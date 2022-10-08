@@ -1,20 +1,9 @@
-\documentclass[11pt,oneside,titlepage]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
-
-%SetFonts
-
-%SetFonts
-
-
+\documentclass[11pt,oneside,titlepage]{article}
 \title{My real analysis exercises}
-\author{Eugene}
-\date{2022}							% Activate to display a given date or no date
+\usepackage{amssymb}
+\usepackage{geometry}
+\author{Evgeny Markin}
+\date{2022}
 
 \begin{document}
 \maketitle
@@ -32,7 +21,58 @@ $$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| = |x - c||x^{
 
 We can put $|x - c|$ can be as small as we want it to be. Therefore we need an upper bound for $|x^{2} + cx + c^{2}|$.
 
+$$|x^{2} + cx + c^{2}| \leqslant |x^{2}| + |cx| + |c^{2}| \leqslant (|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}$$
 
 
+
+Therefore if we take
+$\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
+then
+$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leqslant \epsilon \frac{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}}) = \epsilon$$
+
+Therefore $f(x) = x ^3$ is continous on \textbf{R}.
+
+\subsection*{(b)}
+Argue, using Theorem 4.4.6, that f is not uniformly continuous on R
+
+
+\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if $\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$ satisfying
+
+$|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leqslant \epsilon_0$
+
+In order to show that $f(x) = x^3$ is not uniformly continous on \textbf{R} let us use sequences
+
+$$x_n = n$$
+$$y_n = (n + 1/n)$$
+
+Firstly
+$$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
+
+on the other hand
+
+$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n} + 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
+$$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leqslant |3n| \to \infty$$
+
+rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$ but $|f(x_n) - f(y_n) \to \infty$
+
+Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
+
+\subsection*{(c)}
+Show that $f$ is uniformly continuous on any bounded subset of \textbf{R}.
+
+Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t. $\forall x \in A$ $x \leqslant M$
+(i.e. $A$ is bounded $M$)
+
+Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
+$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leqslant \frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
+
+Therefore if we take
+$$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
+then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore making $f(x)$ uniformly
+continous by definition
+
+
+\section*{4.4.2}
+Show that $f(x) = 1/x^3$  is uniformly continous on the set $[1, \infty)$, but is not on the set $(0, 1]$
 
 \end{document}  
