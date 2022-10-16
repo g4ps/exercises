@@ -1,6 +1,6 @@
 \documentclass[11pt,oneside,titlepage]{article}
 \title{My real analysis exercises}
-% \usepackage{amssymb}
+\usepackage{amsmath,amssymb}
 \usepackage{geometry}
 \author{Evgeny Markin}
 \date{2022}
@@ -13,35 +13,46 @@
 \subsection*{{a}}
 \textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
 
-In order to show, that $f$ is continous we need to show, that $\forall \epsilon \in \textbf{R}$ $\exists \delta$ s.t.
+In order to show, that $f$ is continous we need to show, that $\forall
+\epsilon \in \textbf{R}$ $\exists \delta$ s.t.
 $$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
 
 Let's rewrite the first formula
 
-$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| = |x - c||x^{2} + cx + c^{2}|$$
+$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
+|x - c||x^{2} + cx + c^{2}|$$
 
-We can put $|x - c|$ can be as small as we want it to be. Therefore we need an upper bound for $|x^{2} + cx + c^{2}|$.
+We can put $|x - c|$ can be as small as we want it to be. Therefore we need
+an upper bound for $|x^{2} + cx + c^{2}|$.
 
-$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}$$
+$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
+|c|(|c| + 1) + |c|^{2}$$
 
 
 
 Therefore if we take
 $\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
 then
-$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}}) = \epsilon$$
+$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
+  |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
+= \epsilon$$
 
 Therefore $f(x) = x ^3$ is continous on \textbf{R}.
 
 \subsection*{(b)}
-\textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous on \textbf{R}}
+\textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
+  on \textbf{R}}
 
 
-\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if $\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$ satisfying
+\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
+function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
+$\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
+satisfying
 
 $|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
 
-In order to show that $f(x) = x^3$ is not uniformly continous on \textbf{R} let us use sequences
+In order to show that $f(x) = x^3$ is not uniformly continous on
+\textbf{R} let us use sequences
 
 $$x_n = n$$
 $$y_n = (n + 1/n)$$
@@ -51,54 +62,69 @@ $$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
 
 on the other hand
 
-$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n} + 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
+$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
++ 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
 $$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
 
-rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$ but $|f(x_n) - f(y_n) \to \infty$
+rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
+but $|f(x_n) - f(y_n) \to \infty$
 
 Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
 
 \subsection*{(c)}
-\textit{Show that $f$ is uniformly continuous on any bounded subset of \textbf{R}.}
+\textit{Show that $f$ is uniformly continuous on any bounded subset
+  of \textbf{R}.}
 
-Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t. $\forall x \in A$ $x \leq M$
-(i.e. $A$ is bounded $M$)
+Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
+$\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
 
 Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
-$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq \frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
+$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
+\frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
 
 Therefore if we take
 $$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
-then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore making $f(x)$ uniformly
-continous by definition
+then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
+making $f(x)$ uniformly continous by definition
 
 
 \section*{4.4.2}
-\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set $[1, \infty)$, but is not on the set $(0, 1]$}
+\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
+  $[1, \infty)$, but is not on the set $(0, 1]$}
 
-In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us first prove that it is just continous, with the hope that $\delta$ is not depentant on $x$
+In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
+first prove that it is just continous, with the hope that $\delta$ is not
+depentant on $x$
 
-$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| = |\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
-= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| = |c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
+$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
+|\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
+= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
+|c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
 $$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
 
-Therefore we need to show that if $\delta$ is bounded above at 1, then $|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by some constant, but  $(0, 1]$ isn't.
+Therefore we need to show that if $\delta$ is bounded above at 1, then
+$|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
+some constant, but  $(0, 1]$ isn't.
 
-$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2} + \frac{1}{cx^3}| \leq
+$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
++ \frac{1}{cx^3}| \leq
 |\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
 $$
 
-for $x \in [1, \infty)$ each of those fractions are bounded above by 1, therefore for $x \in [1, \infty)$
+for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
+therefore for $x \in [1, \infty)$
 
 $$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
 
-therefore if we pick $\delta < \epsilon / 3 $ then it follows, that $|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
+therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
+$|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
 
 on the other hand,
 
 $$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
 
-Therefore we will need smaller deltas as we approach 0; to put it more concretely let's use the theorem for
+Therefore we will need smaller deltas as we approach 0; to put it more
+concretely let's use the theorem for
 \textbf{Sequential Criterion for Nonuniform Continuity}.
 
 Let us pick
@@ -107,7 +133,8 @@ $$y_n = 1/(n + 1)$$
 
 then
 
-$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}| = |\frac{1}{n ^ 2 + 1}| \to 0$$
+$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
+= |\frac{1}{n ^ 2 + 1}| \to 0$$
 
 but
 
@@ -135,6 +162,529 @@ both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound
 
 Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
 
+To be continued...
+
+
+\section*{4.2.1}
+\textit{Use Definition 4.2.1 to supply a proof for the following limit statements.}
+
+(a) $\lim_{x \to 2}(2x + 4) = 8$.
+
+(b) $\lim_{x\to0} x^3 = 0$.
+
+(c) $\lim_{x\to2} x^3 = 8$.
+
+(d) $lim_{x\to\pi}[[x]] = 3$, where [[x]] denotes the greatest integer less than or
+equal to x.
+
+Let's first state Definition 4.2.1
+
+\textbf{Definition 4.2.1.} Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that $\lim_{x\to c} f(x) = L$ provided that, for all $\epsilon > 0$, there exists
+a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows that $|f(x) - L| < \epsilon$.
+
+(a):
+$$ |f(x) - L| = |2 x + 4 - 8| = |2 x - 4| = 2|x - 2| < \epsilon $$
+$$ |x-2| < \frac{\epsilon}{2}$$
+
+$$  \delta = \frac{\epsilon}{2} \to |2 x + 4 - 8| < \epsilon $$
+
+as desired.
+
+(b):
+$$ |f(x) - L| = |x^3 - 0| = |x^3| = |x|^3 < \epsilon $$
+$$ |x| < \sqrt[3]{\epsilon}{} $$
+$$ \delta = \sqrt[3]{\epsilon} \to |x^3| < \epsilon $$
+
+as desired.
+
+(c):
+$$ |f(x) - L| = |x^3 - 8| = |(x - 2)(x^2 + 2x + 4)| = |x-2||x^2 + 2x + 4| < \epsilon $$
+$$|x-2| < \frac{\epsilon}{|x^2 + 2x + 4|} $$
+
+Suppose that we set the maximum delta at 1; then upper bound for $|x^2 + 2x + 4|$ is:
+
+$$ |x^2 + 2x + 4| \leq |x^2| + |2x| + 4 = |x|^2 + 2|x| + 4 \leq (|c| + 1)^2 + 2(|c| + 1) + 4 =$$
+$$= (2 + 1)^2 + 2(2 + 1) + 4 = 9 + 6 + 4 = 19
+$$
+
+Therefore
+
+$$\delta = min\{1, \epsilon/19\} \to |x^3 - 8| = |x-2||x^2 + 2x + 4| < \frac{\epsilon}{19} * 19 = \epsilon $$
+
+as desired.
+
+(d):
+
+$$ |[[x]] - 3| = [[0.1415926...]] = 0 < \epsilon $$
+
+Suppose that we pick $\delta = 0.1$, then any $x \in V_{\delta}$ will satisfy $|[[x]] - 3| = 0 < \epsilon $
+for any $\epsilon > 0$ as desired.
+
+\section*{4.2.2}
+\textit{Assume a particular $\delta > 0$ has been constructed as a suitable response
+  to a particular $\epsilon$ challenge. Then, any larger/smaller (pick one) $\delta$ will also suffice.}
+
+Smaller. This follows from the fact, that
+$$\delta_1 < \delta_2 \to V_{\delta_1} \subset V_{\delta_2}$$
+
+\section*{4.2.3}
+\textit{Use Corollary 4.2.5 to show that each of the following limits does not exist.}
+
+(a) $\lim_{x\to0} |x|/x$
+
+(b) $\lim_{x\to 1} g(x)$ where $g$ is Dirichlet’s function from Section 4.1.
+
+I'll not state corollary 4.2.5  function here, because it's tedious, but it'll be obvious which corollary I'm talking about by the context.
+
+
+(a): let
+$$(x_n) = 1/n$$
+$$(y_n) = -1/n$$
+then
+$$(x_n) \to 0;(y_n) \to 0$$
+but
+$$|x_n| / x_n = 1$$
+$$|y_n| / y_n = -1$$
+therefore the limit does not exist.
+
+(b):
+
+The Dirichlet function is
+\begin{equation}
+D(x)=
+    \begin{cases}
+        1 & \text{if } x \in \textbf{Q}\\
+        0 & \text{if } x \notin \textbf{Q}
+    \end{cases}
+\end{equation}
+
+let
+$$(x_n) = 2/n + 1$$
+$$(y_n) = \sqrt{2}/n + 1$$
+
+then
+
+$$(x_n) \to 1;(y_n) \to 1$$
+
+but
+
+$$(x_n) = 2/n + 1 \in \textbf{Q}$$
+$$(y_n) = \sqrt{2}/n + 1 \notin \textbf{Q}$$
+
+therefore
+
+$$ D(x_n) = 1$$
+$$ D(y_n) = 0$$
+
+thus the function is not continous at 1
+
+\section*{4.2.4}
+\textit{Review the definition of Thomae’s function t(x) from Section 4.1.}
+
+\textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$, each of which converges to 1 without using the number 1 as a term in the sequence.}
+
+\textit{(b) Now, compute $\lim t(x_n)$, $\lim t(y_n)$, and $\lim t(z_n)$.}
+
+\textit{(c) Make an educated conjecture for $\lim_{x\to1} t(x)$, and use Definition 4.2.1B
+  to verify the claim. Given $\epsilon > 0$, consider the set of points
+$\{x \in \textbf{R} : t(x)  \epsilon\}$.  Argue that all the points in this set are isolated.}
+
+
+The definition of  Thomae function is
+\begin{equation}
+t(x)=
+    \begin{cases}
+      1 & \text{if } x = 0\\
+      1/n & \text {if } x = m/n \in \textbf{Q} \text{\textbackslash} \{0\} \\
+      0 & \text{if } x \notin \textbf{Q}
+    \end{cases}
+\end{equation}
+
+(a): Let our three sequences be
+
+$$ (x_n) = n/(n + 1)$$
+$$ (y_n) = (n + 1)/n$$
+$$ (z_n) = \sum_{i=1}^{n}{\frac{1}{2^n}}$$
+
+(b):
+$$t(x_n) = \{1/2, 1/3, 1/4, 1/5, 1/6, 1/7 ...\}$$
+$$t(y_n) = \{1, 1/2, 1/3, 1/4, 1/5, 1/6 ...\}$$
+$$t(z_n) = \{1/2, 1/4, 1/8, 1/16 ...\}$$
+
+(c): The educated conjecture here is that $\lim_{x \to 1} t(x) = 0$
+
+In order to prove that conjecture author suggests, that we use $\epsilon-\delta$ definition. Let's try
+it;
+
+$$ |t(x)| < \epsilon$$
+
+For all $\epsilon \in \textbf{R} > 0$
+
+Therefore by archimedes property there exists a number $n \in \textbf{N}$ s.t. $\frac{1}{n} < \epsilon$.
+Thus suppose that we have $\delta = 1/n$. Then our proposition is that 
+
+$$\forall b \in (1 - 1/n; 1 + 1/n) \to |t(b)| < \epsilon$$
+
+If $b \notin \textbf{Q} $ then $t(b) = 0$ and therefore $|t(b)| < \epsilon$; therefore we need to prove,
+that any number $b = m_1/n_1 \in (1 - 1/n; 1 + 1/n) \cap \textbf{Q}$ is such, that $|t(b)| = 1/n_1 < 1/n$.
+Also suppose $m_1 = n_1 + k$ (it's worth noting that in this case $k \in \textbf{Z}$); then
+
+$$ 1 - \frac{1}{n} < \frac{m_1}{n_1} < 1 + \frac{1}{n}$$
+$$ 1 - \frac{1}{n} < \frac{n_1 + k}{n_1} < 1 + \frac{1}{n}$$
+$$ 1 - \frac{1}{n} < 1 + \frac{k}{n_1} < 1 + \frac{1}{n}$$
+$$ - \frac{1}{n} <  \frac{k}{n_1} <  \frac{1}{n}$$
+$$ |\frac{k}{n_1}| <  \frac{1}{n}$$
+$$ |k||\frac{1}{n_1}| = |k||t(\frac{1}{n_1})| <  \frac{1}{n}$$
+
+therefore because $k \in \textbf{Z}$
+
+$$ |t(\frac{1}{n_1})| = |\frac{1}{n_1}| <  \frac{1}{n|k|} < \frac{1}{n}$$
+
+thus for each $\epsilon > 0$ we can find a corresponding $\delta > 0$ as desired.
+
+\section*{4.2.5}
+Suppose that $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$
+
+$(ii)$ $\lim_{x \to c}[f(x) + g(x)] = L + M$
+
+$(iii)$ $\lim_{x \to c}[f(x) g(x)] = L M$
+
+(a)\textit{ Supply the details for how Corollary 4.2.4 part (ii) follows from the sequential criterion for functional limits in Theorem 4.2.3 and the Algebraic Limit Theorem for sequences proved in Chapter 2.}
+
+From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
+
+$$(a_n) + (b_n) = a + b$$
+
+We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
+therefore by the algebraic limit theorem
+
+$$f(c_n) + g(c_n) = L + M$$
+
+for any sequence $(c_n) \to c$. Therefore we can state that
+
+$$\lim_{x \to c}(f(x) + g(x)) = L + M $$
+
+as desired
+
+\textit{(b) Now, write another proof of Corollary 4.2.4 part (ii) directly from Definition 4.2.1 without using the sequential criterion in Theorem 4.2.3.}
+
+$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$; therefore for any $\epsilon_1 > 0$ we can find $\delta_1 > 0$ s.t.
+
+$$ |x - c| < \delta_1 \to |f(x) - L| < \epsilon_1 $$
+
+Also for the same $\epsilon_1$ there exist $\delta_2 > 0$ s.t.
+
+$$ |x - c| < \delta_2 \to |g(x) - M| < \epsilon_1 $$
+
+let $\delta_3 = min\{\delta_1, \delta_2\}$; then it is true that 
+
+$$ |x - c| < \delta_3 \to |f(x) - L| < \epsilon_1 $$
+$$ |x - c| < \delta_3 \to |g(x) - M| < \epsilon_1 $$
+
+because $V_{\delta_1} \subseteq V_{\delta_3} $ and $V_{\delta_2} \subseteq V_{\delta_3} $
+
+therefore
+
+$$|f(x) - L| + |g(x) - M| < 2 \epsilon_1$$
+
+Therefore 
+
+$$ |f(x) + g(x) - L -  M| = |f(x) - L + g(x) - M| \leq |f(x) - L| + |g(x) - M| < 2 \epsilon_1 $$
+
+Thus for any $\epsilon > 0$ there exist corresponding $\epsilon_1 = \frac{\epsilon}{2}$ for which there
+exist corresponding $\delta = min\{\delta_1, \delta_2\}$ (where $\delta_1$ is a delta for $f(x)$ and
+$\delta_2$ is a delta for $g(x)$) which satisfies
+
+$$|x - c| < \delta \to |f(x) + g(x) - (L + M)| < \epsilon$$
+
+therefore $\lim_{x \to c}(f(x) + g(x)) = L + M$ as desired.
+
+\textit{(c) Repeat (a) and (b) for Corollary 4.2.4 part (iii).}
+
+(a):
+
+From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
+
+$$(a_n) (b_n) = a  b$$
+
+We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
+therefore by the algebraic limit theorem
+
+$$f(c_n)  g(c_n) = L M$$
+
+for any sequence $(c_n) \to c$. Therefore we can state that
+
+$$\lim_{x \to c}(f(x)g(x)) = L M $$
+
+as desired
+
+(b):
+
+$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$;
+
+In  order to prove the needed limit let's first use some algebra
+$$ |f(x)g(x) - LM| = $$
+$$ |f(x)g(x) + f(x)M - f(x)M - LM| = $$
+$$|f(x)(g(x) - M) + M(f(x) - L)| \leq
+|f(x)(g(x) - M)| + | M(f(x) - L)| = $$
+$$|f(x)||g(x) - M| + |M||f(x) - L|  $$
+
+our strategy is to show that both elements of the last sum are less or equal to $\epsilon/2$
+
+Let $\epsilon > 0$.
+
+$$ |M||f(x) - L| < \frac{\epsilon}{2}$$
+If $M = 0$ then the abovementioned inequality always holds and we are free to choose any $\delta_1$;
+
+Otherwise tet us pick $\delta_1$ such that inequality
+$$ |f(x) - L| < \frac{\epsilon}{2|M|}$$
+holds.
+
+The next step is a little bit more complicated because we need to work with $f(x)$; let us pick y = 1;
+then because $\lim_{x \to c}f(x) = L$ we know that there exists $\delta_2$ s.t. $|x - c| < \delta_2
+\to |f(x) - L| < 1$. 
+
+Therefore
+
+$$|f(x) - L| < 1$$
+
+Little sidenote: let's prove that 
+$$ |a - b| < c \to |a| < |b| + c  $$
+
+Firstly some preliminary stuff
+$$|a - b| \geq 0 \to c > |a - b| > 0 \to c > 0$$
+
+$$|a - b| < c \to -c < a - b < c$$
+$$b -c < a  < b + c$$
+
+Now let's see all the cases for $a, b \in \textbf{R}$
+
+if $a \geq 0$ and $b \geq 0$ then
+$$a < b + c$$
+$$|a| < |b| + c$$
+
+if $a < 0$ and $b \geq 0$ then
+$$ b + c \geq 0 > a$$
+$$a < b + c$$
+$$|a| < |b| + c$$
+
+if $a \geq 0$ and $b < 0$ then
+$$b -c < a  < b + c$$
+$$-b +c > -a  > -b - c$$
+$$|b| +c > -a  > |b| - c$$
+$$-|b| - c  < a  <  c - |b|$$
+$$|a|  <  c - |b| \leq c + |b|$$
+$$|a|  <  c + |b|$$
+
+if $a < 0$ and $b < 0$ then
+$$b -c < a  < b + c$$
+$$-b + c > -a  > -b - c$$
+$$|b| + c > |a|  > |b| - c$$
+$$|b| + c > |a|$$
+$$|a| < |b| + c$$
+
+Therefore $\forall a,b\in \textbf{R}$
+$$|a - b| < c \to |a| < |b| + c$$
+as desired.
+
+Back to our exercise: 
+
+$$|f(x) - L| < 1$$
+$$|f(x)| < |L| + 1$$
+
+Therefore we can state that upper bound for our $|f(x)|$ with $\epsilon = 1$ is $|L| + 1$
+
+Thus if we pick $\delta_2$ sufficient for
+
+$$|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}$$
+
+therefore if we pick $\delta = min\{\delta_1, \delta_2\}$ then
+
+$$|x - c| < \delta \to $$
+$$|f(x)g(x) - LM| \leq |f(x)||g(x) - M| + |M||f(x) - L| <  \frac{\epsilon}{2} +
+\frac{\epsilon}{2} = \epsilon  $$
+
+therefore $\lim_{x \to c}[f(x) g(x)] = LM$ as desired
+
+\section*{4.2.6}
+\textit{Let $g: A\to \textbf{R}$ and assume that $f$ is bounded function on $A \subseteq \textbf{R}$
+  (i.e. there exists $M > 0$ satisfying $|f(x| \leq M$ for all $x \in A$). Show that
+  if $\lim_{x \to c}g(x) = 0$, then $\lim_{x \to c}g(x)f(x) = 0$ as well.}
+
+Here we can't use an intuitive approach of just using algebraic limit theorem because $f(x)$ may
+not hav limit at $c$.
+Anyways we proceed by $\epsilon-\delta$ approach.
+
+Therefore we need to show that
+$$\exists \delta: |f(x)g(x)| < \epsilon$$
+
+First of all,
+$$ |f(x)g(x)| = |f(x)||g(x)|$$
+
+Then we notice, that because $f(x)$ is bounded
+
+$$\exists M \in \textbf{R} > 0: |f(x)| \leq M$$
+therefore
+$$|f(x)||g(x)| < |M||g(x)| = M|g(x)|$$
+
+therefore if we pick $\delta$ sufficient for $|g(x)| < \frac{\epsilon}{M}$ then it follows that
+
+$$|f(x)g(x)| \leq M|g(x)| < \epsilon$$
+
+therefore
+$$\forall \epsilon \in \textbf{R} \exists \delta : |x - c| < \delta \to |f(x)g(x)| < \epsilon$$
+
+therefore
+
+$$\lim_{x \to c}[f(x)g(x)] = 0$$
+as desired.
+
+\section*{4.2.7}
+\textit{(a) The statement $\lim_{x \to 0}1/x^2 = \infty$ certainly makes intuitive sense. Construct a rigirius definition in the "challenge-response" style of Definition 4.2.1 for a limit statement of the form $\lim_{x \to c}f(x) = \infty$ and use it to prove the previous statement }
+
+\textbf{Definition of limit to infinity}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x\to c} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
+a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows
+that $f(x) > \epsilon$.
+
+Now we need to show that for  $f(x) = 1/x^2$
+$$\lim_{x \to 0}f(x) = \infty$$
+
+First
+$$ f(x) > \epsilon$$
+$$ \frac{1}{x^2} > \epsilon$$
+$$ x^2 < \frac{1}{\epsilon}$$
+$$ x < \sqrt{\frac{1}{\epsilon}}$$
+
+therefore if we pick $\delta = \sqrt{\frac{1}{\epsilon}}$, then it follows that
+$$ f(x) > \epsilon$$
+as desired.
+
+Quick (and insufficient) test in Python seems to corraborate  this statement
+
+\textit{(b) Now construct a definition for the statement $\lim_{x \to \infty} f(x) = L$. Show
+$\lim_{x \to \infty} 1/x = 0$}
+
+\textbf{Definition of infinite limit}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x \to \infty} f(x) = L$ provided that, for all $\epsilon \in \textbf{R} > 0$, there exists
+a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
+that $|f(x) - c | < \epsilon$.
+
+We start as ususal at the $\epsilon$
+$$|f(x) - 0| < \epsilon$$
+$$|1/x| < \epsilon$$
+Given that we can pick any $\delta$ as we want, we can pick it at the very least at $0$ to get rid
+of the absolute value
+$$1/x < \epsilon$$
+$$x > 1/\epsilon$$
+
+therefore $\delta = 1/\epsilon$ then it follows that $$|f(x) - 0| < \epsilon$$ as desired.
+
+\textit{(c) What would a rigorous definition for $\lim_{x \to \infty} f(x) = \infty$ would look like? Give an example of such a limit}
+
+\textbf{Definition of infinite limit to infinity}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x \to \infty} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
+a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
+that $f(x) > \epsilon$.
+
+The corresponding example of such a limit  is $f(x) = x$.
+
+\section*{4.2.8}
+\textit{Assume $f(x) \geq g(x)$ for all $x$ in some set $A$ on which $f$ and $g$ are defined. Show that for any limit point $c$ of $A$ we must have }
+$$\lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
+
+I'm gonna do it by using contradiction; suppose that $f(x)$ and $g(x)$ are defined as in the
+exercise, but
+$$\lim_{x \to c} f(x) <  \lim_{x \to c} g(x) $$
+% for some $c \in A$
+
+% then
+% $$\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) < 0 $$
+
+% Let $\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) = M < 0$
+
+% therefore for $\epsilon = 0 - M$ there exist $\delta$ s.t.
+
+% $$|x - c| < \delta \to |f(x) - g(x) + M| < \epsilon = - M$$
+
+% thus 
+
+then it follows that there exist a sequence $(a_n) \to c$ such that $f(a_n) \geq g(a_n)$ for all
+$n \in \textbf{N}$; Therefore $\lim(f(a_n)) \geq \lim(g(a_n))$ and  but it contradicts our
+initial assumption.
+
+\section*{4.2.9 (Squeeze Theorem)} Let $f,g$ and $h$ satisfy $f(x) \geq g(x) \geq h(x)$ for all
+$x$ in some common domain $A$. If $\lim_{x \to c}f(x) = L$ and $\lim_{x \to c}h(x) = L$ at some
+limit point $c$ of  $A$, show $\lim_{x \to c}g(x) = L$ as well
+
+As proven in the previous exercise
+$$\forall x \in A: f(x) > g(x) \to \lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
+
+therefore
+
+$$\lim_{x \to c} f(x) = L \geq \lim_{x \to c} g(x) $$
+and
+$$\lim_{x \to c} g(x) \geq \lim_{x \to c} h(x) = L $$
+Thus 
+$$ L \geq\lim_{x \to c} g(x) \geq L  $$
+therefore
+$$\lim_{x \to c} g(x) = L  $$
+as desired.
+
+\section*{4.3.1}
+\textit{Let $g(x) = \sqrt[3]{x}$.}
+
+\textit{(a) Prove that g is continous at c = 0}
+
+We're gonna use $\epsilon-\delta$ definition. First of all, let's state that $g(0) = 0$. Therefore
+
+$$|f(x) - f(c)| = |\sqrt[3]{x} - 0|  < \epsilon $$
+$$ |\sqrt[3]{x}| < \epsilon $$
+
+Here I would like to proof that $ \forall x \in \textbf{R}: |\sqrt[3]{x}| = \sqrt[3]{|x|}$: 
+if $x \geq 0$ then $|\sqrt[3]{x}| = \sqrt[3]{x}= \sqrt[3]{|x|}$;
+if $x < 0$ then $|\sqrt[3]{x}| = \sqrt[3]{-x}= \sqrt[3]{|x|}$. Therefore 
+$$ |\sqrt[3]{x}| = \sqrt[3]{|x|} =  < \epsilon $$ is justified.
+
+Therefore we can state that 
+$$|x| =  < \epsilon ^ 3$$ 
+Thus if we pick $\delta = \epsilon ^ 3$ then
+$$|x - c| = |x| < \delta \to |f(x) - f(c)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}|
+= \sqrt[3]{|x|} < \sqrt[3]{\epsilon^3} =  \epsilon $$
+
+Therefore $g$ is continous at 0
+
+\textit{(b) Prove that $g$ is continous at a point $c \neq 0$. (The identity
+  $a^3 - b^3 = (a - b)(a ^ 2 + ab + b^2)$ will be helpful)}
+
+We're gonna use $\epsilon-\delta$ definition once again.
+$$|f(x) - f(c)| = |\sqrt[3]{x} - \sqrt[3]{c}| < \epsilon$$
+First, let's use a little algebra
+$$|\sqrt[3]{x} - \sqrt[3]{c}| = |\sqrt[3]{x} - \sqrt[3]{c}| * 1 =
+|\sqrt[3]{x} - \sqrt[3]{c}|\frac{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} = \frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)}$$
+
+Let's look now at the sum  $\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} +
+\sqrt[3]{c}^2$: $\sqrt[3]{x} ^ 2 \geq 0 $ because it is a square. For
+$\sqrt[3]{x} + \sqrt[3]{x} ^ 2$ we need to be able to articulate $\delta$ so
+that both $x$ and $c$ are the same sign; if we fo that then it becomes
+nonnegative. $\sqrt[3]{c} ^ 2 \geq 0 $ because it is a square
+
+Therefore if right now we pinky-promise that we will account for unusual delta
+in the future, then we are able to say that 
+$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 \geq 0 $$
+And therefore
+$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 =
+|\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2| $$
+
+
+
+
 
 \end{document}
-
