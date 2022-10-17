@@ -683,8 +683,161 @@ And therefore
 $$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 =
 |\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2| $$
 
+Continuing with our initial algebra
 
+$$\frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+\frac{|\sqrt[3]{x} - \sqrt[3]{c}||\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+\frac{|x - c|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+$$
+$$ |x - c|\frac{1}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} < \epsilon
+$$
+As we disussed earlier $(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}  +
+\sqrt[3]{c} ^ 2) \geq 0$ and therefore 
 
+$$ |x - c| < \epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
++ \sqrt[3]{c} ^ 2) $$
 
+Thus, if we pick $\delta = min\{\epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
++ \sqrt[3]{c} ^ 2), |x - 0|\}$ (we need the second value
+because we need the sum to be equal to its absolute value; ) then
+
+$$|x - c| < \delta \to |f(x)  - f(c)| < \epsilon$$
+
+Therefore $f(x) = \sqrt[3]{x}$ is continous on \textbf{R}.
+
+\section*{4.3.2}
+
+\textit{(a) Supply a proof for Theorem 4.3.9 using the $\epsilon-\delta$
+  characterization of continuity.}
+
+First, let's state the theorem
+
+\textbf{Theorem 4.3.9 (Composition of Continuous Functions).} \textit{Given
+  $f: A \to \textbf{R}$ and $g: B \to \textbf{R}$, assume that the range
+  $f(A) =\{f(x): x \in A\}$ is contained in the domain $B$ so that the
+  composition $g \circ f = g(f(x)) $ is well-defined on $A$. }
+
+\textit{If $f$ is continous ac $c \in A$, and if $g$ is continous at
+  $f(c) \in B$, then $g \circ f$ is continous at c.}
+
+Firstly, the fact that both $f$ and $g$ are continous tells that
+
+$$\forall \epsilon_1 \in \textbf{R}: \exists \delta_1:  |x - c| < \delta_1 \to
+|f(x) - f(c)| < \epsilon_1$$
+$$\forall \epsilon_2 \in \textbf{R}: \exists \delta_2: |x - c| < \delta_2 \to
+|g(x) - g (c)| < \epsilon_2$$
+And we need to prove that
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - c| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+
+% Let's pick the $c \in A$. 
+% Firstly, because of all of the continuity and stuff, we are assured, that there
+% exists partucular $M=g(f(c))$. Let's fix $\epsilon$. Therefore if
+% we plug this $\epsilon$ into continuity of $g(x)$, then we'll get $\delta_1$.
+
+The main strategy for this one is to plug some delta into some epsilon (or
+vice versa), and get some use out of it.
+
+Firstly, let's get some things out of the way: let us fix particular $c \in A$
+and $\epsilon \in \textbf{R} > 0$. Then, let's plug this $\epsilon$ at $f(c)$
+into the continuity of $g(x)$ so we can get a $\delta_g > 0$. Therefore
+we will have
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
+\to |g(x) - g(f(c))| < \epsilon $$
+which is kinda close to the thing, that we're trying to prove.
+
+We also know that
+$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
+|f(x) - f(c)| < \epsilon_f$$
+therefore it is true that
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |y - f(c)| < \delta_g
+\to |g(y) - g(f(c))| < \epsilon $$
+$$ \exists \delta_f: |x - c | < \delta_f \to
+|f(x) - f(c)| < \delta_g$$
+
+From this we can state that
+$$ \forall \epsilon \in \textbf{R} > 0: \exists \delta_f: |x - c | < \delta_f \to |f(x) - f(c)| < \delta_g \to
+|g(f(x)) - g(f(c))| < \epsilon $$
+
+This doesn't sound too persuasive for me, so I probably need to explore it a
+little but more.
+
+Suppose that with all the present assumptions, we get the given $\epsilon$.
+If we plug it into definition of continuity for  $g(x)$ at $g(f(c))$, then
+we'll get the neccesary $\delta_g$. If we plug $\delta_g$ as an $\epsilon$
+for the definition of continuity of $f(x)$, then we'll get $\delta_f$.
+
+We can probably prove it with a little bit more clarity. We need to prove that
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+
+Firstly, definition of contonuity of $g(x)$ gives us the fact, that 
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
+\to |g(x) - g(f(c))| < \epsilon $$
+
+then if $x \in f(A)$ then $\exists y \in A $ s.t. $f(y) = x$ therefore
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |f(y) - f(c)| < \delta_g
+\to |g(f(y)) - g(f(c))| < \epsilon $$
+
+From the definition of continuity of $f$ we know that 
+
+$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
+|f(x) - f(c)| < \epsilon_f$$
+
+Therefore 
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+as desired.
+
+\textit{(b) Give another proof of this theorem using the sequantial
+  characterization of continuity (from Theorem 4.3.2 (iv)) }
+
+Theorem 4.3.2 (iv) states that if $(x_n) \to c$ (with $x_n \in A$), then
+$f(x_n) \to f(c)$.
+
+Because $f(x)$ is continous we can state that for every sequence $(x_n) \to c$
+it is true that $f(x_n) \to f(c)$. Therefore because $f(x_n)$ is a sequence
+itself, we can state that $g(f(x_n)) \to g(f(c))$. Therefore it is true, that
+for every sequence $(x_n) \to c$ it follows, that $g(f(x_n)) \to g(f(c))$.
+Therefore $g(f(x))$ is continous, as desired.
+
+\section*{4.3.3}
+\textit{Using the $\epsilon-\delta$ characteriation of continuity (and tus using no previous results anbout the sequences), show that the linear function $f(x) = ax + b$ is continous at every poinnt of \textbf{R}.}
+
+Let's start with our usual stuff
+
+$$ |f(x) - f(c)| < \epsilon $$
+$$ |ax + b - (ac + b)| = |ax + b - ac - b| = |a||x - c| < \epsilon $$
+$$|x - c| < \epsilon / a $$
+
+Therefore if we pick $\delta = \epsilon / a$ then it follows that $|f(x) - f(c)| < \epsilon$, as desired.
+
+\section*{4.3.4}
+\textit{(a) Show using Definition 4.3.1 that any function $f$ with domain
+  \textbf{Z} with necessarily be continous at every point in its domain.}
+
+Suppose that $f: Z \to R$. We need to prove that 
+
+$$\forall \epsilon: \exists \delta: |x - c| < \delta \to |f(x) - f(c)| < \epsilon $$
+
+Suppose that we pick $\delta = 0.1$ (or any other value, such that the only one
+of the domain values will be in the needed neighborhood). Then there will be
+only one number in the domain neighhborhood, and because of that we can state
+that
+$$|f(x) - f(c)| = |f(c) - f(c)|  = 0 < \epsilon$$
+
+Therefore the fucntion is continous, as desired.
+
+\textit{(b) Show in general that if $c$ is an isolated point of $A \subseteq \textbf{R}$, then $f: A \to \textbf{R}$ is continous at c.}
+
+In this particular case we can't just set $\delta$ at some number, so we gotta
+be a little more creative. To be distract myself from getting any unproductive
+ideas, I should state here that $\textbf{Q}$ is a set of isolated points.
 
 \end{document}
