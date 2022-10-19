@@ -8,6 +8,9 @@
 \begin{document}
 \maketitle
 
+Exercises are from UTM-040 Understanding analysis by Stephen Abbott. Edition is
+unknown, but the date in the preface is August 2000.
+
 \section*{4.4.1}
 
 \subsection*{{a}}
@@ -1054,5 +1057,145 @@ $$|b| = |b - a + a| \leq |b - a| + |a| = |a - b| + |a|$$
 $$|b| - |a| \leq |a - b|$$
 $$|a| - |b| \geq -|a - b|$$
 $$-|a - b| \leq |a| - |b| \leq |a - b| \to ||a| - |b|| \leq |a - b|$$
+
+\section*{1.2.6}
+\textit{Given a function $f$ and a subset $A$ of its domain, let $f(A)$
+  represent the range of $f$ over the set $A$; that is,
+  $f(A) = \{f(x): x \in A\}$. }
+
+\textit{(a) Let $f(x) = x^2$. if $A=[0,2]$ (the closed interval $\{x \in
+  \textbf{R}: 0 \leq x \leq 2\}$) and $B=[1,4]$, find $f(A)$ and $f(B)$. Does
+  $f (A \cap B) = f(A) \cap f(B)$ in this case? Does $f(A \cup B) = f(A) \cup
+  f(B)$? }
+
+First things first: $f(A) = [0, 4]$; $f(B) = [1, 16]$ (without any proof
+because if we don't go with axiomatic stuff, then it is obvious).
+
+$$f(A \cap B) = f([1, 2]) = [1, 4]$$
+$$f(A) \cap f(B) = [1, 4]$$
+
+Therefore in this case $f(A) \cap f(B) = f(A \cap B)$.
+
+$$f(A \cup B) = f([0, 4]) = [0, 16] = f(A) \cup f(B)$$
+
+\textit{(b) Find two sets $A$ and $B$ for which $f(A \cap B) \neq f(A) \cap f(B)$.}
+
+Let $A = [-1, 0]$ and $B = [0, 1]$. Then
+$$f(A \cap B) = f(\{0\}) = \{0\}$$
+$$f(A) \cap f(B) = [0, 1] \cap [0, 1] = [0, 1] \neq f(A \cap B)$$
+
+\textit{(c) Show that, for an arbitrary function $g: \textbf{R} \to \textbf{R}$, it
+  is always true that $g(A \cap B) \subseteq g(A) \cap g(B)$ for all sets
+  $A,B \subseteq \textbf{R}$.}
+
+$$x \in g(A \cap B) \to x \in g(A)$$
+$$x \in g(A \cap B) \to x \in g(B)$$
+Therefore
+$$x \in g(A \cap B) \to x \in g(A) \cap g(B)$$
+Thus
+$$g(A \cap B) \subseteq g(A) \cap g(B)$$
+
+\textit{(d) Form and prove a conjecture aout the relationship between $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.}
+
+$$x \in g(A) \to x \in g(A \cup B)$$
+$$x \in g(B) \to x \in g(A \cup B)$$
+
+Therefore
+$$x \in g(A) \cup g(B) \to x \in g(A \cup B)$$
+Thus
+$$g(A) \cup g(B) \subseteq g(A \cup B)$$
+
+Suppose that
+
+$$\exists y \in \textbf{R}: y \in g(A \cup B); y \notin g(A) \cup g(B)$$
+
+Then $\exists q_1 \in A \cup B: g(q_1) = y$ but
+$$\forall q_2 \in A, q_3 \in B: g(q_2) \neq y; g(q_3) \neq y$$
+
+Therefore $q_1 \notin A$ and $q_1 \notin B$. Therefore $q_1 \in A^c \cap B^c$.
+Using De Morgan rule
+$$q_1 \in A^c \cap B^c \to q_1 \in (A \cup B)^c$$
+therefore 
+$$q_1 \notin g(A \cup B)$$
+which is a contradiction. Therefore
+
+$$y \in g(A \cup B) \to g(A) \cup g(B)$$
+Thus
+$$g(A \cup B) \subseteq g(A) \cup g(B)$$
+
+Therefore if we take into account previous conclusion
+
+$$g(A \cup B) = g(A) \cup g(B)$$
+
+for any $g$.
+
+\section*{1.2.7}
+
+\textit{Given a function $f: D \to \textbf{R}$ and a subset $B \subseteq \textbf{R}$, let $f^{-1}(B)$ be the set of all points from the domain $D$ that get mapped into $B$; that is, $f^{-1}(B) = \{x \in D: f(x) \in B\}$. This is called
+  the preimage of $B$.}
+
+\textit{(a) Let $f(x) = x^2$. If A is the closed interval $[0,4]$ and B is the
+  closed interval $[-1, 1]$, find $f^{-1}(A)$ and $f^{-1}(B)$. Does
+  $f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)$ in this case? Does
+  $f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B)$?
+}
+
+$$f^{-1}(A) = [-2, 2]$$
+$$f^{-1}(B) = [-1, 1]$$
+$$f^{-1}(A \cap B) = f^{-1}([0, 1]) = [-1, 1] = f^{-1}(A) \cap f^{-1}(B)$$
+$$f^{-1}(A \cup B) = f^{-1}([-1, 4]) = [-2, 2] = f^{-1}(A) \cup f^{-1}(B)$$
+
+\textit{(b) The good behaviour of preimages demonstated in (a) is completely
+  general. Show that for an arbitrary function $g: \textbf{R} \to \textbf{R}$,
+  it is always true that $g^{-1}(A \cap B) = g^{-1}(A) \cap g^{-1}(B)$ and
+  $g^{-1}(A \cup B) = g^{-1}(A) \cup g^{-1}(B)$ for all sets $A, B \subseteq \textbf{R}$.
+}
+
+% $$ x_1 \in g^{-1}(A) \to \exists y_1 \in A: g(y) = x$$
+% $$ x_2 \in g^{-1}(B) \to \exists y_2 \in B: g(y) = x$$
+By definition
+$$ x \in g^{-1}(A \cap B) \to \exists y \in A \cap B: y = g(x)$$
+Therefore if we we use the fact  $y \in A \cap B \to y \in A$ and $y \in A \cap B \to y \in B$
+$$ x \in g^{-1}(A \cap B) \to \exists y \in A: y = g(x) \to x \in g^{-1}(A)$$
+$$ x \in g^{-1}(A \cap B) \to \exists y \in B: y = g(x) \to x \in g^{-1}(B)$$
+therefore $x \in g^{-1}(A \cap B)$ implies that $x \in g^{-1}(A)$ and $x \in g^{-1}(B)$, or in other words
+$$g^{-1}(A \cap B) \subseteq g^{-1}(A) \cap g^{-1}(B)$$
+
+In other direction: 
+$$x \in g^{-1}(A) \to \exists y_1 \in A: y_1 = g(x)$$
+$$x \in g^{-1}(B) \to \exists y_2 \in B: y_2 = g(x)$$
+
+$x \in g^{-1}(A) \cap g^{-1}(B)$ implies that $ \exists y_1 \in A: g(x) = y_1$ and $\exists y_2 \in B: y_2 = g(x)$. Because $g$ is a function we know, that
+for every $x$ there exists only one $y = g(x)$. Therefore $y_1 = y_2 = g(x)$.
+Thus we can state that $y \in A \cap B$.
+
+thus
+$$x \in g^{-1}(A) \cap g^{-1}(B) \to \exists y \in A \cap B: y = g(x) \to
+x \in g^{-1}(A \cap B)$$
+
+Therefore 
+
+$$ g^{-1}(A) \cap g^{-1}(B) \subseteq   g^{-1}(A \cap B)$$
+
+If we take previous conclusion into account, then it follows that
+$$ g^{-1}(A) \cap g^{-1}(B) = g^{-1}(A \cap B)$$
+as desired.
+
+Now let's prove that  $g^{-1}(A \cup B) = g^{-1}(A) \cup g^{-1}(B)$:
+
+
+If $ x \in g^{-1}(A) \cup g^{-1}(B))$ then  $\exists y \in A: y = g(x)$ or
+$\exists y \in B: y = g(x)$. If we take into account that $y \in A \to y \in A \cup B$ then we can conclude that
+
+$$ x \in g^{-1}(A) \cup g^{-1}(B)) \to \exists y \in A \cup B : y = g(x) \to
+x \in g^{-1}(A \cup B)$$
+Thus
+
+$$g^{-1}(A) \cup g^{-1}(B) \subseteq g^{-1}(A \cup B)$$
+
+In other direction: 
+$$x \in g^{-1}(A \cup B) \to \exists y \in A \cup B: y = g(x) \to y = g(x)$$
+
+
 
 \end{document}
