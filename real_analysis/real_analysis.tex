@@ -840,4 +840,219 @@ In this particular case we can't just set $\delta$ at some number, so we gotta
 be a little more creative. To be distract myself from getting any unproductive
 ideas, I should state here that $\textbf{Q}$ is a set of isolated points.
 
+To be continued
+
+\section*{3.2.1}
+\textit{(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption
+  that the collection of open sets be finite get used}
+
+Theorem 3.2.3 states that
+
+(ii) The intersection of a finite collection of open sets is open.
+
+The assumption of the finality of the set is used in the fact, that we need
+the minimum of the epsilons.
+
+\textit{(b) Give an example of an infinite collection of nested open sets}
+$$ O_1 \supseteq O_2 \supseteq O_3 \supseteq O_4 \supseteq ... $$
+\textit{whose intersection $\cap_{n = 1}^{\infty} O_n$ is closed and nonempty.}
+
+First of all, we should state that open is not an opposite of closed in this
+context. We can get $O_n = (-\infty; \infty)$. Then this definition
+(technically) fits into the requrement of qs
+
+Let $O_n = (1 - 1/n, 2 + 1/n)$. Let us also define 
+$$A = \cap_{n = 1}^{\infty} O_n$$
+
+Suppose that $x \in A$. To be continued...
+
+
+\section*{1.2.1}
+\textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
+  to show $\sqrt{6}$ is irrational?}
+
+Suppose that $\sqrt{3}$ is a rational number; then it is true that
+$$\exists m \in \textbf{Z}, n \in \textbf{N}: \frac{m}{n} = \sqrt{3}$$
+where $m$ and $n$ are at their lowest possible terms. Then
+$$\sqrt{3}n = m$$
+$$3n^2 = m^2$$
+
+Therefore we can state, that $m \% 3 = 0$. Therefore $\exists k: 3k = m$.
+Thus we can reformulate formula as
+$$3n^2 = (3k)^2$$
+$$n^2 = 3k^2$$
+
+Therefore $n\%3 = 0$ as well. Therefore $n$ and $k$ are not in their possible
+terms, which conradicts our initial assumtions. Therefore we can state that
+$\sqrt{3} \notin \textbf{Q}$.
+
+Let's try the same argument for $\sqrt{6}$.
+$$\exists m \in \textbf{Z}, n \in \textbf{N}: \frac{m}{n} = \sqrt{6}$$
+$$\sqrt{6}n = m$$
+$$6n^2 = m^2$$
+then m has as their dividers both 2 and 3. Therefore $m\%2 = 0$ and $m\%3 = 0$.
+Therefore we can proceed with the same argument as earlier
+$$6n^2 = (6k)^2$$
+$$n^2 = 6k^2$$
+
+Therefore n is divided by 6, etc., etc., $\sqrt{6} \notin \textbf{Q}$.
+
+\textit{(b) Where does the proof of Theorem 1.1.1 break down if we try to use
+  it to prove $\sqrt{4}$ is irrational? }
+
+Suppose that $\sqrt{4}$ is a rational number; then it is true that
+$$\exists m \in \textbf{Z}, n \in \textbf{N}: \frac{m}{n} = \sqrt{2}$$
+where $m$ and $n$ are at their lowest possible terms. Then
+$$\sqrt{4}n = m$$
+$$4n^2 = m^2$$
+
+n can still be odd and m can still be even. In other words, m is divisible by
+a prime, and the number under the radical consists of two primes. Therefore
+if a number decomposes to two equal sets of primes, then its square root is
+a rational number. Otherwise it isn't.
+
+\section*{1.2.2}
+
+\textit{Decide which of the following represent true statements about the
+  nature of sets. For any that are false, provide a specific exapmple where the
+  statement in question does not hold.}
+
+\textit{(a) if $A_1 \supseteq A_2 \supseteq A_3 \supseteq ... $ are all sets
+  containing an infinite number of elements, then the intersection
+  $\cap_{n = 1}^{\infty} A_n$ is infinite as well.} -
+
+$\cap_{n = 1}^{\infty} A_n = (0, 1/n)$ has no numbers in it.
+
+Proof is easy -
+
+$$\forall x \in \textbf{R} > 0: \exists n \in N: 1/n < x$$
+
+\textit{(b) if $A_1 \supseteq A_2 \supseteq A_3 \supseteq ... $ are all finite,
+  nonempty sets of real numbers, then the intersection
+  $\cap_{n = 1}^{\infty} A_n$ is finite and nonempty.} -
+
+True.
+
+There is no need for the proof, but I'll supply one anyways. If all $A_n$ are
+finite and nonempty, then $\exists j \in \textbf{N} : |A_1| = j$. Therefore,
+because of the same reasons, there are only $j - 1$ times when
+
+$$A_k \supset A_{k + 1}$$
+
+can happen, because after $j - 1$ times the set will be empty. Therefore,
+because it is finite, their intersection will have finite number of
+elements and will be non-empty.
+
+\textit{(c) $A \cap (B \cup C) = (A \cap B) \cup C$}
+
+False: let
+
+$$x \notin A, x \notin B, x \in C$$
+Then
+$$x \in A \cap (B \cup C); x \notin = (A \cap B) \cup C$$
+
+\textit{(c) $A \cap (B \cap C) = (A \cap B) \cap C$}
+
+True. Kinda goes without a proof; if you imagine a Vien diagram, then it's
+obvious.
+
+\textit{(c) $A \cap (B \cup C) = (A \cap B)  \cup (A \cap C)$}
+
+True. For the same reason as before.
+
+I'm sure that there exist more concrete versions of those proofs, but I'm not
+required to provide any. My suspition on why is it so, is because it's a
+little more complicated and requires more knowlege in set theory and/or logic.
+
+\section*{1.2.3 (De Morgan's Laws).}
+
+\textit{Let A and B be subsets of \textbf{R}}
+
+\textit{(a) If $x \in (A \cap B)^c$, explain why $x \in A^c \cup B^c$. This
+  shows that $(A \cap B)^c \subseteq (A \cap B)^c$.}
+
+If we have two sets $A$ and $B$, then \textbf{R} desintegrates into 4 different
+sets: $A$, $B$, $A^c$, $B^c$.
+
+Therefore there must exists sets
+$$S_1 = A \cap B$$
+$$S_2 = A^c \cap B$$
+$$S_3 = A \cap B^c$$
+$$S_4 = A^c \cap B^c$$
+
+An element cannot be in the set and not in the set at the same time. Therefore,
+there does not exist an element, which is in two of $S_n$'s.
+
+For any $x \in \textbf{R} \to x in A$ or $x \notin A$. Therefore an element
+of $\textbf{R}$ needs to be in at least one of those sets. It is easily seen by
+$$A \cap \textbf{R} = A$$
+$$A \cap (B \cup B^c) = A$$
+$$(A \cap B) \cup (A \cap B^c)) = A$$
+
+Therefore $\cup_{n = 1}^4 S_n = \textbf{R}$ and
+$\cap_{n = 1}^4 S_n = \emptyset$.
+
+Suppose $x \in (A \cap B)^c$. Then $x \notin A \cap B$. Therefore
+$x \in S_2 \cup S_3 \cup S_4$.
+
+Suppose that $x \in A^c \cup B^c$. Then $x \in S_2 \cup S_3 \cup S_4$.
+
+Therefore $ (A \cap B)^c \subseteq A^c \cup B^c$.
+
+\textit{(b) Prove the reverse inclusion}
+
+I didn't find a good axiomatic way to settle this; proof in part (a)
+will suffice for both of thosse
+
+\textit{(c) Show $(A \cup B)^c = A^c \cap B^c$ by demonstrating inclusion both
+  ways.}
+
+$$(A \cup B)^c = S_4 = A^c \cap B^c$$
+
+I spent too much time on this one, so this will suffice.
+
+\section*{1.2.4}
+\textit{Verify the triangle inequality in the special cases where }
+
+\textit{(a) $a$ and $b$ have the same sign}
+
+Suppose $a \geq 0$, $b \geq 0$. Then $|a| = a$ and $|b| = b$. Therefore
+$$|a + b| = a + b = |a| + |b| \leq  |a| + |b|$$
+
+Suppose $a < 0$, $b < 0$. Then $|a| = -a$ and $|b| = -b$; also $a + b < 0 \to
+|a + b| = -(a + b) = -a - b$. Therefore 
+$$|a + b| = -a + (-b) = |a| + |b| \leq  |a| + |b|$$.
+
+\textit{(b) $a \geq 0$, $b < 0$ and $a + b \geq 0$.}
+
+$$a + b \geq 0 \to a + b = |a + b|$$
+
+Also, $|a| = a$ and $|b| = -b$. Therefore
+$$a + b \geq 0 \to a \geq -b \to a \geq |b| \to |a| \geq |b|$$
+
+$$ b < 0$$
+$$ b \leq 0$$
+$$ 2b \leq 0$$
+$$ b + b \leq 0$$
+$$ b \leq (-b)$$
+$$a + b \leq a + (-b)$$
+$$|a + b| \leq |a| + |b|$$
+
+\section*{1.2.5}
+\textit{Use the triangle inequality ti establish the inequalities}
+
+\textit{(a) $|a - b| \leq |a| + |b|;$}
+$$|a - b| = |a + (-b)| \leq |a| + |-b| = |a| + |b|$$
+
+\textit{(b) $||a| - |b|| \leq |a - b|$;}
+
+let $a = a + b - b$. Then
+
+$$|a| = |a - b + b| \leq |a - b| + |b|$$
+$$|a| - |b| \leq |a - b|$$
+$$|b| = |b - a + a| \leq |b - a| + |a| = |a - b| + |a|$$
+$$|b| - |a| \leq |a - b|$$
+$$|a| - |b| \geq -|a - b|$$
+$$-|a - b| \leq |a| - |b| \leq |a - b| \to ||a| - |b|| \leq |a - b|$$
+
 \end{document}
