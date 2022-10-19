@@ -986,7 +986,7 @@ $$S_4 = A^c \cap B^c$$
 An element cannot be in the set and not in the set at the same time. Therefore,
 there does not exist an element, which is in two of $S_n$'s.
 
-For any $x \in \textbf{R} \to x in A$ or $x \notin A$. Therefore an element
+For any $x \in \textbf{R} \to x \in A$ or $x \notin A$. Therefore an element
 of $\textbf{R}$ needs to be in at least one of those sets. It is easily seen by
 $$A \cap \textbf{R} = A$$
 $$A \cap (B \cup B^c) = A$$
@@ -1004,15 +1004,17 @@ Therefore $ (A \cap B)^c \subseteq A^c \cup B^c$.
 
 \textit{(b) Prove the reverse inclusion}
 
-I didn't find a good axiomatic way to settle this; proof in part (a)
-will suffice for both of thosse
+
+As seen in part (a)
+
+$$(A \cap B)^c = S_2 \cup S_3 \cup S_4 = A^c \cup B^c$$
 
 \textit{(c) Show $(A \cup B)^c = A^c \cap B^c$ by demonstrating inclusion both
   ways.}
 
+No need to do both ways.
 $$(A \cup B)^c = S_4 = A^c \cap B^c$$
 
-I spent too much time on this one, so this will suffice.
 
 \section*{1.2.4}
 \textit{Verify the triangle inequality in the special cases where }
@@ -1195,6 +1197,182 @@ $$g^{-1}(A) \cup g^{-1}(B) \subseteq g^{-1}(A \cup B)$$
 
 In other direction: 
 $$x \in g^{-1}(A \cup B) \to \exists y \in A \cup B: y = g(x) \to y = g(x)$$
+
+As proven before $g(A \cup B) = g(A) \cup g(B)$ and therefore
+$y \in g(A \cup B)$ implies that either $y \in g(A)$ or $y \in g(B)$. Therefore
+$$ x \in g^{-1}(A \cup B) \to x \in g^{-1}(A) \cup g^{-1}(B)$$
+$$ g^{-1}(A \cup B)  \subseteq g^{-1}(A) \cup g^{-1}(B)$$
+And if we combine this fact with previous conclusion:
+$$ g^{-1}(A \cup B) =  g^{-1}(A) \cup g^{-1}(B)$$
+as desired.
+
+\section*{1.2.8}
+
+\textit{Form the logical negation of each claim. One way to do this is to
+  simply add "It is bot the case that ... " in front of each assertion, but for
+  each statement, try to embed the word "not" as deeply into the resulting
+  sentence as possible (or avoid using it altogether).}
+
+\textit{(a) For all real numbers satisfying $a < b$, there exist an $n \in
+  \textbf{N}$ such that $a + 1/n < b$.}
+There exist real numbers $a < b$ such that $a + 1/n \geq b$ for all $n \in \textbf{N}$.
+
+\textit{(b) Between every two distinct real numbers, there is a rational number}
+
+There exist two real numbers, such that there are only irrational numbers
+between them.
+
+\textit{(c) For all natural numbers $n \in \textbf{N}$, $\sqrt{n}$ is either a
+  natural number  or an irrational number}
+
+There exist a natural number $n \in \textbf{N}$, such that $\sqrt{n}$ is a
+rational number, that is not a natural number. (This one is a little bit weird
+if we try to negate this, but "not" is stuffed as deep as possible)
+
+\textit{(d) Given any real number $x \in \textbf{R}$, there exist $n \in
+  \textbf{N}$ satistying $n > x$}
+
+There exist a real number $x \in \textbf{R}$, such that for all $n \in \textbf{N}$ it is true that $n \leq x$.
+
+\section*{1.2.9}
+\textit{Show that the sequence $(x_1, x_2, x_3,...)$ defined in Example 1.2.7
+  is bounded above by 2; that is, prove that $x_n \leq 2$ for every $n \in
+  \textbf{N}$.}
+
+The mentioned sequence is defined by
+$$x_1 = 1$$
+$$x_{n + 1} = (1/2)x_n + 1$$
+
+A great advice about induction states, that when you hear words "prove" and
+"sequence" in the same sentence, then the word "recursion" should pop up in
+your head. So here we go
+
+Base case: $x_1 \leq 2$.
+
+Inductive proposition: $x_n \leq 2$
+
+Inductive step:
+$$x_n \leq 2$$
+$$(1/2)x_n \leq 1$$
+$$(1/2)x_n + 1 \leq 2$$
+$$x_{n + 1} = (1/2)x_n + 1 \leq 2$$
+$$x_{n + 1} \leq 2$$
+as desired.
+
+\section*{1.2.10}
+\textit{Let $y_1 = 1$, and for each $n \in \textbf{N}$ define $y_{n + 1} =
+  (3 * y_n + 4) / 4$.}
+
+\textit{(a) Use induction to prove that the sequence satisfies $y_n < 4$ for
+  all $n \in \textbf{N}$.}
+
+Base case: $y_1 = 1 < 4$
+
+Inductive proposition: $y_n < 4$
+
+Inductive step:
+
+$$y_n < 4$$
+$$3 * y_n < 12$$
+$$3 * y_n + 4 < 16$$
+$$(3 * y_n + 4) / 4 < 4$$
+$$y_{n + 1} =  (3 * y_n + 4) / 4 < 4$$
+$$y_{n + 1} < 4$$
+as desired.
+
+\textit{(b) Use another induction to show the sequence $(y_1, y_2, y_3,...)$
+  is increasing}
+
+We need to show that $y_{n + 1} - y_n \geq 0$
+
+As shown earlier 
+$$y_n < 4$$
+therefore
+$$ y_n < 4$$
+$$ \frac{y_n}{4} < 1$$
+$$1 > \frac{y_n}{4}$$
+$$1 - \frac{y_n}{4} > 0$$
+$$1 + (\frac{3 y_n}{4} - y_n) > 0$$
+$$\frac{3 y_n}{4} + 1 - y_n > 0$$
+$$(3 * y_n + 4) / 4 - y_n  > 0$$
+$$y_{n + 1} - y_n  > 0$$
+as desired.
+
+\section*{1.2.11}
+\textit{If a set $A$ contains $n$ elements, prove that the number of
+  different subsets of $A$ is equal to $2^n$. (Keep in mind that the empty set
+  $\emptyset$ is considered to be a subset of every set.)}
+
+This proof is dumb, but intuitive:
+
+Every subset is corresponding to a number in binary number: 0 for excluded,
+1 for included. Therefore there exist $2^n$ possible combinations.
+
+For a more concrete proof let's resort to induction.
+
+Base case(s): subsets of $\emptyset$ are $\emptyset$ itseft ($2^0 = 1$ in total). Subsets of
+set with one element are $\emptyset$ and set itself ($2^1 = 1$ in total).
+
+Proposition is that set with n elements has $2^n$ subsets.
+
+Inductive step is that for set with $n + 1$ elements can either have or hot
+have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
+2^{n + 1}$ subsets, as desired.
+
+\section*{1.2.12}
+\textit{For this exerice, assume Exercise 1.2.3 has been successfully completed
+  (as it was)}
+
+\textit{(a) Show how induction can be used to conclude that }
+$$ (A_1 \cup A_2 \cup ... \cup A_n) = A^c_1 \cap A^c_2 \cap ... \cap A^c_n$$
+
+First of all, base case
+
+$$ (A_1 \cup A_2)^c = A^c_1 \cap A^c_2 $$
+
+Proposition
+$$ (A_1 \cup A_2 \cup ... \cup A_n) = A^c_1 \cap A^c_2 \cap ... \cap A^c_n$$
+
+Step
+$$ (A_1 \cup A_2 \cup ... \cup A_n \cup A_{n + 1}) = A^c_1 \cap A^c_2 \cap ... \cap A^c_n \cap A^c_{n + 1}$$
+
+Let us denote $Q = A^c_1 \cap A^c_2 \cap ... \cap A^c_n$. Then by inductive
+proposition
+
+$$  A^c_1 \cap A^c_2 \cap ... \cap A^c_n \cap A^c_{n + 1} = Q \cap A^c_{n + 1}
+= (Q^c \cup A_{n + 1}) = (A_1 \cup A_2 \cup ... \cup A_n \cup A_{n + 1})
+$$
+as desired.
+
+\textit{(b) Explain why induction cannot be used to conclude }
+$$(\cup^{\infty}_{n = 1}A_n)^c = \cap^{\infty}_{n = 1}A^c_n$$
+\textit{It might be useful to consider part (a) of Exercise 1.2.2.}
+
+Induction cannot be used on this one, because for induction we need finite
+set of elements. This stands on the fact, that if induction works for
+some case, then it works for $n - 1$'th element, and for $n - 2$'th element
+and this way all the way down to the base case. As an example of why it doesn't
+work, we can take into accound exercise 1.2.2, where all of the elements have
+infinite number of elements, and their intersection would have infinite amount
+of elements  for any finite number of elements, but it is not true for the
+infinite amount.
+
+\textit{(c) Is the statement in part (b) valid? If so, write a proof that does
+  not use induction.}
+
+Suppose that
+$$x \in (U^{\infty}_{n = 1}A_n)^c$$
+
+Then $x \notin A_n$ for every $n \in \textbf{N}$. Therefore $x \in A^c_n$ for every $n \in \textbf{N}$. Therefore $x \in \cap^{\infty}_{n = 1}A^c_n$. Thus
+
+$$(\cup^{\infty}_{n = 1}A_n)^c \subseteq \cap^{\infty}_{n = 1}A^c_n$$
+
+Suppose that $x \in \cap^{\infty}_{n = 1}A^c_n$. Then $x \notin A_n$ for every $n \in \textbf{N}$. Therefore $x \notin (U^{\infty}_{n = 1}A_n)$ for every $n \in \textbf{N}$. Therefore $x in \cup^{\infty}_{n = 1}A_n)^c$ for every $n \in \textbf{N}$. Therefore
+$$ \cap^{\infty}_{n = 1}A^c_n \subseteq  (\cup^{\infty}_{n = 1}A_n)^c$$
+
+Thus if we combine two statements
+$$(\cup^{\infty}_{n = 1}A_n)^c = \cap^{\infty}_{n = 1}A^c_n$$
+as desired.
 
 
 
