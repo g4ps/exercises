@@ -1374,6 +1374,360 @@ Thus if we combine two statements
 $$(\cup^{\infty}_{n = 1}A_n)^c = \cap^{\infty}_{n = 1}A^c_n$$
 as desired.
 
+\section*{1.3.1}
+\textit{Let $\textbf{Z}_5 = \{0, 1, 2, 3, 4, 5\}$ and define addition and
+  multiplication modulo 5. In other words, compute the integer remainder when
+  $a + b$ and $ab$ are divided by 5, and use this as the value for the sum and
+  product, respectively.}
+
+\textit{(a) Show that, given any element $z \neq 0$ in $\textbf{Z}_5$, there
+  existsan element $y$ such that $z + y = 0$. The element $y$ is called the
+  additive inverse of $z$.}
+
+It is true, that for every of those elements we can set $y = 5 - z$, for which
+it is true that $z + y = 5$ and $(z + y)\%5 = 0$ as desired.
+
+\textit{(b) Show that, given any element $z \neq 0$ in $\textbf{Z}_5$, there
+  existsan element $x$ such that $zx = 1$. The element $x$ is called the
+  multiplicative inverse of $z$.}
+
+$$ (1 * 1) \% 5 = 1 $$
+$$ (2 * 3) \% 5 = 1 $$
+$$ (3 * 2) \% 5 = 1 $$
+$$ (4 * 4) \% 5 = 1 $$
+as desired.
+
+\textit{(c) The existence of additive and multiplicative inverses is part of
+  the definition of a field. Investigate the set $\textbf{Z}_4 = \{0, 1, 2,
+  3\}$ (where addition and multiplication are defined modulo 4) for the
+  existense of additive and multiplicative inverses. Make a conjecture about
+  the values of n for which additive inverses exist in $\textbf{Z}_n$, and then
+  form another conjecture about the existence of multiplicative inverses.}
+
+For $\textbf{Z}_4$ we define additive inverse the same way we defined it
+in the  part (a) ($4 - z = y$). For multiplicative inverse we have the way
+with $1$, but any for 2 we don't have multiplicative inverse.
+
+Therefore the conjecture about the additive inserse is that every $Z_n$ with
+addition defined as addition modulo n we have additive inverse.
+
+Proof of it is that every element of $\textbf{Z}_n$  is less than n, and that
+because of this there exists $s = n - x \in \textbf{Z}_n$
+
+For multiplicative inverse the conjecture is that it exists only when
+n is a prime number.
+
+\section*{1.3.2}
+\textit{(a) Write a formal definition in the style of Definition 1.3.2 for the
+  infinum or greatest lower bound of a set}
+
+A real number $s$ is the \textit{greatest lower bound} for a set
+$A \subseteq \textbf{R}$ if it meets the following two criteria:
+
+(i) $s$ is a lower bound
+
+(ii) if $b$ is any lower bound for $A$, then $s \geq b$.
+
+\textit{(b) Now, state and prove a version of Lemma 1.3.7 for greatest lower
+  bounds.}
+
+\textbf{Lemma for greatest lower bounds}
+
+Assume $s \in \textbf{R}$ is a lower bound for a set  $A \subseteq \textbf{R}$.
+Then, $s = inf(A)$ if and only if, for every choice of $\epsilon > 0$, there
+exists an element $a \in A$ satisfying $s + \epsilon > a$.
+
+Proof:
+
+In one direction: Suppose $s = inf(A)$. Then, by definition of greatest lower
+bound, there does not exist a lower bound, greater than $s$. In other words,
+suppose that there exist $\epsilon > 0$ such that there is no element $a \in A$
+such that $a < s + \epsilon$. Then $s + \epsilon$ is a lower bound, which is
+greater than s, therefore s is not a greatest lower bound, which is a
+contradiction. Therefore there does not exist $\epsilon > 0$ for which
+there exist no $a \in A$ such that $a < s + \epsilon$. Therefore for
+every $\epsilon > 0$ there exist an $a \in A$  such that $a < s + \epsilon$,
+as desired.
+
+In other direction: suppose that $s$ is a lower bound and for every $\epsilon
+> 0$ there exist $a \in A$ such that $a < s + \epsilon$. Then any number
+$s + \epsilon$ is not a lower bound. Therefore any number, which is greater
+than $s$ is not a lower bound. Therefore any lower bound is less or equal to
+$s$. Therefore $s$ is a greatest lower bound.
+
+Maybe this proof is a little bit more coplicated, than it should be, but
+at least every step is followed properly.
+
+\section*{1.3.3}
+\textit{(a) Let $A$ be bounded below, and define $B = \{b \in \textbf{R}:
+  b $ is a lower bound for $A\}$. Show that $sup(B) = inf(A)$.}
+
+$B$ is a set, therefore Axiom of Completeness states that there exist real
+number $k = sup(B)$. Therefore all lower bounds are less or equal to $k$.
+
+In order to prove that $k$ is infinum, we need to show that it is a lower
+bound.
+
+We do it by contradiction: suppose that $k$ is not a lower bound. Therefore
+there exists $a \in A$ such that $k > a$. Let $\epsilon = k - a > 0$. Then,
+because $k = sup(B)$ there exist $b \in B$ such that $k - \epsilon < b$.
+Therefore $a < b$. Therefore there exist an element of $A$, that is less than
+lower bound of $A$. Therefore $b$ is not a lower bound. Therefore we have a
+contradiction. Thus $k$ is a lower bound.
+
+Because $k$ is a lower bound, $k \in B$ by definition of $B$. Therefore it is
+a lower bound, that is greater or equal to any other lower bounds, because it
+is a supremum of $B$. Therefore it is an infinum of $A$ by definition of
+infinum.
+
+\textit{(b) Use (a) to explain why there is no need to assert that greatest
+  upper bound exist as part of the Axiom of Completeness.}
+
+Proof of part (a) does not take into account the fact, that $A$ (that is
+bounded below) has an infinum. We prove its existence of the infinum by
+the fact, that we have a set of lower bounds (which is in its turn
+has a supremum by Axiom of Completeness), and setting the fact, that its
+supremum is lower bound itself  and therefore proving that it is in the set of
+lower bounds and therefore setting the fact, that it exists.
+
+\textit{(c) Propose another way to use the Axiom of Completeness to prove
+  that sets bounded below have greatest lower bounds.}
+
+The only idea, that goes into my mind is to create set $B = \{-a: a \in A\}$.
+Then it'll have a supremum, for which the inverse will be the infinum of the
+set. We can polish this idea with some theorems and axioms, but I'm satisfied
+with the current proof already, and nobody is requiring it.
+
+\section*{1.3.4}
+\textit{Assume that $A$ abd $B$ are nonempty, bounded above, and satisfy
+  $B \subseteq A$. Show $sup(B) \leq sup(A)$.}
+
+We prove it by contradiction: let $B \subseteq A$ and
+$$sup(B) > sup(A)$$
+
+Then let $\epsilon = sup(B) - sup(A) > 0$. Then by lemma we have
+
+$$b \in B: b > sup(B) - \epsilon$$
+$$b \in B: b > sup(B) - sup(B) + sup(A)$$
+$$b \in B: b > sup(A)$$
+
+Therefore $b > sup(A)$, which is an upper bound for $A$ and by extension
+$\forall a \in A: b > a$. Therefore $b \notin A$ and $b \in B$. Therefore
+$B \not\subseteq A$, which is a contradiction. Therefore $sup(B) \leq sup(A)$.
+
+\section*{1.3.5}
+\textit{Let $A \subseteq \textbf{R}$ be bounded above, and let $c \in
+  \textbf{R}$. Define the sets $c + A$ and $cA$ by $c + A = \{c + a: a \in A\}$
+  and  $cA = \{ca: a \in A\}$
+}
+
+\textit{(a) Show that $sup(c + A) = c + sup(A)$.}
+
+% $$\forall a \in A: a \leq sup(A)$$
+% $$\forall a \in A: c + a \leq c +  sup(A)$$
+% $$n \in c + A \to \exists a \in A: n = c + a$$
+% $$\forall n \in c + A: n \leq c + sup(A)$$
+
+% $c + sup(A)$ is an upper bound of c + A
+We gonna prove it by contradiction
+
+Suppose $c + sup(A)$ is not an upper bound of $c + A$. Then
+$$\exists n \in c + A: n > c + sup(A)$$
+let us call such element $l$;
+also, by the definition of $c + A$
+$$\forall n \in c + A : \exists a \in A: c + a = n$$
+therefore
+$$\exists a \in A: c + a = l$$
+because $l > c + sup(A)$
+$$c + a > c + sup(A)$$
+$$a > sup(A)$$
+Which is a contradiction. Therefore $c + sup(A)$ is an upper bound for $c + A$.
+
+Suppose $c + sup(A) \neq sup(c + A)$. Then $sup(c + A)$ is less
+than $c + sup(A)$. Let $\epsilon = c + sup(A) - sup(c + A)$. Then
+
+$$\exists k \in A: k > sup(A) - \epsilon$$
+$$k > sup(A) - c - sup(A) + sup(c + A)$$
+$$k > - c  + sup(c + A)$$
+
+Therefore
+$$\exists h \in c + A: h = k + c$$
+$$h - c = k$$
+$$h - c >  -c + sup(c + A)$$
+$$h > sup(c + A)$$
+
+therefore
+
+$$\exists h \in c + A: h > sup(c + A)$$
+
+which is a contradiction. Therefore $c + sup(A) = sup(c + A)$, as desired.
+
+\textit{(b) If $c \geq 0$, show that $sup(cA) = c * sup(A)$}
+
+If $c = 0$, then it $cA = \{0\}$, and the case is trivial. Therefore let's
+discuss further case when $c > 0$.
+
+Suppose $c * sup(A)$ is not an upper bound for $cA$.
+
+Then
+$$\exists q \in cA: q > c * sup(A)$$
+by the definition of $cA$
+$$\exists j \in A: q = cj$$
+therefore
+$$q > c * sup(A)$$
+$$cj > c * sup(A)$$
+$$j > sup(A)$$
+
+Which is a contradiction, because $j \in A$. Therefore $c * sup(A)$ is an
+upper bound for $cA$.
+
+Suppose $c *sup(A) \neq sup(cA)$. Then $sup(c A)$ is less
+than $c * sup(A)$.
+
+$$c * sup(A) > sup(cA)$$
+$$c * sup(A) - sup(cA) > 0$$
+$$\frac{c * sup(A) - sup(cA)}{c} > 0$$
+% $$\frac{c * sup(A) - sup(cA)}{c} > 0$$
+
+Let $\epsilon = \frac{c * sup(A) - sup(cA)}{c}$. Then
+
+
+$$\exists k \in A: k > sup(A) - \epsilon$$
+$$k > sup(A) - \frac{c * sup(A) - sup(cA)}{c}$$
+$$k > sup(A) - sup(A) - sup(cA)/c$$
+$$k > sup(cA)/c$$
+
+Therefore
+$$\exists h \in cA: h = ck$$
+$$h/c = k$$
+$$h/c>  sup(cA)/c$$
+$$h > sup(cA)$$
+
+therefore
+
+$$\exists h \in cA: h > sup(cA)$$
+
+Which is a contradiction. Therefore $sup(cA) = c * sup(A)$ as desired.
+
+\textit{(c) Postulate a simular type of statement for $sup(cA)$ for the case
+  $c < 0$}
+
+Proposition: suppose that $A$ is bounded below;  if $c < 0$ then $sup(cA) = c
+* inf(A)$
+
+Suppose $c * inf(A)$ is not an upper bound for $cA$.
+
+Then
+$$\exists q \in cA: q > c * inf(A)$$
+by the definition of $cA$
+$$\exists j \in A: q = cj$$
+therefore
+$$q > c * inf(A)$$
+$$cj > c * inf(A)$$
+$$j < inf(A)$$
+
+Which is a contradiction, because $j \in A$. Therefore $c * sup(A)$ is an
+upper bound for $cA$.
+
+Suppose $c * inf(A) \neq sup(cA)$. Then $sup(c A)$ is less
+than $c * inf(A)$.
+
+$$sup(cA) < c * inf(A)$$
+$$sup(cA) - c * inf(A) < 0$$
+$$\frac{sup(cA) - c * inf(A)}{c} > 0$$
+
+Let $\epsilon = \frac{sup(cA) - c * inf(A)}{c} > 0$. Then
+
+$$\exists k \in A: k < inf(A) + \epsilon$$
+$$ k < inf(A) + \epsilon$$
+$$ k < inf(A) + \frac{sup(cA) - c * inf(A)}{c}$$
+$$ k < inf(A) + sup(cA)/c - inf(A)$$
+$$ k < sup(cA)/c$$
+
+Therefore
+
+$$\exists h \in cA: h = ck$$
+$$h/c = k$$
+$$h/c = k < sup(cA) / c$$
+$$h/c < sup(cA) / c$$
+$$h > sup(cA)$$
+therefore
+
+$$\exists h \in cA: h > sup(cA)$$
+
+Which is a contradiction. Therefore $sup(cA) = c * inf(A)$ as desired.
+
+\section*{1.3.6}
+\textit{Compute, without proofs, the suprema and infima of the following
+  sets:}
+
+\textit{(a) $\{n \in \textbf{N}: n^2 < 10\}$}
+
+$sup = 3$, $inf = 1$.
+
+\textit{(b) $\{n/(m + n): m,n\in \textbf{N}\}$}
+
+$sup = 1/2$, $inf = 0$.
+
+\textit{(c) $\{n/(2n + 1): n\in \textbf{N}\}$}
+
+$sup = 1/2$, $inf = 1/3$.
+
+\textit{(d) $\{n/m: m,n\in \textbf{N}$ with $m + n \leq 10\}$}
+
+$sup = 9$, $inf = 1/9$.
+
+\section*{1.3.7}
+\textit{Prove that if $a$ is an upper bound for $A$, and if $a$ is also an
+  element $A$, then it must be that $a = sup(A)$}
+
+Let's prove this one by contradiction
+
+Suppose that $a \neq sup(A)$. Because $a$ is still an upper bound, $sup(A) <
+a$, Therefore $a \in A$, but $sup(A) < a$, which is a contradiction.
+Therefore $a = sup(A)$.
+
+\section*{1.3.8}
+\textit{If $sup(A) < sup(B)$, then show that there exists an element $b \in B$,
+  that is an upper bound for $A$.}
+
+Let $\epsilon = sup(B) - sup(A)$. Then
+
+$$\exists b \in B: b > sup(B) - \epsilon$$
+$$ b > sup(B) - \epsilon $$
+$$ b > sup(B) - sup(B) + sup(A) $$
+$$ b > sup(A) $$
+
+therefore $b$ is an upper bound for $A$.
+
+\section*{1.3.9}
+\textit{Without worryong about formal proofs for the moment, decide if the
+  following statements about suprema and infima are true or false. For any that
+  are false, supply an example where the claim in question does not appear to
+  hold.}
+
+\textit{(a) A finite, nonempty set always contains its supremum}
+
+True
+
+\textit{(b) If $a < L$ for every element $a$ in the set $A$, then $sup(A) <
+  L$.}
+False. $sup((0, 1)) = 1$; $\forall a \in (0, 1): a < 1$, therefore $sup(A) = L$.
+
+\textit{(c) If A and B are sets with the property that $a < b$ for every
+  $a \in A$ and $b \in B$, then it follows that $sup(a) < inf(B)$}
+
+False. $sup((0,1)) = inf((1, 2))$
+
+\textit{(d) If $sup(A) = s$ and $sup(B) = t$, then $sup(A + B) = s + t$. The
+  set $A + B$ is defined as $A + B = \{a + b: a \in A$ and $b \in B\}$.}
+
+True
+
+\textit{(e) If $sup(A) \leq sup(B)$, then there exists an element $b \in B$
+  that is an upper bound for $A$.}
+
+False. $sup([1, 2]) = sup((1, 2))$
 
 
 \end{document}
