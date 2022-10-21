@@ -1729,5 +1729,133 @@ True
 
 False. $sup([1, 2]) = sup((1, 2))$
 
+\section*{1.4.1}
+\textit{Without doing too much work, show how to prove Theorem 1.4.3 in the
+  case where $a < 0$ by converting this case into the already proven.}
+
+First of all, let's state the theorem itself.
+
+\textbf{Theorem 1.4.3 (Density of Q in R)}.
+\textit{For every two real numbers $a$ and $b$ with $a < b$, there exists a
+  rational number $r$ satisfying $a < r < b$.}
+
+Then let's talk about the possible cases for $a < 0$. Then $b > a$ by the
+assumtions of the theorem. Therefore $b \geq 0$ or $b < 0$. If $b > 0$ then
+there exist 0 between them. If $b = 0$, then there exist a rational number
+$b = 0 < 1/n < -a$, and by extention $a < 1/n < b$ as desired. Therefore we
+will have some work to do  only with case $b < 0$.
+
+It is  proven, that $a_1 < r < b_1$ if $0 \leq a_1 < b_1$. Therefore for
+$a < b < 0$. Therefore $-a > -b > 0$. Therefore if we set $a_1 = -b$ and
+$b_1 = -a$ then by previously stated theorem, there exist
+
+$$a_1 < r < b_1$$
+$$-b  < r < -a$$
+$$b  > r > a$$
+$$a < r < b$$
+as desired.
+
+\section*{1.4.2}
+\textit{Recall that \textbf{I} stands for the set of irrational numbers.}
+
+\textit{(a) Show that if $a,b \in \textbf{Q}$, then $ab$ and $a + b$ are
+  elements of $\textbf{Q}$ as well.}
+
+Because $a,b \in Q$ $\exists m_1,m_2 \in \textbf{Z}$, $\exists n_1,n_2 \in
+\textbf{N}$ such that
+$$a = \frac{m_1}{n_1}$$
+$$b = \frac{m_2}{n_2}$$
+
+therefore
+$$a + b = \frac{m_1}{n_1} + \frac{m_2}{n_2} =
+\frac{m_1 n_2 + m_2 n_1}{n_1 n_2}$$
+
+$\textbf{Z}$ is presumed closed under addition and $\textbf{N}$ is presumed
+closed under $\textbf{N}$, therefore 
+$$ a + b = \frac{m_1 n_2 + m_2 n_1}{n_1 n_2} \in \textbf{Q}$$
+also $\textbf{Z}$ is closed under multiplication, and therefore
+$$ a  b = \frac{m_1 m_2}{n_1 n_2} \in \textbf{Q}$$
+
+\textit{(b) Show that if $a \in \textbf{Q}$ and $t \in \textbf{I}$, then
+  $a + t \in \textbf{I}$ and $at \in \textbf{I}$ as long as $a \neq 0$.}
+
+We prove both things by contradiction.
+
+Suppose $a + t \in \textbf{Q}$. Then $\exists b \in Q: a + t = b$. Also,
+$a \in Q \to -a \in Q$. Therfore
+
+$$a + t = b$$
+$$t = b - a$$
+Therfore, because $Q$ is closed under addition (as we discussed previously),
+$t \in Q$, which is a contradiction. Therefore $a + t \in I$.
+
+Suppose $at \in Q$ for $a \neq 0$. Then
+$$\exists b \in Q: at = b $$
+therefore if $a = m/n \in Q$, then $1/a = n / m \ in Q$. Therefore
+$$t = b/a$$
+
+Therefore $t \in Q$, which is a contradiction. Therefore $at \in I$ for
+$a \neq 0$.
+
+\textit{(c) Part (a) can besummarized by saing that $Q$ is closed under
+  addition and multiplication. Is $I$ closed under addition and
+  multiplication? Given two irrational numbers $s$ and $t$, what can we say
+  about $s + t$ and $st$.}
+
+$I$ is not closed under addition, nor under multiplication. Proof is
+$\sqrt{2} + 1$ and $0 - \sqrt{2}$ are both irrational, but
+$$\sqrt{2} + 1 - \sqrt{2} = 1 \in Q$$
+and
+$$\sqrt{2} * \sqrt{2} = 2 \in Q$$
+
+\section*{1.4.3}
+\textit{Using Exercise 1.4.2, supply a proof for Corollary 1.4.4 by
+  applying Theorem 1.4.3 to the real numbers $a - \sqrt{2}$  and
+  $b - \sqrt{2}$.}
+
+First, let's state Corollary 1.4.4.
+
+Given any two real numbers $a < b$, there exists an irrational number $t$
+satisfying $a < t < b$.
+
+We know, that between two numbers $a_1 < b_1$ there exists a rational number
+$r$, for which it is true
+$$a_1 < r < b_1$$
+Let $a_1 = a + \sqrt{2}$ and $b_1 = b + \sqrt{2}$. Then
+$$a_1 < r < b_1$$
+$$a + \sqrt{2}  < r < b + \sqrt{2}$$
+$$a  < r - \sqrt{2} < b $$
+
+As we know, $r - \sqrt{2}$ is an irrational number, therefore between $a$ and
+$b$ there exists an irrational number.
+
+\section*{1.4.4}
+\textit{Use the Archimedean Property of $R$ to rigorously prove that
+  $inf\{1/n: n \in N\} = 0$}
+
+It is true, that $\forall n \in N: n > 0$. Therefore
+
+$$n > 0$$
+$$1/n > 0$$
+
+Therfore 0 is a lower bound for $1/n$. Also, because of Archimededean Property,
+if we take any $\forall \epsilon > 0: \exists 1/n: 1/n < \epsilon $
+$$\forall \epsilon > 0: \exists 1/n: 1/n < \epsilon $$
+$$\forall \epsilon > 0: \exists 1/n: 0 + \epsilon > 1/n $$
+
+
+Therfore for every $\epsilon$ there exists an element of a set such that
+$0 + \epsilon$ is greater than this set. Therefore 0 is an infinum of this set,
+as desired.
+
+\section*{1.4.5}
+\textit{Prove that $\cap^{\infty}_{n = 1}(0, 1/n) = \emptyset)$. Notice that
+  this demonstrates that the Nested Interval Property must be closed for the
+  conclusion of the theorem to hold.}
+
+Because of the Archimedean Property, for every $y \in R > 0$ there exists
+$n \in N$ such that
+$$1/n < y$$
+therefore 
 
 \end{document}
