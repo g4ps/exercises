@@ -1849,13 +1849,170 @@ $0 + \epsilon$ is greater than this set. Therefore 0 is an infinum of this set,
 as desired.
 
 \section*{1.4.5}
-\textit{Prove that $\cap^{\infty}_{n = 1}(0, 1/n) = \emptyset)$. Notice that
+\textit{Prove that $\cap^{\infty}_{n = 1}(0, 1/n) = \emptyset$. Notice that
   this demonstrates that the Nested Interval Property must be closed for the
   conclusion of the theorem to hold.}
 
+First of all, $1/n > 0$ implies, that if $y \leq 0$ then $y \notin (0, 1/n)$
+for any $n \in N$.
+
 Because of the Archimedean Property, for every $y \in R > 0$ there exists
-$n \in N$ such that
-$$1/n < y$$
-therefore 
+$n \in N$ such that $1/n < y$. Therefore there does not exist $y > 0$ such
+that $y \geq 1/n$ for every $n \in N$. Therefore for every $y \geq 0$ there
+exist $n \in N$ such that $y \notin (0, 1/n)$.
+
+Therefore there are no real
+numbers in $\cap^{\infty}_{n = 1}(0, 1/n)$. Therefore 
+$$\cap^{\infty}_{n = 1}(0, 1/n) = \emptyset$$
+as desired.
+
+This conclusion proves, that if we have use an open interval for nested
+interval property, then we'll have a problem.
+
+\section*{1.4.6}
+\textit{(a) Finish the proof of Theorem 1.4.5 by showing that the assumption
+  $\alpha ^ 2 > 2$ leads to a contradiction of the fact that
+  $\alpha = sup(T)$.}
+
+First, Theorem 1.4.5 states that there exists a real number $\alpha \in R$
+satisfying $\alpha ^ 2 = 2$.
+
+Our assumpion is that
+$$T = \{t \in R: t ^ 2 < 2\}\text{ and }\alpha = sup(T)$$
+
+Our strategy is to state that if $a^2 > 2$, then $a$ is not a least upper
+bound.
+
+If $a$ is an least upper bound for $T$, then it is true, that
+$$\forall \epsilon > 0: \exists t \in T: t > \alpha - \epsilon $$
+
+Therefore for every $n \in N$
+$$\exists t \in T: t > \alpha - 1/n $$
+
+Now let us follow with the proof. For all $n \in N$.
+$$t > \alpha - 1/n $$
+$$\alpha - 1/n < t $$
+$$(\alpha - 1/n)^2 < t^2 $$
+
+$$(\alpha - 1/n)^2 < t^2 $$
+$$\alpha^2 - \frac{2 \alpha}{n} + \frac{1}{n^2} < t^2 $$
+$$\alpha^2 - \frac{2 \alpha}{n} + \frac{1}{n^2} < t^2 $$
+
+Let's jusfity something now. $1^2 = 1 < 2$, therefore $1 < \alpha$. Therefore
+$2 \alpha - 1 > 0$. Also, because $\alpha^2 > 2$, $\alpha^2 - 2 > 0$.
+Therefore 
+$$\frac{\alpha^2 - 2}{2 \alpha -  1} > 0 \in R$$
+
+Now, let us pick $n \in N$ such that
+$$1/n < \frac{\alpha^2 - 2}{2 \alpha -  1}$$
+then
+
+$$1/n < \frac{\alpha^2 - 2}{2 \alpha -  1}$$
+$$1/n^2 < \frac{\alpha^2 - 2}{2 \alpha -  1}$$
+$$n^2 > \frac{2 \alpha -  1}{\alpha^2 - 2}$$
+$$\frac{2 \alpha -  1}{n^2} < \alpha^2 - 2$$
+$$\frac{2 \alpha}{n^2} -  \frac{1}{n^2} < \alpha^2 - 2$$
+$$- \alpha^2 + \frac{2 \alpha}{n^2} -  \frac{1}{n^2} < - 2$$
+$$\alpha^2 - \frac{2 \alpha}{n^2} +  \frac{1}{n^2} > 2$$
+$$\alpha^2 - \frac{2 \alpha}{n} +  \frac{1}{n^2} > 2$$
+but
+$$\alpha^2 - \frac{2 \alpha}{n} + \frac{1}{n^2} < t^2 < 2 $$
+
+Therefore we have a contradiction. Therefore $\alpha \leq 2$. Therefore
+$\alpha = 2$, as desired. Phew.
+
+\textit{(b) Modify the argument to prove the existence of $\sqrt{B}$ for any
+  real number $b \geq 0$.}
+
+Let's discuss the case  $a^2 < b$.
+
+$$(\alpha + 1/n)^2 = \alpha^2 + \frac{2 \alpha}{n} + \frac{1}{n^2} <
+\alpha ^2 + \frac{2 \alpha}{n} + \frac{1}{n} = \alpha + \frac{2 \alpha + 1}{n}
+$$
+
+Let 
+$$\frac{1}{n} < \frac{b - \alpha}{2 \alpha + 1}$$
+then 
+$$(\alpha + \frac{1}{n})^2 = \alpha^2 + (b - \alpha^2) = b$$
+
+Therefore $\alpha + 1/n \in T$. Therefore $a^2 \geq b$.
+
+Now let $$1/n < \frac{\alpha^2 - b}{2 \alpha -  1}$$. Then by reasoning in
+the last part of exercise we can state, that $\alpha^2 \leq b$. Therefore
+$\alpha^2 = b$, as desired.
+
+\section*{1.4.7}
+\textit{Finish the following proof for Theorem 1.4.12.}
+
+First of all, let us state Theorem 1.4.12
+
+If $A \subseteq B$ and $B$ is countable, then $A$ is either contable, finite
+or empty.
+
+Assume B is a countable set. Thus, there exists $f: N \to B$, which 1-1 and
+onto. Let $A \subseteq B$ be an infinite subset of $B$. We must show that $A$
+is countable.
+
+Let $n_1 = min\{n \in N: f(n) \in A\}$. As a start to a definition of
+$g: N \to A$, set $g(1) = f(n_1)$. Show how to inductively continue this
+process to produce a 1-1 function $g$ from $N$ onto $A$.
+
+Proposition: $g(n) = f(n_n)$.
+
+Step: let $n_{n + 1} = min\{k > n \in N: f(k) \in A\text\}$. Then $f(n) <
+n_{n+ 1} \notin n_{n + 1}$. Therefore $g(n + 1) = f(n_{n + 1})$. Therefore
+
+$$\forall n_1 \neq n_2, k_1, k_2 \in N \exists g(n_1) = f(k_1)  \neq g(n_2) =
+f(k_2)$$
+and
+$$\forall l \in g(N) \exists k \in N: g(k) = f(n_k) = l$$
+Therefore there exist a bijective function $g: N \to A$. Therefore A is
+countable, as desired.
+
+If $A$ is not infinite, then it's finite (duh).
+
+Same with empty.
+
+\section*{1.4.8}
+\textit{Use the following outline to supply for the statements in Theorem
+  1.4.13.}
+
+First of all, let's state Theorem 1.4.13
+
+(i) If $A_1, A_2,...A_m$ are each countable sets, then the union
+$A_1 \cup A_2 \cup ... \cup A_m$ is countable.
+
+(ii) If $A_n$ is countable set for each $n \in N$, then $\cup^{\infty}_{n = 1}
+A_n$ is countable.
+
+\textit{(a) First, prove statement (i) for two countable sets, $A_1$ and $A_2$.
+  Example 1.4.8 (ii) may be a useful reference. Some technicalities can be
+  avoided by first replacing $A_2$, with the set $B_2 = A_2 \setminus A_1
+  = \{x \in A_2: x \notin A_1\}$. The point of this is that the union
+  $A_1 \cup B_2$ is equal to $A_1 \cup A_2$ and the sets $A_1$ and $B_2$ are
+  disjoint. (What happens if $B_2$ is finite?)}
+
+Let us first set $B_2 = A_2 \setminus A_1$. We will do it in order to have two
+useful properties:
+$$a \in B_2 \to a \in A_1^c \cup A_2 \to a \notin A_1$$
+$$A_1 \cup B_2 = A_1 \cup (A_1^c \cap B_2) = (A_1 \cap A_1^c) \cup (A_1 \cap
+B_2) = A_1 \cap B_2$$
+
+Let's finally begin with the proof.  $B_2 \subseteq A_2$. By using
+previous theorem we can state, that $B_2$ is either countable, finite, or
+empty. If it is empty, then $A_1 \cup A_2 = A_1$, and therefore is countable.
+
+If $B_2$ is finite, then let $n = |B_2|$. Then we can have function
+$$f: N \to A_1 \cup B_2: $$
+$$f(x) = \text{ x'th smallest element of } B_2 \text{ if }x \leq n $$
+$$f(y) = g(y - n) $$
+where $g$ is a function, that maps $N \to A_1$ (which exists, because the
+set $A_1$ is countable).
+
+N'th smallest element in this case is defined to be $x \in A: \forall k \in A
+x \geq k$, if $n = 1$ or $x \in A:  \in A: x > j$, where $j$ is (N-1)'th
+smallest element.
+
+
 
 \end{document}
