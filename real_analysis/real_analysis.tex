@@ -11,865 +11,6 @@
 Exercises are from UTM-040 Understanding analysis by Stephen Abbott. Edition is
 unknown, but the date in the preface is August 2000.
 
-\section*{4.4.1}
-
-\subsection*{{a}}
-\textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
-
-In order to show, that $f$ is continous we need to show, that $\forall
-\epsilon \in \textbf{R}$ $\exists \delta$ s.t.
-$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
-
-Let's rewrite the first formula
-
-$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
-|x - c||x^{2} + cx + c^{2}|$$
-
-We can put $|x - c|$ can be as small as we want it to be. Therefore we need
-an upper bound for $|x^{2} + cx + c^{2}|$.
-
-$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
-|c|(|c| + 1) + |c|^{2}$$
-
-
-
-Therefore if we take
-$\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
-then
-$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
-  |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
-= \epsilon$$
-
-Therefore $f(x) = x ^3$ is continous on \textbf{R}.
-
-\subsection*{(b)}
-\textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
-  on \textbf{R}}
-
-
-\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
-function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
-$\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
-satisfying
-
-$|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
-
-In order to show that $f(x) = x^3$ is not uniformly continous on
-\textbf{R} let us use sequences
-
-$$x_n = n$$
-$$y_n = (n + 1/n)$$
-
-Firstly
-$$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
-
-on the other hand
-
-$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
-+ 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
-$$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
-
-rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
-but $|f(x_n) - f(y_n) \to \infty$
-
-Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
-
-\subsection*{(c)}
-\textit{Show that $f$ is uniformly continuous on any bounded subset
-  of \textbf{R}.}
-
-Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
-$\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
-
-Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
-$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
-\frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
-
-Therefore if we take
-$$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
-then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
-making $f(x)$ uniformly continous by definition
-
-
-\section*{4.4.2}
-\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
-  $[1, \infty)$, but is not on the set $(0, 1]$}
-
-In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
-first prove that it is just continous, with the hope that $\delta$ is not
-depentant on $x$
-
-$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
-|\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
-= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
-|c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
-$$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
-
-Therefore we need to show that if $\delta$ is bounded above at 1, then
-$|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
-some constant, but  $(0, 1]$ isn't.
-
-$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
-+ \frac{1}{cx^3}| \leq
-|\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
-$$
-
-for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
-therefore for $x \in [1, \infty)$
-
-$$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
-
-therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
-$|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
-
-on the other hand,
-
-$$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
-
-Therefore we will need smaller deltas as we approach 0; to put it more
-concretely let's use the theorem for
-\textbf{Sequential Criterion for Nonuniform Continuity}.
-
-Let us pick
-$$x_n = 1/n$$
-$$y_n = 1/(n + 1)$$
-
-then
-
-$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
-= |\frac{1}{n ^ 2 + 1}| \to 0$$
-
-but
-
-$$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
-$$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
-
-therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
-
-\section*{4.4.3}
-\textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
-
-Let us first complete 3.3.1
-
-\textit{Exercise 3.3.1. Show that if K is compact, then sup K and inf K both exist and are elements of K.}
-
-Because $K$ is compact, it is both closed and bound; therefore, because it is bounded,
-
-
-$$ \exists M \in \textbf{R} > 0 :  \forall x \in K $$
-$$ |x| \leq M $$
-
-
-Therefore there exist lower and upper bound of $K$. Therefore, by axiom of completenss, there exist
-both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound)
-
-Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
-
-To be continued...
-
-
-\section*{4.2.1}
-\textit{Use Definition 4.2.1 to supply a proof for the following limit statements.}
-
-(a) $\lim_{x \to 2}(2x + 4) = 8$.
-
-(b) $\lim_{x\to0} x^3 = 0$.
-
-(c) $\lim_{x\to2} x^3 = 8$.
-
-(d) $lim_{x\to\pi}[[x]] = 3$, where [[x]] denotes the greatest integer less than or
-equal to x.
-
-Let's first state Definition 4.2.1
-
-\textbf{Definition 4.2.1.} Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that $\lim_{x\to c} f(x) = L$ provided that, for all $\epsilon > 0$, there exists
-a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows that $|f(x) - L| < \epsilon$.
-
-(a):
-$$ |f(x) - L| = |2 x + 4 - 8| = |2 x - 4| = 2|x - 2| < \epsilon $$
-$$ |x-2| < \frac{\epsilon}{2}$$
-
-$$  \delta = \frac{\epsilon}{2} \to |2 x + 4 - 8| < \epsilon $$
-
-as desired.
-
-(b):
-$$ |f(x) - L| = |x^3 - 0| = |x^3| = |x|^3 < \epsilon $$
-$$ |x| < \sqrt[3]{\epsilon}{} $$
-$$ \delta = \sqrt[3]{\epsilon} \to |x^3| < \epsilon $$
-
-as desired.
-
-(c):
-$$ |f(x) - L| = |x^3 - 8| = |(x - 2)(x^2 + 2x + 4)| = |x-2||x^2 + 2x + 4| < \epsilon $$
-$$|x-2| < \frac{\epsilon}{|x^2 + 2x + 4|} $$
-
-Suppose that we set the maximum delta at 1; then upper bound for $|x^2 + 2x + 4|$ is:
-
-$$ |x^2 + 2x + 4| \leq |x^2| + |2x| + 4 = |x|^2 + 2|x| + 4 \leq (|c| + 1)^2 + 2(|c| + 1) + 4 =$$
-$$= (2 + 1)^2 + 2(2 + 1) + 4 = 9 + 6 + 4 = 19
-$$
-
-Therefore
-
-$$\delta = min\{1, \epsilon/19\} \to |x^3 - 8| = |x-2||x^2 + 2x + 4| < \frac{\epsilon}{19} * 19 = \epsilon $$
-
-as desired.
-
-(d):
-
-$$ |[[x]] - 3| = [[0.1415926...]] = 0 < \epsilon $$
-
-Suppose that we pick $\delta = 0.1$, then any $x \in V_{\delta}$ will satisfy $|[[x]] - 3| = 0 < \epsilon $
-for any $\epsilon > 0$ as desired.
-
-\section*{4.2.2}
-\textit{Assume a particular $\delta > 0$ has been constructed as a suitable response
-  to a particular $\epsilon$ challenge. Then, any larger/smaller (pick one) $\delta$ will also suffice.}
-
-Smaller. This follows from the fact, that
-$$\delta_1 < \delta_2 \to V_{\delta_1} \subset V_{\delta_2}$$
-
-\section*{4.2.3}
-\textit{Use Corollary 4.2.5 to show that each of the following limits does not exist.}
-
-(a) $\lim_{x\to0} |x|/x$
-
-(b) $\lim_{x\to 1} g(x)$ where $g$ is Dirichlet’s function from Section 4.1.
-
-I'll not state corollary 4.2.5  function here, because it's tedious, but it'll be obvious which corollary I'm talking about by the context.
-
-
-(a): let
-$$(x_n) = 1/n$$
-$$(y_n) = -1/n$$
-then
-$$(x_n) \to 0;(y_n) \to 0$$
-but
-$$|x_n| / x_n = 1$$
-$$|y_n| / y_n = -1$$
-therefore the limit does not exist.
-
-(b):
-
-The Dirichlet function is
-\begin{equation}
-D(x)=
-    \begin{cases}
-        1 & \text{if } x \in \textbf{Q}\\
-        0 & \text{if } x \notin \textbf{Q}
-    \end{cases}
-\end{equation}
-
-let
-$$(x_n) = 2/n + 1$$
-$$(y_n) = \sqrt{2}/n + 1$$
-
-then
-
-$$(x_n) \to 1;(y_n) \to 1$$
-
-but
-
-$$(x_n) = 2/n + 1 \in \textbf{Q}$$
-$$(y_n) = \sqrt{2}/n + 1 \notin \textbf{Q}$$
-
-therefore
-
-$$ D(x_n) = 1$$
-$$ D(y_n) = 0$$
-
-thus the function is not continous at 1
-
-\section*{4.2.4}
-\textit{Review the definition of Thomae’s function t(x) from Section 4.1.}
-
-\textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$, each of which converges to 1 without using the number 1 as a term in the sequence.}
-
-\textit{(b) Now, compute $\lim t(x_n)$, $\lim t(y_n)$, and $\lim t(z_n)$.}
-
-\textit{(c) Make an educated conjecture for $\lim_{x\to1} t(x)$, and use Definition 4.2.1B
-  to verify the claim. Given $\epsilon > 0$, consider the set of points
-$\{x \in \textbf{R} : t(x)  \epsilon\}$.  Argue that all the points in this set are isolated.}
-
-
-The definition of  Thomae function is
-\begin{equation}
-t(x)=
-    \begin{cases}
-      1 & \text{if } x = 0\\
-      1/n & \text {if } x = m/n \in \textbf{Q} \text{\textbackslash} \{0\} \\
-      0 & \text{if } x \notin \textbf{Q}
-    \end{cases}
-\end{equation}
-
-(a): Let our three sequences be
-
-$$ (x_n) = n/(n + 1)$$
-$$ (y_n) = (n + 1)/n$$
-$$ (z_n) = \sum_{i=1}^{n}{\frac{1}{2^n}}$$
-
-(b):
-$$t(x_n) = \{1/2, 1/3, 1/4, 1/5, 1/6, 1/7 ...\}$$
-$$t(y_n) = \{1, 1/2, 1/3, 1/4, 1/5, 1/6 ...\}$$
-$$t(z_n) = \{1/2, 1/4, 1/8, 1/16 ...\}$$
-
-(c): The educated conjecture here is that $\lim_{x \to 1} t(x) = 0$
-
-In order to prove that conjecture author suggests, that we use $\epsilon-\delta$ definition. Let's try
-it;
-
-$$ |t(x)| < \epsilon$$
-
-For all $\epsilon \in \textbf{R} > 0$
-
-Therefore by archimedes property there exists a number $n \in \textbf{N}$ s.t. $\frac{1}{n} < \epsilon$.
-Thus suppose that we have $\delta = 1/n$. Then our proposition is that 
-
-$$\forall b \in (1 - 1/n; 1 + 1/n) \to |t(b)| < \epsilon$$
-
-If $b \notin \textbf{Q} $ then $t(b) = 0$ and therefore $|t(b)| < \epsilon$; therefore we need to prove,
-that any number $b = m_1/n_1 \in (1 - 1/n; 1 + 1/n) \cap \textbf{Q}$ is such, that $|t(b)| = 1/n_1 < 1/n$.
-Also suppose $m_1 = n_1 + k$ (it's worth noting that in this case $k \in \textbf{Z}$); then
-
-$$ 1 - \frac{1}{n} < \frac{m_1}{n_1} < 1 + \frac{1}{n}$$
-$$ 1 - \frac{1}{n} < \frac{n_1 + k}{n_1} < 1 + \frac{1}{n}$$
-$$ 1 - \frac{1}{n} < 1 + \frac{k}{n_1} < 1 + \frac{1}{n}$$
-$$ - \frac{1}{n} <  \frac{k}{n_1} <  \frac{1}{n}$$
-$$ |\frac{k}{n_1}| <  \frac{1}{n}$$
-$$ |k||\frac{1}{n_1}| = |k||t(\frac{1}{n_1})| <  \frac{1}{n}$$
-
-therefore because $k \in \textbf{Z}$
-
-$$ |t(\frac{1}{n_1})| = |\frac{1}{n_1}| <  \frac{1}{n|k|} < \frac{1}{n}$$
-
-thus for each $\epsilon > 0$ we can find a corresponding $\delta > 0$ as desired.
-
-\section*{4.2.5}
-Suppose that $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$
-
-$(ii)$ $\lim_{x \to c}[f(x) + g(x)] = L + M$
-
-$(iii)$ $\lim_{x \to c}[f(x) g(x)] = L M$
-
-(a)\textit{ Supply the details for how Corollary 4.2.4 part (ii) follows from the sequential criterion for functional limits in Theorem 4.2.3 and the Algebraic Limit Theorem for sequences proved in Chapter 2.}
-
-From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
-
-$$(a_n) + (b_n) = a + b$$
-
-We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
-therefore by the algebraic limit theorem
-
-$$f(c_n) + g(c_n) = L + M$$
-
-for any sequence $(c_n) \to c$. Therefore we can state that
-
-$$\lim_{x \to c}(f(x) + g(x)) = L + M $$
-
-as desired
-
-\textit{(b) Now, write another proof of Corollary 4.2.4 part (ii) directly from Definition 4.2.1 without using the sequential criterion in Theorem 4.2.3.}
-
-$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$; therefore for any $\epsilon_1 > 0$ we can find $\delta_1 > 0$ s.t.
-
-$$ |x - c| < \delta_1 \to |f(x) - L| < \epsilon_1 $$
-
-Also for the same $\epsilon_1$ there exist $\delta_2 > 0$ s.t.
-
-$$ |x - c| < \delta_2 \to |g(x) - M| < \epsilon_1 $$
-
-let $\delta_3 = min\{\delta_1, \delta_2\}$; then it is true that 
-
-$$ |x - c| < \delta_3 \to |f(x) - L| < \epsilon_1 $$
-$$ |x - c| < \delta_3 \to |g(x) - M| < \epsilon_1 $$
-
-because $V_{\delta_1} \subseteq V_{\delta_3} $ and $V_{\delta_2} \subseteq V_{\delta_3} $
-
-therefore
-
-$$|f(x) - L| + |g(x) - M| < 2 \epsilon_1$$
-
-Therefore 
-
-$$ |f(x) + g(x) - L -  M| = |f(x) - L + g(x) - M| \leq |f(x) - L| + |g(x) - M| < 2 \epsilon_1 $$
-
-Thus for any $\epsilon > 0$ there exist corresponding $\epsilon_1 = \frac{\epsilon}{2}$ for which there
-exist corresponding $\delta = min\{\delta_1, \delta_2\}$ (where $\delta_1$ is a delta for $f(x)$ and
-$\delta_2$ is a delta for $g(x)$) which satisfies
-
-$$|x - c| < \delta \to |f(x) + g(x) - (L + M)| < \epsilon$$
-
-therefore $\lim_{x \to c}(f(x) + g(x)) = L + M$ as desired.
-
-\textit{(c) Repeat (a) and (b) for Corollary 4.2.4 part (iii).}
-
-(a):
-
-From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
-
-$$(a_n) (b_n) = a  b$$
-
-We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
-therefore by the algebraic limit theorem
-
-$$f(c_n)  g(c_n) = L M$$
-
-for any sequence $(c_n) \to c$. Therefore we can state that
-
-$$\lim_{x \to c}(f(x)g(x)) = L M $$
-
-as desired
-
-(b):
-
-$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$;
-
-In  order to prove the needed limit let's first use some algebra
-$$ |f(x)g(x) - LM| = $$
-$$ |f(x)g(x) + f(x)M - f(x)M - LM| = $$
-$$|f(x)(g(x) - M) + M(f(x) - L)| \leq
-|f(x)(g(x) - M)| + | M(f(x) - L)| = $$
-$$|f(x)||g(x) - M| + |M||f(x) - L|  $$
-
-our strategy is to show that both elements of the last sum are less or equal to $\epsilon/2$
-
-Let $\epsilon > 0$.
-
-$$ |M||f(x) - L| < \frac{\epsilon}{2}$$
-If $M = 0$ then the abovementioned inequality always holds and we are free to choose any $\delta_1$;
-
-Otherwise tet us pick $\delta_1$ such that inequality
-$$ |f(x) - L| < \frac{\epsilon}{2|M|}$$
-holds.
-
-The next step is a little bit more complicated because we need to work with $f(x)$; let us pick y = 1;
-then because $\lim_{x \to c}f(x) = L$ we know that there exists $\delta_2$ s.t. $|x - c| < \delta_2
-\to |f(x) - L| < 1$. 
-
-Therefore
-
-$$|f(x) - L| < 1$$
-
-Little sidenote: let's prove that 
-$$ |a - b| < c \to |a| < |b| + c  $$
-
-Firstly some preliminary stuff
-$$|a - b| \geq 0 \to c > |a - b| > 0 \to c > 0$$
-
-$$|a - b| < c \to -c < a - b < c$$
-$$b -c < a  < b + c$$
-
-Now let's see all the cases for $a, b \in \textbf{R}$
-
-if $a \geq 0$ and $b \geq 0$ then
-$$a < b + c$$
-$$|a| < |b| + c$$
-
-if $a < 0$ and $b \geq 0$ then
-$$ b + c \geq 0 > a$$
-$$a < b + c$$
-$$|a| < |b| + c$$
-
-if $a \geq 0$ and $b < 0$ then
-$$b -c < a  < b + c$$
-$$-b +c > -a  > -b - c$$
-$$|b| +c > -a  > |b| - c$$
-$$-|b| - c  < a  <  c - |b|$$
-$$|a|  <  c - |b| \leq c + |b|$$
-$$|a|  <  c + |b|$$
-
-if $a < 0$ and $b < 0$ then
-$$b -c < a  < b + c$$
-$$-b + c > -a  > -b - c$$
-$$|b| + c > |a|  > |b| - c$$
-$$|b| + c > |a|$$
-$$|a| < |b| + c$$
-
-Therefore $\forall a,b\in \textbf{R}$
-$$|a - b| < c \to |a| < |b| + c$$
-as desired.
-
-Back to our exercise: 
-
-$$|f(x) - L| < 1$$
-$$|f(x)| < |L| + 1$$
-
-Therefore we can state that upper bound for our $|f(x)|$ with $\epsilon = 1$ is $|L| + 1$
-
-Thus if we pick $\delta_2$ sufficient for
-
-$$|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}$$
-
-therefore if we pick $\delta = min\{\delta_1, \delta_2\}$ then
-
-$$|x - c| < \delta \to $$
-$$|f(x)g(x) - LM| \leq |f(x)||g(x) - M| + |M||f(x) - L| <  \frac{\epsilon}{2} +
-\frac{\epsilon}{2} = \epsilon  $$
-
-therefore $\lim_{x \to c}[f(x) g(x)] = LM$ as desired
-
-\section*{4.2.6}
-\textit{Let $g: A\to \textbf{R}$ and assume that $f$ is bounded function on $A \subseteq \textbf{R}$
-  (i.e. there exists $M > 0$ satisfying $|f(x| \leq M$ for all $x \in A$). Show that
-  if $\lim_{x \to c}g(x) = 0$, then $\lim_{x \to c}g(x)f(x) = 0$ as well.}
-
-Here we can't use an intuitive approach of just using algebraic limit theorem because $f(x)$ may
-not hav limit at $c$.
-Anyways we proceed by $\epsilon-\delta$ approach.
-
-Therefore we need to show that
-$$\exists \delta: |f(x)g(x)| < \epsilon$$
-
-First of all,
-$$ |f(x)g(x)| = |f(x)||g(x)|$$
-
-Then we notice, that because $f(x)$ is bounded
-
-$$\exists M \in \textbf{R} > 0: |f(x)| \leq M$$
-therefore
-$$|f(x)||g(x)| < |M||g(x)| = M|g(x)|$$
-
-therefore if we pick $\delta$ sufficient for $|g(x)| < \frac{\epsilon}{M}$ then it follows that
-
-$$|f(x)g(x)| \leq M|g(x)| < \epsilon$$
-
-therefore
-$$\forall \epsilon \in \textbf{R} \exists \delta : |x - c| < \delta \to |f(x)g(x)| < \epsilon$$
-
-therefore
-
-$$\lim_{x \to c}[f(x)g(x)] = 0$$
-as desired.
-
-\section*{4.2.7}
-\textit{(a) The statement $\lim_{x \to 0}1/x^2 = \infty$ certainly makes intuitive sense. Construct a rigirius definition in the "challenge-response" style of Definition 4.2.1 for a limit statement of the form $\lim_{x \to c}f(x) = \infty$ and use it to prove the previous statement }
-
-\textbf{Definition of limit to infinity}
-Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
-$\lim_{x\to c} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
-a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows
-that $f(x) > \epsilon$.
-
-Now we need to show that for  $f(x) = 1/x^2$
-$$\lim_{x \to 0}f(x) = \infty$$
-
-First
-$$ f(x) > \epsilon$$
-$$ \frac{1}{x^2} > \epsilon$$
-$$ x^2 < \frac{1}{\epsilon}$$
-$$ x < \sqrt{\frac{1}{\epsilon}}$$
-
-therefore if we pick $\delta = \sqrt{\frac{1}{\epsilon}}$, then it follows that
-$$ f(x) > \epsilon$$
-as desired.
-
-Quick (and insufficient) test in Python seems to corraborate  this statement
-
-\textit{(b) Now construct a definition for the statement $\lim_{x \to \infty} f(x) = L$. Show
-$\lim_{x \to \infty} 1/x = 0$}
-
-\textbf{Definition of infinite limit}
-Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
-$\lim_{x \to \infty} f(x) = L$ provided that, for all $\epsilon \in \textbf{R} > 0$, there exists
-a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
-that $|f(x) - c | < \epsilon$.
-
-We start as ususal at the $\epsilon$
-$$|f(x) - 0| < \epsilon$$
-$$|1/x| < \epsilon$$
-Given that we can pick any $\delta$ as we want, we can pick it at the very least at $0$ to get rid
-of the absolute value
-$$1/x < \epsilon$$
-$$x > 1/\epsilon$$
-
-therefore $\delta = 1/\epsilon$ then it follows that $$|f(x) - 0| < \epsilon$$ as desired.
-
-\textit{(c) What would a rigorous definition for $\lim_{x \to \infty} f(x) = \infty$ would look like? Give an example of such a limit}
-
-\textbf{Definition of infinite limit to infinity}
-Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
-$\lim_{x \to \infty} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
-a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
-that $f(x) > \epsilon$.
-
-The corresponding example of such a limit  is $f(x) = x$.
-
-\section*{4.2.8}
-\textit{Assume $f(x) \geq g(x)$ for all $x$ in some set $A$ on which $f$ and $g$ are defined. Show that for any limit point $c$ of $A$ we must have }
-$$\lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
-
-I'm gonna do it by using contradiction; suppose that $f(x)$ and $g(x)$ are defined as in the
-exercise, but
-$$\lim_{x \to c} f(x) <  \lim_{x \to c} g(x) $$
-% for some $c \in A$
-
-% then
-% $$\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) < 0 $$
-
-% Let $\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) = M < 0$
-
-% therefore for $\epsilon = 0 - M$ there exist $\delta$ s.t.
-
-% $$|x - c| < \delta \to |f(x) - g(x) + M| < \epsilon = - M$$
-
-% thus 
-
-then it follows that there exist a sequence $(a_n) \to c$ such that $f(a_n) \geq g(a_n)$ for all
-$n \in \textbf{N}$; Therefore $\lim(f(a_n)) \geq \lim(g(a_n))$ and  but it contradicts our
-initial assumption.
-
-\section*{4.2.9 (Squeeze Theorem)} Let $f,g$ and $h$ satisfy $f(x) \geq g(x) \geq h(x)$ for all
-$x$ in some common domain $A$. If $\lim_{x \to c}f(x) = L$ and $\lim_{x \to c}h(x) = L$ at some
-limit point $c$ of  $A$, show $\lim_{x \to c}g(x) = L$ as well
-
-As proven in the previous exercise
-$$\forall x \in A: f(x) > g(x) \to \lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
-
-therefore
-
-$$\lim_{x \to c} f(x) = L \geq \lim_{x \to c} g(x) $$
-and
-$$\lim_{x \to c} g(x) \geq \lim_{x \to c} h(x) = L $$
-Thus 
-$$ L \geq\lim_{x \to c} g(x) \geq L  $$
-therefore
-$$\lim_{x \to c} g(x) = L  $$
-as desired.
-
-\section*{4.3.1}
-\textit{Let $g(x) = \sqrt[3]{x}$.}
-
-\textit{(a) Prove that g is continous at c = 0}
-
-We're gonna use $\epsilon-\delta$ definition. First of all, let's state that $g(0) = 0$. Therefore
-
-$$|f(x) - f(c)| = |\sqrt[3]{x} - 0|  < \epsilon $$
-$$ |\sqrt[3]{x}| < \epsilon $$
-
-Here I would like to proof that $ \forall x \in \textbf{R}: |\sqrt[3]{x}| = \sqrt[3]{|x|}$: 
-if $x \geq 0$ then $|\sqrt[3]{x}| = \sqrt[3]{x}= \sqrt[3]{|x|}$;
-if $x < 0$ then $|\sqrt[3]{x}| = \sqrt[3]{-x}= \sqrt[3]{|x|}$. Therefore 
-$$ |\sqrt[3]{x}| = \sqrt[3]{|x|} =  < \epsilon $$ is justified.
-
-Therefore we can state that 
-$$|x| =  < \epsilon ^ 3$$ 
-Thus if we pick $\delta = \epsilon ^ 3$ then
-$$|x - c| = |x| < \delta \to |f(x) - f(c)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}|
-= \sqrt[3]{|x|} < \sqrt[3]{\epsilon^3} =  \epsilon $$
-
-Therefore $g$ is continous at 0
-
-\textit{(b) Prove that $g$ is continous at a point $c \neq 0$. (The identity
-  $a^3 - b^3 = (a - b)(a ^ 2 + ab + b^2)$ will be helpful)}
-
-We're gonna use $\epsilon-\delta$ definition once again.
-$$|f(x) - f(c)| = |\sqrt[3]{x} - \sqrt[3]{c}| < \epsilon$$
-First, let's use a little algebra
-$$|\sqrt[3]{x} - \sqrt[3]{c}| = |\sqrt[3]{x} - \sqrt[3]{c}| * 1 =
-|\sqrt[3]{x} - \sqrt[3]{c}|\frac{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
-  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)} = \frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
-  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)}$$
-
-Let's look now at the sum  $\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} +
-\sqrt[3]{c}^2$: $\sqrt[3]{x} ^ 2 \geq 0 $ because it is a square. For
-$\sqrt[3]{x} + \sqrt[3]{x} ^ 2$ we need to be able to articulate $\delta$ so
-that both $x$ and $c$ are the same sign; if we fo that then it becomes
-nonnegative. $\sqrt[3]{c} ^ 2 \geq 0 $ because it is a square
-
-Therefore if right now we pinky-promise that we will account for unusual delta
-in the future, then we are able to say that 
-$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 \geq 0 $$
-And therefore
-$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 =
-|\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2| $$
-
-Continuing with our initial algebra
-
-$$\frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
-  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)} =
-\frac{|\sqrt[3]{x} - \sqrt[3]{c}||\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
-  \sqrt[3]{c} ^ 2|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)} =
-\frac{|x - c|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)} =
-$$
-$$ |x - c|\frac{1}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-  + \sqrt[3]{c} ^ 2)} < \epsilon
-$$
-As we disussed earlier $(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}  +
-\sqrt[3]{c} ^ 2) \geq 0$ and therefore 
-
-$$ |x - c| < \epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-+ \sqrt[3]{c} ^ 2) $$
-
-Thus, if we pick $\delta = min\{\epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
-+ \sqrt[3]{c} ^ 2), |x - 0|\}$ (we need the second value
-because we need the sum to be equal to its absolute value; ) then
-
-$$|x - c| < \delta \to |f(x)  - f(c)| < \epsilon$$
-
-Therefore $f(x) = \sqrt[3]{x}$ is continous on \textbf{R}.
-
-\section*{4.3.2}
-
-\textit{(a) Supply a proof for Theorem 4.3.9 using the $\epsilon-\delta$
-  characterization of continuity.}
-
-First, let's state the theorem
-
-\textbf{Theorem 4.3.9 (Composition of Continuous Functions).} \textit{Given
-  $f: A \to \textbf{R}$ and $g: B \to \textbf{R}$, assume that the range
-  $f(A) =\{f(x): x \in A\}$ is contained in the domain $B$ so that the
-  composition $g \circ f = g(f(x)) $ is well-defined on $A$. }
-
-\textit{If $f$ is continous ac $c \in A$, and if $g$ is continous at
-  $f(c) \in B$, then $g \circ f$ is continous at c.}
-
-Firstly, the fact that both $f$ and $g$ are continous tells that
-
-$$\forall \epsilon_1 \in \textbf{R}: \exists \delta_1:  |x - c| < \delta_1 \to
-|f(x) - f(c)| < \epsilon_1$$
-$$\forall \epsilon_2 \in \textbf{R}: \exists \delta_2: |x - c| < \delta_2 \to
-|g(x) - g (c)| < \epsilon_2$$
-And we need to prove that
-$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - c| < \delta \to
-|g(f(x)) - g (f(c))| < \epsilon$$
-
-% Let's pick the $c \in A$. 
-% Firstly, because of all of the continuity and stuff, we are assured, that there
-% exists partucular $M=g(f(c))$. Let's fix $\epsilon$. Therefore if
-% we plug this $\epsilon$ into continuity of $g(x)$, then we'll get $\delta_1$.
-
-The main strategy for this one is to plug some delta into some epsilon (or
-vice versa), and get some use out of it.
-
-Firstly, let's get some things out of the way: let us fix particular $c \in A$
-and $\epsilon \in \textbf{R} > 0$. Then, let's plug this $\epsilon$ at $f(c)$
-into the continuity of $g(x)$ so we can get a $\delta_g > 0$. Therefore
-we will have
-$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
-\to |g(x) - g(f(c))| < \epsilon $$
-which is kinda close to the thing, that we're trying to prove.
-
-We also know that
-$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
-|f(x) - f(c)| < \epsilon_f$$
-therefore it is true that
-$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |y - f(c)| < \delta_g
-\to |g(y) - g(f(c))| < \epsilon $$
-$$ \exists \delta_f: |x - c | < \delta_f \to
-|f(x) - f(c)| < \delta_g$$
-
-From this we can state that
-$$ \forall \epsilon \in \textbf{R} > 0: \exists \delta_f: |x - c | < \delta_f \to |f(x) - f(c)| < \delta_g \to
-|g(f(x)) - g(f(c))| < \epsilon $$
-
-This doesn't sound too persuasive for me, so I probably need to explore it a
-little but more.
-
-Suppose that with all the present assumptions, we get the given $\epsilon$.
-If we plug it into definition of continuity for  $g(x)$ at $g(f(c))$, then
-we'll get the neccesary $\delta_g$. If we plug $\delta_g$ as an $\epsilon$
-for the definition of continuity of $f(x)$, then we'll get $\delta_f$.
-
-We can probably prove it with a little bit more clarity. We need to prove that
-$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
-|g(f(x)) - g (f(c))| < \epsilon$$
-
-Firstly, definition of contonuity of $g(x)$ gives us the fact, that 
-$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
-\to |g(x) - g(f(c))| < \epsilon $$
-
-then if $x \in f(A)$ then $\exists y \in A $ s.t. $f(y) = x$ therefore
-$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |f(y) - f(c)| < \delta_g
-\to |g(f(y)) - g(f(c))| < \epsilon $$
-
-From the definition of continuity of $f$ we know that 
-
-$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
-|f(x) - f(c)| < \epsilon_f$$
-
-Therefore 
-$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
-|g(f(x)) - g (f(c))| < \epsilon$$
-as desired.
-
-\textit{(b) Give another proof of this theorem using the sequantial
-  characterization of continuity (from Theorem 4.3.2 (iv)) }
-
-Theorem 4.3.2 (iv) states that if $(x_n) \to c$ (with $x_n \in A$), then
-$f(x_n) \to f(c)$.
-
-Because $f(x)$ is continous we can state that for every sequence $(x_n) \to c$
-it is true that $f(x_n) \to f(c)$. Therefore because $f(x_n)$ is a sequence
-itself, we can state that $g(f(x_n)) \to g(f(c))$. Therefore it is true, that
-for every sequence $(x_n) \to c$ it follows, that $g(f(x_n)) \to g(f(c))$.
-Therefore $g(f(x))$ is continous, as desired.
-
-\section*{4.3.3}
-\textit{Using the $\epsilon-\delta$ characteriation of continuity (and tus using no previous results anbout the sequences), show that the linear function $f(x) = ax + b$ is continous at every poinnt of \textbf{R}.}
-
-Let's start with our usual stuff
-
-$$ |f(x) - f(c)| < \epsilon $$
-$$ |ax + b - (ac + b)| = |ax + b - ac - b| = |a||x - c| < \epsilon $$
-$$|x - c| < \epsilon / a $$
-
-Therefore if we pick $\delta = \epsilon / a$ then it follows that $|f(x) - f(c)| < \epsilon$, as desired.
-
-\section*{4.3.4}
-\textit{(a) Show using Definition 4.3.1 that any function $f$ with domain
-  \textbf{Z} with necessarily be continous at every point in its domain.}
-
-Suppose that $f: Z \to R$. We need to prove that 
-
-$$\forall \epsilon: \exists \delta: |x - c| < \delta \to |f(x) - f(c)| < \epsilon $$
-
-Suppose that we pick $\delta = 0.1$ (or any other value, such that the only one
-of the domain values will be in the needed neighborhood). Then there will be
-only one number in the domain neighhborhood, and because of that we can state
-that
-$$|f(x) - f(c)| = |f(c) - f(c)|  = 0 < \epsilon$$
-
-Therefore the fucntion is continous, as desired.
-
-\textit{(b) Show in general that if $c$ is an isolated point of $A \subseteq \textbf{R}$, then $f: A \to \textbf{R}$ is continous at c.}
-
-In this particular case we can't just set $\delta$ at some number, so we gotta
-be a little more creative. To be distract myself from getting any unproductive
-ideas, I should state here that $\textbf{Q}$ is a set of isolated points.
-
-To be continued
-
-\section*{3.2.1}
-\textit{(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption
-  that the collection of open sets be finite get used}
-
-Theorem 3.2.3 states that
-
-(ii) The intersection of a finite collection of open sets is open.
-
-The assumption of the finality of the set is used in the fact, that we need
-the minimum of the epsilons.
-
-\textit{(b) Give an example of an infinite collection of nested open sets}
-$$ O_1 \supseteq O_2 \supseteq O_3 \supseteq O_4 \supseteq ... $$
-\textit{whose intersection $\cap_{n = 1}^{\infty} O_n$ is closed and nonempty.}
-
-First of all, we should state that open is not an opposite of closed in this
-context. We can get $O_n = (-\infty; \infty)$. Then this definition
-(technically) fits into the requrement of qs
-
-Let $O_n = (1 - 1/n, 2 + 1/n)$. Let us also define 
-$$A = \cap_{n = 1}^{\infty} O_n$$
-
-Suppose that $x \in A$. To be continued...
-
-
 \section*{1.2.1}
 \textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
   to show $\sqrt{6}$ is irrational?}
@@ -2002,17 +1143,1729 @@ Let's finally begin with the proof.  $B_2 \subseteq A_2$. By using
 previous theorem we can state, that $B_2$ is either countable, finite, or
 empty. If it is empty, then $A_1 \cup A_2 = A_1$, and therefore is countable.
 
-If $B_2$ is finite, then let $n = |B_2|$. Then we can have function
-$$f: N \to A_1 \cup B_2: $$
-$$f(x) = \text{ x'th smallest element of } B_2 \text{ if }x \leq n $$
-$$f(y) = g(y - n) $$
-where $g$ is a function, that maps $N \to A_1$ (which exists, because the
-set $A_1$ is countable).
+For the finite case we'll need function, that returns the n'th smallest
+element of the set. We can argue, that this function does not need the
+rigorous definition, but we'll give it anyways:
 
-N'th smallest element in this case is defined to be $x \in A: \forall k \in A
-x \geq k$, if $n = 1$ or $x \in A:  \in A: x > j$, where $j$ is (N-1)'th
-smallest element.
+$$s_F(1) = \{x \in F: \forall y \in F: x \leq y\}$$
+$$s_F(n) = \{x \in F \setminus \{s(1),...,s(n - 1)\}\}: \forall y \in F \setminus \{s(1),...,s(n - 1)\}\}: x \leq y\}$$
+for the finite set $F \subseteq R$.
+
+$$\forall n_1 > n_2 \in N: s_F(n_2) \notin F \setminus \{s(1),...,s(n_1 - 1)\}
+\to s_F(n_1) \neq s_F(n_2)$$
+therefore the function is injecttive
+
+We remove one element at every iteration from $F$ every iteration, therefore
+$\{s_F(1),...s_F(|F|)\}$ spans the whole set $F$. Therefore the function is
+surjective. Therefore the function is bijective.
+
+Now let us define $q: N \to A_1 \cup B_2$. Let $g_1: N \to A_1$ be a bijective
+function, that exists, because the set $A_1$ is countable. Then 
+\begin{equation}
+  q(x)=
+  \begin{cases}
+    s_{B_2}(x) & \text{if } x \leq |B_2|\\
+    g_1(x - |B_2|) & \text{if } x > |B_2|
+  \end{cases}
+\end{equation}
+
+Let's analyse this function. If $x_1 < x_2 \leq |B_2|$ or $x_1 > x_2 > |B_2|$,
+then $q(x_1) \neq q(x_2)$ by injectivity of $s_{B_2}$ or $g_1(x)$ respectively.
+If $x_1 \leq |B_2| < x_2$, then $q(x_1) \in B_2$ and $q(x_2) \in A_1$. Those
+two sets are disjoint, and therefore $q(x_1) \neq q(x_2)$. Therefore for
+all possible $x_1,x_2 \in N \to q(x_1) \neq q(x_2)$. Therefore the function
+is injective.
+
+Let $b \in N$ and  $N_b = \{x \in N > b\}$. Also let  $N_a = \{x \in N_b: x -
+b\}$. Then
+$$\forall c \in N_a: \exists v \in N_b: c = v - b$$
+$$\forall v \in N_b: \exists n \in N: v = n + b$$
+$$\forall c \in N_a: \exists n \in N: c = n$$
+therfore $N \subseteq N_a$.
+$$\forall n \in N: \exists v \in N_b: v = n + b$$
+$$\forall v \in N_b: \exists c \in N_a: c = v - b$$
+$$\forall n \in N: \exists c \in N_a: c = n$$
+therfore $N_a \subseteq N$. Thus $N = N_a$.
+
+Therefore
+$$\forall x > |B_2|: \exists n \in N: g_1(x - |B_2|) = g_1(n)$$
+Therefore $g_1$ spans the whole set $A_1$. $s_{B_2}$ spans the whole $B_2$ by
+surjectivity of $s$. Therefore $q$ spans $A_1 \cup B_2$. Therefore it
+is surjective.
+
+Therefore $A_1 \cup B_2$ is bijective, therefore $A_1 \cup B_2$ is countable
+if $B_2$ is finite. One last thing, that I want to add before finishing this case
+is to acknowledge the fact, that this theorem is  true not for
+real numbers only. This fact throws our minimal element part out of  the proof.
+This misfortune can be avoided through the usage of lists and by converting sets
+into them. I did not use this fact here because of the need to axiomaticly
+define lists, which I can, but don't want to do. 
+
+Now let us proceed with the case when $B_2$ is countable. Let $g_1: N \to A_1$ be a bijective funciton for $A_1$ and $g_2: N \to B_2$ be a bijective funciton
+for $B_2$ (both of those exist because of the fact, that both of the sets are
+countable).  Let $q: N \to A_1 \cup B_2$ be defined as
+\begin{equation}
+  q(x) =
+  \begin{cases}
+    g_1((x + 1) /  2) \text{ if x is odd} \\
+    g_2(x / 2) \text{if x is even}
+  \end{cases}
+\end{equation}
+
+Then $\forall n_1 \neq n_2 \in N \to g(n_1) \neq g(n_2)$ because of either
+injectivity of both functions, or because of the fact, that both sets are
+disjoint. Therefore $q$ is injective. Also
+$${x \text{ is odd}: (x + 1) / 2} = {x \text{is even}: x/2 } = N$$
+Therefore $q$ spans $A_1 \cup B_2$. Therefore the function is surjective.
+
+Thus $q$ is bijective and $A_1 \cup B_2 = A_1 \cup B_2$ is countable if
+$B_2$ is countable.
+
+Therefore for any countable sets $A_1$ and $A_2$ it is true, that their
+union is countable as well.
+
+\textit{Now, explain how the more general statement in (i) follows}
+
+We prove the first part of the teorem by induction.
+
+Base: $A_1 \cup A_2$ is countable.
+
+Proposition: $\cup^{m}_{n = 1}A_n$ is countable for $m \in N$.
+
+Step:
+$$\cup^{m + 1}_{n = 1}A_n = \cup^{m}_{n = 1}A_n \cup A_{m + 1}$$
+
+$\cup^{m}_{n = 1}A_n$ is a countable set because of the proposition.
+$A_{m + 1}$ is countable by assumtion of the theorem. Therefore
+$\cup^{m + 1}_{n = 1}A_n$ is a union of two countable sets, and therefore is
+itself contable, as desired.
+
+\textit{(b) Explain why induction connot be used to prove part (ii) of
+  Theorem 1.4.13 from part (i)}
+
+Induction cannot be used to prove part (ii) because of the fact, that induction
+relies of finality of the given set.
+
+\textit{(c) Show how arranging N into the two-dimentional array }
+$$\text{1 3 6 10 15 ...}$$
+$$\text{2 5 9 14 ...   }$$
+$$\text{4 8 13 ...}$$
+$$\text{7 12 ...}$$
+$$\text{11 ...}$$
+$$...$$
+\textit{leads to a proof of a Theorem 1.4.13 (ii)}
+
+This proof will not be as rigorous as the ones before that, but i'll try them
+anyways. Let us convert all of the given sets onto lists. Then let us construct
+lists
+$$l_1 = {A_{1_1}}$$
+$$l_2 = {A_{2_1}, A_{1_2}}$$
+$$l_3 = {A_{3_1}, A_{2_2}, A_{3_1}}$$
+$$...$$
+$$l_n = {A_{n_1}, A_{n - 1_{2}}, A_{n - 2_{3}1} ...}$$
+
+if $A_{n_n}$ already has been included into the lists $l_{1..n - 1}$, then we don't
+include it in the list.
+Then if we concatenate all of those lists together, then we will have function
+$q: N \to \cup^{\infty}_{n = 1} A_n$ which is defined as
+$$q(x) = \text{x'th element of the final list}$$
+This function will be injective, because we threw out already included elements, and
+will be surjective, because all of the elements of $\cup^{\infty}_{n = 1} A_n$ are
+eventually in the list. Thus, we have a bijective function between $N$ and
+$\cup^{\infty}_{n = 1} A_n$. Therefore $\cup^{\infty}_{n = 1} A_n$ is countable, as
+desired.
+
+\section*{1.4.9}
+\textit{(a) Given sets $A$ and $B$, explain why $A \sim B$ is equivalent to asserting
+  $B \sim A$.}
+
+Short answer: bijectivity implies inversability.
+
+Medius answer: injectivity leads us to the fact, that for every element of codomain there
+exists only one element of the domain and by extension lets us
+define inverse function in the first place;
+surjectiviry guarantees, that the inverse function is defined for every element of the domain.
+
+Long answer:
+
+$A \sim B$ implies, that there exists a bijective function $g: A \to B$. Bijective means
+that
+$$\forall a_1 \neq a_2 \in A \to g(a) \neq g(b)$$
+$$\forall b \in B: \exists a \in A: g(a) = b$$
+
+This implies that for all $b \in B$ there exist only one $a \in A$ such that $g(a) = b$.
+This fact lets us define $g^{-1}: B \to A$ as
+$$g^{-1}(b) = a \text{ such that } g(a) = b$$
+
+Then
+$$\forall b_1 \neq b_2 \in B \to g^{-1}(b_1) \neq g^{-1}(b_2)$$
+because $g$ is a function and therefore $g^{-1}(b_1) \neq g^{-1}(b_2) \to
+g(a_1) \neq g(a_2) \to a_1 \neq a_2$. Therefore $g^{-1}$ is injective.
+
+$$\forall a \in A: \exists g(a) \to \exists b \in B: g^{-1}(b) = a$$
+and therefore
+$$\forall a \in A: \exists b \in B: g^{-1}(b) = a$$
+therefore function is surjective.
+
+Therefore the function is bijective and therefore $B \sim A$.
+
+Therefore $A \sim B \iff B \sim A $, as desired.
+
+% $$\forall b \in B: \not \exists a_1 \neq a_2 \in A: g(a_1) = g(a_2) = b$$.
+% because g is a function, for every $a \in A$ there exists only one $b \in B$. Therefore
+% there does not exist $b_1 \neq  b_2 \in B$ such that $g(a) = b_1$ and $g(a) = b_2$.
+
+\textit{(b) For three sets $A, B$ and $C$, show that $A \sim B$ and $B \sim C$
+  implies $A \sim C$. These two properties are what is meant by saying that $\sim$
+  is an equivalence relation.}
+
+Because $A \sim B$ and $B \sim C$ there exist two bijective functions $g_1: A \to B$ and
+$g_2: B \to C$.
+Therefore
+$$\forall a_1 \neq a_2 \in A \to g_1(a_1) \neq g_1(a_2)$$
+$$\forall b_1 \neq b_2 \in B \to g_2(b_1) \neq g_2(b_2)$$
+therefore
+$$\forall a_1 \neq a_2 \in A \to g_1(a_1) \neq g_1(a_2) \to g_2(g_1(a_1)) \neq g_2(g_1(a_2))$$
+
+Also
+$$\forall a \in A: \exists b \in B: g_1(a) = b$$
+$$\forall b \in B: \exists c \in C: g_2(b) = c$$
+and therefore
+$$\forall a \in A: \exists b \in B: g_1(a) = b \to  \exists c \in C: g_2(g_1(a)) \in C $$
+
+Therefore $g_2 \circ g_1: A \to C$ is a bijective function. Therefore $A \sim C$, as desired.
+
+\section*{1.4.10}
+\textit{Show that the set of all finite subsets of N is a countable set. (It turns out that
+  the set of all subsets of N is not a countable set. This is a title of Section 1.5)}
+
+Our strategy here will be to show that for every $n \in N$ set of sets of
+length $n$ is countable, therefore their union is countable.
+
+Maybe I should proceed with induction.
+Base: 
+First of all, set N in countable.  Therefore the set of sets of length 1 is countable.
+
+Proposition:
+Suppose that set of sets of length $n \in N$ is countable.
+
+Step:
+Because set of sets of length N is countable, let us take a set $S_m$.
+Then, let us add a number into in , which is not already in this set.
+To be more precise, let us define
+$$N_m = N \setminus S_m$$
+$$S_{m_k} = S_m\cup \{\text{k'th number of}N_m\}$$
+
+Then each of $S_{m_k}$ is a union of countable sets, and therefore countable.
+Therefore $\cup^{\infty}_{k = 1} S_{m_k} = S_{m + 1}$ is countable.
+
+Therefore each set of sets of length $n \in N$ is countable. Therefore their union is
+countable. Therefore set of finite subsets of $N$ is countable, as desired.
+
+\section*{1.4.11}
+\textit{Consider the open interval $(0,1)$, and let $S$ be the set of points in the
+  open unit square; that is, $S = \{(x, y): 0 \leq x,y \leq 1\}$}
+
+\textit{(a) Find a 1-1 function, that maps (0, 1) into, but not necessarily onto, S.
+  (This is easy.)}
+
+Yeah, it is. Let $g(x) = (x, 0.5)$.
+
+\textit{(b) Use the fact that every real number has a decimal expansion to produce a
+  1-1 function that maps $S$ into (0, 1). Discuss whether the formulated function is onto.
+  (Keep in mind that any terminating decimal expansion such as .235 represents the same
+  real number as .234999999999 ).}
+
+Let $g(x, y): S \to (0, 1)$ be such a function, that maps digits of $x$ into the
+odd digits of the result, and $y$ into the event digits of the result. As an example
+$$g(.235, .746) = .273456$$
+
+This function is into, because we are essentially writing two dirrerent numbers in an
+odd way. 
+Therefore $\forall s_1, s_2 \in S \to g(s_1) \neq g_(s_2) \ $
+
+The problem arises with surjectivity. Suppose that we have a number $x = 0.2$. If
+this function would be the output of our function, then $y$ would need to be 0;
+Therefore the function is not surjective.
+
+\textit{The Schroder-Bernstein Theorem discussed in Exercise 1.4.13 to follow
+  can now be applised to conclude that $(0,1) \sim S$}
+
+\section*{1.4.12}
+\textit{A real number $x \in R$ is called algebraic if there exists integers
+  $a_0, a_1, a_2, ..., a_n \in Z$, not all zero, such that }
+
+$$a_n x^n + a_{n - 1} x^{x - 1} + ... + a_1 x + a_0 = 0$$
+\textit{Said another way, a real number is algebraic if it is the root of a polynomial
+  with integer coefficients. Real numbers that are not algebraic are called transcendental
+  numbers. Reread the last paragraph of Section 1.1. The final question posed here is
+  closely related to the question of whether or not transcendental numbers exist.}
+
+\textit{(a) Show that $\sqrt{2}$, $\sqrt[3]{2}$ and $\sqrt{3} + \sqrt{2}$ are algebraic.}
+
+Let $a_0 = -2$, $a_1 = 0$ and $a_2 = 1$. Then
+
+$$a_2 x^2 + a_1 x + a_0 = 0$$
+$$ x^2 + 0  - 2 = 0$$
+$$x^2 = 2$$
+$$x = \sqrt{2} \text{ or } x = -\sqrt{2}$$
+
+Therefore $\sqrt{2}$ is algebraic.
+
+Let $a_0 = -2$, $a_1 = 0$, $a_2 = 0$ and $a_3 = 1$. Then
+
+$$a_3 x^3 + a_2 x^2 + a_1 x + a_0 = 0$$
+$$ x^3 + 0  - 2 = 0$$
+$$x^3 = 2$$
+$$x = \sqrt[3]{2}$$
+
+Therefore $\sqrt[3]{2}$ is algebraic.
+
+Let $a_0 = 1$, $a_1 = 0$, $a_2 = -10$, $a_3 = 0$ and $a_4 = 1$. Then
+
+$$x^4 - 10 x^2 + 1 = 0$$
+$$x^4 - 10 x^2 + 25 =  24$$
+$$(x^2 - 5)^2 =  4 * 6$$
+$$x^2 - 5 =  2\sqrt{6}$$
+$$x^2 = 5 + 2\sqrt{6}$$
+$$x^2 = 2 + 3 + 2\sqrt{2}\sqrt{3}$$
+$$x = \sqrt{2} + \sqrt{3}$$
+
+Therefore $\sqrt{2} + \sqrt{3}$ is algebraic.
+
+\textit{(b) Fix $n \in N$, and let $A_n$ be the algebraic numbers obtained as roots of
+  polynomials with integer coefficients that have degree $n$. Using the fact that
+  every polynomial has a finite number of roots, show that $A_n$ is countable. (For
+  each $m \in N$, consider polynomicals $a_n x^n + a_{n - 1} x^{n - 1} + ... +
+  a_1 x + a_0$ that satisfy $|a_n| + |a_{n - 1}| + ... + |a_1| + |a_0| \leq m$.)}
+
+Let us fix $m \in M$, then there exist a finite number of $a_n, ..., a_1, a_0 \in Z$ such that
+$|a_n| + |a_{n - 1}| + ... + |a_1| + |a_0| \leq 0$. Therefore for each $m \in M$ there
+are finitely many combinations of coefficients and thus finitely many numbers of roots.
+Therefore let us correspont each root, with a number $n \in N$ is ascending order
+(keeping in mind, we should check, that this number is not already in the function). Then
+we'll get a bijective  function from $N$ to all the possible roots of polynomials
+with integral coefficiens. Therefore $A_n$ is countable.
+
+\textit{(c) Now, argue that the set of all algebraic numbers is countable. What may we
+  conclude about the set of transcendental numbers?}
+
+Because $A_n$ is countable for each $n \in N$ we know, that
+$\cup^{\infty}_{n = 1}A_n$ is countable as well. By definition, algebraic number
+is a root of one of such polynomials, and therefore algebraic numbers are a countable
+set.
+
+The fact, that the set of algebraic numbers is countable presents us with a fact, that
+the set of transcedental numbers is not countable (because if it was, then the set
+of real numbers would be a union of two countable sets and therefore countable as
+well).
+
+\section*{1.4.13 (Schroder-Bernstein Theorem)}
+\textit{Assume that there exists a 1-1 function $f: X \to Y$ and another 1-1 function
+  $g: Y \to X$. Follow the steps to show that there exists a 1-1, onto function $h: X \to Y$
+  and hence $X \sim Y$.}
+
+\textit{(a) The range of $f$ is defined by $f(X) = \{y \in Y: y = f(x) \text{ for some }
+  x \in X$. Let $y \in f(X)$. (Because $f$ is not neccesarily onto, the range $f(X)$
+  may not be all of $Y$.) Explain why there exists a unique $x \in X$ such that $f(x) = y$.
+  Now define $f^{-1}(y) = x$, and show that $f^{-1}$ is a 1-1 function from $f(X)$ onto $X$.}
+
+Because $f$ is given to be injective, it is true that
+$$\forall x_1 \neq x_2 \in X \to  f(x_1) \neq f(x_2)$$
+$f$ is also a function.  By definition of a function we know, that for every element
+of domain there exists only one element of codomain. Therefore
+$$\forall f(x_1) \neq f(x_2) \in f(X) \to  x_1 \neq x_2$$
+By plugging $y$ into the equation we have
+$$\forall y_1 \neq y_2  \in f(X) \to  x_1 \neq x_2$$
+Thus we can define $f^{-1}: f(X) \to X$:
+$$f^{-1}(y) = \{x \in X: f(x) = y\}$$
+This function will be injective by the fact that
+$$\forall y_1 \neq y_2  \in f(X) \to  x_1 \neq x_2 \to f^{-1}(x_1) \neq f^{-1}(x_2)$$
+
+\textit{In a similat way, we can also defin the 1-1 function $g^{-1}: g(X) \to Y$}
+
+Same logic applies to $g(x)$. Therefore we have
+$$g^{-1}(x) = \{y \in Y: g(y) = x\}$$
+which by the same logic is injective.
+
+\textit{(b) Let $x \in X$ be arbitrary. Let the chain $C_x$ be the set consisting of all
+  elements of the form }
+$$\text{(1) }..., f^{-1}(g^{-1}(x)), g^{-1}(x), x, f(x), g(f(x)), f(g(f(x))), ...$$
+\textit{Explain why the number of elements to the left of $x$ in the above chain may be zero,
+  finite, or infinite}
+
+The number of elements on the left is 0, if there does not exists $y \in Y$ such that
+$g(y) = x$.
+
+The number of elements on the left is finite number, if after some element $l$ there
+does not exist an element $y \in Y$ or $x \in X$, such that $g(y) = l$ or $f(x) = l$.
+
+The number of elements on the left is infinite, if there exist both of those numbers
+for every element (for example, if both functions are onto).
+
+% One idea, that I want to explore, is that if there exists only a finite set of
+% elements to the left of $x$, then its number is fixed (namely 1).
+
+% Suppose, that we have our $x$. Then, if the number of elements to the left is not
+% 0, then there exist $y: g(y) = x$ by the definition of $g^{-1}(x)$. Therefore
+% $x \in g(Y) \subseteq X$. Suppose now that 
 
 
+
+
+
+\textit{(c) Show that any two chains are either identical, or completely disjoint}
+
+Suppose that $x_1 \neq x_2$. Then $f(x_1) \neq f(x_2)$ by injectivity of $f$.
+Also, $f(x) \in Y$, and therefore $g(f(x_1)) \neq g(f(x_2))$ and so on.
+
+$f^{-1}$ and $g^{-1}$ are injective as well. Therefore the same logic applies. Thus
+we can state that
+$$\forall x_1 \neq x_2 \to C_{x_1} \cap C_{x_2} = \emptyset $$
+and
+$$\forall x_1 = x_2 \to C_{x_1} \cap C_{x_2} = C_{x_1} = C_{x_2} $$
+
+\textit{(d) Note that the terms of the chain in (1) alternate between elements of $X$
+  and elements of $Y$. Given a chain $C_x$, we want to focus on $C_x \cap Y$,
+  which is just a part of the chain that sits in $Y$.}
+
+\textit{Define the set $A$ to be the union of all chains $C_x$ satisfying
+  $C_x \cap Y \subseteq f(X)$. Let $B$ constst if the union of the remaining chains not
+  in $A$. Show that any chain contained in $B$ must be of the form}
+$$y, g(y), f(g(y)), g(f(g(y))), ....$$
+\textit{where $y$ is an element of $Y$ that is not in $f(X)$}
+
+Let $A$ and $B$ be defined as in the exercise text. Then
+$$\forall C_x \in B: \exists c \in C_x: c \in Y \text{ and } c \notin f(X)$$.
+Thus
+$$\nexists x \in X: f(x) = c$$
+at the same time
+$$c \in Y \to \exists x \in X: g(y) = x$$.
+
+Becaus $g: Y \to g(Y) \subseteq X$ and $f: X \to f(X) \subseteq Y$ we can write
+the chain in the form 
+$$c, g(c), f(g(c)), ...$$
+Substituting $c$ with $y$ we get 
+$$y, g(y), f(g(y)), ...$$
+where $y \notin f(X)$, as desired.
+
+\textit{(e) Let $X_1 = A \cap X$, $X_2 = B \cap X$, $Y_1 = A \cap Y$, and $Y_2 = B \cap Y$.
+  Show that $f$ maps $X_1$ onto $Y_1$ and that $g$ maps $Y_2$ onto $X_2$. Use this
+  infortation to prove $X \sim Y$.}
+
+Let $X_1$, $X_2$, $Y_1$ and $Y_2$ be defined as in exercise text. Then
+let us discuss $f(X_1)$
+$$A = \{C_x: C_x \cap Y \subseteq f(X)\}$$
+$$X_1 = \{C_x \cap X: C_x \cap Y \subseteq f(X)\}$$
+$$Y_1 = \{C_x \cap Y: C_x \cap X \subseteq g(Y)\}$$
+
+therefore
+$$\forall y \in Y_1: \exists x \in X_1: f(x) = y$$
+and
+$$\forall x \in X_2: \exists y \in Y_2: g(y) = x$$
+Or in other words, $f: X_1 \to Y_1$ is surjective(onto).
+
+By the same logic, $g: Y_2 \to X_2$ is also surjective.
+
+Let us define function $h: X \to Y$
+\begin {equation}
+h(x) =
+  \begin{cases}
+    f(x) \text{ if } x \in X_1 \\
+    g^{-1}(x) \text{ if } x \in X_2
+  \end{cases}
+\end {equation}
+
+Functions $f$ and $g^{-1}$ are both injective.  $X_1 \cap X_2 = \emptyset$. Therefore
+$h$ is injective as well.
+Also, $X_1 \cup X_2 = X$,  and both $f$ and $g$ are surjective. Therefore $h$ is surjective
+as well.
+
+Therefore this function is bijective. Therefore we have a bijective function from
+$X$ to $Y$. Therefore $X \sim Y$, as desired.
+    
+\section*{1.5.1}
+\textit{Show that $(0, 1) = \{x \in R: 0 < x < 1\}$ is uncountable if and only if R
+  is uncountable.}
+
+Let
+
+$$ f(x) = \frac{2x - 2)}{x ^ 2 - 2x}$$
+
+Calsulus shows that this function maps $(0, 1) \to R$. Also, it shows,
+that ist is increasing and therefore it is bijective. Thus
+there exist a bijective. Thus $(0, 1) \sim R$. Therefore it is uncountable
+if and only if $R$ is uncountable.
+
+\section*{1.5.2}
+\textit{(a) Explain why the real numnder $x = b_1 b_2 b_3...$ cannot be f(1).}
+
+If $f(1) = b$ then
+$$b_1 = 2 \to b_1 \neq 2$$
+$$b_1 \neq 2 \to b_1 = 2$$
+Therefore we have a contradiction.
+
+\textit{(b) Now, explain why $x \neq f(2)$, and in general why $x \neq f(n)$ for any
+  $n \in N$. }
+
+If $f(1) = b$ then
+$$b_n = 2 \to b_n \neq 2$$
+$$b_n \neq 2 \to b_n = 2$$
+Therefore we have a contradiction for $n \in N$.
+
+\textit{(c) Point ount the contradiction that arises from these observations and
+  conclude that $(0, 1)$ is uncountable.}
+
+If $(0,1)$ is countable, then $b \in (0, 1)$, but it cannot be correspondent
+to $n \in N$ for any $f: N \to (0, 1)$. Therefore either $b \notin (0, 1)$ or
+$(0, 1)$ is not countable. Because $b \in (0, 1)$ we conclude that $(0, 1)$ is
+uncountable.
+
+\section*{1.5.3}
+\textit{Supply rebuttals to the following complaints about the proof of
+  Theorem 1.5.1}
+
+\textit{(a) Every rational number has a decimal expansion so we could apply
+  this same argument to show that the set of rational numbers between 0 and 1
+  is uncountable. However, because we know that any subset of $Q$ must me countable,
+  the proof of Theorem 1.5.1 must be flawed}
+
+We can try to apply the same argument to $Q$, but now we have a problem with the
+fact, that every rational number in decimal expansion repeats itself after some
+point or another. Therefore $b \notin Q$, therefore we cannot conclude anything.
+
+\textit{(b) A few numbers have two different decimal representations. Specifically,
+  any decimal expansion that terminates can also be written with repeating 9's.
+  For instance, 1/2 can be written as .5 or as .4999.... Doesn't this cause some
+  problems?}
+
+No, it doesn't. And the reason on why it doesn't cause any problems is because
+our argument stems on the fact, that given $b \in R$ is not in the set,
+if the set is countable. Therefore different representations problem is irrelevant.
+
+\section*{1.5.4}
+\textit{Let $S$ be the set consisting of all sequences of 0's and 1's. Observee that $S$
+  is not a particular sequence, but rather a large set whose elements are sequences;
+  namely,}
+$$S = \{(a_1, a_2, a_3,...): a_n = 0 or 1\}$$
+\textit{As an example, the sequence (1, 0, 1, 0, 1, 0, ...) is an element of $S$, as the
+  sequence (1, 1, 1, 1, ...).}
+
+\textit{Give a rigorous argument, that S is uncountable}
+
+I don't know, if it counts, as rigorous, but here we go.
+
+Each $s \in S$ corresponds to a binary reresentation of a number in $(0, 1)$. Therefore
+$S \sim (0, 1) \sim R$, therefore it is uncountable.
+
+We can work around sets and NIP to show the same thing if we want to, but I dont want to.
+
+\section*{1.5.5}
+\textit{(a) Let $A = \{a, b, c\}$. List the eight elements of $P(A)$. (Do not forget that
+  $\emptyset$ is considered to be a subset of every set.)}
+
+$$\emptyset, \{a\}, \{b\}, \{b, a\}, \{c\}, \{c, a\}, \{c, b\},  \{c, b, a\}$$
+
+\textit{(b) If $A$ is finite with $n$ elements, show that $P(A)$ has $2^n$ elements.
+  (Constructing a particular subset of $A$ can be interpreted as making a series of
+  decisions about whether or not toinclude each element of $A$.}
+
+Repeat of 1.2.11
+
+This proof is dumb, but intuitive:
+
+Every subset is corresponding to a number in binary number: 0 for excluded,
+1 for included. Therefore there exist $2^n$ possible combinations.
+
+For a more concrete proof let's resort to induction.
+
+Base case(s): subsets of $\emptyset$ are $\emptyset$ itseft ($2^0 = 1$ in total). Subsets of
+set with one element are $\emptyset$ and set itself ($2^1 = 1$ in total).
+
+Proposition is that set with n elements has $2^n$ subsets.
+
+Inductive step is that for set with $n + 1$ elements can either have or hot
+have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
+2^{n + 1}$ subsets, as desired.
+
+\section*{1.5.6}
+\textit{(a) Using the particular set $A = \{a, b, c\}$, exhibit two different
+  1-1 mappings from $A$ to $P(A)$}
+
+\begin{equation}
+  f_1(x) =
+  \begin{cases}
+    a \to \{a\} \\
+    b \to \{b\} \\
+    c \to \{c\} \\
+  \end{cases}    
+\end{equation}
+
+\begin{equation}
+  f_2(x) =
+  \begin{cases}
+    a \to \emptyset \\
+    b \to \{b\} \\
+    c \to \{c\} \\
+  \end{cases}    
+\end{equation}
+
+\textit{(b) Letting $B = \{1, 2, 3, 4\}$, produce an example of a 1-1 map $g: B \to P(B)$.
+}
+
+\begin{equation}
+  f_3(x) =
+  \begin{cases}
+    1 \to {1} \\
+    2 \to {2} \\
+    3 \to {3} \\
+    4 \to {4} \\
+  \end{cases}    
+\end{equation}
+
+\textit{(c) Explain why, in parts (a) and (b), it is impossible to construct mappings,
+  that are onto}
+
+$|A| < |P(A)|$
+
+\section*{1.5.7}
+\textit{Return to the particular functions constructed in Exercise 1.5.6 and construct
+  subset B that results using the preceding rule. In each case, note that B is not in
+  the range of the function used. }
+
+For $f_1$:
+$$B = \{\emptyset\}$$
+
+For $f_2$:
+$$B = \{a\}$$
+
+For $f_3$:
+$$B = \{\emptyset§\}$$
+
+\section*{1.5.8}
+\textit{(a) First, show that the case $a' \in B$ leads to a contradiction.}
+
+Suppose that $a' \in B$. By definition of $B$,  $a \notin f(a')$. Therefore we have a
+contradiction.
+
+\textit{(b) Now, finish the argument by showing that the case $a' \notin B$ is
+  equally unacceptable.}
+
+Suppose that $a' \notin B$. Therfore, by definition of $B$, $a' \notin B \to a' \in B$.
+Therefore we have a contradiction. Thus, we cannot construct a surjective map from $A$ to
+$P(A)$. Therefore $A \not\sim P(A)$.
+
+\section*{1.5.9}
+\textit{As a final exercise, answer each of the following be establishing a 1-1
+  correspondence with a set of known cardinality.}
+
+\textit{(a) Is the set of all function from $\{0, 1\}$ to $N$ countable or
+  uncountable?}
+
+Examples of such functions
+\begin{equation}
+  f_1 =
+  \begin{cases}
+    \{0\} \to 5 \\
+    \{1\} \to 123
+  \end{cases}
+\end{equation}
+
+\begin{equation}
+  f_2 =
+  \begin{cases}
+    \{0\} \to 7 \\
+    \{1\} \to 7
+  \end{cases}
+\end{equation}
+
+Each of those functions we can correspond to a set of $Q^+ = {q \in Q: q > 0}$,
+which is countable (infinite subset of a countable set $\to$ countable) .
+
+To clarify my result, think of $f(0)$ as of numerator, and $f(1)$ as denumenator.
+
+\textit{(b) Is the set of all function from $N$ to $\{0, 1\}$ countable or uncountable.}
+
+Uncountable. Each of those function we can correspond to a sequence of 0's and 1's from
+Exercise 1.5.4.
+
+\textit{(c)Given a set $B$, a subset $A$ of $P(B)$ is called an antichain, if no
+  element of $A$ is a subset of any other element of $A$. Does $P(N)$ contain an
+  uncountable antichain?}
+
+Yes, it does. We can correspond a function from $N$ to $\{0, 1\}$ to an antichain
+by adding element $2n$ to the set, if the n'th element of a sequence is 0, and
+adding $2n - 1$ to the set, if the n'th position is 1. Therefore, for
+2 different chains we will have two different sets, each of which will be
+different by al least two numbers, and therefore not a subset of each other.
+
+
+\section*{4.4.1}
+
+\subsection*{{a}}
+\textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
+
+In order to show, that $f$ is continous we need to show, that $\forall
+\epsilon \in \textbf{R}$ $\exists \delta$ s.t.
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+
+Let's rewrite the first formula
+
+$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
+|x - c||x^{2} + cx + c^{2}|$$
+
+We can put $|x - c|$ can be as small as we want it to be. Therefore we need
+an upper bound for $|x^{2} + cx + c^{2}|$.
+
+$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
+|c|(|c| + 1) + |c|^{2}$$
+
+
+
+Therefore if we take
+$\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
+then
+$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
+  |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
+= \epsilon$$
+
+Therefore $f(x) = x ^3$ is continous on \textbf{R}.
+
+\subsection*{(b)}
+\textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
+  on \textbf{R}}
+
+
+\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
+function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
+$\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
+satisfying
+
+$|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
+
+In order to show that $f(x) = x^3$ is not uniformly continous on
+\textbf{R} let us use sequences
+
+$$x_n = n$$
+$$y_n = (n + 1/n)$$
+
+Firstly
+$$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
+
+on the other hand
+
+$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
++ 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
+$$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
+
+rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
+but $|f(x_n) - f(y_n) \to \infty$
+
+Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
+
+\subsection*{(c)}
+\textit{Show that $f$ is uniformly continuous on any bounded subset
+  of \textbf{R}.}
+
+Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
+$\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
+
+Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
+$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
+\frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
+
+Therefore if we take
+$$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
+then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
+making $f(x)$ uniformly continous by definition
+
+
+\section*{4.4.2}
+\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
+  $[1, \infty)$, but is not on the set $(0, 1]$}
+
+In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
+first prove that it is just continous, with the hope that $\delta$ is not
+depentant on $x$
+
+$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
+|\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
+= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
+|c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
+$$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
+
+Therefore we need to show that if $\delta$ is bounded above at 1, then
+$|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
+some constant, but  $(0, 1]$ isn't.
+
+$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
++ \frac{1}{cx^3}| \leq
+|\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
+$$
+
+for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
+therefore for $x \in [1, \infty)$
+
+$$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
+
+therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
+$|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
+
+on the other hand,
+
+$$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
+
+Therefore we will need smaller deltas as we approach 0; to put it more
+concretely let's use the theorem for
+\textbf{Sequential Criterion for Nonuniform Continuity}.
+
+Let us pick
+$$x_n = 1/n$$
+$$y_n = 1/(n + 1)$$
+
+then
+
+$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
+= |\frac{1}{n ^ 2 + 1}| \to 0$$
+
+but
+
+$$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
+$$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
+
+therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
+
+\section*{4.4.3}
+\textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
+
+Let us first complete 3.3.1
+
+\textit{Exercise 3.3.1. Show that if K is compact, then sup K and inf K both exist and are elements of K.}
+
+Because $K$ is compact, it is both closed and bound; therefore, because it is bounded,
+
+
+$$ \exists M \in \textbf{R} > 0 :  \forall x \in K $$
+$$ |x| \leq M $$
+
+
+Therefore there exist lower and upper bound of $K$. Therefore, by axiom of completenss, there exist
+both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound)
+
+Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
+
+To be continued...
+
+
+\section*{4.2.1}
+\textit{Use Definition 4.2.1 to supply a proof for the following limit statements.}
+
+(a) $\lim_{x \to 2}(2x + 4) = 8$.
+
+(b) $\lim_{x\to0} x^3 = 0$.
+
+(c) $\lim_{x\to2} x^3 = 8$.
+
+(d) $lim_{x\to\pi}[[x]] = 3$, where [[x]] denotes the greatest integer less than or
+equal to x.
+
+Let's first state Definition 4.2.1
+
+\textbf{Definition 4.2.1.} Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that $\lim_{x\to c} f(x) = L$ provided that, for all $\epsilon > 0$, there exists
+a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows that $|f(x) - L| < \epsilon$.
+
+(a):
+$$ |f(x) - L| = |2 x + 4 - 8| = |2 x - 4| = 2|x - 2| < \epsilon $$
+$$ |x-2| < \frac{\epsilon}{2}$$
+
+$$  \delta = \frac{\epsilon}{2} \to |2 x + 4 - 8| < \epsilon $$
+
+as desired.
+
+(b):
+$$ |f(x) - L| = |x^3 - 0| = |x^3| = |x|^3 < \epsilon $$
+$$ |x| < \sqrt[3]{\epsilon}{} $$
+$$ \delta = \sqrt[3]{\epsilon} \to |x^3| < \epsilon $$
+
+as desired.
+
+(c):
+$$ |f(x) - L| = |x^3 - 8| = |(x - 2)(x^2 + 2x + 4)| = |x-2||x^2 + 2x + 4| < \epsilon $$
+$$|x-2| < \frac{\epsilon}{|x^2 + 2x + 4|} $$
+
+Suppose that we set the maximum delta at 1; then upper bound for $|x^2 + 2x + 4|$ is:
+
+$$ |x^2 + 2x + 4| \leq |x^2| + |2x| + 4 = |x|^2 + 2|x| + 4 \leq (|c| + 1)^2 + 2(|c| + 1) + 4 =$$
+$$= (2 + 1)^2 + 2(2 + 1) + 4 = 9 + 6 + 4 = 19
+$$
+
+Therefore
+
+$$\delta = min\{1, \epsilon/19\} \to |x^3 - 8| = |x-2||x^2 + 2x + 4| < \frac{\epsilon}{19} * 19 = \epsilon $$
+
+as desired.
+
+(d):
+
+$$ |[[x]] - 3| = [[0.1415926...]] = 0 < \epsilon $$
+
+Suppose that we pick $\delta = 0.1$, then any $x \in V_{\delta}$ will satisfy $|[[x]] - 3| = 0 < \epsilon $
+for any $\epsilon > 0$ as desired.
+
+\section*{4.2.2}
+\textit{Assume a particular $\delta > 0$ has been constructed as a suitable response
+  to a particular $\epsilon$ challenge. Then, any larger/smaller (pick one) $\delta$ will also suffice.}
+
+Smaller. This follows from the fact, that
+$$\delta_1 < \delta_2 \to V_{\delta_1} \subset V_{\delta_2}$$
+
+\section*{4.2.3}
+\textit{Use Corollary 4.2.5 to show that each of the following limits does not exist.}
+
+(a) $\lim_{x\to0} |x|/x$
+
+(b) $\lim_{x\to 1} g(x)$ where $g$ is Dirichlet’s function from Section 4.1.
+
+I'll not state corollary 4.2.5  function here, because it's tedious, but it'll be obvious which corollary I'm talking about by the context.
+
+
+(a): let
+$$(x_n) = 1/n$$
+$$(y_n) = -1/n$$
+then
+$$(x_n) \to 0;(y_n) \to 0$$
+but
+$$|x_n| / x_n = 1$$
+$$|y_n| / y_n = -1$$
+therefore the limit does not exist.
+
+(b):
+
+The Dirichlet function is
+\begin{equation}
+D(x)=
+    \begin{cases}
+        1 & \text{if } x \in \textbf{Q}\\
+        0 & \text{if } x \notin \textbf{Q}
+    \end{cases}
+\end{equation}
+
+let
+$$(x_n) = 2/n + 1$$
+$$(y_n) = \sqrt{2}/n + 1$$
+
+then
+
+$$(x_n) \to 1;(y_n) \to 1$$
+
+but
+
+$$(x_n) = 2/n + 1 \in \textbf{Q}$$
+$$(y_n) = \sqrt{2}/n + 1 \notin \textbf{Q}$$
+
+therefore
+
+$$ D(x_n) = 1$$
+$$ D(y_n) = 0$$
+
+thus the function is not continous at 1
+
+\section*{4.2.4}
+\textit{Review the definition of Thomae’s function t(x) from Section 4.1.}
+
+\textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$, each of which converges to 1 without using the number 1 as a term in the sequence.}
+
+\textit{(b) Now, compute $\lim t(x_n)$, $\lim t(y_n)$, and $\lim t(z_n)$.}
+
+\textit{(c) Make an educated conjecture for $\lim_{x\to1} t(x)$, and use Definition 4.2.1B
+  to verify the claim. Given $\epsilon > 0$, consider the set of points
+$\{x \in \textbf{R} : t(x)  \epsilon\}$.  Argue that all the points in this set are isolated.}
+
+
+The definition of  Thomae function is
+\begin{equation}
+t(x)=
+    \begin{cases}
+      1 & \text{if } x = 0\\
+      1/n & \text {if } x = m/n \in \textbf{Q} \text{\textbackslash} \{0\} \\
+      0 & \text{if } x \notin \textbf{Q}
+    \end{cases}
+\end{equation}
+
+(a): Let our three sequences be
+
+$$ (x_n) = n/(n + 1)$$
+$$ (y_n) = (n + 1)/n$$
+$$ (z_n) = \sum_{i=1}^{n}{\frac{1}{2^n}}$$
+
+(b):
+$$t(x_n) = \{1/2, 1/3, 1/4, 1/5, 1/6, 1/7 ...\}$$
+$$t(y_n) = \{1, 1/2, 1/3, 1/4, 1/5, 1/6 ...\}$$
+$$t(z_n) = \{1/2, 1/4, 1/8, 1/16 ...\}$$
+
+(c): The educated conjecture here is that $\lim_{x \to 1} t(x) = 0$
+
+In order to prove that conjecture author suggests, that we use $\epsilon-\delta$ definition. Let's try
+it;
+
+$$ |t(x)| < \epsilon$$
+
+For all $\epsilon \in \textbf{R} > 0$
+
+Therefore by archimedes property there exists a number $n \in \textbf{N}$ s.t. $\frac{1}{n} < \epsilon$.
+Thus suppose that we have $\delta = 1/n$. Then our proposition is that 
+
+$$\forall b \in (1 - 1/n; 1 + 1/n) \to |t(b)| < \epsilon$$
+
+If $b \notin \textbf{Q} $ then $t(b) = 0$ and therefore $|t(b)| < \epsilon$; therefore we need to prove,
+that any number $b = m_1/n_1 \in (1 - 1/n; 1 + 1/n) \cap \textbf{Q}$ is such, that $|t(b)| = 1/n_1 < 1/n$.
+Also suppose $m_1 = n_1 + k$ (it's worth noting that in this case $k \in \textbf{Z}$); then
+
+$$ 1 - \frac{1}{n} < \frac{m_1}{n_1} < 1 + \frac{1}{n}$$
+$$ 1 - \frac{1}{n} < \frac{n_1 + k}{n_1} < 1 + \frac{1}{n}$$
+$$ 1 - \frac{1}{n} < 1 + \frac{k}{n_1} < 1 + \frac{1}{n}$$
+$$ - \frac{1}{n} <  \frac{k}{n_1} <  \frac{1}{n}$$
+$$ |\frac{k}{n_1}| <  \frac{1}{n}$$
+$$ |k||\frac{1}{n_1}| = |k||t(\frac{1}{n_1})| <  \frac{1}{n}$$
+
+therefore because $k \in \textbf{Z}$
+
+$$ |t(\frac{1}{n_1})| = |\frac{1}{n_1}| <  \frac{1}{n|k|} < \frac{1}{n}$$
+
+thus for each $\epsilon > 0$ we can find a corresponding $\delta > 0$ as desired.
+
+\section*{4.2.5}
+Suppose that $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$
+
+$(ii)$ $\lim_{x \to c}[f(x) + g(x)] = L + M$
+
+$(iii)$ $\lim_{x \to c}[f(x) g(x)] = L M$
+
+(a)\textit{ Supply the details for how Corollary 4.2.4 part (ii) follows from the sequential criterion for functional limits in Theorem 4.2.3 and the Algebraic Limit Theorem for sequences proved in Chapter 2.}
+
+From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
+
+$$(a_n) + (b_n) = a + b$$
+
+We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
+therefore by the algebraic limit theorem
+
+$$f(c_n) + g(c_n) = L + M$$
+
+for any sequence $(c_n) \to c$. Therefore we can state that
+
+$$\lim_{x \to c}(f(x) + g(x)) = L + M $$
+
+as desired
+
+\textit{(b) Now, write another proof of Corollary 4.2.4 part (ii) directly from Definition 4.2.1 without using the sequential criterion in Theorem 4.2.3.}
+
+$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$; therefore for any $\epsilon_1 > 0$ we can find $\delta_1 > 0$ s.t.
+
+$$ |x - c| < \delta_1 \to |f(x) - L| < \epsilon_1 $$
+
+Also for the same $\epsilon_1$ there exist $\delta_2 > 0$ s.t.
+
+$$ |x - c| < \delta_2 \to |g(x) - M| < \epsilon_1 $$
+
+let $\delta_3 = min\{\delta_1, \delta_2\}$; then it is true that 
+
+$$ |x - c| < \delta_3 \to |f(x) - L| < \epsilon_1 $$
+$$ |x - c| < \delta_3 \to |g(x) - M| < \epsilon_1 $$
+
+because $V_{\delta_1} \subseteq V_{\delta_3} $ and $V_{\delta_2} \subseteq V_{\delta_3} $
+
+therefore
+
+$$|f(x) - L| + |g(x) - M| < 2 \epsilon_1$$
+
+Therefore 
+
+$$ |f(x) + g(x) - L -  M| = |f(x) - L + g(x) - M| \leq |f(x) - L| + |g(x) - M| < 2 \epsilon_1 $$
+
+Thus for any $\epsilon > 0$ there exist corresponding $\epsilon_1 = \frac{\epsilon}{2}$ for which there
+exist corresponding $\delta = min\{\delta_1, \delta_2\}$ (where $\delta_1$ is a delta for $f(x)$ and
+$\delta_2$ is a delta for $g(x)$) which satisfies
+
+$$|x - c| < \delta \to |f(x) + g(x) - (L + M)| < \epsilon$$
+
+therefore $\lim_{x \to c}(f(x) + g(x)) = L + M$ as desired.
+
+\textit{(c) Repeat (a) and (b) for Corollary 4.2.4 part (iii).}
+
+(a):
+
+From the algebraic limit theorem we know, that if $(a_n) \to a$ and $(b_n) \to b$ then
+
+$$(a_n) (b_n) = a  b$$
+
+We also know, that for any sequence $(c_n) \to c$ it is true, that $f(c_n) \to L$ and $g(c_n) \to M$;
+therefore by the algebraic limit theorem
+
+$$f(c_n)  g(c_n) = L M$$
+
+for any sequence $(c_n) \to c$. Therefore we can state that
+
+$$\lim_{x \to c}(f(x)g(x)) = L M $$
+
+as desired
+
+(b):
+
+$\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$;
+
+In  order to prove the needed limit let's first use some algebra
+$$ |f(x)g(x) - LM| = $$
+$$ |f(x)g(x) + f(x)M - f(x)M - LM| = $$
+$$|f(x)(g(x) - M) + M(f(x) - L)| \leq
+|f(x)(g(x) - M)| + | M(f(x) - L)| = $$
+$$|f(x)||g(x) - M| + |M||f(x) - L|  $$
+
+our strategy is to show that both elements of the last sum are less or equal to $\epsilon/2$
+
+Let $\epsilon > 0$.
+
+$$ |M||f(x) - L| < \frac{\epsilon}{2}$$
+If $M = 0$ then the abovementioned inequality always holds and we are free to choose any $\delta_1$;
+
+Otherwise tet us pick $\delta_1$ such that inequality
+$$ |f(x) - L| < \frac{\epsilon}{2|M|}$$
+holds.
+
+The next step is a little bit more complicated because we need to work with $f(x)$; let us pick y = 1;
+then because $\lim_{x \to c}f(x) = L$ we know that there exists $\delta_2$ s.t. $|x - c| < \delta_2
+\to |f(x) - L| < 1$. 
+
+Therefore
+
+$$|f(x) - L| < 1$$
+
+Little sidenote: let's prove that 
+$$ |a - b| < c \to |a| < |b| + c  $$
+
+Firstly some preliminary stuff
+$$|a - b| \geq 0 \to c > |a - b| > 0 \to c > 0$$
+
+$$|a - b| < c \to -c < a - b < c$$
+$$b -c < a  < b + c$$
+
+Now let's see all the cases for $a, b \in \textbf{R}$
+
+if $a \geq 0$ and $b \geq 0$ then
+$$a < b + c$$
+$$|a| < |b| + c$$
+
+if $a < 0$ and $b \geq 0$ then
+$$ b + c \geq 0 > a$$
+$$a < b + c$$
+$$|a| < |b| + c$$
+
+if $a \geq 0$ and $b < 0$ then
+$$b -c < a  < b + c$$
+$$-b +c > -a  > -b - c$$
+$$|b| +c > -a  > |b| - c$$
+$$-|b| - c  < a  <  c - |b|$$
+$$|a|  <  c - |b| \leq c + |b|$$
+$$|a|  <  c + |b|$$
+
+if $a < 0$ and $b < 0$ then
+$$b -c < a  < b + c$$
+$$-b + c > -a  > -b - c$$
+$$|b| + c > |a|  > |b| - c$$
+$$|b| + c > |a|$$
+$$|a| < |b| + c$$
+
+Therefore $\forall a,b\in \textbf{R}$
+$$|a - b| < c \to |a| < |b| + c$$
+as desired.
+
+Back to our exercise: 
+
+$$|f(x) - L| < 1$$
+$$|f(x)| < |L| + 1$$
+
+Therefore we can state that upper bound for our $|f(x)|$ with $\epsilon = 1$ is $|L| + 1$
+
+Thus if we pick $\delta_2$ sufficient for
+
+$$|g(x) - M| < \frac{\epsilon}{2(|L| + 1)}$$
+
+therefore if we pick $\delta = min\{\delta_1, \delta_2\}$ then
+
+$$|x - c| < \delta \to $$
+$$|f(x)g(x) - LM| \leq |f(x)||g(x) - M| + |M||f(x) - L| <  \frac{\epsilon}{2} +
+\frac{\epsilon}{2} = \epsilon  $$
+
+therefore $\lim_{x \to c}[f(x) g(x)] = LM$ as desired
+
+\section*{4.2.6}
+\textit{Let $g: A\to \textbf{R}$ and assume that $f$ is bounded function on $A \subseteq \textbf{R}$
+  (i.e. there exists $M > 0$ satisfying $|f(x| \leq M$ for all $x \in A$). Show that
+  if $\lim_{x \to c}g(x) = 0$, then $\lim_{x \to c}g(x)f(x) = 0$ as well.}
+
+Here we can't use an intuitive approach of just using algebraic limit theorem because $f(x)$ may
+not hav limit at $c$.
+Anyways we proceed by $\epsilon-\delta$ approach.
+
+Therefore we need to show that
+$$\exists \delta: |f(x)g(x)| < \epsilon$$
+
+First of all,
+$$ |f(x)g(x)| = |f(x)||g(x)|$$
+
+Then we notice, that because $f(x)$ is bounded
+
+$$\exists M \in \textbf{R} > 0: |f(x)| \leq M$$
+therefore
+$$|f(x)||g(x)| < |M||g(x)| = M|g(x)|$$
+
+therefore if we pick $\delta$ sufficient for $|g(x)| < \frac{\epsilon}{M}$ then it follows that
+
+$$|f(x)g(x)| \leq M|g(x)| < \epsilon$$
+
+therefore
+$$\forall \epsilon \in \textbf{R} \exists \delta : |x - c| < \delta \to |f(x)g(x)| < \epsilon$$
+
+therefore
+
+$$\lim_{x \to c}[f(x)g(x)] = 0$$
+as desired.
+
+\section*{4.2.7}
+\textit{(a) The statement $\lim_{x \to 0}1/x^2 = \infty$ certainly makes intuitive sense. Construct a rigirius definition in the "challenge-response" style of Definition 4.2.1 for a limit statement of the form $\lim_{x \to c}f(x) = \infty$ and use it to prove the previous statement }
+
+\textbf{Definition of limit to infinity}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x\to c} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
+a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows
+that $f(x) > \epsilon$.
+
+Now we need to show that for  $f(x) = 1/x^2$
+$$\lim_{x \to 0}f(x) = \infty$$
+
+First
+$$ f(x) > \epsilon$$
+$$ \frac{1}{x^2} > \epsilon$$
+$$ x^2 < \frac{1}{\epsilon}$$
+$$ x < \sqrt{\frac{1}{\epsilon}}$$
+
+therefore if we pick $\delta = \sqrt{\frac{1}{\epsilon}}$, then it follows that
+$$ f(x) > \epsilon$$
+as desired.
+
+Quick (and insufficient) test in Python seems to corraborate  this statement
+
+\textit{(b) Now construct a definition for the statement $\lim_{x \to \infty} f(x) = L$. Show
+$\lim_{x \to \infty} 1/x = 0$}
+
+\textbf{Definition of infinite limit}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x \to \infty} f(x) = L$ provided that, for all $\epsilon \in \textbf{R} > 0$, there exists
+a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
+that $|f(x) - c | < \epsilon$.
+
+We start as ususal at the $\epsilon$
+$$|f(x) - 0| < \epsilon$$
+$$|1/x| < \epsilon$$
+Given that we can pick any $\delta$ as we want, we can pick it at the very least at $0$ to get rid
+of the absolute value
+$$1/x < \epsilon$$
+$$x > 1/\epsilon$$
+
+therefore $\delta = 1/\epsilon$ then it follows that $$|f(x) - 0| < \epsilon$$ as desired.
+
+\textit{(c) What would a rigorous definition for $\lim_{x \to \infty} f(x) = \infty$ would look like? Give an example of such a limit}
+
+\textbf{Definition of infinite limit to infinity}
+Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that
+$\lim_{x \to \infty} f(x) = \infty$ provided that, for all $\epsilon \in \textbf{R}$, there exists
+a $\delta$ such that whenever $x > \delta$ (and $x \in A$) it follows
+that $f(x) > \epsilon$.
+
+The corresponding example of such a limit  is $f(x) = x$.
+
+\section*{4.2.8}
+\textit{Assume $f(x) \geq g(x)$ for all $x$ in some set $A$ on which $f$ and $g$ are defined. Show that for any limit point $c$ of $A$ we must have }
+$$\lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
+
+I'm gonna do it by using contradiction; suppose that $f(x)$ and $g(x)$ are defined as in the
+exercise, but
+$$\lim_{x \to c} f(x) <  \lim_{x \to c} g(x) $$
+% for some $c \in A$
+
+% then
+% $$\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) < 0 $$
+
+% Let $\lim_{x \to c} f(x) -  \lim_{x \to c} g(x) = M < 0$
+
+% therefore for $\epsilon = 0 - M$ there exist $\delta$ s.t.
+
+% $$|x - c| < \delta \to |f(x) - g(x) + M| < \epsilon = - M$$
+
+% thus 
+
+then it follows that there exist a sequence $(a_n) \to c$ such that $f(a_n) \geq g(a_n)$ for all
+$n \in \textbf{N}$; Therefore $\lim(f(a_n)) \geq \lim(g(a_n))$ and  but it contradicts our
+initial assumption.
+
+\section*{4.2.9 (Squeeze Theorem)} Let $f,g$ and $h$ satisfy $f(x) \geq g(x) \geq h(x)$ for all
+$x$ in some common domain $A$. If $\lim_{x \to c}f(x) = L$ and $\lim_{x \to c}h(x) = L$ at some
+limit point $c$ of  $A$, show $\lim_{x \to c}g(x) = L$ as well
+
+As proven in the previous exercise
+$$\forall x \in A: f(x) > g(x) \to \lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
+
+therefore
+
+$$\lim_{x \to c} f(x) = L \geq \lim_{x \to c} g(x) $$
+and
+$$\lim_{x \to c} g(x) \geq \lim_{x \to c} h(x) = L $$
+Thus 
+$$ L \geq\lim_{x \to c} g(x) \geq L  $$
+therefore
+$$\lim_{x \to c} g(x) = L  $$
+as desired.
+
+\section*{4.3.1}
+\textit{Let $g(x) = \sqrt[3]{x}$.}
+
+\textit{(a) Prove that g is continous at c = 0}
+
+We're gonna use $\epsilon-\delta$ definition. First of all, let's state that $g(0) = 0$. Therefore
+
+$$|f(x) - f(c)| = |\sqrt[3]{x} - 0|  < \epsilon $$
+$$ |\sqrt[3]{x}| < \epsilon $$
+
+Here I would like to proof that $ \forall x \in \textbf{R}: |\sqrt[3]{x}| = \sqrt[3]{|x|}$: 
+if $x \geq 0$ then $|\sqrt[3]{x}| = \sqrt[3]{x}= \sqrt[3]{|x|}$;
+if $x < 0$ then $|\sqrt[3]{x}| = \sqrt[3]{-x}= \sqrt[3]{|x|}$. Therefore 
+$$ |\sqrt[3]{x}| = \sqrt[3]{|x|} =  < \epsilon $$ is justified.
+
+Therefore we can state that 
+$$|x| =  < \epsilon ^ 3$$ 
+Thus if we pick $\delta = \epsilon ^ 3$ then
+$$|x - c| = |x| < \delta \to |f(x) - f(c)| = |\sqrt[3]{x} - 0| = |\sqrt[3]{x}|
+= \sqrt[3]{|x|} < \sqrt[3]{\epsilon^3} =  \epsilon $$
+
+Therefore $g$ is continous at 0
+
+\textit{(b) Prove that $g$ is continous at a point $c \neq 0$. (The identity
+  $a^3 - b^3 = (a - b)(a ^ 2 + ab + b^2)$ will be helpful)}
+
+We're gonna use $\epsilon-\delta$ definition once again.
+$$|f(x) - f(c)| = |\sqrt[3]{x} - \sqrt[3]{c}| < \epsilon$$
+First, let's use a little algebra
+$$|\sqrt[3]{x} - \sqrt[3]{c}| = |\sqrt[3]{x} - \sqrt[3]{c}| * 1 =
+|\sqrt[3]{x} - \sqrt[3]{c}|\frac{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} = \frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)}$$
+
+Let's look now at the sum  $\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} +
+\sqrt[3]{c}^2$: $\sqrt[3]{x} ^ 2 \geq 0 $ because it is a square. For
+$\sqrt[3]{x} + \sqrt[3]{x} ^ 2$ we need to be able to articulate $\delta$ so
+that both $x$ and $c$ are the same sign; if we fo that then it becomes
+nonnegative. $\sqrt[3]{c} ^ 2 \geq 0 $ because it is a square
+
+Therefore if right now we pinky-promise that we will account for unusual delta
+in the future, then we are able to say that 
+$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 \geq 0 $$
+And therefore
+$$\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2 =
+|\sqrt[3]{x} ^ 2 + \sqrt[3]{x}\sqrt[3]{c} + \sqrt[3]{c}^2| $$
+
+Continuing with our initial algebra
+
+$$\frac{|\sqrt[3]{x} - \sqrt[3]{c}|(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2)}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+\frac{|\sqrt[3]{x} - \sqrt[3]{c}||\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c} +
+  \sqrt[3]{c} ^ 2|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+\frac{|x - c|}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} =
+$$
+$$ |x - c|\frac{1}{(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
+  + \sqrt[3]{c} ^ 2)} < \epsilon
+$$
+As we disussed earlier $(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}  +
+\sqrt[3]{c} ^ 2) \geq 0$ and therefore 
+
+$$ |x - c| < \epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
++ \sqrt[3]{c} ^ 2) $$
+
+Thus, if we pick $\delta = min\{\epsilon(\sqrt[3]{x}^2 + \sqrt[3]{x}\sqrt[3]{c}
++ \sqrt[3]{c} ^ 2), |x - 0|\}$ (we need the second value
+because we need the sum to be equal to its absolute value; ) then
+
+$$|x - c| < \delta \to |f(x)  - f(c)| < \epsilon$$
+
+Therefore $f(x) = \sqrt[3]{x}$ is continous on \textbf{R}.
+
+\section*{4.3.2}
+
+\textit{(a) Supply a proof for Theorem 4.3.9 using the $\epsilon-\delta$
+  characterization of continuity.}
+
+First, let's state the theorem
+
+\textbf{Theorem 4.3.9 (Composition of Continuous Functions).} \textit{Given
+  $f: A \to \textbf{R}$ and $g: B \to \textbf{R}$, assume that the range
+  $f(A) =\{f(x): x \in A\}$ is contained in the domain $B$ so that the
+  composition $g \circ f = g(f(x)) $ is well-defined on $A$. }
+
+\textit{If $f$ is continous ac $c \in A$, and if $g$ is continous at
+  $f(c) \in B$, then $g \circ f$ is continous at c.}
+
+Firstly, the fact that both $f$ and $g$ are continous tells that
+
+$$\forall \epsilon_1 \in \textbf{R}: \exists \delta_1:  |x - c| < \delta_1 \to
+|f(x) - f(c)| < \epsilon_1$$
+$$\forall \epsilon_2 \in \textbf{R}: \exists \delta_2: |x - c| < \delta_2 \to
+|g(x) - g (c)| < \epsilon_2$$
+And we need to prove that
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - c| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+
+% Let's pick the $c \in A$. 
+% Firstly, because of all of the continuity and stuff, we are assured, that there
+% exists partucular $M=g(f(c))$. Let's fix $\epsilon$. Therefore if
+% we plug this $\epsilon$ into continuity of $g(x)$, then we'll get $\delta_1$.
+
+The main strategy for this one is to plug some delta into some epsilon (or
+vice versa), and get some use out of it.
+
+Firstly, let's get some things out of the way: let us fix particular $c \in A$
+and $\epsilon \in \textbf{R} > 0$. Then, let's plug this $\epsilon$ at $f(c)$
+into the continuity of $g(x)$ so we can get a $\delta_g > 0$. Therefore
+we will have
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
+\to |g(x) - g(f(c))| < \epsilon $$
+which is kinda close to the thing, that we're trying to prove.
+
+We also know that
+$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
+|f(x) - f(c)| < \epsilon_f$$
+therefore it is true that
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |y - f(c)| < \delta_g
+\to |g(y) - g(f(c))| < \epsilon $$
+$$ \exists \delta_f: |x - c | < \delta_f \to
+|f(x) - f(c)| < \delta_g$$
+
+From this we can state that
+$$ \forall \epsilon \in \textbf{R} > 0: \exists \delta_f: |x - c | < \delta_f \to |f(x) - f(c)| < \delta_g \to
+|g(f(x)) - g(f(c))| < \epsilon $$
+
+This doesn't sound too persuasive for me, so I probably need to explore it a
+little but more.
+
+Suppose that with all the present assumptions, we get the given $\epsilon$.
+If we plug it into definition of continuity for  $g(x)$ at $g(f(c))$, then
+we'll get the neccesary $\delta_g$. If we plug $\delta_g$ as an $\epsilon$
+for the definition of continuity of $f(x)$, then we'll get $\delta_f$.
+
+We can probably prove it with a little bit more clarity. We need to prove that
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+
+Firstly, definition of contonuity of $g(x)$ gives us the fact, that 
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |x - f(c)| < \delta_g
+\to |g(x) - g(f(c))| < \epsilon $$
+
+then if $x \in f(A)$ then $\exists y \in A $ s.t. $f(y) = x$ therefore
+$$ \forall \epsilon \in \textbf{R}: \exists \delta_g: |f(y) - f(c)| < \delta_g
+\to |g(f(y)) - g(f(c))| < \epsilon $$
+
+From the definition of continuity of $f$ we know that 
+
+$$ \forall \epsilon_f \in \textbf{R}: \exists \delta_f: |x - c | < \delta_f:
+|f(x) - f(c)| < \epsilon_f$$
+
+Therefore 
+$$\forall \epsilon \in \textbf{R}: \exists \delta: |x - f(c)| < \delta \to
+|g(f(x)) - g (f(c))| < \epsilon$$
+as desired.
+
+\textit{(b) Give another proof of this theorem using the sequantial
+  characterization of continuity (from Theorem 4.3.2 (iv)) }
+
+Theorem 4.3.2 (iv) states that if $(x_n) \to c$ (with $x_n \in A$), then
+$f(x_n) \to f(c)$.
+
+Because $f(x)$ is continous we can state that for every sequence $(x_n) \to c$
+it is true that $f(x_n) \to f(c)$. Therefore because $f(x_n)$ is a sequence
+itself, we can state that $g(f(x_n)) \to g(f(c))$. Therefore it is true, that
+for every sequence $(x_n) \to c$ it follows, that $g(f(x_n)) \to g(f(c))$.
+Therefore $g(f(x))$ is continous, as desired.
+
+\section*{4.3.3}
+\textit{Using the $\epsilon-\delta$ characteriation of continuity (and tus using no previous results anbout the sequences), show that the linear function $f(x) = ax + b$ is continous at every poinnt of \textbf{R}.}
+
+Let's start with our usual stuff
+
+$$ |f(x) - f(c)| < \epsilon $$
+$$ |ax + b - (ac + b)| = |ax + b - ac - b| = |a||x - c| < \epsilon $$
+$$|x - c| < \epsilon / a $$
+
+Therefore if we pick $\delta = \epsilon / a$ then it follows that $|f(x) - f(c)| < \epsilon$, as desired.
+
+\section*{4.3.4}
+\textit{(a) Show using Definition 4.3.1 that any function $f$ with domain
+  \textbf{Z} with necessarily be continous at every point in its domain.}
+
+Suppose that $f: Z \to R$. We need to prove that 
+
+$$\forall \epsilon: \exists \delta: |x - c| < \delta \to |f(x) - f(c)| < \epsilon $$
+
+Suppose that we pick $\delta = 0.1$ (or any other value, such that the only one
+of the domain values will be in the needed neighborhood). Then there will be
+only one number in the domain neighhborhood, and because of that we can state
+that
+$$|f(x) - f(c)| = |f(c) - f(c)|  = 0 < \epsilon$$
+
+Therefore the fucntion is continous, as desired.
+
+\textit{(b) Show in general that if $c$ is an isolated point of $A \subseteq \textbf{R}$, then $f: A \to \textbf{R}$ is continous at c.}
+
+In this particular case we can't just set $\delta$ at some number, so we gotta
+be a little more creative. To be distract myself from getting any unproductive
+ideas, I should state here that $\textbf{Q}$ is a set of isolated points.
+
+To be continued
+
+\section*{3.2.1}
+\textit{(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption
+  that the collection of open sets be finite get used}
+
+Theorem 3.2.3 states that
+
+(ii) The intersection of a finite collection of open sets is open.
+
+The assumption of the finality of the set is used in the fact, that we need
+the minimum of the epsilons.
+
+\textit{(b) Give an example of an infinite collection of nested open sets}
+$$ O_1 \supseteq O_2 \supseteq O_3 \supseteq O_4 \supseteq ... $$
+\textit{whose intersection $\cap_{n = 1}^{\infty} O_n$ is closed and nonempty.}
+
+First of all, we should state that open is not an opposite of closed in this
+context. We can get $O_n = (-\infty; \infty)$. Then this definition
+(technically) fits into the requrement of qs
+
+Let $O_n = (1 - 1/n, 2 + 1/n)$. Let us also define 
+$$A = \cap_{n = 1}^{\infty} O_n$$
+
+Suppose that $x \in A$. To be continued...
+
+\section*{2.2.1}
+\textit{Verify, using the definition of convergence of a sequence, that the following
+  sequenceces converge to the proposed limit.}
+
+\textit{(a) $\lim\frac{1}{(6 n ^ 2 + 1} = 0$}
+
+Let $\epsilon$ be arbitrary. Choose
+$N \in \textbf{N}: N > \sqrt{\frac{1}{6 \epsilon} - \frac(1)(6)}$. Let $n \in N \geq N$. Then
+
+$$n > \sqrt{\frac{1}{6 \epsilon} - \frac{1}{6}}$$
+$$n ^ 2  > \frac{1}{6 \epsilon} - \frac{1}{6}$$
+$$6 n ^ 2  > 1/\epsilon - 1$$
+$$6 n ^ 2 + 1 > 1/\epsilon$$
+$$\frac{1}{(6 n ^ 2 + 1)} < \epsilon$$
+$$|\frac{1}{(6 n ^ 2 + 1)}| < \epsilon$$
+
+as desired.
+
+\textit{(b) $\lim\frac{3n + 1}{2n + 5} = \frac{3}{2}$}
+
+Let $\epsilon$ be arbitrary. Choose
+$N \in \textbf{N}: N > \frac{13}{4 \epsilon} - 10/4$. Let $n \in N \geq N$. Then
+
+$$ n > \frac{13}{4 \epsilon} - 10/4$$
+$$ 4n > \frac{13}{\epsilon} - 10$$
+$$ 4n + 10 > \frac{13}{\epsilon} $$
+$$ \frac{13}{4n + 10} < \epsilon $$
+$$ |\frac{13}{4n + 10}| < \epsilon $$
+$$ |\frac{-13}{4n + 10}| < \epsilon $$
+$$ |\frac{6n + 2 - 6n - 15}{4n + 10}| < \epsilon $$
+$$ |\frac{2(3n + 1) - 3(2n + 5)}{2(2n + 5)}| < \epsilon $$
+$$ |\frac{3n + 1}{2n + 5} - \frac{3}{2}| < \epsilon $$
+
+as desired.
+
+\textit{(c) $\lim\frac{2}{\sqrt{n + 3}} = 0$}
+
+Let $\epsilon$ be arbitrary. Choose
+$N \in \textbf{N}: N > {\frac{2}{\epsilon}}^2 - 3$. Let $n \in N \geq N$. Then
+
+$$n> {\frac{2}{\epsilon}}^2 - 3$$
+$$n + 3 > {\frac{2}{\epsilon}}^2$$
+$$\sqrt{n + 3} > \frac{2}{\epsilon}$$
+$$\frac{2}{\sqrt{n + 3}} < \epsilon$$
+$$|\frac{2}{\sqrt{n + 3}}| < \epsilon$$
+
+as desired.
+
+\section*{2.2.2}
+\textit{What happens if we reverse the order of the quantifiers on Definition 2.2.3?}
+
+\textit{Definition: A sequence $(x_n)$ verconges to $x$ if there exists an $\epsilon > 0$
+  such that for all $N \in \textbf{N}$ it is true that $n \geq N$ implies $|x_n - x| <
+  \epsilon$.}
+
+\textit{Give an example of a vercongent sequence. Can you give an example of a vercongent
+  sequence, that is divirgent? What exactly is being described in this strange definition?}
+
+An example of a vercongent sequence:
+$$(x_n) = 5$$.
+
+An example of a vercongent sequence, that is divergent:
+$$(x_n) = (-1)^n$$.
+
+Here described a bounded sequence (i.e. $|(x_n)| < M$  for some $M > 0\in R$
+
+\section*{2.2.3}
+\textit{Describe what we would have to demonstrate in order to disprove each
+  of the following statements.}
+
+\textit{(a) At every college in the United States, there is a student who is at least
+  seven feet tall}
+
+There exist a college, where every student is shorter than 7 feet.
+
+\textit{(b) For all colleges in the United States, there exists a professor who
+  gives every student a grade of either A or B}
+
+There exist a college, where every professor gives C or less every time.
+
+\textit{(c) There exist a college in the United States where every student is at least
+  six feet tall}
+
+In all colleges across US there exists a student, who is shorter than 6 feet.
+
+\section*{2.2.4}
+\textit{Argue that the sequence }
+$$1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, (\text{5 zeroes}), 1...$$
+\textit{
+  does not converge to zero. For what values of $\epsilon > 0$ does there exist a response
+  N? For which values of $\epsilon > 0$ is there no suitable response?}
+
+If we set $\epsilon = 0.5$, then from time to time elements will get out of
+the desired range.
+
+For values $\epsilon > 1$ there always exist a suitable N.
+
+For values $ 0 < \epsilon \leq 0$ there exists no responce.
+
+\section*{2.2.5}
+\textit{Let $[[x]]$ be the greatest integer less than of equal to $x$. For example,
+  $[[\pi]] = 3$ and $[[3]] = 3$. Find $\lim a_n$ and supply proofs for each conclusion
+  if}
+
+\textit{(a) $a_n = [[1/n]]$}
+$$\forall n \in N \to 0  < 1/n \leq 1$$
+$$n \in N \geq 2 \to  0  < 1/n < 1$$
+Therefore for $n > 2$
+$$\forall \epsilon > 0 \in R: |[[1/n]]| = [[1/n]] = 0 < \epsilon$$
+as desired.
+
+\textit{(b) $a_n = [[(10 + n)/2n]]$}
+
+Let n > 10. Then
+
+$$n > 10$$
+$$2n > 20$$
+$$\frac{10}{2n} < \frac{1}{2}$$
+$$0 < \frac{10}{2n} + \frac{1}{2} < 1$$
+$$[[\frac{10}{2n} + \frac{1}{2} ]] = 0$$
+
+Thus for every $\epsilon > 0$ we can pick $N = 10$ and it follows that 
+$$|[[(10 + n)/2n]]| < 0$$
+
+Therefore $(a_n) \to 0$, as desired.
+
+\textit{Reflecting on these examples, comment on the statement following Definition
+  2.2.3 that "the smaller the $\epsilon$-neighborhood, the larger $N$ may
+  need to be".}
+
+The key word here is "may". It may have to be larger, it may not. In some cases one
+value works for all of the $\epsilon$'s. I bet my money on the fact, that it  can be rigorously proven, that this is the case only for the sequences, that are constant after
+some term, but I'll skip that
+
+\section*{2.2.6}
+\textit{Suppose that for a particular $\epsilon > 0$ we have found a suitable
+  value of $N$ that "works" for a given sequence in the sence of Definition 2.2.3.}
+
+\textit{(a) Then, any larger/smaller (pick one) N will also work for the same $\epsilon > 0$.}
+
+Larger. This fact follows from definition.
+
+\textit{(b) Then, this same N will also work for any larger/smaller value of $\epsilon$.}
+
+Larger. $x \in V_\epsilon \to x \in V_{\epsilon + s}$
+
+\section*{2.2.7}
+\textit{Informally speaking, the sequence $\sqrt{n}$ "converges to infinity".}
+
+\textit{(a) Imitate the logical structure of Definition 2.2.3 to create a rigorous definition
+  for the mathematical statement $\lim x_n = \infty$. Use this definition to prove
+  $\lim \sqrt{n} = \infty$.}
+
+\textbf{Definition of convergence to infinity}
+A sequence $(a_n)$ converges for infinity if, for every $\epsilon \in R$, there exists an
+$N \in \textbf{N}$ such that whenever $n \geq N$ it follows that $a_n > \epsilon$.
+
+I relaxed a bit statement about the $\epsilon$, namely substituted $\epsilon > 0$ to
+$\epsilon \in R$. In case you are wondering, Both cases are the equivalent.
+
+Let $\epsilon \in R$ be arbitrary. Then we can pick $N \in \textbf{N}: N > \epsilon ^ 2$.
+Then for $n \in \textbf{N} > N$:
+$$n > \epsilon ^ 2$$
+$$\sqrt{n} > \epsilon$$
+
+Therefore the sequence converges to infinity
+
+\textit{(b) What does your definition in (a) say about the particular sequence
+  $(1, 0, 2, 0, 3, 0, 4, 0, 5, 0, ...)$}
+
+It says, that it doesn't converge to infinity (specifically for the case $\epsilon > 0$)
+
+\section*{2.2.8}
+\textit{Here are two useful definitions:}
+
+\textit{(i) A sequence $(a_n)$ is eventually in a set $A \subseteq R$ if there exists
+  $N \in \textbf{N}$ such that $a_n \in A$ for all $n \geq N$.}
+
+\textit{(ii) A sequence $(a_n)$ is frequently in a set $A \subseteq R$ if for every
+  $N \in \textbf{N}$ there exists $n \geq N$ such that $a_n \in A$.
+}
+
+\textit{(a) Is the sequence $(-1)^n$ eventually or frequently in the set $\{1\}$?}
+
+Frequently
+
+\textit{(b) Which definition is stronger? Does frequently imply eventually or does
+  eventually imply frequently?}
+
+Eventually is stronger. Eventually implies frequently.
+
+\textit{(c) Give an alternative rephrasing of Definition 2.2.3B using either frequently
+  or eventually. Which is the term we want?}
+
+We want to use eventually
+
+A sequence $(a_n)$ converges to $a$ if, given any $\epsilon$-neighborhood $V_\epsilon(a)$ of
+$a$, sequence is eventually in $V_\epsilon(a)$.
+
+\textit{(d) Suppose an infinite number of terms of a sequence $(x_n)$ are equal to 2.
+  Is $(x_n)$ necessarily eventually in the interval $(1.9, 2.1)$? Is it frequently in
+  $(1.9, 2.1)$?}
+
+It is not necessarily eventually  in $(1.9, 2.1)$. Example:
+$$(1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, ....)$$
+
+It is indeed frequently in $(1.9, 2.1)$. This stems from the fact, that before $a_n$,
+there exist only a finite number of elements before it. Therefore 2 is bound to
+be met again at some time.
 
 \end{document}
