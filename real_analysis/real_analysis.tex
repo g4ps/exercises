@@ -185,7 +185,7 @@ $$a + b \leq a + (-b)$$
 $$|a + b| \leq |a| + |b|$$
 
 \section*{1.2.5}
-\textit{Use the triangle inequality ti establish the inequalities}
+\textit{Use the triangle inequality to establish the inequalities}
 
 \textit{(a) $|a - b| \leq |a| + |b|;$}
 $$|a - b| = |a + (-b)| \leq |a| + |-b| = |a| + |b|$$
@@ -2867,5 +2867,341 @@ $$(1, 2, 2, 2, 3, 2, 4, 2, 5, 2, 6, 2, ....)$$
 It is indeed frequently in $(1.9, 2.1)$. This stems from the fact, that before $a_n$,
 there exist only a finite number of elements before it. Therefore 2 is bound to
 be met again at some time.
+
+\section*{2.3.1}
+\textit{Show that the constant sequence $(a, a, a, ...)$ converges to $a$.}
+
+$$|a_n - a| = |a - a| = 0$$
+therefore for every $n \in N$ it is true, that $|a_n - a| < \epsilon$.
+Therefore $(a_n) \to a$, as desired.
+
+\section*{2.3.2}
+\textit{Let $x_n >\geq 0$ for all $n \in N$.}
+
+\textit{(a) If $(x_n) \to 0$, show that $(\sqrt{x_n}) \to 0$}
+
+Suppose that $(x_n) \to 0$. Then
+
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \in  > N:
+|x_n - 0| < \epsilon$$.
+
+$$|x_n - 0| < \epsilon$$
+$$|x_n| < \epsilon$$
+$$x_n < \epsilon$$
+$$\sqrt{x_n} < \sqrt{\epsilon}$$
+therefore
+$$\forall \epsilon \in R > 0: \exists \epsilon = \sqrt{\epsilon} > 0:
+\exists N \in \textbf{N}: \forall n \in  > N: |\sqrt{x_n} - 0| < \epsilon$$.
+therefore
+$$\forall \epsilon \in R > 0: 
+\exists N \in \textbf{N}: \forall n \in  > N: |\sqrt{x_n} - 0| < \epsilon$$.
+From which it follows that $(\sqrt{x_n}) \to 0$ by definition of a limit.
+
+\textit{(b) If $(x_n) \to x$, show that $(\sqrt{x_n}) \to \sqrt{x}$}
+
+Suppose that $(x_n) \to x$. Then
+
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \in  > N:
+|x_n - x| < \epsilon$$.
+$$|x_n - x|  < \epsilon$$
+$$|(\sqrt{x_n} + \sqrt{x})(\sqrt{x_n} - \sqrt{x})|  < \epsilon$$
+$$|\sqrt{x_n} - \sqrt{x}|  < \frac{\epsilon}{|\sqrt{x_n} + \sqrt{x}|}$$
+$$ |\sqrt{x_n} + \sqrt{x}| \leq |\sqrt{x_n}| + |\sqrt{x}| = \sqrt{x_n} +
+\sqrt{x} \to \frac{\epsilon}{|\sqrt{x_n} + \sqrt{x}|} <
+\frac{\epsilon}{\sqrt{x_n} + \sqrt{x}}$$
+$$|\sqrt{x_n} - \sqrt{x}|  < \frac{\epsilon}{\sqrt{x_n} + \sqrt{x}}$$
+$(x_n)$ is convergent and therefore bounded. Therefore there exists
+$M \in R > 0: x_n < M$. Therefore $\sqrt{x_n} < \sqrt{M}$. Thus
+$\sqrt{x_n} + \sqrt{x} < \sqrt{M} + \sqrt{x}$. Therefore
+$$|\sqrt{x_n} - \sqrt{x}|  < \frac{\epsilon}{\sqrt{M} + \sqrt{x}}$$
+
+
+therefore
+$$\forall \epsilon \in R > 0: \exists \epsilon_1 = \frac{\epsilon}{\sqrt{M}
+  + \sqrt{x}} > 0:
+\exists N \in \textbf{N}: \forall n \in  > N: |\sqrt{x_n} - \sqrt{x}|
+< \epsilon$$.
+therefore
+$$\forall \epsilon \in R > 0: 
+\exists N \in \textbf{N}: \forall n \in  > N: |\sqrt{x_n} - \sqrt{x}|
+< \epsilon$$.
+From which it follows that $(\sqrt{x_n}) \to x$ by definition of a limit.
+
+\section*{2.3.3 (Squeezze Theorem).}
+\textit{Show that if $x_n \leq y_n \leq z_n$ for all $n \in N$, and if
+  $\lim x_n = \lim z_n = l$, then $\lim y_n = l$ as well.}
+
+$$\forall n \in N: x_n \leq y_n \to \lim x_n \leq \lim y_n$$
+$$\forall n \in N: y_n \leq z_n \to \lim y_n \leq \lim z_n$$
+therefore
+$$\forall n \in N: x_n \leq y_n \leq z_n \to  \lim x_n \leq \lim y_n \leq \lim z_n$$
+
+Therefore
+$$\lim x_n = \lim z_n = l \to \lim y_n = l$$
+as desired.
+
+\section*{2.3.4}
+\textit{Show that limits, if they exist, must be unique. In other words,
+  assume $\lim a_n = l_1$ and $\lim a_n = l_2$, and prove that $l_1 = l_2$.}
+
+We will procede with a proof by contradiction.
+
+Suppose $l_1 \neq l_2$. Then
+
+$$\forall \epsilon > 0: \exists N \in N: n \geq N \to |a_n - l_1| \leq \epsilon$$
+$$\forall \epsilon > 0: \exists N \in N: n \geq N \to |a_n - l_2| \leq \epsilon$$
+
+Let $\epsilon = |l_1 - l_2|/2$. Then $\exists N_1 \in N$ such that $n_1 \geq N$
+implies that 
+$$|a_{n_1} - l_1| < |l_1 - l_2|/2$$
+also there exists $N_2 \in N$ such that  $n_2 \geq N_2$ implies that 
+$$|a_{n_2} - l_2| < |l_1 - l_2|$$
+Let $n = max\{n_1, n_2\}$. Then
+$$|a_n - l_1| < |l_1 - l_2|/2$$
+$$|a_n - l_2| < |l_1 - l_2|/2$$
+$$|a_n - l_1| + |a_n - l_2| < |l_1 - l_2|$$
+$$|a_n - l_1| + |l_2 - a_n| < |l_1 - l_2|$$
+then by triangular inequality
+$$|a_n - l_1 + l_2 - a_n| \leq |a_n - l_1| + |l_2 - a_n| < |l_1 - l_2| $$
+$$|a_n - l_1 + l_2 - a_n| < |l_1 - l_2| $$
+$$| - l_1 + l_2| < |l_1 - l_2| $$
+$$| l_1 - l_2| < |l_1 - l_2| $$
+which is a contradiction. Therefore
+$$\lim a_n = l_1 \text{ and } \lim a_n \to l_2 \to l_1 = l_2$$
+as desired.
+
+\section*{2.3.5}
+\textit{Let $(x_n)$ and $(y_n)$ be given, and deefine $(z_n)$ to be the
+  "shuffled" sequence $(x_1, y_1, x_2, y_2, x_3, y_3, ...)$. Prove that
+  $(z_n)$ is convergent it and only if $(x_n)$ and $(y_n)$ are both
+  convergent with $\lim x_n = \lim y_n $.}
+
+\textbf{In the forward direction:}
+
+Suppose that $(z_n)$ is convergent to some $l \in R$. Then 
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: n \geq N \to |z_n - l| < \epsilon$$
+Because $(z_n)$ is "shuffled" we can follow that 
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: (n + 1) / 2 \geq N \to
+|x_{(n + 1) / 2} - l| < \epsilon$$
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: n  / 2 \geq N \to |y_{n/2} - l| < \epsilon$$
+Therefore if we let $m_1 = (n + 1) / 2$ and $m_2 = n/2$
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: m_1 \geq N \to |x_{m_1} - l| < \epsilon$$
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: m_2 \geq N \to |y_{m_2} - l| < \epsilon$$
+Therefore $\lim x_n = \lim y_n = l$, as desired.
+
+\textbf{In the backward direction:}
+
+Suppose that both $(x_n)$ and $(y_n)$ are convergent to some $l$. Then
+
+$$\forall \epsilon > 0: \exists N_1 \in \textbf{N}: m_1 \geq N_1 \to |x_{m_1} - l| < \epsilon$$
+$$\forall \epsilon > 0: \exists N_2 \in \textbf{N}: m_2 \geq N_2 \to |y_{m_2} - l| < \epsilon$$
+
+If we pick $N = (max\{N_1, N_2\} + 1) * 2$, then
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: n \geq N \to |x_{(n - 1) / 2 } - l| < \epsilon$$
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: m_2 \geq N \to |y_{n/2} - l| < \epsilon$$
+
+If $n$ is odd then  $z_n = x_{(n - 1) / 2}$, and if $n$ is even
+then $z_n = y_{n/2}$. Therefore 
+
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: n \geq N \to |z_n - l| < \epsilon$$
+
+Thus $(z_n) \to l$ as well, as desired.
+
+\section*{2.3.6}
+\textit{Show that if $(b_n) \to b$, then the sequence of absolute values
+  $|b_n|$ converges to $|b|$.}
+
+As proven in 1.2.5
+$$||a| - |b|| \leq |a - b|$$
+Therefore  $ ||b_n| - |b|| \leq |b_n - b| $
+Thus
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: n \geq N \to ||b_n| - |b|| < \epsilon$$
+Thus $(|b_n|) \to |b|$, as desired.
+
+\textit{(b) Is the converse of part (a) true? If we know that $|b_n| \to |b|$,
+  can we deduce that $(b_n) \to b$?}
+
+No. Glaring example is
+$$a_n = (-1)^n$$
+
+\section*{2.3.7}
+\textit{(a) Let $(a_n)$ be a boundeed (non necessarily convergent) sequence,
+  and assume $\lim b_n = 0$. Show that $\lim (a_n b_n) = 0$. Why are not
+  allowed to use Algebraic Limit Theorem to prove that?}
+
+Let $M > |a_n|$ for all $n \in N$ (it exists because of the boundness of $a_n$).
+Then
+$$ |a_n b_n| = |a_n||b_n| \leq M |b_n|$$
+$$ |a_n b_n| \leq  M |b_n|$$
+$$ -M|b_n| \leq a_n b_n \leq  M |b_n|$$
+
+Both $(M|b_n|)$ and $(-M|b_n|)$ converge to 0. Therefore $(a_n b_n)$ converges
+to 0 as well by Squeeze theorem.
+
+A little sidenote: this statement can be proven with the standart definition
+of limit as well, but that proof is longer and I wanted to use brand-new,
+self-proven theorem on this one.
+
+We can't use Algebraic Limit Theorem on that one beacause it prerequsites
+that both sequences are convergent, and here it is not the case.
+
+\textit{(b) Can we conclude anything about the convergence of $(a_n b_n)$
+  if we assume that $(b_n)$ converges to some nonzero limit $b$?}
+
+We can probably conclude that if $(a_n)$ is divergent, then $(a_n b_n)$ is
+divergent as well, but we can't conclude nothing definitive about
+just a bounded sequence.
+
+\textit{(c) Use (a) for prove Theoremt 2.3.3, part (iii), for the case when
+  $a = 0$.}
+
+If $(b_n)$ is convergent (possibly to zero), then it is bounded.
+Therefore, by (a), we can state that
+$$(a_n b_n) \to a b = 0$$
+
+But wait a second, we used something from the algebraic property in part (a)!
+Doesn't in mean, that we proved a theorem by assuming, that it is true? No.
+In part (a) we concluded, that $M|b_n|$ is convergent to 0 by using
+part (i) of algebraic limit theorem. We didn't even use the case when
+$M = 0$, and therefore we can sleep well.
+
+\section*{2.3.8}
+\textit{Give an example of each of the following, or state that such a
+  request is impossible by referencing the proper theorem(s):}
+
+\textit{(a) sequences $(x_n)$ and $(y_n)$, which both diverge, but
+  whose sum $(x_n + y_n)$ converges}
+$$(x_n) = n$$
+$$(y_n) = -n$$
+
+\textit{(b) sequences $(x_n)$ and $(y_n)$, where $(x_n)$ converges, $(y_n)$
+  diverges, and $(x_n + y_n)$ converges}
+
+Impossible.
+
+I want to say, that the algebraic limit theorem prevents 
+this statement to be true, but I don't know if we can apply it here.
+
+Suppose that $(x_n + y_n)$ converges to $l$. Let $(ln) = l$ be a constant
+sequence. Then
+
+$$(x_n + y_n - l) \to 0$$
+Also, because both $(x_n)$ and $(l)$ converge, $(l - x_n)$ converges as well.
+therefore
+$$(x_n + y_n - l+ l - x_n)$$ converges as well. Therefore $(y)$ converges,
+which is a contradiction.
+
+Turns out that yeah, it applies.
+
+\textit{(c) a convergent sequence $(b_n)$ with $b_n \neq 0$ for all $n$ such
+  that $(1/b_n)$ diverges}
+
+$$(b_n) = 1/n$$.
+
+\textit{(d) an unbounded sequence $(a_n)$ and a convergent sequence $(b_n)$
+  with $(a_n - b_n)$ bounded;}
+
+Impossible.
+
+Same algebraic limit theorem with a bit of convergence to infinity
+
+\textit{(e) Two sequences $(a_n)$ and $(b_n)$, where $(a_n b_n)$ and
+  $(a_n)$ converge, but $(b_n)$ diverge.}
+
+$$(a_n) = 1/n$$
+$$(b_n) = (-1)^n$$
+
+\section*{2.3.9}
+\textit{Does Theorem 2.3.4 remain true, if all of the inequalities are
+  assumed to be strict? If we assume, for instance, that a convergent
+  sequence $(x_n)$ satisfies $x_n > 0$ for all $n \in N$, what we may conclude
+  about the limit?}
+
+If we swap all inequalities to strict ineqaulities, then the theorem is false.
+Example: $(b_n) = 1/n \to 0$, but $b_n > 0$ for all n's.
+
+\section*{2.3.10}
+\textit{If $(a_n) \to 0$ and $|b_n - b| \leq a_n$, then show that $(b_n) \to b$.}
+
+$(a_n) \to 0$ implies, that for every $\epsilon \in R > 0$ we can get
+$|a_n| < \epsilon$. Therefore
+
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|b_n - b| < a_n \leq |a_n| < \epsilon$$
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|b_n - b|  < \epsilon$$
+Therefore $(b_n) \to b$, as desired.
+
+\section*{2.3.11 (Cesaro Means).}
+\textit{Show that if $(x_n)$ is a convergent sequence, then the sequence given by
+  the averages }
+$$y_n = \frac{x_1 + x_2 + ... + x_n}{n}$$
+\textit{also converges to the same limit.}
+
+Let $(x_n) \to l$. Then we need to show that 
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|\frac{x_1 + x_2 + ... + x_n}{n} - l| < \epsilon$$
+
+$$|x_n - l| < \epsilon$$
+$$ \frac{x_1 + x_2}{2} = \frac{x_1}{2} + \frac{x_2}{2} < x_2$$
+$$\frac{x_1}{2} < x_2 - \frac{x_2}{2}$$
+$$\frac{x_1}{2} < x_2$$
+$$ \frac{x_1 + x_2 + x_3}{3} = \frac{x_1}{3} + \frac{x_2}{3} + \frac{x_3}{3}  < x_3$$
+$$ \frac{x_1 + x_2 + x_3}{3} = x_1 + x_2 + x_3  < 3x_3$$
+$$ \frac{x_1 + x_2 + x_3}{3} = x_1 + x_2 + x_3  < 3x_n$$
+
+$$y_n = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{x_n + a_1 + x_n + a_2 + ... + x_n}{n} =
+\frac{n x_n + a_1 + a_2 + ...}{n} = $$
+$$\frac{n x_n}{n} + \frac{ a_1 + a_2 + ...}{n} = x_n + \frac{ a_1 + a_2 + ...}{n} $$
+
+$$y_n = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{l + a_1 + l + a_2 + ... + l + a_n}{n} =
+\frac{n l + a_1 + a_2 + ...}{n} = $$
+$$\frac{n l}{n} + \frac{ a_1 + a_2 + ...}{n} = l + \frac{ a_1 + a_2 + ...}{n} $$
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|x - l| < \epsilon$$
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|l + a_n - l| < \epsilon$$
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|a_n| < \epsilon$$
+$$(a_n) \to 0$$
+$$a_1 \leq a_1/1$$
+$$a_2 \leq a_2/2$$
+$$a_3 \leq a_3/3$$
+$$a_n \leq a_n/n$$
+
+$$\frac{ a_1 + a_2 + ...}{n} \leq \frac{ M + M  + ...}{n} = Mn / n = M$$
+$$\frac{ a_1 + a_2 + ...}{n} \leq  M$$
+$$n \geq  \frac{a_1 + a_2 + ...}{M}$$
+
+$$|\frac{ a_1 + a_2 + ...}{n}| < \epsilon$$
+$$|\frac{ a_1 + a_2 + ... + a_n}{n}| < \epsilon$$
+$$|a_1 + a_2 + ... + a_n| < n \epsilon$$
+$$|M - b_1 + M - b_2 + ... + M - b_n| < n \epsilon$$
+$$nM| - b_1 - b_2 -  ... - b_n| < n \epsilon$$
+$$M| - b_1 - b_2 -  ... - b_n| < \epsilon$$
+$$| - b_1 - b_2 -  ... - b_n| < \epsilon / M$$
+$$| b_1 + b_2 +    ...  + b_n| < \epsilon / M$$
+
+Firstly, let us prove that if $(a_n)$ to 0, then
+$$(\frac{a_1 + a_2 + ... + a_n}{n}) \to 0$$ as well.
+
+$$\frac{a_1 + a_2 + ... + a_n}{n} \leq M$$
+$$\frac{M + b_1 + M + b_2 + ... + M + b_n}{n} \leq M$$
+$$\frac{Mn + b_1 + b_2 + ... + b_n}{n} \leq M$$
+$$Mn + b_1 + b_2 + ... + b_n \leq Mn$$
+$$ b_1 + b_2 + ... + b_n \leq 0$$
+
+Let $\epsilon \in R > 0$. Then we want
+
+
+$$|\frac{a_1 + a_2 + ... + a_n}{n}| =$$
+$$\frac{1}{n}|a_1 + a_2 + ... + a_n|= $$
+$$\frac{1}{n}|a_1 + a_2 + ... + a_n| \leq \frac{1}{n}(|a_1| + |a_2| + ... + |a_n|)=
+\frac{|a_1| + |a_2| + ... + |a_n|}{n}$$
+
+Let $\epsilon \in R > 0$. Then, by convergence of $(a_n) \to 0$, there exist $N_1$ such
+that whenever $n > N$ it follows that $|a_n| \leq \epsilon$.
+
+Therefore let us 
 
 \end{document}
