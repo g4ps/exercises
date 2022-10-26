@@ -3138,70 +3138,119 @@ Therefore $(b_n) \to b$, as desired.
 $$y_n = \frac{x_1 + x_2 + ... + x_n}{n}$$
 \textit{also converges to the same limit.}
 
-Let $(x_n) \to l$. Then we need to show that 
-$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
-|\frac{x_1 + x_2 + ... + x_n}{n} - l| < \epsilon$$
+The strategy for the proof for this theorem  is to firtsly show, that this
+statement is true for all of the sequences, that converge to
+0. Then we'll show that this case is equivalent to the theorem in general.
 
-$$|x_n - l| < \epsilon$$
-$$ \frac{x_1 + x_2}{2} = \frac{x_1}{2} + \frac{x_2}{2} < x_2$$
-$$\frac{x_1}{2} < x_2 - \frac{x_2}{2}$$
-$$\frac{x_1}{2} < x_2$$
-$$ \frac{x_1 + x_2 + x_3}{3} = \frac{x_1}{3} + \frac{x_2}{3} + \frac{x_3}{3}  < x_3$$
-$$ \frac{x_1 + x_2 + x_3}{3} = x_1 + x_2 + x_3  < 3x_3$$
-$$ \frac{x_1 + x_2 + x_3}{3} = x_1 + x_2 + x_3  < 3x_n$$
+First, let's prove that this is true for the case when  $(a_n) \to 0$
 
-$$y_n = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{x_n + a_1 + x_n + a_2 + ... + x_n}{n} =
-\frac{n x_n + a_1 + a_2 + ...}{n} = $$
-$$\frac{n x_n}{n} + \frac{ a_1 + a_2 + ...}{n} = x_n + \frac{ a_1 + a_2 + ...}{n} $$
+Strategy here is to show, that 
 
-$$y_n = \frac{x_1 + x_2 + ... + x_n}{n} = \frac{l + a_1 + l + a_2 + ... + l + a_n}{n} =
-\frac{n l + a_1 + a_2 + ...}{n} = $$
-$$\frac{n l}{n} + \frac{ a_1 + a_2 + ...}{n} = l + \frac{ a_1 + a_2 + ...}{n} $$
-$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
-|x - l| < \epsilon$$
-$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
-|l + a_n - l| < \epsilon$$
-$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
-|a_n| < \epsilon$$
-$$(a_n) \to 0$$
-$$a_1 \leq a_1/1$$
-$$a_2 \leq a_2/2$$
-$$a_3 \leq a_3/3$$
-$$a_n \leq a_n/n$$
+Suppose that we have a given $\epsilon \in R > 0$. Then there exists
+$q \in N$ such that  $|a_q| < \epsilon$. Also, because of the fact,
+that $(a_n) \to 0$ there exist  $ k \in N \geq q$
+such that $|a_k| \geq |a_{q_1}|$ (i.e. maximum element of this set)
+for all $q_1 \in N \geq q$.
 
-$$\frac{ a_1 + a_2 + ...}{n} \leq \frac{ M + M  + ...}{n} = Mn / n = M$$
-$$\frac{ a_1 + a_2 + ...}{n} \leq  M$$
-$$n \geq  \frac{a_1 + a_2 + ...}{M}$$
+Then, let
+$$ N > \frac{|a_1| + |a_2| +  ... + |a_{q - 1}| - q|a_k|}{\epsilon -   |a_k|}$$
 
-$$|\frac{ a_1 + a_2 + ...}{n}| < \epsilon$$
-$$|\frac{ a_1 + a_2 + ... + a_n}{n}| < \epsilon$$
-$$|a_1 + a_2 + ... + a_n| < n \epsilon$$
-$$|M - b_1 + M - b_2 + ... + M - b_n| < n \epsilon$$
-$$nM| - b_1 - b_2 -  ... - b_n| < n \epsilon$$
-$$M| - b_1 - b_2 -  ... - b_n| < \epsilon$$
-$$| - b_1 - b_2 -  ... - b_n| < \epsilon / M$$
-$$| b_1 + b_2 +    ...  + b_n| < \epsilon / M$$
+If, for some god fosaken reason, $q \geq N$, then we can set $N$ to be more
+than $q$, and it wouldn't make the differenct. Same applies to $k$, if it
+matters (it doesn't).
 
-Firstly, let us prove that if $(a_n)$ to 0, then
-$$(\frac{a_1 + a_2 + ... + a_n}{n}) \to 0$$ as well.
+Therefore if we let $n > N$, then we can concur that  
+$$ n > \frac{|a_1| + |a_2| +  ... + |a_{q - 1}| - q|a_k|}{\epsilon -   |a_k|}$$
+$$\frac{|a_1| + |a_2| +  ... + |a_{q - 1}| - q|a_k|}{\epsilon -   |a_k|} <  n $$
+$$|a_1| + |a_2| +  ... + |a_{q - 1}| - q|a_k| < \epsilon n -   |a_k| n $$
+$$|a_1| + |a_2| +  ... + |a_{q - 1}| + |a_k| n  - q|a_k| < \epsilon n$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + |a_k| -\frac{ q|a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{n|a_k|}{n} -\frac{ q|a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{n|a_k| - q|a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{(n - q)|a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_k| + ... + |a_k|}{n} < \epsilon$$
+because $|a_{q+}| \leq |a_k|$ 
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_{q}| + ... + |a_n|}{n} \leq \frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_k| + ... + |a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}| + |a_{q}| + ... + |a_n|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| + ... + |a_n|}{n} < \epsilon$$
+$$|\frac{a_1 + a_2 + ... + a_n}{n}| = \frac{ |a_1 + a_2 + ... + a_n|}{n} \leq \frac{ |a_1| + |a_2| + ... + |a_n|}{n} < \epsilon$$
+$$|\frac{a_1 + a_2 + ... + a_n}{n}| < \epsilon$$
+$$|\frac{a_1 + a_2 + ... + a_n}{n} - 0| < \epsilon$$
 
-$$\frac{a_1 + a_2 + ... + a_n}{n} \leq M$$
-$$\frac{M + b_1 + M + b_2 + ... + M + b_n}{n} \leq M$$
-$$\frac{Mn + b_1 + b_2 + ... + b_n}{n} \leq M$$
-$$Mn + b_1 + b_2 + ... + b_n \leq Mn$$
-$$ b_1 + b_2 + ... + b_n \leq 0$$
+Therefore
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n > N \to
+|\frac{a_1 + a_2 + ... + a_n}{n} - 0| < \epsilon$$
 
-Let $\epsilon \in R > 0$. Then we want
+Therefore $(a_n) \to 0$ implies that $(\frac{a_1 + a_2 + ... + a_n}{n}) \to 0$
+as well.
+
+Now, proud of our achievement, we can proceed with the initial argument.
+Suppose that $(x_n) \to l$. Then if we set $l_n = l$, then $(l_n) \to l$.
+Therefore $(x_n - l_n) \to 0$. And because of it, we can use our initial
+conclusion.
+$$(\frac{x_1 - l_n + x_2 - l_n + ... + x_n - l_n}{n}) \to 0$$
+$$(\frac{x_1 + x_2 + ... + x_n - l_n n}{n}) \to 0$$
+$$(\frac{x_1 + x_2 + ... + x_n}{n} - \frac{l_n n}{n}) \to 0$$
+$$(\frac{x_1 + x_2 + ... + x_n}{n} - l_n) \to 0$$
+Therefore 
+$$(\frac{x_1 + x_2 + ... + x_n}{n}) \to l$$
+
+When push comes to shove, we can prove it axiomatically throuh
+$$|\frac{x_1 - l_n + x_2 - l_n + ... + x_n - l_n}{n}| < \epsilon$$
+$$|\frac{x_1 + x_2 + ... + x_n - n l_n}{n}| < \epsilon$$
+$$|\frac{x_1 + x_2 + ... + x_n}{n} - \frac{n l_n}{n}| < \epsilon$$
+$$|\frac{x_1 + x_2 + ... + x_n}{n} - l_n| < \epsilon$$
+$$|\frac{x_1 + x_2 + ... + x_n}{n} - l| < \epsilon$$
+Which comes to the same conclusion. Therefore now we can affirmatively
+state that
+
+$$(x_n) \to l \text{ implies } \frac{x_1 + x_2 + ... + x_n}{n} \to l$$
+as desired.
+
+\textit{Give an example to show that it is possible for the sequence $(y_n)$
+  of averages to converge even if $(x_n)$ does not.}
+
+$$x_n = ([[n / 2]])(-1)^n$$
+Where $[[]]$ is a floor function.
+Therefore
+$$x_n = (0, 0, 1, -1, 2, -2, ...)$$
 
 
-$$|\frac{a_1 + a_2 + ... + a_n}{n}| =$$
-$$\frac{1}{n}|a_1 + a_2 + ... + a_n|= $$
-$$\frac{1}{n}|a_1 + a_2 + ... + a_n| \leq \frac{1}{n}(|a_1| + |a_2| + ... + |a_n|)=
-\frac{|a_1| + |a_2| + ... + |a_n|}{n}$$
+\section*{2.3.12}
+\textit{Consider the doubly indexed array $a_{m,n} = m / (m + n))$.}
 
-Let $\epsilon \in R > 0$. Then, by convergence of $(a_n) \to 0$, there exist $N_1$ such
-that whenever $n > N$ it follows that $|a_n| \leq \epsilon$.
+\textit{(a) Intuitively speaking, what should $\lim_{m,n \to \infty} a_{m,n}$
+  represent? Compute the "iterated" limits}
+$$ \lim_{n \to \infty} \lim_{m \to \infty} a_{m,n} \text{ and }
+\lim_{m \to \infty} \lim_{n \to \infty} a_{m,n} $$
 
-Therefore let us 
+Intuitively speaking $\lim_{m,n \to \infty} a_{m,n}$ should mean that
+the larger the $m$ and $n$ get, the closer $a_{m,n}$ becomes.
+
+$$\lim_{n \to \infty} a_{m_n} = \lim_{n \to \infty} m/(m + n) =
+\lim_{n \to \infty} m/m + m/n = 1$$  
+$$\lim_{m \to \infty} \lim_{n \to \infty} a_{m,n} =
+\lim_{m \to \infty}  1 = 1$$
+
+$$\lim_{m \to \infty} a_{m,n} = \lim_{m \to \infty} m/(m + n) =
+\lim_{m \to \infty} = m/m + m/n = \infty$$
+$$\lim_{n \to \infty} \lim_{m \to \infty} a_{m,n} = \lim_{n \to \infty} \infty = \infty$$
+
+\textit{(b) Formulate a rigorous definition in the style of Definition 2.2.3
+  for the statement}
+$$\lim_{m,n \to \infty} a_{m,n} = l$$
+
+A list is a set of length n in form
+$$\{a_1, \{a_1, a_2\}, \{a_1, a_2, a_3\}, ..., a_{n -1}, a_n\}\}\}\}... $$
+It is denoted by
+$$(a_1, a_2, a_3, ..., a_n)$$
+
+A double indexed sequence $a_{m,n}$ is a function from the list $(j, k)$,
+where $j, k \in N$ to $R$.
+
+A sequence $(a_{m, n})$ converges to a real number $a$ if, for every positive
+number $\epsilon$, there exist $N_1, N_2 \in \textbf{N}$ such that
+whenever $m > N_1$ and $n > N_2$ it follows that $|a_{m,n} - a| <
+\epsilon$.
 
 \end{document}
