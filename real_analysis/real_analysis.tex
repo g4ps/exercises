@@ -3253,4 +3253,436 @@ number $\epsilon$, there exist $N_1, N_2 \in \textbf{N}$ such that
 whenever $m > N_1$ and $n > N_2$ it follows that $|a_{m,n} - a| <
 \epsilon$.
 
+\section*{2.4.1}
+\textit{Complete the proof of Theorem 2.4.6 by showing that if the
+  series $\sum^{\infty}_{n = 0} 2^n b_{2^n}$ diverges, then so does
+  $\sum^{\infty}_{n = 1} b_n$. Example 2.4.5 may be a useful reference.}
+
+First of all, let's state Theorem 2.4.6
+
+\textbf{Theorem 2.4.6 (Caucht condensation Test)}
+\textit{Suppose $(b_n)$ is decreasing and satisfies $b_n \geq 0$ for all
+  $n \in \textbf{N}$. Then, the series $\sum_{n = 1}^{\infty}b_n$ converges
+  if and only if the series }
+$$\sum_{n = 0}^{\infty}2^n b_{2^n} = b_1 + 2 b_2 + 4 b_4 + 8 b_8 + ...$$
+\textit{converges.}
+
+Suppose that $\sum^{\infty}_{n = 0} 2^n b_{2^n}$ diverges. Then a partial
+sum
+$$s_{2^k} = b_1 + 2 b_2 + 4 b_4 + ... =
+b_1 + b_2 + b_2 + b_4 + b_4 + b_4 + b_4 ... \leq
+b_1 + b_2 + b_3 + b_4 + b_5 + b_6 + b_7 + ... = s_n $$
+
+Therefore, partial sum for $\sum^{\infty}_{n = 0} 2^n b_{2^n}$ is less than
+$\sum^{\infty}_{n = 1} b_n$. Therefore $\sum^{\infty}_{n = 1} b_n$ diverges,
+as desired.
+
+\section*{2.4.2}
+\textit{(a) Prove that the sequence defined by $x_1 = 3$ and}
+$$x_{n + 1} = \frac{1}{4 - x_n}$$
+\textit{converges.}
+
+
+
+Firstly, let us write a couple of elements of this sequence to see what's going on:
+$$(x_n) = 3, 1, 1/3, 3/11, ...$$
+
+Those elements of the sequence tell us, that the sequence is probably decreasing
+and also bounded below by some constant around 0.25, and therefore bounded below
+by 2. Also, the proof of the fact that the sequence is bounded above by 4 might
+come in handy.
+
+To prove the proposition, that this sequence  is convergent we will
+use property, that if a sequence is bounded and monotone, then it is convergent.
+Let's start with proposition that the this sequence is decreasing.
+
+We'll use induction for this one, because it seems right;
+
+Base: $x_1 < 4$.
+
+Proposition: $x_n < 4$
+
+Step:
+
+$$x_{n + 1} = \frac{1}{4 - x_n} < 4$$
+$$4 - x_n > \frac{1}{4}$$
+$$- x_n > \frac{1}{4} - 4$$
+$$x_n < 3\frac{1}{4}$$
+
+Therefore $x_n < 4$. From this we can conclude that 
+$$x_n < 4$$
+$$4 - x_n > 0$$
+$$\frac{1}{4 - x_n} > 0$$
+$$x_{n + 1} > 0$$
+
+Now let us prove, that the sequence is decreasing. We'll also do it with induction.
+
+Base: $x_1 - x_2 = 3 - 1 = 2 > 0$
+
+Proposition: $x_{n - 1} - x_n > 0$.
+
+Step:
+We had proved already, that $x_n > 0$, and $x_n < 4$ Therefore
+$$x_n - x_{n + 1} > 0$$
+$$ x_n - \frac{1}{4 - x_n} > 0$$
+$$ (4 - x_n)x_n - 1 > 0$$
+$$ 4 x_n - x_n^2 - 1 > 0$$
+$$x_n^2 - 4 x_n + 1 < 0$$
+$$(x_n - (2 - \sqrt{3}))(x_n - (2 + \sqrt{3})) < 0$$
+It can be shown, that our sequence bounded by $2 - \sqrt{3}$ and $2 + \sqrt{3}$.
+
+Thus the sequence is decrasing and bounded, and therefore convergent.
+
+\textit{(b) Now thatwe know $\lim x_n$ exists, explain why $\lim x_{n + 1}$
+  must also exist and equal the same value.}
+
+By the definition of limit of a sequence, for every $\epsilon$ there exist an
+$N$ such that for all $n \geq N$ $|x_n - l| < \epsilon$. Therefore, because
+every $(x_{n + 1}) \subset (x_n)$ we can conclude, that $(x_{n + 1})$ converges
+to the same value.
+
+\textit{(c) Take the limit of each side of the recursive eqation in part (a) of
+  this exercise to explicitly compute $\lim x_n$.}
+
+$$\lim x_{n + 1} = \frac{1}{4 - \lim x_n}$$
+$$\lim x_n = \frac{1}{4 - \lim x_n}$$
+$$\lim x_n = \frac{1}{4 - \lim x_n}$$
+$$(4 - \lim x_n)\lim x_n = 1$$
+$$4 \lim x_n - (\lim x_n) ^ 2  - 1= 0$$
+$$ (\lim x_n) ^ 2 - 4 \lim x_n  + 1= 0$$
+
+From my 5th grade class I remember that.
+$$\lim x_n = 2 -  \sqrt{3} \text{ or } \lim x_n = 2 +  \sqrt{3}$$
+
+Given that $2 + \sqrt{3} > 3$ and that the sequence is decreasing and first
+element of it is $3$, we can state that $x_n > 3$ for all n. Therefore
+$$\lim x_n = 2 - \sqrt{3}$$
+
+\section*{2.4.3}
+\textit{Following the model of Exercise 2.4.2, show that the sequence defined
+  by $y_1 = 1$ and $y_{n + 1} = 4 - 1/y_n$.}
+
+Let's write down a few elements of this sequence:
+$$y_1 = 1, 3, 11/3, 41/11, ...$$
+This one is probably increasing and bounded above by 4 and below by 1
+
+Base: $1 \leq y_1 = 1 \leq 4$
+
+Proposition: $1 \leq y_n \leq 4$
+
+Step:
+
+$$1 \leq y_n \leq 4$$
+$$1 \geq 1/y_n \geq 1/4$$
+$$-1 \leq -1/y_n \leq -1/4$$
+$$3 \leq 4 - 1/y_n \leq 3 \frac{3}{4}$$
+$$1 \leq 4 - 1/y_n \leq 4$$
+$$1 \leq y_{n + 1} \leq 4$$
+
+
+$$1 \leq y_n \leq 2 + \sqrt{3}$$
+$$1 \geq 1/y_n \geq \frac{1}{2 + \sqrt{3}}$$
+$$-1 \leq -1/y_n \leq -\frac{1}{2 + \sqrt{3}}$$
+$$3 \leq 4 - 1/y_n \leq 4  -\frac{1}{2 + \sqrt{3}}$$
+$$3 \leq 4 - 1/y_n \leq \frac{8 + 4 \sqrt{3} - 1}{2 + \sqrt{3}}$$
+$$3 \leq 4 - 1/y_n \leq \frac{7 + 4 \sqrt{3}}{2 + \sqrt{3}}$$
+$$3 \leq 4 - 1/y_n \leq \frac{(2 + \sqrt{3})^2}{2 + \sqrt{3}}$$
+$$3 \leq 4 - 1/y_n \leq 2 + \sqrt{3}$$
+
+as desired.
+
+Therefore $1 \leq y_n \leq 4$ for all $n \in N$.
+
+Now, let us try to prove that the sequence is increasing
+
+$$y_{n + 1} \geq y_n $$
+$$y_{n + 1} - y_n \geq 0 $$
+$$4 - 1/y_n - y_n \geq 0 $$
+$$4y_n - 1 - y_n^2 \geq 0 $$
+$$y_n^2 - 4 y_n + 1 \leq 0 $$
+$$(y - (2 + \sqrt{3}))(y - (2 - \sqrt{3})) \leq 0 $$
+
+Therefore  if we prove that the sequence is bounded by $2 + \sqrt{3}$ and
+$2 + \sqrt{3}$, then we'll have our proof
+
+Base: $2 - \sqrt{3} \leq y_1 = 1 \leq 2 + \sqrt{3}$
+
+Proposition: $2 - \sqrt{3} \leq y_n \leq 2 + \sqrt{3}$
+
+Step:
+$$2 - \sqrt{3} \leq y_n \leq 2 + \sqrt{3}$$
+$$\frac{1}{2 - \sqrt{3}} \geq 1/y_n \geq \frac{1}{2 + \sqrt{3}}$$
+$$-\frac{1}{2 - \sqrt{3}} \leq -1/y_n \leq - \frac{1}{2 + \sqrt{3}}$$
+$$4 -\frac{1}{2 - \sqrt{3}} \leq 4  -1/y_n \leq 4 - \frac{1}{2 + \sqrt{3}}$$
+$$\frac{7 - 4 \sqrt{3}}{2 - \sqrt{3}} \leq y_{n + 1} \leq \frac{7 + 4 \sqrt{3}}{2 + \sqrt{3}}$$
+Given that $7 + 4 \sqrt{3} = (2 + \sqrt{3})^2$ and $7 - 4 \sqrt{3} = (2 - \sqrt{3})^2$ 
+$$2 - \sqrt{3} \leq y_{n + 1} \leq 2 + \sqrt{3}$$
+Therefore all of elements of our sequence are bounded by $2 - \sqrt{3}$ and
+$2 + \sqrt{3}$. Thus $y_{n + 1} \geq y_n$, and therefore the sequence is increasing.
+
+Now we have the proof that the sequence is both bounded and increasing, and thus
+converges to some number. After some calculation (and by using common sense) we can
+also conslude, that the sequence converges to $2 + \sqrt{3}$.
+
+\section*{2.4.4}
+\textit{Show that }
+$$ \sqrt{2}, \sqrt{2 \sqrt{2}}, \sqrt{ 2 \sqrt{ 2 \sqrt{2}}}, ... $$
+\textit{converges and find the limit.}
+
+If we write the same expression as in exerice but using powers instead of
+radicals we'll get
+$$ 2^{\frac{1}{2}}, 2^{\frac{3}{4}}, 2^{\frac{7}{8}}, ...$$ 
+
+Therefore the sequence can be written as
+$$x_n =  2 ^{\sum_{m = 1}^n 2^{-m}}$$
+
+$2^m > 0$ for all $m \in N$, therefore the sum is increasing. Thus, the power, in
+which we put 2 is also increasing, therefore the whole sequence is increasing.
+
+Because each element of this sequence is a power of a positive number, we can
+conclude, that all of the elements are bound below by 0.
+
+Therefore we just need to prove that 
+$$\sum_{m = 1}^{\infty} 2^{-m} = 1$$
+and we'll have our proof.
+
+We'll do it by using the properties of this sum. We can see that
+$$\sum_{m = 1}^{n}2^{-m} + 2^{-n} = 1$$
+$2^{-n} > 0$, and therefore $1 - \sum_{m = 1}^{n}2^{-m} = 2^{-n} > 0$ for
+all $m \in N$.
+
+Thus, for every $\epsilon > 0$ we can conclude that $\exists M \in \textbf{N}$ such
+that for all $m \geq M$.
+$$1/m < \epsilon$$
+therefore
+$$\sum_{m = 1}^{\infty} 2^{-m} = 1$$
+and thus
+$$(x_n) =  2 ^{\sum_{m = 1}^n 2^{-m}} \to 2^1 = 2$$
+
+\section*{2.4.5 (Calculating Square Roots)}
+\textit{Let $x_1 = 2$, and define }
+$$x_{n+1} = \frac{1}{2}(x_n + \frac{2}{x_n})$$
+\textit{a) Show that $x_n^2$ is always greater than 2, and then use this to prove
+  that $x_n - x_{n + 1} \geq 0$. Conclude that $\lim x_n = \sqrt{2}$.  }
+
+We'll use induction to show that $x_n^2$ is always greated than 2.
+
+Base: $2 ^2 = 4 > 2$.
+
+Proposition: $x_n ^ 2 > 2$
+
+Step:
+% $$(\frac{1}{2}(x_n + \frac{2}{x_n}))^2 = \frac{1}{4}(x_n ^ 2 + 4 + \frac{4}{x_n^2})$$
+$$x_n^2 > 2$$
+$$x_n^2 - 2 > 0$$
+$$(x^2 - 2)^2 > 0$$
+$$x_n ^ 4 - 4 x_n^2 + 4 > 0$$
+$$x_n ^ 2 - 4 + \frac{4}{x_n^2} > 0$$
+$$(x_n ^ 2 + 4 + \frac{4}{x_n^2}) > 8$$
+$$\frac{1}{4}(x_n ^ 2 + 4 + \frac{4}{x_n^2}) > 2$$
+$$x_{n + 1}^2 > 2$$
+Thus $x_n^2 > 2$ for all $n \in \textbf{N}$.
+
+Thus
+$$x_n^2  > 2$$
+$$x_n^2 - 2 > 0$$
+$$\frac{1}{2}x_n - \frac{2}{2 x_n} > 0$$
+$$x_n - x_{n + 1} = x_n - \frac{1}{2}(x_n + \frac{2}{x_n}) = \frac{1}{2}x_n - \frac{2}{2x_n} > 0$$
+
+Therefore the sequence is decreasing. Now let us prove, that every element of the
+sequence is positive.
+
+Base: $x_1 > 0$
+
+Step:
+$$x_n> 0$$
+$$x_n^2 > 0$$
+$$x_n^2 > -2$$
+$$x_n^2 + 2 > 0$$
+$$x_n + \frac{2}{x_n} > 0$$
+$$(x_n + \frac{2}{x_n}) > 0$$
+$$\frac{1}{2}(x_n + \frac{2}{x_n}) > 0$$
+$$x_{n + 1} > 0$$
+
+Thus every element of the sequence is positive and decreasing. Therefore the
+sequence is convergent (because it is bounded above by the first element and
+below by 0).
+
+Thus this sequence converges to a positive limit. Let $l = \lim x_n$. Then also
+$l = \lim x_{n + 1}$. Thus
+
+$$l = \frac{1}{2}(l + 2/l)$$
+$$2 l = l + 2/l$$
+$$l = 2/l$$
+$$l^2 = 2$$
+$$l = \sqrt{2}$$
+as desired.
+
+\textit{(b) Modify the sequence $(x_n)$ so that it converges to $\sqrt{c}$. }
+
+$$x_1 = c$$.
+$$x_n =  \frac{1}{2}(x_n + \frac{c}{x_n})$$
+
+The proof that this sequence works is obtained through the same logic, as in part (a).
+
+\section*{2.4.6 (Limit Superior)}
+\textit{Let $(a_n)$ be a bounded sequence.}
+
+\textit{(a) Prove that the sequence defined by $y_n = sup\{a_k: k \geq n\}$
+  converges}
+
+In order to prove that we need to show that this seqeunce is both bounded and
+monotone (in this case, decreasing).
+
+Suppose that $n_1 > n_2 \in \textbf{N}$. Then it follows that
+$$\{a_k: k \geq n_1\} \subseteq \{a_k: k \geq n_2\}$$
+
+Therefore 
+$$\forall l \in \{a_k: k \geq n_2\} \to l \leq sup\{a_k: k \geq n_2\}$$
+and thus
+$$\forall l \in \{a_k: k \geq n_1\} \to l \leq sup\{a_k: k \geq n_2\}$$
+(i.e. if a number $o$ is a supremum for $\{a_k: k \geq n_1\}$, then
+it is an upper bound for $\{a_k: k \geq n_2\}$).
+And thus $y_n \geq y_{n + 1}$. Therefore sequence $(y_n)$ is decreasing.
+
+Also, because the sequence is bounded, $\exists M \in R > 0$ such that
+$|a_n| \leq M$ for all $n \in N$. Thus, $y_n$ is bounded below by $-M$.
+Therefore the sequence is decreasing and bounded. Therefore it converges.
+
+\textit{(b) The limit superior of $(a_n)$, or $\lim\sup a_n$, is defined by}
+$$\lim \sup a_n = \lim y_n$$
+\textit{where $y_n$ is the sequence from part (a) of this exercise. Proveide
+  a reasonable definition for $\lim\inf a_n$ and briefly explay why it always
+  exists for any bounded sequence.}
+
+For a bounded sequence $(a_n)$, $\lim\inf a_n$ is a limit of a sequence,
+defined by
+$$y_n = \inf\{a_k: k \geq n\}$$.
+
+Because for any $n_1 > n_2 \in \textbf{N}$ it follows that
+$\{a_k: k \geq n_1\} \subseteq \{a_k: k \geq n_2\}$, we
+will get that the sequence $y_n$ is bounded, and because of the
+boundness of $(a_n)$ we will get that the sequence is increasing.
+
+\textit {(c) Prove that $\lim\inf a_n \leq \lim \sup a_n$ for every bounded
+  sequence, and give an example of a sequence, for which this ineqality is
+  strict.}
+
+We'll use a proof by contradiction on this one.
+
+Suppose that $\lim\inf a_n > \lim \sup a_n$. Then let $l = \lim\inf a_n -
+\lim \sup a_n$.
+
+Thus there exists $n \in N$ for which
+$$|\sup\{a_k: k \geq n\} - \lim\sup a_n| < l/2$$
+$$-l/2 < \sup\{a_k: k \geq n\} - \lim\sup a_n < l/2$$
+$$ \lim\inf a_n - l/2 < \sup\{a_k: k \geq n\} + \lim\inf a_n - \lim\sup a_n <\lim\inf a_n +  l/2$$
+$$ \lim\sup a_n + l/2 < \sup\{a_k: k \geq n\} + l < \lim\inf a_n + l/2$$
+$$  \sup\{a_k: k \geq n\} + l/2 < \lim\inf a_n $$
+$$  \sup\{a_k: k \geq n\} < \lim\inf a_n - l/2$$
+Therefore $a_n $
+
+At the same time there exists $m \in M$ for which
+$$|\inf\{a_k: k \geq m\} - \lim\inf a_n| < l/2$$
+$$-l/2 < \inf\{a_k: k \geq m\} - \lim\inf a_n < l/2$$
+$$\lim\inf a_n -l/2 < \inf\{a_k: k \geq m\}  < l/2 + \lim\inf a_n$$
+$$\lim\inf a_n - l/2 < \inf\{a_k: k \geq m\}  <  l/2 + \lim\inf a_n$$
+Thus
+$$  \sup\{a_k: k \geq n\} < \inf\{a_k: k \geq m\}$$
+
+Pick $j = \max\{m, n\}$.  Thus 
+$$\{a_k: k \geq n\} \subseteq \{a_k: k \geq j\}$$
+$$\{a_k: k \geq m\} \subseteq \{a_k: k \geq j\}$$
+Therefore
+$$ \sup\{a_k: k \geq n\} \geq \sup \{a_k: k \geq j\}$$
+$$ \inf\{a_k: k \geq n\} \leq \inf \{a_k: k \geq j\}$$
+Thus 
+$$ \sup \{a_k: k \geq j\} \leq \sup\{a_k: k \geq n\} < \inf\{a_k: k \geq m\}
+\leq \inf \{a_k: k \geq j\} $$
+$$ \sup \{a_k: k \geq j\} <  \inf \{a_k: k \geq j\} $$
+
+Therefore supremum of the set is less than an infinum of a set, which is
+a contradiction. Therefore $\lim\inf a_n \leq \lim \sup a_n$.
+
+Example of a sequence, for which this inequality is strict is
+$$a_n = -1^n$$
+
+\textit{(d) Show that $\lim \inf a_n = \lim \sup a_n$ if and only if
+  $lim a_n$ exists. In this case, all three share the same value.}
+
+\textbf{In forward direction:}
+
+Suppose that $\lim \inf a_n = \lim \sup a_n = l$. Then for every $\epsilon > 0$
+there exists $n \in N$ such that
+$$|\sup \{a_k: k \geq n\} - l| < \epsilon$$
+Also there exists $m \in N$ such that 
+$$|\inf \{a_k: k \geq m\} - l| < \epsilon$$
+for the same $\epsilon$.
+
+Let us set $j = \max\{n, m\}$. Then
+$$-\epsilon < \sup \{a_k: k \geq j\} - l < \epsilon$$
+$$ l - \epsilon < \sup \{a_k: k \geq j\} < \epsilon + l$$
+
+Also
+$$-\epsilon < \inf \{a_k: k \geq j\} - l < \epsilon$$
+$$l - \epsilon < \inf \{a_k: k \geq j\} < l + \epsilon$$
+
+For any $j \in N \geq k$
+$$a_j \leq \sup \{a_k: k \geq j\} < \epsilon + l$$
+$$l - \epsilon < \inf \{a_k: k \geq j\} \leq a_j$$
+therefore
+$$l - \epsilon < a_j < l + \epsilon$$
+$$ - \epsilon < a_j - l <  \epsilon$$
+$$|a_j - l| <  \epsilon$$
+
+Therefore 
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|a_n - l| < \epsilon$$
+or in other words, $\lim a_n = l = \lim \inf a_n = \lim \sup a_n$, as desired.
+
+\textbf{In other direction: }
+
+Suppose that $\lim a_n = l$. From this we can state that
+$$|a_n - l| < \epsilon$$
+$$ \epsilon < a_n - l < \epsilon$$
+$$l - \epsilon < a_n  < \epsilon + l$$
+
+Thus both $\sup \{a_k: k \geq n\}$ and $\inf \{a_k: k \geq n\}$
+are bounded by $l - \epsilon$ and $l + \epsilon$. In other words
+$$l - \epsilon \leq  \inf \{a_k: k \geq n\} \leq \sup \{a_k: k \geq n\} \leq \epsilon + l$$
+
+This is true for all $\epsilon > 0$. Thus if we set $\epsilon = 1/j$
+where $j \in N$, there exists appropriate $i \in N$ for which
+$$l - 1/j \leq  \inf \{a_k: k \geq i\} \leq  \sup \{a_k: k \geq i\} \leq  l + 1/j$$
+
+Therefore if we take a limit of all sides of this inequality  we can state that$$\lim (l - 1/j) \leq  \lim \inf \{a_k: k \geq i\} \leq \lim \sup \{a_k: k \geq i\} \leq \lim( l + 1/j)$$
+$$l \leq  \lim \inf a_n \leq \lim \sup a_n \leq l$$
+Here, the ability to take limits of all sides is justified by the fact, that
+$\forall n \in N > k: a_n \geq b_n \to \lim a_n \geq \lim b_n$.
+
+Thus $\lim \inf a_n = \lim \sup a_n = l$, as desired.
+
+\section*{2.5.1}
+\textit{Prove Theorem 2.5.2}
+
+First of all, let us state the theorem itself.
+
+\textbf{Theorem 2.5.2}
+Subsequences of a convergent sequence converge to the same limit.
+
+Suppose that $a_n$ is a convergent sequence,  $b_n$ is  a subsequence of
+$a_n$, and $l$ is a limit of $a_n$.  Because $a_n$ is a convergent sequence
+we can state that 
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|a_n - l| < \epsilon$$
+
+For each $N \in textbf{N}$ there exists $M \in \textbf{N}$, such that
+$M \geq N$ and  $b_M = a_N$. Also, for each $m > M \in \textbf{N}$ there exists
+$n > N \in \textbf{N}$ such that $b_m = a_n$
+Thus we can state that 
+$$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \exists M \in \textbf{N} > N:  \forall m \geq M \to |b_m - l| < \epsilon$$
+$$\forall \epsilon \in R > 0:  \exists M \in \textbf{N} :  \forall m \geq M \to |b_m - l| < \epsilon$$
+or in other words, $(b_n) \to l$, as desired.
+
+
 \end{document}
