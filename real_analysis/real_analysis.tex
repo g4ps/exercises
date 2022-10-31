@@ -3676,7 +3676,7 @@ we can state that
 $$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
 |a_n - l| < \epsilon$$
 
-For each $N \in textbf{N}$ there exists $M \in \textbf{N}$, such that
+For each $N \in \textbf{N}$ there exists $M \in \textbf{N}$, such that
 $M \geq N$ and  $b_M = a_N$. Also, for each $m > M \in \textbf{N}$ there exists
 $n > N \in \textbf{N}$ such that $b_m = a_n$
 Thus we can state that 
@@ -3684,5 +3684,140 @@ $$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \exists M \in \textbf{N}
 $$\forall \epsilon \in R > 0:  \exists M \in \textbf{N} :  \forall m \geq M \to |b_m - l| < \epsilon$$
 or in other words, $(b_n) \to l$, as desired.
 
+\section*{2.5.2}
+\textit{(a) Prove that if an infinite series converges, then the associative
+  property holds. Assume $a_1 + a_2 + a_3 + a_4 + a_5 + ...$ converges
+  to a limit $L$ (i.e. the sequence of partial sums $(s_n) \to L$). Show that
+  any regrouping of the terms}
+$$(a_1 + a_2 + ... + a_{n_1}) + (a_{n_1 + 1} + a_{n_1 + 2} + ... + a_{n_2}) +
+(a_{n_2 + 1} + a_{n_2 + 2} + ... + a_{n_3}) + ...$$
+\textit{leads to a series that also converges to $L$.}
+
+Suppose that we regrouped terms of the above-given sequence. Then each
+of the terms will be defined by sequence of partial sums
+$$s_1 = (a_1 + a_2 + ... + a_{n_1})$$
+$$s_2 = (a_1 + a_2 + ... + a_{n_1}) + (a_{n_1 + 1} + a_{n_1 + 2 } + ... a_{n_2})$$
+$$s_n = a_1 + ... + a_{n_n}$$
+
+Therefore, $s_n$ is a subsequence of an original sequence. 
+Therefore, because the original sequence converges to the same limit,
+$s_n$ will be convergent to the same limit, as desired.
+
+\textit{(b) Compare this result to the example discussed at the end of Section
+  2.1 where infinite addition was shown not to be associative. Why doesn't
+  our proof in (a) apply to this example?}
+
+Our proof doesn't apply to any of the sequences, discussed in the 2.1
+because each one  of them was not convergent , which is a
+prerequisite for part (a).
+
+\section*{2.5.3}
+\textit{Give an example of each of the following, or argue that such a request
+  is impossible.}
+
+\textit{(a) A sequence that does not contain 0 or 1 as a term but contains
+  subsequences , converging to each of those values}
+\begin{equation}
+  a_n =
+  \begin{cases}
+    1/n \text{ if n is even} \\
+    1 - 1/n \text{ if n is odd}
+  \end{cases}
+\end{equation}
+
+\textit{(b) A monotone sequence that diverges but has a convergent subseqence}
+
+Suppose that we have such a sequqnce. Then, because  subseqeuence is
+convergent, it is bounded. Thus, there exist $M > 0$ for which
+$ |a_{n_j}| \geq M \to -M \leq a_{n_j} \leq M$. For each of elements
+of the original sequemce, there exists an element of subsequence,
+that is "further down the line" (i.e.
+$\forall n \in N: \exists m, j \in N: n < m \text{ and } a_m =
+a_{n_j}$). Then
+$$a_n \leq a_{m_j} \leq M$$
+in case of the increasing sequence
+$$a_n \geq a_{m_j} \geq -M$$
+in case of the decreasing sequence.
+
+Thus, the original sequence is bounded. Thus the original sequence is bounded
+and monotone. Therefore the original sequence is convergent. Therefore
+we have a contradiction.
+
+\textit{(c) A sequence that contains subsequences converging to every point
+  in the infinite set $\{1, 1/2, 1/3, 1/4, 1/5, ....\}$}
+
+Let
+$$a_n = [1], [1, 1/2], [1, 1/2, 1/3], [1, 1/2, 1/3, 1/4], [1, 1/2, 1/3, 1/4, 1/5], ...$$
+where $[$ and $]$ are added just for the visual clue.
+
+Therefore we have in it a subsequence, that converges to an arbitrary number
+$1/n$ for $n \in N$.
+
+\textit{(d) An unbounded sequence with a convergent subsequence.}
+
+\begin{equation}
+  a_n =
+  \begin{cases}
+    n \text{ if n is odd } \\
+    0 \text{ if n is even }
+  \end{cases}
+\end{equation}
+
+\textit{(e) A sequence that has a subsequence that is bounded but contains no
+  subsequence that converges}
+
+Impossible. Because there exists bounded subsequence, which is in and of itself
+a sequence, there exists a convergent subsequence of a subsequence ( by
+Bolzano-Weierstrass Theorem). Subsequence of a subsequence is a subsequence of
+original sequence. Thus an original sequence contains a convergent
+subsequence.
+
+\section*{2.5.4}
+\textit{Assume $(a_n)$ is a bounded sequence with the property that every
+  convergent subsequence of $(a_n)$ converges to the same limit $a \in R$.
+  Show that $(a_n)$ must converge to $a$.}
+
+
+Because $(a_n)$ is bounded, there exists $M > 0$ such that
+$|a_n| < M$.
+
+Suppose that we have an $\epsilon$-neighborhood around $a$. Then
+$[-M, M] \setminus V_{\epsilon}(a)$ could contait elements of $(a_n)$.
+Suppose that $[-M, M] \ V_{\epsilon}(a)$ contains infinite amount of elements
+of $(a_n)$. Then there exists a subsequence of $(a_n)$, that
+it is outside of  $V_{\epsilon}$. Thus, there exists a convergent subsequence
+of sequence, that converges to some number, other, than $a$, which is a
+contradiction. Therefore there exists only finite amount of elements in
+$[-M, M] \setminus V_{\epsilon}(a)$.
+
+Therefore, for any $\epsilon$, there exists an $N$ (which is
+a maximum index of a finite elements of elements outside the neighborhood, or
+1 in case that there are no elements outside of the neighborhood),
+for which it is true, that $n > N \in \textbf{N} \to a_n \in V_{\epsilon}(a)$.
+Therefore, $(a_n) \to a$ by topological version of definition of convergence.
+
+\section*{2.5.5}
+\textit{Extend the result proved in Example 2.5.3 to the case $|b| < 1$.
+  Show that $\lim (b^n) = 0$ whenever $-1 < b < 1$.}
+
+Let $-1 < b < 1$. Then we need to prove that
+$$\forall \epsilon: \exists N \in \textbf{N}: \forall n \geq N \to
+|b^n - 0| < \epsilon$$
+$$\forall \epsilon: \exists N \in \textbf{N}: \forall n \geq N \to
+|b^n| < \epsilon$$
+We already know, that for $0 < b_1 < 1$ it is true, that $\lim (b_1^n) = 0$.
+Thus, for $b = 0$, the case is triival, and for $b < 0$ it defaults to
+$|b| = b_1$. Therefore $\lim (b^n) = 0$ for $-1 < b < 1$.
+
+\section*{2.5.6}
+\textit{Let $(a_n)$ be a bounded sequence, and define the set }
+$$S = \{x \in R: x < a_n \text{ for indefinetly many terms }a_n \}$$
+\textit{Show that there exists a subsequence $(a_{n_k})$ converging to
+  $s = \sup S$. (This is a direct proof of the Bolzano-Weierstrass Theorem
+  using Axiom of Completeness.) }
+
+If $(a_n)$ is a bounded sequence, there exists $M > 0$ for which it is
+true that $a_n \leq M$. Therefore $S$ is bounded above by $M$. Thus
+$S$ has a supremum.
 
 \end{document}
