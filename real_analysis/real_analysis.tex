@@ -3816,8 +3816,273 @@ $$S = \{x \in R: x < a_n \text{ for indefinetly many terms }a_n \}$$
   $s = \sup S$. (This is a direct proof of the Bolzano-Weierstrass Theorem
   using Axiom of Completeness.) }
 
-If $(a_n)$ is a bounded sequence, there exists $M > 0$ for which it is
-true that $a_n \leq M$. Therefore $S$ is bounded above by $M$. Thus
-$S$ has a supremum.
+The wording of this exercise doesn't make it easy to understand what exactly
+are we trying to prove. After some pondering, I concluded, that what this
+particular exercise is trying to say, is that there exists a subsequence,
+that is convergent to a limit supremum of this sequence. If it does, then
+some rewording of 2.4.6 part(a) will give you the desired result. If it
+doesn't, then I don't know what do I need to prove, and therefore
+declare this particular exerice as unfinished.
+
+This exercise already took too much time which was spent on anything but
+math, therefore instead of pondering further, I will rather spend time on
+other exerices from this book.
+
+After some research on this topic, I found out that there exist another
+proof of Bolzano-Weierstrass Theorem, that doesn't use NIP, and my idea
+now is that this particular exercise tried to ask us to give that proof.
+That proof can be (kinda) derived from the limit superior theorem, by
+the fact, that if a limit superior exists, then there exists 
+a subsequence in the original sequence, that converges to limit
+superior.
+
+\section*{2.6.1}
+\textit{Give an example of each of the following, or argue that such a request
+  is impossible }
+
+\textit{(a) A Cauchy sequence that is not monotone}
+$$a_n = (-0.5)^n$$
+It convergent (as proven in previous exercises), and is a Cauchy sequence
+(because it is convergent)
+
+\textit{(b) A monotone sequence that is not Cauchy}
+
+$$a_n = n$$
+It is not convergent, therefore not a Caucy sequence.
+
+\textit{(c) A Cauchy sequence with a divergent subsequence.}
+
+Impossible, because a Cauchy sequence is a convergent sequence, and
+all of the subsequences of convergent sequence are convergent to the
+same number.
+
+\textit{(d) An unbounded sequence containing a subsequence that is Cauchy}
+
+\begin{equation}
+  a_n =
+  \begin{cases}
+    n \text{ if n is odd } \\
+    0 \text{ if n is even}
+  \end{cases}
+\end{equation}
+
+\section*{2.6.2}
+\textit{Supply a proof for Theorem 2.6.2}
+
+Firstly, let us state the theorem itself
+
+\textbf{Theorem 2.6.2}
+\textit{Every convergent sequence is a Cauchy sequence}
+
+Suppose that $(x_n)$ converges to $x$. Thus,
+$$\forall \epsilon/2 > 0: \exists N \in \textbf{N}: \forall n \geq N \to
+|x_n - x| < \epsilon/2$$
+
+Let $m > N$. Then
+$$|x_n - x| < \epsilon/2$$
+$$|x_m - x| < \epsilon/2$$
+thus
+$$|x_n - x| + |x_m - x| < \epsilon$$
+$$|x_n - x| + |x - x_m| < \epsilon$$
+$$|x_n - x + x - x_m| \leq |x_n - x| + |x - x_m| < \epsilon$$
+$$|x_n - x + x - x_m| < \epsilon$$
+$$|x_n - x_m| < \epsilon$$
+
+Thus any convergent sequence is a Cauchy sequence, as desired.
+
+\section*{2.6.3}
+\textit{(a) Explain how the following pseudo-Cauchy property differs
+  from the proper definition of a Cauchy sequence: A sequence $(s_n)$ is
+  pseude-Cauchy if, for all $\epsilon > 0$, there exists an $N$ such that
+  if $n \geq N$, then $|s_{n + 1} - s_n| < \epsilon$.}
+
+It obviously differs in the fact, that in given definition we are only
+onsidering the element, that goes after one element, instead of
+all of elements, that are after.
+
+\textit{(b) If possible, give an example of a divirgent sequence $(s_n)$ that
+  is pseudo-Cauchy}
+
+Harmonic series.
+
+\section*{2.6.4}
+\textit{Assume $(a_n)$ and $(b_n)$ are Cauchy sequences. Use a triangle
+  inequality argument to prove $c_n = |a_n - b_n|$ is Cauchy.}
+
+Therefore for each $\epsilon$ there exists
+$$\forall \epsilon/2 > 0: \exists N_1 \in \textbf{N}: \forall n,m \geq N_1 \to
+|a_n - a_m| < \epsilon/2$$
+$$\forall \epsilon/2 > 0: \exists N_2 \in \textbf{N}: \forall n,m \geq N_2 \to
+|b_n - b_m| < \epsilon/2$$
+
+Let us pick $N = \max\{N_1, N_2\}$. Then
+$$|a_n - a_m| + |b_n - b_m| < \epsilon$$
+$$|c_n - c_m| = ||a_n - b_n| - |a_m - b_m|| \leq |a_n - b_n - a_m + b_m|
+\leq |a_n - a_m| + |b_n - b_m| < \epsilon$$
+$$|c_n - c_m|  < \epsilon$$
+Thus $(c_n)$ is also Cauchy, as desired.
+
+\section*{2.6.5}
+\textit{If $(x_n)$ and $(y_n)$ are Cauchy sequences, then one easy way to
+  prove that $(x_n + y_n)$ is Cauchy is to use the Cauchy Criterion. By
+  Theorem 2.6.4, $(x_n)$ and $(y_n)$ must be convergent, and the Algebraic
+  Limit Theorem then implies $(x_n + y_n)$ is convergent and hence Cauchy}
+
+\textit{(a) Give a direct argument that $(x_n + y_n)$ is a Cauchy
+  sequence that does not use the Cauchy Criterion or the Algebraic Limit
+  Theorem.}
+
+Suppose that $(x_n)$ and $(y_n)$ are Cauchy sequences. Therefore
+$$\forall \epsilon/2 > 0: \exists N_1 \in \textbf{N}: \forall m,n \geq N_1 \to
+|x_n - x_m| < \epsilon/2$$
+and
+$$\forall \epsilon > 0: \exists N_2 \in \textbf{N}: \forall m,n \geq N_2 \to
+|y_n - y_m| < \epsilon/2$$
+
+Therefore let $N = \max\{N_1, N_2\}$. Then
+$$\forall \epsilon/2 > 0: \exists N \in \textbf{N}: \forall m,n \geq N \to
+|x_n - x_m| < \epsilon/2$$
+and
+$$\forall \epsilon > 0: \exists N \in \textbf{N}: \forall m,n \geq N \to
+|y_n - y_m| < \epsilon/2$$
+
+Thus
+$$|x_n - x_m| + |y_n + y_m| < \epsilon$$
+$$|x_n - x_m + y_n - y_m | = |x_n - x_m + y_n - y_m| \leq |x_n - x_m| + |y_n + y_m| < \epsilon$$
+therefore $(x_n + y_n)$ is a Cauchy sequence as well, as desired.
+
+\textit{(b) Do the same for the product $(x_n y_n)$.}
+
+Suppose that $(x_n)$ and $(y_n)$ are Cauchy sequences. Therefore
+they are bounded by $|x_n| < M_1$ and $|y_n| < M_2$. Let us pick the
+greatest $M = \max\{M_1, M_2\}$. Then
+$$\forall \epsilon/2 > 0: \exists N_1 \in \textbf{N}: \forall m,n \geq N_1 \to
+|x_n - x_m| < \frac{\epsilon}{2M}$$
+and
+$$\forall \epsilon > 0: \exists N_2 \in \textbf{N}: \forall m,n \geq N_2 \to
+|y_n - y_m| < \frac{\epsilon}{2M}$$
+
+Thus 
+$$|x_n y_n - x_m y_m| = |x_n y_n - x_n y_m + x_n y_m - x_m y_m | =
+|x_n (y_n - y_m) +  y_m( x_n - x_m) | \leq$$
+$$ \leq |x_n||y_n - y_m| + |y_m| |x_n - x_m| \leq M \frac{\epsilon}{2M} +
+M \frac{\epsilon}{2M} = \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
+
+Therefore $(x_n y_n)$ is a Cauchy sequence as well.
+
+\section*{2.6.6}
+
+\textit{(a) Assume the Nested Interval Property (Theorem 1.4.1) is true and
+  use a technique similar to the one employed in the proof of the
+  Bolzano-Weierstrass Theorem to give a proof for the Axiom of Completeness
+  (The reverse implication was given in Chapter 1. This shows, that AoC is
+  equivalent to NIP}
+
+Suppose that we have a bounded set $A$. Then, because it is bounded, there
+exists an interval $I_1 = [a, b]$, where $a \in A$, and
+$b \in \textbf{R} \setminus A$ - upper bound of $A$. Then, let us
+divide this set (and in general set $I_n$) into two sets of equal
+length $[a, l]$ and $[l, b]$.
+Then set $I_{n + 1}$ to the set, $[l, b]$, if it has any elements of $A$;
+otherwise set it to $[a, l]$. Because of the NIP
+$$\cap_{n = 1}^{\infty} I_n  = B\neq \emptyset$$
+
+Suppose now, that there exist two elements $c < d \in B$. Then let us
+look at the interval $[c, d]$ with length $h$. Because of the Archimedian
+property, there exists a $n \in N$, such that $1/n < |d - c|$, and thus
+there must exists $1/2^n < |d - c|$. Therefore there exists a set $I_j$, which
+length is less than distance between $c$ and $d$. Therefore we
+have a contradiction. (The absolute value here is redundant, but it doesn't
+hurt). Therefore there exists only one number in $B$. Let us henceforth call
+it $l$.
+
+Suppose, that there exists  $q \in A$, such that $q > l$. Then it follows,
+that there exists an interval $[q, l]$. By the same logic, as in the previous
+paragraph, we can conclude, that such element does not exist. Therefore,
+for all $q \in A$ it is true, that $q \leq l$. Thus, $l$ is an upper bound.
+
+Suppose now, that $r$ is an upper bound of $A$ with the property, that
+$r < l$. Then $[r, l]$ contains no elements of $A$. Therefore there exists
+$I_g \subseteq [r, l]$ such that it contains no elements of $A$,
+which is a contradiction. Therefore, for any upper bound $r$ it is true, that
+$r \geq l$.
+
+Therefore $l$ is an upper bound with the property, that any  upper bound
+is either greater or equal to $l$. Thus, $l$ is a lowest upper bound
+(or supremum) of $A$. Therefore, by existence of such a bound,
+any bounded set of $R$ has a least  upper bound. In other words,
+$$NIP\iff AoC$$
+, as desired.
+
+\textit{(b) Use the Monotone Convergence Theorem to give a proof of the
+  Nested Interval Property. (This extablishes the equivalence of AoC,
+  NIP, and MCT}
+
+Suppose, that we have nested intervals
+$$I_1 \subseteq I_2 \subseteq I_3 \subseteq I_4 ... \subseteq I_n \subseteq ...$$
+
+Then, let $(a_n) = \text{lower bound of }I_n$. Then it follows, that
+$$a_1 \leq a_2 \leq a_3 ... \leq a_n \leq \text{ upper bound of any of } I_n$$
+Therefore, this sequence is increasing  and bounded above (and below by $a_1$).
+Thus, it is convergent to some number $l_1 \in R$.
+
+Let us also define $(b_n) = \text{upper bound of }I_n$
+$$b_1 \geq b_2 \geq b_3 ... \geq b_n \geq \text{ lower bound of any of } I_n$$
+Therefore, this sequence is decreasing  and bounded below (and above by $b_1$).
+Thus, it is convergent to some number $l_2 \in R$.
+
+Now look at $l_1$. Let us pick $I_j$ with lower  bound $a_1$ and upper bound
+$b_1$. Suppose, that $l_1 < a_1$. Then let $\epsilon = a_1 - l_1$. Then it
+follows, that all of the elements of the sequence after $g$ (i.e. $a_n$ for $n \geq g$) are not in $V_\epsilon(l_1)$. Thus, we have a contradition. Thus,
+$l \geq a_1$. Wit hthe same logic and opposite sign we can prove that
+$l \geq b_1$. Thus, $l \in I_g$ for any $g \in N$. Thus,
+$$l \in \cap_{n = 1}^{\infty}I_n$$
+Thus, the intersection of any number of nested sets is non-empty. Thus,
+
+$$MCT \iff NIP$$
+, as desired.
+
+\textit{(c) This time, start with the Bolzano-Weierstrass Theorem and
+  use it to construct a proof of the Nested Interval Property. (Thus, BW
+  is equivalent to NIP, and hence to AoC and MCT as well.)}
+
+Suppose that we have nested intervals
+$$I_1 \subseteq I_2 \subseteq I_3 \subseteq I_4 ... \subseteq I_n \subseteq ...$$
+
+Now let us define a sequence, such that every member of a sequence is
+a number is a corresponding interval $I_n$.
+$$(a_n) = \{x: x \in I_n\}$$
+
+First of all, this sequence is going to be bounded by $I_1$. Therfore, by
+BW, it has a convergent subsequence. Let us call this subsequence $(a_{n_j})$,
+and call a limit of such a sequence $l$. Then by the same logic as in part (b),
+$l \in I_g$ for any $g \in \textbf{N}$, and therefore
+$$l \in \cap_{n = 1}^{\infty}I_n$$
+Thus,
+$$BW \iff NIP$$
+
+\textit{(d) Finally, use the Cauchy Criterion to prove the Bolzano-Weierstrass
+  Theorem. This is a final link in the equivlence of the five characterizations
+  of completeness discussed at the end of Section 2.6}
+
+Suppose that we have a bounded sequence $(a_n)$. Then, it follows, that
+there exists $M > 0$ such that $a_n \in [-M, M]$ for any $n \in N$.
+We are going to decribe how to get from $I_j$ to $I_{j + 1}$, and
+by extension from $a_{n_j}$ to $a_{n_{j + 1}}$. For the complete costruction
+let $I_1 = [-M, M]$ and proceed from there.
+Now let's start constructing sequence.
+
+Pick $a_{n_{j}} $ from interval $I_j = [a, b]$. Then divide $I_j$ into two
+equal-length intervals $[a, l]$ and $[b, l]$. As discussed in previous
+exercises, one of them will hav infinite amount of elements. Let $I_{j + 1}$
+be interval with infinite amount of elements of $(a_n)$.
+
+Therefore for each of $\epsilon > 0$ there will exists $j \in N$ such that
+it will be true, that $I_j \subseteq V_\epsilon(a_j)$. And thus will contain
+every  element of subsequence $\{a_{n_k}: k \geq j\}$ (the proof for validity
+of this statement was already discussed in original proof of BW). Thus,
+$(a_{n_j})$ will be a Cauchy sequence, and therefore convergent to some
+value. Therefore
+$$CC \iff BW$$
 
 \end{document}
