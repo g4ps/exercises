@@ -4085,4 +4085,161 @@ $(a_{n_j})$ will be a Cauchy sequence, and therefore convergent to some
 value. Therefore
 $$CC \iff BW$$
 
+\section*{2.7.1}
+\textit{Proving the Alternating Series Test (Theorem 2.7.7) amounts to
+  showing that the sequence of partial sums }
+$$s_n  = a_1 - a_2 + a_3 - ... \pm a_n$$
+\textit{converges. (The opening example in Section 2.1 includes a
+  typical illustration of $(s_n)$.) Different characterizations of
+  completeness lead to different proofs.}
+
+Let us state the theorem itself first:
+
+\textbf{Theorem 2.7.7 (Alternating Series Test)}
+\textit{Let $(a_n)$ be a sequence satisfying}
+$$\text{(i) } a_1 \leq a_2 \leq a_3 \leq ... \leq a_n \leq ... \text{ and }$$
+$$\text{(ii) } (a_n) \to 0$$
+\textit{Then, the alternating series $\sum_{n = 1}^{\infty}(-1)^{n + 1} a_n$
+converges}
+
+Firstly, let us draw some conclusions from the theorem. If $a_n < 0$ for
+some $n \in N$, then all of the $a_j$ for $j > n$ are $a_j \leq a_n < 0$, and
+thus it does not converge to zero, which is a contradiction. Thus we
+can state that $a_n \geq 0$ for all $n \in N$.
+
+\textit{(a) Prove the Alternating Series Test by showing that $(s_n)$ is a
+  Cauchy sequence.}
+
+
+Let $\epsilon > 0$. Then, because $(a_n)$ converges, there exist
+$N \in \textbf{N}$ such that for all $n > N$ it follows that
+$|a_n| < \epsilon$.
+
+Let $s_n = a_1 - a_2 + a_3 - ... \pm a_n$. Now let
+$s_m = a_1 - a_2 + a_3 - ... \pm a_m$ for $m \geq n$. Then
+$$|s_m - s_n| = |a_{n + 1} - a_{n + 2} + ... \pm a_m|$$
+
+Let us examine isnterval $[0, a_n]$ with regards to elemets, that follow $a_n$:
+$$a_n \geq a_{n + 1} \to a_n - a_{n + 1} \in [0, a_n]$$
+Also, because $a_n \geq a_{n + 1} \geq a_{n + 2}$ we can state that
+$a_n - a_{n + 1} + a_{n + 2} \in [0, a_n]$.  Thus
+$$[a_n - a_{n + 1} + a_{n + 2}, a_{n + 2}] \subseteq
+[a_n - a_{n + 1}, a_n] \subseteq [0, a_n]$$
+Thus
+$$ a_n \geq a_{n + 1} - a_{n + 2} + a_{n + 3} - ... \pm a_m$$
+for any $m \geq n$.
+Therefore
+$$|s_m - s_n| = |a_{n + 1} - a_{n + 2} + ... \pm a_m| \leq a_n < \epsilon$$
+
+
+Therefore we can state that for any $\epsilon > 0$ there exist $N$, such that for all
+$n, m \geq N$ it follows that
+$$|s_n - s_m| \leq a_n < \epsilon$$
+Therefore $(s_n)$ is a Cauchy sequence. Thus it converges, as desired.
+
+\textit{(b) Supply another proof for this result using the NIP (Theorem 1.4.1).
+}
+
+Let us define  interval $[a_n - a_{n + 1}; a_n]$ for some $n \in N$.
+We can see that
+$a_n$ and $a_n - a_{n - 1}$ are in this interval. Because
+$a_{n + 2} \geq 0$ and  $a_{n + 2} \leq a_{n + 1}$ we can state that
+$$a_n - a_{n + 1} \leq a_{n + 2} + a_n - a_{n + 1} \leq a_n$$
+It also doesn't hurt to state here that
+$$a_{n + 2} + a_n - a_{n + 1} \leq a_n \to [a_n - a_{n + 1}, a_{n + 2} + a_n - a_{n + 1}] \subseteq [a_n - a_{n + 1}; a_n]$$
+
+Now let us define
+$$I_n = [a_{2n} - a_{2n + 1}, a_{2n}]$$
+from our discussion in previous paragraph we can state that
+$$a_{2_n + m} \in I_n$$
+where $m \in N \cup \{0\}$. Also
+$$I_n \subseteq I_{n+1}$$
+For the future use let us also note the fact, that for every $j \in N$ there
+exists an interval $I_n$, whose length is less or equal to $a_j$.
+
+Thus we have a collection of nested intervals. NIP states that
+$$\cap_{n = 1}^{\infty} I_n = B \neq \emptyset$$
+Suppose that we have $a \neq b \in B$. Then there exist $\epsilon = |a - b|$,
+for which by convergence of $(a_n)$ there exists $N$ for which it is true that
+$$\forall n \geq N \to |a_n| \leq \epsilon$$
+Therefore there exists  an interval, whose length is less than the distance
+betweeen $a$ and $b$. Therefore both $a$ and $b$  cannot be at some $I_n$ at
+the same time. Therefore  we have a contradiction, and we can state that we
+cannot have two distinct elements in $B$. Thus,  there exists
+only one element in $B$.
+
+Note that for every partial sum $s_n$ we can find corresponding $I_m$ such that
+$$s_n \in I_m$$
+Thus we can state that
+$$(s_n)\to l$$
+or in other words, 
+$$\sum_{n = 1}^{\infty} (-1)^na_n = \lim s_n = l$$
+where $l$ is the sole element of $B$.
+
+\textit{(c) Consider the subsequences $(s_{2n})$ and $(s_{2n + 1})$, and show
+  how the Monotone Convergence Theorem leads to a third proof for the
+  Alternating Series Test}
+
+Let us note that
+$$s_{2n} = a_1 - a_2 + ... + a_{2n - 1} - a_{2n}$$
+Thus
+$$s_{2n} - s_{2(n + 1)} = a_{2n + 1} - a_{2_n + 2} \geq 0$$
+thus series $(s_{2n})$ is increasing. Also
+$$s_{2n + 1 } - s_{2(n + 1) + 1} = - a_{2n + 2} + a_{2_n + 3} \leq 0$$
+thus series $(s_{2n + 1})$ is decreasing.
+
+Because $(s_{2n + 1})$ is decreasing, there exists $a = \sup(s_{2n + 1})$.
+Because $(s_{2n})$ is increasing, there exists $b = \inf(s_{2n})$.
+Every $s_j$ is either equal to some $s_{2n}$ if $j$ is even or to some
+$s_{2_n + 1}$ if j is odd. Thus $(s_n)$ is bounded above by $a$ and bounded
+below by $b$.
+
+By MCT we can state that 
+$$\lim s_{2n} = l_1$$
+$$\lim s_{2n + 1} = l_2 $$
+Now let note that for all $n \in N$
+$$s_{2n} - s_{2n + 1} = a_{2n}$$
+Because all subsequences of convergent sequence converge to the same number
+we can state that 
+$$\lim(s_{2_n} - s_{2n + 1}) = \lim(a_{2n}) = 0$$
+thus
+$$\lim s_{2n} = \lim s_{2n + 1} = l_1 = l_2 = l$$
+
+Because for every $n$ there exists $s_{2n} \leq s_j$ and
+$s_{2n + 1} \leq s_j$
+we can conclude that by Squeeze theorem
+$$\sum_{n = 1}^{\infty} (-1)^na_n = \lim{s_n} = l$$
+as desired.
+
+\section*{2.7.2}
+\textit{(a) Provide the details for the proof of the Comparison Test
+  (Theorem 2.7.4) using the Cauchy Criterion for Series.}
+
+Let us firstly state the theorem itself
+
+\textbf{Theorem 2.7.4 (Comparison Test)}
+\textit{Assume $(a_k)$ and $(b_k)$ are sequences satisfying
+  $0 \leq a_k \leq b_k$ for all $k \in N$.}
+
+\textit{(i) If $\sum^{\infty}_{k = 1}b_k$ converges,
+  then $\sum^{\infty}_{k = 1}b_k$ converges}
+
+\textit{(ii) If $\sum^{\infty}_{k = 1}a_k$ diverges,
+  then $\sum^{\infty}_{k = 1}b_k$ diverges}
+
+Let us pick some $\epsilon > 0$. Then, by Cauchy Criterion for sequences,
+there exists $m > n \in N$.
+such that 
+$$|s_n - s_m| = |b_{m + 1} + ... + b_n| = b_{m + 1} + ... + b_n < \epsilon$$
+for $s_n$ - partial sum for $\sum^{\infty}_{k = 1}b_k$.
+
+Let $l_n$ be a partial sum for $\sum^{\infty}_{k = 1}a_k$. Then
+$$|l_n - l_m| = |a_{m + 1} + ... + a_n| = a_{m + 1} + ... + a_n \leq
+b_{m + 1} + ... + b_n = |s_n - s_m| \leq \epsilon$$
+
+Thus, by Cauchy Criterion for seqeunces,  $\sum^{\infty}_{k = 1}a_k$ converges.
+
+
+
+
 \end{document}
