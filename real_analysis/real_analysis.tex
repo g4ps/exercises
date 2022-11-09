@@ -9,7 +9,14 @@
 \maketitle
 
 Exercises are from UTM-040 Understanding analysis by Stephen Abbott. Edition is
-unknown, but the date in the preface is August 2000.
+unknown, but the date in the preface is August 2000. I don't own any rights
+for the book and I am not planning to aquire them anytime soon. 
+
+Also it wouldn't hurt to mention, that some (or maybe even most) of exercises
+were not proof-read after they were written,  and that none of them were
+evaluated by anyone who matters. There are a lot of mistakes out  there, both
+in mathematical and logical parts, and in the language they were written as
+well. I am doing this kind of stuff for fun, so cut me some slack.
 
 \section*{1.2.1}
 \textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
@@ -385,7 +392,7 @@ $$x_1 = 1$$
 $$x_{n + 1} = (1/2)x_n + 1$$
 
 A great advice about induction states, that when you hear words "prove" and
-"sequence" in the same sentence, then the word "recursion" should pop up in
+"sequence" in the same sentence, then the word "induction" should pop up in
 your head. So here we go
 
 Base case: $x_1 \leq 2$.
@@ -446,7 +453,7 @@ as desired.
 
 This proof is dumb, but intuitive:
 
-Every subset is corresponding to a number in binary number: 0 for excluded,
+Every subset is corresponding to a number in binary system: 0 for excluded,
 1 for included. Therefore there exist $2^n$ possible combinations.
 
 For a more concrete proof let's resort to induction.
@@ -4097,7 +4104,7 @@ Let us state the theorem itself first:
 
 \textbf{Theorem 2.7.7 (Alternating Series Test)}
 \textit{Let $(a_n)$ be a sequence satisfying}
-$$\text{(i) } a_1 \leq a_2 \leq a_3 \leq ... \leq a_n \leq ... \text{ and }$$
+$$\text{(i) } a_1 \geq a_2 \geq a_3 \geq ... \geq a_n \geq ... \text{ and }$$
 $$\text{(ii) } (a_n) \to 0$$
 \textit{Then, the alternating series $\sum_{n = 1}^{\infty}(-1)^{n + 1} a_n$
 converges}
@@ -4173,7 +4180,7 @@ $$s_n \in I_m$$
 Thus we can state that
 $$(s_n)\to l$$
 or in other words, 
-$$\sum_{n = 1}^{\infty} (-1)^na_n = \lim s_n = l$$
+$$\sum_{n = 1}^{\infty} (-1)^{n + 1}a_n = \lim s_n = l$$
 where $l$ is the sole element of $B$.
 
 \textit{(c) Consider the subsequences $(s_{2n})$ and $(s_{2n + 1})$, and show
@@ -4208,7 +4215,7 @@ $$\lim s_{2n} = \lim s_{2n + 1} = l_1 = l_2 = l$$
 Because for every $n$ there exists $s_{2n} \leq s_j$ and
 $s_{2n + 1} \leq s_j$
 we can conclude that by Squeeze theorem
-$$\sum_{n = 1}^{\infty} (-1)^na_n = \lim{s_n} = l$$
+$$\sum_{n = 1}^{\infty} (-1)^{n + 1}a_n = \lim{s_n} = l$$
 as desired.
 
 \section*{2.7.2}
@@ -4227,8 +4234,10 @@ Let us firstly state the theorem itself
 \textit{(ii) If $\sum^{\infty}_{k = 1}a_k$ diverges,
   then $\sum^{\infty}_{k = 1}b_k$ diverges}
 
+\textbf{ (i)}
+
 Let us pick some $\epsilon > 0$. Then, by Cauchy Criterion for sequences,
-there exists $m > n \in N$.
+there exists $m > n \geq N \in textbf{N}$.
 such that 
 $$|s_n - s_m| = |b_{m + 1} + ... + b_n| = b_{m + 1} + ... + b_n < \epsilon$$
 for $s_n$ - partial sum for $\sum^{\infty}_{k = 1}b_k$.
@@ -4237,9 +4246,481 @@ Let $l_n$ be a partial sum for $\sum^{\infty}_{k = 1}a_k$. Then
 $$|l_n - l_m| = |a_{m + 1} + ... + a_n| = a_{m + 1} + ... + a_n \leq
 b_{m + 1} + ... + b_n = |s_n - s_m| \leq \epsilon$$
 
-Thus, by Cauchy Criterion for seqeunces,  $\sum^{\infty}_{k = 1}a_k$ converges.
+Thus, by Cauchy Criterion for Series,  $\sum^{\infty}_{k = 1}a_k$ converges.
+
+\textbf{(ii)}
+
+By Cauchy Criterion for sequences (or rather by negation of it),
+there exists $\epsilon > 0$ such that 
+for all  $m > n \in N$ it is true that 
+$$|l_n - l_m| = |a_{m + 1} + ... + a_n| = a_{m + 1} + ... + a_n > \epsilon$$
+for $l_n$ - partial sum for $\sum^{\infty}_{k = 1}a_k$.
+
+Let $s_n$ be a partial sum for $\sum^{\infty}_{k = 1}b_k$. Then
+$$\epsilon < |l_n - l_m| = |a_{m + 1} + ... + a_n| = a_{m + 1} + ... + a_n \leq
+b_{m + 1} + ... + b_n = |s_n - s_m|$$
+
+For all $m > n \geq N$ 
+
+Thus, by Cauchy Criterion for Series,  $\sum^{\infty}_{k = 1}b_k$ diverges.
+
+\textit{(b) Give another proof for the Comparison Test, this time using the
+  Monotone Convergence Theorem}
+
+Firstly, let us look closer at $\sum^{\infty}_{k = 1}(b_k)$: first
+thing that we could
+notice, is that every term of the sum is non-negative, and therefore
+we can state that the sequence of partial sums for it  is increasing.
+Same can be said about $\sum^{\infty}_{k = 1}(a_k)$.
+
+\textbf{(i)}
+
+Let us define  $s_k$ to be  a partial sum for
+$\sum^{\infty}_{k = 1}(b_k)$ and $l_k$ to be a partial sum for
+$\sum^{\infty}_{k = 1}(a_k)$. Because
+$s_k$ is increasing and convergent, it is true that
+$$s_k \leq l$$
+for any $k \in N$ where $l = \lim s_k$. Thus
+$$l_k \leq s_k \leq l$$
+for any $k \in N$. Therefore $l_k$ is bounded above by $l$ as well.
+Bringing up to our attention again that $a_k$ is non-negative, we can
+state that
+$$0 \leq l_k \leq l$$
+thus $\sum^{\infty}_{k = 1}(a_k)$ is bounded and monotone and therefore by MCT,
+convergent.
+
+\textbf{(ii)}
+
+Here we will not neccesarily use MCT itself, but the fact, that any convergent
+function is bounded.
+
+Partial sums for $\sum^{\infty}_{k = 1}(a_k)$ are not convergent and
+increasing, therefore we can state that they are unbounded, precisely
+that it is convergent to infinity. Because $l_k \leq s_k$, the same can be said
+about partial sums for  $\sum^{\infty}_{k = 1}(b_k)$.
+
+\section*{2.7.3}
+\textit{Let $\sum a_n$ be given. For each $n \in N$, let $p_n = a_n$ if $a_n$
+  os positive and assign $p_n = 0$ if $a_n$ is negative. In a similar manner,
+  let $q_n = a_n$ if $a_n$ is negative and $q_n = 0$ if $a_n$ is positive. }
+
+\textit{(a) Argue that if $\sum a_n$ diverges, then at least one of
+  $\sum p_n$ or $\sum q_n$ diverges.}
+
+We are going to proceed with a proof by contradiction.
+
+Suppose that both $\sum p_n$ and  $\sum q_n$ converge. Let $s_n$ be
+a parital sum for $\sum a_n$, $s1_n$ a parial sum for $p_n$ and $s2_n$ a
+partial sum for $q_n$. Then
+$$s1_n + s2_n = p_1 + p_2 + ... + p_n + q_1 + q_2 + ... + q_n =
+a_1 + a_2 + a_3 + ... + a_n = s_n$$
+
+Thus $\sum a_n$ converges, which is a contradiction. Therefore both
+sums $\sum q_n$ and $\sum p_n$ cannot be convergent. Therefore at least one of
+$\sum q_n$ or $\sum p_n$ must diverge.
+
+\textit{(b) Show that if $\sum a_n$ converges conditionaly, then both
+  $\sum p_n$ and $\sum q_n$ diverge.}
+
+We are going to proceed with a proof by contradiction as well. Suppose that
+$p_n$ converges (we are only looking at the case with $p_n$ here, but the
+same logic can be applied for $q_n$ as well).
+
+Then, we can state that $\sum -p_n$ converges as well. Thus $\sum a_n - p_n$
+converges. Therefore $\sum q_n$ also converges. Therefore $\sum p_n - q_n$
+converges as well. Therefore $\sum a_n$ converges absolutely, which is a
+contradiction.
+
+Therefore we can state, that in orger to $\sum a_n$ to converge absolutely,
+both $\sum p_n$ and $\sum q_n$ must diverge, as desired.
+
+\section*{2.7.4}
+\textit{Give an example to show that it is possible for both $\sum x_n$ and
+  $\sum y_n$ diverge, but for $\sum x_n y_n$ converge.}
+
+$$x_n = y_n = 1/n \to x_n y_n = 1/n^2$$
+
+\section*{2.7.5}
+\textit{(a) Show that if $\sum a_n$ converges absolutely, then $\sum a_n^2$
+  also converges absolutely. Does this proposition hold without absolute
+  convergence?}
+
+Let $s_n$ be a partial sum for $\sum |a_n|$. Then, because $\sum |a_n|$
+converges, there exists $M > 0$ such that $s_n \leq M$. Therefore
+each $|a_n| \leq M$. Therefore
+$$s_n^2 = |a_1^2| + |a_2^2| + ... + |a_n^2| \leq M|a_1| + M|a_2| + ... +
+M|a_n| = M(|a_1| + |a_2| + ... + |a_n|) = Ms_n$$
+
+Threefore, because of the convergence $\sum |a_n|$ we can state, that
+$M\sum |a_n| = \sum M |a_n|$ converges as well. Thus, $\sum |a_n|^2$ also
+converges. Thus $\sum a_n^2$ converges absolutely, as desired.
+
+If we substitute $a_n$ with some conditionally convergent series, then
+this proof collapses on the moment, when we state that $|a_n| \leq M$. That
+doesn't neccesarily disprove the proposition, only shows where does
+absolute convergence plays the role  in our proof. In order to disprove
+this proposition we need an example of a convergent sequence, that contradicts
+our proposition. One such sequence is
+$$\sum a_n = \sum \frac{(-1)^{n + 1}}{\sqrt{n}}$$
+$$\sum a_n^2 = \sum \frac{1}{n}$$
+where the first sum is convergent by Alternating Series Test, and the last
+is divergent, because is is a harmonic series.
+
+\textit{(b) If $\sum a_n$ converges and $a_n \geq 0$, can we conclude anything
+  about $\sum \sqrt{a_n}$?}
+
+Not really.
+
+$a_n = \frac{1}{n^2}$ implies that  $\sum a_n $ conveges, but $\sum \sqrt{a_n}$
+is a Harmonic Series. For $a_n = \frac{1}{n^2}$ both $\sum a_n$ and
+$\sum \sqrt{a_n}$ converge (both conclusions are justified by the fact, that
+we had drawn  some time ago that the series
+$\sum 1/n^p$ converges if and only if $p > 1$ ).
+
+\section*{2.7.6}
+\textit{(a) Show that if $\sum x_n$ converges absolutely, and the sequence
+$(y_n)$ is bounded. then the sum $\sum x_n y_n$ converges.}
 
 
+Let $s_n$ be a partial sum for $\sum |x_n|$ and $l_n$ be a partial sum
+for $\sum |y_n x_n|$. Then, because $(y_n)$
+is bounded, there exists $M > 0$ such that $|y_n| \leq M$.  Therefore
+$$l_n = |x_1 y_1| + |x_2 y_2| + ... + |x_n y_n| \leq M|x_1| + M|x_2| + ... +
+M|x_n| = M(|x_1| + |x_2| + ... + |x_n|) = Ms_n$$
+Therefore $\sum x_n$  being absolutely  convergent implies that
+$\sum M x_n$ is also absolutely convergent, which implies that $\sum x_n y_n$
+is also absolutely convergent.
 
+\textit{(b) Find a counterexample that demonstrates that part (a) does not
+  always hold if the convergence of $\sum x_n$ is conditional}
+
+Same as in exercise 2.7.5
+$$\sum x_n = \sum \frac{(-1)^{n + 1}}{\sqrt{n}}$$
+$$(y_n) = \frac{(-1)^{n + 1}}{\sqrt{n}}$$
+$$\sum y_n x_n = \sum \frac{1}{n}$$
+
+\section*{2.7.7}
+\textit{Now that we have proved the basic facts about geometric series,
+  supply a proof for Corollary 2.4.7}
+
+Corollary 2.4.7 states that the series
+$$\sum^{\infty}_{n = 1} 1/n^p$$
+converges if and only if $p > 1$
+
+% Partial sums for this sequences are defined as
+% $$(s_n) = \frac{1}{1^p} + \frac{1}{2^p} + \frac{1}{3^p} + ... + \frac{1}{n^p}$$
+
+% If $p < 1$ then $1/n^p \geq 1/n$ and therefore the series diverges.
+
+Let us employ Cauchy Condensation Test here.
+Let us first play with the term of the sequence for it.
+$$2^n a_{2^n} = 2^n \frac{1}{(2^n)^p} = \frac{2^n}{2^{np}} =
+2^{n - np} = 2^{n(1 - p)} = (2^{1 - p})^n$$
+We know, that geometric series converges if and only if
+for its term $ar^k$,  $|r| < 1$. Thus, we
+can state, that by Cause Condensation Test, the original series converges
+if and only if 
+$$|2^{1 - p}| < 1$$
+$$2^{1 - p} < 1$$
+$$1 - p < \log_2 (1)$$
+$$1 - p < 0$$
+$$p > 1$$
+as desired.
+
+\section*{2.7.8}
+\textit{Prove Theorem 2.7.1 part (ii)}
+
+Theorem 2.7.1 part (ii) states that
+
+\textit{If $\sum_{k = 1}^{\infty} a_k = A$ and $\sum_{k = 1}^{\infty} b_k = B$
+then $\sum_{k = 1}^{\infty} (a_k + b_k) = A + B$}
+
+Let $s_n$ be a partial sum for the series $\sum_{k = 1}^{\infty} a_k = A$,
+$t_n$ be a partial sum for $\sum_{k = 1}^{\infty} b_k = B$ and
+$p_n$ be a parial sum for $\sum_{k = 1}^{\infty} (a_k + b_k)$. Then
+$$s_n + t_n = a_1 + a_2 + ... + a_n + b_1 + b_2 + ... + b_n =
+a_1 + b_1 + a_2 + b_2 + ... + a_n + b_n = p_n $$
+for every $n \in N$. 
+
+Thus we can state that $\lim (a_n + b_n) = A + B$ by Algebraic Limit Theorem.
+Thus 
+$$\lim (a_n + b_n) = \lim p_n = \sum (a_n + b_n) = A + B$$
+as desired.
+
+\section*{2.7.9 (Ratio Test)}
+\textit{Given a series $\sum_{n = 1}^{\infty} a_n$ with $a_n \neq 0$, the
+  Ratio Test states that if $(a_n)$ satisfies}
+$$\lim|\frac{a_{n + 1}}{a_n}| = r < 1$$
+\textit{then the series converges absolutely.}
+
+\textit{(a) Let $r'$ satisfy $r < r' < 1$. (Why must such an $r'$ exist?)
+  Explain why there exists an $N$ such that $n \geq N$ implies
+  $|a_{n + 1}| \leq |a_n|r'$}
+
+First of all,
+$$|\frac{a_{n + 1}}{a_n}| = |a_{n + 1} \frac{1}{a_n}| =  |a_{n + 1}| |\frac{1}{a_n}|$$.
+
+If  $a_n \geq 0$, then $|\frac{1}{a_n}| = \frac{1}{a_n} = \frac{1}{|a_n|}$.
+If $a_n < 0$ then $|\frac{1}{a_n}| = - \frac{1}{a_n} = \frac{1}{-a_n} =
+\frac{1}{|a_n|}$. Therefore $|\frac{1}{a_n}| = \frac{1}{|a_n|}$. Thus 
+$$|\frac{a_{n + 1}}{a_n}| = |a_{n + 1}| |\frac{1}{a_n}| =
+\frac{|a_{n + 1}|}{|a_n|}$$
+
+Thus
+$$\lim|\frac{a_{n + 1}}{a_n}| = \lim\frac{|a_{n + 1}|}{|a_n|} = r < 1$$
+
+$r'$ exists, beacause for any $\epsilon > 0$ there exists $n \in N$ such that
+$1/n < \epsilon$. Therefore if we set $\epsilon = 1 - r$, then there exists
+$1/n_1 < \epsilon$. Therefore
+$$0 < 1/n_1 < \epsilon$$
+$$0 < 1/n_1 < 1 - r$$
+$$r < r + 1/n_1 < 1$$
+
+Suppose that we set $\epsilon = r' - r$. Then, by definition of limit, there
+exists $N \in \textbf{N}$, such that for any $n \geq N$ it follows that 
+$$|\frac{|a_{n + 1}|}{|a_n|} - r| < \epsilon$$
+$$|\frac{|a_{n + 1}|}{|a_n|} - r| < r' - r$$
+$$- (r' - r) < \frac{|a_{n + 1}|}{|a_n|} - r < r' - r$$
+$$- r' +  r < \frac{|a_{n + 1}|}{|a_n|} - r < r' - r$$
+$$- r' + 2r < \frac{|a_{n + 1}|}{|a_n|}  < r'$$
+$$\frac{|a_{n + 1}|}{|a_n|}  < r'$$
+$$|a_{n + 1}|  < r'|a_n|$$
+as desired.
+
+\textit{(b) Why does $|a_N|\sum(r')^n$ necessarily converge? }
+
+Because we have $r$ is a limit of non-negative terms, we can conclude,
+that $r \geq 0$. Thus, $0 \leq r'  < 1$. Thus, $|r'| < 1$. Therefore,
+$\sum(r')^n$ is a geometric series with $|r| < 1$. Therefore it converges.
+Therefore $|a_N| \sum(r')^n$ is convergent. Also, $\sum |a_N| (r')^n$ is
+convergent as well.
+
+\textit{(c) Now, show that $\sum |a_n|$ converges.}
+
+
+Let $s_n$ be a partial sum for $\sum a_n$ and let $q_n$ be a partial sum
+for $\sum |a_N| r'^n$.
+
+Let $\epsilon$ be arbitrary. Then, there
+exists $N_1 \in \textbf{N}$ such that
+$n \geq N_1 \to |a_{n + 1}| \leq |a_n|r'$.
+$\sum a_n$. There also exists $N_2 \in \textbf{N}$ such that $m > n \geq N_2$
+implies than $|q_m - q_n| < \epsilon$ (this comes from Cauchy Criterion for
+Series). Then let  $N = \max\{N_1, N_2\}$.
+
+Then for $m > n \geq N$.
+$$|s_m - s_n| = ||a_{n + 1}| + |a_{n + 2}| + ... |a_m|| =
+|a_{n + 1}| + |a_{n + 2}| + ... |a_m| \leq$$
+$$\leq|a_n|r' + |a_{n + 1}|r' +
+... + |a_{m - 1}|r' \leq |a_{n - 1}|r'^2 + |a_{n}|r'^2 + ... +
+|a_{m - 2}|r'^2 \leq$$
+$$\leq |a_N|r'^{N - n} + |a_N|r'^{N - n + 1} + ... + |a_N|r'^{N - m} =
+|q_m - q_n| < \epsilon$$
+
+Therefore there exists $N \in \textbf{N}$ such that for every $m > n \geq N$
+$$|s_m - s_n| < \epsilon$$
+
+Thus, by Cauchy criterion for series, the  series $\sum |a_n|$ is convergent.
+Thus $\sum a_n$ is absolutely convergent.
+
+\section*{2.7.10}
+\textit{(a) Show that if $a_n > 0$ and $\lim(na_n) = l$ with $l \neq 0$,
+  then the series $\sum a_n$ diverges. }
+
+I think that for this one the strategy is to somehow compare element
+of a given  sequence, and then conclude, that the partial sum of a desired
+series is more than a partial sum for harmonic series, and therefore is
+divergent.
+
+First of all, $n \in N \to n \geq 0$, therfore $a_n n \geq 0$. Therefore
+we can state that $l \geq 0$.
+
+Let $(s_n)$ be a sequence of  partial sums  for $\sum a_n$. Then
+let $\epsilon = l$. Then there exists $N \in \textbf{N}$ such that for all
+$n \in \textbf{N} \geq N$ it follows that
+$$ |n a_n - l| > \epsilon$$
+$$ n a_n - l > \epsilon$$
+$$ n a_n - l > l $$
+$$ n a_n  > 2l $$
+$$ a_n  > \frac{2l}{n} $$
+
+Let us now look at the Harmonic Series. Define $q_n$ to be a partial sum for
+the Harmonic Series. We know, that it is divergent. Thus,
+there exists an $\epsilon$, such that
+$$|q_m - q_n| \geq \epsilon$$
+for any $m > n \in \textbf{N}$. Thus
+$$|\frac{1}{m} + \frac{1}{m - 1} + ... + \frac{1}{n + 1} | \geq \epsilon$$
+$$\frac{1}{m} + \frac{1}{m - 1} + ... + \frac{1}{n + 1} \geq \epsilon$$
+$$\frac{2l}{m} + \frac{2l}{m - 1} + ... + \frac{2l}{n + 1} \geq 2l \epsilon$$
+$$a_m + a_{m - 1} + ... + a_{n + 1} \geq 2l \epsilon$$
+$$|s_m - s_n| \geq 2l \epsilon$$
+
+Thus, there exists $2l\epsilon \in R$ such that for every
+$m > n \in \textbf{N}$ it follows that 
+$$|s_m - s_n| \geq 2l \epsilon$$
+
+Thus, by Cauchy Criterion for series, the series $\sum a_n$ is divergent.
+
+\textit{(b) Assume $a_n > 0$ and $\lim(n^2 a_n)$ exists. Show that
+  $\sum a_n$ converges.}
+
+Suppose that all assumption in the exercise are true. Then, by defintion
+of limit, for every $\epsilon > 0$
+there exists $N \in \textbf{N}$ such that if $n \geq N$, then it
+follows that
+$$|n^2 a_n - l| < \epsilon$$
+$$- \epsilon < n^2 a_n - l < \epsilon$$
+$$- \epsilon + l < n^2 a_n  < l + \epsilon$$
+$$\frac{l - \epsilon}{n^2} < a_n  < \frac{l + \epsilon}{n^2}$$
+$$0< a_n  < \frac{l + \epsilon}{n^2}$$
+
+We know, that the sum $\sum 1/n^2$ is convergent. Therefore
+$\sum \frac{ l + \epsilon}{n^2}$ is convegent as well for any
+$l + \epsilon \in R$. Thus, by Comparison Test, $\sum a_n$ is convergent as
+well, as desired.
+
+\section*{2.7.11}
+\textit{Find examples of two series $\sum a_n$ and $\sum b_n$ both of which
+  diverge, but for which $\sum \min\{a_n, b_n\}$ converges. To make it more
+  challanging, produce exampless where $(a_n)$ and $(b_n)$ are positive and
+  decreasing.}
+
+If the relax the exercise and try to make just normal versions of given things, then we'll get
+
+\begin{equation}
+  a_x =
+  \begin{cases}
+    1 \text{ if n is even} \\
+    1/n^2 \text{ if n is odd}
+  \end{cases}
+\end{equation}
+
+and
+
+\begin{equation}
+  b_x =
+  \begin{cases}
+    1 \text{ if n is odd} \\
+    1/n^2 \text{ if n is even}
+  \end{cases}
+\end{equation}
+
+Then the obvious minimum will converge, as desired. In this case we even have
+every element of every sequence to be positive.
+
+The idea behind this one is probably to construct the desired case from
+"barely" divergent sequences and series (In this case we probably need
+something along the lines of Harmonic Series )
+
+It (probably) can be shown, that the desired sequences are convergent to zero
+(or at the very least one of them).
+
+On this particular exercise we are going to assume some things without any
+hope for proof or concrete base, and we are going to pull'em out of thin air.
+First of all: the required seirieses are most likely to be "barely" divergent.
+Secondly, required sequences (not serieses) are probably convergent to 0. It's
+actually hard to belive, that such sequences exist.
+
+I can't really come up with one right now, so i'll suspend it for a later date.
+
+
+\section*{2.7.12 (Summation by Parts)}
+\textit{Let $(x_n)$ and $(y_n)$ be sequences, and let
+  $s_n = x_1 + x_2 + ... + x_n$. Use the observation that
+  $x_j = s_j - s_{j - 1}$ to verify formula }
+$$\sum_{j = m + 1}^{n} x_j y_j = s_n y_{n + 1} - s_m y_{m + 1} +
+\sum_{j = m + 1}^{n} s_j (y_j - y_{j + 1})$$
+$$s_n y_{n + 1} - s_m y_{m + 1} +
+\sum_{j = m + 1}^{n} s_j (y_j - y_{j + 1}) = $$
+$$ = s_n y_{n + 1} - s_m y_{m + 1} +
+s_{m + 1} (y_{m + 1} - y_{m + 2}) +
+s_{m + 2} (y_{m + 2} - y_{m + 3}) +
+... +
+s_{n} (y_{n} - y_{n + 1}) = $$
+$$ = s_n y_{n + 1} - s_m y_{m + 1} +
+s_{m + 1} y_{m + 1} - s_{m + 1} y_{m + 2} +
+s_{m + 2} y_{m + 2} - s_{m + 2} y_{m + 3} +
+... +
+s_{n} y_{n} - s_{n} y_{n + 1} = $$
+$$ =  - s_m y_{m + 1} +
+s_{m + 1} y_{m + 1} - s_{m + 1} y_{m + 2} +
+s_{m + 2} y_{m + 2} - s_{m + 2} y_{m + 3} +
+... + s_{n - 1} y_{n - 1} - s_{n - 1} y_{n}
++ s_{n} y_{n}  = $$
+$$ =  y_{m + 1}(s_{m + 1} - s_m ) +
+y_{m + 2}(s_{m + 2} - s_{m + 1} ) +
+...   y_{n}( s_{n} - s_{n - 1})  = $$
+$$ = y_{m + 1} x_{m + 1} +
+y_{m + 2} x_{m + 2} + ... +
+y_{n}x_n = \sum_{j = m + 1}^{n} x_j y_j
+$$
+as desired.
+
+\section*{2.7.13 (Dirichlet's Test)}
+\textit{Dirichlet's Test for convergence states that if the partial sums of
+  $\sum_{n = 1}^{\infty} x_n$ are bounded (but not necessarily convergent), and
+  if $(y_n)$ is a sequence satisfyong $y_1 \geq y_2 \geq y_3 \geq ... \geq 0 $
+  with $\lim y_n = 0$, then the series $\sum_{n=1}^{\infty} x_n y_n$ converges.
+}
+
+\textit{(a) Let $M > 0$ be an upper bound for the partial sums of
+  $\sum_{n = 1}^{\infty} x_n$. Use Exercise 2.7.12 to show that }
+$$\left|\sum_{j = m + 1}^{n} x_j y_j\right| \leq 2M|y_{m + 1}|$$
+
+Suppose that everything in exercise is true. Then it follows that
+$|s_j| < M$. Then
+$$\left|\sum_{j = m + 1}^{n} x_j y_j\right| =
+\left|s_n y_{n + 1} - s_m y_{m + 1} + \sum_{j = m + 1}^{n}{s_j (y_j - y_{j + 1})} \right| \leq$$
+$$\leq \left|s_n y_{n + 1}\right| + \left|s_m y_{m + 1}\right| + \left|\sum_{j = m + 1}^{n}{s_j (y_j - y_{j + 1})} \right| = $$
+$$\leq |s_n| |y_{n + 1}| + |s_m|| y_{m + 1}| + |s_j|\left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right| \leq $$
+$$\leq M |y_{n + 1}| + M| y_{m + 1}| + M\left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right| =$$
+$$=  M \left(|y_{n + 1}| + | y_{m + 1}| + \left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right|\right) \leq
+$$
+$$\leq  M \left(|y_{n + 1}| + | y_{m + 1}| + \left| y_{m + 1} - y_{m + 2} + y_{m + 2} - y_{m + 3} +  ... + y_n - y_{n + 1}\right|\right) =$$
+$$=  M \left(|y_{n + 1}| + | y_{m + 1}| + \left| y_{m + 1} - y_{n + 1}\right|\right) = $$
+$$=  M \left(y_{n + 1} +  y_{m + 1} + y_{m + 1} - y_{n + 1}\right) = 2M|y_{m + 1}|$$
+
+Therefore
+$$\left|\sum_{j = m + 1}^{n} x_j y_j\right| \leq 2M|y_{m + 1}|$$
+as desired
+
+\textit{(b) Prove Dirichlet's Test just stated.}
+
+Suppose that we are given some $\epsilon$ > 0. By the convergence of $(y_n)$,
+there exists $N$, such that for  $\epsilon_1 = \epsilon / 2M$ and $m + 1 \geq N$ it
+follows that
+$$|y_{m + 1}| < \epsilon_1$$
+$$|y_{m + 1}| < \epsilon / 2M$$
+$$2M|y_{m + 1}| < \epsilon$$
+$$\left|\sum_{j = m + 1}^{n} x_j y_j\right| \leq 2M|y_{m + 1}| < \epsilon$$
+$$\left|\sum_{j = m + 1}^{n} x_j y_j\right|  < \epsilon$$
+Thus, by Cauchy Criterion for Series, it follows that
+$\sum_{n = 1}^{\infty} x_j y_j$ converges, as desired.
+
+\textit{(c) Show how the Alternating Series Test (Theorem 2.7.7) can be
+  derived as a special case of Dirichlet's Test.}
+
+Firstly, 2.7.7 states that
+
+\textbf{Theorem 2.7.7 (Alternating Series Test)}
+\textit{Let $(a_n)$ be a sequence satisfying}
+$$\text{(i) } a_1 \geq a_2 \geq a_3 \geq ... \geq a_n \geq ... \text{ and }$$
+$$\text{(ii) } (a_n) \to 0$$
+\textit{Then, the alternating series $\sum_{n = 1}^{\infty}(-1)^{n + 1} a_n$
+  converges}
+
+We cas set $x_n = (-1)^{n + 1}$, which is gonna be bounded by $[-1, 1]$, and
+$y_n = a_n$, which converges to 0 and satisfies all of the necessary
+prerequisites for Dirichlet's Test to be applied.
+
+\section*{2.7.14 (Abel's Test).}
+\textit{Abel's Test for convergence states that if the series
+  $\sum_{n = 1}^{\infty} x_n$ converges, and if $y_n$ is a sequence
+  satisfying  }
+$$y_1 \geq y_2 \geq y_3 \geq ... \geq 0$$
+then the series $\sum_{n = 1}^{\infty} x_n y_n$ converges.
+
+\textit{(a) Carefully point out how the hypothesis of Abel's Test differs from
+that of Dirichlet's Test in Exercise 2.7.13.}
 
 \end{document}
