@@ -4767,5 +4767,124 @@ $$|\sum_{j = m + 1}^{n} x_j y_j|= |\sum_{j = 1}^{n} a_n b_n| <2 A b_1$$
 
 Therefore by Cauchy Criterion for Series, $\sum x_j y_j$ is convergent.
 
+\section*{2.8.1}
+\textit{Using the particular array $(a_{ij})$ from  Section 2.1, compute
+  $\lim_{n \to \infty} s_{nn}$. How does this value compare to the two
+  iterated values for the sum already computed? }
+
+Firstly, let us state the requested array:  $\{a_{ij}: i,j \in \textbf{N}\}$,
+where $a_{ij} = 1/2^{j - i}$ if $j > i$, $a_{ij} = -1$ if $j = i$, and
+$a_{ij} = 0$ if $j < i$ (I'd gladly portrait the grid here if I knew how to
+do it).
+
+I don't think, that we need concrete proofs and/or some other rigorous stuff,
+so it'll suffice to show that
+$$s_{1,1} = -1$$
+$$s_{2,2} = -3/2$$
+$$s_{3,3} = -7/4$$
+
+Or in general, $(s_{n,n}) \to  -2$, or in other words,
+$$\lim_{n \to \infty} s_{n,n} = -2$$
+as desired.
+
+The resulting value is equal to one of the earlier computed results.
+
+\section*{2.8.2}
+
+\textit{Show that if the iterated series }
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_{ij}|$$
+\textit{converges (meaning that for each fixed $i \in \textbf{N}$ the series
+  $\sum_{j = 1}^{\infty}|a_{ij}|$ converges to some real number $b_i$, and
+  the series $\sum_{i = 1}^{\infty}b_i$ converges as well), then the iterated
+  series}
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij}$$
+\textit{converges.}
+
+Suppose that
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_{ij}|$$
+converges. This implies that for every $i \in N$ it is true that
+$\sum_{j = 1}^{\infty}|a_{ij}|$  converges. This implies that
+$\sum_{j = 1}^{\infty}a_{ij}$ converges. It is also true, tha
+$\sum_{i = 1}^{\infty}b_{i}$ converges. Triangular inequality implies that
+$$ b_i =  \sum_{j = 1}^{\infty}|a_{ij}| \geq \left|\sum_{j = 1}^{\infty}a_{ij}\right|$$
+$$  0 \leq \left|\sum_{j = 1}^{\infty}a_{ij}\right| \leq b_i$$
+Thus, by Comparison Test
+$$\sum_{i = 1}^{\infty}\left|\sum_{j = 1}^{\infty}a_{ij}\right|$$
+converges. Thus, by Absolute Convergence Test
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij}$$
+converges too, as desired.
+
+
+
+\section*{2.8.3}
+
+\textbf{Theprem 2.8.1.}
+\textit{Let $\{a_{ij}: i, j \in N\}$ be a doubly indexed array of real numbers.
+If}
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_{ij}|$$
+\textit{converges, then both
+  $\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty} a_{ij}$ and
+  $\sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty} a_{ij}$ converge to the same value. Moreover, }
+$$\lim_{n \to \infty} s_{nn} = \sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij} = \sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty}a_{ij}$$
+\textit{where $s_{nn} = \sum_{i = 1}^{n}\sum_{j = 1}^{n}a_{ij}$}
+
+\textit{(a) Prove that the set $\{t_{mn}: m, n \in \textbf{N}\}$ is bounded
+  above, and use this fact to conclude that the sequence $(t_{nn})$ converges.}
+
+Because
+$$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_{ij}| = l$$
+is convergent, we can state that $t_{mn}$ is less than $l$. Also,
+$t_{m, m} - t_{n,n} \geq 0$ for $m \geq n$. Thus, the sequence is bounded
+and monotone, and therefore convergent.
+
+\textit{(b) Now, use the fact that $(t_{nn})$ is a Cauchy sequence to argue
+  that $(s_{nn})$ is a Cauchy sequence and hence converges.}
+
+Let $\epsilon > 0$. Then there exists $N \in \textbf{N}$ such  that for
+$m > n \in N$ it follows that
+$$|t_{mm} - t_{nn}| < \epsilon$$
+$$||a_{m,m}| + |a_{m, m - 1}| + ... + |a_{n + 1, n + 1}|| < \epsilon$$
+$$|a_{m,m}| + |a_{m, m - 1}| + ... + |a_{n + 1, n + 1}| < \epsilon$$
+$$|a_{m,m} + a_{m, m - 1} + ... + a_{n + 1, n + 1}| \leq |a_{m,m}| + |a_{m, m - 1}| + ... + |a_{n + 1, n + 1}| < \epsilon$$
+$$|a_{m,m} + a_{m, m - 1} + ... + a_{n + 1, n + 1}|  < \epsilon$$
+$$|s_{mm} - s_{nn}|  < \epsilon$$
+
+Therefore $(s_{nn})$ is a Cauchy sequence, and therefore it is convergent, as
+desired.
+
+\section*{2.8.4}
+\textit{(a) Argue that there exists an $N_1 \in \textbf{N}$ such that
+  $m, n \geq N_1$ implies $B - \frac{\epsilon}{2} < t_{mn} \leq B$.}
+
+There exist $m_0, n_0 \in N$ such that
+$$B - \frac{\epsilon}{2} < t_{m_0, n_0} \leq B$$
+
+We know, that $t_{m_1, n_0} - t_{m_0, n_0} \geq 0$ for $m_1 \geq m_0$. Thus,
+if we pick $N_1 = \max\{m_0, n_0\}$, then $m, n \geq N_1$ implies that 
+$$B - \frac{\epsilon}{2} < t_{m, n} \leq B$$
+as desired
+
+\textit{(b) Now, show that there exists an $N$ such that }
+$$|s_{mn} - S| < \epsilon$$
+\textit{for all $m, n \geq N$.}
+
+We know, that $(t_{n,n})$ is a Cauchy sequence, and thus, for the given
+$\epsilon$ there exists $N$, such that $m > n \geq N$ implies that 
+$$|t_{m,m} - t_{n,n}| < \epsilon/2$$
+$$||a_{m,m}| + |a_{m - 1, m}| + ... + |a_{n + 1,n + 1}|| < \epsilon/2$$
+$$|a_{m,m}| + |a_{m - 1, m}| + ... + |a_{n + 1,n + 1}| < \epsilon/2$$
+$$|a_{m,m}| + |a_{m - 1, m}| + ... + |a_{n + 1,m}| < \epsilon/2$$
+$$|a_{m,m} + a_{m - 1, m} + ... + a_{n + 1,m}| < \epsilon/2$$
+$$|a_{m,m} + a_{m - 1, m} + ... + a_{n + 1,m}| < \epsilon/2$$
+
+$$|s_{nn} - S| < \epsilon/2$$
+$$|s_{nn} - S| + |a_{m,m} + a_{m - 1, m} + ... + a_{n + 1,m}| < \epsilon$$
+$$|s_{nn} + a_{m, n} + .... + a_{n + 1, n} - S| \leq |s_{nn} - S| + |a_{m,m} + a_{m - 1, m} + ... + a_{n + 1,m}| <  \epsilon$$
+$$|s_{nn} + a_{m, n} + .... + a_{n + 1, n} - S| < \epsilon$$
+$$|s_{mn}  - S| < \epsilon$$
+
+Thus, there exists $N \in \textbf{N}$ such that $m, n \geq N$ implies
+$$|s_{mn} - S| < \epsilon$$
+as desired
 
 \end{document}
