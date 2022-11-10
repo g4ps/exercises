@@ -4617,11 +4617,20 @@ It (probably) can be shown, that the desired sequences are convergent to zero
 
 On this particular exercise we are going to assume some things without any
 hope for proof or concrete base, and we are going to pull'em out of thin air.
-First of all: the required seirieses are most likely to be "barely" divergent.
-Secondly, required sequences (not serieses) are probably convergent to 0. It's
+First of all: the required seiries are most likely to be "barely" divergent.
+Secondly, required sequences (not series) are probably convergent to 0. It's
 actually hard to belive, that such sequences exist.
 
-I can't really come up with one right now, so i'll suspend it for a later date.
+I looked this exercise up on the internet for some hints, and I got some.
+Suppose that:
+
+$a_n$ - equal to $1/n^2$ for "odd" turns (i.e. for [1], [3, 4], [7, 8, 9], ...),
+and maximum of itself for other terms
+$b_n$ - equal to $1/n^2$ for "even" turns (i.e. for [2], [5, 6], [10, 11, 12], ...), and maximum of itself for other terms
+
+Then I think, that both of them diverge, but cannot prove it. There exists a
+more robust example, but I think, that it is pretty cursed anyways. I'm done
+with this exercise anyways, not gonna spend more time on it.
 
 
 \section*{2.7.12 (Summation by Parts)}
@@ -4672,7 +4681,7 @@ $|s_j| < M$. Then
 $$\left|\sum_{j = m + 1}^{n} x_j y_j\right| =
 \left|s_n y_{n + 1} - s_m y_{m + 1} + \sum_{j = m + 1}^{n}{s_j (y_j - y_{j + 1})} \right| \leq$$
 $$\leq \left|s_n y_{n + 1}\right| + \left|s_m y_{m + 1}\right| + \left|\sum_{j = m + 1}^{n}{s_j (y_j - y_{j + 1})} \right| = $$
-$$\leq |s_n| |y_{n + 1}| + |s_m|| y_{m + 1}| + |s_j|\left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right| \leq $$
+$$\leq |s_n| |y_{n + 1}| + |s_m|| y_{m + 1}| + |M|\left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right| \leq $$
 $$\leq M |y_{n + 1}| + M| y_{m + 1}| + M\left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right| =$$
 $$=  M \left(|y_{n + 1}| + | y_{m + 1}| + \left|\sum_{j = m + 1}^{n}{ (y_j - y_{j + 1})} \right|\right) \leq
 $$
@@ -4721,6 +4730,42 @@ $$y_1 \geq y_2 \geq y_3 \geq ... \geq 0$$
 then the series $\sum_{n = 1}^{\infty} x_n y_n$ converges.
 
 \textit{(a) Carefully point out how the hypothesis of Abel's Test differs from
-that of Dirichlet's Test in Exercise 2.7.13.}
+  that of Dirichlet's Test in Exercise 2.7.13.}
+
+First of all, Abel's Test requires $\sum x_n$ to be not only bounded, but
+convergent as well. Secondly, $(y_n)$ is not required to be convergent.
+
+\textit{(b) Assume that $\sum a_n$ has partials sums, that are bounded by a
+  constant $A > 0$, and assume $b_1 \geq b_2 \geq b_3 \geq ... \geq 0$. Use
+  Exercise 2.7.12 to show that }
+$$\left|\sum_{j = 1}^{n} a_j b_j \right| \leq 2 A b_1$$
+let $s_n$ be a sequence of partial sums for $\sum a_n$. Then
+$$\left|\sum_{j = 1}^{n} a_j b_j \right| = \left|s_n b_{n + 1} - s_1 b_2 + \sum_{j = 1}^{n} s_j (b_j - b_{j + 1})\right| \leq $$
+$$\leq |s_n b_{n + 1}| + |s_0 b_1| + \left|\sum_{j = 1}^{n} s_j (b_j - b_{j + 1})\right| $$
+$$\leq |s_n b_{n + 1}| + |s_0 b_1| + \sum_{j = 1}^{n} \left|s_j (b_j - b_{j + 1})\right| $$
+$$\leq |s_n b_{n + 1}| + |s_0 b_1| + \sum_{j = 1}^{n} \left|s_j (b_j - b_{j + 1})\right| $$
+$$\leq |s_n ||b_{n + 1}| + |s_0 ||b_1| + \sum_{j = 1}^{n} \left|s_j|| (b_j - b_{j + 1})\right| $$
+$$\leq A|b_{n + 1}| + A|b_1| + \sum_{j = 1}^{n} A \left| (b_j - b_{j + 1})\right| $$
+$$\leq A(|b_{n + 1}| + |b_1| + \sum_{j = 1}^{n}  \left| (b_j - b_{j + 1})\right| )$$
+$$\leq A(b_{n + 1} + b_1 + \sum_{j = 1}^{n}   (b_j - b_{j + 1}) )$$
+$$\leq A(b_{n + 1} + b_1 + b_1 - b_2 + b_2 - b_3 + ... + b_n - b_{n + 1}) $$
+$$\leq A(b_1 + b_1) = 2 A b_1 $$
+as desired.
+
+\textit{(c) Prove Abel's Test via the following strategy. For a fixed
+  $m \in N$, apply part (b) to $\sum_{j = m + 1}^{n} x_j y_j $ by setting
+  $a_n = x_{m + n}$ and $b_n = y_{m + n}$. (Argue that an upper bound on the
+  partial sums of $\sum_{n = 1}^{\infty} a_n$ can be made arbitrarily small by
+  taking $m$ to be large.)}
+
+Let us fix $m \in N$. Then set $a_n = x_{m + n}$ and $b_n = y_{m + n}$. Then
+$\sum_{j = 1}^{n} a_j$ is equal to $\sum_{m + 1}^{m + n} x_n$. Thus, for every
+$\epsilon > 0$ we can find $m \in N$, such that
+$\sum_{j = 1}^{n}a_j < \epsilon$ by convergence of $\sum x_j$ and by using
+Cauchy Criterion. Therefore we always have $A = \epsilon$. Thus
+$$|\sum_{j = m + 1}^{n} x_j y_j|= |\sum_{j = 1}^{n} a_n b_n| <2 A b_1$$
+
+Therefore by Cauchy Criterion for Series, $\sum x_j y_j$ is convergent.
+
 
 \end{document}
