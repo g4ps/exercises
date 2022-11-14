@@ -4887,4 +4887,82 @@ Thus, there exists $N \in \textbf{N}$ such that $m, n \geq N$ implies
 $$|s_{mn} - S| < \epsilon$$
 as desired
 
+\section*{2.8.5}
+\textit{Use the Algebraic Limit Theorem (Theorem 2.3.3) and the Order Limit
+  (Theorem 2.3.4) to show that for all $m \geq N$}
+$$|(r_1 + r_2 + ... + r_m) - S| \leq  \epsilon$$
+\textit{Conclude that the iterated sum
+  $\sum_{i=1}^{\infty}\sum_{j=1}^{\infty} a_{ij}$ converges to S.}
+
+We know, that for every $\epsilon > 0$  there exists $N \in \textbf{N}$ such
+that for $m,n \geq N$ it follows that
+$$|s_{mn} - S| < \epsilon$$
+
+We also should state, that because the sum of absolute values converge
+to some number, then it follows, that $\sum r_m$ also converges to some number.
+Therefore we can use both Order Limit Theorem and Algebraic Limit Theorem.
+
+$$\left|\left(\sum_{j = 1}^{\infty}a_{1,j} + \sum_{j = 1}^{\infty}a_{2,j} + ... + \sum_{j = 1}^{\infty}a_{m,j}\right) - S\right| \leq  \epsilon$$
+
+% Going bottom-up
+% $$(p_m) \to S$$
+% $$\forall \epsilon : \exists N \in \textbf{N}: \forall m \geq N \to  |p_m - S| < \epsilon$$
+% $$p_n = \sum a_{1,n} + \sum a_{2,n} + ... + \sum a_{m,n}$$
+
+% Maybe the  idea is to show that every element is bound below by some $s_{mn}$ and bound above by $S$.
+
+% $$\sum r_n - \sum s_{mn} = $$
+% $$ = (\sum_{j=1}^{\infty} a_{1,j} + \sum_{j=1}^{\infty} a_{2,j} + \sum_{j=1}^{\infty} a_{m,j})
+% - (\sum_{j=1}^{n} a_{1,j} + \sum_{j=1}^{n} a_{2,j} + ... + \sum_{j=1}^{n} a_{m,j})$$
+% $$\left|\sum r_n - \sum s_{mn}\right| = $$
+% $$ = \left|(\sum_{j=1}^{\infty} a_{1,j} + \sum_{j=1}^{\infty} a_{2,j} + \sum_{j=1}^{\infty} a_{m,j})
+%   - (\sum_{j=1}^{n} a_{1,j} + \sum_{j=1}^{n} a_{2,j} + ... + \sum_{j=1}^{n} a_{m,j})\right|$$
+$$\left|\sum r_n - \sum s_{mn}\right| = $$
+$$ = \left|(\sum_{j=1}^{\infty} a_{1,j} + \sum_{j=1}^{\infty} a_{2,j} + \sum_{j=1}^{\infty} a_{m,j})
+  - (\sum_{j=1}^{n} a_{1,j} + \sum_{j=1}^{n} a_{2,j} + ... + \sum_{j=1}^{n} a_{m,j})\right| = $$
+$$\left|\sum_{j = n + 1}^{\infty} a_{1,j} + \sum_{j = n + 1}^{\infty} a_{2,j} + ...
+  + \sum_{j = n + 1}^{\infty} a_{m,j} \right| \leq $$
+$$
+\leq \sum_{j = n + 1}^{\infty} |a_{1,j}| + \sum_{j = n + 1}^{\infty} |a_{2,j}| + ...
++ \sum_{j = n + 1}^{\infty} |a_{m,j}|  \to 0
+$$
+
+
+By convergence of $\sum \sum |a_{m,n}|$ we know, that every
+$\sum_{j = 1}^{\infty} |a_{m,n}|$
+converges to some number. Suppose that it converges to $r_m$. 
+Thus we can state that
+$$\sum_{j = n + 1}^{\infty} = \lim(\sum_{j = 1}^{\infty} |a_{m,j}| - \sum_{j = 1}^{n} |a_{m,j}|) = \lim(r_m - r_m) = 0$$
+
+Thus, $q_n = \left|\sum r_n - \sum s_{mn}\right|$ is a sequence,
+each element of which is less than a sum of elements of sequences,
+convergent to 0, and thus, by Algebraic Limit Theorem, it itself
+is also convergent to 0.
+
+Thus,   $\sum_{i=1}^{\infty}\sum_{j=1}^{\infty} a_{ij} = S$, as desired.
+
+\section*{2.8.6}
+\textit{Finish the proof by showing that the other iterated sum, $\sum_{j=1}^{\infty}\sum_{i=1}^{\infty} a_{ij}$, converges to S as well. Notice that the
+  same argument can be used once it is established that. for each fixed column
+  $j$, the sum $\sum_{i = 1}^{\infty} a_{ij}$ converges to some real number
+  $c_i$.}
+
+We can make an argument here, that we don't really need two different proofs
+on the account that it doesn't matter in which particular direction (rows or
+columns) we construct $r$'s.
+
+To make the argument more concrete, substitute $i$ for $j$  in the
+previous section of the proof and you'll get the desired result.
+
+Therefore if $\sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty}|a_{ij}|$ exists,
+then it follows that 
+$$\lim_{n \to \infty} s_{nn} = \sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij} = \sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty}a_{ij}$$
+
+\section*{2.8.7}
+\textit{(a) Assuming the hypothesis -- and hence the conclusion of
+  Theorem 2.8.1, show that $\sum_{k = 2}^{\infty}d_k$ converges absolutely.}
+
+We can 
+
+
 \end{document}
