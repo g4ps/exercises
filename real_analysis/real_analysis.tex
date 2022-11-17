@@ -4962,7 +4962,80 @@ $$\lim_{n \to \infty} s_{nn} = \sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij} 
 \textit{(a) Assuming the hypothesis -- and hence the conclusion of
   Theorem 2.8.1, show that $\sum_{k = 2}^{\infty}d_k$ converges absolutely.}
 
-We can 
+This follows from the fact that $\sum_{k = 2}^{\infty}|d_k|$ is increasing, and bounded
+above by $\sum \sum |a_{ij}|$, and therefore convergent absolutely.
 
+\textit{(b) Imitate the strategy in the proof of Theorem 2.8.1 to show
+  $\sum_{k=2}^{\infty} d_k$ converges to $S = \lim_{n \to \infty}s_{nn}$}
+
+Let $n \in \textbf{N}$ and let $m = 2n$. Then it follows, that
+every $a_{ij}$, that comprises $s_{nn}$ is in $d_{m}$. Also, every $a_{ij}$
+in $d_{m}$ is contained in $s_{mm}$. Thus, let $q_k$ be a sequence, such that
+$q_k = d_m - s_{nn}$. We know that $t_{nn}$ (which is sequence of  paritial
+sums for the absolute sum) converges. Thus, if we define $l_k$ to be an
+absolute sum of evements of $q_k$, then it follows, that 
+$$ |t_mm - t_nn| < \epsilon $$
+$$ t_mm - t_nn < \epsilon $$
+$$ t_mm - t_nn < \epsilon $$
+$$  l_k < \epsilon $$
+$$|q_k| < \epsilon$$
+Thus, $(q_k) \to 0$. Therefore we can state that
+$$\lim d_m = \lim q_m + \lim s_{nn}$$
+Thus, $\lim d_m = S$, as desired.
+
+\section*{2.8.8}
+\textit{Assume that $\sum_{i = 1}^{\infty} a_i$  converges to $A$, and
+  $\sum_{i = 1}^{\infty} b_i$ converges absolutely to $B$.}
+
+\textit{(a) Show that the set}
+$$\left\{\sum_{i = 1}^{m}\sum_{j = 1}^{n}|a_i b_j|: m,n \in \textbf{N}\right\}$$
+\textit{is bounded. Use this to show that the iterated sum
+  $\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_i b_j|$ converges so that we
+  may apply Theorem 2.8.1}
+
+
+First of all, because sum of both sequences converge, we can state that
+$(a_n) \to 0$ and $(b_n) \to 0$. Thus, both of them are bounded. Thus
+let us take a look at a partial sum of $\sum_{i = 1}^{m}\sum_{j = 1}^{n}|a_i b_j|$
+
+$$s_n = |a_1 b_1| + |a_2 b_2| + ... + |a_n b_n| =
+|a_1||b_1| + |a_2 || b_2| + ... + |a_n ||b_n| \leq$$
+$$\leq |M||b_1| + |M||b_2| + ... + |M||b_n| = |M|(b_1 + b_2 + ... + b_n)$$
+where $M$ is a number such that $|a_n| < M$.
+
+Thus we can state that every element of a sequence of partial sums for the
+original sequence is less or equal to an element of a sequence of partial sums
+for $\sum |Mb_n|$. Thus, the set is bounded above by |MB| (by Algebraic Limit
+Theorem for Series). Because the sum it is a sum of non-negative terms we
+can conclude, that is is also bounded below by 0 (to be more rigorous, every
+element in sequence of partial sums is greater, than an element of a sequence
+of 0's, and therefore is non-negative).
+
+By the fact that this sum is a sum of non-negative terms, we can state that
+the sequence of partial sums is increasing, and therefore, by MCT, the sum
+is convergent.
+
+
+\textit{(b) Let $s_{nn} = \sum_{i = 1}^n\sum_{j = 1}^n a_i b_j$, and use the
+  Algebraic Limit Theorem to show that $\lim_{n \to \infty} s_{nn} = AB$.
+  Conclude that }
+$$\sum_{i = 1}^{\infty} \sum_{j = 1}^{\infty} a_j b_i =
+\sum_{j = 1}^{\infty} \sum_{i = 1}^{\infty} a_j b_i =
+\sum_{k = 2}^{\infty}  d_k = AB$$
+
+$$s_n = a_1 b_1 + a_1 b_2 + a_1 b_3 + .. + a_n b_n = $$
+$$= a_1 (b_1 + b_2 + ... + b_n) + a_2 (b_1 + b_2 + ... + b_n) + ...
++ a_n(b_1 + b_2 + ... + b_n) = $$
+$$= (a_1 + a_2 + ... + a_n)(b_1 + b_2 + ... + b_n)) = p_n q_n$$
+where $p_n$ and $q_n$ are sequences of partial sums for $\sum a_n$ and
+$b_n$ respectively. Thus we can state that
+$$\lim_{n \to \infty} s_{nn} = \lim_{n \to \infty} (\sum_{i = 1}^{n} a_i 
+\sum_{i = 1}^{n} b_i) = AB$$
+
+Therefore, by Theorem 2.8.1 and its consequences
+$$\sum_{i = 1}^{\infty} \sum_{j = 1}^{\infty} a_j b_i =
+\sum_{j = 1}^{\infty} \sum_{i = 1}^{\infty} a_j b_i =
+\sum_{k = 2}^{\infty}  d_k = AB$$
+as desired.
 
 \end{document}
