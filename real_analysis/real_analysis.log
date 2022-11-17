@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  17 NOV 2022 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  17 NOV 2022 21:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -216,30 +216,8 @@ LaTeX Warning: Command \textsection invalid in math mode on input line 1750.
 LaTeX Warning: Command \textsection invalid in math mode on input line 1750.
 
 Missing character: There is no § in font cmr10!
-[37] [38] [39]
-Overfull \hbox (17.48622pt too wide) detected at line 1901
-\OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \
-OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n
-/10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 ^^@ \OML/
-cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 
-= \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m
-/it/10.95 x\OMS/cmsy/m/n/10.95 jj[]j \OT1/cmr/m/n/10.95 =
- []
-
-[40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
-Overfull \hbox (26.35402pt too wide) detected at line 2470
-\OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[] ^^
-@ []j ^^C \OT1/cmr/m/n/10.95 1 = \OMS/cmsy/m/n/10.95 j[] ^^@ []j[] \OT1/cmr/m/n
-/10.95 = []
- []
-
-
-Overfull \hbox (32.7789pt too wide) detected at line 2495
-[] \OT1/cmr/m/n/10.95 = [] = [] =
- []
-
-[52] [53] [54] [55] [56] [57] [58] [59]
-Overfull \hbox (33.66159pt too wide) in paragraph at lines 2836--2837
+[37] [38] [39] [40] [41]
+Overfull \hbox (33.66159pt too wide) in paragraph at lines 1977--1978
 []\OT1/cmr/m/it/10.95 (b) What does your def-i-ni-tion in (a) say about the par
 -tic-u-lar se-quence $\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
 0.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/
@@ -249,8 +227,8 @@ m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1
 .95 ; \OT1/cmr/m/n/10.95 0\OML/cmm/m/it/10.95 ; :::\OT1/cmr/m/n/10.95 )$ 
  []
 
-[60] [61] [62]
-Overfull \hbox (22.53769pt too wide) in paragraph at lines 2984--2985
+[42] [43] [44]
+Overfull \hbox (22.53769pt too wide) in paragraph at lines 2125--2126
 \OT1/cmr/m/it/10.95 Let $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/
 n/10.95 )$ \OT1/cmr/m/it/10.95 and $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y[]
 \OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 be given, and dee-fine $\OT1/cmr/m/n/
@@ -259,10 +237,10 @@ he "shuf-fled" se-quence $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]; x[]
 ; y[]; x[]; y[]; :::\OT1/cmr/m/n/10.95 )$\OT1/cmr/m/it/10.95 .
  []
 
-[63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
-[78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91] [92]
-[93] [94]
-Overfull \hbox (7.54654pt too wide) detected at line 4389
+[45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59]
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74]
+[75] [76]
+Overfull \hbox (7.54654pt too wide) detected at line 3530
 \OML/cmm/m/it/10.95 l[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it
 /10.95 x[]y[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 j\O
 ML/cmm/m/it/10.95 x[]y[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 + \OML/cmm/m/i
@@ -279,16 +257,16 @@ sy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 =
 /n/10.95 j\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 Ms[]
  []
 
-[95] [96] [97] [98]
-Overfull \hbox (11.30057pt too wide) in paragraph at lines 4586--4587
+[77] [78] [79] [80]
+Overfull \hbox (11.30057pt too wide) in paragraph at lines 3727--3728
 \OT1/cmr/m/it/10.95 Find ex-am-ples of two se-ries $[] \OML/cmm/m/it/10.95 a[]$
  \OT1/cmr/m/it/10.95 and $[] \OML/cmm/m/it/10.95 b[]$ \OT1/cmr/m/it/10.95 both 
 of which di-verge, but for which $[] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95
  a[]; b[]\OMS/cmsy/m/n/10.95 g$
  []
 
-[99] [100]
-Overfull \hbox (7.36441pt too wide) detected at line 4658
+[81] [82]
+Overfull \hbox (7.36441pt too wide) detected at line 3799
 \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 s[]y[] \OT1/cmr
 /m/n/10.95 + \OML/cmm/m/it/10.95 s[]y[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
 0.95 s[]y[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 s[]y[] \OMS/cmsy/m/n/10.95
@@ -298,39 +276,60 @@ m/it/10.95 s[]y[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 s[]y[] \OT1/cmr/m/n/
 10.95 =
  []
 
-[101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111]
-(./real_analysis.aux) ) 
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93]
+Overfull \hbox (17.48622pt too wide) detected at line 4274
+\OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \
+OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n
+/10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 ^^@ \OML/
+cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 
+= \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m
+/it/10.95 x\OMS/cmsy/m/n/10.95 jj[]j \OT1/cmr/m/n/10.95 =
+ []
+
+[94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
+Overfull \hbox (26.35402pt too wide) detected at line 4843
+\OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[] ^^
+@ []j ^^C \OT1/cmr/m/n/10.95 1 = \OMS/cmsy/m/n/10.95 j[] ^^@ []j[] \OT1/cmr/m/n
+/10.95 = []
+ []
+
+
+Overfull \hbox (32.7789pt too wide) detected at line 4868
+[] \OT1/cmr/m/n/10.95 = [] = [] =
+ []
+
+[107] [108] [109] [110] (./real_analysis.aux) ) 
 Here is how much of TeX's memory you used:
  2303 strings out of 478268
  33856 string characters out of 5846347
- 349310 words of memory out of 5000000
+ 353310 words of memory out of 5000000
  20522 multiletter control sequences out of 15000+600000
  480057 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,13n,62p,323b,208s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
-Output written on real_analysis.pdf (112 pages, 485890 bytes).
+</usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb>
+Output written on real_analysis.pdf (111 pages, 485898 bytes).
 PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
+ 454 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
