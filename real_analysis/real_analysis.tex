@@ -5033,12 +5033,186 @@ First of all, we should state that open is not an opposite of closed in this
 context. We can get $O_n = (-\infty; \infty)$. Then this definition
 (technically) fits into the requrement of qs
 
-Let $O_n = (1 - 1/n, 2 + 1/n)$. Let us also define 
+Let $O_n = (1 - 1/n, 2 + 1/n)$. Let us then define 
 $$A = \cap_{n = 1}^{\infty} O_n$$
 
-Suppose that $x \in A$. To be continued...
+Then it follows that $x \in A \to 1 \leq x \leq 2$. Thus, $A = [1,2]$, which is
+closed, as desired.
 
 
+\section*{3.2.2 }
+\textit{Let }
+$$B = \left\{\frac{(-1)^nn}{n + 1}: n = 1,2,3,... \right\}$$
+
+\textit{(a) Find the limit points of B}
+
+1 and -1. This can be seen from the fact that $\lim \frac{n}{n + 1} = 1$ and
+$\lim \frac{-n}{n + 1} = 1$, where both of the expressions in the limit
+are subsequences of the original sequence (numbers were not derived by using
+some process, just pure intuition).
+
+$x \in B$ implies that $x = \frac{n}{n + 1}$  or $x = \frac{-n}{n + 1}$ for
+some $n \in N$. Thus it can be shown, that -1 and 1 are the only limit points
+of B.
+
+\textit{(b) Is $B$ a closed set?}
+
+No, it isn't, because it doesn't contain its limit points. This stems from
+the fact that
+$$\frac{(-1)^nn}{n + 1} = 1$$
+$$(-1)^nn = n + 1$$
+and no such number exists. The same can be shown for $-1$.
+
+\textit{(c) Is $B$ an open set?}
+
+No, because any neighborhood around any element will contain some  numbers,
+that are not in $B$ (e.g. irrational numbers).
+
+\textit{(d) Does $B$ contain any isolated points}
+
+Given that none of the limit points are in the $B$, we can conclude that
+the set $B$ consists exclusively of isolated points.
+
+\textit{(e) Find $\bar{B}$}
+$$\bar{B} = B \cup \{-1, 1\}$$
+
+\section*{3.2.3}
+\textit{Decide whether the following sets are open, closed, or neither. If a
+  set is not open, find a point in the set for which there is no
+  $\epsilon$-neighborhood contained in the set. If a set is not closed, find
+  a limit point that is not containted in the set.  }
+
+\textit{(a) $\textbf{Q}$}
+
+Neither closed, nor open. Any number will suffice for both tests.
+(proof - look at the irrational numbers).
+
+\textit{(b) \textbf{N}}
+
+Not open - any number will suffice. Closed - does not have limit points, and
+thus contains the set of limit points (i.e. empty set).
+
+\textit{(c) $\{x \in R: x > 0\}$}
+
+Open. Is not closed, does not contain 0.
+
+\textit{(d) $(0,1]$}
+
+Not open, 1. Not closed, 0.
+
+\textit{(e) $\{1 + 1/4 + 1/9 + ... + 1/n^2: n \in N\}$}
+
+Not open, number 1 is an example. Not closed, does not contain its supremum.
+
+
+\section*{3.2.4}
+\textit{Prove the converse of Theorem 3.2.5 by showing that if
+  $x = \lim a_n$ for some sequence $(a_n)$ contained in $A$ satisfying
+  $a_n \neq x$, then x is a limit point of $A$.}
+
+Firstly, let us state the theorem itself
+
+\textbf{Theorem 3.2.5}
+\textit{A point x is a limit point of a set $A$ if and only if $x = \lim a_n$
+  for some sequence $(a_n)$ contained in $A$ satisfying $a_n \neq x$ for all
+  $n \in \textbf{N}$.}
+
+Let  $\epsilon > 0$. Then, by definition of convergence, there
+exists $N \in \textbf{N}$, such that $n \geq N \to a_n \in V_\epsilon(x)$
+(don't forget, that $x = \lim a_n$). Therefore there exists
+$a_n \in V_\epsilon(x) \neq x $. Also, because the sequence is contained in
+$A$, $a_n \in V_\epsilon(x) \cap A$.  Therefore every $\epsilon$-neighborhood
+of $x$ intersects  $A$ in some point other that $x$. Therefore $x$ is a limit
+point, as desired.
+
+\section*{3.2.5}
+\textit{Let $a \in A$. Prove that $a$ is an isolated point of $A$ if and only
+  if there exists an $\epsilon$-neighborhood $V_\epsilon(a)$ such that
+  $V_\epsilon(a) \cap A = \{a\}$ }
+
+\textbf{In one direction:}
+
+Suppose that $a$ is an isolated point of $A$. It follows, that it is not a
+limit point. Thus, by definition of a limit point, there does not exist an
+$V_\epsilon(a)$ such that it intersects $A$ at some other point than $a$.
+In other words, $V_\epsilon(a) \cap A = \{a\}$, as desired.
+
+\textbf{In other direction:}
+
+We'll prove this one by contradiction. Suppose that
+$V_\epsilon(a) \cap A = \{a\}$ and $a$ is a limit point. Then, there exists
+a sequence $(a_n)$ fully contained in $A$, that converges to $a$. Therefore,
+there exists $N \in \textbf{N}$ such that $n \geq N \to a_n \in V_\epsilon(a)$.
+Therefore, $\{a, a_n\} \subseteq V_\epsilon(a) \cup A$, which is a
+contradiction. Thus, $a$ is not a limit point and therefore is an isolated
+point, as desired.
+
+\section*{3.2.6}
+
+\textit{Prove Theorem 3.2.8}
+
+Firstly, let us state the theorem
+
+\textbf{Theorem 3.2.8}
+\textit{A set $F \subseteq R$ is closed if and only if every Cauchy sequence
+  contained in $F$ has a limit that is also an element of $F$. }
+
+\textbf{In one direction:}
+
+Let  $F \subseteq R$ be closed. We are going to proceed with proof by
+contradiction.
+
+Suppose that there exists a Cauchy sequence $(s_n)$, that is contained in $F$,
+that has a limit outside of $F$. Then $x$ is a limit point of $F$. Then it is
+contained in $F$, because $F$ is closed, which is a contradiction.
+
+\textbf{In other direction:}
+
+Assume that every Cauchy sequence  contained in $F$ has a limit
+that is also an element of $F$.
+
+We are going to use a proof by contradiction on this one as well. Suppose that
+$F$ is not closed. Then, there exists $x$, that is a limit point of $F$, that
+is not in $F$. Therefore, there exists a sequence, that is contained in $F$,
+that converges to $x$. Then, this sequence is Cauchy. Thus, we have a Cauchy
+sequence, that is contained in $F$, which converges to a point outside of $F$,
+which is a contradiction.
+
+\section*{3.2.7}
+\textit{Let $x \in O$ where $O$ is an open set. If $(x_n)$ is a sequence
+  converging to $x$, prove that all but a finite number of the terms of
+  $(x_n)$ must be contained in $O$. }
+
+Becaus $x$ is in open set, there exists an $\epsilon$ such that the neighborhood $V_\epsilon (x) \subseteq O$. Thus, by the convergenve of $(x_n)$ to $x$,
+there
+exists $N \in \textbf{N}$ such that $n \geq N \to x_n \in V_\epsilon$.
+Therefore for this sequence only $N$ or less elements are outside of $O$.
+Therefore for any convergent sequence $(x_n)$ it is true, that all but a finite
+number of terms of $(x_n)$ are outside of $O$, as desired.
+
+\section*{3.2.8}
+\textit{Given $A \subseteq R$, let $L$ be the set of all limit points of
+  $A$.}
+
+\textit{(a) Show that the set $L$ is closed.}
+
+Suppose that $L$ is not closed. Thus, there exists $x \notin L$, that is a
+limit point of $L$. Therefore there exists a sequence $(s_n)$, that is
+convergent to $x$, that is fully contained in $L$. Therefore for
+every $\epsilon$ there exists $N \in \textbf{N}$ such that $n \geq N$ implies
+that $s_n \in  V_\epsilon(x)$. Because $V_\epsilon(x)$ is an open set, there
+exists a neighborhood $V_{\epsilon_1}(s_n) \subseteq V_\epsilon(x)$.
+Because $(s_n)$ is contained in $L$, $s_n$ is a limit point of $a$. Therefore,
+$V_{\epsilon_1}(s_n)$ contains some element of $A$ other that $s_n$.
+Therefore every neighborhood of $V_\epsilon(x)$ contains an element of $A$.
+Therefore $x$ is a limit point of $A$. Therefore $x \in L$, which is a
+contradiction. Therefore $L$ is closed, as desired.
+
+\textit{(b) Argue that if $x$ is a limit point of $A \cup L$, thex $x$ is a
+  limit point of $A$. Use this observation to furnish a proof for
+  Theorem 3.2.12}
+
+Suppose that $x$ is a limit point of $A \cup L$. Then 
 
 
 \end{document}
