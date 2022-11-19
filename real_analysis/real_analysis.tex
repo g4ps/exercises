@@ -5212,7 +5212,241 @@ contradiction. Therefore $L$ is closed, as desired.
   limit point of $A$. Use this observation to furnish a proof for
   Theorem 3.2.12}
 
-Suppose that $x$ is a limit point of $A \cup L$. Then 
+Suppose that $x$ is a limit point of $A \cup L$. Then it follows that every
+$\epsilon$-neighborhood of $x$ intersects $A \cup L$ at some point other than $x$. Let us look at particular  $V_\epsilon(x)$.
+We can follow that there exists a point in the neighborhood,
+that it is in $A \cup L$ and  is distinct from $x$. Let us call this point  $a$.
+From the fact, that $a \in A \cup L$ we can state that $a$ is either in $A$,
+$L$, or both.
+If the point is in $L$, then it follows, that it is a limit point of $A$.
+Because $a \in V_\epsilon(x)$ and the fact, that $V_\epsilon(x)$ is an open set,
+we can state that there exists a neighborhood
+$V_{\epsilon_1}(a) \subseteq V_\epsilon(x)$. Therefore, because $a$ is a point
+in $L$, is is a limit point of $A$. Thus $V_{\epsilon_1}(a)$ intersects $A$ at
+some point. Thus, there exists a point $q \in A$ and $q \in V_{\epsilon_1}(a)$.
+Therefore $q \in V_\epsilon(x)$. Therefore any neighborhood of $x$ contains a
+point in $A$. Therefore it is a limit point of $A$, as desired.
 
+Now let us state Theorem 3.2.12
+
+\textbf{Theorem 3.2.12} \textit{For any $A \subseteq \textbf{R}$, the closure
+  $\bar{A}$ is a closed set and is the smallest set containing $A$.}
+
+From what we've argued we can follow that any limit point of $\bar A = A \cup L$
+is a limit point of $A$, and therefore is an element of $L$ and therefore an
+element of $\bar{A}$.  Thus all limit points of $\bar A$ is in $\bar A$. Therefore
+it is a closed set.
+
+Any closed set containing $A$ must contain $L$ as well. This shows, that $\bar A$
+is the smallest closed set containing $A$.
+
+\section*{3.2.9}
+
+\textit{(a) If $y$ is a limit point of $A \cup B$, show that $y$ is either a limit
+  point of $A$ of a limit point of $B$ (or both).}
+
+
+We are going to proceed with a proof by contradiction. Suppose that there exists a
+limit point $x$ of $A \cup B$, that is not a limit point of $A$ or $B$. Then it
+follows, that there exists a sequence $(s_n)$, that is contained in $A \cup B$,
+converges to $x$ and such that $s_n \neq x$ for every $n \in N$. Then this
+sequence contains infinite anount of elements in either $A$, $B$ or both
+(rigorous conclusion can be drawn from the argument, that there could not
+be finite amount of elements of the sequence in both $A$ and $B$).
+Therefore there exists a subsequence in either $A$ or $B$, that is convergent to
+$x$. Therefore $x$ is a limit point for either $A$ or $B$.
+
+\textit{(b) Prove that $\overline{A \cup B} = \overline A \cup \overline B$}
+
+We already concluded, that if $y$ is a limit point of $A \cup B$, then $y$ is a limit point
+of $A$, or a limit point of $B$. In other words,
+$$y \in L_{A\cup B} \to y \in L_A \text{ or } y \in L_B$$
+Then it follows that
+$$y \in \overline{A\cup B} \to y \in L_A \text{ or } y \in L_B \text{ or } y \in A \cup B$$
+$$y \in \overline{A\cup B} \to y \in L_A \text{ or } y \in L_B \text{ or } y \in A
+\text{ or } y \in B$$
+$$y \in \overline{A\cup B} \to   y \in A \text{ or }  y \in L_A 
+\text{ or } y \in B \text{ or }  y \in L_B$$
+$$y \in \overline{A\cup B} \to   y \in \overline A
+\text{ or } y \in \overline B $$
+$$y \in \overline{A\cup B} \to   y \in \overline A
+\cup y \in \overline B $$
+
+The usage of the word "or" is a little liberal here, but the idea is the same - both
+$\overline{A \cup B}$ and $\overline A \cup \overline B$ exhaustively decompose to the same
+4 sets, and therefore are equal.
+
+\textit{(c) Does the result about closures in (b) extend to infinite }
+
+The current argument extends at least to the finite amount of element by the virtue of
+induction. Something tells me, that this particular thing does not extend though to the
+infinite amount of element.
+
+One possible example on why this proposition might be false can be drawn
+from the fact, that closure of any
+ratonal number is the number itself, therefore the union of closures of all rational numbers is
+the set of rational numbers, but the closure of the set of all rationall numbers is the
+set of real numbers.
+
+I'm gonna roll with this particular counter-example as the proof of the fact, that given
+proposition is false, because I don't see anything that is wrong with it.
+
+Another example  is the union of sets, where each set contains one element - $1/n$ for
+some $n \in N$. Same logic applies, closure of any given set is the set itself, but
+the closure of union of sets includes zero.
+
+
+\section*{3.2.10 (De Morgan's Laws)}
+\textit{A proof for the De Morgan's Laws in the case of two sets is outlined in Exercise 1.2.3.
+  The general argument is simular.}
+
+\textit{(a) Given a collection of sets $\{E_\lambda: \lambda \in  \Lambda\}$, show that }
+$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c = \cap_{\lambda \in \Lambda} E_\lambda^c$$
+and
+$$\left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c = \cup_{\lambda \in \Lambda} E_\lambda^c$$
+
+Suppose that $x \in \left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$. It
+follows, that $x$ is not in the union of given sets. Therefore there is no
+set $E_n$ such that $x \in E_n$ (because if there would be such a set, then $x$
+wouldn't be in $\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$).
+Therefore $x \in \cap_{\lambda \in \Lambda} E_\lambda^c$. Therefore 
+$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c \subseteq \cap_{\lambda \in \Lambda} E_\lambda^c$$
+
+The proof of reverse inclusion is the same as with the forward, but in reverse
+order.
+
+$x \in \left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c$ implies that
+$x$ is not in every $E_n$. Therefore there exists $x \in E_n^c$ for some $E_n$.
+therefore it is in $\cup_{\lambda \in \Lambda} E_\lambda^c$. The proof of
+reverse inclusion uses the same argument, but in other direction.
+
+\textit{(b) Now, provide the details for the proof of Theorem 3.2.14}
+
+Let us state the theorem first.
+
+\textbf{Theorem 3.2.14}
+\textit{(i) The union of a finite collection of closed sets is closed.}
+
+\textit{(ii) The intersection of an arbitrary collection of closed sets is closed}
+
+Let $\{E_\lambda: \lambda \in \Lambda\}$ be a finite collection of closed sets.
+Therefore $\{E_\lambda^c: \lambda \in \Lambda\}$ is a finite collection of open
+sets. Therefore intersection
+$$\cap_{\lambda \in \Lambda} E_\lambda^c = (\cup_{\lambda \in \Lambda} E_\lambda)^c$$
+is open. Therefore $\cup_{\lambda \in \Lambda} E_\lambda$ is closed, as desired.
+
+Let $\{E_\lambda: \lambda \in \Lambda\}$ be a arbitrary collection of closed sets.
+Therefore $\{E_\lambda^c: \lambda \in \Lambda\}$ is a arbitrary collection of open
+sets. Therefore union
+$$\cup_{\lambda \in \Lambda} E_\lambda^c = (\cap_{\lambda \in \Lambda} E_\lambda)^c$$
+is open. Therefore $\cap_{\lambda \in \Lambda} E_\lambda$ is closed, as desired.
+
+\section*{3.2.11}
+\textit{Let $A$ be bounded above so that $s = \sup A$ exists. Show that
+  $s \in \overline A$}
+
+For eny $\epsilon > 0$ there exists an element $a \in A$ such that
+$$a > s - \epsilon$$
+$$a - s > - \epsilon$$
+$$s - a < \epsilon$$
+s is a supremum of $A$, therefore $s \geq a$, therefore $s - a \geq 0$. Thus
+$s - a = |s - a|$. Therefore 
+$$|s - a| < \epsilon$$
+Therefore $a \in V_\epsilon(s)$ for any $\epsilon > 0$. Thus, s is a limit point of
+$A$. Threfore $s \in \overline A$, as desired.
+
+\section*{3.2.12}
+\textit{Decide whether the following statements are true or false. Provide counterexamples for those that are false, and supply proofs for those that are true.}
+
+\textit{(a) For any set $A \subseteq \textbf{R}$, $\overline A^c$ is open.}
+
+True. Closure of any set is closed, therefore complement of closure is open.
+
+\textit{(b) If a set $A$ has an isolated point, it cannot be an open set}
+
+True. We're gonna proceed with a proof by contradiction.
+Suppose that $A$ is an open set and $x \in A$ is an isolated point. Then there
+exists a neighborhood $V_\epsilon(x) \subseteq A$. Therefore any neighborhood
+of $a$ intersects $A$ as some point (this can be proven rigorously, but it's
+tedious and redundant). Therefore $x$ is a limit point of $A$, which is a
+contradiction. Therefore it is not isolated, therefore we have a contradiction.
+
+\textit{(c) A set $A$ is closed if and only if $\overline A = A$.}
+
+True
+
+In one direction: if $A$ is closed, then $L \subseteq A$, therefore
+$\overline A = A \cup L  = A$.
+
+In other direction: $\overline A = A \cup L  = A$ implies that $L \subseteq A$.
+Therefore $A$ is closed. (By the way, $L$ denotes a set of limit points of $A$ )
+
+\textit{(d) If $A$ is a bounded set, then $s = \sup A$ is a limit point of A}
+
+False. Any finite set is counterexample.
+
+\textit{(e) Every finite set is closed.}
+
+True. Finite sets consit of isolated points, therefore they don't have limit
+points, therefore they contain their limit points.
+
+\textit{(f) An open set that containt every rational number must necessarily be
+  all of $R$.}
+
+False. $\textbf{R} \setminus \{\sqrt{2}\}$.
+
+\section*{3.2.13}
+\textit{Prove that the only sets that are both open and closed are $R$ and
+  the empty set $\emptyset$}
+
+Suppose that there exists a set $B \neq R \neq \emptyset$, that is both
+closed and open. Then let $x \in B^c$. It follows, that $x$ cannot be a limit
+point of $B$ (because if it was, then it would be in $B$, because $B$ is closed).
+Therefore we have an isolated point in an open set $B^c$, which is imposible
+(as proven in the previous exercise). Therefore we have a point which is
+neither a limit point, nor a isolated point, which is a contradicion.
+
+Same argument doesn't work on $R$ and $\emptyset$, because of the fact,
+that $\emptyset$ doesn't contain any points.
+
+\section*{3.2.14}
+\textit{A set $A$ is called $F_\sigma$ set if it can be written as the
+  countable union of closed sets. A set $B$ is called $G_\delta$ set if it
+  can be written as the countable intersection of open sets}
+
+\textit{(a) Show that a closed interval $[a,b]$ is a $G_\delta$ set.}
+
+Let there be a collection of open sets, defined by
+$$\{(-1/n + a, b + 1/n): n \in N\}$$
+
+Then its intersection is equal to $[a,b]$ (This can be shown by using the fact, that
+$[a,b]$ is in every set of the  collection, but any number outside of $[a,b]$
+isn't). Therefore it is a $G_\delta$ set.
+
+\textit{(b) Show that the half-open interval $(a,b]$ is both a $G_\delta$ and
+  an $F_\sigma$ set.}
+
+The intersection of
+$$\{(a, b + 1/n): n \in N\}$$
+is equal to $(a, b]$, therefore it is a $G_\delta$ set.
+
+The union of
+$$\{[a + 1/n, b]: n \in N\}$$
+is equal to $(a, b]$ (if  $a + 1/n < b$, then let the set corresponding be an
+empty set), therefore it is a $F_\sigma$ set.
+
+\textit{(c) Show that $\textbf{Q}$ is an $F_\sigma$, and set of irrationals
+  $\textbf{I}$ forms a $G_\sigma$ set.}
+
+We know, that $Q$ is a countable set. Also, singleton $\{m\}$ is a closed set.
+Therefore union of 
+$\{m: m \in Q\}$
+is a countable union of closed sets, that is equal to $Q$. Therefore $Q$ is a
+$F_\sigma$ set.
+
+Also, let
+$\{R \setminus m: m \in Q\}$
+be a collection of open sets. Then its union is equal to $I$. Therefore $I$ is
+a $G_\delta$ set.
 
 \end{document}
