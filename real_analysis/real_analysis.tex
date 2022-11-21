@@ -5449,4 +5449,132 @@ $\{R \setminus m: m \in Q\}$
 be a collection of open sets. Then its union is equal to $I$. Therefore $I$ is
 a $G_\delta$ set.
 
+\section*{3.3.1}
+\textit{Show that if $K$ is compact, then $\sup K$ and $\inf K$ both exist
+  and are elements of $K$}
+
+If $K$ is compact, then it is bounded (i.e. bounded above and below), and
+thus have supremum and infinum.
+
+Now let us take into account the fact, that for every $\epsilon > 0$ it is
+true, that there exist elements $k_1$ and $k_2$ (with a possibility
+that $k_1 = k_2$) such that
+
+$$k_1 > \sup K - \epsilon$$
+$$k_2 < \inf K + \epsilon$$
+thus
+$$\sup K - k_1 <  \epsilon$$
+$$k_2 - \inf K < \epsilon$$
+because of the properties of supremum and infinum $\sup K - k_1 \geq  0$ and
+$k_2 - \inf K \geq 0$. Thus
+$$|\sup K - k_1| < \epsilon$$
+$$|k_2 - \inf K| < \epsilon$$
+
+Therefore we can state, that every neighborhood around supremum and infinum
+has a member of $K$ in it. Thus $\sup K$ and $\inf  K$ are limit points of $K$.
+Thus, because $K$ is closed, we can conclude that $\sup K \in K$ and
+$\inf K \in K$, as desired.
+
+\section*{3.3.2}
+\textit{Prove the converse of Theorem 3.3.4 by showing that if a set
+  $K \subseteq R$ is closed and bounded, then it is compact.}
+
+Firstly, let us state the theorem itself:
+
+\textbf{Theorem 3.3.4}
+\textit{A set $K \subseteq R$ is compact if and only if it is closed and
+  bounded.}
+
+Let $(s_n)$ be a sequence, that is contained in $K$. Thus, because $K$ is
+bounded, $(s_n)$ is bounded as well. Thus, by BW, it has a convergent
+subsequence $(s_{n_k})$. If this subsequence has its limit as an
+element of subsequence(i.e. $s_{n_k} = c$
+for some $c \in R$ and some of $n_k \in  \textbf{N}$),
+then its limit is in $K$ by the virtue of the fact, that $s_n \in K$ for
+all $n \in \textbf{N}$.
+If subsequence doesn't have its limit as its element, then we can state,
+that its limit is a limit point of $K$, and therefore in $K$ by the fact, that
+$K$ is closed.
+
+\section*{3.3.3}
+\textit{Show that the cantor set defined in Section 3.1 is compact set. }
+
+I'll not provide a definition here, because it is too lengthy, but you can
+look it up online. The Cantor set is bounded by definition, therefore we don't
+need to worry about that. Now by the same definition, 
+the compliment of Cantor set is a infinite union of open sets, therefore
+the compliment of Cantor set is an open set itself. Thus, we can state
+that a compliment of a compliment (i.e. the set itself) is closed. Thus,
+Cantor set is closed and bounded, and therefore compact, as desired.
+
+\section*{3.3.4}
+\textit{Show that if $K$ is compact and $F$ is closed, then $K \cap F$ is
+  compact.}
+
+The intersection of arbitrary  collection of closed sets is closed,
+therefore $K \cap F$ is closed as well.
+$x \in K \cap F \to x \in K \to |x| \leq M$, where $M$ is a bound of $K$.
+Therefore $K \cap  F $ is bounded. Therefore $K \cap F$ is compact, as desired.
+
+\section*{3.3.5}
+\textit{Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.}
+
+\textit{(a) $\textbf{Q}$}
+
+Not compact. $(s_n) = \{1, 1.4, 1.41, 1.414, 1.4142, ... \}$ - sequence, that
+converges to $\sqrt{2}$.
+
+\textit{(b) $\textbf{Q} \cap [0, 1]$}
+
+Not compact. $(s_n) = \{0.7, 0.7, 0.707, 0.7071, ... \}$ - sequence, that
+converges to $\sqrt{2} / 2$.
+
+\textit{(c) \textbf{R}}
+
+Not compact $(x_n) = n$ - doesn't converge, and none of its subsequences
+converge as well.
+
+\textit{(d) $\textbf{R} \cap [0,1]$}
+
+Compact.
+
+\textit{(e) $\{1, 1/2, 1/3, 1/4,...\}$}
+
+Not compact. $(s_n) = 1/n$ converges to 0, but 0 is not in the set.
+
+\textit{(d)  $\{1, 1/2, 2/3, 3/4, 4/5,...\}$}
+
+Compact.
+
+\section*{3.3.6}
+\textit{As some more evidence of the surprising nature of the Cantor set,
+  follow these steps  to show that the sum $C + C = \{x + y: x,y \in C\}$ is
+  equal to the closed interval $[0,2]$. (Keep in mind that $C$ has zero length
+  and contains no intervals. )}
+
+\textit{The observation that $\{x + y: x,y \in C\} \subseteq [0,2]$ passes
+  for obvious, so we only need to prove the reverse inclusion
+  $[0, 2] \subseteq \{x + y: x,y \in C\}$. Thus, given $s \in [0,2]$, we
+  must find two elements $x,y \in C$ satisfying $x + y = s$.}
+
+\textit{(a) Show that there exist $x_1,y_1 \in C_1$ for which
+  $x_1 + y_1 = s$. Show in general that, for an arbitrary $n \in \textbf{N}$,
+  we  can always find $x_n,y_n \in C_n$ fow which $x_n + y_n = s$.
+}
+
+If $s \in C_1$, then we can set $x_n = s$.
+
+If $s \in (1/3, 2/3)$ pick $x_n = 1/3$.
+
+If $s \in (1,2]$ pick $x_n = 1$. --- false
+
+In general, the idea might be to pick largest element of $C_n$, that is less than
+$s$. 
+
+
+First of all, every for every $s$ we need to show only $x_n$, $y_n$ will be equal to
+$s - x_n$. Therefore for every $s \in [0,2]$ we need to show how to pick $x_n$.
+
+
+
 \end{document}
