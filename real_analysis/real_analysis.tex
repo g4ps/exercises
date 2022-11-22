@@ -5771,6 +5771,322 @@ If a set is finite, then it'll certainly have in its clompact cover a set, where
 each one of the points are located, therefore finite sets are clompact.
 
 Therefore set is clompact if and only if it is finite.
-    
+
+
+\section*{3.4.1}
+\textit{If $P$ is a perfect set and $K$ is compact, is the intersection
+  $P \cap K$ always compact? Always perfect?}
+
+$x \in P \cap K \to x \in K$, thus $P \cap K$ is bounded. Intersection of
+arbitrary collection of closed sets are closed, therefore $P \cap K$ is
+closed as well. Therefore $P \cap K$ is always compact.
+
+The intersection is not always perfect - $[1, 2] \cap [2, 3] = \{2\}$.
+
+\section*{3.4.2}
+\textit{Does there exist a perfect set consisting of only rational numbers?}
+
+If we count empty set as a set, that consists of only rational numbers
+(i.e. if we translate the text of this exercise to $x \in B \to x \in Q$),
+then yes.
+
+If not, then no. This stems from the fact, that the set of rationals is
+countable, and non-empty perfect sets are uncountable.
+
+\section*{3.4.3}
+\textit{Review the portion of the proof given for Theorem 3.4.2 and follow
+  these steps to complete the argument}
+
+First of all, Theorem 3.4.2 states that Cantor set is perfect.
+
+\textit{(a) Because $x \in C_1$ argue that there exists an $x_1 \in C \cap C_1$
+  with $x_1 \neq x$ satisfying $|x - x_1| \leq 1/3$}
+
+Here we can even go as far as to say, that there exists $x \in C$ such that
+$|x - x_1| \leq 1/6$. The idea here is that the $x_1 \in C_1$ implies,
+that there exists a closed interval $I_1 \subseteq C_1$, which length is $1/3$
+such that $x \in I_1$. Now the fact, that $x \in I_1$ and $|I_1| = 1/3$ implies
+that the minimal distance between the boundary of $I_1$ and $x$ is the half the length  of the interval. Boundaries of
+closed intervals, that constitute $C_1$ (or
+$C_n$ in general) are inside of $C$. Therefore there exists $x \in C$ (and
+$C \cap C_1$, because $C \cap C_n = C$ for every $n \in N$) such
+that  $|x - x_1| \leq 1/6 \leq 1/3$.
+
+\textit{(b) Finish the proof by showing that for each $n \in N$ there exists
+  $x_n \in C \cap C_n$, different from $x$, satisfying
+  $|x - x_n| \leq  1/3^n$}
+
+Length of the interval, that constitutes $C_n$  is $3^{-n}$, therefore
+$x \in C \to x \in C_n \to \exists x_n: x_n \in C, |x_n - x| < 1/3^n$.
+Therefore for  any $\epsilon$-neighborhood of $x$ we will have $n \in N$ such
+that $1/3^n < \epsilon$ (by convergence of $1/3^n$ to 0) and therefore
+there will exist $x_n \in C$, that is also in desired neighborhood.
+Therefore any $x \in C$ is a limit point of $C$. Therefore $C$ is a closed
+set, that does not contain any isolated points. Therefore it is perfect
+(how nice).
+
+\section*{3.4.4}
+\textit{Repeact the Cantor construction from Section 3.1 starting with the
+  open interval $[0,1]$. This time, however, remove the open middle fourth
+  from each component.}
+
+\textit{Is the resulting set compact? Perfect?}
+
+The set will surely be bounded. It will also be equal to the compliment
+of union of arbitrary collection of open sets, and therefore will be closed.
+
+By the same logic, as in previous exercise (but perhaps this time with a
+slightly lower length of an interval) it will be perfect.
+
+\textit{(b) Using the algorithms from Section 3.1, compute the length and
+  dimention of this Cantor-like set.}
+
+The provess will be the same as in 3.1, because I didn't get which
+exect formula they used in order to get to the desired conclusion.
+
+Let us called the desired set $E$. Then it follows, that after each iteration
+we remove $1/4$ of $E_n$ to get to $E_{n + 1}$.
+
+
+Therefore, the length of a $E$ will be defined as a limit of
+a sequence
+$$a_1 = 1$$
+$$a_{n + 1} = a_n - a_n/4 = 3/4 a_n$$
+
+Python shows, that it'll be equal to 0, but we'll need to use
+a more rigorous approach.
+
+First of all, let us show by induction that $a_n$ is more or equal to $0$
+for any $n \in N$. Base case is already taken care of ($a_1  = 1\geq 0$).
+Proposition is that $a_n \geq 0$. Therefore the step is trivial:
+$$a_n \geq 0 \to 3/4 a_n \geq 0 \to a_{n + 1} \geq 0$$
+as desired.
+
+$$a_{n + 1} = a_n * 3/4 \to a_{n + 1} - a_n = 1/4 a_n \geq 0$$
+therefore the series is decreasing. Therefore it is bounded below and
+decreasing, therefore it is convergent. Also it shows, that it'll be bounded
+above by 1.
+
+Thus, we can conclude that
+$$a_n = a_{n - 1} * 3/4 = a_{n - 2} * 9/16 = ... = a_1 * (3/4^n) = 3/4^n$$
+
+We know, that $|b| < 1 $ implies that $ (b^n) \to 0$. $|E_n|$ =
+$3/4^{n - 1}$. Therefore the length of $E$ is equal to $\lim 3/4^n = 0$.
+
+Probably the half of this proof is redundant, but I'll roll with it anyways.
+
+When we remove the first quarter from $[0, 1]$ we'll get
+$[0, 3/8] \cup [5/8, 1]$. Therefore if we magnify the set by $8/3$, we'll get
+$[0, 1] \cup [5/3, 8/3]$, or two copies of $E$. Thus, the dimention of $E$
+(with processes and definitions from 3.1) will be
+$$2 = (8/3)^x$$
+$$\ln{(2)} / \ln{(8/3)} = x$$
+$$x \approx 0.70669505...$$
+Idk why do I need to know this, but here's the answer.
+
+\section*{3.4.5}
+\textit{Let $A$ and $B$ be subsets of $\textbf{R}$. Show that if there exist
+  disjoint open sets $U$ and $V$ with $A \subseteq U$ and $B \subseteq V$,
+  then $A$ and $B$ are separated.}
+
+Suppose that $A$ and $B$ are not separated and let $x \in \overline A \cap B$.
+(If $\overline A \cap B = \emptyset$, then swap names for  $A$ with $B$ and
+$U$ with $V$).
+
+It can be shown, that if $l$ is a limit point of $A$, then it is also a limit
+point of $U \supseteq A$ (I won't rigorously prove it here because it was
+earlier proven rigorously somewhere in this chapter's exercises; it is
+also somewhat obvious and redundant). Thus,
+$\overline A \subseteq \overline U$. Therefore,
+$$l \in \overline A \cap B \to l \in \overline U \cap V \to l \in V$$
+
+Because $l$ is in $V$ and $V$ is open, it implies
+that there exists neighborhood
+$V_\epsilon(l) \subseteq V$. Also, because $l$ is a limit point of $U$ we
+can state, that every neighborhood of $l$ has a member of $U$ in it.
+Thus, $\exists x \in U: x \in V_\epsilon(l) \to
+\exists x \in U: x \in V$. Therefore $U$ and $V$ are not disjoint, which is
+a contradiction.
+
+\section*{3.4.6}
+\textit{Prove Theorem 3.4.6}
+
+Firstly, let us state the theorem itself:
+
+\textbf{Theorem 3.4.6}
+\textit{A set $E \subseteq \textbf{R}$ is connected if and only if, for all
+  nonempty disjoint sets $A$ and $B$ satisfying $E = A \cup B$, there always
+  exists a convergent sequence $(x_n) \to x$ with $(x_n)$ contained in one of
+  $A$ or $B$, and $x$ an element of the other.}
+
+Suppose that we divided $E$ into disjoint $A$ and $B$.
+
+\textbf{In one direction:}
+
+$E$ being connected implies that $\overline A \cap B \neq \emptyset$ (If
+it is not the case, then swap names for $A$ and $B$). Let
+$l \in \overline A \cap B$. Then it follows, that $l$ is a limit point for
+$\overline A$. Thus, there exists a sequence, that is contained in $A$,
+that is convergent to $l \in \overline A \cap B \to l \in B$, as desired.
+
+\textbf{In other direction:}
+
+Let us divide $E$ into disjoint $A$ and $B$. Then it follows, that there
+exists a sequence $(x_n) \to x$ that is contained in $A$, that converges to a
+limit in $B$ (once again, if it is not the case, then swap names).
+Also, because $A$ and $B$ are disjoint, it follows that $x_n \neq x$ for
+all $n \in N$.
+Then it follows, that $x$ is a limit point of $A$. Thus
+$x \in \overline A \cap B \neq \emptyset$. Therefore $A$ and $B$ are not
+separated. Therefore $E$ is connected, as desired.
+
+
+\section*{3.4.7}
+\textit{(a) Find an example of disconnected set whose closure is connected}
+
+$Q$
+
+\textit{(b) If $A$ is connected, is $\overline A$ necessarily connected? If
+  $A$ is perfect, s $\overline A$ necessarily perfect?}
+
+If $A$ is empty or a singleton, then $A = \overline A$, therefore $\overline
+A$ is connected as well. Therefore we need only to handle the case, when
+$A$ is nonempty and not a singleton.
+
+Suppose that $A$ is connected and $\overline A$ is disconnected. Thus we can
+find two nonempry $Q$ and $W$ such that $Q \cup W = \overline A$.
+Now let $A_1 = Q \cap A$, $A_2 = W \cap A$, $L_1 = Q \cap L$ and
+$L_2 = W \cap L$.
+
+$\overline Q \cap W = \emptyset$ implies that any limit points of $A_1$ are
+not in $W$ and therefore not in $L_2$.
+Also, by the same logic, any limit points of $A_2$ are not in $L_1$.
+
+Let $A_1$ be empty. It follows, that $A \subseteq W$. Therefore $A_2 = A$.
+Therefore $Q$ consists
+of some of  limit points of $A$. But those limit points cannot be a limit
+for any $A_2 = A$. Therefore $Q$ is empty, which is a contradiction.
+(If $A_2$ is empty, then swap names and the same logic will apply; both
+sets cannot be empty, because they have to contain at least $A$, which is
+nonempty)
+
+Therefore there exist two sets, such that $A_1 \cup A_2 = A$, and
+$\overline A_1 \cap A_2 = \emptyset$ and $\overline A_2 \cap A_1 = \emptyset$.
+Therefore we can write $A_1$ and $A_2$ are separated and nonempty.
+Therefore $A$ is disconnected, which is a contradiction.
+
+
+If $A$ is perfect, then it is closed, therefore $A = \overline A$. Therefore
+$\overline A$ is perfect as well.
+
+\section*{3.4.8}
+\textit{A set $E$ is totally disconnected if, given two points $x, y \in E$,
+  there exist separated $A$ and $B$  with $x \in A$, $y \in B$, and
+  $E = A \cup B$}
+
+I probably should add here, that we are also assuming that $x \neq y$,
+otherwise this definition is meaningless.
+
+\textit{(a) Show that $Q$ is totally disconnected}
+
+We know, that between any two real numbers there exists an irrational number.
+Thus for $x < y \in Q$ (swap names if it is not the case) there exists
+an irrational number $i$ such that $x < i < y$. Thus, for those two points
+there would exist two intervals $A = Q \cap (-\infty, i)$ and $B = Q \cap (i, \infty)$, which are separeted.
+
+\textit{(b) Is the set of irrational numbers totally disconnected.}
+
+Yes. It is also true that between two real numbers there exists a rational
+number. Thus, by the same logic as in (a), the set of irrationals is totally
+disconnected.
+
+\section*{3.4.9}
+\textit{Follow these steps to show that the Cantor set
+  $C = \cap_{n = 0}^{\infty} C_n $ described in Section 3.1 is totally
+  disconnected in the sense described in Exercise 3.4.8}
+
+\textit{(a) Given $x, y \in C$, with $x < y$, set $\epsilon = y - x$. For
+  each $n = 0, 1, 2,...$, the set $C_n$ consists of a finite number of closed
+  intervals. Explain why there must exist an $N$ large enough so that it is
+  impossible for $x$ and $y$ both to belong to same closed interval $C_N$.}
+
+The length of an interval, that constitutes $C_n$ is $3^{-n + 1}$. The sequence
+of lengths of those intervals converges to 0, therefore there exists
+a $C_N$ such that maximum length of an interval in it is less than $\epsilon$.
+
+\textit{(b) Argue that there exists a point $z \neq C$ such that $x < z < y$.
+  Explain how this proves that there can be no interval of the form $(a,b)$
+  with $a < b$ contained in $C$.}
+
+Because for every $x, y \in C$ there exists $C_N$,
+which intervals  cannot hold both
+of $x$ and $y$, there exists a point $z \notin C_N$ such that $x < z < y$
+(otherwise they would be in the same interval).
+
+Thus for any two points $a< b \in C$ there exists $z \notin C$ such that
+$a < z < b$.
+
+\textit{(c) Show that $C$ is totally disconnected.}
+
+We can take two intervals $A = (-\infty, z) \cap C$ and
+$B = (-\infty, z) \cap C$, which would satisfy the constraint from the
+definition.
+
+\section*{3.4.10}
+\textit{Let $\{r_1, r_2, r_3, ... \}$ be an enumeration of the rational
+  numbers, and for each $n \in N$ set $\epsilon_n = 1/2$. Define
+  $O = \cup_{n = 1}^{\infty}V_{\epsilon_n}(r_n)$, and let $F = O^c$.}
+
+\textit{(a) Argue that $F$ is a closed, nonempty set consisting only of irrational numbers.}
+
+$O$ is defined to be a union of arbitrary collection of open sets, therefore
+it is open itself. Thus, its compliment, F,  must be closed.
+
+The non-emptyness of this set might stem from the fact, that even if
+every neigborhood is disjoint, then  length of $O$ is
+equal to $2 \sum 1/2^n = 2$.
+
+If $F$ is empty, then $O = \textbf{R}$. Therefore $O$ is closed and perfect.
+
+Let $\{[0, 3] \setminus \cup_{i = 1}^{n}r_i\}$ be a collection of compact sets.
+Then each one of them will be non-empty. Therefore their intersection
+is nonempty. Therefore $F$, which is a superset of this set,  is nonempty.
+
+% I'm not entirely satisfied with this proof, might return to it later.
+
+% Suppose that $x \in F$ is a rational number. Then there exists a neighborhood
+% in $O$ for this particular rational number. Therefore this number is not in
+% $F$, which is a contradiction. Therefore $F$ contains only irrational numbers.
+
+
+\textit{(b) Does F contain any nonempty open intervals? Is F totally
+  disconnected? }
+
+If $(a, b)$ is an interval in $F$, then it follows, that it contains a real
+number, which is not if $F$. Therefore there are no open sets in $F$.
+
+Therefore by this logic, $F$ is totally disconnected (pick a rational
+number between $a$ and $b$, call it $r$, and produce
+sets $(-\infty, r) \cup F)$ and $(r, \infty) \cup F$)
+
+\textit{(c) Is it possible to know whether $F$ is perfect? If not, can we
+  modify this construction to produce a nonempty perfect set of irrational
+  numbers?}
+
+It depends on how exactly do we define $r_1, r_2,...$ whether $F$ will be
+perfect or not. We can define those neighborhoods to converge around some
+irrational number, (i.e. make it so first one is has an upper bound of 3,
+then define the  next one to be bound below by $3.2$, then upper to $3.14$,
+then lower to $3.142$ and so on to $\pi$; Maybe we'll need to increase the
+speed with which we converge in order to accomodate for the fact, that
+epsilons are getting smaller pretty fast)
+
+I don't think that we can somehow put a constraint on the epsilons, if we
+don't define how to produce the $r$'s
+
+I don't consider this particular exercise to be even close to being correctly
+done, maybe i'll return to it later
+
+
 
 \end{document}
