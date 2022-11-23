@@ -6087,6 +6087,99 @@ don't define how to produce the $r$'s
 I don't consider this particular exercise to be even close to being correctly
 done, maybe i'll return to it later
 
+\section*{3.5.1}
+\textit{Argue that a set $A$ is a $G_\delta$ set if and only if its complement
+  is an $F_\sigma$ set.}
+
+\textbf{In one direction:}
+Suppose that $G_\delta$ set is composed by $\cap_{n = 1}^{\infty} s_n$, where
+$s_n$ is a closed set. Then by De Morgan rule
+$$G_\delta^c = (\cap_{n = 1}^{\infty} s_n)^c =
+\cup_{n = 1}^{\infty} s_n^c$$
+
+Because $s_n$ is a closed set, then $s_n^c$ is an open set. Therefore 
+$$G_\delta^c = \cup_{n = 1}^{\infty} s_n^c$$
+is a $F_\sigma$ set.
+
+\textit{In other direction:}
+Suppose that $F_\sigma$ set is composed by $\cup_{n = 1}^{\infty} s_n$, where
+$s_n$ is an open set. Then by De Morgan rule
+$$F_\sigma^c = (\cup_{n = 1}^{\infty} s_n)^c =
+\cap_{n = 1}^{\infty} s_n^c$$
+
+Because $s_n$ is an open set, then $s_n^c$ is a closed set. Therefore 
+$$F_\sigma^c = \cup_{n = 1}^{\infty} s_n^c$$
+is a $G_\delta$ set.
+
+\section*{3.5.2}
+\textit{Replace each \rule{1cm}{0.15mm} with the word finite or countable,
+  depending of which is more appropriate}
+
+\textit{(a) The countable union of $F_\sigma$ sets is a $F_\sigma$ set}
+
+\textit{(b) The finite intersection of $F_\sigma$ sets is an $F_\sigma$ set.}
+
+\textit{(c) The finite union of $G_\delta$ sets is a $G_\delta$ set}
+
+\textit{(d) The countable intersection of $G_\delta$ sets is an $G_\delta$ set.}
+
+\section*{3.5.3}
+\textit{(This exercise has already appeared as Exercise 3.2.14.)}
+
+\section*{3.5.4}
+\textbf{Theorem 3.5.2}  If $\{G_1, G_2, G_3, ... \}$ is a countable collections of dense,
+open sets, then the intersection $\cap_{n = 1}^{\infty} G_n $ is not empty.
+
+\textit{(a) Starting with $n = 1$, inductively construct a nested sequence of
+  closed intervals $I_1 \supseteq I_2 \supseteq I_3 \supseteq ... $
+  satisfying $I_n \subseteq G_n$. Give special attention to the issue of the
+  endpoints of each $I_n$}
+
+Let us pick any $x_1 \in G_1$ . Then, because it is open, there exists
+$V_{\epsilon_1}(x) \subseteq G_1$. Let
+$I_1 = [x_1 - \epsilon / 2, x_1 + \epsilon / 2]$. Then it follows, that there
+exist $x_2 \in G_2$ such that $x_1 - \epsilon / 2 < x_2 < x_1 + \epsilon / 2$.
+Then it follows that $x_2 \in  G_1 \cap G_2$.
+
+In general  let
+$I_n = [x_n - \epsilon / 2, x_n + \epsilon / 2]$. Then it follows, that there
+exist $x_{n + 1} \in G_{n + 1}$ such that
+$x_n - \epsilon / 2 < x_{n + 1} < x_1 + \epsilon / 2$.
+Then it follows that $x_{n + 1} \in  G_{n} \cap G_{n + 1}$.
+
+\textit{(b) Now, use Theorem 3.3.5 or the NIP to furnish the proof}
+
+Therefore we have got the collection of nonempty sets, which satisties
+$$I_n \subseteq G_n$$
+and
+$$I_{n + 1} \subseteq I_n$$
+
+Therefore $\cap I_n \neq \emptyset$. Therefore
+$$\cap_{n = 1}^{\infty} I_n \subseteq
+\cap_{n = 1}^{\infty} G_n \neq \emptyset$$
+
+\section*{3.5.5}
+\textit{Show that it is impossible to write}
+$$\textbf{R} = \cup_{n = 1}^{\infty}F_n$$
+\textit{where for each $n \in N$, $F_n$ is a closed set containing
+  no nonempty open intervals.}
+
+Suppose that $\textbf{R} = \cup_{n = 1}^{\infty}F_n$ where $F_n$ are closed
+sets. Then 
+$$\textbf{R}^c = \emptyset = (\cup_{n = 1}^{\infty}F_n)^c =
+\cap_{n = 1}^{\infty}(F_n)^c$$
+Then $\cap_{n = 1}^{\infty}F_n^c = \emptyset $, where $F_n$ is a closed
+set and therefore $F_n^c$ is an open set.
+
+Let  $x,y \in \textbf{R} $ such that $x < y$. Then suppose that
+there is no $z \in F_n^c$ such that $x < z < y$. Then it follows, that
+$(x, y) \not \subseteq F_n^c$ Therefore $(x, y) \subseteq F_n$, which is a
+contradiction. Therefore $F_n^c$ is dense in $R$.
+
+Therefore $\cap_{n = 1}^{\infty}F_n^c$ is a countable intersection of dence,
+open sets (countable because we sum from n to $\infty$, therefore on N).
+Therefore it cannot be empty, which is a contradiction.
+
 
 
 \end{document}

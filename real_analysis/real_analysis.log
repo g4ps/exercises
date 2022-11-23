@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  23 NOV 2022 01:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  23 NOV 2022 23:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -299,7 +299,7 @@ Overfull \hbox (32.7789pt too wide) detected at line 4868
  []
 
 [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
-[119] [120] [121] [122] [123] [124] [125] [126] [127] [128]
+[119] [120] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130]
 (./real_analysis.aux) ) 
 Here is how much of TeX's memory you used:
  2303 strings out of 478268
@@ -328,10 +328,10 @@ pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on real_analysis.pdf (129 pages, 543583 bytes).
+Output written on real_analysis.pdf (131 pages, 548048 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
- 340 compressed objects within 4 object streams
+ 517 PDF objects out of 1000 (max. 8388607)
+ 344 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
