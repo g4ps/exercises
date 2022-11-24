@@ -6138,168 +6138,261 @@ Therefore the fucntion is continous, as desired.
 
 \textit{(b) Show in general that if $c$ is an isolated point of $A \subseteq \textbf{R}$, then $f: A \to \textbf{R}$ is continous at c.}
 
-In this particular case we can't just set $\delta$ at some number, so we gotta
-be a little more creative. To be distract myself from getting any unproductive
-ideas, I should state here that $\textbf{Q}$ is a set of isolated points.
+Because $c$ is an isolated point,  we can follow, that it is not a limit
+point. Therefore there exists $\delta$ such that neighborhood
+$V_\delta(c) \cap A = \{c\}$. Then it follows that
+for all $\epsilon > 0$ we have $\delta > 0$ such that
+$$x \in V_\delta(c) \to f(x) = f(c) \in V_\epsilon(c)$$
+as desired.
 
-To be continued
+\section*{4.3.5}
+\textit{In Theorem 4.3.4, statement (iv) says that $f(x) / g(x)$ is continous
+  at $c$ if both $f$ and $g$ are, provided that the quotent is defined. Show
+  that if $g$ is continous at $c$ and $g(c) \neq 0$, then there exists an open
+  interval containing $c$ on which $f(x) / g(x)$ is always defined.}
 
-\section*{4.4.1}
+Suppose that $f(x) / g(x)$ is continous at $c$. Then it follows, that for any
+$\epsilon > 0$ there exists $\delta > 0$ such that
+$$ x \in V_\delta \to f(x)/g(x) \in V_\epsilon$$
 
-\subsection*{{a}}
-\textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
+Thus, $f(x)/g(x)$ is defined on open interval $V_\delta$.
 
-In order to show, that $f$ is continous we need to show, that $\forall
-\epsilon \in \textbf{R}$ $\exists \delta$ s.t.
-$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+\section*{4.3.6}
+\textit{(a) Reffering to the proper theorems, give a formal argument that
+  Dirichlet's function from Section 4.1 is nowhere-continous at $R$.}
 
-Let's rewrite the first formula
+Let $c \in R$ and $\epsilon = 0.5$
 
-$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
-|x - c||x^{2} + cx + c^{2}|$$
+Suppose now that $\delta > 0$. Then it follows, that there exists both
+$z_1 \in I$ and $z_2 \in Q$ such that
+$$c - \delta < z_1 < c + \delta$$
+$$c - \delta < z_2 < c + \delta$$
+therefore exists $f(z_1) = 0$ and $f(z_0) = 1$.
+Therefore for any $c \in R$ there does not exist a $\delta$, such that
+$$x \in V_\delta(c) \to f(x) \in V_\epsilon(f(c))$$. Therefore Dirichlet's
+function is not continous at any point in $R$.
 
-We can put $|x - c|$ can be as small as we want it to be. Therefore we need
-an upper bound for $|x^{2} + cx + c^{2}|$.
+\textit{(b) Review the definition of Thomae's function in Section 4.1 and
+  demonstrate that it fails to be continous at every rational point.}
 
-$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
-|c|(|c| + 1) + |c|^{2}$$
+Thomae's function is defined as 
+\begin{equation}
+  t(x)=
+  \begin{cases}
+    1 & \text{if } x = 0\\
+    1/n & \text {if } x = m/n \in \textbf{Q} \text{\textbackslash} \{0\} \\
+    0 & \text{if } x \notin \textbf{Q}
+  \end{cases}
+\end{equation}
 
+Suppose now that $c \in Q$. Then it follows that if we set $\epsilon = f(c)$.
+For every $\delta > 0$ there exists $z \in I$ such that $z \in V_\delta$.
+Therefore, for $\epsilon = f(c)$ $f(z) = 0$. Therefore
+$$|f(c) - f(x)| < \epsilon$$
+$$- \epsilon < f(x) - f(c) < \epsilon$$
+$$- \epsilon < f(x) - f(c) < f(c)$$
+$$- \epsilon < f(x) - f(c) < f(c)$$
+$$f(x) - f(c) < f(c)$$
+$$f(x) < 0$$
+$$0  < 0$$
+Which is false. Therefore for every $c \in Q$ there exist a $\epsilon$,
+such that there is no $delta > 0$ for which it is true that
+$$x \in V_\delta \to f(x) \in V_\delta(f(c))$$
 
+\textit{(c) Use the characterization of continuity in Theorem 4.3.2 (iii) to
+  show that Thomae's function is continous at every irrational point in
+  \textbf{R}. (Given $\epsilon > 0$, consider the set of points
+  $\{x \in R: t(x) \geq \epsilon\}$. Argue that all the points in this set
+  are isolated )}
 
-Therefore if we take
-$\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
-then
-$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
-  |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
-= \epsilon$$
+Let $\epsilon > 0$ and $z \in I$. Therefore we can state, that there exists
+$N \in \textbf{N}$ such that $1/n < \epsilon$. Now let us look at
+$V_{1/n}(z)$. 
+There exists a finite amount of natural numbers, that
+are less then $N$. If there exist natural numbers $n_1 < n$, such
+that there exists $m_1 \in Z$ fow which $m_1 / n_1 \in V_{1/n}(z)$, then pick
+one, for which $|m_1 / n_1 - z|$ is the lowest and let $\delta
+= |m_1 / n_1 - z|$.
+If such numbers do not exist, pick $\delta = 1/n$.
+That insures, that any rational number in $V_b(z)$ has the property,
+that if we put it as $m_1/n_1$, then $n_1 > n$.
 
-Therefore $f(x) = x ^3$ is continous on \textbf{R}.
+Then it follows, that for any  $\epsilon > 0$ there exists $\delta > 0$
+such that $x \in V_\delta \to f(x) \in V_\epsilon(t(z))$ (if $x \in I$, then
+$x = 0 < \epsilon$; if $x \in Q$, then $f(x) < 1/n < \epsilon$ because of
+how had
+we constructed $\delta$ in the previous paragraph). Therefore Thomae's function
+is continous at any irrational point.
 
-\subsection*{(b)}
-\textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
-  on \textbf{R}}
+In the text of the exercise we were asked to consider a specific set and
+all that other stuff,
+and that method would certainly work, but I consider this particular method
+to be a little more straightforward.
 
+\section*{4.3.7}
+\textit{Assume $h: R \to R$ is continous on $R$ and let $K = \{x: h(x) = 0\}$.
+  Show that $K$ is a closed set.}
 
-\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
-function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
-$\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
-satisfying
-
-$|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
-
-In order to show that $f(x) = x^3$ is not uniformly continous on
-\textbf{R} let us use sequences
-
-$$x_n = n$$
-$$y_n = (n + 1/n)$$
-
-Firstly
-$$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
-
-on the other hand
-
-$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
-+ 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
-$$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
-
-rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
-but $|f(x_n) - f(y_n) \to \infty$
-
-Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
-
-\subsection*{(c)}
-\textit{Show that $f$ is uniformly continuous on any bounded subset
-  of \textbf{R}.}
-
-Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
-$\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
-
-Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
-$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
-\frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
-
-Therefore if we take
-$$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
-then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
-making $f(x)$ uniformly continous by definition
-
-
-\section*{4.4.2}
-\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
-  $[1, \infty)$, but is not on the set $(0, 1]$}
-
-In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
-first prove that it is just continous, with the hope that $\delta$ is not
-depentant on $x$
-
-$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
-|\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
-= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
-|c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
-$$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
-
-Therefore we need to show that if $\delta$ is bounded above at 1, then
-$|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
-some constant, but  $(0, 1]$ isn't.
-
-$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
-+ \frac{1}{cx^3}| \leq
-|\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
-$$
-
-for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
-therefore for $x \in [1, \infty)$
-
-$$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
-
-therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
-$|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
-
-on the other hand,
-
-$$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
-
-Therefore we will need smaller deltas as we approach 0; to put it more
-concretely let's use the theorem for
-\textbf{Sequential Criterion for Nonuniform Continuity}.
-
-Let us pick
-$$x_n = 1/n$$
-$$y_n = 1/(n + 1)$$
-
-then
-
-$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
-= |\frac{1}{n ^ 2 + 1}| \to 0$$
-
-but
-
-$$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
-$$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
-
-therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
-
-\section*{4.4.3}
-\textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
-
-Let us first complete 3.3.1
-
-\textit{Exercise 3.3.1. Show that if K is compact, then sup K and inf K both exist and are elements of K.}
-
-Because $K$ is compact, it is both closed and bound; therefore, because it is bounded,
+Suppose that $K$ is not closed. Then it follows, that there exists a
+limit point of $K$, that is not in $K$. Let $y \in R$ be a limit point
+of $K$, that is not in $K$. It follows, that there exists a sequence
+$(h(x_n)) \to y$, such that $h(x_n) \in K$ and $h(x_n) \neq y$. TBC
 
 
-$$ \exists M \in \textbf{R} > 0 :  \forall x \in K $$
-$$ |x| \leq M $$
+% \section*{4.4.1}
+
+% \subsection*{{a}}
+% \textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
+
+% In order to show, that $f$ is continous we need to show, that $\forall
+% \epsilon \in \textbf{R}$ $\exists \delta$ s.t.
+% $$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+
+% Let's rewrite the first formula
+
+% $$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
+% |x - c||x^{2} + cx + c^{2}|$$
+
+% We can put $|x - c|$ can be as small as we want it to be. Therefore we need
+% an upper bound for $|x^{2} + cx + c^{2}|$.
+
+% $$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
+% |c|(|c| + 1) + |c|^{2}$$
 
 
-Therefore there exist lower and upper bound of $K$. Therefore, by axiom of completenss, there exist
-both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound)
 
-Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
+% Therefore if we take
+% $\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
+% then
+% $$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
+%   |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
+% = \epsilon$$
 
-To be continued...
+% Therefore $f(x) = x ^3$ is continous on \textbf{R}.
+
+% \subsection*{(b)}
+% \textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
+%   on \textbf{R}}
 
 
+% \textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
+% function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
+% $\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
+% satisfying
+
+% $|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
+
+% In order to show that $f(x) = x^3$ is not uniformly continous on
+% \textbf{R} let us use sequences
+
+% $$x_n = n$$
+% $$y_n = (n + 1/n)$$
+
+% Firstly
+% $$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
+
+% on the other hand
+
+% $$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
+% + 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
+% $$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
+
+% rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
+% but $|f(x_n) - f(y_n) \to \infty$
+
+% Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
+
+% \subsection*{(c)}
+% \textit{Show that $f$ is uniformly continuous on any bounded subset
+%   of \textbf{R}.}
+
+% Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
+% $\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
+
+% Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
+% $$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
+% \frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
+
+% Therefore if we take
+% $$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
+% then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
+% making $f(x)$ uniformly continous by definition
+
+
+% \section*{4.4.2}
+% \textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
+%   $[1, \infty)$, but is not on the set $(0, 1]$}
+
+% In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
+% first prove that it is just continous, with the hope that $\delta$ is not
+% depentant on $x$
+
+% $$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
+% |\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
+% = |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
+% |c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
+% $$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
+
+% Therefore we need to show that if $\delta$ is bounded above at 1, then
+% $|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
+% some constant, but  $(0, 1]$ isn't.
+
+% $$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
+% + \frac{1}{cx^3}| \leq
+% |\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
+% $$
+
+% for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
+% therefore for $x \in [1, \infty)$
+
+% $$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
+
+% therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
+% $|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
+
+% on the other hand,
+
+% $$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
+
+% Therefore we will need smaller deltas as we approach 0; to put it more
+% concretely let's use the theorem for
+% \textbf{Sequential Criterion for Nonuniform Continuity}.
+
+% Let us pick
+% $$x_n = 1/n$$
+% $$y_n = 1/(n + 1)$$
+
+% then
+
+% $$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
+% = |\frac{1}{n ^ 2 + 1}| \to 0$$
+
+% but
+
+% $$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
+% $$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
+
+% therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
+
+% \section*{4.4.3}
+% \textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
+
+% Let us first complete 3.3.1
+
+% \textit{Exercise 3.3.1. Show that if K is compact, then sup K and inf K both exist and are elements of K.}
+
+% Because $K$ is compact, it is both closed and bound; therefore, because it is bounded,
+
+
+% $$ \exists M \in \textbf{R} > 0 :  \forall x \in K $$
+% $$ |x| \leq M $$
+
+
+% Therefore there exist lower and upper bound of $K$. Therefore, by axiom of completenss, there exist
+% both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound)
+
+% Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
+
+% To be continued...
 
 \end{document}
