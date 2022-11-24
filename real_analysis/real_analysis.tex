@@ -5446,8 +5446,8 @@ $F_\sigma$ set.
 
 Also, let
 $\{R \setminus m: m \in Q\}$
-be a collection of open sets. Then its union is equal to $I$. Therefore $I$ is
-a $G_\delta$ set.
+be a collection of open sets. Then its intersection is equal to $I$.
+Therefore $I$ is a $G_\delta$ set.
 
 \section*{3.3.1}
 \textit{Show that if $K$ is compact, then $\sup K$ and $\inf K$ both exist
@@ -6178,8 +6178,124 @@ contradiction. Therefore $F_n^c$ is dense in $R$.
 
 Therefore $\cap_{n = 1}^{\infty}F_n^c$ is a countable intersection of dence,
 open sets (countable because we sum from n to $\infty$, therefore on N).
-Therefore it cannot be empty, which is a contradiction.
+Therefore it cannot be empty. Therefore $\cup_{n = 1}^{\infty}F_n \neq R$,
+which is a contradiction.
+
+\section*{3.5.6}
+\textit{Show how the previous exercise implies that the set $I$ of irrationals
+  cannot ber a $F_\sigma$ set, and $Q$ cannot be a $G_\delta$ set.}
+
+We had already proven that $Q$ is a $F_\sigma$ set and $I$ is a
+$G_\delta$ set. 
+
+Suppose that $Q$ is a $G_\delta$ set. Then it follows that $Q^c = I$ is a
+$F_\sigma$ set. Therefore $Q \cup Q^c = R = I \cup I^c$ is a $F_\sigma$ set.
+
+Because $Q$ and $I$ is a $F_\sigma$ there exists collection $F_n$ and $S_n$
+such that every $F_n$ and $S_n$ is a closed set. Also, for every
+$x < y \in F_n$  it follows that $x, y \in Q$. Therefore, there exists
+$z \in Q^c = I$ such that $x < z < y$. Therefore there does not exist
+a nonempty open interval $(x, y) \subseteq F_n$. Same can be said
+about $S_n$. Thus $Q \cup I = R$ can be written as the union of sets
+$J_n$ where for each $n \in N$, $J_n$ is a closed set containing no nonempty
+open intervals, which is a contradiction.
+
+Thus $Q$ cannot be a $G_\delta$ set. Because  $I$ being $F_\sigma$ set implies
+that $Q$ is a $G_\delta$ set, $I$ cannot be a $F_\sigma$ set.
 
 
+\section*{3.5.7}
+\textit{Using Exercise 3.5.6 and versions of the statements in Exercise 3.5.2,
+  construct a set that is neithter in $F_\sigma$ nor a $G_\delta$.}
+
+First of all, it is necessary to state that $\emptyset$ is in and of itself a
+closed set. Therefore $\cup_{n = 1}^{\infty} \emptyset = \emptyset$. Thus
+$\emptyset$ is a $F_\sigma$ set. Also, $\emptyset$ is an open set. Thus
+$\cap_{n = 1}^{\infty} \emptyset = \emptyset$ is a $G_\delta$ set.
+
+If $A$ is a closed set, then $A = \cup_{n = 1}^{\infty} A$ is a $F_\sigma$ set.
+If $A$ is an open set, then $A = \cap_{n = 1}^{\infty} A$ is a $G_\delta$ set.
+
+Let $W$ be a desired set. Then it follows that $W$ is not a $F_\sigma$, and
+is not  a $G_\delta$ set. Also, $W^c$ has the same properties.
+
+Any finite set is closed and therefore is a $F_\sigma$ set. Their compliment
+is a $G_\delta$ set.
+
+Therefore the set that we are looking for is neither closed nor open.
+
+Cantor set won't do, because it is closed.
+
+Set $\{1, 1/2, 1/3, ...\}$ won't do, because it can we written as a
+countable union of closed singletons, and therefore it is $F_\sigma$ set.
+Its compliment won't do for obvious reasons.
+
+$Q$ is an $F_\sigma$ set. Then $Q \cap (0, 1)$ is not closed, because it doesn't contain 0 and 1. It can be still written as the countable union of closed
+singletons, therefore it is still $F_\sigma$.
+
+I decided to look up a hint in the internet saw the answer.
+$((-\infty, 0) \cap I)) \cup ((0, \infty) \cap Q)$ is neither $F_\sigma$ nor
+$G_\delta$. What a shameful waste of an exercise.
+
+
+\section*{3.5.8}
+\textit{Show that a set $E$ is nowhere-dense in $R$ if and only if the
+  compliment of $\overline E$ is dense in $R$}
+
+\textbf{In one direction:}
+Suppose that $E$ is nowhere-dense. Then it follows, that $\overline E$ does
+not contain any nonempty intervals. Thus, given any $x, y \in R$ it follows
+that $(x, y) \not \subseteq \overline E$. Thus, there exists $k \in (x, y)$
+such that $k \not \in \overline E$. Therefore $k \in (\overline E)^c$.
+Thus, given two real numbers, there exists $k \in (\overline E)^c$ such
+that $x < k < y$. Therefore $(\overline E)^c$ is dense in $R$, as desired.
+
+\textbf{In other direction:}
+Suppose that $(\overline E)^c$ is dense in $R$. Then, for any $x < y \in R$
+there exists $z \in (\overline E)^c$ such that $x < z < y$. Therefore
+there does not exist $x_1, y_1 \in R$ such that $(x, y) \subseteq \overline E$.
+Therefore $E$ is nowhere-dense.
+
+\section*{3.5.9}
+\textit{Decide whether the following sets are dense in \textbf{R},
+  nowhere-dense in \textbf{R}, or somewhere in between}
+
+\textit{(a) $A = \textbf{Q} \cap [0, 5]$}
+
+$\overline A = [0, 5]$, therefore the set is not nowhere-dense. It isn't
+dense in $R$ though, because for $-1$ and $-1/2$ there is no number in the
+$A$, that is between them.
+
+\textit{(b) $B = \{1/n: n \in N\}$}
+
+Nowhere-dense
+
+\textit{(c) the set of irrationals}
+
+Is dense in $R$.
+
+\textit{(d) the Cantor set}
+
+Cantor set is closed, and therefore $C = \overline C$. Also, it is totally
+disconnected, and therefore $x < y \in C \to \exists z \in C^c: x < z < y$.
+Therefore it does not contain any open intervals. Therefore it
+is nowhere-dense.
+
+\section*{3.5.10}
+\textit{Finish the proof by finding a contradiction to the results in this
+  section}
+
+\textit{\textbf{Theorem 3.5.4 (Baire's Theorem)} The set of real numbers
+  \textbf{R} cannot be written as the countable union of nowhere-dense sets.}
+
+For contradition, assume that $E_1, E_2, E_3, ... $ are each nowhere-dense and
+satisfy $\textbf{R} = \cup_{n = 1}^{\infty} E_n$. For each $E_n$ we can state
+that $E_n \subseteq \overline E_n$. Thus, $\cup_{n = 1}^{\infty} E_n \subseteq
+\cup_{n = 1}^{\infty} \overline E_n$. Therefore
+$R \subseteq \cup_{n = 1}^{\infty} \overline E_n$. Therefore
+$\cup_{n = 1}^{\infty} \overline E_n = R$. $E_n$ is nowhere-dense, therefore
+$\overline E_n$ contains no nonempty intervals. Therefore $R$ can be written as
+countable union of closed sets, where each of those sets contain no nonempty
+open intervals, which is a contradiction.
 
 \end{document}
