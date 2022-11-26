@@ -6235,9 +6235,351 @@ to be a little more straightforward.
 
 Suppose that $K$ is not closed. Then it follows, that there exists a
 limit point of $K$, that is not in $K$. Let $y \in R$ be a limit point
-of $K$, that is not in $K$. It follows, that there exists a sequence
-$(h(x_n)) \to y$, such that $h(x_n) \in K$ and $h(x_n) \neq y$. TBC
+of $K$, that is not in $K$. It follows from equivalence of limit point,
+that there exists a sequence
+$((x_n)) \to y$, such that $x_n \in K$ and $x_n \neq y$ for all
+$n \in N$.
 
+$y \not \in K$ implies that $h(y) \neq 0$. Thus
+for every
+sequence $(x_n) \to y$ it is true that  $(h(x_n)) \to h(y) $. Because
+$x_n \in K$ it follows
+that $h(x_n) = 0$. Thus $\lim 0 = h(y) \neq 0$, which
+is a contradiction. Therefore $K$ is closed.
+
+\section*{4.3.8}
+\textit{(a) Show that if a function is continous on all of \textbf{R} and
+  equal to 0 at every rational point, then it nust be identically 0 on all
+  of \textbf{R}}
+
+We are going to prove this one by contradiction. Suppose that there exists a
+point $x \in \textbf{R}$ such that $f(x) \neq 0$. Then let
+$\epsilon = |f(x)|$. Then it follows, because of the continuity of $f$ on $R$,
+that for every $\delta \in \textbf{R}$
+it is true that there exists a rational point $q$ in $V_\delta(x)$.
+Thus
+$$f(x) - \epsilon < f(q) < f(x) + \epsilon$$
+$$f(x) - \epsilon < 0 < f(x) + \epsilon$$
+$$f(x) - |f(x)| < 0 < f(x) + |f(x)$$
+If $f(x) \geq 0$ then $f(x) - |f(x)| = f(x) - f(x) = 0$.
+If $f(x) < 0$ then $f(x) + |f(x)| = f(x) - f(x) = 0$.
+Thus, $0 < 0$, which is a contradiction.
+
+Therefore $f$ cannot be continous at $R$ if $f(x) = 0$ at every rational point
+and there exists $f(x) \neq 0$. Thus only possibility when $f(x)$ is
+continous under those circumstances is if $f(x) = 0$ for every $x \in R$.
+
+\textit{(b) If $f$ and $g$ are defined on all of $R$ and $f(r) = g(r)$ at
+  every rational  point, must $f$ and $g$ be the same functions? }
+
+Only if both  $f$ and $g$ are continous. Also, it doesn't have to be for
+rationals only, it also can be applied to any dense set in $R$.
+
+\section*{4.3.9 (Contraction Mapping Theorem)}
+\textit{Let $f$ be a function defined on all of $R$, and assume there is a
+  constant $c$ such that $0 < c < 1$ and}
+$$|f(x) - f(y)| \leq c|x - y|$$
+\textit{for all $x,y \in R$.}
+
+\textit{(a) Show that $f$ is continous on $R$.}
+
+Fix $y \in R$ then pick $\epsilon > 0$.
+Then it follows, that $1/c \epsilon > 0$. Let $\delta = 1/c \epsilon$
+Therefore for every  $x \in V_\delta$ it follows that
+$$|x - y| < \delta$$
+$$|x - y| < 1/c \epsilon$$
+$$c |x - y| <  \epsilon$$
+Thus it follows, that
+$$|f(x) - f(y)| < c |x - y| <  \epsilon$$
+Thus for every $\epsilon > 0$ there exists $\delta > 0$ such that
+$$x \in V_\delta \to f(x) \in V_\epsilon(f(x))$$
+Thus $f$ is continous at $y$ . Thus for every $y \in R$ $f$ is continous.
+Thus, $f$ is continous at $R$, as desired.
+
+\textit{(b) Pick some point $y_1 \in R$ and construct the sequence }
+$$(y_1, f(y_1), f(f(y_1)), ... )$$
+\textit{In general, if $y_{n + 1} = f(y_n)$, show that
+  the resulting sequence $(y_n)$
+  is a Cauchy sequence. Hence we may let $y = \lim y_n$.}
+
+% $$|y_{n + 2} - y_{n + 1}| \leq c|y_{n + 1} - y_n|$$
+
+% $$|y_{n + 1} - y_n| \leq c|y_n - y_{n - 1}|$$
+% $$c|y_{n + 1} - y_n| \leq c^2|y_n - y_{n - 1}|$$
+% $$|y_{n + 2} - y_{n + 1}| \leq c^2|y_n - y_{n - 1}|$$
+% $$|y_{n + 2} - y_{n + 1}| + |y_{n + 1} - y_{n}| \leq
+% |y_{n + 2} - y_{n + 1} + y_{n + 1} - y_{n}| =
+% |y_{n + 2} - - y_{n}|
+% $$
+
+
+
+% $$|y_m - y_n| < \epsilon$$
+
+
+Let us firstly observe that
+$$|y_{n + 2} - y_{n + 1}| \leq c|y_{n + 1} - y_n|$$
+implies that 
+$$|y_3 - y_1| = |y_3 + y_2 - y_2 - y_1| = |y_3 - y_2 + y_2 - y_1| \leq $$
+$$ \leq  |y_3 - y_2| + |y_2 - y_1| \leq$$
+$$\leq c|y_2 - y_1| + |y_2 - y_1| =
+(c + 1) |y_2 - y_1| = (c + c^0) |y_2 - y_1|$$
+
+and in general for $m > n \in N$ 
+$$|y_m - y_n| = 
+|y_m - y_{m - 1} + y_{m + 1} - y_{m - 2} + y_{m + 2} ...  - y_n| \leq$$
+$$ \leq |y_m - y_{m - 1}| + |y_{m + 1} - y_{m - 2}| + ... +
+|y_{n + 1}  - y_n| \leq $$
+$$ \leq c^{m - n - 1}|y_{n + 1} - y_{n - 1}| +
+c^{m - n - 2}|y_{n + 1} - y_{n}| + ... +
+|y_{n + 1}  - y_n| \leq  $$
+$$ \leq c^{m  - 1}|y_{2} - y_{1}| +
+c^{m - 2}|y_{2} - y_{1}| + ... +
+c^n|y_{2}  - y_1| =  $$
+$$\left(\sum_{j = n}^{m - 1}c^j\right)|y_2 - y_1|$$
+
+We know, that for $0 < c < 1$ the sum
+$$\sum_{j = 1}^{\infty}c^j$$
+converges to some limit. Because $c > 0$ it follows that
+$$\left(\sum_{j = n}^{m - 1}c^j\right)
+\leq
+\left(\sum_{j = n}^{\infty}c^j\right)$$
+and thus
+$$|y_m - y_n| \leq \left(\sum_{j = n}^{m - 1}c^j\right)|y_2 - y_1|
+\leq \left(\sum_{j = n}^{\infty}c^j\right) |y_2 - y_1|$$
+
+Also, because the series is convergent, 
+$$\lim_{n \to \infty} \left(\sum_{j = n}^{\infty}c^j\right) \to 0$$
+That statement finishes preliminaries for our proof, so let us begin
+
+Let $\epsilon > 0$. Let us also calculate first $y_1$ and $y_2$.
+Now let $N$ be such a number, that it satisfies 
+$$\left(\sum_{j = N}^{\infty}c^j\right) < \frac{\epsilon}{|y_2 - y_1|}$$
+thus for every $n \geq N$ it is true that
+$$\left(\sum_{j = n}^{\infty}c^j\right) < \frac{\epsilon}{|y_2 - y_1|}$$
+$$\left(\sum_{j = n}^{\infty}c^j\right)|y_2 - y_1| < \epsilon$$
+
+Therefore we can state that for every $m > n > N \in \textbf{N}$ it follows
+that 
+$$|y_m - y_n| \leq 
+\left(\sum_{j = n}^{\infty}c^j\right)|y_2 - y_1| < \epsilon$$
+% |y_m - y_{m - 1} + y_{m + 1} - y_{m - 2} + y_{m + 2} ...  - y_n| \leq$$
+% $$ \leq |y_m - y_{m - 1}| + |y_{m + 1} - y_{m - 2}| + ... +
+% |y_{n + 1}  - y_n| \leq $$
+% $$ \leq c^{m - n - 1}|y_{n + 1} - y_{n - 1}| +
+% c^{m - n - 2}|y_{n + 1} - y_{n}| + ... +
+% |y_{n + 1}  - y_n| \leq  $$
+% $$ \leq c^{m  - 1}|y_{2} - y_{1}| +
+% c^{m - 2}|y_{2} - y_{1}| + ... +
+% c^n|y_{2}  - y_1| =  $$
+% $$\left(\sum_{j = n}^{m - 1}c^j\right)|y_2 - y_1| \leq
+
+Therefore $(y_n)$ is a Cauchy sequence, as desired.
+
+\textit{(c) Prove that $y$ is a fixed point of $f$ (i.e., $f(y) = y$) and that
+  it is unique in this regard}
+
+Just to remind myself, I'll state here that we have  defined $y$ in
+the text of previous exercise.
+
+Because $(y_n) \to y$, it follows that $(f(y_n)) \to f(y)$.
+$$(f(y_n)) = \{f(y_1), f(y_2), ... \} = \{y_2, y_3, ... \}$$
+Therefore $(f(y_n))$ is a subseqeunce of $(y_n)$. Therefore
+it converges to $y$ as well. Therefore $f(y) = y$, as desired.
+
+Suppose that $f(y) \neq y$. Then let $b = |f(y) - y|$. Then it follows that
+
+
+Suppose that there exists  $f(y_1) = y_1$, $f(y_2) = y_2$ and $y_1 \neq y_2$.
+Then it follows that 
+$$|f(y_1) - f(y_2)| \leq c|y_1 - y_2|$$
+$$|y_1 - y_2| \leq c|y_1 - y_2|$$
+$$1 \leq c$$
+which is a contradiction.
+
+\textit{(d) Finally, prove that if $x$ is any arbitrary point in $R$ then the
+  sequence $(x, f(x), f(f(x)), ...)$ converges to $y$ defined in (b).}
+
+Suppose that $x \in R$. then it follows, that
+$(x, f(x), f(f(x)), ... )$ converses to some $z \neq y \in R$. Then
+it follows, that $f(z) = z$ by the same reasoning as in (c). Thus
+$$|f(z) - f(y)| \leq c|z - y|$$
+$$|z - y| \leq c|z - y|$$
+$$1 \leq c$$
+which is a contradiction. Therefore the only number, to which $z$ is convergent
+is $0$ (contradiction does not arive when $z = y$, because $|z - y| = 0$,
+thus the equation becomes $0 = 0$).
+
+\section*{4.3.10}
+\textit{Let $f$ be a function defined of all of $R$ that satisfies the additive
+  condition $f(x + y) = f(x) + f(y)$ for arr $x, y \in R$.}
+
+\textit{(a) Show that $f(0) = 0$ and that $f(-x) = -f(x)$ for all $x \in R$ }
+
+$$f(0) = f(0 + 0) = f(0) + f(0)$$
+$$f(0) = f(0) + f(0)$$
+$$0  = f(0)$$
+
+$$f(x) + f(-x) = f(x - x)  = f(0) = 0$$
+$$f(x) + f(-x)  = 0$$
+$$ f(-x)  = - f(x)$$
+
+\textit{(b) Show that if $f$ is continous at $x = 0$, then $f$ is continous
+  at every pont in \textbf{R}}
+
+Let $f$ be continous at $0$. Therefore we can state that
+$$\epsilon > 0: \exists \delta > 0: |x - 0| < \delta \to |f(x) - f(0)| < \epsilon$$
+$$\epsilon > 0: \exists \delta > 0: |x - 0| < \delta \to |f(x) - 0| < \epsilon$$
+$$\epsilon > 0: \exists \delta > 0: |x + c - c| < \delta \to |f(x)| < \epsilon$$
+
+Let $c \in R$. Let $\epsilon > 0$. Then
+$$\epsilon > 0: \exists \delta > 0: |x + 0| < \delta \to |f(x) + 0| < \epsilon$$
+$$\epsilon > 0: \exists \delta > 0: |x + c - c| < \delta \to |f(x) + f(c) - f(c)| < \epsilon$$
+$$\epsilon > 0: \exists \delta > 0: |x + c - c| < \delta \to |f(x) + f(c) - f(c)| < \epsilon$$
+$$\epsilon > 0: \exists \delta > 0: |(x + c) - c| < \delta \to |f(x + c) - f(c)| < \epsilon$$
+
+
+Thus for any $y \in R$ we can set it as $y = c + x$. Thus, $f$ is continous
+at $y \in R$.
+
+\textit{(c) Let $k = f(1)$. Show that $f(n) = kn$ for all $n \in N$, and
+  then prove that $f(z) = kz$ for all $z \in Z$. }
+
+Suppose that $k = f(1)$. Then it follows that
+$$k + k = f(1) + f(1) = f(1 + 1) = f(2)$$
+Thus
+$$kn = \sum_{j = 1}^{n} k = \sum_{j = 1}^{n} f(1) =
+f\left(\sum_{j = 1}^{n} 1\right) = f(n)$$
+for all $n \in \textbf{N}$.
+
+$f(-x) = -f(x)$. Thus if $z < 0 \in Z$ then
+$$kz = \sum_{j = 1}^{-z} -k = \sum_{j = 1}^{-z} f(-1) =
+f\left(\sum_{j = 1}^{-z} -1\right) = f(z)$$
+thus $f(z) = kz$ for all $z \in Z$ (taking into account positive values of $N$)
+
+Let $r \in Q$. Then ther exists $n/m = r$ such that $n \in N$ and $m \in Z$.
+Thus
+$$r = n/m = \sum_{j = 1}^{n} 1/m$$
+We know, that $f(m) = km$ for $m \in Z$. Suppose that $m > 0$. Then
+$$f(1) = k$$
+$$f\left(\sum_{j = 1}^m \frac{1}{m}\right) = k$$
+$$\sum_{j = 1}^m f\left(\frac{1}{m}\right) = k$$
+$$mf\left(\frac{1}{m}\right) = k$$
+$$f\left(\frac{1}{m}\right) = \frac{k}{m}$$
+If $m < 0$ then
+$$f(1) = k$$
+$$f\left(\sum_{j = 1}^{-m} \frac{1}{m}\right) = k$$
+$$\sum_{j = 1}^{-m} f\left(\frac{1}{m}\right) = k$$
+$$mf\left(\frac{1}{m}\right) = k$$
+$$f\left(\frac{1}{m}\right) = \frac{k}{m}$$
+Thus, for $m \in Z \setminus \{0\}$,
+$$f(1/m) = \frac{k}{m}$$
+
+Therefore
+$$f(r) = f\left(\frac{n}{m}\right) = f\left(\sum_{j = 1}^n\frac{1}{m}\right) =
+\sum_{j = 1}^nf\left(\frac{1}{m}\right) = n f\left(\frac{1}{m}\right) =
+n \frac{k}{m} = k \frac{n}{m} = kr$$
+as desired.
+
+\textit{(d) Use (b) and (c) to conclude that $f(x) = kx$ for all $x \in R$.
+  Thus, any additive function that is continous at $x = 0$ must neecssarily
+  be a linear function through origin}
+
+From continuity of $f$ on $R$ it follows, that it is continous on $Q$.
+Let $h(x) = kx$ for all $x \in R$. 
+Then let us define  $g(x) = f(x) - h(x)$. It follows that $g(x) = 0$ for all
+$x \in Q$. Also, because of the continuity of both $f$ and $h$ on $R$ it
+follows, that $g$ is continous on $R$.
+Thus, from out discussion in Exercise 4.3.8 we can conclude,
+that $g(x) = 0$ for all $x \in R$. Thus, $f(x) = h(x)$ for all $x \in R$.
+Therefore $f(x) = kx$ for all $x \in R$, as desired.
+
+\section*{4.3.11}
+\textit{For each of the following choices of $A$, construct a function
+  $f: R \to R$ that has discontinuities at every point $x \in A$ and is
+  continous on $A^c$}
+
+\textit{(a) $A = Z$}
+$$f(x) = [[x]]$$
+where $[[]]$ is the floor function.
+
+\textit{(b) $A = \{x: 0 < x < 1\}$}
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    0 \text{ if } x \in (-\infty, 0) \cup (1, \infty) \cup Q \\
+    |x| \text{ if } x \in I \cap [0, 0.5] \\
+    |x - 1| \text{ if } x \in I \cap (0.5, 1)
+  \end{cases}
+\end{equation}
+(i.e. its a modified Dirichlet's function, that has sort of a diamond shape
+in $[0, 1]$)
+
+\textit{(c) $A = \{x: 0 \leq x \leq 1\}$}
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    0 \text{ if } x \in (-\infty, 0) \cup (1, \infty) \cup Q \\
+    1 \text{ if } x \in I \cap [0, 0.1] \\
+  \end{cases}
+\end{equation}
+(same idea as in (b), but no diamond shape here, just the partial Dirichlet's
+and partial 0)
+
+\textit{(d) $A = \{1/n: n \in N\}$}
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    0 \text{ if } x \in A \\
+    x \text{ if } x \in A^c \\
+  \end{cases}
+\end{equation}
+(here we took into account 0, it is convergent from every direction)
+
+\section*{4.3.12}
+\textit{Let C be the Cantor set constructed in Section 3.1. Define
+$g: [0, 1] \to R$ by}
+\begin{equation}
+  g(x) =
+  \begin{cases}
+    1 \text{ if } x \in C \\
+    0 \text{ if } x \not \in C \\
+  \end{cases}
+\end{equation}
+\textit{(a) Show that $g$ fails to be continous at any point $c \in C$}
+
+Suppose that $c \in C$ and let $\epsilon = 1$. Then it follows, that
+for every $\delta$-neighborhood $V_\delta(c)$ there would exist
+$x \in V_\delta(c)$ such that $x \notin C$ (this follows from our discussion
+from previous chapter that $C$ is totally disconnected. Exercise 3.4.9
+contains rigorous proof for validity of my last statement).
+Therefore
+$$|g(x) - 1| < \epsilon$$
+$$|0 - 1| < 1$$
+$$1 < 1$$
+for every $\delta > 0$. Thus for some $\epsilon$ there does not exist
+$\delta > 0$, that satisfies continuity constraint. Therefore
+$C$ is not continous at every $c \in C$.
+
+\textit{(b) Prove that $g$ is continous at every point $c \notin C$}
+
+Suppose that $c \notin C$. Then $c \in C^c$. We know (see chapter 3), that
+$C$ is a closed set. Thus $C^c$ is an open set.
+$[0, 1] = (0, 1) \cup \{0, 1\}$ and $\{0, 1\}  \subseteq C$, therefore
+$\{0, 1\}  \not \subseteq C^c$. Thus
+$$[0, 1] \cap C^c = ((0, 1) \cup \{0, 1\}) \cap C^c =$$
+$$= ((0, 1) \cap C^c) \cup (\{0, 1\}) \cap C^c) =
+((0, 1) \cap C^c) \cup \emptyset 
+= (0, 1) \cap C^c$$.
+Therefore the set, for every element of which $g(x) = 0$, is a union of open sets, and therefore is 
+itself an open set. Thus, for every $c \in C^c$ and every
+$\epsilon > 0$ we can find a $V_\delta(c) \subseteq C^c \cap [0, 1]$ (see
+definition of open sets) such that
+$$|g(x) - g(c)| = |0 - 0| = 0 < \epsilon$$
+for every $\epsilon > 0$. Therefore $g(x)$ is continous at every point
+$c \notin C$, as desired.
+
+  
 
 % \section*{4.4.1}
 
