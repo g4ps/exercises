@@ -8,8 +8,8 @@
 \begin{document}
 \maketitle
 
-Exercises are from UTM-040 Understanding analysis by Stephen Abbott. Edition is
-unknown, but the date in the preface is August 2000. I don't own any rights
+Exercises are from UTM-040 Understanding analysis by Stephen Abbott, 1st
+edition. I don't own any rights
 for the book and I am not planning to aquire them anytime soon. 
 
 Also it wouldn't hurt to mention, that some (or maybe even most) of exercises
@@ -6579,162 +6579,441 @@ $$|g(x) - g(c)| = |0 - 0| = 0 < \epsilon$$
 for every $\epsilon > 0$. Therefore $g(x)$ is continous at every point
 $c \notin C$, as desired.
 
-  
 
-% \section*{4.4.1}
+\section*{Preliminaries and notes for text of 4.4}
 
-% \subsection*{{a}}
-% \textit{Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
+One thing, that was buggging me is how $x \in (c - 1, c + 1)$ implies that
+$|x| < c + 1$. Here's the proof of it.
+$$x \in (c - 1, c + 1)$$
+$$c - 1 < x < c + 1$$
+$$- 1 < x - c <  1$$
+$$|x - c| <  1$$
+$$||x| - |c|| \leq |x - c| < 1 $$
+$$||x| - |c||  < 1 $$
+$$-1 < |x| - |c|  < 1 $$
+$$-1 + |c| < |x| < 1 + |c|$$
 
-% In order to show, that $f$ is continous we need to show, that $\forall
-% \epsilon \in \textbf{R}$ $\exists \delta$ s.t.
-% $$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+\section*{4.4.1}
 
-% Let's rewrite the first formula
+\textit{(a) Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
 
-% $$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
-% |x - c||x^{2} + cx + c^{2}|$$
+In order to show, that $f$ is continous we need to show, that $\forall
+\epsilon \in \textbf{R}$ $\exists \delta$ s.t.
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
 
-% We can put $|x - c|$ can be as small as we want it to be. Therefore we need
-% an upper bound for $|x^{2} + cx + c^{2}|$.
+Let's rewrite the first formula
 
-% $$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
-% |c|(|c| + 1) + |c|^{2}$$
+$$ |f(x) - f(c)| = |x^{3} - c^{3}| = |(x - c)(x^{2} + cx + c^{2})| =
+|x - c||x^{2} + cx + c^{2}|$$
 
+We can put $|x - c|$ can be as small as we want it to be. Therefore we need
+an upper bound for $|x^{2} + cx + c^{2}|$.
 
-
-% Therefore if we take
-% $\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
-% then
-% $$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
-%   |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
-% = \epsilon$$
-
-% Therefore $f(x) = x ^3$ is continous on \textbf{R}.
-
-% \subsection*{(b)}
-% \textit{Argue, using Theorem 4.4.6, that f is not uniformly continuous
-%   on \textbf{R}}
+$$|x^{2} + cx + c^{2}| \leq |x^{2}| + |cx| + |c^{2}| \leq (|c| + 1)^{2} +
+|c|(|c| + 1) + |c|^{2}$$
 
 
-% \textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
-% function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
-% $\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
-% satisfying
 
-% $|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
+Therefore if we take
+$\delta = min\{1, \epsilon/((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2})\}$
+then
+$$|x^3 - c^3| = |x-c||x^2 + cx + c^2| \leq \epsilon \frac{((|c| + 1)^{2} +
+  |c|(|c| + 1) + |c|^{2}) }{ ((|c| + 1)^{2} + |c|(|c| + 1) + |c|^{2}})
+= \epsilon$$
 
-% In order to show that $f(x) = x^3$ is not uniformly continous on
-% \textbf{R} let us use sequences
+Therefore $f(x) = x ^3$ is continous on \textbf{R}.
 
-% $$x_n = n$$
-% $$y_n = (n + 1/n)$$
-
-% Firstly
-% $$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
-
-% on the other hand
-
-% $$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
-% + 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
-% $$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
-
-% rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
-% but $|f(x_n) - f(y_n) \to \infty$
-
-% Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
-
-% \subsection*{(c)}
-% \textit{Show that $f$ is uniformly continuous on any bounded subset
-%   of \textbf{R}.}
-
-% Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
-% $\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
-
-% Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
-% $$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
-% \frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
-
-% Therefore if we take
-% $$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
-% then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
-% making $f(x)$ uniformly continous by definition
+\textit{(b) Argue, using Theorem 4.4.6, that f is not uniformly continuous
+  on \textbf{R}}
 
 
-% \section*{4.4.2}
-% \textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
-%   $[1, \infty)$, but is not on the set $(0, 1]$}
+\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).} A
+function $f:A \to \textbf{R}$ fails to be uniformly continuous on $A$ if
+$\exists \epsilon > 0 $ and  two sequences $(x_n)$ and $(y_n)$ in $A$
+satisfying
 
-% In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
-% first prove that it is just continous, with the hope that $\delta$ is not
-% depentant on $x$
+$|x_n - y_n| \to 0$ $but$ $|f(x_n) - f(y_n) \leq \epsilon_0$
 
-% $$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
-% |\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
-% = |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
-% |c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
-% $$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
+In order to show that $f(x) = x^3$ is not uniformly continous on
+\textbf{R} let us use sequences
 
-% Therefore we need to show that if $\delta$ is bounded above at 1, then
-% $|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
-% some constant, but  $(0, 1]$ isn't.
+$$x_n = n$$
+$$y_n = (n + 1/n)$$
 
-% $$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
-% + \frac{1}{cx^3}| \leq
-% |\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
-% $$
+Firstly
+$$ |x_n - y_n| = |n - n - 1/n| = |-1/n| = 1/n \to 0$$
 
-% for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
-% therefore for $x \in [1, \infty)$
+on the other hand
 
-% $$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
+$$|f(x_n) - f(y_n)| = |n ^ 3 - (n + 1/n) ^ 3| = |n^3 - (n^3 + 3 \frac{n^2}{n}
++ 3 \frac{n}{n^2} + \frac{1}{n^3})| = $$
+$$ = |-3n - \frac{3}{n} - \frac{1}{n^3} | \leq |3n| \to \infty$$
 
-% therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
-% $|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
+rmaxima seems to eraborate this statement, therefore  $|x_n - y_n| \to 0$
+but $|f(x_n) - f(y_n) \to \infty$
 
-% on the other hand,
+Therefore $f(x) = x^3$ is not uniformly continous on \textbf{R}.
 
-% $$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
+\textit{(c) Show that $f$ is uniformly continuous on any bounded subset
+  of \textbf{R}.}
 
-% Therefore we will need smaller deltas as we approach 0; to put it more
-% concretely let's use the theorem for
-% \textbf{Sequential Criterion for Nonuniform Continuity}.
+Suppose that $A \subset \textbf{R}$ and $\exists M \in \textbf{R}$ s.t.
+$\forall x \in A$ $x \leq M$ (i.e. $A$ is bounded $M$)
 
-% Let us pick
-% $$x_n = 1/n$$
-% $$y_n = 1/(n + 1)$$
+Then, $\forall c \in A$ and $\forall \epsilon \in \textbf{R}$
+$$\frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}  \leq
+\frac{\epsilon}{((|c| + 1)^{2} + |c|(|c| + 1) + |c|^2} $$
 
-% then
+Therefore if we take
+$$\delta = min\{1, \frac{\epsilon}{((|M| + 1)^{2} + |M|(|M| + 1) + |M|^2}\} $$
+then $|x - c| < \delta$ implies, that $ |f(x) - f(c)| < \epsilon$, therefore
+making $f(x)$ uniformly continous by definition
 
-% $$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
-% = |\frac{1}{n ^ 2 + 1}| \to 0$$
+There is also another way to show that $f$ is uniformly continous:
+if set $A$ is bounded, then $\overline A$ is closed and bounded and therefore
+compact. Therefore $f$ is uniformly continous at $\overline A$. Therefore
+it is continous at $A$, as desired.
 
-% but
+The last statement in previous paragraph can be justified by proof by
+contradiction and using 4.4.6
 
-% $$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
-% $$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
+\section*{4.4.2}
+\textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
+  $[1, \infty)$, but is not on the set $(0, 1]$}
 
-% therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
+In order to show, that $f(x)$ is continous on the set $[1, \infty)$ let us
+first prove that it is just continous, with the hope that $\delta$ is not
+depentant on $x$
 
-% \section*{4.4.3}
-% \textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
+$$ |\frac{1}{x^3} - \frac{1}{c^3}| = |\frac{c^3 - x^3}{x^3c^3}| =
+|\frac{(c - x)(x^2 + cx + c^2)}{x^3c^3}|
+= |(c - x) \frac{x^2 + cx + c^2}{x^3c^3}| =
+|c - x||\frac{x^2 + cx + c^2}{x^3c^3}| =$$
+$$ = |x - c||\frac{x^2 + cx + c^2}{x^3c^3}| $$
 
-% Let us first complete 3.3.1
+Therefore we need to show that if $\delta$ is bounded above at 1, then
+$|\frac{x^2 + cx + c^2}{x^3c^3}|$ is bounded above at $[1, \infty)$ by
+some constant, but  $(0, 1]$ isn't.
 
-% \textit{Exercise 3.3.1. Show that if K is compact, then sup K and inf K both exist and are elements of K.}
+$$ |\frac{x^2 + cx + c^2}{x^3c^3}| = |\frac{1}{c^3 x} + \frac{1}{c^2x^2}
++ \frac{1}{cx^3}| \leq
+|\frac{1}{c^3 x}| + |\frac{1}{c^2x^2}| + |\frac{1}{cx^3}|
+$$
 
-% Because $K$ is compact, it is both closed and bound; therefore, because it is bounded,
+for $x \in [1, \infty)$ each of those fractions are bounded above by 1,
+therefore for $x \in [1, \infty)$
+
+$$ |\frac{x^2 + cx + c^2}{x^3c^3}| \leq 3 $$
+
+therefore if we pick $\delta < \epsilon / 3 $ then it follows, that
+$|f(x) - f(c)| < \epsilon$ for $x \in [1, \infty)$
+
+on the other hand,
+
+$$ \lim_{x \to 0}(|\frac{x^2 + cx + c^2}{x^3c^3}|) \to \infty  $$
+
+Therefore we will need smaller deltas as we approach 0; to put it more
+concretely let's use the theorem for
+\textbf{Sequential Criterion for Nonuniform Continuity}.
+
+Let us pick
+$$x_n = 1/n$$
+$$y_n = 1/(n + 1)$$
+
+then
+
+$$|x_n - y_n| = |\frac{1}{n} - \frac{1}{n + 1}| = |\frac{n + 1 - n}{n(n + 1)}|
+= |\frac{1}{n ^ 2 + 1}| \to 0$$
+
+but
+
+$$ |f(x_n) - f(y_n)| = |1/(\frac{1}{n})^3 - 1/(\frac{1}{n + 1})^3| = |1/(\frac{1}{n^3}) - 1/(\frac{1}{(n + 1)^3})| =  |n^3 - (n + 1)^3| =  $$
+$$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
+
+therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
+
+\section*{4.4.3}
+\textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
+
+Let me restate here exercise 3.3.1
+
+\textit{Show that if $K$ is compact, then $\sup K$ and $\inf K$ both exist
+  and are elements of $K$}
+
+If $K$ is compact, then it is bounded (i.e. bounded above and below), and
+thus have supremum and infinum.
+
+Now let us take into account the fact, that for every $\epsilon > 0$ it is
+true, that there exist elements $k_1$ and $k_2$ (with a possibility
+that $k_1 = k_2$) such that
+
+$$k_1 > \sup K - \epsilon$$
+$$k_2 < \inf K + \epsilon$$
+thus
+$$\sup K - k_1 <  \epsilon$$
+$$k_2 - \inf K < \epsilon$$
+because of the properties of supremum and infinum $\sup K - k_1 \geq  0$ and
+$k_2 - \inf K \geq 0$. Thus
+$$|\sup K - k_1| < \epsilon$$
+$$|k_2 - \inf K| < \epsilon$$
+
+Therefore we can state, that every neighborhood around supremum and infinum
+has a member of $K$ in it. Thus $\sup K$ and $\inf  K$ are limit points of $K$.
+Thus, because $K$ is closed, we can conclude that $\sup K \in K$ and
+$\inf K \in K$, as desired.
+
+Now back to our exerice. Let us firstly state EVT here
+
+\textbf{Theorem 4.4.3 (Extreme Value Theorem)}
+\textit{If $f: K \to R$ is continous on a compact set $K \subseteq R$, then
+  $f$ attains a maximum and minimum value. In other words, there exists
+  $x_0, x_1 \in K$ such that $f(x_0) \leq f(x) \leq f(x_1)$ for all $x \in K$.}
+
+First of all, because $K$ is compact we can state that $f(K)$ is compact
+as well ($f(K)$ in this sense is the range of $f$ on $K$). Therefore
+there exist $\sup f(K) \in f(K)$ and  $\inf f(K) \in f(K)$.
+For both supremum and infinum therefore there exists at least one of
+$x_1 \in K$ such that $f(x_1) = \sup f(K)$ and $x_2 \in K$
+such that $f(x_2) = \inf f(K)$. Now let $y \in K$. It follows that
+$$\inf f(K) \leq f(y) \leq \sup f(K) $$
+$$f(x_2) \leq f(y) \leq f(x_1) $$
+as desired.
+
+\section*{4.4.4}
+\textit{Show that if $f$ is continous on $[a, b]$ with $f(x) > 0$ for all
+  $a \leq x \leq b$, then $1/f$ is bounded on $[a, b]$.}
+
+Firstly, $[a, b]$ is a closed set. Therefore $f([a, b])$ is closed set as well.
+By virtue of the fact, that $f(x) > 0$ we can state, that $f(x) \neq 0$.
+Therefore function $g \circ f = 1/f(x)$ is defined on all $f([a, b])$.
+Therefore $g(f([a, b]))$ is compact. Therefore it is bounded, as desired.
+
+\section*{4.4.5}
+\textit{Using the advice that follows Theorem 4.4.6, provide a complete
+  proof for criterion for noninform continuity}
+
+Let us firstly state the theorem itself here
+
+\textbf{Theorem 4.4.6 (Sequential Criterion for Nonuniform Continuity).}
+\textit{A function $f: A \to R$ fails to be uniformly continous on $A$ if
+  there exists a particular $\epsilon_0 > 0$ and two sequences $(x_n)$ and
+  $(y_n)$ in $A$ satisfying}
+$$|x_n - y_n| \to 0 \text{ but } |f(x_n) - f(y_n)| \geq \epsilon_0$$.
+
+Now let us take an advice from the text of proof and take a negation of
+definition of uniform continuity.
+
+\textit{A function $f:A \to R$ is not uniformly
+ continous on $A$ if there exists $\epsilon > 0$ such that
+ for every $\delta > 0$ there exist  $|x - y| < \delta$ for which it 
+ it is true  that  $|f(x) - f(y)| \geq \epsilon$.}
+
+Therefire in order for function to fail to be uniformly continous on $A$ we
+need an $epsilon$, for which there whould be no suitable $\delta$ for all
+$x, y \in A$
+
+Now fuppose that for some $f: A \to R$ there exist two sequences $(x_n)$ and
+$(y_n)$ such that
+$$|x_n - y_n| \to 0$$
+and there exists $\epsilon_0 > 0$ such that 
+$$|f(x_n) - f(y_n)| \geq \epsilon_0$$.
+
+Then it follows from convergence of $(|x_n - y_n|)$ that
+for every $\delta > 0$ there exists
+$N \in \textbf{N}$ such that $n \geq N$ implies
+that $|x_n - y_n| < \delta$. Thus, for given $\epsilon$ there does not
+exits $\delta > 0$, such that $|x - y| < \delta$ and
+$|f(x) - f(y)| < \epsilon$. Therefore $f$ does not converge uniformly on
+$A$.
+
+I do not have a clue on why do we need to consider $\delta_n = 1/n$. Maybe I've
+skipped something, but it doesn't look like it.
+
+Update: found out, that there is an error in the theorem's definition. It
+is supposed to state that
+\textit{A function $f: A \to R$ fails to be uniformly continous on $A$ if
+  and only if
+  there exists a particular $\epsilon_0 > 0$ and two sequences $(x_n)$ and
+  $(y_n)$ in $A$ satisfying}
+And therefore we have equivalence instead of implication.
+
+In sight of new developments it is imperative then to prove the
+theorem in other deirection.
+
+Because $f$ is not uniformly continous on $R$, there exists $\epsilon_0 > 0$
+such that for every $\delta > 0$ there exists $|x - y| < \delta$ such that
+$|f(x) - f(y)| \geq \epsilon_0$. Therefore let us have a sequence
+$\delta_n = 1/n$. Then it follows, that there exists $x_n, y_n$ for which it
+is true that
+$$|x_n - y_n| < \delta_n$$
+and
+$$|f(x_n) - f(y_n)| < \delta_n$$
+
+Therefore we have two sequences $(x_n)$ and $(y_n)$ with desired properties.
 
 
-% $$ \exists M \in \textbf{R} > 0 :  \forall x \in K $$
-% $$ |x| \leq M $$
+\section*{4.4.6}
+\textit{Give an example of each of the following, or state that such a request is impossible. For any that are impossible, supply a short explanation (perhaps referencing the appropriate theorem(s)) for why this is the case.}
+
+\textit{(a) A continous function $f: (0, 1) \to R$ and a Cauchy sequence
+  $(x_n)$ such that $f(x_n)$ is not a Cauchy sequence;}
+$$f = 1 / x - 1$$
+$$(x_n) = 1 - 1/n$$
+
+\textit{(b) A continous function $f: [0, 1] \to R$ and a Cauchy sequence
+  $(x_n)$ such that $f(x_n)$ is not a Cauchy sequence;}
+
+Impossible. Because $[0, 1]$ is a closed set it follows that a limit
+to which $(x_n)$ converges  is in $[0, 1]$ (because the limit of a given
+sequence is a limit point). Therefore for 
+$(x_n) \to c$ it follows that $f(x_n) \to f(c)$ by Characterization of
+Continuiity (iv).
+
+\textit{(c) A continous function $f: [0, \infty) \to R$ and a Cauchy sequence
+  $(x_n)$ such that $f(x_n)$ is not a Cauchy sequence;}
+
+Impossible. Same reason as in (b).
+
+\textit{(d) A continous bounded function $f$ on $(0, 1)$ that attains a
+  maximum value on this open interval but not a minimum value.}
+
+$$f(x) = -|x - 0.5| + 0.5$$
+
+\section*{4.4.7}
+\textit{Assume that $g$ is defined on an open interval $(a, c)$ and it is
+  known to be uniformly continous on $(a, b]$ and $[b, c)$, where
+  $a < b < c$. Prove that $g$ is uniformly continous on $(a, c)$.}
+
+Suppose that $g$ is not uniformly continous. Then it follows, that
+there exist $\epsilon_0 > 0$ and
+two sequences $(x_n)$ and $(y_n)$ such that
+$$|x_n - y_n| \to 0 \text{ but } |f(x_n) - f(y_n)| \geq \epsilon_0$$
+
+Let us pick $a < a_1 < b$ and $b < c_1 < c$. Then it follows that
+$g$ is contninous at $[a_1, b] \subset (a, b] $ and $[b, c_1] \subset [b, c)$,
+both of which are compact. Therefore it is also uniformly continous at
+$[a_1, c_1]$, which is also compact.
+
+Then it follows that there exists $\delta_1, \delta_2, \delta_3$ for
+$(a, b], [a_1, c_1], [b, c)$ for which it follows that
+$$|x - y| < \delta_n \to |f(x) - f(y)| < \epsilon_0$$
+for $n \in \{1, 2, 3\}$.
+
+Let $\delta = \min\{\delta_1, \delta_2, \delta_3, |a_1 - b|, |c_1 - b|\}$.
+Then it follows, that there exist $x_j, y_j$ from original sequences
+such that $|x_j - y_j| < \delta$ and 
+$$|f(x_j) - f(y_j)| \geq \epsilon_0$$
+but $|x_j - y_j| < \delta$ implies that $x_j, y_j$ are in one of the
+intervals $(a, b], [a_1, c_1], [b, c)$, therefore 
+$$|f(x_j) - f(y_j)| < \epsilon_0$$
+which is a contradiction.
+
+\section*{4.4.8}
+Firsty I should state that in order to confirm my previous exercise I looked
+up an answer to it online. Their proof was not simular to mine, it employed
+triangular inequality, but the main stuff is the same. This exercise is
+simular at times to the previous one, so I employ proof with triangular
+inequality here.
+
+\textit{(a) Assume that $f: [0, \infty) \to R$ is continous at every point in
+  its domain. Show that if there exists $b > 0$ such that $f$ is uniformly
+  continous on the set $[b, \infty)$, then $f$ is uniformly continous on
+  $[0, \infty)$.}
+
+Because $f$ is continous in $[0, \infty)$ and $[0, b]$ is a
+compact set we can state that
+it is uniformly continous at $[0, b]$
+
+Therefore let $\delta_1, \delta_2$ be responses for $\epsilon / 2$ for
+sets $[0, b]$ and $[b, \infty)$ respectively. If $x, y \in [0, \infty)$ are
+both in $[0, b]$ or $[b, \infty)$, then
+$$|f(x) - f(y)| < \epsilon / 2 < \epsilon$$
+If one of them (let it be $x$) is in $[0, b]$ and another is in $[b, \infty)$,
+then it follows that
+$$|f(x) - f(y)| = |f(x) - f(b) + f(b) - f(y)| \leq
+|f(x) - f(b)| + |f(b) - f(y)| < \epsilon/2 + \epsilon/2 = \epsilon$$
+as desired.
+
+\textit{(b) Prove that $f(x) = \sqrt{x}$ is uniformly continous on
+  $[0, \infty)$}
+I've got a feeling, that we need to employ somehow part (a) here, but I don't
+see the connection.
+
+$$|\sqrt{x} - \sqrt{c}| =
+|\sqrt{x} - \sqrt{c}|\left(\frac{\sqrt{x} + \sqrt{c}}{\sqrt{x} +
+    \sqrt{c}}\right) = 
+\frac{|x - c|}{\sqrt{x} + \sqrt{c}} \leq  \frac{|x - c|}{\sqrt{c}}  $$
+
+Let $f(x) = \sqrt{x}$. Then it follows that $f$ is uniformly continous at
+$[0, 1]$. For $[1, \infty)$ it follows that
+$$\frac{|x - c|}{\sqrt{c}} \leq |x - c|$$
+Therefore if we set $\delta = \epsilon$ then
+$$|\sqrt{x} - \sqrt{c}| \leq |x - c| < \epsilon$$
+therefore it is uniformly convergent at $[1, \infty)$.
+Therefore, using part (a), we can concluse that $f$ is uniformly continous at
+$[0, \infty)$, as desired.
+
+\section*{4.4.9}
+\textit{A function $f: A \to R$ is called Lipschitz if there exists a bound
+  $M > 0$ such that }
+$$\left|\frac{f(x) - f(y)}{x - y}\right| \leq M$$
+for all $x, y \in A$. Geometrically speaking, a function $f$ is Lipshitz if
+there is a uniform  bound on the magnitude of the slopes of lines drawn
+through any two point of the graph of $f$.
+
+\textit{(a) Show that if $f: A \to R$ is Lipshitz, then it is uniformly
+  continous on $A$. }
+
+Suppose that $f$ is Lipschitz. Then it follows that
+$$\left|\frac{f(x) - f(y)}{x - y}\right| \leq M$$
+$$\frac{|f(x) - f(y)|}{|x - y|} \leq M$$
+$$|f(x) - f(y)| \leq M|x - y|$$
+Thus if we set $\delta = \epsilon/M$, then it follows that
+$$|x - y| < \epsilon/M$$
+$$M|x - y| < \epsilon$$
+$$|f(x) - f(y)| \leq M|x - y| < \epsilon$$
+Therefore any Lipschitz is uniformly continous.
+
+\textit{(b) Is the converse true? Are all uniformly continous functions
+  necessatily Lipschitz?}
+
+First feeling is that it is not. Because if uniform continuity is equivalent
+to being Lipschitz, then that would appear earlier and would be massively more
+important.
+
+In order to create a more concrete proof then just
+"it's too good to be true", we need to come up with counterexample.
+
+For $f(x) = \sqrt{x}$ we have 
+
+$$\left|\frac{\sqrt{x} - \sqrt{y}}{x - y}\right| =
+\frac{|\sqrt{x} - \sqrt{y}|}{|x - y|} =
+\frac{|\sqrt{x} - \sqrt{y}|}{|\sqrt{x} - \sqrt{y}||\sqrt{x} + \sqrt{y}|} =
+\frac{1}{|\sqrt{x} - \sqrt{y}|}$$
+which is unbound. Therefore not all uniform functions are Lipschitz.
+
+\section*{4.4.10}
+\textit{Do uniforly continous functions preserve boudedness? If $f$ is
+  uniformly continous on a bounded set $A$, is $f(A)$ necessarily bounded?}
+
+I want to say yes on this one. In order to make it concrete let's look at
+the definition.
+
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+
+Let $A$ be bounded set. Now let $\epsilon > 0$. Therefore there exists
+$\delta > 0$ such that
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+$f$ is unbounded on $A$.
+Therefore for every $r \in R$ there exists $x \in A$ such that
+$f(x) > r$
 
 
-% Therefore there exist lower and upper bound of $K$. Therefore, by axiom of completenss, there exist
-% both $sup(K)$ and $inf(K)$ (i.e. both least upper bound and greatest lower bound)
+Now suppose that for some $\epsilon$ we have a corresponding
+$\delta$. Then it follows, that
 
-% Now let's prove that there exists a sequence that converges to either $sup(k)$ or $inf(k)$.
+Suppose that $f$ is uniformly continous. This implies that for a given
+$\epsilon$ there exists corresponding $\delta$.
 
-% To be continued...
 
 \end{document}
