@@ -6999,21 +6999,31 @@ which is unbound. Therefore not all uniform functions are Lipschitz.
 I want to say yes on this one. In order to make it concrete let's look at
 the definition.
 
-$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+Suppose that the function is not bounded on $A$. Then
+let $\epsilon_0 > 0$. 
+Now let us pick $f(j_0)$ for some $j \in A$.
+Then pick $f(j_{n + 1}) > f(j_n) + \epsilon_0$ for the case if the function is
+not bound above and $f(j_{n + 1}) < f(j_n) - \epsilon_0$ for the case if the
+function is not bound below. It follows then
+that $|f(j_{m}) - f(j_n)| > \epsilon_0$ for all $m \neq n \in N$.
+% Thus we'll have a sequence $\{f(x_1), f(x_2), ...\}$.
 
-Let $A$ be bounded set. Now let $\epsilon > 0$. Therefore there exists
-$\delta > 0$ such that
-$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
-$f$ is unbounded on $A$.
-Therefore for every $r \in R$ there exists $x \in A$ such that
-$f(x) > r$
+Now let us look at the sequence $(j_n)$. Each of them will be in $A$, and
+therefore we can state that the sequence is bounded.
+By Bolzano-Weierstrass theorem we'll have a convergent 
+subsequence $(j_{n_k})$. Then pick two subsequences of $(j_{n_k})$ which
+we'll call $(x_n)$ and $(y_n)$ such that $x_n \neq y_n$ (for example pick
+$(x_n)$ to be odd elements and $(y_n)$ be even elements)
+Because they are subsequences of convergent
+sequence it follows that they converge to the same limit. Thus,
+$(x_n - y_n)$ converges to 0. Therefore $(|x_n - y_n|) \to 0$. Thus there
+exist $\epsilon_0$ and  two sequences $(x_n)$ and $(y_n)$ such that
+$$|x_n - y_n| \to 0 \text{ and } |f(x_n) - f(y_n)| \geq \epsilon_0$$
+therefore $f$ is not uniformly convergent.
 
+Therefore if $A$ is convergent and $f$ is uniformly continous on $A$, then
+$f(A)$ is bounded as well.
 
-Now suppose that for some $\epsilon$ we have a corresponding
-$\delta$. Then it follows, that
-
-Suppose that $f$ is uniformly continous. This implies that for a given
-$\epsilon$ there exists corresponding $\delta$.
 
 
 \end{document}
