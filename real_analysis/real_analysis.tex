@@ -7139,35 +7139,65 @@ $(f(x_n))$ is a Cauchy sequence.
   possible to define values $g(a)$ and $g(b)$ at the endpoints so that the
   extended function $g$ is continous on $[a, b]$.}
 
+\textbf{In one direction: }
+
 Suppose that $g$ is a uniformly continous function defined on $(a, b)$.
-$a$
 
 Let us define $g(a) = \lim(g(x_n))$ and $g(b) = \lim(g(y_n))$
 for some sequences $(x_n) \to a$ and $(y_n) \to b$.
 
-Suppose now  that $(x_n)$ and $(y_n)$ are arbitrary sequences that convege to
-$a$. It follows then that $(g(x_n))$ and $(g(y_n))$ converge. Suppose that
-they converge to limits $a_1$ and $a_2$. Therefore
-let $\epsilon = |a_1 - a_2|$. It follows then than there exists $\delta > 0$
-such that
-$$|g(x_n) - a_2| < \epsilon$$
+% Let $\epsilon > 0$. Then there exists $N \in \textbf{N}$ for sequence
+% $(f(x_n))$ such that
+% $$n \to N \to f(x_n) \in V_\epsilon(f(a))$$.
+% Because $x_n$ is convergent it follows that it is also bounded. Thus
+% there exists $\delta > 0$ such that $x_n \in V_\delta(a)$ for some
+% $n \geq N$.
+
+Suppose now that there exists a sequence $(z_n) \to a$ that is contained in
+$(a, b)$ , but
+$(f(z_n))$ does not converge to $f(a)$. Because $(z_n)$ is Cauchy it follows
+that $(f(z_n))$ is also Cauchy and therefore it converges to some limit
+$a_1 \neq a$. Then let $\epsilon = |a_1 - a| / 3$. It follows then that
+there exists $N_1 \in \textbf{N}$ such that
+$$n_1 \geq N_1 \to |f(z_{n_1}) - a_1| < \epsilon$$
+
+For the same $\epsilon$ there exists $N_2$ such that 
+$$n_2 \geq N_2 \to |f(x_{n_1}) - f(a)| < \epsilon$$
+for our original sequence, that is convergent to $f(a)$.
+Let $N = \max\{N_1, N_2\}$. It follows then that
+$$n \geq N \to |f(z_n) - a_1| < \epsilon$$
+$$n \geq N \to |f(x_n) - f(a)| < \epsilon$$
+
+Then it follows that there exist two sequences such that 
+$$|f(x_n) - f(z_n)| \geq |f(a) - a_1| / 3$$
+
+Also, $(x_n) \to a$ and $(z_n) \to a$, which means that
+$(x_n - z_n) \to 0$. Therefore we can state that there exist two sequences in
+$(a, b)$ such that 
+$$\lim|x_n - z_n| = 0 \text{ but } |f(x_n) - f(z_n)| \geq \epsilon_0$$
+where $\epsilon_0 = |a - a_1| / 3$. Therefore the function is not uniformly
+continous at $(a, b)$.
+
+It follows then for every sequence $(x_n) \to a$ it follows that
+$(f(x_n)) \to f(a)$. Therefore, by Characterization of Continuity it follows
+that $f$ is continous at $a$.
+
+Same reasoning can be applied to $f(b)$, therefore $f$ is continous at
+$f(b)$ as well.
+
+Therefore $f$ is continous at an interval $[a, b]$, which is a compact set.
+Therefore $f$ is uniformly continous at $[a, b]$, as desired.
 
 
+\textbf{In other direction: }
+This case is trivial, so I'll be short.
 
-Let $\epsilon > 0$. It follows, that there exists $\delta > 0$ such that
-for all $x \in (a, b)$ 
-$$|x - y| < \delta \to |f(x) - f(y)| < \delta$$
-and there exists $N \in n$ such that $g(
-$$|g(x) - g(a)| < \epsilon$$
-
-Let us look at $[a, b]$. Beacause $g$ preserves Cauchy sequences it follows
-that whenever $(l_n) \to a$ or $(l_n) \to b$ it follows that
-$(g(l_n)) \to a$ or $(g(l_n)) \to b$. Therefore
-
-TBC
-
-
-reverse of (b) follows from
-uniform continuity on a compact set (probably)
+Suppose that it is possible to define values $g(a)$ and $g(b)$ such that
+$g$ is continous at $[a, b]$. It follows then that $g$ is uniformly continous
+at $[a, b]$. Therefore for any $\epsilon > 0$ there exists $\delta > 0$
+such that for any $x, y \in (a, b) \subseteq [a, b]$
+it follows that
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+therefore the function is uniformly continous on $(a, b)$.
 
 \end{document}

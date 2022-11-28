@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  28 NOV 2022 03:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  29 NOV 2022 01:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -311,7 +311,7 @@ cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95
 /it/10.95 x\OMS/cmsy/m/n/10.95 jj[]j \OT1/cmr/m/n/10.95 =
  []
 
-[140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150]
+[140] [141] [142] [143] [144] [145] [146] [147] [148] [149] [150] [151]
 (./real_analysis.aux) ) 
 Here is how much of TeX's memory you used:
  2302 strings out of 478268
@@ -340,10 +340,10 @@ pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on real_analysis.pdf (151 pages, 606643 bytes).
+Output written on real_analysis.pdf (152 pages, 609119 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
+ 585 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
