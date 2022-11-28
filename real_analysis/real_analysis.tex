@@ -7024,6 +7024,150 @@ therefore $f$ is not uniformly convergent.
 Therefore if $A$ is convergent and $f$ is uniformly continous on $A$, then
 $f(A)$ is bounded as well.
 
+\section*{4.4.11 (Topological Characterization of continuity)}
+\textit{Let $g$ be defined on all of $R$. If $A$ is a subset of $R$, define the
+  set $g^{-1}(A)$ by }
+$$g^{-1}(A) = \{x \in R: g(x) \in A\}$$
+\textit{Show that $g$ is continous if and only if $g^{-1}(O)$ is open whenever
+  $O \subseteq R$ is an open set.}
 
+\textbf{In one direction: }
+Supppose that $g$ is continous. Now let $O \subseteq R$ be an open subset of
+$R$. Let $x \in g^{-1}(O)$. It follows then that $g(x) \in O$. Because
+$O$ is open there exists $V_\epsilon(g(x)) \subseteq O$. Because $g$ is
+continus on $R$ there exists $V_\delta(x)$ such that
+$$y \in V_\delta(x) \to g(y) \in V_\epsilon(g(x)) \to
+g(y) \in O \to y \in g^{-1}(O)$$
+thus
+$$V_\delta(x) \subseteq  g^{-1}(O)$$
+for all $x \in g^{-1}(O)$.
+
+Therefore for every $x \in g^{-1}(O)$ there exists a neighborhood
+$V_\epsilon(x)$ such that $V_\epsilon \subseteq g^{-1}(O)$. Therefore
+for any continous $g$ it follows that $g^{-1}(O)$ is an open set  whenever
+$O$ is an open set, as desired.
+
+\textbf{In another direction: }
+Suppose that whenever $O$ is an open set it follows that $g^{-1}(O)$ is an
+open set as well. Let us pick some $\epsilon > 0$. It follows that for
+every $x \in R$
+$$g^{-1}(V_\epsilon(g(x)))$$
+is an open set. Because $g(x) \in V_\epsilon(g(x))$ we can state that
+$x \in g^{-1}(V_\epsilon(g(x)))$. Therefore there exists a neighborhood
+$V_\delta(x) \subseteq g^{-1}(V_\epsilon(g(x)))$. Thus, for every $x \in R$ and
+all $\epsilon > 0$ there exists $\delta > 0$ such that
+$$x \in V_\delta(x) \to x \in V_\epsilon(g(x))$$
+
+Therefore $g$ is continous on $R$, as desired.
+
+\section*{4.4.12}
+\textit{Conctruct an alternate proof of Theorem 4.4.8 using the open cover
+  characterization of compactness from Theorem 3.3.8 (iii)}
+
+Theorem 3.3.8 (iii) states that a set is compact if and only if any open conver
+for $K$ has a finite subcover
+
+Theorem 4.4.8 states that a function is continous on a compact set $K$ is
+uniformly continous on $K$.
+
+Because $K$ is compact it follows that $f(K)$ is compact as well.
+
+Suppose that $f$ is not uniformly continous. It follows then that there exist
+two sequences $(x_n)$ and $(y_n)$ in $K$ such that
+$$|x_n - y_n| \to 0 \text{ but } |f(x_n) - f(y_n)| \geq \epsilon_0$$
+
+Let $\epsilon = \epsilon_0 / 3$. Then let us define open cover
+$$\{(y - \epsilon, y + \epsilon): y \in f(K)\}$$
+It follows that $f(K)$ is covered by finite subsover. Let
+us call sets, that compose this finite subcover $\{I_1, I_2, ... I_n\}$.
+Then it follows that at least one of those sets has infinite amount of
+elements of sequence $(f(x_n))$ (otherwise the amount of elements in the
+sequence is finite). Let us call the set in which there is
+infinite amount of elements $I_m$, and subsequence, that is contained in this
+set $(f(x_{n_j}))$. Because $|f(x_n) - f(y_n)| \geq \epsilon_0 > \epsilon$
+we can state that there are no elements $(f(y_{n_j}))$ in $I_m$. Thus
+let us pick a set $I_l$ such that it has infinite amount of $(f(y_{n_j}))$,
+and call the subsequence that is contained in $I_l$ $(f(y_{n_l}))$.
+For this sequence find corresponding $(f(x_{n_l})) \subseteq (f(x_{n_j}))$.
+
+After that let $x_m$ be a number, such that
+$$I_m = (f(x_m) - \epsilon, f(x_m) + \epsilon)$$
+define $x_l$ in the same order for $I_l$. Then it follows (by continuity of
+$f$ on $K$), that there exist $\delta_m$ and $\delta_l$, that correspond
+to $x_m$ and $x_l$ for given $\epsilon$. Thus, it is true that
+$$x_{n_l} \in V_{\delta_l}(x_l)$$
+and
+$$y_{n_l} \in V_{\delta_l}(x_m)$$
+
+We know that $(|x_{n_l} - y_{n -l}|) \to 0$. By BW there exist convergent
+subsequences in $x_n$, $y_n$. Therefore limit of those subsequences are equal
+Therefore
+$$\overline{V_{\delta_l}(x_l)} \cap \overline{V_{\delta_l}(x_m)} \neq
+\emptyset$$
+Let $x_v \in \overline{V_{\delta_l}(x_l)} \cap \overline{V_{\delta_l}(x_m)}$.
+Then we'll have
+$x_n, y_n \in V_\delta(x)$ for every $\delta > 0$. Therefore
+for every $\delta > 0$ it follows that $\epsilon > epsilon_0$. Therefore
+$f$ is not continous at $x_v$, which is a contradiction. 
+
+This proof is FUBAR. It's probably wrong, and it took me too much time.
+I found the correct one it the internet, and I thought about the way
+they've done it there before I wrote this one, but failed to recognize
+it as a valid strategy and threw that idea away.
+
+
+\section*{4.4.13}
+
+\textit{(a) Show that a uniformly continous function preserves Cauchy
+  sequences; that is, if $f: A \to R$ is uniformly continous and
+  $(x_n) \subseteq A$ is a Cauchy sequence, then show $f(x_n)$ is a
+  Cauchy sequence}
+
+Suppose that $(x_n)$ is a Cauchy sequence and $f$ is a uniformly continous function.
+
+Let $\epsilon > 0$. Then there exists $\delta > 0$ such that whenever
+$|x - y| < \delta$ it follows that $|f(x) - f(y)| < \epsilon$.
+Because $(x_n)$ is Cauchy there exists 
+ $N \in \textbf{N}$ such that whenever
+$m,n \geq N$ it follows that
+$$|x_m - x_n| < \delta$$
+Thus $|f(x_m) - f(x_n)| < \epsilon$ for all $m, n \geq N$. Therefore
+$(f(x_n))$ is a Cauchy sequence.
+
+\textit{(b) Let $g$ be a continous function on the open interval $(a, b)$.
+  Prove that $g$ is uniformly continous on $(a, b)$ if and only if it is
+  possible to define values $g(a)$ and $g(b)$ at the endpoints so that the
+  extended function $g$ is continous on $[a, b]$.}
+
+Suppose that $g$ is a uniformly continous function defined on $(a, b)$.
+$a$
+
+Let us define $g(a) = \lim(g(x_n))$ and $g(b) = \lim(g(y_n))$
+for some sequences $(x_n) \to a$ and $(y_n) \to b$.
+
+Suppose now  that $(x_n)$ and $(y_n)$ are arbitrary sequences that convege to
+$a$. It follows then that $(g(x_n))$ and $(g(y_n))$ converge. Suppose that
+they converge to limits $a_1$ and $a_2$. Therefore
+let $\epsilon = |a_1 - a_2|$. It follows then than there exists $\delta > 0$
+such that
+$$|g(x_n) - a_2| < \epsilon$$
+
+
+
+Let $\epsilon > 0$. It follows, that there exists $\delta > 0$ such that
+for all $x \in (a, b)$ 
+$$|x - y| < \delta \to |f(x) - f(y)| < \delta$$
+and there exists $N \in n$ such that $g(
+$$|g(x) - g(a)| < \epsilon$$
+
+Let us look at $[a, b]$. Beacause $g$ preserves Cauchy sequences it follows
+that whenever $(l_n) \to a$ or $(l_n) \to b$ it follows that
+$(g(l_n)) \to a$ or $(g(l_n)) \to b$. Therefore
+
+TBC
+
+
+reverse of (b) follows from
+uniform continuity on a compact set (probably)
 
 \end{document}
