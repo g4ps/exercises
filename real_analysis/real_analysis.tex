@@ -7168,8 +7168,11 @@ Let $N = \max\{N_1, N_2\}$. It follows then that
 $$n \geq N \to |f(z_n) - a_1| < \epsilon$$
 $$n \geq N \to |f(x_n) - f(a)| < \epsilon$$
 
-Then it follows that there exist two sequences such that 
+Because $\epsilon = |f(a) - a_1| / 3$ it  follows that there exist
+two sequences such that 
 $$|f(x_n) - f(z_n)| \geq |f(a) - a_1| / 3$$
+(I still think that this particular implication is correct, but cannot
+prove it rigorously)
 
 Also, $(x_n) \to a$ and $(z_n) \to a$, which means that
 $(x_n - z_n) \to 0$. Therefore we can state that there exist two sequences in
@@ -7199,5 +7202,180 @@ such that for any $x, y \in (a, b) \subseteq [a, b]$
 it follows that
 $$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
 therefore the function is uniformly continous on $(a, b)$.
+
+I still have some reservation abous some concreteness of implication for
+one of the implication in part (a), specifically with
+the problem that if $a \neq b \in R$ and $p > 2$  then it follows that
+for all $a_1$ and $b_1$ that satisfies
+$$|a - a_1| < \frac{|a - b|}{p}$$
+and
+$$|b - b_1| < \frac{|a - b|}{p}$$
+it follows that.
+$$|a_1 - b_1| \geq |a - b| - (2 \frac{|a - b|}{p})$$
+
+
+Right now I don't feel like pondering on that problem, therefore I'll
+mark this paragraph with TODO and return to it later
+
+\section*{4.5.1}
+\textit{Show how the Itermediate Value Theorem follows as a corollary
+  to Theorem 4.5.2}
+
+Theorem 4.5.2 states that continous functions preserve connected sets.
+Therefore for $f: [a, b] \to  R$ it follows that
+$f([a, b])$ is connected. We know, that a set is connected if and only if
+for any $a < c < b$ where $a, b$ it follows that $c$ is in this set as well.
+Therefore for some number $f(a) < L < f(b)$ (or $f(a) > L > f(b)$) it follows
+that $L \in f([a, b])$. Therefore there exists $x \in [a, b]$ such that
+$f(x) = L$, as desired.
+
+\section*{4.5.2}
+\textit{Decide the validity of the following conjectures.}
+
+\textit{(a) Continous functions take bounded open intervals to bounded open
+  intervals }
+
+False. $f(x) = x^2$ on $(-1, 1)$ is $(1, 0]$, which is not open.
+
+\textit{(b) Continous functions take bounded open intervals to open sets }
+
+False. For the same reason as in (a).
+
+\textit{(c) Continous functions take bounded closed intervals to bounded
+  closed intervals.}
+
+True. Continous functions preserve compact sets and preserve continous
+sets, therefore they preserve closed intervals.
+
+\section*{4.5.3}
+\textit{Is there a continous function on all of $R$ with range $f(R)$ equal
+  to $Q$?}
+
+No. This follows from dencity of $Q$ in $R$. For two numbers $a > b \in Q$
+there exists $c \in I$ such that $a > c > b$, therefore 
+$c = f(x)$ for some $x \in R$, but $x \in R \to f(x) \in Q$. Therefore
+$c \notin f(R)$. But $f$ is continous on $R$, therefore $c \in f(R)$, which is
+a contradiction.
+
+\section*{4.5.4}
+\textit{A function $f$ is increasing on $A$ if $f(x) \leq f(y)$ for all
+  $x < y$ in $A$. Show that the IVT does have a converse if we assume $f$ is
+  increasing on $[a, b]$.}
+
+We need to show that if function is increasing and for every $x < y \in [a, b]$
+and all $L$ between $f(x)$ and $f(y)$, it is always possible to find
+a point $c \in (x, y)$, where $f(c) = L$, then the function is continous
+on $[a, b]$.
+
+Firstly we need to prove some preliminary things.
+Suppose that for some connected set $E$ there exists $x \in E$ such
+that for some $\epsilon > 0$ there does not exist $y \neq x \in E$ such
+that $|y - x| < \epsilon$. Then $x$ is an isolated point of $E$.
+Therefore it is not a limit point of $E$.
+Therefore $E$ can be divided into $E \setminus \{x\}$ and $\{x\}$, which are
+separated. Therefore the set is disconnected. Therefore we have a
+contradiction. Thus we can state that if $E$ is connected,
+then for every $\epsilon > 0$ it follows that 
+$$V_\epsilon(x) \cap E \neq \emptyset$$
+
+Also, we know that constant functions are continous. Thus for
+any noncontinous functions, that are not defined on singletons
+or on emptysets it follows that ranges of those functions have
+at least two numbers, that are not equal to each other.
+
+Now back to our business:
+
+Suppose that $x \in [a, b]$.
+
+Let us look at $y_1 < y_2 \in f([a, b])$. Because of the IVP
+it follows that there
+exists $L \in f([a, b])$ such that $ y_1 < L < y_2$. Therefore
+$f([a, b])$ is connected.
+
+
+% We need to show that there exists $\delta > 0$ such
+% that $|x - y| < \delta \to |f(x) - f(y)| < \epsilon$
+
+Let $\epsilon > 0$.
+Thus we can state that there exists some $f(y) \neq f(x)$ such that
+$|f(x) - f(y)| < \epsilon$. Let $f(x_1) = \sup{V_\epsilon(f(x))}$
+and $f(x_2) = \inf{V_\epsilon(f(x))}$. It follows that
+$f(x_1) \geq f(x_2)$. Therefore $x_1 \geq x_2$. Therefore by IVP of $f$ 
+it follows that
+$$l \in (x_1, x_2) \to f(l) \in (f(x_1), f(x_2)) \subseteq V_\epsilon(f(x))$$
+Because $x \in (x_1, x_2)$ and $(x_1, x_2)$ is an open set it follows that
+there exists $\delta > 0$ such that neighborhood
+$V_\delta(x) \subseteq (x_1, x_2)$. Therefore we can state that for every
+$c \in [a, b]$ and
+for every $\epsilon > 0$ there exists $\delta > 0$ such that
+$$x \in V_\delta(c)  \to f(x) \in V_\epsilon(f(c))$$
+Therefore the function is continous at $[a, b]$.
+
+\section*{4.5.5}
+\textit{Finish the proof of the IVT using the AoC started previously}
+
+Let us consider a case $f(a) < 0 < f(b)$. (Same idea holds for any other
+number other than 0, but the notation will be messy)
+
+Let
+$$K = \{x \in [a, b]: f(x) \leq 0\}$$
+
+$K$ is bounded above by $b$, and $a \in K$, so $K$ is not empty. Therefore
+by AoC there exists $c = \sup{K}$
+
+Suppose that $f(c) < 0$ or $f(c) > 0$. Then it follows, that there exists
+$\epsilon = |f(c)| / 2$. By continuity of $f$ it follows that there exists
+$\delta > 0$ such that
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+
+Thus for some $x_1 > c$ and $x_2 < c$. Then it follows, that there exists
+$\delta > 0$ such that
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+
+
+Let us look at the case $f(c) < 0$. It follows, that $f(c) < 0 < f(b)$.
+Therefore $f(c) \neq f(b)$. Therefore $c \neq b$. Then it follows, that
+$c \in [a, b)$. 
+
+Because $a \in [a, c]$ and $f(a)$ is the only number such that $f(a) \leq 0$.
+By assumptions  of our exercise it follows that $f(a) < 0$.
+Let $\epsilon = |a|$. It follwos then that there exists $V_\delta(a)$
+such that
+$$x \in V_\delta(a) \to f(x) \in V_\epsilon(f(a))$$
+Because $a$ is a limit point of $[a, c]$ it follows that
+$$V_\delta(a) \cap (a, b] \neq \emptyset$$
+Therefore let $a_1 \in V_\delta(a) \cap (a, b]$ . It follows then
+that
+$$f(a_1) \in V_\epsilon(f(a))$$
+$$|f(a_1) - f(a) | < |f(a) |$$
+$$-|f(a)| < f(a_1) - f(a) < |f(a)|$$
+$f(a) \leq 0 \to |f(a)| = -f(a)$. Therefore
+$$f(a) < f(a_1) - f(a) < - f(a)$$
+$$f(a_1) < 0 $$
+Therefore $a$ is not the only number for which $f(a) < 0$. Also, because
+$f(a_1) \in (a, b]$ it follows that $a_1 > a$. Therefore
+$a \neq \sup{K}$. 
+
+Therefore $a < c < b$. Thus, let $\epsilon = |f(c)|$. It follows that
+there exists $\delta_1 > 0$ such that 
+$$|x - c| < \delta_1 \to |f(x) - f(c)| < \epsilon$$
+Because $a < c < b \to c \in (a, b)$, there exists $\delta_2 > 0$ such that
+$V_{\delta_2}(c) \subseteq (a, b)$. Therefore let
+$\delta = \min\{\delta_1, \delta_2\}$. It follows then that
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+Therefore there exist numbers $c_1 < c < c_2$ such that
+$f(c_1) < 0$ and $f(c_2) < 0$.
+Therefore we can't state that $c < 0$, because there exists $c_2 > c$ such that
+$f(c_2) < 0$, and therefore $c_2 \in K$. If $c > 0$, then there exists
+$c_1 < c$ such that $f(c_2) > 0$ and for any number between $c$ and $c_2$ it
+follows, that $f(x) > 0$. Therefore $c$ is now the lowest bound of $K$ and
+therefore is not a supremum.
+
+Thus the only viable option left is to $f(c) = 0$. Therefore if
+$f: [a, b] \to R$ is continous and $f(a) < 0 < f(b)$, then there
+must exist $c \in (a, b)$ such that $f(c) = 0$. Same argument can be
+applied to any number other then $0$, therefore any continous
+function has IVP, as desired.
+
 
 \end{document}
