@@ -7366,7 +7366,8 @@ $$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
 Therefore there exist numbers $c_1 < c < c_2$ such that
 $f(c_1) < 0$ and $f(c_2) < 0$.
 Therefore we can't state that $c < 0$, because there exists $c_2 > c$ such that
-$f(c_2) < 0$, and therefore $c_2 \in K$. If $c > 0$, then there exists
+$f(c_2) < 0$, and therefore $c_2 \in K$. Thus $c$ is not a lower bound for
+$K$. If $c > 0$, then there exists
 $c_1 < c$ such that $f(c_2) > 0$ and for any number between $c$ and $c_2$ it
 follows, that $f(x) > 0$. Therefore $c$ is now the lowest bound of $K$ and
 therefore is not a supremum.
@@ -7376,6 +7377,126 @@ $f: [a, b] \to R$ is continous and $f(a) < 0 < f(b)$, then there
 must exist $c \in (a, b)$ such that $f(c) = 0$. Same argument can be
 applied to any number other then $0$, therefore any continous
 function has IVP, as desired.
+
+
+\section*{4.5.6}
+\textit{Finish the proof of the Intermediate Value Theorem using the Nested Interval Property started previously.}
+
+Consider a case when $L = 0$. 
+Suppose that there exists $f$ is continous at $[a, b]$. Then let
+$I_0 = [a, b]$. Then take a point $z_1 = (a + b)/2$. If $f(z_1) > 0$ then
+let $I_1 = [a, z]$. Otherwise let $I_1 = [z, b]$. In general for
+$I_n = [a_n, b_n]$ pick $z_n = (a_n + b_n) / 2$. If $f(z_n) > 0$
+let $I_{n + 1} = [a_n, z]$. Otherwise let $I_{n + 1} = [z, b_n]$.
+It followss then that $\lim |I_n| = 0$ and $I_{n + 1} \subseteq I_n$, thus
+they are nested.
+
+Because of the NIP we know, that
+$$\cap_{n = 0}^{\infty} I_n \neq \emptyset$$
+Therefore we can let $c \in \cap_{n = 0}^{\infty} I_n$.
+
+Let us consider a sequence $(x_n)$ where $x_n \in I_n$. Then
+for every $\epsilon > 0$ there exists $N \in \textbf{N}$  such that
+$n \geq N \to
+x_n \in I_n \subset V_\epsilon(c)$ by virtue of the fact that
+$\lim|I_n| = 0$ and that intervals are nested. Thus this sequence converge to $c$.
+
+Now let us look at $f(c)$. If $f(c) > 0$, then let $\epsilon = |f(c)|$.
+It follows that ther exists $\delta> 0$ such that
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+It follow then that there exists neighborhood around $c$ for which
+there exists $I_n$ such that both bounds of $I_n$ are more than $0$, which
+is a contradiction.
+If $f(c) < 0$, then for the same $\epsilon = |f(c)|$ we'll have a contradiction
+that both bounds are lower than $0$, which is also a contradiction (for a more
+rigorous approach with equations with absolute values and all that
+meaty stuff goto previous exercise)
+
+Therefore the only option which is left is $f(c) = 0$, as desired. 
+
+\section*{4.5.7}
+\textit{Let $f$ be a continous function on the closed interval $[0, 1]$ with
+  range also contained in $[0, 1]$. Prove that $f$ must have a fixed point;
+  that is, show $f(x) = x$ for at least one value of $x \in [0, 1]$.}
+
+We are going to proceed with a proof by contradiction.
+Suppose $f: [0, 1] \to R$ is
+continous at $[0, 1]$, $[0, 1] \subseteq f([0, 1])$ and for all 
+$x \in [0, 1]$ it follows that $f(x) \neq x$. Then let 
+$g(x) = f(x) - x$.
+It follows that for all $x \in [0, 1]$ $g(x) \neq 0$.
+Because $f(x) \neq x$ it follows that $f(0) \neq 0$ and $f(1) \neq 1$.
+Because $[0, 1] \subseteq f([0, 1])$ it follows that there exist
+$f(x_1) = 0$ and $f(x_2) = 1$ for $x_1, x_2 \in (0, 1)$. Therefore
+there exist $g(x_1) = 0 - x$ and $g(x_2) = 1 - x_2$. Because $x \in (0, 1)$
+it follows that $g(x_1) < 0$ and $g(x_2) > 0$. Thus, by IVT, there
+exists $g(x) = 0$, for which it follows that $f(x) = x$, which is a
+contradiction. (Holy moly, that was surprisingly fast)
+
+By the way, same reasoning applies not only to $[0, 1]$, but (at least) for
+any closed and bounded interval in $R$.
+
+\section{4.5.8}
+\textit{Imagine a clock where the hour hand and the minute hand are
+  indistinguishable from each other.
+  Assuming the hands move continuously around
+  the face of the clock, and assuming their positions can be measured with
+  perfect accuracy, is it always possible to determine the time?
+}
+
+No, it isn't
+
+12 o'clock is an obvious case when the hands meet, and this is possible
+to tell time from it (assuming that we are talking about 12-hour time periods).
+
+Suppose now that we are looking at the distance between two hours (i.e.
+between 1 and 2 or some other such interval).
+Now for given interval there exist 12 small intervals, such that if
+an hour hand is in one of those 12 intervals, then a minute hand is in a
+given interval (e.g. 1/12th of any hour interval right after a  number,
+for interval between 12 and 1). Thus, let us put the hour hand
+in a given interval. It follows, that a minute hand will go through all of the
+12 intervals on the clock at some time. Some of those 12 intervals are
+guaranteed to be not in the same hour, as the hour hand. Thus, let us pick
+such an interval. Now if we represent this interval as $[0, 1]$, then
+$x$ will represent the position of hour hand if the minute hand is
+in the interval, in which we have hour number. Because minute hand will pass
+through this interval we can state that $[0, 1] \subset f([0, 1])$, where
+$f$ is the position of minute clock. Thus, there will exist a point at
+which $f(x) = x$, and therefore the hour and minute clock will be
+indistinguishable.
+
+This proof is a bit sloppy in the language department, but to my credit
+I can say, that it's pretty hard to explain positions and rotation and whatnot
+of different things without using pictures and in general.
+
+
+\section*{4.6.1}
+\textit{Using modifications of therse functions, construct a function
+  $f: R \to R$ so that }
+
+\textit{(a) $D_f = Z$}
+
+Actulaly, floor function will do, but I'll do another one, simular to
+Dirichlet's as well
+
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    1 \text{ if } x \in Z \\
+    0 \text{ otherwise}
+  \end{cases}
+\end{equation}
+
+\textit{(b) $D_f = \{x: 0 < x \leq 1\}$}
+
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    0 \text{ if } x \in (-\infty, 0) \cup (Q \cap [0, 1]) \\
+    x \text { otherwise}
+  \end{cases}
+\end{equation}
 
 
 \end{document}
