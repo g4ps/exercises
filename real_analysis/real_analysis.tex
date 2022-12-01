@@ -7436,7 +7436,7 @@ contradiction. (Holy moly, that was surprisingly fast)
 By the way, same reasoning applies not only to $[0, 1]$, but (at least) for
 any closed and bounded interval in $R$.
 
-\section{4.5.8}
+\section*{4.5.8}
 \textit{Imagine a clock where the hour hand and the minute hand are
   indistinguishable from each other.
   Assuming the hands move continuously around
@@ -7498,5 +7498,61 @@ Dirichlet's as well
   \end{cases}
 \end{equation}
 
+\section*{4.6.2}
+\textit{State a similar definition for the left-hand limit}
+$$ \lim_{x \to c^-}{f(x)} = L$$
+
+Given a limit point $c$ of a set $A$ and a function $f: A \to R$, we
+write
+$$ \lim_{x \to c^-}{f(x)} = L$$
+if for all $\epsilon > 0$ there exists a $\delta > 0$ such that
+$f(x) - L < \epsilon$ whenever $- \delta   < x - c < 0$.
+
+\section*{4.6.3}
+\textit{Supply a proof for this proposition}
+
+We are talking here about Theorem 4.6.3, which reads as follows:
+
+\textbf{Theorem 4.6.3}
+\textit{Given $f: A \to R$ and a limit point $c$ of $A$,
+  $\lim_{x \to c}{f(x)} = L$ if and only if }
+$$ \lim_{x \to c^+}{f(x)} = L \text{ and } \lim_{x \to c^-}{f(x)} = L$$
+
+\textbf{In forward direction:}
+
+This case is kind of trivial: suppose that $\lim_{x \to c} f(x) = L$.
+It follows that for every $\epsilon > 0$ there exists $\delta > 0$ such that
+$$0 < |x - c| < \delta \to |f(x) - L| < \epsilon$$
+from this it follows that
+$$0 < x - c < \delta \to |f(x) - L| < \epsilon$$
+and
+$$-\delta > x - c < 0 \to |f(x) - L| < \epsilon$$
+therefore $\lim_{x \to c^{+}}{f(x)} = \lim_{x \to c^{-}}{f(x)} = L$,
+as desired.
+
+\textbf{In backward direction:}
+
+Suppose that $\lim_{x \to c^{+}}{f(x)} = \lim_{x \to c^{-}}{f(x)} = L$
+Now suppose that $(x_n) \to c$ is a convergent sequence, such that
+$x_n \in A$ and $x_n \neq c$. This follows that there exists
+and infinite subsequence in either  $A \cap (-\infty, c)$ or
+$A \cap (c, \infty)$. Because it is a subsequence of convergent
+sequence, it follows that it is convergent to $c$. Now it is trivial to show
+that for a this subsequence and therefore original sequence in
+$A \setminus \{c\}$ it follows that $\lim f(x) \to L$.
+
+
+Also, another way to show the same is:
+$$0 < x - c < \delta  \to |f(x) - L| < \epsilon $$
+$$0 > x - c > -\delta \to |f(x) - L| < \epsilon$$
+therefore 
+$$0 < |x - c| < \delta \to |f(x) - L| < \epsilon$$
+as desired.
+
+\section*{4.6.4}
+\textit{Let $f: R \to R$ be increasing. Prove that $\lim_{x \to c^{+}{f(x)}}$
+  and $\lim_{x \to c^{-}{f(x)}}$ mush exist at every point $c \in R$. Argue
+  that the only type of discontinuity a monotone function can have is a
+  jump discontinuity }
 
 \end{document}
