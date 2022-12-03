@@ -7244,7 +7244,7 @@ False. For the same reason as in (a).
 \textit{(c) Continous functions take bounded closed intervals to bounded
   closed intervals.}
 
-True. Continous functions preserve compact sets and preserve continous
+True. Continous functions preserve compact sets and preserve connected
 sets, therefore they preserve closed intervals.
 
 \section*{4.5.3}
@@ -7262,8 +7262,8 @@ a contradiction.
   $x < y$ in $A$. Show that the IVT does have a converse if we assume $f$ is
   increasing on $[a, b]$.}
 
-We need to show that if function is increasing and for every $x < y \in [a, b]$
-and all $L$ between $f(x)$ and $f(y)$, it is always possible to find
+We need to show that if a function is increasing on $[a, b]$
+and for every  $L$  between $f(x)$ and $f(y)$ it is always possible to find
 a point $c \in (x, y)$, where $f(c) = L$, then the function is continous
 on $[a, b]$.
 
@@ -7554,5 +7554,136 @@ as desired.
   and $\lim_{x \to c^{-}{f(x)}}$ mush exist at every point $c \in R$. Argue
   that the only type of discontinuity a monotone function can have is a
   jump discontinuity }
+
+Suppose that a function is increasing. That means that for every  $x \geq y$
+it is true that  $f(x) \geq f(y)$. 
+
+Let $c \in R$. It is true that $x < c \to f(x) \leq f(c)$
+
+Let us construct a sequence $x_n = c - 1/n$. It follows that
+$f(x_n) \leq f(c)$. Thus $(f(x_n))$ is bounded. Because $x_n \geq x_{n_1}$
+it follows that $f(x_n) \geq f(x_{n + 1})$, and thus the sequence is
+increasing. By MCT we can state that the sequence is convergent. Therefore
+let $L = \lim f(x_n)$. Suppose that
+$\epsilon > 0$. It follows, that there exists $N \in \textbf{N}$ such
+that $|f(x_n) - L| < \epsilon$.
+
+For any $c - 1/n =  x_n < x < c$ it follows that $f(x_n) \leq f(x) \leq f(c)$. Therefore for any $c \in R$ and
+any $\epsilon > 0$ there exists $\delta$ such that
+$-\delta < x  - c< 0 \to |f(x) - L| < \epsilon$
+or in other words, there exists a left-hand-limit.
+
+Let us also construct a sequence $x_n = c + 1/n$. Because $x_n < x_{n + 1}$
+it follows that $f(x_n) \leq f(x_{n + 1})$. Therefore $f(x_n)$ is decreasing
+and bounded below. Therefore is has a limit $L$. Therefore for any
+$\epsilon > 0$ we can find $f(x_n)$ such that
+$$|f(x_n) - L| < \epsilon$$
+For any  $c < x < x_n = c  + 1/n$ it us true that $L < f(x) < f(x_n)$.
+Therefore for any $c \in R$ there exists $L$ such that
+for any $\epsilon > 0$  we can find $\delta = 1/n$ such that
+$$0 < x - c < \delta \to |f(x) - L| < \epsilon$$
+or in other words, function has right-hand limit.
+
+Same reasoing can be applied to a monotone function, or we can just see, that
+by multiplying decreasing function by -1 we'll get a incrasing function, and
+use the argument, which is presented above.
+
+Suppose now that $f$ is monotone and there exists a discontinuity set $D_f$.
+From what we've proven above we can state that on this set, despite the
+fact that there is no continuity, there still will be a right-hand limit
+and left-hand limit. Therefore on this set those limits cannot be equal.
+Therefore this discontinuity will be a jump discontinuity, as desired.
+
+\section*{4.6.5}
+\textit{Construct a bijection between the set of jump discontinuities of a
+  monotone function $f$ and a subset of $Q$. Conclude that $D_f$ for a monotone
+  function $f$ must  either be finite or countable, but not uncountable.}
+
+(1p10) Maybe we can always divide a domain of such a function in two
+at the point of discontinuity.
+I.e. pick one point where $f$ has a jump, set it as 0, then take
+another; if it happens before initial discontinuit let it be equal to
+-1/2; if it happens after, then pick 1/2 and so on;
+
+Contradiction might help with this argument.
+
+Suppose that there exists an unenumerated point of discontinuity. Then
+it follows that there exists two enumeratied ones above and below given
+discontinuity (maybe leads us nowhere).
+
+Let an $L^+$ be a right-hand limit of this discontinuity, and $L^-$ be
+the left-hand limit. It follows that for any $\epsilon > 0$ there exists
+$\delta > 0$ such that
+$$0 < x < \delta \to |f(x) - L^+| < \epsilon$$
+
+Maybe we need a better enumeration algorithm, because this one might be
+insufficient.
+
+(2p-2) We probably can't show that the $D_f$ does not contain open intervals
+(we can).
+Set of irrationals does not contain any intervals but is still uncountable.
+
+(3p-3) Another idea is that this set
+is closed, and therefore its compliment is open.
+
+(4) There is always a sequence in codomain, that converges to either
+a left or right limit. Because the function is increasing, those "jumps"
+are not in the range. Thus we can represent range as a collection of
+intervals. There are maybe some isolated points in range.
+
+In those intervals functions have IVP.
+
+$D_f$ is a set of different points. It might contain a limit point, but it
+does not have two. It does not contain any open intervals
+(this is all speculation)
+
+
+(5) The set is most likely nowhere dense.
+
+(6)
+$$ 0 < x - c < \delta$$
+$$ - \delta/2< x - c - \delta/2 < \delta/2$$
+$$x \in V_\delta(\delta / 2 - c)$$
+
+(7) The set of discontinuities is definitely closed (FALSE!) case in point:
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    1/2 \text{ for } x \in [0, 1/2) \\
+    3/4 \text{ for } x \in [1/2, 3/4) \\
+    7/8 \text{ for } x \in [3/4, 7/8) \\
+    \text{ and so on} 
+  \end{cases}
+\end{equation}
+and
+may (or may not) be
+bounded. We definitely cannot have a maximum and minimum discontinuity
+(case in point: floor function) 
+
+(8) If a function is monotone, then we can have a bound for some
+interval, that is contained in domain.
+
+(9) Something about IVT. Because for some $\epsilon$ we have a $\delta$
+such that
+$$0 < x < \delta \to |f(x) - L^+| < \epsilon$$
+
+(10) function is monotone, therefore we can state that for the set of
+discontinuities $x_1 > x_2 \to f(x_1) \geq f(x_2)$. It can be shown that
+$f(x_1) > f(x_2)$
+
+(11) Complement of set of discontinuities is probably open and is a union of
+open intervals. Each of those intervals will contain a rational number.
+Therefore we can set a bijection between a set of continous intervals and
+their discontinuities.
+
+Now we only need to show that a monotone function cannot be disscontinous at
+an interval.
+
+Suppose that it is not continous at an interval $(a, b)$.
+Suppose that $c \in (a, b)$. Therefore there exists  $\epsilon > 0$
+such that for any $\delta > 0$ there exists $x \in V_\delta(c)$ such that 
+$$|x - c| < \delta \text{ and } |f(x) - f(c)| \geq \epsilon$$
+
+
 
 \end{document}
