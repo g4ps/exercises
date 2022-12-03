@@ -7599,91 +7599,127 @@ Therefore this discontinuity will be a jump discontinuity, as desired.
   monotone function $f$ and a subset of $Q$. Conclude that $D_f$ for a monotone
   function $f$ must  either be finite or countable, but not uncountable.}
 
-(1p10) Maybe we can always divide a domain of such a function in two
-at the point of discontinuity.
-I.e. pick one point where $f$ has a jump, set it as 0, then take
-another; if it happens before initial discontinuit let it be equal to
--1/2; if it happens after, then pick 1/2 and so on;
+$\lim_{x \to c^+} f(x) > \lim_{x \to c^-}$ by the virtue
+of the fact that function is increasing and therefore $x < y \to f(x) < f(y)$
+and $\lim_{x \to c^+} f(x) \neq \lim_{x \to c^-}$  because they are jump
+discontinuities.
 
-Contradiction might help with this argument.
+Therefore there exists a rational number $q$ such that
+$$\lim_{x \to c_1^-} f(x) < q < \lim_{x \to c_1^+}$$
+$$\lim_{x \to c_2^-} f(x) < q < \lim_{x \to c_2^+}$$
+It follows then that $f(c_1) = f(c_2)$ and thus $c_1 = c_2$
 
-Suppose that there exists an unenumerated point of discontinuity. Then
-it follows that there exists two enumeratied ones above and below given
-discontinuity (maybe leads us nowhere).
+By this bijection the set of discontinuity of monotone $f$ to subset of  $Q$
+it follows that set of discontinuities of monotone function is either
+countable, or subset of countable, which is either
+finite (which includes empty) or countable.
 
-Let an $L^+$ be a right-hand limit of this discontinuity, and $L^-$ be
-the left-hand limit. It follows that for any $\epsilon > 0$ there exists
-$\delta > 0$ such that
-$$0 < x < \delta \to |f(x) - L^+| < \epsilon$$
-
-Maybe we need a better enumeration algorithm, because this one might be
-insufficient.
-
-(2p-2) We probably can't show that the $D_f$ does not contain open intervals
-(we can).
-Set of irrationals does not contain any intervals but is still uncountable.
-
-(3p-3) Another idea is that this set
-is closed, and therefore its compliment is open.
-
-(4) There is always a sequence in codomain, that converges to either
-a left or right limit. Because the function is increasing, those "jumps"
-are not in the range. Thus we can represent range as a collection of
-intervals. There are maybe some isolated points in range.
-
-In those intervals functions have IVP.
-
-$D_f$ is a set of different points. It might contain a limit point, but it
-does not have two. It does not contain any open intervals
-(this is all speculation)
+This is not my own proof, I've spent too much time on this exercise and looked
+up the answer.
 
 
-(5) The set is most likely nowhere dense.
+\section*{4.6.6}
+\textit{Show that in each case we set an $F_\sigma$ set as the set where
+  each function is discontinous.}
 
-(6)
-$$ 0 < x - c < \delta$$
-$$ - \delta/2< x - c - \delta/2 < \delta/2$$
-$$x \in V_\delta(\delta / 2 - c)$$
+$R$ is closed itself.
 
-(7) The set of discontinuities is definitely closed (FALSE!) case in point:
-\begin{equation}
-  f(x) =
-  \begin{cases}
-    1/2 \text{ for } x \in [0, 1/2) \\
-    3/4 \text{ for } x \in [1/2, 3/4) \\
-    7/8 \text{ for } x \in [3/4, 7/8) \\
-    \text{ and so on} 
-  \end{cases}
-\end{equation}
-and
-may (or may not) be
-bounded. We definitely cannot have a maximum and minimum discontinuity
-(case in point: floor function) 
+$R \setminus \{0\}$ can be written as
+$$\cup_{n=1}^{\infty} (-\infty, -1/n] \cup [1/n, \infty)$$
 
-(8) If a function is monotone, then we can have a bound for some
-interval, that is contained in domain.
+$Q$ can be written as a countable union of singletons
 
-(9) Something about IVT. Because for some $\epsilon$ we have a $\delta$
-such that
-$$0 < x < \delta \to |f(x) - L^+| < \epsilon$$
+$Z$ can be written as a countable union of singletons
 
-(10) function is monotone, therefore we can state that for the set of
-discontinuities $x_1 > x_2 \to f(x_1) \geq f(x_2)$. It can be shown that
-$f(x_1) > f(x_2)$
+For $(0, 1]$ we have 
+$$(0, 1] = \cup_{n = 2}^{\infty} [1/n, 1]$$
 
-(11) Complement of set of discontinuities is probably open and is a union of
-open intervals. Each of those intervals will contain a rational number.
-Therefore we can set a bijection between a set of continous intervals and
-their discontinuities.
+\section*{4.6.7}
+\textit{Prove that, for a fixed $\alpha > 0$, the set $D_\alpha$ is closed}
 
-Now we only need to show that a monotone function cannot be disscontinous at
-an interval.
+Set $D_\alpha$ is defined as
+$$D_\alpha = \{x \in R: f \text{ is not }\alpha\text{-continous at }x\}$$
 
-Suppose that it is not continous at an interval $(a, b)$.
-Suppose that $c \in (a, b)$. Therefore there exists  $\epsilon > 0$
-such that for any $\delta > 0$ there exists $x \in V_\delta(c)$ such that 
+Suppose that $f$ is $\alpha$-continous at $x$. It follows that there exists
+$\delta$ such that whenever $y, z \in (x - \delta, x + \delta)$ it follows that
+$|f(y - f(z)| < \alpha$. Thus, if we pick any
+$x_1 \in (x - \delta, x + \delta)$, because $(x - \delta, x + \delta)$ is open
+we can state that there exists $\delta_1$ such that
+$V_{\delta_1}(x_1) \subseteq (x -\delta, x + \delta)$, for which it is
+true that $|f(y - f(z)| < \alpha$. Thus $f$ will  
+ also be $\alpha$-continous at  $x_1$ .
+
+Now let us create a collection of open intervals
+$$\{I_n = (x - \delta, x + \delta): x \text{ is $\alpha$-continous and
+  $\delta$ is corresponding number for given $\alpha$})\}$$
+an let us take its union and denote it as $J$. From our discution earlier
+it follows that only $\alpha$-continous points are contained in $J$.
+Also, all the $\alpha$-continous points are contained in $J$.
+Because $J$ is a union of open sets (open intervals are open sets), therefore
+it is itself open. Thus complement of it (which is equal to $D_f$) is closed,
+as desired.
+
+\section*{4.6.8}
+\textit{If $a_1 < a_2$, show that $D_{\alpha_2} \subseteq D_{\alpha_1}$}
+
+Suppose that $f$ is $\alpha_1$-continous at $x$. It follows that there exists
+$\delta_1$, for which it is true that whenever
+$y, z \in (x - \delta_1, x + \delta_1$ it follows that 
+$$|f(y) - f(z)| < \alpha_1 < \alpha_2$$
+Therefore $x$ is $\alpha_2$-continous at $x$. Therefore
+$D_{\alpha_2} \subseteq D_{\alpha_1}$
+as desired.
+
+\section*{4.6.9}
+\textit{Let $\alpha > 0$ be given. Show that if $f$ is continous at $x$, then
+  it is $\alpha$-continous at $x$ as well. Explain how it follows that
+  $D_\alpha \subseteq D_f$.}
+
+Suppose that $f$ is continous at $c$. It follows that for any $\epsilon > 0$
+there exists $\delta > 0$ such that 
+$$|x - c| < \delta \to |f(x) - f(c)| < \epsilon$$
+
+Let $\epsilon = \alpha / 2$. it follows that for any number $x, y < \delta$
+$$|y - c| < \delta \to |f(y) - f(c)| < \epsilon$$
+$$|z - c| < \delta \to |f(z) - f(c)| < \epsilon$$
+
+
+$$|f(y) - f(c)| + |f(z) - f(c)| < 2\epsilon$$
+$$|f(y) - f(c)| + |f(c) - f(z)| < \alpha$$
+$$|f(y) - f(c) + f(c) - f(z)| \leq |f(y) - f(c)| + |f(c) - f(z)| < \alpha$$
+$$|f(y)  - f(z)|  < \alpha$$
+Thus $f$ is $\alpha$-continous at $c$.
+
+Thus $x \in D_f \to x \in D_\alpha$ for any $\alpha > 0$. Thus
+$D_\alpha \subseteq D_f$ for any $\alpha > 0$.
+
+\section*{4.6.10}
+\textit{Show that if $f$ is not continous at $x$, then $f$ is not
+  $\alpha$-continous for some $\alpha > 0$. Now explain why this guarantees
+  that}
+$$D_f = \cup_{n = 1}^{\infty}D_{\frac 1 n }$$
+
+Suppose that $f$ is not continous at $x$. This means that there exists some
+$\epsilon > 0$ such that for all $\delta > 0$ it is true that
+there exists $x$ such that 
 $$|x - c| < \delta \text{ and } |f(x) - f(c)| \geq \epsilon$$
 
 
+Function defined on $R$ is not $\alpha$-continous at $c$
+if for every $\delta > 0$ there exists
+$y, z \in (-\delta + c, \delta + c)$ such that 
+$|f(y) - f(z)| \geq \alpha$
+
+Therefore for $\alpha = \epsilon$ and for $y = x$ and $z = c$
+$$|f(y) - f(z)| = |f(x) - f(c)|  \geq \epsilon =  \alpha$$
+Thus the function is not $\epsilon$-continous.
+
+It follows that for any discontinuity in $f$  at $c$
+there would exist $\epsilon$, for which there would exist $1/n < \epsilon$
+such that $c \in D_{\frac 1 n}$ because
+$c \in D_{\epsilon}$ and $D_{\frac 1 n} \supseteq D_\epsilon$ implies
+$c \in  D_{\frac 1 n}$ Thus
+$$D_f = \cup_{n = 1}^{\infty}D_{\frac 1 n }$$
+as desired.
 
 \end{document}
