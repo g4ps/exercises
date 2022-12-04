@@ -1,0 +1,147 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  5 DEC 2022 00:03
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**linear_algebra.tex
+(./linear_algebra.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count194
+\l__pdf_internal_box=\box50
+)
+(./linear_algebra.aux)
+\openout1 = `linear_algebra.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 9.
+ [1
+
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./line
+ar_algebra.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 1.
+)
+\tf@toc=\write3
+\openout3 = `linear_algebra.toc'.
+
+ [1
+
+] [2
+
+]
+Chapter 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <17.28> on input line 20.
+
+Overfull \hbox (60.60939pt too wide) detected at line 42
+\OT1/cmr/m/n/10.95 ([])[] = [] = [] = [] =
+ []
+
+[3
+
+]
+Overfull \hbox (20.06857pt too wide) detected at line 77
+\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 + (\OML/cmm/m/it/10.95 ^^L \OT1/cmr/m/
+n/10.95 + \OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 a[]
+ \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i \OT1/cmr/m/n/10.95 + (\OML/cmm/m
+/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i \OT1/cmr/m/n/10.95 
++ \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i\OT1/cmr
+/m/n/10.95 ) = (\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.9
+5 b[]i \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/c
+mm/m/it/10.95 b[]i\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/1
+0.95 + \OML/cmm/m/it/10.95 b[]i \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95  \OT
+1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^L\OT1/cmr/m/n/10.95 ) + \OML/cmm/m/it/1
+0.95 ^^U
+ []
+
+
+Overfull \hbox (37.10196pt too wide) detected at line 84
+\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 + (\OML/cmm/m/it/10.95 ^^L \OT1/cmr/m/
+n/10.95 + \OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ) = (\OML/cmm/m/it/10.95 a[
+] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i\OT1/cmr/m/n/10.95 )((\OML/cmm/m
+/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i\OT1/cmr/m/n/10.95 )
+ + (\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[]i\OT1/c
+mr/m/n/10.95 )) = ((\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/
+10.95 b[]i\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OM
+L/cmm/m/it/10.95 b[]i\OT1/cmr/m/n/10.95 )) + (\OML/cmm/m/it/10.95 a[] \OT1/cmr/
+m/n/10.95 + \OML/cmm/m/it/10.95 b[]i\OT1/cmr/m/n/10.95 ) = (\OML/cmm/m/it/10.95
+ ^^L\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^U
+ []
+
+[4] [5]
+Chapter 2.
+[6
+
+] (./linear_algebra.aux) ) 
+Here is how much of TeX's memory you used:
+ 472 strings out of 478268
+ 8432 string characters out of 5846347
+ 306462 words of memory out of 5000000
+ 18747 multiletter control sequences out of 15000+600000
+ 477885 words of font info for 56 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 32i,6n,38p,166b,183s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2022/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
+10.pfb>
+Output written on linear_algebra.pdf (7 pages, 150602 bytes).
+PDF statistics:
+ 93 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,120 @@
+\documentclass[11pt,oneside,titlepage]{report}
+\title{My linear algebra exercises}
+% \usepackage{amsmath,amssymb}
+% \usepackage{geometry}
+\author{Evgeny Markin}
+\date{2022}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter*{Preface}
+
+Exercises are from "Linear algebra done right" by Sheldon Axler, 3rd ed.
+I've already read this book before and completed some exercises from it.
+Right now I want to brush up the material once again, put all the
+proofs on a more durable material than paper and to prepare myself to
+what's gonna happen afterwards.
+
+\chapter{1.A $R^n$ and $C^n$}
+
+\section*{1}
+\textit{Suppose $a$ and $b$ are real numbers, not both $0$. Find real nuber
+  $c$ and $d$ such that }
+$$1/(a + bi) = c + di$$
+
+$$\frac{1}{a + bi} = c + di$$
+$$\frac{1}{a + bi} - c - di = 0$$
+$$\frac{a - bi}{(a + bi)(a - bi)} = c + di$$
+$$\frac{a - bi}{(a^2 + b^2)} = c + di$$
+$$\frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i = c + di$$
+Thus $c = \frac{a}{a^2 + b^2}$ and $d = -\frac{b}{a^2 + b^2}$
+
+\section*{2}
+\textit{Show that }
+$$\frac{-1  + \sqrt{3}i}{2}$$
+\textit{is a cube root of $1$ (meaning that its cube equals 1)}
+$$(\frac{-1  + \sqrt{3}i}{2})^3 =
+\frac{(-1  + \sqrt{3}i)^3}{8} =
+\frac{(-1  + \sqrt{3}i)(-1  + \sqrt{3}i)^2}{8} =
+\frac{(-1  + \sqrt{3}i)(1  - 2\sqrt{3}i - 3)}{8} =
+$$
+$$
+=\frac{(-1  + \sqrt{3}i)(-2  - 2\sqrt{3}i)}{8} =
+\frac{2 + 2\sqrt{3}i - 2\sqrt{3}i + 6}{8} =
+\frac{8}{8} = 1
+$$
+as desired.
+
+\section*{3}
+\textit{Find two distinct square roots of $i$}
+
+Square root of $i$, I assume, is a number, whose square is equal to $i$.
+Suppose that $(a + bi)^2 = i$. It follows that
+$$(a + bi)^2 = a^2 + 2abi - b^2$$
+So if we set $$a = b = 1/\sqrt{2}$$ this equation holds. Also it holds for
+$$a = b = -1/\sqrt{2}$$
+maxima seems to agree with me on this one
+
+\section*{4}
+\textit{Show that $\alpha + \beta = \beta + \alpha$ for all
+  $\alpha, \beta \in \textbf{C}$}
+
+Let $\alpha = a_1 + b_1 i$ and $\beta = a_2 + b_2 i$. It follows
+$$\alpha + \beta = a_1 + b_1 i + a_2 + b_2 i = a_2 + b_2 i + a_1 + b_1 i =
+\beta  + \alpha$$
+as desired.
+
+\section*{5}
+\textit{Show that $(\alpha + \beta) + \lambda = \alpha + (\beta + \lambda)$
+  for all  $\alpha, \beta, \lambda \in \textbf{C}$}
+
+Let $\alpha = a_1 + b_1 i$ , $\beta = a_2 + b_2 i$, $\lambda = a_3 + b_3 i$.
+It follows that 
+$$\alpha + (\beta + \lambda)  = a_1 + b_1 i + (a_2 + b_2 i + a_3 + b_3 i) =
+(a_1 + b_1 i + a_2 + b_2 i) + a_3 + b_3 i = 
+(\alpha + \beta) + \lambda$$
+
+\section*{6}
+\textit{Show that $(\alpha \beta) \lambda = \alpha( \beta \lambda)$}
+
+$$\alpha + (\beta + \lambda)  = (a_1 + b_1 i) ((a_2 + b_2 i) + (a_3 + b_3 i)) =
+((a_1 + b_1 i)(a_2 + b_2 i)) + (a_3 + b_3 i) = 
+(\alpha \beta) \lambda$$
+
+\section*{7}
+\textit{Show that for every $\alpha \in \textbf{C}$ there exists a unique
+  $\beta \in \textbf{C}$ such that $\alpha + \beta = 0$}
+
+Suppose that there exist two different $\beta_1 \neq \beta_2$ such that
+$\alpha + \beta_1 = 0$ and $\alpha + \beta_2 = 0$. It follows that
+$$ \beta_1 = \beta_1 + 0 =  \beta_1 + \alpha + \beta_2 = \alpha + \beta_1  + \beta_2 = 0  + \beta_2 = \beta_2$$
+which is a contradiction. Therefore there exists only one unique $\beta$.
+
+\section*{8}
+\textit{Show that for every $\alpha \in \textbf{C}$ with $\alpha \neq 0$
+  there exists a unique $\beta \in \textbf{C}$ such that $\alpha \beta = 1$}
+
+Suppose that it is not true and there exist two different
+$\beta_1 \neq \beta_2$ such that
+$$\alpha \beta_1 = 1 \textit{ and } \alpha \beta_2 = 1$$
+it follows then that 
+$$\beta_1 = 1 *  \beta_1 = \alpha \beta_2 \beta_1  =
+\alpha \beta_1 \beta_2 = 1 * \beta_2 = \beta_2$$
+which is a contradiction. Therefore there exists only one unique $\beta$.
+
+\section*{etc}
+The rest of the section is the repetition of this kind of stuff.
+That is a lot of writing, and not a lot of thinking, so I'll skip it.
+I don't ususally like to skip sections, but I have  aa feeling, that I've
+completed this thing on paper somewhere, and there is not much reason to
+rewrite it here.
+
+\chapter{1B Definition of Vector Space}
+
+
+
+
+
+\end{document}
