@@ -7834,7 +7834,8 @@ So around 0 for rationals
 $$\lim_{x \to c}\frac{g(x) - g(c)}{x - c} =
 \lim_{x \to c}\frac{x^2 - 0}{x - 0} = \lim_{x \to c}\frac{x^2}{x} = c = 0$$
 and for irrationals
-$$\lim_{x \to c}\frac{-x^2 - 0}{x - 0} = \lim_{x \to c}\frac{-x^2}{x} = c = 0$$
+$$\lim_{x \to c}\frac{-x^2 - 0}{x - 0} = \lim_{x \to c}\frac{-x^2}{x} = -c
+= 0$$
 
 I think that it'll do. Not sure, that it is correct, but don't see
 anything wring with it.
@@ -7873,13 +7874,30 @@ any $a > 0$ it follows that $f$ is continous.
 \textit{(b) For which values of $a$ is $f$ differentiable at zero? In this
   case, is the derivative function continous?}
 
-We know (but didn't prove anywhere yet), that for $f(x) = x^n$
-$f'(x) = nx^{n - 1}$, which is true for any $n \in R$. Therefore for
+Derivative of a given function is defined as
+\begin{equation}
+  f'(x) =
+  \begin{cases}
+    ax^(a - 1) \text{ if } x \geq 0 \\
+    0 \text{ if } x < 0
+  \end{cases}
+\end{equation}
+
+We can't put  $x = 0$ into a negative power, therefore  for
 function to be differentiable we need to set $a > 1$.
 
 \textit{(b) For which values of $a$ is $f$ twice-differentiable?}
 
-$a > 2$.
+Same idea,
+\begin{equation}
+  f''(x) =
+  \begin{cases}
+    a(a - 1)x^(a - 2) \text{ if } x \geq 0 \\
+    0 \text{ if } x < 0
+  \end{cases}
+\end{equation}
+
+Therefore $a > 2$.
 
 \section*{5.2.5}
 \textit{Let }
@@ -7891,7 +7909,232 @@ $a > 2$.
   \end{cases}
 \end{equation}
 \textit{Find a particular (potentially noninteger) value for $a$ so that}
+
 \textit{(a) $g_a$ is differentiable on $R$ but such that $g'_a$ is unbounded
-in $[0, 1]$}
+  in $[0, 1]$}
+
+In general, the derivative of a given function is calculated as
+\begin{equation}
+  g'_a(x) =
+  \begin{cases}
+    ax^{a - 1} \sin(1/x) - x^{a - 2}\cos(1/x) \text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+
+By using the method of probes and errors (mostly errors), I came up with
+a possible answer of 0; suppose that a = 0, then
+\begin{equation}
+  g'_0(x) =
+  \begin{cases}
+    - x^{-2}\cos(1/x) \text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+which is unbounded, when we try to converge to 0; But this thing is not
+continous at 0 (original function), therefore it is not differentiable at
+0, therefore it is not differentiable on $R$,  therefore $0$ won't do.
+
+Let us go back to the grass roots and derive the derivative (heh) from the
+definition.
+
+$$g'(c) = \lim_{x \to c}\frac{g(x) - g(c)}{x - c}$$
+for 0 we'll have
+$$\lim_{x \to c}\frac{g(x) - g(c)}{x - c} =
+\lim_{x \to c}\frac{g(x) - 0}{x - 0} =
+\lim_{x \to c}x^a\sin(\frac{1}{x}) \frac{1}{x} =
+\lim_{x \to c}x^{a - 1}\sin(\frac{1}{x}) $$
+We know, that thing will exist as long as $a > 1$.
+
+For $x \neq 0$ we'll use a more general approach
+\begin{equation}
+  g'_a(x) =
+  \begin{cases}
+    ax^{a - 1} \sin(1/x) - x^{a - 2}\cos(1/x) \text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+This thing will not have a limit near zero for $a < 2$. Thus,
+we can set $1 < a <2 $ for the desired effect (Looked up the answer in the
+book, but practically solved it myself with exception of justifying
+the answer)
+
+\textit{(b) $g_a$ is differentiable on $R$ with $g'_a$ continous but not
+  differentiable at zero.}
+
+One again, in order for $g'$ to exist at $0$ we need to set it to at least to
+$1$. In order for $g'$ to be continous at $0$ we need to set $a > 2$,
+otherwise the limit will not exist at zero.
+
+Thus we need a $a$ such that $g''$ does not exist at $0$. In order for it to
+happen let us think about
+$$g''(x) = \lim_{x \to 0} \frac{g'(x) - g'(c)}{x - c} =
+\lim_{x \to 0} \frac{g'(x)}{x} =
+$$
+$$= \lim_{x \to 0} \frac{ax^{a - 1} \sin(1/x) - x^{a - 2}\cos(1/x)}{x} =
+\lim_{x \to 0} ax^{a - 2} \sin(1/x) - x^{a - 3}\cos(1/x) $$
+Thus if we set $a = 3$ it follows that the oscilations for
+$ax^{a - 2} \sin(1/x)$ are negligable, but for $x^{a - 3}\cos(1/x)$
+are present, therefore the limit does not exist. Thus the desired number is
+$3$. (it's actually possible to set $a$ to $(2, 3]$, but 3 will do as well).
+
+\textit{(c) $g_a$ is differentiable on $R$ and $g'_a$ is differentiable on
+  $R$, but suh that $g''_a$ is not continous at $0$.}
+
+The limit of $g''_4$ is not defined, so I'll go with $4$.
+
+\section*{5.2.6}
+\textit{(a) Assume that $g$ is differentiable on $[a, b]$ and satisfies
+  $g'(a) < 0 < g'(b)$. Show that there exists a point $x \in (a, b)$ where
+  $g(a) > g(x)$ and a point $y \in (a, b)$ where $g(y) < g(b)$}
+
+Because $g$ is defferentiable on $[a, b]$ it follows that it is continous
+at $[a, b]$ as well. Thus, because $[a, b]$ is compact, it follows that
+it attains maximum and minimum values at $[a, b]$. Thus, there exists
+$x_0, x_1 \in [a, b]$ such that $f(x_0) \leq f(x) \leq f(x_1)$ for
+all $x \in [a, b]$.
+
+Suppose that there does not exist a point $x \in (a, b)$ such that
+$g(a) > g(x)$ or $g(x) > g(b)$.
+It follows that
+$g(a) \geq g(x)$ and $g(x) \leq g(b)$ for every $x \in (a, b)$.
+$$g(a) \leq g(x) \to g(a) - g(x) \leq 0 \to g(x) - g(a) \leq 0 $$
+$$g(x) \leq g(b) \to g(x) - g(b) \leq 0 $$
+for all $x \in (a, b)$ Then it
+follows that for any sequence, that is contained in $a$
+$(x_n) \to a$ $f(x_n) \geq f(a)$; and for every sequence $(y_n) \to b$
+$f(y_n) \leq f(b)$
+Therefore
+$$f'(a) = \lim_{n \to \infty} \frac{f(x_n) - f(a)}{x_n - a} \geq 0$$
+$$f'(b) = \lim_{n \to \infty} \frac{f(y_n) - f(b)}{y_n - b} \leq 0$$
+but $f'(a) < 0 < f'(b)$. Therefore we have a contradiction.
+
+Thus there exists point $x \in (a, b)$ such that $g(a) > g(x)$ and
+$y \in (a, b)$ (with a possibility that $x = y$) such that $g(y) < g(b)$.
+
+\textit{(b) Now complete the proof of Darboux's Theorem started earlier.}
+
+Darboux's Theorem states that
+
+\textit{If f is differentiable on an interval $[a, b]$, and if $\alpha$
+  satisfies $f'(a) < \alpha < f'(b)$ (or the oter way around), then there
+  exists a point $c \in (a, b)$ where $f'(c) = \alpha$}
+
+We firstly simplify  matters with defining $g(x) = f(x) - \alpha x$ on
+$[a, b]$. We can state that on $[a, b]$
+$$g'(x)  = f'(x) - \alpha$$
+by algebraic properties of derivatives. Now our hypothesis states that
+$g'(a) < 0 < g'(b)$ for some $c \in (a, b)$. Using conclusion from
+previous part we can state that there exists $c \in (a, b)$ such that
+$g(c) < g(a)$ and $g(b) < g(c)$. Thus $g$ does not attain minimum at
+$a$ or $b$. Thus it attains minimum at some point $j \in (a, b)$. Thus, by
+IET. $g'(j) = 0$. Thus, $0  = f'(j) - \alpha \to f'(j) = \alpha$, as desired.
+
+\section*{5.2.7}
+\textit{Review the definition of uniform continuity (Definition 4.4.5)
+  and also the content of
+  Theorem 4.4.8, which states that continous functions on compact sets are
+  uniformly continous.}
+
+\textit{(a) Propose a definition for what it should mean to say that
+  $f: A \to R$ is uniformly differentiable on $A$.}
+
+Differentiability of a function at $c$ means that
+$\lim_{x \to c}\frac{f(x) - f(c)}{x - c}$
+exists. 
+
+A function $f$ is uniformly differentiable at $A$ if for every $\epsilon > 0$
+there exists $\delta > 0$ such that for every $x, y \in A$ such that
+$|x - y| < \delta$ it follows that 
+$$\left|\frac{f(x) - f(y)}{x - y} - f'(x)\right| < \epsilon$$
+
+\textit{(b) Give an example of a uniformly differentiable function on $[0, 1]$}
+
+Something along the lines of constant functions will probably suffice.
+
+Suppose that $f: R \to R$ and  $f = 0$. It follows that for any
+$x, y \in R$ $f'(x) = 0$ , $f(y) = 0$ and $f(x) = 0$. It follows that
+$$|0| < \epsilon$$
+for any $\epsilon > 0$
+
+\textit{(c) Is there a theorem analogous to Theorem 4.4.8 for differentiation?
+  Are functions that are differentiable on a closed interval $[a, b]$
+  necessarily uniformly differentiable? The class of examples discussed in
+  Section 5.1 may be useful.}
+
+Something tells me, that this is not the case. Let us think about
+function
+\begin{equation}
+  g_2(x) =
+  \begin{cases}
+    x^2 \sin(1/x)\text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+as it follows from the discussion in the section, its derivative is not
+continous. Thus, there exists $\epsilon$ (namely 1)
+such that $|f(x)| \geq \epsilon$, for any given $\delta$. Thus,
+$$|\frac{f(x) - f(y)}{x - y} - f'(x)| > \epsilon$$
+for some $x \in [0, 1]$
+
+\section*{5.2.8}
+\textit{Decide whether each conjecture is true or false. Provide an argument
+  for those that are true ad a counterexample for each one that is false.}
+
+\textit{(a) If a derivative function is not constant, then the derivative must
+  take on some irrational values.}
+
+If derivative function is not constant, then there exist some sumbers
+$a, b \in f'([a, b])$. By density of irrationals it follows that there exists
+an irrational number  $i \in (a, b)$. By Darboux's Theorem, there exists
+a number in the domain such that $f'(c) = i$.
+
+\textit{(b) If $f'$ exists on an open interval, and there is some point $c$
+  where $f'(c) > 0$, then there exists a $\delta$-neighborhood
+  $V_\delta(c)$ around $c$ in which $f'(x) > 0$ for all
+  $x \in V_\delta(c)$.}
+
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    x/2 + x^2 \sin(1/x)\text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+
+For $0$ we will have
+$$f'(0) = \lim_{x \to 0} \frac{x/2 + x^2 \sin(1/x)}{x} =
+\lim_{x \to 0} 1/2 + x \sin(1/x) = 1/2$$
+
+But for any other $c \neq 0$
+$$f'(c) = 2c\sin(1/x) - \cos(1/x) + 1/2$$
+For which $cos(1/x)$ will plunge derivative around any neighborhood below 0.
+(I don't have a clue on how should I come up with this answer, never crossed
+my mind)
+
+\textit{(c) If $f$ is differentiable on an interval containing zero and if
+  $\lim_{x \to 0}f'(x) = L$, then it must be that $L = f'(0)$.}
+
+Suppose that it is not the case. Then it follows that there exists
+$\epsilon = |L - f'(0)|$. Because $\lim_{x \to 0}f'(x) = L$ it follows that
+there exists $\delta > 0$ such 
+$|x| < \delta \to |f'(x) - L| < \epsilon$
+But $|0| = 0 < \delta$ and $|f'(0) - L| = \epsilon$, which is a contradiction.
+
+\textit{(d) Repeat conjecture (c) but drop the assumption that $f'(0)$
+  necessarily exists. If $f'(x)$ exists for all $x \neq 0$ and if
+  $\lim_{x \to 0} f'(x) = L$, then $f'(0)$ exists and equal to $L$.}
+
+Not necessarily. We can construct a function
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    0 \text{ if } x \neq 0 \\
+    1 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+
+Then our proposition falls apart.
+
 
 \end{document}
