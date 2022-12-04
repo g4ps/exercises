@@ -7722,4 +7722,176 @@ $c \in  D_{\frac 1 n}$ Thus
 $$D_f = \cup_{n = 1}^{\infty}D_{\frac 1 n }$$
 as desired.
 
+
+\section*{5.2.1}
+\textit{Supply proofs for parts (i) and (ii) of Theorem 5.2.4}
+
+Part (i)  of 5.2.4 states that
+$$(f + g)'(c) = f'(c) + g'(c)$$
+
+$$(f + g)'(c) = \lim_{x \to c}\frac{(f + g)(x) - (f + g)(c)}{x - c} 
+= \lim_{x \to c}\frac{f(x) + g(x) - f(c) - g(c)}{x - c} = $$
+$$=  \lim_{x \to c}\frac{f(x) - f(c)}{x - c} + \frac{g(x) - g(c)}{x - c} =
+\lim_{x \to c}\frac{f(x) - f(c)}{x - c} +
+\lim_{x \to c}\frac{g(x) - g(c)}{x - c} = f'(c) + g'(c)
+$$
+
+Part (ii) of 5.2.4 states that
+$$(kf)'(c) = kf'(c)$$
+
+$$(kf)'(c) = \lim_{x \to c}\frac{kf(x) - kf(c)}{x - c} =
+k \lim_{x \to c}\frac{f(x) - f(c)}{x - c} = k f'(c)$$
+
+as desired.
+
+\section*{5.2.2}
+\textit{(a) Use Definitions 5.2.1 to produce the proper formula for the
+  derivative of $f(x) = 1/x$.}
+
+$$f'(c) = \lim_{x \to c}\frac{f(x) - f(c)}{x - c} =
+\lim_{x \to c}\frac{\frac 1 x  - \frac 1 c}{x - c} =
+\lim_{x \to c}\frac{\frac{c}{cx}  - \frac{x}{cx}}{x - c} =
+\lim_{x \to c}\frac{\frac{c - x}{cx}}{x - c} =
+\lim_{x \to c}\frac{(c - x)\frac{1}{cx}}{x - c} =$$
+$$ = \lim_{x \to c}\frac{- (x - c)\frac{1}{cx}}{x - c} =
+\lim_{x \to c} - \frac{1}{cx} =  - \frac{1}{x^2} = - x^{-2}$$
+
+\textit{(b) Combine the result in part (a) with the chain rule (Theorem 5.2.5)
+  to supply a proof for part (iv) of Theorem 5.2.4}
+
+By Chain Rule
+$$(1/g)'(c) = -\frac{1}{g^2(c)} g'(c)$$
+Thus
+$$(f/g)'(c) = (f * 1/g)'(c) =  \frac{f'(c)}{g(c)}  -
+\frac{f(c) g'(c)}{g^2(c)}  =
+\frac{f'(c)g(c)}{g^2(c)}  - \frac{f(c) g'(c)}{g^2(c)}  = $$
+$$\frac{f'(c)g(c) - f(c) g'(c)}{g^2(c)}$$
+as desired
+
+\textit{(c) Supply a direct proof of Theorem 5.2.4 (iv) be algebraically
+  manipulating the difference quotent for $(f/g)$ in a style similar to
+  the proof of Theorem 5.2.4 (iii)}
+
+$$(f/g)'(c) = 
+$$
+
+$$\frac{(f/g)(x) - (f/g)(c)}{x - c} =
+\frac{\frac{f(x)}{g(x)} - \frac{f(c)}{g(c)}}{x - c} =
+\frac{\frac{f(x)g(c) - f(c)g(x)}{g(x)g(c)} }{x - c} =
+\frac{f(x)g(c) - f(c)g(x) }{(x - c)g(x)g(c)} =
+\frac{f(x)g(c) - f(c)g(x) }{(x - c)g(x)g(c)} =
+$$
+
+$$\frac{f(x)g(c) - f(c)g(c) + f(c)g(c)- f(c)g(x) }{(x - c)g(x)g(c)} =
+\frac{g(c)(f(x) - f(c)) - f(c)(g(x)- g(c)) }{(x - c)g(x)g(c)} =$$
+$$ =
+\frac{g(c)(f(x) - f(c)) - f(c)(g(x)- g(c)) }{(x - c)}\frac{1}{g(x)g(c)} =
+\left[\frac{g(c)(f(x) - f(c))}{(x - c)}
+  - \frac{f(c)(g(x)- g(c)) }{(x - c)}\right]\frac{1}{g(x)g(c)} =
+$$
+$$=
+\left(g(c)\left[\frac{(f(x) - f(c))}{(x - c)}\right] -
+f(c)\left[\frac{(g(x)- g(c)) }{(x - c)}\right]\right)\frac{1}{g(x)g(c)} = 
+$$
+
+Therefore
+$$(f/g)'(c) =
+\lim_{x \to c}
+\left(g(c)\left[\frac{(f(x) - f(c))}{(x - c)}\right] -
+  f(c)\left[\frac{(g(x)- g(c)) }{(x - c)}\right]\right)\frac{1}{g(x)g(c)} =
+\frac{g(c)f'(c) - f(c) g'(c)}{g^2(c)}
+$$
+as desired.
+
+\section*{5.2.3}
+\textit{By imitating the Dirichlet construction in Section 4.1, construct a
+  function on $R$ that is differentiable at a single point}
+
+So a function, that was comprised, that is continous at a single point
+is
+\begin{equation}
+  g(x) =
+  \begin{cases}
+    x \text{ if } x \in Q \\
+    0 \text{ otherwise }
+  \end{cases}
+\end{equation}
+
+$$\frac{g(x) - g(c)}{x - c}$$
+for this function is undefined for any rational point
+
+Something along the lines of
+\begin{equation}
+  g(x) =
+  \begin{cases}
+    x^2 \text{ if } x \in Q \\
+    -x^2 \text{ otherwise }
+  \end{cases}
+\end{equation}
+might work
+
+So around 0 for rationals
+$$\lim_{x \to c}\frac{g(x) - g(c)}{x - c} =
+\lim_{x \to c}\frac{x^2 - 0}{x - 0} = \lim_{x \to c}\frac{x^2}{x} = c = 0$$
+and for irrationals
+$$\lim_{x \to c}\frac{-x^2 - 0}{x - 0} = \lim_{x \to c}\frac{-x^2}{x} = c = 0$$
+
+I think that it'll do. Not sure, that it is correct, but don't see
+anything wring with it.
+
+\section*{5.2.4}
+\textit{Let }
+\begin{equation}
+  f(x) =
+  \begin{cases}
+    x^a \text{ if } x \geq 0 \\
+    0 \text{ if } x < 0
+  \end{cases}
+\end{equation}
+\textit{(a) For which values of $a$ is $f$ continous at zero?}
+First of all, $a$ cannot be less than 0 or zero itself, because those powers
+are not defined for $0$. As far as I can tell, $0^0$ is not defined, but
+if we define it to be 1, then it'll be a trivial case.
+
+I want to say that a function is continous at $a > 0$.
+
+Suppose that $\epsilon > 0$ It follows that $f(c) = 0$. From the
+left the limit will be equal to $0$. From the right we need to think about it
+for a while. Suppose
+$$|x - c| < \delta$$
+$$|x - 0| < \delta$$
+$$x < \delta$$
+$$x^a < \delta^a$$
+$$|x^a| < \delta^a$$
+thus if we pick $\delta = \epsilon^{1/a}$ it follows that 
+$$|x^a| < \epsilon$$
+$$|x^a - 0| < \epsilon$$
+$$|f(x) - 0| < \epsilon$$
+Therefore the function has a right-hand limit of $0$ as well. Therefore for
+any $a > 0$ it follows that $f$ is continous.
+
+\textit{(b) For which values of $a$ is $f$ differentiable at zero? In this
+  case, is the derivative function continous?}
+
+We know (but didn't prove anywhere yet), that for $f(x) = x^n$
+$f'(x) = nx^{n - 1}$, which is true for any $n \in R$. Therefore for
+function to be differentiable we need to set $a > 1$.
+
+\textit{(b) For which values of $a$ is $f$ twice-differentiable?}
+
+$a > 2$.
+
+\section*{5.2.5}
+\textit{Let }
+\begin{equation}
+  g_a(x) =
+  \begin{cases}
+    x^a sin(1/x) \text{ if } x \neq 0 \\
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+\textit{Find a particular (potentially noninteger) value for $a$ so that}
+\textit{(a) $g_a$ is differentiable on $R$ but such that $g'_a$ is unbounded
+in $[0, 1]$}
+
 \end{document}
