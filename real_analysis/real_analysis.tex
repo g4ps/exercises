@@ -8136,5 +8136,204 @@ Not necessarily. We can construct a function
 
 Then our proposition falls apart.
 
+\section*{5.3.1}
+\textit{Recall from Exercise 4.4.9 that a function $f: A \to R$ is called
+  Lipschitz on $A$ if there exists an $M > 0$ such that }
+$$\left|\frac{f(x) - f(y)}{x - y}\right| \leq M$$
+\textit{for all $x, y \in A$. Show that if $f$ is differentiable on a closed
+  interval $[a, b]$ and if $f'$ is continous on $[a, b]$ then $f$ is
+  Lipschitz on $[a, b]$.}
+
+Suppose that $f$ is differentiable on $[a, b]$ and $f'$ is continous at
+$[a, b]$. Because continous functions preserve compact sets we can state that
+$f'([a, b])$  is compact as well. Therefore $f'([a, b])$ contains its maximum
+and miniumum. Thus, for every  $x > y \in f'([a, b])$ there exists
+$c \in (a, b)$ such that
+$$f'(c) = \frac{f(x) - f(y)}{x - y}$$
+Because $f'([a, b])$ is compact  we can state that for some $M \in R$
+$$|f'(c)| \leq M$$
+therefore 
+$$|\frac{f(x) - f(y)}{x - y}| \leq M$$
+for all $x, y \in [a, b]$. Therefore the function is Lipschitz on $[a, b]$,
+as desired.
+
+\section*{5.3.2}
+\textit{Recall from Exercise 4.3.9 that a function $f$ is contractive on a
+  set $A$ if there exists a constant $0 < s < 1$ such that }
+$$|f(x) - f(y)| \leq s|x - y|$$
+\textit{for all $x, y \in A$. Show that if $f$ is differentiable and $f'$ is
+  continous and satistfies $|f'(x)| < 1$ on a closed interval, then $f$ is
+  contractive on this set.}
+
+Suppose that a function $f$ is differentiable and $f'$ is continous and
+satisfies $|f'(x)| < 1$ on a closed interval $[a, b]$. Because $f'$ is
+continous at a closed interval (which is a compact set) thus it attains
+maximum at it. Thus, there exists a point  $s_p = [a, b]$ such that
+$f'(s_p) \geq f'(x)$ for every $x \in [a, b]$. Thus let $s = f'(s_p) < 1$.
+
+It follows, that for
+any pair of numbers $x< y \in [a, b]$ there exist $c \in (a, b)$ such that
+$$f'(c) = \frac{f(x) - f(y)}{x - y}$$
+Because $c \in (a, b) \subset [a, b]$ it follows that $|f'(c)| \leq s$. Thus
+$$|f'(c)| = |\frac{f(x) - f(y)}{x - y}| \leq s$$
+$$\left|\frac{f(x) - f(y)}{x - y}\right| < s$$
+$$\frac{|f(x) - f(y)|}{|x - y|} \leq s$$
+$$|f(x) - f(y)| \leq s|x - y|$$
+for some $0 < s < 1$, as desired.
+
+
+\section*{5.3.3}
+\textit{Let $h$ be a differentiable function defined on the interval $[0, 3]$,
+  and assume that $h(0) = 1$, $h(1) = 2$, and $h(3) = 2$.}
+
+\textit{(a) Argue that there exists a point $d \in [0, 3]$ where $h(d) = d$.}
+
+First of all, on $[0, 1]$ there may be no point such that $h(d) = d$
+(for example if $h$ is defined $h(x) = 1 + x$ for this section or something
+that is greater that this). Thus we need to concentrate on the interval
+$[1, 3]$.
+
+Let us look at the function
+$$f(x) = h(x) - x$$
+it follows that if $f(x) = 0$, then there exists a point where $h(x) = x$.
+We know that
+$$f(0) = 1 - 0 = 1$$
+and
+$$f(3) = 2 - 3 = -1$$
+Thus, by IVT and diffetentiability (and therefore continuity) of $h$ (and
+therefore $f$) on $[0, 3]$,
+there exists a point $c \in [0, 3]$  where $f(c) = 0$ and
+thus $h(c) = c$, as desired.
+
+
+\textit{(b) Argue that at some point $c$ wehave $h'(c) = 1/3$}
+
+By MVT there exists a point $c \in (0, 3)$ such that
+$$f'(c) = \frac{f(3) - f(0)}{3 - 0} = \frac{2 - 1}{3} = \frac{1}{3}$$
+as desired.
+
+\textit{(c) Argue that $h'(x) = 1/4$ at some point in the domain}
+
+We know, that there exists $h'(c_1) = 0$ and $h'(c_2) = 1/3$. Thus by Darboux's
+Theorem there exists a point in $(c_1, c_2)$ (or $(c_2, c_1)$, whichever is
+appropriate) such that  $h'(c_1) < 1/4 < h'(c_2) \to h'(c_3) = 1/4$
+
+
+\section*{5.3.4}
+\textit{(a) Supply the details for the proof of Cauchy's Generalized Mean
+  Value Theorem (Theorem 5.3.5)}
+
+Theorem 5.3.5 states that
+\textit{If $f$ and $g$ are continous on the closed interval $[a, b]$ and
+  differentiable on the open inverval $(a, b)$, then there exists a point
+  $c \in (a, b)$ where}
+$$[f(b) - f(a)]g'(c) = [g(b) - g(a)]f'(c)$$
+If $g'$ is never zero on $(a, b)$, then the conclusion can be stated as
+$$\frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}$$
+
+Let
+$$h(x)  = [f(b) - f(a)]g(x) - [g(b) - g(a)]f(x)$$
+by standart rules of differentiations it follows that
+$$h'(x)  = [f(b) - f(a)]g'(x) - [g(b) - g(a)]f'(x)$$
+It follows by MVT that there exits  $c \in (a, b)$ such that
+$$h'(c) = \frac{h(b) - h(a)}{b - a}$$
+$$[f(b) - f(a)]g'(c) - [g(b) - g(a)]f'(c) = \frac{h(b) - h(a)}{b - a}$$
+$$[f(b) - f(a)]g'(c) - [g(b) - g(a)]f'(c) =
+$$
+$$ = 
+\frac{[f(b) - f(a)]g(b) - [g(b) - g(a)]f(b) -
+  [f(b) - f(a)]g(a) + [g(b) - g(a)]f(a)}{b - a}$$
+$$[f(b) - f(a)]g'(c) - [g(b) - g(a)]f'(c) =
+$$
+$$ = 
+\frac{g(b)f(b) - f(a)g(b) - f(b)g(b) + g(a)f(b) -
+  f(b)g(a) + f(a)g(a) + g(b)f(a) - g(a)f(a)}{b - a}$$
+$$[f(b) - f(a)]g'(c) - [g(b) - g(a)]f'(c) = \frac{0}{b - a}$$
+$$[f(b) - f(a)]g'(c) - [g(b) - g(a)]f'(c) = 0$$
+$$[f(b) - f(a)]g'(c) = [g(b) - g(a)]f'(c)$$
+as desired.
+
+\textit{(b) Give a graphical interpretation of the Generalized Mean
+  Value Theorem analogous to the one given for the Mean Value Theorem at
+  the beginning of Section 5.3. (Consider f and g as parametric equations
+  for a curve.)}
+
+I didn't do one, but I'm sure, that wikipedia will have one. Maybe ine day,
+when I'll be studying GNUPlot or something of sorts, I'll do one just for
+fund and ammend this exercise. For now I'll mark this exercise as TODO
+
+\section*{5.3.5}
+\textit{ A fixed point of the function $f$ is a value $x$ where $f(x) = x$.
+  Show that if $f$ is differentiable on an interval with $f'(x) \neq 1$, then
+  $f$ can have at most one fixed point.}
+
+$f(x) = 1 - x$ at $x = 0.5$ is a proof, that there exists a function for
+1 fixed point where $f'(x) \neq 1$.
+
+Suppose that $f'(x) \neq 1$, $f(x_1) = x_1$, $f(x_2) = x_2$ and $x_1 > x_2$.
+It follows that by MVT there exists $c \in (x_1, x_2)$ such that
+$$f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}$$
+$$f'(c) = \frac{x_2 - x_1}{x_2 - x_1}$$
+$$f'(c) = 1$$
+which is a contradiction.
+
+\section*{5.3.6}
+\textit{Let $g: [0, 1] \to R$ be a twice-differentiable (i.e., both $g$ and
+  $g'$ are differentiable functions) with $g''(x) \geq 0$ for all
+  $x \in [0, 1]$. If $g(0) > 0$ and $g(1) = 1$, show that $g(d) = d$ for some
+  point $d \in (0, 1)$ if and only if $g'(1) > 1$. (This geometrically
+  plausible fact is used in the introductory discussion to Chapter 6).}
+
+\textbf{In forward direction: }
+Suppose that there exists $d \in (0, 1)$ such that $g(d) = d$. It follows, that
+there exists a point $c \in (d, 1)$ such that
+$$g'(c) = \frac{g(1) - g(d)}{1 - d}$$
+$$g'(c) = \frac{1 - d}{1 - d}$$
+$$g'(c) = 1$$
+Thus, there exists a point  $j \in (c, 1)$ such that
+$$g''(j) = \frac{g'(1) - g'(c)}{1 - c}$$
+Because $g''(x) \geq 0$ for all $x \in [0, 1]$ it follows that
+$$\frac{g'(1) - g'(c)}{1 - c} > 0$$
+$$g'(1) - g'(c) > 0$$
+$$g'(1) > g'(c)$$
+$$g'(1) > 1$$
+as desired.
+
+\textbf{In opposite direction: }
+
+Define
+$$f(x) = g(x) - x$$
+It follows that $f'(x) = g'(x) - 1$ and $f''(x) = g''(x) > 0$. Thus
+$f(1) = 0$, $f(0) > 0$ and $f'(1) > 0$
+
+$$f'(j) = \frac{f(1) - f(0)}{1}$$
+$$f'(j) =  - f(0)$$
+$$f'(j) < 0$$
+
+Thus, there exits $f'(j) < 0$ and $f'(1) > 0$. Therefore we can state that
+there exists $c \in (j, 1)$ such that $f'(c) = 0$. 
+
+
+Then suppose that $c \in (0, 1)$. It follows
+$$\frac{f'(1) - f'(c)}{1 - c} > 0$$
+$$f'(1) - f'(c) > 0$$
+$$f'(1) > f'(c)$$
+for any $c \in [0, 1]$
+
+Suppose not that $k \in (0, c)$ it follows that
+$$\frac{f'(k) - f'(0)}{k} > 0$$
+$$f'(k) f'(0) > 0$$
+$$f'(k) > f'(0)$$
+
+Suppose that $k \in (c, 1)$. It follows that
+$$\frac{f'(1) - f'(k)}{1 - k} > 0$$
+$$f'(1) - f'(k) > 0$$
+$$f'(1) > f'(k)$$
+for any $k \in (c, 1)$.
+
+Suppose that $f(1) \leq f(k)$. It follows that there exists 
+
+todo later
+
 
 \end{document}
