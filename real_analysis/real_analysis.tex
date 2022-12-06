@@ -8306,34 +8306,169 @@ $$f(x) = g(x) - x$$
 It follows that $f'(x) = g'(x) - 1$ and $f''(x) = g''(x) > 0$. Thus
 $f(1) = 0$, $f(0) > 0$ and $f'(1) > 0$
 
-$$f'(j) = \frac{f(1) - f(0)}{1}$$
-$$f'(j) =  - f(0)$$
-$$f'(j) < 0$$
+Now suppose that there is no element $k \in (0, 1)$, for which
+$f(k) \leq 0$. It follows that for every sequence $(x_n) \to 1$ where
+$x_n \neq 1$, $f(x_n) > 0$. Thus,
+$$f'(1) = \lim_{n \to \infty}\frac{f(1) - f(x_n)}{1 - x_n}$$
+but
+$$\frac{f(1) - f(x_n)}{1 - x_n} < 0$$
+for all $n \in N$, and thus
+$$f'(1) \leq 0$$
+which is a contradiction of given fact that $g'(1) = 1 \to f'(1) > 0$. Thus
+we can state, that there exists a point $k \in (0, 1)$ such that
+$f(k) \leq 0$. Therefore by IVT there exists $k_1: f(k_1) = 0$
+(for  $f(k) = 0$ the case is trivial and doesn't require IVT).
+Therefore $g(k_1) - k_1 = 0 \to g(k_1) = k_1$, as desired.
 
-Thus, there exits $f'(j) < 0$ and $f'(1) > 0$. Therefore we can state that
-there exists $c \in (j, 1)$ such that $f'(c) = 0$. 
+\section*{5.3.7}
+\textit{(a) Recall that a function $f: (a, b) \to R$ is increasing on $(a, b)$
+  if $f(x) \leq f(y)$ whether $x < y$ in $(a, b)$. Assume $f$ is differentiable
+  on $(a, b)$. Show that $f$ is increasing on $(a, b)$ if and only if
+  $f'(x) \geq 0$ for all $x \in (a, b)$}
 
+\textbf{In forward direction: }
+Suppose that a function is increasing and differentiable on  $(a, b)$.
+Suppose that $c \in (a, b)$. It follows that
+$$f'(c) = \lim_{x \to c}\frac{f(x) - f(c)}{x - c}$$
+If $x > c$ then $f(x) - f(c) \geq 0$ and therefore
+$\frac{f(x) - f(c)}{x - c} \geq 0$.
+If $x < c$ then $f(x) - f(c) \leq 0$ and therefore
+$\frac{f(x) - f(c)}{x - c} \geq 0$.
+Thus $\frac{f(x) - f(c)}{x - c} > 0$ for all $x \neq c$. Thus
+$f'(c) \geq 0$, as desired.
 
-Then suppose that $c \in (0, 1)$. It follows
-$$\frac{f'(1) - f'(c)}{1 - c} > 0$$
-$$f'(1) - f'(c) > 0$$
-$$f'(1) > f'(c)$$
-for any $c \in [0, 1]$
+\textbf{In backward direction: }
+Suppose that a function is differentiable and $f'(c) \geq 0$. It follows that
+for any $x >  y \in (a, b)$ there exists $k \in (a, b)$ such that
+$$f'(k) = \frac{f(x) - f(y)}{x - y}$$
+thus
+$$\frac{f(x) - f(y)}{x - y} \geq 0$$
+$$\frac{f(x) - f(y)}{x - y} \geq 0$$
+$$f(x) - f(y) \geq 0$$
+$$f(x) \geq f(y)$$
+Thus for any $x > y$ it follows that $f(x) \geq f(y)$ as desired.
 
-Suppose not that $k \in (0, c)$ it follows that
-$$\frac{f'(k) - f'(0)}{k} > 0$$
-$$f'(k) f'(0) > 0$$
-$$f'(k) > f'(0)$$
+\textit{(b) Show that the function}
+\begin{equation}
+  g(x) = 
+  \begin{cases}
+    x / 2 + x^2 \sin(1/x) \text{ if } x \neq 0
+    0 \text{ if } x = 0
+  \end{cases}
+\end{equation}
+\textit{is differentiable on $R$ and satisfies $g'(0) > 0$. Now
+  prove that $g$ is not increasing over any interval containing 0.}
 
-Suppose that $k \in (c, 1)$. It follows that
-$$\frac{f'(1) - f'(k)}{1 - k} > 0$$
-$$f'(1) - f'(k) > 0$$
-$$f'(1) > f'(k)$$
-for any $k \in (c, 1)$.
+At $0$ we've got
+$$f'(0) = \lim_{x \to 0}\frac{f(x) - f(0)}{x - 0} =
+\lim_{x \to 0}\frac{f(x)}{x} =
+\lim_{x \to 0}\frac{x / 2 + x^2 \sin(1/x)}{x} =
+\lim_{x \to 0} 1 / 2 + x \sin(1/x) = 1/2$$
+thus it is continous at $0$ and $f'(0) > 0$ (I forgot that we are using $g$
+as a name for the function and I wont change a thing because of it)
 
-Suppose that $f(1) \leq f(k)$. It follows that there exists 
+For any other number other than $0$ we've got
+$$f'(x) =     1 / 2 + 2x \sin(1/x) - x^2  \cos(1/x)  x^{-2}$$
+$$f'(x) =     1 / 2 + 2x \sin(1/x) - \cos(1/x)$$
+it follows that there does not exist a neighborhood around zero such that
+$f'(x) \geq 0$ for all of the neighborhood (because of the discontinuity of
+derivative around zero because of the term $\cos(1/x)$). Thus, there
+does not exist a neighborhood around zero such that the function is
+increasing on it, as desired (we needed to prove for any open interval, but
+this proof will do for it because of the definition of open sets).
 
-todo later
+\section*{5.3.8}
+\textit{Assume $g: (a, b) \to R$ is differentiable at some point
+  $c \in (a, b)$. If $g'(c) \neq 0$, show that there exists a
+  $\delta$-neighborhood $V_\delta(c) \subseteq (a, b)$ for which
+  $g(x) \neq g(c)$ for all $x \in V_\delta(c)$. Compare this result with
+  Exercise 5.3.7}
+
+We are going to use a proof by contradiction on this one. Suppose that
+there exists a $\delta$ and by extension $V_\delta(c)$ such that
+$x , y \in V_\delta(c) \to g(x) = g(y)$. Let $(x_n) \to c$ be such that
+$x_n \neq c$. It follows that $f(x_n) \to f(c)$. Thus there
+exists $N \in \textbf{N}$ such that $n \geq N$ implies that
+$$x_n \in V_\delta(c)$$
+Now it follows that
+$$f(x_n) = f(x_m) $$
+for all $m \geq n \geq N$. Thus
+$$f'(c) = \lim_{n \to \infty}{\frac{f(x_n) - f(c)}{x_n - c}}$$
+$$f'(c) = \lim_{n \to \infty}{\frac{f(x_n) - f(c)}{x_n - c}}$$
+$x_n, c \in V_\delta(c) \to f(x_n) = f(c) \to f(x_n) - f(c) = 0$. Thus
+$$f'(c) = 0$$
+which is a contradiction.
+
+It folllows that function from 5.3.7(b) has no neighborhood around zero s.t.
+$g(x) = g(c)$.
+
+\section*{5.3.9}
+\textit{Assume that $\lim_{x \to c}{f(x)} = L$, where $L \neq 0$, and assume
+  $\lim_{x \to c}{g(x)} = 0$. Show that $\lim_{x \to c}|f(x)/g(x)| = \infty$}
+
+Suppose $\epsilon > 0$
+
+By convergence of $f$ there exists 
+$\delta_1$ s.t.
+$$x \in V_{\delta_1}(c) \to |f(x) - L| < L/2$$
+
+$$|f(x) - L| < L/2$$
+$$L - L/2 < f(x) < L + L/2$$
+$$L/2 < f(x) < 3L/2$$
+
+By convergence of $g$ there exists 
+$\delta_2$ s.t.
+$$x \in V_{\delta_2}(0) \to |g(x) | < |L/2|\epsilon$$
+
+Pick $\delta = \min\{\delta_1, \delta_2\}$. It follows that 
+$$x \in \delta \to |\frac{f(x)}{g(x)}| = \frac{|f(x)|}{|g(x)|} >
+\frac{|f(x)|}{|L/2|/\epsilon)} > \frac{|L/2|}{ |L/2|/|\epsilon|} = \epsilon$$
+therefore for any $\epsilon > 0$ there exists  $\delta$ s.t.
+$$x \in \delta \to |\frac{f(x)}{g(x)}| = \frac{|f(x)|}{|g(x)|} > \epsilon$$
+or in other words
+$$\lim_{x \to c}{f(x)/g(x)} = \infty$$
+as desired.
+
+\section*{5.3.10}
+\textit{Let $f$ be a bounded function and assume $\lim_{x \to c}g(x) = \infty$.
+  Show that $\lim_{x \to c}f(x)/g(x) = 0$
+}
+
+Suppose that $f$ is bounded by $M > 0$. Thus $|f(x)| < M$
+
+Let $\epsilon > 0$. By continuity of $g$ it follows that there exists
+$\delta_1$ such that
+$$x \in V_\delta(c) \to g(x) > M/\epsilon$$
+Thus
+$$x \in V_\delta(c) \to \frac{|f(x)|}{|g(x)|} < \epsilon$$
+for every $\epsilon > 0$
+Thus $\lim_{x \to c}f(x)/g(x) = 0$, as desired.
+
+\section*{5.3.11}
+\textit{Use the Generalized Mean Value Theorem to furnish a proof of the
+  $0/0$ case of L'Hopital's rule (Theorem 5.3.6)}
+
+Theorem 5.3.6 states that
+
+\textit{Assume $f$ and $g$ are continous functions defined on an interval
+  containing $a$, and assume that $f$ and $g$ are differentiable on this
+  interval, with the possible exception of the point $a$. If $f(a) = 0$ and
+  $g(a) = 0$, then }
+$$\lim_{x_\to a}\frac{f'(x)}{g'(x)} = L \text{ implies }
+\lim_{x_\to a}\frac{f(x)}{g(x)} = L$$
+
+$$|x - a| < \delta \to \left|\frac{f'(x)}{g'(x)} - L\right| < \epsilon$$
+
+Thus we can state that for all $c \in (x - a, a)$ 
+
+Let us call the interval on which $f$ and $g$ are defined as $[x, y]$.
+Suppose that $$\lim_{x_\to a}\frac{f'(x)}{g'(x)} = L$$
+It follows that
+$$\lim_{x_\to a}\frac{f'(x)}{g'(x)} =
+\lim_{x_\to a}\frac{\lim_{y \to x}\frac{f(y) - f(x)}{y - x}}{
+  \lim_{y \to x}\frac{g(y) - g(x)}{y - x}}$$
+
+TODO 
 
 
 \end{document}
