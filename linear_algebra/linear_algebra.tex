@@ -1,7 +1,10 @@
-\documentclass[11pt,oneside,titlepage]{report}
+\documentclass[10pt,oneside,titlepage]{book}
 \title{My linear algebra exercises}
-% \usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb}
 % \usepackage{geometry}
+% \usepackage{pdfpages}
+% \usepackage{tocloft}
+\usepackage{hyperref}
 \author{Evgeny Markin}
 \date{2022}
 
@@ -111,10 +114,97 @@ I don't ususally like to skip sections, but I have  aa feeling, that I've
 completed this thing on paper somewhere, and there is not much reason to
 rewrite it here.
 
-\chapter{1B Definition of Vector Space}
+\chapter{1.B Definition of Vector Space}
 
+\section*{1}
+\textit{Prove that $-(-v)= v$ for every $v \in V$.}
 
+For $v$ there exists only one $-v$. For $-v$ there exists only one $-(-v))$.
 
+Thus
+$$v = v + 0 = v + (-v) + (-(-v)) = 0 + (-(-v)) = -(-v)$$
+as desired (idk if it's true, I'm not good at axioms and stuff)
+
+\section*{2}
+\textit{Suppose $a \in F, v \in V$, and $av = 0$. Prove that
+  $a = 0$ or $v = 0$.}
+
+Suppose that $a \neq 0$, $v \neq 0$ but $av = 0$. It follows that there
+exist $1/a$ - multiplicative inverse of $a$. It follows that
+$$1/a * av = 1/a * 0$$
+$$1v = 0$$
+$$v = 0$$
+which is a contradiction. Thus either $a = 0$ or $v = 0$.
+
+\section*{3}
+\textit{Suppose $v, w \in V$. Explain why there exists a unique $x \in V$
+  such that $v + 3x = w$.}
+
+Suppose that there exists $x_1 \neq x_2$ such that
+$v + 3x_1 = w$ and $v + 3x_2 = w$. Thus
+$$3x_1 = w - v = 3x_2$$
+$$x_1 = \frac{1}{3}(w - v) = x_2$$
+which is a contradiction.
+
+Same can be stated from the fact that $x$ is a unique additive inverse of
+$\frac{1}{3}(v - w)$.
+
+\section*{4}
+\textit{The empty set is not a vector space. The empty set fails to satisfy
+  only one of the requirements listed in 1.19. Which one?}
+
+Additive indentity. Empty set does not have zero element in it.
+BTW $\{0\}$ is a vector space.
+
+\section*{5}
+\textit{Show that n the defintition of a vector space (1.19), the additive
+  inverse condition can be replaced with the condition that}
+$$0v = 0 \textit{ for all } v \in V$$
+\textit{Here the 0 on the left side is the number 0, and the 0 on the right
+  side is the additive identity of $V$.}
+
+$$0v = 0$$
+$$(1 - 1)v = 0$$
+$$1v - 1v = 0$$
+$$v - v= 0$$
+$$v + (- v)= 0$$
+
+\section*{6}
+\textit{Let $\infty$ and $-\infty$ denote two distinct object, neither of
+  which is in $R$. Define an addition and multiplication on
+  $R \cup \{\infty\} \cup \{-\infty\}$ as you could guess from the notation.
+  Specifically, the sum and the product of two real numbers is as usual,
+  and for $t \in R$ define
+}
+
+$$
+t\infty =
+\begin{cases}
+  -\infty \text{ if } t < 0 \\
+  0 \text{ if } t = 0 \\
+  \infty \text{ if } t > 0 \\
+\end{cases}
+$$
+
+$$
+t(-\infty) =
+\begin{cases}
+  \infty \text{ if } t < 0 \\
+  0 \text{ if } t = 0 \\
+  -\infty \text{ if } t > 0 \\
+\end{cases}
+$$
+
+$$t + \infty = \infty + t = \infty$$
+$$t + (-\infty) = (-\infty) + t = (-\infty)$$
+$$\infty + \infty = \infty$$
+$$(-\infty) + (-\infty) = (-\infty)$$
+$$\infty + (-\infty) = 0$$
+
+\textit{Is $R \cup \{\infty\} \cup \{-\infty\}$ a vector space over
+  $R$? Explain.}
+
+I don't think that it is, TODO.
 
 
 \end{document}

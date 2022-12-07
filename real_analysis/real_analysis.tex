@@ -1,12 +1,16 @@
-\documentclass[11pt,oneside,titlepage]{article}
+\documentclass[11pt,oneside,titlepage]{book}
 \title{My real analysis exercises}
 \usepackage{amsmath,amssymb}
 \usepackage{geometry}
+\usepackage{hyperref}
 \author{Evgeny Markin}
 \date{2022}
 
 \begin{document}
 \maketitle
+\tableofcontents
+
+\chapter*{Preface}
 
 Exercises are from UTM-040 Understanding analysis by Stephen Abbott, 1st
 edition. I don't own any rights
@@ -17,6 +21,8 @@ were not proof-read after they were written,  and that none of them were
 evaluated by anyone who matters. There are a lot of mistakes out  there, both
 in mathematical and logical parts, and in the language they were written as
 well. I am doing this kind of stuff for fun, so cut me some slack.
+
+\chapter{Real Numbers}
 
 \section*{1.2.1}
 \textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
@@ -1806,6 +1812,7 @@ adding $2n - 1$ to the set, if the n'th position is 1. Therefore, for
 2 different chains we will have two different sets, each of which will be
 different by al least two numbers, and therefore not a subset of each other.
 
+\chapter{Sequences and Series}
 \section*{2.2.1}
 \textit{Verify, using the definition of convergence of a sequence, that the following
   sequenceces converge to the proposed limit.}
@@ -4181,7 +4188,7 @@ as desired.
 
 
 
-
+\chapter{Basic Topology of R}
 
 \section*{3.2.1}
 \textit{(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption
@@ -5466,6 +5473,8 @@ $\cup_{n = 1}^{\infty} \overline E_n = R$. $E_n$ is nowhere-dense, therefore
 $\overline E_n$ contains no nonempty intervals. Therefore $R$ can be written as
 countable union of closed sets, where each of those sets contain no nonempty
 open intervals, which is a contradiction.
+
+\chapter{Functional Limits and Continuity}
 
 \section*{4.2.1}
 \textit{Use Definition 4.2.1 to supply a proof for the following limit statements.}
@@ -7722,6 +7731,7 @@ $c \in  D_{\frac 1 n}$ Thus
 $$D_f = \cup_{n = 1}^{\infty}D_{\frac 1 n }$$
 as desired.
 
+\chapter{The Derivative}
 
 \section*{5.2.1}
 \textit{Supply proofs for parts (i) and (ii) of Theorem 5.2.4}
@@ -8459,16 +8469,127 @@ $$\lim_{x_\to a}\frac{f'(x)}{g'(x)} = L \text{ implies }
 
 $$|x - a| < \delta \to \left|\frac{f'(x)}{g'(x)} - L\right| < \epsilon$$
 
-Thus we can state that for all $c \in (x - a, a)$ 
+Now let us think about
+$$\frac{f(x)}{g(x)} = \frac{f(x) + f(a)}{g(x) + g(a)} = \frac{f'(c)}{g'(c)}$$
+for some $c \in (a, x)$. Thus
+$$\left|\frac{f'(c)}{g'(c)} - L\right| < \epsilon$$
+$$\left|\frac{f(x) + f(a)}{g(x) + g(a)} - L\right|  < \epsilon$$
+$$\left|\frac{f(x) }{g(x) } - L\right|  < \epsilon$$
+as desired.
 
-Let us call the interval on which $f$ and $g$ are defined as $[x, y]$.
-Suppose that $$\lim_{x_\to a}\frac{f'(x)}{g'(x)} = L$$
-It follows that
-$$\lim_{x_\to a}\frac{f'(x)}{g'(x)} =
-\lim_{x_\to a}\frac{\lim_{y \to x}\frac{f(y) - f(x)}{y - x}}{
-  \lim_{y \to x}\frac{g(y) - g(x)}{y - x}}$$
+\section*{5.3.12}
+\textit{Assume $f$ and $g$ are as described in Theorem 5.3.6, but now add the
+  the assumption that $f$ and $g$ are differentiable at $a$ and $f'$ and $g'$
+  are continous at $a$. Find a short proof for the $0/0$ case of L'Hopital's
+  rule under this stronger hypothesis}
 
-TODO 
+$$\lim_{x \to c}\frac{f'(x)}{g'(x)} = \frac{f'(c)}{g'(c)} =
+\frac{\lim_{x \to c}\frac{f(x) - f(c)}{x - c}}
+{\lim_{x \to c}\frac{g(x) - g(c)}{x - c}} =
+\lim_{x \to c} \frac{\frac{f(x) - f(c)}{x - c}}
+{\frac{g(x) - g(c)}{x - c}} =
+\lim_{x \to c} \frac{f(x) - f(c)} {g(x) - g(c)} =
+\lim_{x \to c} \frac{f(x) - 0} {g(x) - 0} =$$
+$$ = \lim_{x \to c} \frac{f(x)} {g(x)}$$
+as desired.
+
+\section*{5.3.13}
+\textit{Review the hypothesis of Theorem 5.3.6. What happens if we do not
+  assume that $f(a) = g(a) = 0$, but assume only that $\lim_{x \to a}f(x) = 0$
+  adn $\lim_{x \to a} g(x) = 0$? Assuming we have a proof for Theorem 5.3.6
+  as it is written, explain how to construct a valid proof under this
+  slightly weaker hypothesis.}
+
+We can use a modified function $h$ such that it satisfies the requirements of
+$5.3.6$ to show, that every sequence is convergent to the same limit and thus
+sequences of $f$ converge to the same limit as well.
+
+
+\section*{5.4.1}
+
+\textit{Sketch a graph of $(1/2)h(2x)$ on $[-2, 3]$. Give a qualitative
+  description of the functions}
+$$h_n(x) = \frac{1}{2^n}h(2^nx)$$
+\textit{as $n$ gets larger.}
+
+I haven't draws a graph, but as I understand the main idea here is that the
+functtion becomes more and more "compressed" when the values as values
+of $n$ increase.
+
+\section*{5.4.2}
+\textit{Fix $x \in R$. Argue that the series}
+$$\sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
+\textit{converges absolutely and thus $g(x)$ is properly defined.}
+
+$0 \leq h(x) \leq 1$. Therefore
+$$\sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
+is increasing and bounded above by $\sum{1/2^n}$, therefore it is convergent.
+
+\section*{5.4.3}
+\textit{Taking the continuity of $h(x)$ as given, reference the proper
+  theorems from Chapter 4 that imply that the finite sum}
+$$g_m(x) = \sum_{n = 0}^{m}{\frac{1}{2^n} h (2^nx)}$$
+\textit{is continous on $R$}
+
+The only two theorems that come to mind are Alebraic Continuity Theorem (4.3.4)
+and Composition of Continous Functions (4.3.9).
+They are sufficient enough to make this function continous
+(i.e $h$ and $2^nx$ are continous, therefore (CoCF) $h(2^nx)$ is continous,
+therefore (ACT) $\frac{1}{2^n} h(2^nx)$ is continous, therefore (ACT)
+$\sum_{n = 0}^{m} \frac{1}{2^n} h(2^nx)$ is continous).
+
+
+\section*{5.4.4}
+\textit{Show that}
+$$\frac{g(x_m) - g(0)}{x_m - 0} = m + 1$$
+\textit{and use this to prove that $g'(0)$ does not exist.}
+
+Firstly,
+$$(x_m) = 1/2^m$$
+$$g(x) = \sum_{n = 0}^{\infty}{h_n(x)} =
+\sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
+
+Thus
+$$g(x_m) = \sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^n \frac{1}{2^m})} = 
+\sum_{n = 0}^{\infty}{2^{-n}h(2^{n - m})} =
+\sum_{n = 0}^{\infty}{2^{-m}2^{-n + m} h(2^{n - m})} =
+2^{-m} \sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n - m})} = $$
+$$
+= x_m \sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n - m})}
+= x_m \left(\sum_{n = 0}^{m}{2^{-n + m} h(2^{n - m})} + 
+\sum_{n = m + 1}^{\infty}{2^{-n + m} h(2^{n - m})}\right)
+$$
+For every even $j$ $h(j) = 0$. Thus we can state that
+$$\sum_{n = m + 1}^{\infty}{2^{-n + m} h(2^{n - m})} =
+\sum_{n = m + 1}^{\infty}{2^{-n + m} * 0 } = 0
+$$
+and for $x \in [0, 1]$ $x = |x| = h(x)$. Thus
+$$\sum_{n = 0}^{m}{2^{-n + m} h(2^{n - m})} =
+\sum_{n = 0}^{m}{2^{-n + m} 2^{n - m}} =
+\sum_{n = 0}^{m}{2^0} =
+\sum_{n = 0}^{m}{1} =
+1 + \sum_{n = 1}^{m}{1} =
+m + 1
+$$
+thus
+$$
+x_m \left(\sum_{n = 0}^{m}{2^{-n + m} h(2^{n - m})} + 
+  \sum_{n = m + 1}^{\infty}{2^{-n + m} h(2^{n - m})}\right) =
+x_m \left(m + 1 + 0\right) =
+x_m \left(m + 1\right)
+$$
+thus
+$$g(x_m) = x_m(m + 1)$$
+$$\frac{g(x_m)}{x_m} = m + 1$$
+$$\frac{g(x_m) + 0}{x_m + 0} = m + 1$$
+and because $g(0) = 0$
+$$\frac{g(x_m) + g(0)}{x_m + 0} = m + 1$$
+
+Because of this we can state that there exists sequence $(x_m) \to 0$
+where $x_m \neq 0$ and $\lim{f(x_m) } = \infty$. Thus the limit of 
+$$\frac{g(x_m) + g(0)}{x_m + 0}$$
+does not exist. Therefore $g'(0)$ does not exist, as desired.
+
 
 
 \end{document}

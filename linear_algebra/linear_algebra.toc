@@ -1,2 +1,2 @@
-\contentsline {chapter}{\numberline {1}1.A $R^n$ and $C^n$}{3}{}%
-\contentsline {chapter}{\numberline {2}1B Definition of Vector Space}{6}{}%
+\contentsline {chapter}{\numberline {1}1.A $R^n$ and $C^n$}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}1.B Definition of Vector Space}{6}{chapter.2}%
