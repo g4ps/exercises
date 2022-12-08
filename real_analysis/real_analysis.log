@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  7 DEC 2022 23:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  9 DEC 2022 00:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -365,16 +365,16 @@ Chapter 1.
 ] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
 [19] [20] [21] [22] [23] [24] [25]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-116.
+119.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1116.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1119.
 
  [26]
-Overfull \hbox (23.19232pt too wide) in paragraph at lines 1171--1174
+Overfull \hbox (23.19232pt too wide) in paragraph at lines 1174--1177
 []\OT1/cmr/m/n/10.95 We re-move one el-e-ment at ev-ery it-er-a-tion from $\OML
 /cmm/m/it/10.95 F$ \OT1/cmr/m/n/10.95 ev-ery it-er-a-tion, there-fore $\OMS/cms
 y/m/n/10.95 f\OML/cmm/m/it/10.95 s[]\OT1/cmr/m/n/10.95 (1)\OML/cmm/m/it/10.95 ;
@@ -384,10 +384,10 @@ m/n/10.95 j\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 g$
 
 [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
 
-LaTeX Warning: Command \textsection invalid in math mode on input line 1756.
+LaTeX Warning: Command \textsection invalid in math mode on input line 1759.
 
 
-LaTeX Warning: Command \textsection invalid in math mode on input line 1756.
+LaTeX Warning: Command \textsection invalid in math mode on input line 1759.
 
 Missing character: There is no § in font cmr10!
 [39] [40]
@@ -395,7 +395,7 @@ Chapter 2.
 [41
 
 ] [42] [43] [44]
-Overfull \hbox (33.66159pt too wide) in paragraph at lines 1984--1985
+Overfull \hbox (33.66159pt too wide) in paragraph at lines 1987--1988
 []\OT1/cmr/m/it/10.95 (b) What does your def-i-ni-tion in (a) say about the par
 -tic-u-lar se-quence $\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/1
 0.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/
@@ -406,7 +406,7 @@ m/n/10.95 0\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1
  []
 
 [45] [46] [47]
-Overfull \hbox (22.53769pt too wide) in paragraph at lines 2132--2133
+Overfull \hbox (22.53769pt too wide) in paragraph at lines 2135--2136
 \OT1/cmr/m/it/10.95 Let $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/
 n/10.95 )$ \OT1/cmr/m/it/10.95 and $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 y[]
 \OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.95 be given, and dee-fine $\OT1/cmr/m/n/
@@ -418,7 +418,7 @@ he "shuf-fled" se-quence $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]; x[]
 [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62]
 [63] [64] [65] [66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
 [78] [79]
-Overfull \hbox (7.54654pt too wide) detected at line 3537
+Overfull \hbox (7.54654pt too wide) detected at line 3540
 \OML/cmm/m/it/10.95 l[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it
 /10.95 x[]y[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 + \OMS/cmsy/m/n/10.95 j\O
 ML/cmm/m/it/10.95 x[]y[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 + \OML/cmm/m/i
@@ -436,7 +436,7 @@ sy/m/n/10.95 j\OML/cmm/m/it/10.95 x[]\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/10.95 =
  []
 
 [80] [81] [82] [83]
-Overfull \hbox (11.30057pt too wide) in paragraph at lines 3734--3735
+Overfull \hbox (11.30057pt too wide) in paragraph at lines 3737--3738
 \OT1/cmr/m/it/10.95 Find ex-am-ples of two se-ries $[] \OML/cmm/m/it/10.95 a[]$
  \OT1/cmr/m/it/10.95 and $[] \OML/cmm/m/it/10.95 b[]$ \OT1/cmr/m/it/10.95 both 
 of which di-verge, but for which $[] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95
@@ -444,7 +444,7 @@ of which di-verge, but for which $[] []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95
  []
 
 [84] [85]
-Overfull \hbox (7.36441pt too wide) detected at line 3806
+Overfull \hbox (7.36441pt too wide) detected at line 3809
 \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 s[]y[] \OT1/cmr
 /m/n/10.95 + \OML/cmm/m/it/10.95 s[]y[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
 0.95 s[]y[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 s[]y[] \OMS/cmsy/m/n/10.95
@@ -464,19 +464,19 @@ Chapter 4.
 [120
 
 ] [121] [122] [123] [124] [125] [126] [127] [128] [129] [130]
-Overfull \hbox (26.35402pt too wide) detected at line 5982
+Overfull \hbox (26.35402pt too wide) detected at line 5985
 \OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[] ^^
 @ []j ^^C \OT1/cmr/m/n/10.95 1 = \OMS/cmsy/m/n/10.95 j[] ^^@ []j[] \OT1/cmr/m/n
 /10.95 = []
  []
 
 
-Overfull \hbox (32.7789pt too wide) detected at line 6007
+Overfull \hbox (32.7789pt too wide) detected at line 6010
 [] \OT1/cmr/m/n/10.95 = [] = [] =
  []
 
 [131] [132] [133] [134] [135] [136] [137] [138]
-Overfull \hbox (17.50099pt too wide) in paragraph at lines 6410--6411
+Overfull \hbox (17.50099pt too wide) in paragraph at lines 6413--6414
 []\OT1/cmr/m/it/10.95 (d) Fi-nally, prove that if $\OML/cmm/m/it/10.95 x$ \OT1/
 cmr/m/it/10.95 is any ar-bi-trary point in $\OML/cmm/m/it/10.95 R$ \OT1/cmr/m/i
 t/10.95 then the se-quence $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x; f\OT1/cm
@@ -486,7 +486,7 @@ x\OT1/cmr/m/n/10.95 ))\OML/cmm/m/it/10.95 ; :::\OT1/cmr/m/n/10.95 )$
  []
 
 [139] [140] [141] [142] [143] [144]
-Overfull \hbox (17.48622pt too wide) detected at line 6700
+Overfull \hbox (17.48622pt too wide) detected at line 6703
 \OMS/cmsy/m/n/10.95 j[] ^^@ []j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \
 OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 j[]j \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n
 /10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 ^^@ \OML/
@@ -501,41 +501,52 @@ Chapter 5.
 [167
 
 ]
-Overfull \hbox (53.95549pt too wide) detected at line 7793
+Overfull \hbox (53.95549pt too wide) detected at line 7796
 [] \OT1/cmr/m/n/10.95 = [] = [] = [] = [] =
  []
 
 
-Overfull \hbox (64.05911pt too wide) detected at line 7801
+Overfull \hbox (64.05911pt too wide) detected at line 7804
 \OT1/cmr/m/n/10.95 = [][] = [] [] =
  []
 
 
-Overfull \hbox (26.31538pt too wide) detected at line 7813
+Overfull \hbox (26.31538pt too wide) detected at line 7816
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f=g\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it
 /10.95 c\OT1/cmr/m/n/10.95 ) = [] [] [] = []
  []
 
 [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179]
 [180] [181] [182]
-Overfull \hbox (1.26588pt too wide) detected at line 8492
+Overfull \hbox (1.26588pt too wide) detected at line 8495
 [] [] \OT1/cmr/m/n/10.95 = [] = [] = [] [] = [] [] = [] [] =
  []
 
 [183]
-Overfull \hbox (38.91061pt too wide) detected at line 8556
+Overfull \hbox (38.91061pt too wide) detected at line 8559
 \OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10
 .95 ) = [] [] = [] [] = [] [] = 2[] [] [] =
  []
 
-[184] [185] (./real_analysis.aux)
+[184]
+Overfull \hbox (7.23228pt too wide) detected at line 8603
+\OML/cmm/m/it/10.95 g\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[] \OT1/cmr/m/n/1
+0.95 + 1) = [] [] = [] [] = [] [] =
+ []
+
+
+Overfull \hbox (20.87917pt too wide) detected at line 8611
+\OT1/cmr/m/n/10.95 = 2[] [] = 2[] [] =
+ []
+
+[185] [186] [187] [188] (./real_analysis.aux)
 Package rerunfilecheck Info: File `real_analysis.out' has not changed.
 (rerunfilecheck)             Checksum: 7A2A02924DED4B2DEB54762D13489299;730.
  ) 
 Here is how much of TeX's memory you used:
- 9476 strings out of 478268
- 143989 string characters out of 5846347
- 451965 words of memory out of 5000000
+ 9480 strings out of 478268
+ 144025 string characters out of 5846347
+ 452965 words of memory out of 5000000
  27134 multiletter control sequences out of 15000+600000
  481960 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -559,10 +570,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on real_analysis.pdf (186 pages, 724077 bytes).
+Output written on real_analysis.pdf (189 pages, 731005 bytes).
 PDF statistics:
- 1274 PDF objects out of 1440 (max. 8388607)
- 1037 compressed objects within 11 object streams
- 453 named destinations out of 1000 (max. 500000)
+ 1289 PDF objects out of 1440 (max. 8388607)
+ 1049 compressed objects within 11 object streams
+ 457 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

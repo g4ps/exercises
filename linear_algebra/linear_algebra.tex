@@ -204,7 +204,49 @@ $$\infty + (-\infty) = 0$$
 \textit{Is $R \cup \{\infty\} \cup \{-\infty\}$ a vector space over
   $R$? Explain.}
 
-I don't think that it is, TODO.
+I don't think that it is.
 
+$$(t + \infty) - \infty = \infty - \infty = 0$$
+$$t + (\infty - \infty) = t + 0 = t$$
+thus
+$$t + (\infty - \infty) \neq (t + \infty) - \infty$$
+thus 
+$R \cup \{\infty\} \cup \{-\infty\}$ is not associative, therefore it is
+not a vector space.
+
+\chapter{1.C Subspaces}
+
+\section*{1}
+\textit{For each of the following subsets of $F^3$, determine whether it is a
+  subspace of $F^3$:}
+
+\textit{(a) $\{(x_1, x_2, x_3) \in F^3: x_1 + 2x_2 + 3x_3 = 0\}$}
+
+Yes, it is. $0$ is contained within it.
+$$(x_1, x_2, x_3) + (y_1, y_2, y_3) = (x_1 + y_1, x_2 + y_2, x_3 + y_3)$$
+therefore
+$$x_1 + y_1 + 2(x_2 + y_2) +  3(x_3 + y_3) =
+x_1 + 2x_2 + 3x_3 + y_1 + 2y_2 + 3y_3 = 0+ 0 = 0$$
+therefore it is closed under addition
+$$n(x_1, x_2, x_3) = (nx_1, nx_2, nx_3)$$
+$$nx_1 + 2nx_2 + 3nx_3 = n(x_1 + 2x_2 + 3x_3 ) = 0n = 0$$
+therefore it is closed under multiplication.
+
+\textit{(b) $\{(x_1, x_2, x_3) \in F^3: x_1 + 2x_2 + 3x_3 = 4\}$}
+
+It's not a subspace, because it does not contain zero.
+
+
+\textit{(c) $\{(x_1, x_2, x_3) \in F^3: x_1 x_2 x_3 = 0\}$}
+
+It's not a subspace, because
+$$(0, 1, 1) + (1, 0, 0) = (1, 1, 1)$$
+therefore it's not closed under addition.
+
+\textit{(d) $\{(x_1, x_2, x_3) \in F^3: x_1  = 5x_3\}$}
+
+It's a subspace, proof is the same as in (a), can be seen more clearly when we
+rewrite constraint as
+$$x_1 = 5x_3 \to x_1 + 0x_2 -5x_3 = 0$$
 
 \end{document}

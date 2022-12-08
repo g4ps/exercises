@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  7 DEC 2022 23:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  9 DEC 2022 00:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,15 +368,19 @@ m/n/10 )\OML/cmm/m/it/10 ^^U
 Chapter 2.
 [6
 
-] [7] [8] (./linear_algebra.aux)
+] [7] [8]
+Chapter 3.
+[9
+
+] [10] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 61A88E216EC13B59F9A7BA1670D9F9FA;322.
+(rerunfilecheck)             Checksum: CD4431341CE0D315A74983B068982D90;433.
  ) 
 Here is how much of TeX's memory you used:
- 8543 strings out of 478268
- 131766 string characters out of 5846347
- 421612 words of memory out of 5000000
- 26640 multiletter control sequences out of 15000+600000
+ 8549 strings out of 478268
+ 131821 string characters out of 5846347
+ 421614 words of memory out of 5000000
+ 26641 multiletter control sequences out of 15000+600000
  484242 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,63p,254b,345s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -395,10 +399,10 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (9 pages, 182857 bytes).
+Output written on linear_algebra.pdf (11 pages, 188603 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 33 named destinations out of 1000 (max. 500000)
+ 25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

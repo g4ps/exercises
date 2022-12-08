@@ -22,6 +22,9 @@ evaluated by anyone who matters. There are a lot of mistakes out  there, both
 in mathematical and logical parts, and in the language they were written as
 well. I am doing this kind of stuff for fun, so cut me some slack.
 
+If for some god-forsaken reason you decide to copy or use this book for
+any reason, then you are free to do so.
+
 \chapter{Real Numbers}
 
 \section*{1.2.1}
@@ -8590,6 +8593,156 @@ where $x_m \neq 0$ and $\lim{f(x_m) } = \infty$. Thus the limit of
 $$\frac{g(x_m) + g(0)}{x_m + 0}$$
 does not exist. Therefore $g'(0)$ does not exist, as desired.
 
+\section*{5.4.5}
+\textit{(a) Modify the previous argument to show that $g'(1)$ does not exist.
+  Show that $g'(1/2)$ does not exist.}
 
+$$g(x_m + 1) = \sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^n (\frac{1}{2^m} + 1))}
+= 
+\sum_{n = 0}^{\infty}{2^{-n}h((2^{n - m} + 2^n)} =
+\sum_{n = 0}^{\infty}{2^{-m}2^{-n + m} h(2^{n - m} + 2^n)} =$$
+$$ = 2^{-m} \sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n - m} + 2^n)} =
+2^{-m} \left(2^m h(2^{-m} + 1) +
+  \sum_{n = 1}^{\infty}{2^{-n + m} h(2^{n - m} + 2^n)}\right) = $$
+$$ = 2^{-m} \left(2^m h(2^{-m} + 1) +
+  \sum_{n = 1}^{\infty}{2^{-n + m} h(2^{n - m} )}\right) =
+2^{-m} \left(2^m (1 - 2^{-m}) +
+  \sum_{n = 1}^{\infty}{2^{-n + m} h(2^{n - m} )}\right) =
+$$
+$$
+=  2^{-m} \left(2^m - 1 + 
+  \sum_{n = 1}^{\infty}{2^{-n + m} h(2^{n - m} )}\right) =
+2^{-m} \left(2^m - 1 + m\right) =  1 + x_m(m - 1)
+$$
+thus
+$$\frac{g(1 + x_m) - g(1)}{x_m + 1 - 1} =
+\frac{1 + x_m(m + 1)) - 1}{x_m } =
+\frac{x_m(m + 1))}{x_m } =
+m + \frac{1}{x_m } = m + 2^m$$
+Because of this we can state that there exists sequence $(1 + x_m) \to 1$
+where $(1 + x_m) \neq 0$ and $\lim{f(1 + x_m) } = \infty$. Thus the limit of 
+$$\frac{g(x_m + 1) - g(1)}{1 + x_m - 1}$$
+does not exist. Therefore $g'(1)$ does not exist, as desired.
+
+For $1/2$ we've got
+$$g(x_m + 1) =
+2^{-m}\sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n}(2^-1 + 2^{-m}))} =
+2^{-m}\sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n - 1} + 2^{n - m}))} =
+$$
+for 
+$$
+=
+2^{-m}\left(2^m h(2^{-1} + 2^{-m}) + 2^{m - 1}h(2^0 + 2^{1 - m}) + \sum_{n = 2}^{\infty}{2^{-n + m} h(2^{n - 1} + 2^{n - m}))}\right) =
+$$
+$$
+=
+2^{-m}\left(2^m h(2^{-1} + 2^{-m}) + 2^{m - 1}h(1 + 2^{1 - m}) + \sum_{n = 2}^{\infty}{2^{-n + m} h(2^{n - 1} + 2^{n - m}))}\right)
+$$
+for $m > 2$
+$$
+2^{-m}\left(2^m (1/2 + 2^{-m}) + 2^{m - 1}(1 - 2^{1 - m}) + \sum_{n = 2}^{\infty}{2^{-n + m} h(2^{n - 1} + 2^{n - m}))}\right) =
+$$
+$$=
+2^{-m}\left(2^m (1/2 + 2^{-m}) + 2^{m - 1}(1 - 2^{1 - m}) + \sum_{n = 2}^{m}{1)}\right) =
+$$
+$$=
+2^{-m}\left((2^{m - 1} + 1) + (2^{m - 1} - 1) + m - 1\right) =
+2^{-m}\left(2^{m}  + m - 1\right) = 1 + x_m\left( m - 1\right)
+$$
+thus
+$$\frac{g(1/2 + x_m) - g(1/2)}{x_m + 1/2 - 1/2} =
+\frac{1 + x_m( m - 1) - (1/2 + 1/2)}{x_m} =
+\frac{x_m(m - 1))}{x_m } =
+m - \frac{1}{x_m } = m - 2^m$$
+Because of this we can state that there exists sequence $(1/2 + x_m) \to 1/2$
+where $(1/2 + x_m) \neq 0$ and $\lim{f(1/2 + x_m) } = -\infty$.
+Thus the limit of 
+$$\frac{g(x_m + 1/2) - g(1/2)}{1/2 + x_m - 1/2}$$
+does not exist. Therefore $g'(1/2)$ does not exist, as desired.
+
+\textit{(b) Show that $g'(x)$ does not exist for any rational number of the
+  form $x = p/2^k$ where $p \in Z$ and $k \in N \cup \{0\}$}
+
+Suppose that $x = p/2^k = 2^{-k}p$.
+$$g(x_m + 1) =
+2^{-m}\sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n}(2^{-k}p + 2^{-m}))} =
+$$
+
+Thus for $m > k$
+$$
+2^{-m}
+\left(\sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n}(2^{-k}p + 2^{-m}))}\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{\infty}{2^{-n + m} h(2^{n -k}p + 2^{n-m}))}\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = k + 1}^{\infty}{2^{-n + m} h(2^{n -k}p + 2^{n-m})}\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{m}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = m + 1}^{\infty}{2^{-n + m} h(2^{n -k}p + 2^{n-m})}\right) =
+$$
+$2^{n -k}p + 2^{n-m}$ is even therefore $h(2^{n -k}p + 2^{n-m}) = 0$.  Thus
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{m}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = m + 1}^{\infty}{2^{-n + m} h(2^{n -k}p + 2^{n-m})}\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{m}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} \right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = k + 1}^{m}{2^{-n + m} h(2^{n -k}p + 2^{n-m})}
+\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = k + 1}^{m}{2^{-n + m} h(2^{n-m})}
+\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+  \sum_{n = k + 1}^{m}{(1))}
+\right) =
+$$
+$$
+= 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+(m - k)
+\right)=
+$$
+if $2^{n -k}p + 2^{n-m} \leq 1$
+$$
+2^{-m}
+\left(\sum_{n = 0}^{k}{2^{-n + m} h(2^{n -k}p + 2^{n-m})} +
+(m - k)
+\right) = 2^{-m}
+\left(\sum_{n = 0}^{k}{2^{n -k + m}p + 1} + (m - k)
+\right) 
+$$
+$$=2^{-m} \left(k + 1 2^{-k + m}p + (m - k) \right)
+=2^{-m} \left( 1 + 2^{-k + m}p + m \right)
+=2^{-k}p + 2^{-m} ( 1  + m)
+$$
+Thus
+$$\frac{g(x + x_m) - g(x)}{x_m + x - x} = \frac{g(x + x_m) - g(x)}{x_m} =
+\frac{x + x_m(m + 1) - x}{x_m} =
+m + 1$$
+
+There's a mistake here somewhere but I can't find it. TODO.
+
+\textit{Going to skip the last two exercises here for how, as they are
+  dependant on the given exercise. Might come
+  back to them later. TODO.}
 
 \end{document}
