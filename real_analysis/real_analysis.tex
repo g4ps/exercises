@@ -8846,6 +8846,34 @@ $$h_n(x) = \frac{x}{1 + x^n}$$
 
 \textit{(a) Find the pointwise limit of $(h_n)$ on $[0, \infty)$.}
 
+I think that it is something along the lines of
+$$
+f_x =
+\begin{cases}
+  x \text{ if } x \in [0, 1) \\
+  1/2 \text{ if } x \in \{1\} \\
+  0 \text{ otherwise }
+\end{cases}
+$$
 
+For $[0, 1)$ we've got $x^n \to 0$, thus
+$$\lim_{n \to \infty}{\frac{x}{1 + x^n}} = \frac{x}{1} = x$$
+for $1$ we've got $x^n \to 1$, and for $x > 1$ $x^n \to \infty$.
+(I can't justify more than that)
+
+\textit{(b) Explain how we know that the convergence cannot be uniform
+  on $[0, \infty)$}
+
+It's not continous and therefore convergence cannot be uniform.
+
+\textit{(c) Choose a smaller set over which the convergence is uniform and
+  supply an argument to show that this is indeed the case.}
+
+Let's try $[0, 5]$. It follows that
+$$\left|\frac{x}{1 + x^n} - x\right|  =
+\left|\frac{x - x - x^n}{1 + x^n}\right|  =
+\left|\frac{ - x^n}{1 + x^n}\right|  =
+\frac{ x^{n + 1}}{1 + x^n}  =
+$$
 
 \end{document}
