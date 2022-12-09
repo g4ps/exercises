@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  9 DEC 2022 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  9 DEC 2022 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -539,15 +539,19 @@ Overfull \hbox (20.87917pt too wide) detected at line 8611
 \OT1/cmr/m/n/10.95 = 2[] [] = 2[] [] =
  []
 
-[185] [186] [187] [188] (./real_analysis.aux)
+[185] [186] [187] [188] [189]
+Chapter 6.
+[190
+
+] [191] [192] (./real_analysis.aux)
 Package rerunfilecheck Info: File `real_analysis.out' has not changed.
-(rerunfilecheck)             Checksum: 7A2A02924DED4B2DEB54762D13489299;730.
+(rerunfilecheck)             Checksum: 63133B237CA6A65D4C8D14883F5AF26B;950.
  ) 
 Here is how much of TeX's memory you used:
- 9480 strings out of 478268
- 144025 string characters out of 5846347
+ 9491 strings out of 478268
+ 144137 string characters out of 5846347
  452965 words of memory out of 5000000
- 27134 multiletter control sequences out of 15000+600000
+ 27135 multiletter control sequences out of 15000+600000
  481960 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,323b,345s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -570,10 +574,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on real_analysis.pdf (189 pages, 731005 bytes).
+Output written on real_analysis.pdf (193 pages, 740920 bytes).
 PDF statistics:
- 1289 PDF objects out of 1440 (max. 8388607)
- 1049 compressed objects within 11 object streams
- 457 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1317 PDF objects out of 1440 (max. 8388607)
+ 1073 compressed objects within 11 object streams
+ 467 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
