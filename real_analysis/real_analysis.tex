@@ -9013,6 +9013,141 @@ as desired.
   $f_n$ is uniformly continous on $A$. Prove taht $f$ is uniformly continous
   on $A$.}
 
-Let $\epsilon > 0$. It follows that there exists $f_n$ such that TODO
+Let $\epsilon > 0$. It follows that there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that
+$$|f_n(x) - f(x)| < \epsilon/3$$
+
+Because $f_n$ is
+uniformly continous it follows that there exists $\delta > 0$ such that
+for all $c \in A$
+$$|x - c| < \delta  \to |f_n(x) - f_n(c)| < \epsilon/3$$
+
+Thus we can add some things to inequality on the left
+$$|x - c| < \delta  \to |f(x) - f_n(x)| +
+| f(c) - f_n(c) | + |f_n(x) - f_n(c)| < \epsilon/3 + \epsilon/3 + \epsilon/3$$
+by summing up right hand side and using absolute value identities we get
+$$|x - c| < \delta  \to |f(x) - f_n(x)| +
+| f_n(c) - f(c) | + |f_n(x) - f_n(c)| < \epsilon$$
+Using triangle inequality we get
+$$|x - c| < \delta  \to |f(x) - f_n(x) +
+f_n(c) - f(c)  + f_n(x) - f_n(c)| < \epsilon$$
+$$|x - c| < \delta  \to |f(x) - f(c)| < \epsilon$$
+thus $f$ is uniformly continous at $A$, as desired.
+
+\section*{6.2.8}
+\textit{Decide which if the following conjectures arre true and which are
+  false. Supply a proof for those that are valid and a counterexample for
+  each one that is not }
+
+\textit{(a) If $f_n \to f$ pointwise on a compact set $K$, then $f_n \to f$
+  uniformy on $K$.}
+
+False. Think of $f(x) = x^n$ on $[0, 1]$.
+
+\textit{(b) If $f_n \to f$ uniformly on $A$ and $g$ is a bounded function on
+  $A$, then $f_ng \to fg$ uniformly on $A$.}
+
+(WRONG)
+False. Let $g$ be a Dirichlet's function, and $f_n = n/n 1 = 1$,
+therefore $fg$ won't be a continous function, therefore $f_ng$ does not
+converge uniformly
+
+\textit{(c) If $f_n \to f$ uniformly on $A$, and if each $f_n$ is bounded
+  on $A$, then $f$ must be also bounded.}
+
+I think that this one is true. Suppose that $\epsilon > 0$. It follows that
+there exists $N$ such that $|f_N - f| < \epsilon$ for all $x \in A$. Thus
+it follows that for every $x \in A$
+$$|f(x) - f_N| < \epsilon$$
+$$-\epsilon + f_N(x)< f(x)  < \epsilon + f_N(x)$$
+because $f_N$ is bounded there exists $M > 0$ such that
+$|f_N(x)| < M$ for all $x \in A$. Therefore
+$$-\epsilon + f_N(x)< f(x)  < \epsilon + f_N(x)$$
+implies
+$$-\epsilon - M < f(x)  < \epsilon + M$$
+for all $x \in A$. Therefore $f$ is bounded.
+
+\textit{(d) If $f_n \to f$ uniformly on a set $A$, and if $f_n \to f$ uniformly
+  on a set $B$, then $f_n \to f$ uniformly on $A \cup B$.}
+
+I  think that this one is true. Suppose that $\epsilon > 0$. Then there
+exists $N_1$ for $A$, and $N_2$ for $B$, therefore if we pick
+$N = \min\{N_1, N_2\}$ it'll work for both, therefore for a given $\epsilon$
+we'll get corresponding $N$. Maybe i've skipped something, but this looks
+good to me.
+
+\textit{(e) If $f_n \to f$ uniformly on an interval, and if each $f_n$ is
+  increasing, then $f$ is also increasing}
+
+Little notation thing: let $A$ denote interval, on which $f$ is defined.
+
+Seems to be true to me. We need to prove that $x < y$ implies $f(x) \leq f(y)$.
+Something tells me that we should proceed with a proof by contradiction.
+Suppose that $x < y$ and $f(x) > f(y)$. It follows that there exists
+$\epsilon = f(x) - f(y) > 0$. Thus for this $\epsilon$ we've got
+corresponding $N \in \textbf{N}$ such that $n \geq N$ implies that 
+$$|f_n(x) - f(x)| < \epsilon/3$$
+for all $x \in A$.
+
+Thus
+$$|f_n(y) - f(y)| + |f_n(x) - f(x)| < 2/3\epsilon < \epsilon$$
+$$|f_n(y) - f(y)| + |f(x) - f_n(x)| < \epsilon$$
+$$|f_n(y) - f(y) + f(x) - f_n(x)| < \epsilon$$
+$$-\epsilon < f_n(y) - f(y) + f(x) - f_n(x) < \epsilon$$
+$\epsilon = f(x) - f(y)$, therefore
+$$-\epsilon < f_n(y) + \epsilon - f_n(x) < \epsilon$$
+$$-2\epsilon < f_n(y)- f_n(x) < 0$$
+$$ f_n(y)- f_n(x) < 0$$
+$$ f_n(y) < f_n(x)$$
+$$ f_n(x) > f_n(y)$$
+which is a contradiction, because $f_n$ are all increasing.
+
+\textit{(f) Repeat conjecture (e) assuming only pointwise convergence.}
+
+I think, that it is also true, we just need to point out that there
+exists $N_1$ for $x$, $N_2$ for $y$, and then pick $N$ to be the maximum of
+two of them and everything else in (e) will hold.
+
+\section*{6.2.9}
+\textit{Assume $(f_n)$ converges uniformly to $f$ on a compact set $K$, and
+  let $g$ be a continous function on $K$ satisfying $g(x) \neq 0$. Show
+  $(f_n/g)$ converges uniformly on $K$ to $f/g$. }
+
+Suppose that $g$ is continous on $K$. It follows that it converges uniformly
+on $K$, and also that it is bounded on $K$. Thus there exists $M > 0$
+such that $|g(x)| < M$.
+
+We need to show that for every $\epsilon > 0$ there exists $N \in \textbf{N}$
+such that for every $x \in K$ we've got
+$$\left|\frac{f(x)}{g(x)} - \frac{f_n(x)}{g(x)}\right|  < \epsilon$$
+$$\left|\frac{f(x) - f_n(x)}{g(x)}\right|  < \epsilon$$
+$$\frac{|f(x) - f_n(x)|}{|g(x)|}  < \epsilon$$
+$$|f(x) - f_n(x)|  < \epsilon |g(x)|$$
+
+We know, that $0$ is not in $g(K)$. Therefore, because
+continous functions map compact sets to compact sets, $g(K)$ is compact,
+and therefore $0$ is not a limit point of $g(K)$. Therefore there exists
+a neighborhood $V_\delta(0)$, such that it does not intersect $g(K)$.
+Thus we can state that $|g(x)| > \delta$. Thus
+$$|f(x) - f_n(x)|  < \epsilon \delta$$
+implies
+$$|f(x) - f_n(x)|  < \epsilon |g(x)|$$
+
+Therefore for eny $\epsilon > 0$ we can pick $N \in \textbf{N}$ such that
+$$|f(x) - f_n(x)|  < \epsilon \delta$$
+and this $N$ will satisty
+$$\left|\frac{f(x)}{g(x)} - \frac{f_n(x)}{g(x)}\right|  < \epsilon$$
+for all $x \in K$. 
+Therefore we can state that $f/g$ is uniformly continous at $K$, as desired.
+
+\section*{6.2.10}
+\textit{Let $f$ be uniformly continous on all of $R$, and define a sequence
+  of functions by $f_n(x) = f(x + \frac 1 n)$. Show that $f_n \to f$ uniformly.
+  Give an example to show that this proposition fails if $f$ is only assumed to
+  be continous and not uniformly continous on $R$.}
+
+Let $\epsilon > 0$. It follows that there exists TODO
+
+
 
 \end{document}
