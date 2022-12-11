@@ -4480,9 +4480,11 @@ the closure of union of sets includes zero.
   The general argument is simular.}
 
 \textit{(a) Given a collection of sets $\{E_\lambda: \lambda \in  \Lambda\}$, show that }
-$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c = \cap_{\lambda \in \Lambda} E_\lambda^c$$
-and
-$$\left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c = \cup_{\lambda \in \Lambda} E_\lambda^c$$
+$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c =
+\cap_{\lambda \in \Lambda} E_\lambda^c$$
+\textit{and}
+$$\left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c =
+\cup_{\lambda \in \Lambda} E_\lambda^c$$
 
 Suppose that $x \in \left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$. It
 follows, that $x$ is not in the union of given sets. Therefore there is no
@@ -8869,11 +8871,148 @@ It's not continous and therefore convergence cannot be uniform.
 \textit{(c) Choose a smaller set over which the convergence is uniform and
   supply an argument to show that this is indeed the case.}
 
-Let's try $[0, 5]$. It follows that
+Let's try $[0, 0.5]$. It follows that
 $$\left|\frac{x}{1 + x^n} - x\right|  =
 \left|\frac{x - x - x^n}{1 + x^n}\right|  =
 \left|\frac{ - x^n}{1 + x^n}\right|  =
-\frac{ x^{n + 1}}{1 + x^n}  =
+\frac{ x^{n + 1}}{1 + x^n} 
 $$
+
+It can be shown, that
+$$\frac{ (1/2)^{n + 1}}{1 + (1/2)^n} < \epsilon \to
+\frac{ x^{n + 1}}{1 + x^n} < \epsilon
+$$ 
+
+for any $x \in [0, 0.5]$. (Once again. can't justify moer than that)
+
+
+\section*{6.2.4}
+\textit{For each $n \in N$, find the points on $R$ where the function
+  $f_n(x) = x/(1 + nx^2)$ attains its maximum and minimum values. Use this
+  to prove $(f_n)$ converges uniformly on $R$. What is the limit function?}
+
+$$f_n(x) = x/(1 + nx^2)$$
+$$f_n(x)' = \frac{(1 + nx^2) - x(2nx)}{(1 + nx^2)^2}$$
+$$\frac{(1 + nx^2) - x(2nx)}{(1 + nx^2)^2} = 0$$
+$$(1 + nx^2) - x(2nx) = 0$$
+$$1 + nx^2 - 2nx^2 = 0$$
+$$1 - nx^2 = 0$$
+$$1 = nx^2$$
+$$\pm \sqrt{\frac{1}{n}} = x$$
+
+From graph we cn see that $f$ attains minimum at $-\sqrt{\frac{1}{n}}$
+and maximum at $\sqrt{\frac{1}{n}}$.
+
+therefore maximum and minimum are equal to 
+$$f_n(\pm \sqrt{\frac{1}{n}}) = \frac{\pm \sqrt{\frac{1}{n}}}
+{1 + n(\pm \sqrt{\frac{1}{n}})^2} =
+\frac{\pm \sqrt{\frac{1}{n}}} {1 + n\frac{1}{n}} =
+\frac{\pm \sqrt{\frac{1}{n}}} {2} =
+\pm \frac{1}{2\sqrt{n}} $$
+
+Because maximums of functions converge to 0, we can state that
+there exists $y \in f_n(R)$
+such that $\forall q \in f_m(R): y \leq q$ for all $n \leq m \in N$.
+Same is true for maximums. 
+
+Thus maximum distance between two points for this function is equal to
+$$| \frac{1}{2\sqrt{n}} + \frac{1}{2\sqrt{n}}| = \frac{1}{\sqrt{n}}$$
+which converges to zero.
+
+Thus for given $\epsilon > 0$ there exists $N \in \textbf{N}$ such that
+$n \geq N \to |\frac{1}{\sqrt{n}}| < \epsilon$. Therefore for the same
+$N$ we have
+$$|f_m(x) - f_n(x)| \leq |\frac{1}{\sqrt{n}}| < \epsilon$$
+thus by Cacuhy Criterion for Uniform Conrvegence, the function  is
+uniformly convergent.
+
+The limit function for this sequence is obviously $f(x) = 0$.
+
+\section*{6.2.5}
+\textit{For each $n \in N$, define $f_n$ on $R$ by}
+$$f_n(x) =
+\begin{cases}
+  1 \text{ if } |x| \geq 1/n \\
+  n|x| \text{ if } |x| < 1/n
+\end{cases}
+$$
+\textit{(a) Find the pointwise limit of $(f_n)$ on $R$ and
+  decide whether or not the convergence is uniform. }
+
+Something along the lines of 
+$$f(x) =
+\begin{cases}
+  1 \text{ if } x \neq 0 \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+will do.
+
+By Archimedian property for every $x \in R$ there exists $n \in N$ such that
+$1/n < |x|$, therefore for every $x \neq 0$ there $n \in N$ such that
+$f_n(x) = 1$. For $x = 0$ there does not exist such $n$, therefore $f_n(0) =
+nx = n0 = 0$ for all $n \in N$.
+
+Convergence is ceirtanly not uniform because the resulting function is not
+continous.
+
+\textit{(b) Construct an example of a pointwise limit of continous funcitons
+  that converges everywhere on the compact set $[-5, 5]$ to a limit function
+  that is unbound on this set.}
+
+$$f_n = \frac{1}{x^2 + \frac{1}{n}}$$
+is probably an answer
+
+\section*{6.2.6}
+\textit{Using the Cauchy Criterion for convergent sequences of real numbers
+  (Theorem 2.6.4), supply a proof for Theorem 6.2.5 (First, define a candidate
+  for $f(x)$, and then argue that $f_n \to f$ uniformly)}
+
+Because we've got equivalence in theorem 6.2.5 let us firstly sort
+out forward direction case
+
+\textbf{In forward directioon:}
+
+Suppose that functions $(f_n)$ converge uniformly on $A$ to $f$. It follows,
+that for every $\epsilon > 0$ there exists $N \in \textbf{N}$ such that
+$|f_n(x) - f(x)| < \epsilon$ for every $x \in A$. Thus for any given
+$\epsilon > 0$ we've got the $N \in \textbf{N}$ such that
+$$n \geq N \to |f_n(x) - f(x)| < \epsilon / 2$$
+
+Thus let $m, n \geq N$. It follows that
+$$|f_n(x) - f_m(x)| \leq |f_n(x) - f(x)| + |f_m(x) - f(x)| < \epsilon/2 + \epsilon/2 = \epsilon$$
+$$|f_n(x) - f_m(x)| <  \epsilon$$
+for all $x \in A$.
+
+Now back to our problem
+
+\textbf{In backward direction:}
+
+Suppose that for every $\epsilon > 0$ there exists $N \in \textbf{N}$ such
+that $|f_n(x) - f_m(x)| < \epsilon$ for all $m, n \geq N$ and all $x \in A$.
+
+It follows that for particular $x \in A$ we've got a Cauchy Sequence
+$f_n(x)$. Thus, for each $x \in R$, $(f_n(x))$ is a convergent sequence.
+Let $f: A \to R$ be defined as
+$$f(x) = \lim_{n \to \infty}f_n(x)$$
+thus $f_n$ converges pointwise to $f$.
+
+Now let $\epsilon > 0$. It follows that for some $x \in A$ there exists
+$N_1 \in \textbf{N}$ such that $n \geq N_1$ implies
+$|f_n(x) - f(x)| < \epsilon$. For the same $\epsilon$ there exists
+$N_2 \in \textbf{N}$ such that $n, m \geq N_2$ implies that
+$|f_n(x) - f_m(x)| < \epsilon/3$ for all $x \in A$. Thus
+it follows, that a limit of a sequence should be in $[f_n(x) - \epsilon/3,
+f_n(x) + \epsilon/3]$ for every $x \in A$. Thus for all $x \in A$
+we've got $N = N_2$ such that
+$$n \geq N_2 \to |f(n) - f(x)| \leq \epsilon/ 3 < \epsilon$$
+as desired.
+
+\section*{6.2.7}
+\textit{Assume that $(f_n)$ converges uniformly to $f$ on $A$ and that each
+  $f_n$ is uniformly continous on $A$. Prove taht $f$ is uniformly continous
+  on $A$.}
+
+Let $\epsilon > 0$. It follows that there exists $f_n$ such that TODO
 
 \end{document}
