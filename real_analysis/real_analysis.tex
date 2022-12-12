@@ -9194,8 +9194,130 @@ uniformly.
 \textit{(c) Prove that if there exists an $M > 0$ such taht $|f_n| \leq M$
   and $|g_n| \leq M$ for all $n \in \textbf{N}$, then $(f_n g_n)$
   does converge uniformly.}
+
+Because $g_n(x) \to g(x)$ for every $x \in A$, and
+$|g_n(x)| < M $ we can state by order limit theorem that $|g(x)| < M$.
+Therefore let us have an arbitrary $\epsilon > 0$ and then pick
+$N_1$ for $f$ and $N_2$ for $g$ such that
+$$|f_n(x) - f(x)| < \epsilon/2M$$
+and
+$$|g_n(x) - g(x)| < \epsilon/2M$$
+for every $x \in A$ (uniformly). Then let $N = \max\{N_1, N_2\}$, for
+which derived inequalities will hold as well.
+
+Thus we can state that
+$$|f_n(x) - f(x)| < \epsilon/2M$$
+$$M|f_n(x) - f(x)| < \epsilon/2$$
+$$|g(x)||f_n(x) - f(x)| < \epsilon/2$$
+and
+$$|g_n(x) - g(x)| < \epsilon/2M$$
+$$M|g_n(x) - g(x)| < \epsilon/2$$
+$$|f_n(x)||g_n(x) - g(x)| < \epsilon/2$$
+
+thus
+$$|g(x)||f_n(x) - f(x)| + |f_n(x)||g_n(x) - g(x)| < \epsilon/2 + \epsilon/2$$
+$$|g(x)||f_n(x) - f(x)| + |f_n(x)||g_n(x) - g(x)| < \epsilon$$
+$$|f_n(x)g(x) - f(x)g(x)| + |f_n(x)g_n(x) - f_n(x)g(x)| < \epsilon$$
+$$|f(x)g(x) - f_n(x)g(x)| + | f_n(x)g(x) - f_n(x)g_n(x)| < \epsilon$$
+and by triangle inequality we get
+$$|f(x)g(x) - f_n(x)g(x) + f_n(x)g(x) - f_n(x)g_n(x)| < \epsilon$$
+$$|f(x)g(x)  - f_n(x)g_n(x)| < \epsilon$$
+Thus for any $\epsilon > 0$ there exists $N \in \textbf{N}$, such that
+states equality holds forany $x \in A$, as desired.
+
+\section*{6.2.12}
+\textit{Theorem 6.2.6 has a partial converse. Assume $f_n \to f$ pointwise on
+  a compact set $K$ and assume that for each $x \in K$ the sequence $f_n(x)$
+  is increasing. Follows these steps to show that if $f_n$ and $f$ are
+  continous on $K$, then the convergence is uniform.}
+
+LEt us firstly state the theorem 6.2.6 itself. It follows that
+
+\textit{\textbf{Theorem 6.2.6} Let $(f_n)$ be a sequence of functions defined
+  on $A \subseteq R$ taht converges uniformly on $A$ to a function $f$. If
+  each $f_n$ is continous at $c \in A$, then $f$ is continous at c.}
+
+
+\textit{(a) Set $g_n = f - f_n$ and translate the preceeding hypothesis
+  into statements about the sequence $(g_n)$.}
+
+We can state here that because $f_n$ and $f$ are continous at $K$.
+Therefore $g_n = f - f_n$ is continous as well.
+
+Also, by algebraic properties of limit, $g_x \to 0$ 
+
+Because for each $x \in K$ the sequence $f_n(x)$ is increasing we
+can follow that $f(x) \geq f_n(x) \to f(x) - f_n(x) \geq 0$. Thus
+$g_n(x) \geq 0$ and $(g_n(x))$ is decreasing for every $x \in K$.
+
+\textit{(b) Let $\epsilon > 0$ be arbitrary, and define
+  $K_n = \{x \in K: g_n(x) \geq \epsilon\}$. Argue that $K_1 \supseteq K_2
+  \supseteq K_3 ...$ is a nested sequence of compact sets, and use this
+  observation to finish the arguent.}
+
+Firstly we need to remind ourselves that $\emptyset$ is a compact set.
+
+Every $K_n$ is a subset of $K$, which is bounded. Therefore
+each $K_n$ is bounded as well.
+
+Now suppose that $x$ is a limit point of $K_n$. It follows that there
+exists a sequence $(x_n) \to x$ in $K_n \setminus x$.
+Because every  $g_n$ is continous it follows that $g_n(x_n) \to g_n(x)$.
+By the definition of $K$ it follows that  $g_n(x_n) \geq \epsilon$ and
+therefore limit $g_n(x) \geq \epsilon$. Thus $x \in K$, therefore
+$K_n$ contains its limit points, therefore it is closed.
+Therefore we can state that the set $K_n$ is closed and bounded and therefore
+it is compact.
+
+$(g_n(x))$ is decreasing, therefoer $n_1 > n_2 \to g_{n_1}(x) \leq g_{n_2}(x)$.
+Therefore we can state that $x \in K_{n_1} \to x \in K_{n_2}$. Therefore
+$K_{n_1} \subseteq K_{n_2}$. Thus
+$$K_1 \supseteq K_2  \supseteq K_3 \supseteq ... $$
+as desired.
+
+
+We need to prove that for every $\epsilon > 0$ there exists $N \in \textbf{N}$
+such that $n \geq N$ implies
+$$|f(x) - f_n(x)| < \epsilon$$
+which is equivalent to 
+$$|g_n(x)| < \epsilon$$
+
+If every $K_n$ is nonempty, then it follows, that intersection of
+$K_n$'s are nonempty, therefore there exists $x \in K$ such that
+$$|f(x) - f_n(x)| \geq \epsilon$$
+for every $\epsilon > 0$, therefire $f_n$ does not converge (even pointwisely)
+to $f$, which is a contradiction.
+
+Therefore for every $\epsilon$ there exists $n \in N$ such that
+$K_n = \emptyset$. Therefore $g_n(x) < \epsilon$ for every $x \in K$.
+therefore
+$$g_n(x) < \epsilon$$
+$$|g_n(x)| < \epsilon$$
+$$|f - f_n| < \epsilon$$
+therefore the function is uniformly continous, as desired.
+
+
+\section*{6.2.13 (Cantor Function)}
+\textit{Review the construction of the Cantor set $C \subseteq [0, 1]$ from
+  Section 3.1. This exercise makes use of results and notation from this
+  discussion.}
+
+\textit{(a) Define $f_0(x) = x$ for all $x \in [0, 1]$. Now let }
+$$f_1(x) =
+\begin{cases}
+  (3/2)x \text{ for } 0 \leq x \leq 1/3 \\
+  1/2 \text{ for } 1/3 < x < 2/3 \\
+  (3/2)x - 1/2 \text{ for } 2/3 \leq x \leq 1
+\end{cases}
+$$
+\textit{Sketch $f_0$ and $f_1$ over $[0, 1]$ and observe that $f_1$ is
+  continous, increasing, and constant on the middle third
+  $(1/3, 2/3) = [0, 1] \setminus C_1$}
+
+Sketched it in a notepad, seems to be true. TODO: add pictures
+
+\textit{(b) Conctruct $f_2$ by imitating this process of flattening out the
+  middle third }
 TODO
-
-
 
 \end{document}
