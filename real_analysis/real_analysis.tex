@@ -9146,7 +9146,55 @@ Therefore we can state that $f/g$ is uniformly continous at $K$, as desired.
   Give an example to show that this proposition fails if $f$ is only assumed to
   be continous and not uniformly continous on $R$.}
 
-Let $\epsilon > 0$. It follows that there exists TODO
+Let $\epsilon > 0$. It follows that there exists $\delta > 0$ such that
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+
+Thus for given $\delta$ there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that $1/n < \delta$. Thus
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+$$|x - (x + 1/n)| < \delta \to |f(x) - f(x + 1/n)| < \epsilon$$
+$$|x - (x + 1/n)| < \delta \to |f(x) - f_n(x)| < \epsilon$$
+
+Thus for every $\epsilon > 0$ there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that $|f(x) - f_n(x)| < \epsilon$. Therefore
+$f_n$ onverges uniformly to $f$, as desired.
+
+For $f(x) = x^2$ we've got
+$$|f(x) - f(x + 1/n)| = |x^2 - (x + 1/n)^2| = |-2x/n - 1/n^2|$$
+which is unbounded as $x$ becomes greater, therefore there does not
+exist single sufficient $n$ for every $x$, therefore convergence is
+not uniform.
+
+\section*{6.2.11}
+\textit{Assume $(f_n)$ and $(g_n)$ are uniformly convergent sequences of
+  functions.}
+
+\textit{(a) Show that $(f_n + g_n)$ is a uniformly convergent sequence of
+  functions.}
+
+Let $\epsilon > 0$. It follows that for $\epsilon/2$
+there exist corresponding $N_1$ and $N_2$ for $f_n$ and $g_n$. Thus
+if we pick $N = \max\{N_1, N_2\}$
+
+$$|f_n(x) - f(x)| < \epsilon/$$
+$$|g_n(x) - g(x)| < \epsilon/2$$
+
+$$|f_n(x) - f(n)| + |g_n(x) - g(x)| < 2\epsilon/2$$
+$$|f_n(x) - f(n) + g_n(x) - g(x)| < \epsilon$$
+$$|f_n(x) + g_n(x) - (f(n)  + g(x))| < \epsilon$$
+therefore $(f_n + g_n)$ uniformly converges to $(f + g)$.
+
+\textit{(b) Give an example to show that the product $(f_n g_n)$ may not
+  converge uniformly}
+
+$$f_n = g_n = x + 1/n$$
+from previous exercise we can get that $(f_n + g_n)$ does not converge
+uniformly.
+
+\textit{(c) Prove that if there exists an $M > 0$ such taht $|f_n| \leq M$
+  and $|g_n| \leq M$ for all $n \in \textbf{N}$, then $(f_n g_n)$
+  does converge uniformly.}
+TODO
 
 
 
