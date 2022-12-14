@@ -254,7 +254,8 @@ $$x \in g(A \cap B) \to x \in g(A) \cap g(B)$$
 Thus
 $$g(A \cap B) \subseteq g(A) \cap g(B)$$
 
-\textit{(d) Form and prove a conjecture aout the relationship between $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.}
+\textit{(d) Form and prove a conjecture aout the relationship between
+  $g(A \cup B)$ and $g(A) \cup g(B)$ for an arbitrary function $g$.}
 
 $$x \in g(A) \to x \in g(A \cup B)$$
 $$x \in g(B) \to x \in g(A \cup B)$$
@@ -290,7 +291,10 @@ for any $g$.
 
 \section*{1.2.7}
 
-\textit{Given a function $f: D \to \textbf{R}$ and a subset $B \subseteq \textbf{R}$, let $f^{-1}(B)$ be the set of all points from the domain $D$ that get mapped into $B$; that is, $f^{-1}(B) = \{x \in D: f(x) \in B\}$. This is called
+\textit{Given a function $f: D \to \textbf{R}$ and a subset $B
+  \subseteq \textbf{R}$, let $f^{-1}(B)$ be the set of all points
+  from the domain $D$ that get mapped into $B$; that is,
+  $f^{-1}(B) = \{x \in D: f(x) \in B\}$. This is called
   the preimage of $B$.}
 
 \textit{(a) Let $f(x) = x^2$. If A is the closed interval $[0,4]$ and B is the
@@ -324,7 +328,9 @@ In other direction:
 $$x \in g^{-1}(A) \to \exists y_1 \in A: y_1 = g(x)$$
 $$x \in g^{-1}(B) \to \exists y_2 \in B: y_2 = g(x)$$
 
-$x \in g^{-1}(A) \cap g^{-1}(B)$ implies that $ \exists y_1 \in A: g(x) = y_1$ and $\exists y_2 \in B: y_2 = g(x)$. Because $g$ is a function we know, that
+$x \in g^{-1}(A) \cap g^{-1}(B)$ implies that $ \exists y_1 \in
+A: g(x) = y_1$ and $\exists y_2 \in B: y_2 = g(x)$.
+Because $g$ is a function we know, that
 for every $x$ there exists only one $y = g(x)$. Therefore $y_1 = y_2 = g(x)$.
 Thus we can state that $y \in A \cap B$.
 
@@ -344,7 +350,8 @@ Now let's prove that  $g^{-1}(A \cup B) = g^{-1}(A) \cup g^{-1}(B)$:
 
 
 If $ x \in g^{-1}(A) \cup g^{-1}(B))$ then  $\exists y \in A: y = g(x)$ or
-$\exists y \in B: y = g(x)$. If we take into account that $y \in A \to y \in A \cup B$ then we can conclude that
+$\exists y \in B: y = g(x)$. If we take into account that
+$y \in A \to y \in A \cup B$ then we can conclude that
 
 $$ x \in g^{-1}(A) \cup g^{-1}(B)) \to \exists y \in A \cup B : y = g(x) \to
 x \in g^{-1}(A \cup B)$$
@@ -389,7 +396,8 @@ if we try to negate this, but "not" is stuffed as deep as possible)
 \textit{(d) Given any real number $x \in \textbf{R}$, there exist $n \in
   \textbf{N}$ satistying $n > x$}
 
-There exist a real number $x \in \textbf{R}$, such that for all $n \in \textbf{N}$ it is true that $n \leq x$.
+There exist a real number $x \in \textbf{R}$, such that
+for all $n \in \textbf{N}$ it is true that $n \leq x$.
 
 \section*{1.2.9}
 \textit{Show that the sequence $(x_1, x_2, x_3,...)$ defined in Example 1.2.7
@@ -467,7 +475,8 @@ Every subset is corresponding to a number in binary system: 0 for excluded,
 
 For a more concrete proof let's resort to induction.
 
-Base case(s): subsets of $\emptyset$ are $\emptyset$ itseft ($2^0 = 1$ in total). Subsets of
+Base case(s): subsets of $\emptyset$ are
+$\emptyset$ itseft ($2^0 = 1$ in total). Subsets of
 set with one element are $\emptyset$ and set itself ($2^1 = 1$ in total).
 
 Proposition is that set with n elements has $2^n$ subsets.
@@ -520,11 +529,16 @@ infinite amount.
 Suppose that
 $$x \in (U^{\infty}_{n = 1}A_n)^c$$
 
-Then $x \notin A_n$ for every $n \in \textbf{N}$. Therefore $x \in A^c_n$ for every $n \in \textbf{N}$. Therefore $x \in \cap^{\infty}_{n = 1}A^c_n$. Thus
+Then $x \notin A_n$ for every $n \in \textbf{N}$. Therefore
+$x \in A^c_n$ for every $n \in \textbf{N}$.
+Therefore $x \in \cap^{\infty}_{n = 1}A^c_n$. Thus
 
 $$(\cup^{\infty}_{n = 1}A_n)^c \subseteq \cap^{\infty}_{n = 1}A^c_n$$
 
-Suppose that $x \in \cap^{\infty}_{n = 1}A^c_n$. Then $x \notin A_n$ for every $n \in \textbf{N}$. Therefore $x \notin (U^{\infty}_{n = 1}A_n)$ for every $n \in \textbf{N}$. Therefore $x in \cup^{\infty}_{n = 1}A_n)^c$ for every $n \in \textbf{N}$. Therefore
+Suppose that $x \in \cap^{\infty}_{n = 1}A^c_n$. Then $x \notin A_n$
+for every $n \in \textbf{N}$. Therefore $x \notin (U^{\infty}_{n = 1}A_n)$
+for every $n \in \textbf{N}$. Therefore $x in \cup^{\infty}_{n = 1}A_n)^c$
+for every $n \in \textbf{N}$. Therefore
 $$ \cap^{\infty}_{n = 1}A^c_n \subseteq  (\cup^{\infty}_{n = 1}A_n)^c$$
 
 Thus if we combine two statements
@@ -1164,7 +1178,8 @@ element of the set. We can argue, that this function does not need the
 rigorous definition, but we'll give it anyways:
 
 $$s_F(1) = \{x \in F: \forall y \in F: x \leq y\}$$
-$$s_F(n) = \{x \in F \setminus \{s(1),...,s(n - 1)\}\}: \forall y \in F \setminus \{s(1),...,s(n - 1)\}\}: x \leq y\}$$
+$$s_F(n) = \{x \in F \setminus \{s(1),...,s(n - 1)\}\}:
+\forall y \in F \setminus \{s(1),...,s(n - 1)\}\}: x \leq y\}$$
 for the finite set $F \subseteq R$.
 
 $$\forall n_1 > n_2 \in N: s_F(n_2) \notin F \setminus \{s(1),...,s(n_1 - 1)\}
@@ -1217,7 +1232,9 @@ This misfortune can be avoided through the usage of lists and by converting sets
 into them. I did not use this fact here because of the need to axiomaticly
 define lists, which I can, but don't want to do. 
 
-Now let us proceed with the case when $B_2$ is countable. Let $g_1: N \to A_1$ be a bijective funciton for $A_1$ and $g_2: N \to B_2$ be a bijective funciton
+Now let us proceed with the case when $B_2$ is countable. Let
+$g_1: N \to A_1$ be a bijective funciton for $A_1$
+and $g_2: N \to B_2$ be a bijective funciton
 for $B_2$ (both of those exist because of the fact, that both of the sets are
 countable).  Let $q: N \to A_1 \cup B_2$ be defined as
 \begin{equation}
@@ -1947,7 +1964,8 @@ Therefore $(a_n) \to 0$, as desired.
   need to be".}
 
 The key word here is "may". It may have to be larger, it may not. In some cases one
-value works for all of the $\epsilon$'s. I bet my money on the fact, that it  can be rigorously proven, that this is the case only for the sequences, that are constant after
+value works for all of the $\epsilon$'s. I bet my money on the fact, that it
+can be rigorously proven, that this is the case only for the sequences, that are constant after
 some term, but I'll skip that
 
 \section*{2.2.6}
@@ -2328,10 +2346,12 @@ $$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{n|a_k| - q|a_k|}{n} < \e
 $$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{(n - q)|a_k|}{n} < \epsilon$$
 $$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_k| + ... + |a_k|}{n} < \epsilon$$
 because $|a_{q+}| \leq |a_k|$ 
-$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_{q}| + ... + |a_n|}{n} \leq \frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_k| + ... + |a_k|}{n} < \epsilon$$
+$$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_{q}| + ... + |a_n|}{n}
+\leq \frac{ |a_1| + |a_2| +  ... + |a_{q - 1}|}{n} + \frac{|a_k| + ... + |a_k|}{n} < \epsilon$$
 $$\frac{ |a_1| + |a_2| +  ... + |a_{q - 1}| + |a_{q}| + ... + |a_n|}{n} < \epsilon$$
 $$\frac{ |a_1| + |a_2| + ... + |a_n|}{n} < \epsilon$$
-$$|\frac{a_1 + a_2 + ... + a_n}{n}| = \frac{ |a_1 + a_2 + ... + a_n|}{n} \leq \frac{ |a_1| + |a_2| + ... + |a_n|}{n} < \epsilon$$
+$$|\frac{a_1 + a_2 + ... + a_n}{n}| =
+\frac{ |a_1 + a_2 + ... + a_n|}{n} \leq \frac{ |a_1| + |a_2| + ... + |a_n|}{n} < \epsilon$$
 $$|\frac{a_1 + a_2 + ... + a_n}{n}| < \epsilon$$
 $$|\frac{a_1 + a_2 + ... + a_n}{n} - 0| < \epsilon$$
 
@@ -2813,7 +2833,8 @@ This is true for all $\epsilon > 0$. Thus if we set $\epsilon = 1/j$
 where $j \in N$, there exists appropriate $i \in N$ for which
 $$l - 1/j \leq  \inf \{a_k: k \geq i\} \leq  \sup \{a_k: k \geq i\} \leq  l + 1/j$$
 
-Therefore if we take a limit of all sides of this inequality  we can state that$$\lim (l - 1/j) \leq  \lim \inf \{a_k: k \geq i\} \leq \lim \sup \{a_k: k \geq i\} \leq \lim( l + 1/j)$$
+Therefore if we take a limit of all sides of this inequality  we can state that
+$$\lim (l - 1/j) \leq  \lim \inf \{a_k: k \geq i\} \leq \lim \sup \{a_k: k \geq i\} \leq \lim( l + 1/j)$$
 $$l \leq  \lim \inf a_n \leq \lim \sup a_n \leq l$$
 Here, the ability to take limits of all sides is justified by the fact, that
 $\forall n \in N > k: a_n \geq b_n \to \lim a_n \geq \lim b_n$.
@@ -4698,7 +4719,10 @@ $x \in K \cap F \to x \in K \to |x| \leq M$, where $M$ is a bound of $K$.
 Therefore $K \cap  F $ is bounded. Therefore $K \cap F$ is compact, as desired.
 
 \section*{3.3.5}
-\textit{Decide which of the following sets are compact. For those that are not compact, show how Definition 3.3.1 breaks down. In other words, give an example of a sequence contained in the given set that does not possess a subsequence converging to a limit in the set.}
+\textit{Decide which of the following sets are compact. For those that are not compact,
+  show how Definition 3.3.1 breaks down. In other words, give an example of a sequence
+  contained in the given set that does not possess
+  a subsequence converging to a limit in the set.}
 
 \textit{(a) $\textbf{Q}$}
 
@@ -4849,7 +4873,8 @@ False. $N$ is not bounded, $Q$ is not closed.
 \textit{Follow these steps to prove the final implication in Theorem 3.3.8.}
 
 \textit{Assume $K$ satisfies (i) and (ii), and let
-  $\{O_\lambda: \lambda \in \Lambda \}$ be an open cover for $K$. For contradiction, let's assume that no finite subcover exists. Let $I_0$ be a closed
+  $\{O_\lambda: \lambda \in \Lambda \}$ be an open cover for $K$. For
+  contradiction, let's assume that no finite subcover exists. Let $I_0$ be a closed
   inverval containing $K$, and bisect $I_0$ into two closed intervals $A_1$
   and $B_1$.}
 
@@ -4880,7 +4905,8 @@ finite length).
   $n$.}
 
 Each $I_n \cap K$ is an intersection of two compact sets (closed interval and
-a compact set), and therefore compact. Therefore we have a series of nested compacted sets, therefore its intersection is non-empty. Therefore there exists
+a compact set), and therefore compact. Therefore we have a series of nested
+compacted sets, therefore its intersection is non-empty. Therefore there exists
 $x \in K$ such that  $x \in I_n$  for all $n \in N$.
 
 \textit{(d) Because $x \in K$, there must exist an open set $O_{\lambda_0}$
@@ -4911,7 +4937,9 @@ it is $(-n, n)$
 
 For
 $$Q \cup [0,1]$$
-it is $\{(-1, 0.7) \cup (0.8, 2), (-1, 0.707) \cup (0.708, 2), (-1, 0.7071) \cup (0.7072, 2), ...\}$ where boundaries of corresponding intervals converge to
+it is $\{(-1, 0.7) \cup (0.8, 2), (-1, 0.707) \cup
+(0.708, 2), (-1, 0.7071) \cup (0.7072, 2), ...\}$ where
+boundaries of corresponding intervals converge to
 $\sqrt{2}/2$.
 
 For
@@ -4987,7 +5015,8 @@ Here we can even go as far as to say, that there exists $x \in C$ such that
 $|x - x_1| \leq 1/6$. The idea here is that the $x_1 \in C_1$ implies,
 that there exists a closed interval $I_1 \subseteq C_1$, which length is $1/3$
 such that $x \in I_1$. Now the fact, that $x \in I_1$ and $|I_1| = 1/3$ implies
-that the minimal distance between the boundary of $I_1$ and $x$ is the half the length  of the interval. Boundaries of
+that the minimal distance between the boundary of
+$I_1$ and $x$ is the half the length  of the interval. Boundaries of
 closed intervals, that constitute $C_1$ (or
 $C_n$ in general) are inside of $C$. Therefore there exists $x \in C$ (and
 $C \cap C_1$, because $C \cap C_n = C$ for every $n \in N$) such
@@ -5411,7 +5440,8 @@ Set $\{1, 1/2, 1/3, ...\}$ won't do, because it can we written as a
 countable union of closed singletons, and therefore it is $F_\sigma$ set.
 Its compliment won't do for obvious reasons.
 
-$Q$ is an $F_\sigma$ set. Then $Q \cap (0, 1)$ is not closed, because it doesn't contain 0 and 1. It can be still written as the countable union of closed
+$Q$ is an $F_\sigma$ set. Then $Q \cap (0, 1)$ is not closed, because
+it doesn't contain 0 and 1. It can be still written as the countable union of closed
 singletons, therefore it is still $F_\sigma$.
 
 I decided to look up a hint in the internet saw the answer.
@@ -5495,8 +5525,11 @@ equal to x.
 
 Let's first state Definition 4.2.1
 
-\textbf{Definition 4.2.1.} Let $f : A \to \textbf{R}$, and let $c$ be a limit point of the domain $A$. We say that $\lim_{x\to c} f(x) = L$ provided that, for all $\epsilon > 0$, there exists
-a $\delta > 0$ such that whenever $0 < |x - c| < \delta$ (and $x \in A$) it follows that $|f(x) - L| < \epsilon$.
+\textbf{Definition 4.2.1.} Let $f : A \to \textbf{R}$, and let $c$ be a limit
+point of the domain $A$. We say that $\lim_{x\to c} f(x) = L$ provided
+that, for all $\epsilon > 0$, there exists
+a $\delta > 0$ such that whenever $0 < |x - c| < \delta$
+(and $x \in A$) it follows that $|f(x) - L| < \epsilon$.
 
 (a):
 $$ |f(x) - L| = |2 x + 4 - 8| = |2 x - 4| = 2|x - 2| < \epsilon $$
@@ -5597,7 +5630,8 @@ thus the function is not continous at 1
 \section*{4.2.4}
 \textit{Review the definition of Thomae’s function t(x) from Section 4.1.}
 
-\textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$, each of which converges to 1 without using the number 1 as a term in the sequence.}
+\textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$,
+  each of which converges to 1 without using the number 1 as a term in the sequence.}
 
 \textit{(b) Now, compute $\lim t(x_n)$, $\lim t(y_n)$, and $\lim t(z_n)$.}
 
@@ -9547,5 +9581,181 @@ $$|g_s(x) - g_s(q) + g_t(q) - g_t(x) + g_s(q) - g_t(q)| < \epsilon$$
 $$|g_s(x) - g_t(x) | < \epsilon$$
 for any $x \in [0, 1]$. Therefore by Cauchy Criterion for Uniform Continuity,
 $(g_n)$ converges uniformly, as desired.
+
+\section*{6.3.1}
+\textit{(a) Let }
+$$h_n(x) = \frac{\sin{(nx)}}{n}$$
+\textit{Show that $h_n \to 0$ uniformly on $R$. At what points does the
+  sequence of derivatives $h_n'$ converge?}
+
+Range of $sin(x)$ is $[-1, 1]$. Therefore we can state that
+$$\left|\frac{\sin{(nx)}}{n}\right| = \frac{|\sin{(nx)}|}{|n|}
+\leq \frac{|1|}{|n|} = \left|\frac{1}{n}\right|$$
+Thus if for given $\epsilon > 0$ we pick $N >  1/\epsilon$, then we'll
+the desired result.
+
+Derivative of $h'n$ can be produced by using familiar rules of differentiation.
+$$h_n'(x) = \frac{1}{n}\cos{(nx)}n = \cos{(nx)}$$
+thus we can't have a convergent function anywhere, but at $0$, where
+for each $n \in N$ we'll have
+$$\cos{(nx)} = \cos{0} = 1$$
+
+\textit{(b) Modify this example to show that it is possible for a sequence
+  $(f_n)$ to converge uniformly, but for $(f_n')$ to be unbounded.}
+
+Something along the lines of
+$$f_n(x) = \frac{\sin{(n x^2)}}{n}$$
+will do. It converges uniformly to $0$ for the same reason as in (a), but
+its derivative is equal to
+$$f_n'(x) = 2x \cos{(n x^2)}$$
+which is unbounded on $R$.
+
+\section*{6.3.2}
+\textit{Consider the sequence of funcitons defined by }
+$$g_n(x) = \frac{x^n}{n}$$
+
+\textit{(a) Show $(g_n)$ converges uniformly on $[0, 1]$ and find
+  $g = \lim{g_n}$. Show that $g$ is differentiable and compute $g'(x)$
+  for all $x \in [0, 1]$.}
+
+For $x \in [0, 1]$,
+$$|x^n| \leq 1$$
+therefore
+$$\left|\frac{x^n}{n}\right| \leq \frac{1}{n}$$
+thus for the same reason as in the previous exercise the function is
+uniformly convergent to $g = \lim_{g_n} = 0$.
+
+$g$ is obviously differentiable on $[0, 1]$, and $g'(x) = 0$.
+
+\textit{(b) Now, show that $(g_n')$ converges on $[0, 1]$. Is the convergence
+uniform? Set $h = \lim_{g_n'}$ and compare $h$ and $g'$. Are they the same?}
+
+By using rules of differentiation we can get
+$$g_n'(x) = x^{n - 1}$$
+which on $[0, 1]$ is poinwise (and definitely not uniformly, as proven in
+examples in the book andprobably somewhere in the exeercises for the previous
+section) convergent to
+$$h(x) =
+\begin{cases}
+  0 \text{ for } x < 1 \\
+  1 \text{ for } x = 1
+\end{cases}
+$$
+
+$h$ and $g'$ are definetly not the same and differ at point $1$.
+
+\section*{6.3.3}
+\textit{Consider the sequence of functions}
+$$f_n(x) = \frac{x}{1 + nx^2}$$
+\textit{Exercise 6.2.4 contains some advice for how to show that $(f_n)$
+  converges uniformly on $R$. Review or complete this exercise}
+
+Just as a reminder, 6.2.4 gives us precisely the same function and asks us
+to prove its uniform convergence. We do it by using usual rules from calculus
+to give us absolute maximums and minimums of those functions, and by showing
+that difference between them converges to zero.
+
+\textit{Now, let $f = \lim{f_n}$. Compute $f_n'(x)$ and find all the values
+  of $x$ for which $f'(x) = \lim{f_n'(x)}$.}
+
+For $f = \lim f_n$ we've got that $f(x) = 0$ and therefore $f'(x) = 0$.
+
+By our usual rules of differentiation we get 
+$$f_n'(x) = \frac{1 + nx^2 - 2nx^2}{(1 + nx^2)^2} =
+\frac{1 - nx^2}{(1 + nx^2)^2}$$
+
+Thus it can be shown (or seen at the graph) that the limit of this function
+is equal to
+$$
+\lim{f_n'(x)} =
+\begin{cases}
+  1 \text{ for } x = 0 \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+thus $\lim{f_n'(x)} = f'(x)$ at $x = R \setminus \{0\}$.
+
+\section*{6.3.4}
+\textit{Let }
+$$g_n(x) = \frac{nx + x^2}{2n}$$
+\textit{and set $g(x) = \lim{g_n(x)}$. Show that $g$ is differentiable in two
+  ways: }
+
+\textit{(a) Compute $g(x)$ by algebraically taking the limit as $n \to \infty$
+  and then find $g'(x)$.}
+
+$$
+g(x) = \lim_{n \to \infty}{\frac{nx + x^2}{2n}} =
+\lim_{n \to \infty}{\frac{nx}{2n} + \frac{x^2}{2n}} = \frac{x}{2}
+$$
+thus
+$$g'(x) = 1/2$$
+
+\textit{(b) Compute $g_n'(x)$ for each $n \in N$ and show that the sequence
+  of derivatives $(g_n')$ converges uniformly on every interval $[-M, M]$.
+  Use Theorem 6.3.3 to conclude $g'(x) = \lim{g_n'(x)}$.}
+
+$$g_n'(x) = \frac{1}{2n}(n + 2x) = \frac{1}{2} + \frac{x}{n}$$
+which is convergent pointwise to $1/2$
+
+Therefore for each $[-M, M]$ we've got
+$$|1/2 + \frac{x}{n} - 1/2| < \epsilon$$
+$$| \frac{x}{n} | < \epsilon$$
+thus if we pick $N > M/\epsilon$ we'll get
+$$| \frac{x}{n} | < \epsilon$$
+thus for every $[-M, M]$ and every $\epsilon > 0$ we have corresponding $N$
+such that $n \geq N$ implies that
+$$|1/2 + \frac{x}{n} - g'| < \epsilon$$
+therefore the function is uniformly convergent at $[-M, M]$.
+
+Therefore be 6.3.3 we can conclude that $g'(x) = \lim g_n'(x)$, as desired.
+
+\textit{(c) Repeat parts (a) and (b) for the sequence
+  $f_n = (nx^2 + 1)/(2n + x)$.}
+
+For the first part
+$$f(x) = \lim{\frac{nx^2 + 1}{2n + x}} =
+\lim{\left(\frac{nx^2}{2n + x} + \frac{1}{2n + x}\right)}
+= \frac{x^2}{2}
+$$
+
+$$f'(x) = x$$
+
+The second part:
+$$f_n'(x) = \frac{nx^2 + 4n^2x - 1}{(x + 2n)^2}$$
+
+$$\lim{f_n'(x)} = \lim{\frac{nx^2 + 4n^2x - 1}{(x + 2n)^2}} =
+\lim{\left(\frac{nx^2}{(x + 2n)^2} +
+    \frac{4n^2x}{(x + 2n)^2} - \frac{1}{(x + 2n)^2}\right)} =
+$$
+$$
+=
+\lim{\left(\frac{4n^2x}{(x + 2n)^2}\right)} =
+\lim{\left(\frac{4n^2x}{x^2 + 4nx + 4n^2}\right)} =
+x
+$$
+
+Thus $f_n'$ converges pointwise to $x$. Thus if we let $\epsilon > 0$
+and set interval $[-M, M]$ for $M > 0$ we'll get
+
+$$|\frac{nx^2 + 4n^2x - 1}{(x + 2n)^2} - x| =
+|\frac{x^3 + 3nx^2 + 1}{(x + 2n)^2}| 
+$$
+
+It can be shown (the precise eslimation is pretty messy) that there exists
+$N$ such that if $n \geq N$, then
+$$|\frac{nx^2 + 4n^2x - 1}{(x + 2n)^2} - x| < \epsilon$$
+for any given epsilon. Therefore the derivative is uniformly convergent at
+$[-M, M]$, therefore $f'(x) = \lim f_n'(x)$, as desired.
+
+\section*{6.3.5}
+\textit{Use the following advice to supply a proof for Theorem 6.3.2. To get
+  started, observe that the triangle inequality implies that, for any
+  $x \in [a, b]$,}
+$$|f_n(x) - f_m(x)| \leq |(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0)| +
+|f_n(x_0) - f_m(x_0)|$$
+\textit{Now, apply the Mean Value Theorem to $f_n - f_m$.}
+
+TODO
 
 \end{document}
