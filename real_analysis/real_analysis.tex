@@ -9756,6 +9756,70 @@ $$|f_n(x) - f_m(x)| \leq |(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0)| +
 |f_n(x_0) - f_m(x_0)|$$
 \textit{Now, apply the Mean Value Theorem to $f_n - f_m$.}
 
-TODO
+Let us firstly state the theorem itself
+
+\textit{\textbf{Theorem 6.3.2} Let $(f_n)$ be a sequence of differentiable
+  functions defined on the closed interval $[a, b]$, and assume $(f_n')$
+  converges uniformly on $[a, b]$. If there exists a point $x_0 \in [a, b]$
+  where $f_n(x_0)$ is convergent, then $(f_n)$ converges uniformly on
+  $[a, b]$. }
+
+For 
+$$|f_n(x) - f_m(x)| \leq |(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0))| +
+|f_n(x_0) - f_m(x_0)|$$
+We can make $|f_n(x_0) - f_m(x_0)|$ we can make as small as we want because o
+the convergence of $f_n'$.
+
+If we follow given advice, we'll get that
+
+$$f'(\alpha) = \frac{f(x) - f(x_0)}{x - x_0}$$
+maybe we can also get
+$$(f_n - f_m)'(\alpha) = \frac{(f_n - f_m)(x) - (f_n - f_m)(x_0)}{x - x_0}$$
+
+Let $\epsilon > 0$
+
+By convergence of $(f_n(x_0))$ we can follows that there exists
+$N_1 \in \textbf{N}$ such that for every $n, m \geq N_1$ it follows that
+$$|f_n(x_0) - f_m(x_0)| < \epsilon/2$$
+
+Because $(f_n')$ is convergent uniformly, then by Cauchy Criterion for
+Uniform Convergence we get that there exists $N_2 \in \textbf{N}$ such that
+for $n, m \geq N_2$ it follows that
+$$|f_n'(y) - f_m'(y)| < \epsilon/(2 * |a - b|)$$
+by algebraic properties of derivatives we have
+$$|(f_n - f_m)'(y)| < \epsilon/(2 * |a - b|)$$
+for every $y \in [a, b]$.
+
+By MVT we've got that for every $x \in [a, b]$ there exists $\alpha \in (a, b)$
+such that
+$$|(f_n - f_m)'(\alpha)| = \left|\frac{(f_n - f_m)(x) -
+    (f_n - f_m)(x_0)}{x - x_0}\right|$$
+$$|(f_n - f_m)'(\alpha)| = \frac{|(f_n - f_m)(x) -
+  (f_n - f_m)(x_0)|}{|x - x_0|} < \epsilon/(2|a - b|)$$
+
+$|x - x_0| \leq |a - b|$, therefore
+$$\frac{1}{|x - x_0|} \geq \frac{1}{|a - b|}$$
+$$ \frac{1}{|a - b|} \leq \frac{1}{|x - x_0|} $$
+and thus
+$$\frac{|(f_n - f_m)(x) -
+  (f_n - f_m)(x_0)|}{|a - b|} \leq
+\frac{|(f_n - f_m)(x) -
+  (f_n - f_m)(x_0)|}{|x - x_0|} < \epsilon/(2|a - b|)$$
+$$\frac{|(f_n - f_m)(x) -
+  (f_n - f_m)(x_0)|}{|a - b|} < \epsilon/(2|a - b|)$$
+$$|(f_n - f_m)(x) -
+(f_n - f_m)(x_0)| < \epsilon/(2)$$
+for every $x \in [a, b]$
+
+Therefore we can follow that 
+$$ |(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0)| +
+|f_n(x_0) - f_m(x_0)| < 2 * \epsilon/2$$
+by factoring right side and using tirangle inequality on the left we have that
+$$ |f_n(x) - f_m(x) |\leq |(f_n(x) - f_m(x)) - (f_n(x_0) - f_m(x_0)| +
+|f_n(x_0) - f_m(x_0)| <  \epsilon$$
+$$ |f_n(x) - f_m(x) |<  \epsilon$$
+for every $x \in [a, b]$. Therefore by Cauchy Criterion for Uniform Convergence
+we can state that $(f_n)$ converges uniformly, as desired.
+
 
 \end{document}
