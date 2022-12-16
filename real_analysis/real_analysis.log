@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  15 DEC 2022 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  17 DEC 2022 00:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -544,14 +544,14 @@ Chapter 6.
 [190
 
 ] [191] [192] [193] [194] [195] [196] [197] [198] [199] [200] [201]
-[202] [203] [204] [205] [206] [207] [208] [209] [210] [211]
-(./real_analysis.aux)
+[202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212] [213]
+[214] [215] [216] (./real_analysis.aux)
 Package rerunfilecheck Info: File `real_analysis.out' has not changed.
 (rerunfilecheck)             Checksum: 63133B237CA6A65D4C8D14883F5AF26B;950.
  ) 
 Here is how much of TeX's memory you used:
- 9528 strings out of 478268
- 144505 string characters out of 5846347
+ 9541 strings out of 478268
+ 144641 string characters out of 5846347
  452965 words of memory out of 5000000
  27135 multiletter control sequences out of 15000+600000
  481960 words of font info for 73 fonts, out of 8000000 for 9000
@@ -576,10 +576,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on real_analysis.pdf (212 pages, 795537 bytes).
+Output written on real_analysis.pdf (217 pages, 809030 bytes).
 PDF statistics:
- 1422 PDF objects out of 1440 (max. 8388607)
- 1158 compressed objects within 12 object streams
- 504 named destinations out of 1000 (max. 500000)
+ 1458 PDF objects out of 1728 (max. 8388607)
+ 1189 compressed objects within 12 object streams
+ 517 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

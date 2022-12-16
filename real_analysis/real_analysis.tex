@@ -9822,4 +9822,211 @@ for every $x \in [a, b]$. Therefore by Cauchy Criterion for Uniform Convergence
 we can state that $(f_n)$ converges uniformly, as desired.
 
 
+\section*{6.4.1}
+\textit{Prove that if $\sum_{n = 1}^{\infty}{g_n}$ converges uniformly, then
+  $(g_n)$ converges uniformly to zero}
+
+Let $\epsilon > 0$. From Cauchy Criterion for Uniform Convergence of Series we
+can state that there exists $N \in \textbf{N}$ such that for all $n > m \geq N$
+$$|f_{m + 1} + f_{m + 2}(x) + ... + f_n(x)| < \epsilon$$
+for all $x \in A$. 
+thus it is also true for $n$ and $n + 1$
+$$|f_n(x)| < \epsilon$$
+$$|f_n(x) - 0| < \epsilon$$
+therefore $f_n$ is uniformly convergent to $0$.
+
+\section*{6.4.2}
+\textit{Supply the details for the proof of the Weierstrass M-Test
+  (Corollary 6.4.5)}
+
+Corollary 6.4.5 states that
+
+\textit{For each $n \in N$, let $f_n$ be a function defined on a set
+  $A \subseteq R$, and let $M_n > 0$ be a real number satisfying }
+$$|f_n(x)| \leq M_n$$
+\textit{for all $x \in A$. If $\sum_{n = 1}^{\infty}M_n$ converges, then
+  $\sum_{n = 1}^{\infty}f_n$ converges uniformly on $A$.}
+
+From this we can follow that $(M_n) \to 0$ and 
+$M_n \geq 0$ for every $n \in \textbf{N}$.
+
+Let $\epsilon > 0$. It follows from Cauchy Criterion for Series that there
+exists $N \in \textbf{N}$ such that $n >  m \geq N$ implies taht
+$$|M_{m + 1} + M_{m + 2} + ... + M_n| < \epsilon$$
+from non-negativity of $M_n$ we can follow that
+$$M_{m + 1} + M_{m + 2} + ... + M_n < \epsilon$$
+$$|M_{m + 1}| + |M_{m + 2}| + ... + |M_n| < \epsilon$$
+thus
+$$|f_{m + 1}(x)| + |f_{m + 2}(x)| + ... + |f_n(x)|
+\leq |M_{m + 1}| + |M_{m + 2}| + ... + |M_n| < \epsilon$$
+for every $x \in A$. Thus by triangle identity we've got that
+$$|f_{m + 1}(x)| + |f_{m + 2}(x)| + ... + |f_n(x)| < \epsilon$$
+$$|f_{m + 1}(x) + f_{m + 2}(x) + ... + f_n(x)|
+\leq |f_{m + 1}(x)| + |f_{m + 2}(x)| + ... + |f_n(x)| < \epsilon$$
+$$|f_{m + 1}(x) + f_{m + 2}(x) + ... + f_n(x)|  < \epsilon$$
+thus by Cauchy Criterion for Uniform Convergence of Series we've got that
+$\sum_{n = 1}^{\infty}{f_n}$ is uniformly convergent, as desired.
+
+\section*{6.4.3}
+
+\textit{(a) Show that $g(x) = \sum cos(2^nx)/2n$ is continous on all of $R$.}
+
+In order to do so we're probably required to show that it is
+convergent unifomly and that each $f_n$ is continous.
+
+$cos(2^nx)/2n$ is obviously continous by composition of continous  functions,
+algebraic properties and assuming the fact that $\cos$ is continous.
+
+Thus we need to prove that it is uniformly continous. 
+We know  that $|\cos(x)| \leq 1$, therefore  we've got that
+$$|\cos(2^nx)/2n| < 1/2^n$$
+
+$\sum 1/2^n$ is convergent, therefore by Weierstrass M-Test we've got that
+$\sum cos(2^nx)/2n$  convegres uniformly. Thus we've got $g(x)$,
+which is equal to a series of continous functions, that converges uniformly,
+and therefore $g(x)$ is contionous, as desired.
+
+\textit{(b) Prove that $h(x) = \sum x^n/n^2$ is continous on $[-1, 1]$.}
+
+In order to do so we need once again to prove that each $x^n/n^2$ is continous
+and that the sum is convergent uniformly.
+
+Each $x^n/n^2$ is continous once again by agebraic properties. For
+$x \in [-1, 1]$ it follows that $|x^n| \leq 1 $. Therefore
+$|x^n/n^2| \leq 1/n^2$. Thus once again by Weierstrass M-Test we've got that
+$\sum x^n/n^2$ is uniformly convergent once again. Thus we can follow that
+$h(x)$ is continous, as desired.
+
+\section*{6.4.4}
+\textit{In Section 5.4, we postponed the argument that the
+  nowhere-differentiable function}
+$$g(x) = \sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
+\textit{is continous on $R$. Use the Weierstrass M-Test to supply the missing
+  proof}
+
+$h(x)$ is continous, therefore $\frac{1}{2^n}h(2^nx)$ is continous.
+
+$h(x)$ is bounded by $1$ (or $2$, it doesn't matter). Therefore
+$$\frac{1}{2^n}h(2^nx) \leq \frac{1}{2^n}$$
+$\sum \frac{1}{2^n}$ is concergent, thus by W. M-Test we've got that sum
+converges uniformly.
+
+Therefore $g$ is an infinite sum, which converges uniformly, and each
+memeber of the sum is continous, therefore $g$ is continous as well, as
+desired.
+
+\section*{6.4.5}
+\textit{Let }
+$$f(x) = \sum_{k = 1}^{\infty}{\frac{\sin(kx)}{k^3}}$$
+
+\textit{(a) Show that $f(x)$ is differentiable and that the derivative
+  $f'(x)$ is continous}
+
+In order to do this we probably need to show that the sum converges unifomly,
+so let's do that.
+
+$$\frac{\sin(kx)}{k^3}$$
+is continous for every $k$, and by boundness of
+sine and therefore by Weierstrass M-Test we can follow that sum converges
+uniformly and that  $f$ is continous.
+
+$$\frac{\sin(kx)}{k^3}$$
+is differentiable and
+$$f_k'(x) = \frac{\cos(kx)}{k^2}$$
+which is also uniformly convergent by Weierstrass M-test.
+
+Thus we can follow that $g(x)$ is differentiable. Also, because each
+$\frac{\cos(kx)}{k^2}$ is continous and
+$$g'(x) = \sum \frac{\cos(kx)}{k^2}$$
+is convergent uniformly we can follow that $g'(x)$ is also continous, as
+desired.
+
+\textit{(b) Can we determine if $f$ is twice-differentiable?}
+
+For
+$$g'(x) = \sum \frac{\cos(kx)}{k^2} = \sum g_k'(x)$$
+we've got
+$$g_k''(x) = - \frac{\sin(kx)}{k}$$
+For which we cannot use our good ol' Weierstrass method because of the
+divergence of harmonic series, and I can't see any other method of assertind
+differentiability.
+
+\section*{6.4.6}
+\textit{Observe taht the series }
+$$f(x) = \sum_{n = 1}^{\infty}{\frac{x^n}{n}} = x + \frac{x^2}{2} +
+\frac{x^3}{3} + ... $$
+\textit{converges for every $x$ in the half-open $[0, 1)$ but does not
+  converge when $x = 1$. For a fixed $x_0 \in (0, 1)$, explain how we can still
+  use the Weierstrass M-Test to prove that $f$ is continous at $x_0$.}
+
+For a fixed $x$ we have some $x < c < 1$, and we know that
+$\sum c^n/n$ converges, therefore for given $x$ series converges as well.
+
+\section*{6.4.7}
+\textit{Let }
+$$h(x) = \sum_{n = 1}^{\infty}{\frac{1}{x^2 + n^2}}$$
+
+\textit{(a) Show taht $h$ is continous on all $R$.}
+
+For any $x \in R$ and any $n \in N$ we've got that
+$$x^2 + n^2 > 0$$
+therefore any $h_n$ is defined on all of $R$. Because any $h_n$ is a rational
+function it follows that it is continous. Therefore the only thing that is left
+is to show that it is convergent uniformly. This follows directly from
+Weierstrass test, aster we observe that
+$$\frac{1}{x^2 + n^2} < 1/n^2$$
+which converges.
+
+Thus the sum is convergent uniformly and all $h_n$ are continous, therefore
+$h$ is continous as well.
+
+\textit{(b) Is $h$ differentiable? If so, is the derivative function $h'$
+  continous?}
+
+$$h_n'(x) = -\frac{2x}{(x^2 + n^2)^2}$$
+
+For a any bounded interval this sum is uniformly convergent. Therefore
+we can state that on any given $x \in R$ there exists a derivative and
+that derivative is continous.
+
+\section*{6.4.8}
+\textit{Let $\{r_1, r_2, ... \}$ be an enumeration of the set of rational
+  numbers. For earch $r_n \in Q$, define  }
+$$u_n(x) =
+\begin{cases}
+  1/2^n \text{ for } x > r_n \\
+  0 \text{ for } x \leq r_n
+\end{cases}
+$$
+\textit{Now, let $h(x) = \sum_{n = 1}^{\infty}u_n(x)$. Prove that $h$ is a
+  monotone function defined on all of $R$ that is continous at every rational
+  point.}
+
+
+Each of $u_n$ is less than $1/2^n$ for every $x \in R$,
+therefore by Weierstrass M-Test the function is convergent uniformly on $R$.
+
+
+for any $x < y$ it follows that
+$$u(x) = \sum_{r_n < x}{1/2^n}$$
+$$u(y) = \sum_{r_n < y}{1/2^n}$$
+$$u(y) = \sum_{r_n < x}{1/2^n} + \sum_{x < r_n < y}{1/2^n}$$
+thus
+$$u(x) - u(y) = \sum_{x < r_n < y}{1/2^n}$$
+given that $1/2^n > 0$ for every $n \in N$ it follows that
+if $x < y$ then 
+$$u(x) \leq u(y)$$
+therefore the function is increasing and therefore monotone.
+
+Let $i \in I$ and $\epsilon > 0$. It follows that there exists
+a finite number of $r_n$'s such that
+$$\sum_{n = 1}^m{1/2^n} > \epsilon$$
+
+Therefore  there exists $\delta > 0$
+such that for any $r_n \in Q \cap V_\delta(i)$
+$$|x - i|  < \delta \to
+|u(x) - u(i)| =  \sum_{n = N}{\infty}{1/2^n} < \epsilon$$
+therefore $u$ is continous at every irrational point.
+
+
 \end{document}
