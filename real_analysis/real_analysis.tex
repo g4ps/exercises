@@ -3630,7 +3630,8 @@ $$\lim|\frac{a_{n + 1}}{a_n}| = r < 1$$
   $|a_{n + 1}| \leq |a_n|r'$}
 
 First of all,
-$$|\frac{a_{n + 1}}{a_n}| = |a_{n + 1} \frac{1}{a_n}| =  |a_{n + 1}| |\frac{1}{a_n}|$$.
+$$|\frac{a_{n + 1}}{a_n}| = |a_{n + 1} \frac{1}{a_n}| =
+|a_{n + 1}| |\frac{1}{a_n}|$$.
 
 If  $a_n \geq 0$, then $|\frac{1}{a_n}| = \frac{1}{a_n} = \frac{1}{|a_n|}$.
 If $a_n < 0$ then $|\frac{1}{a_n}| = - \frac{1}{a_n} = \frac{1}{-a_n} =
@@ -10025,8 +10026,95 @@ $$\sum_{n = 1}^m{1/2^n} > \epsilon$$
 Therefore  there exists $\delta > 0$
 such that for any $r_n \in Q \cap V_\delta(i)$
 $$|x - i|  < \delta \to
-|u(x) - u(i)| =  \sum_{n = N}{\infty}{1/2^n} < \epsilon$$
+|u(x) - u(i)| =  \sum_{n = N}^{\infty}{1/2^n} < \epsilon$$
 therefore $u$ is continous at every irrational point.
+
+\section*{6.5.1}
+\textit{Consider the function $g$ defined by power series }
+$$g(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} +
+\frac{x^5}{5} - ... $$
+\textit{(a) Is $g$ defined on $(-1, 1)$? Is it continous on this set? Is $g$
+  defined on $(-1, 1]$? Is it continous on this set? What happens on $[-1, 1]$?
+  Can the power series for $g(x)$ possibly converge for any other points
+  $|x| > 1$? Explain.}
+
+For any $c \in (-1, 1)$ the given series converges, therefore the function is
+defined on $(-1, 1)$.
+
+For any $c \in (-1, 1)$ we can use Weierstrass M-Test on interval $[-c, c]$
+to conclude that the series converges uniformly. Therefore $g$ is continous
+at $(-1, 1)$.
+
+$g$ is also defined on $(-1, 1]$, because for any given number $c \in (-1, 1]$
+the series converges.
+
+$$\left|\frac{x^{m + 1}}{m + 1} - \frac{x^{m + 2}}{m + 2} + ...
+  + \frac{x^{n}}{n}\right| \leq
+\left|\frac{1}{m + 1} - \frac{1}{m + 2} + ...
++ \frac{1}{n}\right| < \epsilon$$
+
+Therefore it converges uniformly on this set by Cauchy Criterion
+for Uniform Convergence of Series;
+Same cannot be said about $[-1, 1]$, because for
+$x = -1$ our series becomes negative harmonic series and therefore it will
+diverge.
+
+This power series cannot be possibly convergent on any $|x| > 1$, because
+if it is convergent on $|c| > 1$, then it will follow, that it is
+convergent on $x = -1$, which is false.
+
+\textit{(b) For what values of $x$ is $g'(x)$ defined? Find a folmula
+  for $g'$}
+
+$$g(x)' = 1 - x + x^2 - x^3 + x^4  - ...  = \sum_{n = 1}^{\infty}(-x)^{n - 1}$$
+
+Therefore it is a geometric series, which will be convergent only when
+$|x| < 1$.  Formula for it will be given by
+$$\frac{1}{1 - x}$$
+
+Correction: 6.5.6 gives us desired answer.
+
+\section*{6.5.2}
+\textit{Find suitable coefficients $(a_n)$ so that the resulting power series
+  $\sum a_n x^n$}
+
+\textit{(a) converges absolutely for all $x \in [-1, 1]$ and diverges off
+  of this set;}
+
+$$\frac{x^n}{n^2}$$
+
+\textit{(b) converges conditionally at $x = -1$ and diverges at $x = 1$}
+
+$$\frac{x^n}{n}$$
+
+\textit{(c) converges conditionally at both $x = -1$ and $x = 1$}
+
+$$(-1)^n\frac{x^n}{n}$$
+
+\textit{(d) Is it possible to find an example of a power series that converges
+  conditionally at $x = -1$ and converges absolutely at $x = 1$}
+
+No, because absolute convergence at $x = 1$ implies that sum converges
+absolutely at $x = -1$.
+
+\section*{6.5.3}
+\textit{Explain why a power series can converge conditionally for at most
+  two points.}
+
+Because for for any convergent  $x$ sum converges absolutely
+for any $x_0$ such that $|x_0| < |x|$. Therefore the only choice
+for conditional convergence happens at $x$ and $-x$.
+
+\section*{6.5.4}
+\textit{(a) By referencing the proper theorems, produce a detailed argument
+  that a power series that converges on the interval $(-R, R)$ necessatily
+  represents  a continous function at each point $x \in (-R, R)$.}
+
+Suppose that a series converges on the interval $(-R, R)$.
+
+We know that every term of series is a polynomial, and therefore is continous.
+
+Therefore the only thing that is left to show is that it converges uniformly.
 
 
 \end{document}
