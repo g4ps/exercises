@@ -10347,7 +10347,43 @@ $$\sum_{n = 0}^{\infty}{a_n x^n} = \sum_{n = 0}^{\infty}{b_n x^n}$$
 \textit{for al $x$ in interval $(-R, R)$, prove that $a_n = b_n$ for all
   $n = 0, 1, 2, ...$ (Start by showing that $a_0 = b_0$.)}
 
+In order to prove that $a_0 = b_0$ we need to observe that when $x = 0$
+then
+$$\sum_{n = 0}{\infty}{a_n x^n} = a_0 = b_0 = \sum_{n = 0}{\infty}{b_n x^n}$$
 
+For $n = 1$ we've got that
+$$g'(n) = \sum_{n = 1}{\infty}{n a_n x^{n - 1}}$$
+thus
+$$g'(0) = \sum_{n = 1}{\infty}{n a_n x^{n - 1}} = a_1 = b_1 =
+\sum_{n = 1}{\infty}{n a_n x^{n - 1}}$$
+
+In general for $j \in N$ we've got to take $j$'th derivative in
+order to state that
+$$g^{(j)}(0) = \sum_{n = j}{\infty}{\frac{n!}{(n - j)!} a_n x^{n - j}} = a_j
+= b_j = \sum_{n = j}{\infty}{\frac{n!}{(n - j)!} b_n x^{n - j}}$$
+(formula might not be exact, but the idea is presented)
+
+Therefore we can state that $a_j = b_j$ for any $j \in N$, as desired.
+
+\section*{6.5.10}
+\textit{Review the definition and results from Section 2.8 concerning products
+  of series and Cauchy products in particular. At the end of Section 2.9, we
+  mentioned the following result: if both $\sum a_n$ and $\sum b_n$ converge
+  conditionally to $A$ and $B$ respectively, then it is possible for the Cauchy
+  product,}
+$$\sum d_n \text{ where } d_n = a_0 b_n + a_1 b_{n - 1} + ... + a_n b_0$$
+\textit{to diverge. However, if $\sum d_n$ does converge, then it must
+  converge to $AB$. To prove this, set}
+$$f(x) = \sum{ a_n x^n }, g(x) = \sum{b_n x^n}, \text{ and }
+h(x)=\sum{d_n x^n}$$
+\textit{Use Abel's Theorem and the result in Exercise 2.8.8 to establish this
+  result.}
+
+Let the functions be defined as in text of the exercise. 
+
+Because $\sum d_n$, $\sum a_n$ and $\sum b_n$ are defined we can follow that
+by Abel's Theorem $f$, $g$ and $h$ are convergent absolutely at $[0, 1]$.
+TODO
 
 
 \end{document}
