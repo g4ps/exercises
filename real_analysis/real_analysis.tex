@@ -10379,11 +10379,94 @@ h(x)=\sum{d_n x^n}$$
 \textit{Use Abel's Theorem and the result in Exercise 2.8.8 to establish this
   result.}
 
+\textbf{\textit{Didn't get what they tried to ask here, so I looked up the
+  answer. Maybe if I've stayed a little bit longer and read it a couple of
+  dozen more times, then I'd get it, but alas. Repeating rough answer
+  here for continuity.
+}}
+
 Let the functions be defined as in text of the exercise. 
 
 Because $\sum d_n$, $\sum a_n$ and $\sum b_n$ are defined we can follow that
 by Abel's Theorem $f$, $g$ and $h$ are convergent absolutely at $[0, 1]$.
-TODO
 
+Now for $x \in [0, 1)$ $f, g$ and $h$ converge absolutely and therefore
+$$h(x) = f(x)g(x)$$
+
+thus by continuity of those functions on $[0, 1]$ we get that
+$$\sum d_n = (\sum a_n)(\sum b_n)$$
+
+\section*{6.5.11}
+\textit{A series $\sum_{n = 0}^{\infty}{a_n}$ is said to be Abel-summable to
+  $L$ if the power series}
+$$f(x) = \sum_{n = 0}^{\infty}{a_n x^n}$$
+\textit{converges for all $x \in [0, 1)$ and $L = \lim_{x \to 1^-}{f(x)}$.}
+
+\textit{(a) Show that any series that converges to a limit $L$ is also
+  Abel-summable to $L$.}
+
+Suppose that a series is convergent to some $L \in R$. If follows that
+for  any $x \in [0, 1)$ and for any $m > n \in N$
+$$|a_{m + 1} x^{m + 1} + a_{m + 2} x^{m + 2} + ... + a_n x^n| \leq
+|a_{m + 1}  + a_{m + 2}  + ... + a_n|$$
+therefore we can state that for any $x \in [0, 1)$ the series becomes a Cauchy
+sequence and therefore converges to some number. By extension the
+function is convergent uniformly  at every given $ [0, c]$ and $c \in [0, 1)$,
+and therefore it is continous at every $x \in [0, 1)$.
+
+By Abel's theorem the function convergs uniformly at $[0, 1]$, and therefore
+it is continous at this interval. Therefore by continuity of $f$
+we can state that there exists a left limit for $x = 1$ and its limit
+is equal to $L$. Therefore the series is Abel-summable to $L$.
+
+\textit{(b) Show that $\sum_{n = 0}^{\infty}{(-1)^n}$ is Abel-summable and
+  fing the sum}
+
+This function is not convergent, but for any given $x \in [0, 1)$ we've got
+that power series
+$$\sum (-1)^n x^n$$
+is convergent by Weierstrass M-Test and setting $M_n = x^n$, which will
+converge because it is a geometric series.
+
+Something (and by something I mean rough approximation in Python) tells me
+that the series is convergent from the left to 0.
+
+If we look closer at the function then we get that
+$$\sum (-1)^n x^n = \sum (-x)^n $$
+Because given series  is convergent absolutely
+(nodding to the geometric series) we are justified to permutate the series
+however we want. Thus we can set
+$$\sum (-x)^n =  \sum x^{2n} - \sum {x^{2n - 1}} =
+\sum{x^2n} - \sum {\frac{x^{2n}}{x}} =
+\sum{x^2n} - \frac{\sum {x^{2n}}}{x} =
+\frac{x \sum{x^2n} - \sum {x^{2n}}}{x}
+$$
+
+Actually the hell with it, we can just use geometric series.
+$$\sum (-1)^n x^n = \sum (-x)^n = \frac{1}{1 + x}$$
+So we can state that
+$$\lim_{x \to 1^-}{\sum (-1)^n x^n} =
+\lim_{x \to 1^-}{\frac{1}{1 + x}} = \frac{1}{2}$$
+
+At the time when I'm writing this
+I'm not really convinced that this conclusion is right.
+
+Update: after consulting Instructor's manual it turn out that my math is
+correct. Holy moly.
+
+\section*{6.5.12}
+\textit{Consider the function $G$ from the opening discussion on branching
+  processes, and recall that the increasing monotone sequence of probabilities
+  $(d_r)$ has a limit $d = \lim{d_r}$, that satisfies $G(d) = d$. Assume we
+  are in the situation where there are two fixed points: $G(1) = 1$ and some
+  other value $0 < d_0 < 1$ satisfying $G(d_0) = d_0$. Formulate an argument
+  for why the sequence $(d_r)$ necessarily converges to the value $d = d_0$
+  and not to $d = 1$.}
+
+Suppose that some  $d_n$ is greater than $d_0$.
+This implies that $G(d_n) - d_n < 0$,
+which implies that $G(d_n) < d_n$, which implies that $d_{n + 1} < d_n$, which
+is a contradiction of the fact, that the sequence is increasing. Thus
+every $d_n \leq d_0$, therefore it can converge only to $d_0$, as desired.
 
 \end{document}
