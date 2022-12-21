@@ -27,7 +27,8 @@ any reason, then you are free to do so.
 
 \chapter{Real Numbers}
 
-\section*{1.2.1}
+\section{Some preliminaries}
+\subsection*{1.2.1}
 \textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
   to show $\sqrt{6}$ is irrational?}
 
@@ -71,7 +72,7 @@ a prime, and the number under the radical consists of two primes. Therefore
 if a number decomposes to two equal sets of primes, then its square root is
 a rational number. Otherwise it isn't.
 
-\section*{1.2.2}
+\subsection*{1.2.2}
 
 \textit{Decide which of the following represent true statements about the
   nature of sets. For any that are false, provide a specific exapmple where the
@@ -124,7 +125,7 @@ I'm sure that there exist more concrete versions of those proofs, but I'm not
 required to provide any. My suspition on why is it so, is because it's a
 little more complicated and requires more knowlege in set theory and/or logic.
 
-\section*{1.2.3 (De Morgan's Laws).}
+\subsection*{1.2.3 (De Morgan's Laws).}
 
 \textit{Let A and B be subsets of \textbf{R}}
 
@@ -173,7 +174,7 @@ No need to do both ways.
 $$(A \cup B)^c = S_4 = A^c \cap B^c$$
 
 
-\section*{1.2.4}
+\subsection*{1.2.4}
 \textit{Verify the triangle inequality in the special cases where }
 
 \textit{(a) $a$ and $b$ have the same sign}
@@ -200,7 +201,7 @@ $$ b \leq (-b)$$
 $$a + b \leq a + (-b)$$
 $$|a + b| \leq |a| + |b|$$
 
-\section*{1.2.5}
+\subsection*{1.2.5}
 \textit{Use the triangle inequality to establish the inequalities}
 
 \textit{(a) $|a - b| \leq |a| + |b|;$}
@@ -217,7 +218,7 @@ $$|b| - |a| \leq |a - b|$$
 $$|a| - |b| \geq -|a - b|$$
 $$-|a - b| \leq |a| - |b| \leq |a - b| \to ||a| - |b|| \leq |a - b|$$
 
-\section*{1.2.6}
+\subsection*{1.2.6}
 \textit{Given a function $f$ and a subset $A$ of its domain, let $f(A)$
   represent the range of $f$ over the set $A$; that is,
   $f(A) = \{f(x): x \in A\}$. }
@@ -289,7 +290,7 @@ $$g(A \cup B) = g(A) \cup g(B)$$
 
 for any $g$.
 
-\section*{1.2.7}
+\subsection*{1.2.7}
 
 \textit{Given a function $f: D \to \textbf{R}$ and a subset $B
   \subseteq \textbf{R}$, let $f^{-1}(B)$ be the set of all points
@@ -370,7 +371,7 @@ And if we combine this fact with previous conclusion:
 $$ g^{-1}(A \cup B) =  g^{-1}(A) \cup g^{-1}(B)$$
 as desired.
 
-\section*{1.2.8}
+\subsection*{1.2.8}
 
 \textit{Form the logical negation of each claim. One way to do this is to
   simply add "It is bot the case that ... " in front of each assertion, but for
@@ -399,7 +400,7 @@ if we try to negate this, but "not" is stuffed as deep as possible)
 There exist a real number $x \in \textbf{R}$, such that
 for all $n \in \textbf{N}$ it is true that $n \leq x$.
 
-\section*{1.2.9}
+\subsection*{1.2.9}
 \textit{Show that the sequence $(x_1, x_2, x_3,...)$ defined in Example 1.2.7
   is bounded above by 2; that is, prove that $x_n \leq 2$ for every $n \in
   \textbf{N}$.}
@@ -424,7 +425,7 @@ $$x_{n + 1} = (1/2)x_n + 1 \leq 2$$
 $$x_{n + 1} \leq 2$$
 as desired.
 
-\section*{1.2.10}
+\subsection*{1.2.10}
 \textit{Let $y_1 = 1$, and for each $n \in \textbf{N}$ define $y_{n + 1} =
   (3 * y_n + 4) / 4$.}
 
@@ -463,7 +464,7 @@ $$(3 * y_n + 4) / 4 - y_n  > 0$$
 $$y_{n + 1} - y_n  > 0$$
 as desired.
 
-\section*{1.2.11}
+\subsection*{1.2.11}
 \textit{If a set $A$ contains $n$ elements, prove that the number of
   different subsets of $A$ is equal to $2^n$. (Keep in mind that the empty set
   $\emptyset$ is considered to be a subset of every set.)}
@@ -485,7 +486,7 @@ Inductive step is that for set with $n + 1$ elements can either have or hot
 have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
 2^{n + 1}$ subsets, as desired.
 
-\section*{1.2.12}
+\subsection*{1.2.12}
 \textit{For this exerice, assume Exercise 1.2.3 has been successfully completed
   (as it was)}
 
@@ -545,7 +546,9 @@ Thus if we combine two statements
 $$(\cup^{\infty}_{n = 1}A_n)^c = \cap^{\infty}_{n = 1}A^c_n$$
 as desired.
 
-\section*{1.3.1}
+\section{Axiom of Completeness}
+
+\subsection*{1.3.1}
 \textit{Let $\textbf{Z}_5 = \{0, 1, 2, 3, 4, 5\}$ and define addition and
   multiplication modulo 5. In other words, compute the integer remainder when
   $a + b$ and $ab$ are divided by 5, and use this as the value for the sum and
@@ -588,7 +591,7 @@ because of this there exists $s = n - x \in \textbf{Z}_n$
 For multiplicative inverse the conjecture is that it exists only when
 n is a prime number.
 
-\section*{1.3.2}
+\subsection*{1.3.2}
 \textit{(a) Write a formal definition in the style of Definition 1.3.2 for the
   infinum or greatest lower bound of a set}
 
@@ -629,7 +632,7 @@ $s$. Therefore $s$ is a greatest lower bound.
 Maybe this proof is a little bit more coplicated, than it should be, but
 at least every step is followed properly.
 
-\section*{1.3.3}
+\subsection*{1.3.3}
 \textit{(a) Let $A$ be bounded below, and define $B = \{b \in \textbf{R}:
   b $ is a lower bound for $A\}$. Show that $sup(B) = inf(A)$.}
 
@@ -669,7 +672,7 @@ Then it'll have a supremum, for which the inverse will be the infinum of the
 set. We can polish this idea with some theorems and axioms, but I'm satisfied
 with the current proof already, and nobody is requiring it.
 
-\section*{1.3.4}
+\subsection*{1.3.4}
 \textit{Assume that $A$ abd $B$ are nonempty, bounded above, and satisfy
   $B \subseteq A$. Show $sup(B) \leq sup(A)$.}
 
@@ -686,7 +689,7 @@ Therefore $b > sup(A)$, which is an upper bound for $A$ and by extension
 $\forall a \in A: b > a$. Therefore $b \notin A$ and $b \in B$. Therefore
 $B \not\subseteq A$, which is a contradiction. Therefore $sup(B) \leq sup(A)$.
 
-\section*{1.3.5}
+\subsection*{1.3.5}
 \textit{Let $A \subseteq \textbf{R}$ be bounded above, and let $c \in
   \textbf{R}$. Define the sets $c + A$ and $cA$ by $c + A = \{c + a: a \in A\}$
   and  $cA = \{ca: a \in A\}$
@@ -828,7 +831,7 @@ $$\exists h \in cA: h > sup(cA)$$
 
 Which is a contradiction. Therefore $sup(cA) = c * inf(A)$ as desired.
 
-\section*{1.3.6}
+\subsection*{1.3.6}
 \textit{Compute, without proofs, the suprema and infima of the following
   sets:}
 
@@ -848,7 +851,7 @@ $sup = 1/2$, $inf = 1/3$.
 
 $sup = 9$, $inf = 1/9$.
 
-\section*{1.3.7}
+\subsection*{1.3.7}
 \textit{Prove that if $a$ is an upper bound for $A$, and if $a$ is also an
   element $A$, then it must be that $a = sup(A)$}
 
@@ -858,7 +861,7 @@ Suppose that $a \neq sup(A)$. Because $a$ is still an upper bound, $sup(A) <
 a$, Therefore $a \in A$, but $sup(A) < a$, which is a contradiction.
 Therefore $a = sup(A)$.
 
-\section*{1.3.8}
+\subsection*{1.3.8}
 \textit{If $sup(A) < sup(B)$, then show that there exists an element $b \in B$,
   that is an upper bound for $A$.}
 
@@ -871,7 +874,7 @@ $$ b > sup(A) $$
 
 therefore $b$ is an upper bound for $A$.
 
-\section*{1.3.9}
+\subsection*{1.3.9}
 \textit{Without worryong about formal proofs for the moment, decide if the
   following statements about suprema and infima are true or false. For any that
   are false, supply an example where the claim in question does not appear to
@@ -900,7 +903,9 @@ True
 
 False. $sup([1, 2]) = sup((1, 2))$
 
-\section*{1.4.1}
+\section{Consequences of Completeness}
+
+\subsection*{1.4.1}
 \textit{Without doing too much work, show how to prove Theorem 1.4.3 in the
   case where $a < 0$ by converting this case into the already proven.}
 
@@ -926,7 +931,7 @@ $$b  > r > a$$
 $$a < r < b$$
 as desired.
 
-\section*{1.4.2}
+\subsection*{1.4.2}
 \textit{Recall that \textbf{I} stands for the set of irrational numbers.}
 
 \textit{(a) Show that if $a,b \in \textbf{Q}$, then $ab$ and $a + b$ are
@@ -979,7 +984,7 @@ $$\sqrt{2} + 1 - \sqrt{2} = 1 \in Q$$
 and
 $$\sqrt{2} * \sqrt{2} = 2 \in Q$$
 
-\section*{1.4.3}
+\subsection*{1.4.3}
 \textit{Using Exercise 1.4.2, supply a proof for Corollary 1.4.4 by
   applying Theorem 1.4.3 to the real numbers $a - \sqrt{2}$  and
   $b - \sqrt{2}$.}
@@ -1000,7 +1005,7 @@ $$a  < r - \sqrt{2} < b $$
 As we know, $r - \sqrt{2}$ is an irrational number, therefore between $a$ and
 $b$ there exists an irrational number.
 
-\section*{1.4.4}
+\subsection*{1.4.4}
 \textit{Use the Archimedean Property of $R$ to rigorously prove that
   $inf\{1/n: n \in N\} = 0$}
 
@@ -1019,7 +1024,7 @@ Therfore for every $\epsilon$ there exists an element of a set such that
 $0 + \epsilon$ is greater than this set. Therefore 0 is an infinum of this set,
 as desired.
 
-\section*{1.4.5}
+\subsection*{1.4.5}
 \textit{Prove that $\cap^{\infty}_{n = 1}(0, 1/n) = \emptyset$. Notice that
   this demonstrates that the Nested Interval Property must be closed for the
   conclusion of the theorem to hold.}
@@ -1040,7 +1045,7 @@ as desired.
 This conclusion proves, that if we have use an open interval for nested
 interval property, then we'll have a problem.
 
-\section*{1.4.6}
+\subsection*{1.4.6}
 \textit{(a) Finish the proof of Theorem 1.4.5 by showing that the assumption
   $\alpha ^ 2 > 2$ leads to a contradiction of the fact that
   $\alpha = sup(T)$.}
@@ -1112,7 +1117,7 @@ Now let $$1/n < \frac{\alpha^2 - b}{2 \alpha -  1}$$. Then by reasoning in
 the last part of exercise we can state, that $\alpha^2 \leq b$. Therefore
 $\alpha^2 = b$, as desired.
 
-\section*{1.4.7}
+\subsection*{1.4.7}
 \textit{Finish the following proof for Theorem 1.4.12.}
 
 First of all, let us state Theorem 1.4.12
@@ -1144,7 +1149,7 @@ If $A$ is not infinite, then it's finite (duh).
 
 Same with empty.
 
-\section*{1.4.8}
+\subsection*{1.4.8}
 \textit{Use the following outline to supply for the statements in Theorem
   1.4.13.}
 
@@ -1308,7 +1313,7 @@ eventually in the list. Thus, we have a bijective function between $N$ and
 $\cup^{\infty}_{n = 1} A_n$. Therefore $\cup^{\infty}_{n = 1} A_n$ is countable, as
 desired.
 
-\section*{1.4.9}
+\subsection*{1.4.9}
 \textit{(a) Given sets $A$ and $B$, explain why $A \sim B$ is equivalent to asserting
   $B \sim A$.}
 
@@ -1368,7 +1373,7 @@ $$\forall a \in A: \exists b \in B: g_1(a) = b \to  \exists c \in C: g_2(g_1(a))
 
 Therefore $g_2 \circ g_1: A \to C$ is a bijective function. Therefore $A \sim C$, as desired.
 
-\section*{1.4.10}
+\subsection*{1.4.10}
 \textit{Show that the set of all finite subsets of N is a countable set. (It turns out that
   the set of all subsets of N is not a countable set. This is a title of Section 1.5)}
 
@@ -1395,7 +1400,7 @@ Therefore $\cup^{\infty}_{k = 1} S_{m_k} = S_{m + 1}$ is countable.
 Therefore each set of sets of length $n \in N$ is countable. Therefore their union is
 countable. Therefore set of finite subsets of $N$ is countable, as desired.
 
-\section*{1.4.11}
+\subsection*{1.4.11}
 \textit{Consider the open interval $(0,1)$, and let $S$ be the set of points in the
   open unit square; that is, $S = \{(x, y): 0 \leq x,y \leq 1\}$}
 
@@ -1424,7 +1429,7 @@ Therefore the function is not surjective.
 \textit{The Schroder-Bernstein Theorem discussed in Exercise 1.4.13 to follow
   can now be applised to conclude that $(0,1) \sim S$}
 
-\section*{1.4.12}
+\subsection*{1.4.12}
 \textit{A real number $x \in R$ is called algebraic if there exists integers
   $a_0, a_1, a_2, ..., a_n \in Z$, not all zero, such that }
 
@@ -1493,7 +1498,7 @@ the set of transcedental numbers is not countable (because if it was, then the s
 of real numbers would be a union of two countable sets and therefore countable as
 well).
 
-\section*{1.4.13 (Schroder-Bernstein Theorem)}
+\subsection*{1.4.13 (Schroder-Bernstein Theorem)}
 \textit{Assume that there exists a 1-1 function $f: X \to Y$ and another 1-1 function
   $g: Y \to X$. Follow the steps to show that there exists a 1-1, onto function $h: X \to Y$
   and hence $X \sim Y$.}
@@ -1616,8 +1621,10 @@ as well.
 
 Therefore this function is bijective. Therefore we have a bijective function from
 $X$ to $Y$. Therefore $X \sim Y$, as desired.
+
+\section{Cantor's Theorem}
     
-\section*{1.5.1}
+\subsection*{1.5.1}
 \textit{Show that $(0, 1) = \{x \in R: 0 < x < 1\}$ is uncountable if and only if R
   is uncountable.}
 
@@ -1630,7 +1637,7 @@ that ist is increasing and therefore it is bijective. Thus
 there exist a bijective. Thus $(0, 1) \sim R$. Therefore it is uncountable
 if and only if $R$ is uncountable.
 
-\section*{1.5.2}
+\subsection*{1.5.2}
 \textit{(a) Explain why the real numnder $x = b_1 b_2 b_3...$ cannot be f(1).}
 
 If $f(1) = b$ then
@@ -1654,7 +1661,7 @@ to $n \in N$ for any $f: N \to (0, 1)$. Therefore either $b \notin (0, 1)$ or
 $(0, 1)$ is not countable. Because $b \in (0, 1)$ we conclude that $(0, 1)$ is
 uncountable.
 
-\section*{1.5.3}
+\subsection*{1.5.3}
 \textit{Supply rebuttals to the following complaints about the proof of
   Theorem 1.5.1}
 
@@ -1676,7 +1683,7 @@ No, it doesn't. And the reason on why it doesn't cause any problems is because
 our argument stems on the fact, that given $b \in R$ is not in the set,
 if the set is countable. Therefore different representations problem is irrelevant.
 
-\section*{1.5.4}
+\subsection*{1.5.4}
 \textit{Let $S$ be the set consisting of all sequences of 0's and 1's. Observee that $S$
   is not a particular sequence, but rather a large set whose elements are sequences;
   namely,}
@@ -1693,7 +1700,7 @@ $S \sim (0, 1) \sim R$, therefore it is uncountable.
 
 We can work around sets and NIP to show the same thing if we want to, but I dont want to.
 
-\section*{1.5.5}
+\subsection*{1.5.5}
 \textit{(a) Let $A = \{a, b, c\}$. List the eight elements of $P(A)$. (Do not forget that
   $\emptyset$ is considered to be a subset of every set.)}
 
@@ -1721,7 +1728,7 @@ Inductive step is that for set with $n + 1$ elements can either have or hot
 have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
 2^{n + 1}$ subsets, as desired.
 
-\section*{1.5.6}
+\subsection*{1.5.6}
 \textit{(a) Using the particular set $A = \{a, b, c\}$, exhibit two different
   1-1 mappings from $A$ to $P(A)$}
 
@@ -1761,7 +1768,7 @@ have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
 
 $|A| < |P(A)|$
 
-\section*{1.5.7}
+\subsection*{1.5.7}
 \textit{Return to the particular functions constructed in Exercise 1.5.6 and construct
   subset B that results using the preceding rule. In each case, note that B is not in
   the range of the function used. }
@@ -1775,7 +1782,7 @@ $$B = \{a\}$$
 For $f_3$:
 $$B = \{\emptyset§\}$$
 
-\section*{1.5.8}
+\subsection*{1.5.8}
 \textit{(a) First, show that the case $a' \in B$ leads to a contradiction.}
 
 Suppose that $a' \in B$. By definition of $B$,  $a \notin f(a')$. Therefore we have a
@@ -1788,7 +1795,7 @@ Suppose that $a' \notin B$. Therfore, by definition of $B$, $a' \notin B \to a' 
 Therefore we have a contradiction. Thus, we cannot construct a surjective map from $A$ to
 $P(A)$. Therefore $A \not\sim P(A)$.
 
-\section*{1.5.9}
+\subsection*{1.5.9}
 \textit{As a final exercise, answer each of the following be establishing a 1-1
   correspondence with a set of known cardinality.}
 
@@ -1833,7 +1840,10 @@ adding $2n - 1$ to the set, if the n'th position is 1. Therefore, for
 different by al least two numbers, and therefore not a subset of each other.
 
 \chapter{Sequences and Series}
-\section*{2.2.1}
+
+\section{Limit of a Sequence}
+
+\subsection*{2.2.1}
 \textit{Verify, using the definition of convergence of a sequence, that the following
   sequenceces converge to the proposed limit.}
 
@@ -1881,7 +1891,7 @@ $$|\frac{2}{\sqrt{n + 3}}| < \epsilon$$
 
 as desired.
 
-\section*{2.2.2}
+\subsection*{2.2.2}
 \textit{What happens if we reverse the order of the quantifiers on Definition 2.2.3?}
 
 \textit{Definition: A sequence $(x_n)$ verconges to $x$ if there exists an $\epsilon > 0$
@@ -1899,7 +1909,7 @@ $$(x_n) = (-1)^n$$.
 
 Here described a bounded sequence (i.e. $|(x_n)| < M$  for some $M > 0\in R$
 
-\section*{2.2.3}
+\subsection*{2.2.3}
 \textit{Describe what we would have to demonstrate in order to disprove each
   of the following statements.}
 
@@ -1918,7 +1928,7 @@ There exist a college, where every professor gives C or less every time.
 
 In all colleges across US there exists a student, who is shorter than 6 feet.
 
-\section*{2.2.4}
+\subsection*{2.2.4}
 \textit{Argue that the sequence }
 $$1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, (\text{5 zeroes}), 1...$$
 \textit{
@@ -1932,7 +1942,7 @@ For values $\epsilon > 1$ there always exist a suitable N.
 
 For values $ 0 < \epsilon \leq 0$ there exists no responce.
 
-\section*{2.2.5}
+\subsection*{2.2.5}
 \textit{Let $[[x]]$ be the greatest integer less than of equal to $x$. For example,
   $[[\pi]] = 3$ and $[[3]] = 3$. Find $\lim a_n$ and supply proofs for each conclusion
   if}
@@ -1968,7 +1978,7 @@ value works for all of the $\epsilon$'s. I bet my money on the fact, that it
 can be rigorously proven, that this is the case only for the sequences, that are constant after
 some term, but I'll skip that
 
-\section*{2.2.6}
+\subsection*{2.2.6}
 \textit{Suppose that for a particular $\epsilon > 0$ we have found a suitable
   value of $N$ that "works" for a given sequence in the sence of Definition 2.2.3.}
 
@@ -1980,7 +1990,7 @@ Larger. This fact follows from definition.
 
 Larger. $x \in V_\epsilon \to x \in V_{\epsilon + s}$
 
-\section*{2.2.7}
+\subsection*{2.2.7}
 \textit{Informally speaking, the sequence $\sqrt{n}$ "converges to infinity".}
 
 \textit{(a) Imitate the logical structure of Definition 2.2.3 to create a rigorous definition
@@ -2006,7 +2016,7 @@ Therefore the sequence converges to infinity
 
 It says, that it doesn't converge to infinity (specifically for the case $\epsilon > 0$)
 
-\section*{2.2.8}
+\subsection*{2.2.8}
 \textit{Here are two useful definitions:}
 
 \textit{(i) A sequence $(a_n)$ is eventually in a set $A \subseteq R$ if there exists
@@ -2044,14 +2054,16 @@ It is indeed frequently in $(1.9, 2.1)$. This stems from the fact, that before $
 there exist only a finite number of elements before it. Therefore 2 is bound to
 be met again at some time.
 
-\section*{2.3.1}
+\section{Algebraic and Order Limit Theorems}
+
+\subsection*{2.3.1}
 \textit{Show that the constant sequence $(a, a, a, ...)$ converges to $a$.}
 
 $$|a_n - a| = |a - a| = 0$$
 therefore for every $n \in N$ it is true, that $|a_n - a| < \epsilon$.
 Therefore $(a_n) \to a$, as desired.
 
-\section*{2.3.2}
+\subsection*{2.3.2}
 \textit{Let $x_n >\geq 0$ for all $n \in N$.}
 
 \textit{(a) If $(x_n) \to 0$, show that $(\sqrt{x_n}) \to 0$}
@@ -2103,7 +2115,7 @@ $$\forall \epsilon \in R > 0:
 < \epsilon$$.
 From which it follows that $(\sqrt{x_n}) \to x$ by definition of a limit.
 
-\section*{2.3.3 (Squeezze Theorem).}
+\subsection*{2.3.3 (Squeezze Theorem).}
 \textit{Show that if $x_n \leq y_n \leq z_n$ for all $n \in N$, and if
   $\lim x_n = \lim z_n = l$, then $\lim y_n = l$ as well.}
 
@@ -2116,7 +2128,7 @@ Therefore
 $$\lim x_n = \lim z_n = l \to \lim y_n = l$$
 as desired.
 
-\section*{2.3.4}
+\subsection*{2.3.4}
 \textit{Show that limits, if they exist, must be unique. In other words,
   assume $\lim a_n = l_1$ and $\lim a_n = l_2$, and prove that $l_1 = l_2$.}
 
@@ -2146,7 +2158,7 @@ which is a contradiction. Therefore
 $$\lim a_n = l_1 \text{ and } \lim a_n \to l_2 \to l_1 = l_2$$
 as desired.
 
-\section*{2.3.5}
+\subsection*{2.3.5}
 \textit{Let $(x_n)$ and $(y_n)$ be given, and deefine $(z_n)$ to be the
   "shuffled" sequence $(x_1, y_1, x_2, y_2, x_3, y_3, ...)$. Prove that
   $(z_n)$ is convergent it and only if $(x_n)$ and $(y_n)$ are both
@@ -2183,7 +2195,7 @@ $$\forall \epsilon > 0: \exists N \in \textbf{N}: n \geq N \to |z_n - l| < \epsi
 
 Thus $(z_n) \to l$ as well, as desired.
 
-\section*{2.3.6}
+\subsection*{2.3.6}
 \textit{Show that if $(b_n) \to b$, then the sequence of absolute values
   $|b_n|$ converges to $|b|$.}
 
@@ -2200,7 +2212,7 @@ Thus $(|b_n|) \to |b|$, as desired.
 No. Glaring example is
 $$a_n = (-1)^n$$
 
-\section*{2.3.7}
+\subsection*{2.3.7}
 \textit{(a) Let $(a_n)$ be a boundeed (non necessarily convergent) sequence,
   and assume $\lim b_n = 0$. Show that $\lim (a_n b_n) = 0$. Why are not
   allowed to use Algebraic Limit Theorem to prove that?}
@@ -2241,7 +2253,7 @@ In part (a) we concluded, that $M|b_n|$ is convergent to 0 by using
 part (i) of algebraic limit theorem. We didn't even use the case when
 $M = 0$, and therefore we can sleep well.
 
-\section*{2.3.8}
+\subsection*{2.3.8}
 \textit{Give an example of each of the following, or state that such a
   request is impossible by referencing the proper theorem(s):}
 
@@ -2287,7 +2299,7 @@ Same algebraic limit theorem with a bit of convergence to infinity
 $$(a_n) = 1/n$$
 $$(b_n) = (-1)^n$$
 
-\section*{2.3.9}
+\subsection*{2.3.9}
 \textit{Does Theorem 2.3.4 remain true, if all of the inequalities are
   assumed to be strict? If we assume, for instance, that a convergent
   sequence $(x_n)$ satisfies $x_n > 0$ for all $n \in N$, what we may conclude
@@ -2296,7 +2308,7 @@ $$(b_n) = (-1)^n$$
 If we swap all inequalities to strict ineqaulities, then the theorem is false.
 Example: $(b_n) = 1/n \to 0$, but $b_n > 0$ for all n's.
 
-\section*{2.3.10}
+\subsection*{2.3.10}
 \textit{If $(a_n) \to 0$ and $|b_n - b| \leq a_n$, then show that $(b_n) \to b$.}
 
 $(a_n) \to 0$ implies, that for every $\epsilon \in R > 0$ we can get
@@ -2308,7 +2320,7 @@ $$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \forall n \geq N \to
 |b_n - b|  < \epsilon$$
 Therefore $(b_n) \to b$, as desired.
 
-\section*{2.3.11 (Cesaro Means).}
+\subsection*{2.3.11 (Cesaro Means).}
 \textit{Show that if $(x_n)$ is a convergent sequence, then the sequence given by
   the averages }
 $$y_n = \frac{x_1 + x_2 + ... + x_n}{n}$$
@@ -2394,7 +2406,7 @@ Therefore
 $$x_n = (0, 0, 1, -1, 2, -2, ...)$$
 
 
-\section*{2.3.12}
+\subsection*{2.3.12}
 \textit{Consider the doubly indexed array $a_{m,n} = m / (m + n))$.}
 
 \textit{(a) Intuitively speaking, what should $\lim_{m,n \to \infty} a_{m,n}$
@@ -2431,7 +2443,9 @@ number $\epsilon$, there exist $N_1, N_2 \in \textbf{N}$ such that
 whenever $m > N_1$ and $n > N_2$ it follows that $|a_{m,n} - a| <
 \epsilon$.
 
-\section*{2.4.1}
+\section{MCT and Infinite Series}
+
+\subsection*{2.4.1}
 \textit{Complete the proof of Theorem 2.4.6 by showing that if the
   series $\sum^{\infty}_{n = 0} 2^n b_{2^n}$ diverges, then so does
   $\sum^{\infty}_{n = 1} b_n$. Example 2.4.5 may be a useful reference.}
@@ -2455,7 +2469,7 @@ Therefore, partial sum for $\sum^{\infty}_{n = 0} 2^n b_{2^n}$ is less than
 $\sum^{\infty}_{n = 1} b_n$. Therefore $\sum^{\infty}_{n = 1} b_n$ diverges,
 as desired.
 
-\section*{2.4.2}
+\subsection*{2.4.2}
 \textit{(a) Prove that the sequence defined by $x_1 = 3$ and}
 $$x_{n + 1} = \frac{1}{4 - x_n}$$
 \textit{converges.}
@@ -2536,7 +2550,7 @@ Given that $2 + \sqrt{3} > 3$ and that the sequence is decreasing and first
 element of it is $3$, we can state that $x_n > 3$ for all n. Therefore
 $$\lim x_n = 2 - \sqrt{3}$$
 
-\section*{2.4.3}
+\subsection*{2.4.3}
 \textit{Following the model of Exercise 2.4.2, show that the sequence defined
   by $y_1 = 1$ and $y_{n + 1} = 4 - 1/y_n$.}
 
@@ -2602,7 +2616,7 @@ Now we have the proof that the sequence is both bounded and increasing, and thus
 converges to some number. After some calculation (and by using common sense) we can
 also conslude, that the sequence converges to $2 + \sqrt{3}$.
 
-\section*{2.4.4}
+\subsection*{2.4.4}
 \textit{Show that }
 $$ \sqrt{2}, \sqrt{2 \sqrt{2}}, \sqrt{ 2 \sqrt{ 2 \sqrt{2}}}, ... $$
 \textit{converges and find the limit.}
@@ -2637,7 +2651,7 @@ $$\sum_{m = 1}^{\infty} 2^{-m} = 1$$
 and thus
 $$(x_n) =  2 ^{\sum_{m = 1}^n 2^{-m}} \to 2^1 = 2$$
 
-\section*{2.4.5 (Calculating Square Roots)}
+\subsection*{2.4.5 (Calculating Square Roots)}
 \textit{Let $x_1 = 2$, and define }
 $$x_{n+1} = \frac{1}{2}(x_n + \frac{2}{x_n})$$
 \textit{a) Show that $x_n^2$ is always greater than 2, and then use this to prove
@@ -2703,7 +2717,7 @@ $$x_n =  \frac{1}{2}(x_n + \frac{c}{x_n})$$
 
 The proof that this sequence works is obtained through the same logic, as in part (a).
 
-\section*{2.4.6 (Limit Superior)}
+\subsection*{2.4.6 (Limit Superior)}
 \textit{Let $(a_n)$ be a bounded sequence.}
 
 \textit{(a) Prove that the sequence defined by $y_n = sup\{a_k: k \geq n\}$
@@ -2841,7 +2855,9 @@ $\forall n \in N > k: a_n \geq b_n \to \lim a_n \geq \lim b_n$.
 
 Thus $\lim \inf a_n = \lim \sup a_n = l$, as desired.
 
-\section*{2.5.1}
+\section{Subsequences and BW}
+
+\subsection*{2.5.1}
 \textit{Prove Theorem 2.5.2}
 
 First of all, let us state the theorem itself.
@@ -2863,7 +2879,7 @@ $$\forall \epsilon \in R > 0: \exists N \in \textbf{N}: \exists M \in \textbf{N}
 $$\forall \epsilon \in R > 0:  \exists M \in \textbf{N} :  \forall m \geq M \to |b_m - l| < \epsilon$$
 or in other words, $(b_n) \to l$, as desired.
 
-\section*{2.5.2}
+\subsection*{2.5.2}
 \textit{(a) Prove that if an infinite series converges, then the associative
   property holds. Assume $a_1 + a_2 + a_3 + a_4 + a_5 + ...$ converges
   to a limit $L$ (i.e. the sequence of partial sums $(s_n) \to L$). Show that
@@ -2890,7 +2906,7 @@ Our proof doesn't apply to any of the sequences, discussed in the 2.1
 because each one  of them was not convergent , which is a
 prerequisite for part (a).
 
-\section*{2.5.3}
+\subsection*{2.5.3}
 \textit{Give an example of each of the following, or argue that such a request
   is impossible.}
 
@@ -2951,7 +2967,7 @@ Bolzano-Weierstrass Theorem). Subsequence of a subsequence is a subsequence of
 original sequence. Thus an original sequence contains a convergent
 subsequence.
 
-\section*{2.5.4}
+\subsection*{2.5.4}
 \textit{Assume $(a_n)$ is a bounded sequence with the property that every
   convergent subsequence of $(a_n)$ converges to the same limit $a \in R$.
   Show that $(a_n)$ must converge to $a$.}
@@ -2975,7 +2991,7 @@ a maximum index of a finite elements of elements outside the neighborhood, or
 for which it is true, that $n > N \in \textbf{N} \to a_n \in V_{\epsilon}(a)$.
 Therefore, $(a_n) \to a$ by topological version of definition of convergence.
 
-\section*{2.5.5}
+\subsection*{2.5.5}
 \textit{Extend the result proved in Example 2.5.3 to the case $|b| < 1$.
   Show that $\lim (b^n) = 0$ whenever $-1 < b < 1$.}
 
@@ -2988,7 +3004,7 @@ We already know, that for $0 < b_1 < 1$ it is true, that $\lim (b_1^n) = 0$.
 Thus, for $b = 0$, the case is triival, and for $b < 0$ it defaults to
 $|b| = b_1$. Therefore $\lim (b^n) = 0$ for $-1 < b < 1$.
 
-\section*{2.5.6}
+\subsection*{2.5.6}
 \textit{Let $(a_n)$ be a bounded sequence, and define the set }
 $$S = \{x \in R: x < a_n \text{ for indefinetly many terms }a_n \}$$
 \textit{Show that there exists a subsequence $(a_{n_k})$ converging to
@@ -3015,7 +3031,9 @@ the fact, that if a limit superior exists, then there exists
 a subsequence in the original sequence, that converges to limit
 superior.
 
-\section*{2.6.1}
+\section{The Cauchy Criterion}
+
+\subsection*{2.6.1}
 \textit{Give an example of each of the following, or argue that such a request
   is impossible }
 
@@ -3045,7 +3063,7 @@ same number.
   \end{cases}
 \end{equation}
 
-\section*{2.6.2}
+\subsection*{2.6.2}
 \textit{Supply a proof for Theorem 2.6.2}
 
 Firstly, let us state the theorem itself
@@ -3069,7 +3087,7 @@ $$|x_n - x_m| < \epsilon$$
 
 Thus any convergent sequence is a Cauchy sequence, as desired.
 
-\section*{2.6.3}
+\subsection*{2.6.3}
 \textit{(a) Explain how the following pseudo-Cauchy property differs
   from the proper definition of a Cauchy sequence: A sequence $(s_n)$ is
   pseude-Cauchy if, for all $\epsilon > 0$, there exists an $N$ such that
@@ -3084,7 +3102,7 @@ all of elements, that are after.
 
 Harmonic series.
 
-\section*{2.6.4}
+\subsection*{2.6.4}
 \textit{Assume $(a_n)$ and $(b_n)$ are Cauchy sequences. Use a triangle
   inequality argument to prove $c_n = |a_n - b_n|$ is Cauchy.}
 
@@ -3101,7 +3119,7 @@ $$|c_n - c_m| = ||a_n - b_n| - |a_m - b_m|| \leq |a_n - b_n - a_m + b_m|
 $$|c_n - c_m|  < \epsilon$$
 Thus $(c_n)$ is also Cauchy, as desired.
 
-\section*{2.6.5}
+\subsection*{2.6.5}
 \textit{If $(x_n)$ and $(y_n)$ are Cauchy sequences, then one easy way to
   prove that $(x_n + y_n)$ is Cauchy is to use the Cauchy Criterion. By
   Theorem 2.6.4, $(x_n)$ and $(y_n)$ must be convergent, and the Algebraic
@@ -3149,7 +3167,7 @@ M \frac{\epsilon}{2M} = \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$$
 
 Therefore $(x_n y_n)$ is a Cauchy sequence as well.
 
-\section*{2.6.6}
+\subsection*{2.6.6}
 
 \textit{(a) Assume the Nested Interval Property (Theorem 1.4.1) is true and
   use a technique similar to the one employed in the proof of the
@@ -3264,7 +3282,9 @@ $(a_{n_j})$ will be a Cauchy sequence, and therefore convergent to some
 value. Therefore
 $$CC \iff BW$$
 
-\section*{2.7.1}
+\section{Properties of Infinite Series}
+
+\subsection*{2.7.1}
 \textit{Proving the Alternating Series Test (Theorem 2.7.7) amounts to
   showing that the sequence of partial sums }
 $$s_n  = a_1 - a_2 + a_3 - ... \pm a_n$$
@@ -3390,7 +3410,7 @@ we can conclude that by Squeeze theorem
 $$\sum_{n = 1}^{\infty} (-1)^{n + 1}a_n = \lim{s_n} = l$$
 as desired.
 
-\section*{2.7.2}
+\subsection*{2.7.2}
 \textit{(a) Provide the details for the proof of the Comparison Test
   (Theorem 2.7.4) using the Cauchy Criterion for Series.}
 
@@ -3471,7 +3491,7 @@ increasing, therefore we can state that they are unbounded, precisely
 that it is convergent to infinity. Because $l_k \leq s_k$, the same can be said
 about partial sums for  $\sum^{\infty}_{k = 1}(b_k)$.
 
-\section*{2.7.3}
+\subsection*{2.7.3}
 \textit{Let $\sum a_n$ be given. For each $n \in N$, let $p_n = a_n$ if $a_n$
   os positive and assign $p_n = 0$ if $a_n$ is negative. In a similar manner,
   let $q_n = a_n$ if $a_n$ is negative and $q_n = 0$ if $a_n$ is positive. }
@@ -3506,13 +3526,13 @@ contradiction.
 Therefore we can state, that in orger to $\sum a_n$ to converge absolutely,
 both $\sum p_n$ and $\sum q_n$ must diverge, as desired.
 
-\section*{2.7.4}
+\subsection*{2.7.4}
 \textit{Give an example to show that it is possible for both $\sum x_n$ and
   $\sum y_n$ diverge, but for $\sum x_n y_n$ converge.}
 
 $$x_n = y_n = 1/n \to x_n y_n = 1/n^2$$
 
-\section*{2.7.5}
+\subsection*{2.7.5}
 \textit{(a) Show that if $\sum a_n$ converges absolutely, then $\sum a_n^2$
   also converges absolutely. Does this proposition hold without absolute
   convergence?}
@@ -3549,7 +3569,7 @@ $\sum \sqrt{a_n}$ converge (both conclusions are justified by the fact, that
 we had drawn  some time ago that the series
 $\sum 1/n^p$ converges if and only if $p > 1$ ).
 
-\section*{2.7.6}
+\subsection*{2.7.6}
 \textit{(a) Show that if $\sum x_n$ converges absolutely, and the sequence
 $(y_n)$ is bounded. then the sum $\sum x_n y_n$ converges.}
 
@@ -3571,7 +3591,7 @@ $$\sum x_n = \sum \frac{(-1)^{n + 1}}{\sqrt{n}}$$
 $$(y_n) = \frac{(-1)^{n + 1}}{\sqrt{n}}$$
 $$\sum y_n x_n = \sum \frac{1}{n}$$
 
-\section*{2.7.7}
+\subsection*{2.7.7}
 \textit{Now that we have proved the basic facts about geometric series,
   supply a proof for Corollary 2.4.7}
 
@@ -3599,7 +3619,7 @@ $$1 - p < 0$$
 $$p > 1$$
 as desired.
 
-\section*{2.7.8}
+\subsection*{2.7.8}
 \textit{Prove Theorem 2.7.1 part (ii)}
 
 Theorem 2.7.1 part (ii) states that
@@ -3619,7 +3639,7 @@ Thus
 $$\lim (a_n + b_n) = \lim p_n = \sum (a_n + b_n) = A + B$$
 as desired.
 
-\section*{2.7.9 (Ratio Test)}
+\subsection*{2.7.9 (Ratio Test)}
 \textit{Given a series $\sum_{n = 1}^{\infty} a_n$ with $a_n \neq 0$, the
   Ratio Test states that if $(a_n)$ satisfies}
 $$\lim|\frac{a_{n + 1}}{a_n}| = r < 1$$
@@ -3696,7 +3716,7 @@ $$|s_m - s_n| < \epsilon$$
 Thus, by Cauchy criterion for series, the  series $\sum |a_n|$ is convergent.
 Thus $\sum a_n$ is absolutely convergent.
 
-\section*{2.7.10}
+\subsection*{2.7.10}
 \textit{(a) Show that if $a_n > 0$ and $\lim(na_n) = l$ with $l \neq 0$,
   then the series $\sum a_n$ diverges. }
 
@@ -3752,7 +3772,7 @@ $\sum \frac{ l + \epsilon}{n^2}$ is convegent as well for any
 $l + \epsilon \in R$. Thus, by Comparison Test, $\sum a_n$ is convergent as
 well, as desired.
 
-\section*{2.7.11}
+\subsection*{2.7.11}
 \textit{Find examples of two series $\sum a_n$ and $\sum b_n$ both of which
   diverge, but for which $\sum \min\{a_n, b_n\}$ converges. To make it more
   challanging, produce exampless where $(a_n)$ and $(b_n)$ are positive and
@@ -3806,7 +3826,7 @@ more robust example, but I think, that it is pretty cursed anyways. I'm done
 with this exercise anyways, not gonna spend more time on it.
 
 
-\section*{2.7.12 (Summation by Parts)}
+\subsection*{2.7.12 (Summation by Parts)}
 \textit{Let $(x_n)$ and $(y_n)$ be sequences, and let
   $s_n = x_1 + x_2 + ... + x_n$. Use the observation that
   $x_j = s_j - s_{j - 1}$ to verify formula }
@@ -3838,7 +3858,7 @@ y_{n}x_n = \sum_{j = m + 1}^{n} x_j y_j
 $$
 as desired.
 
-\section*{2.7.13 (Dirichlet's Test)}
+\subsection*{2.7.13 (Dirichlet's Test)}
 \textit{Dirichlet's Test for convergence states that if the partial sums of
   $\sum_{n = 1}^{\infty} x_n$ are bounded (but not necessarily convergent), and
   if $(y_n)$ is a sequence satisfyong $y_1 \geq y_2 \geq y_3 \geq ... \geq 0 $
@@ -3895,7 +3915,7 @@ We cas set $x_n = (-1)^{n + 1}$, which is gonna be bounded by $[-1, 1]$, and
 $y_n = a_n$, which converges to 0 and satisfies all of the necessary
 prerequisites for Dirichlet's Test to be applied.
 
-\section*{2.7.14 (Abel's Test).}
+\subsection*{2.7.14 (Abel's Test).}
 \textit{Abel's Test for convergence states that if the series
   $\sum_{n = 1}^{\infty} x_n$ converges, and if $y_n$ is a sequence
   satisfying  }
@@ -3940,7 +3960,9 @@ $$|\sum_{j = m + 1}^{n} x_j y_j|= |\sum_{j = 1}^{n} a_n b_n| <2 A b_1$$
 
 Therefore by Cauchy Criterion for Series, $\sum x_j y_j$ is convergent.
 
-\section*{2.8.1}
+\section{Double suppations}
+
+\subsection*{2.8.1}
 \textit{Using the particular array $(a_{ij})$ from  Section 2.1, compute
   $\lim_{n \to \infty} s_{nn}$. How does this value compare to the two
   iterated values for the sum already computed? }
@@ -3962,7 +3984,7 @@ as desired.
 
 The resulting value is equal to one of the earlier computed results.
 
-\section*{2.8.2}
+\subsection*{2.8.2}
 
 \textit{Show that if the iterated series }
 $$\sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}|a_{ij}|$$
@@ -3989,7 +4011,7 @@ converges too, as desired.
 
 
 
-\section*{2.8.3}
+\subsection*{2.8.3}
 
 \textbf{Theprem 2.8.1.}
 \textit{Let $\{a_{ij}: i, j \in N\}$ be a doubly indexed array of real numbers.
@@ -4025,7 +4047,7 @@ $$|s_{mm} - s_{nn}|  < \epsilon$$
 Therefore $(s_{nn})$ is a Cauchy sequence, and therefore it is convergent, as
 desired.
 
-\section*{2.8.4}
+\subsection*{2.8.4}
 \textit{(a) Argue that there exists an $N_1 \in \textbf{N}$ such that
   $m, n \geq N_1$ implies $B - \frac{\epsilon}{2} < t_{mn} \leq B$.}
 
@@ -4060,7 +4082,7 @@ Thus, there exists $N \in \textbf{N}$ such that $m, n \geq N$ implies
 $$|s_{mn} - S| < \epsilon$$
 as desired
 
-\section*{2.8.5}
+\subsection*{2.8.5}
 \textit{Use the Algebraic Limit Theorem (Theorem 2.3.3) and the Order Limit
   (Theorem 2.3.4) to show that for all $m \geq N$}
 $$|(r_1 + r_2 + ... + r_m) - S| \leq  \epsilon$$
@@ -4114,7 +4136,7 @@ is also convergent to 0.
 
 Thus,   $\sum_{i=1}^{\infty}\sum_{j=1}^{\infty} a_{ij} = S$, as desired.
 
-\section*{2.8.6}
+\subsection*{2.8.6}
 \textit{Finish the proof by showing that the other iterated sum, $\sum_{j=1}^{\infty}\sum_{i=1}^{\infty} a_{ij}$, converges to S as well. Notice that the
   same argument can be used once it is established that. for each fixed column
   $j$, the sum $\sum_{i = 1}^{\infty} a_{ij}$ converges to some real number
@@ -4131,7 +4153,7 @@ Therefore if $\sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty}|a_{ij}|$ exists,
 then it follows that 
 $$\lim_{n \to \infty} s_{nn} = \sum_{i = 1}^{\infty}\sum_{j = 1}^{\infty}a_{ij} = \sum_{j = 1}^{\infty}\sum_{i = 1}^{\infty}a_{ij}$$
 
-\section*{2.8.7}
+\subsection*{2.8.7}
 \textit{(a) Assuming the hypothesis -- and hence the conclusion of
   Theorem 2.8.1, show that $\sum_{k = 2}^{\infty}d_k$ converges absolutely.}
 
@@ -4156,7 +4178,7 @@ Thus, $(q_k) \to 0$. Therefore we can state that
 $$\lim d_m = \lim q_m + \lim s_{nn}$$
 Thus, $\lim d_m = S$, as desired.
 
-\section*{2.8.8}
+\subsection*{2.8.8}
 \textit{Assume that $\sum_{i = 1}^{\infty} a_i$  converges to $A$, and
   $\sum_{i = 1}^{\infty} b_i$ converges absolutely to $B$.}
 
@@ -4215,7 +4237,9 @@ as desired.
 
 \chapter{Basic Topology of R}
 
-\section*{3.2.1}
+\section{Opec and closed sets}
+
+\subsection*{3.2.1}
 \textit{(a) Where in the proof of Theorem 3.2.3 part (ii) does the assumption
   that the collection of open sets be finite get used}
 
@@ -4241,7 +4265,7 @@ Then it follows that $x \in A \to 1 \leq x \leq 2$. Thus, $A = [1,2]$, which is
 closed, as desired.
 
 
-\section*{3.2.2 }
+\subsection*{3.2.2 }
 \textit{Let }
 $$B = \left\{\frac{(-1)^nn}{n + 1}: n = 1,2,3,... \right\}$$
 
@@ -4277,7 +4301,7 @@ the set $B$ consists exclusively of isolated points.
 \textit{(e) Find $\bar{B}$}
 $$\bar{B} = B \cup \{-1, 1\}$$
 
-\section*{3.2.3}
+\subsection*{3.2.3}
 \textit{Decide whether the following sets are open, closed, or neither. If a
   set is not open, find a point in the set for which there is no
   $\epsilon$-neighborhood contained in the set. If a set is not closed, find
@@ -4306,7 +4330,7 @@ Not open, 1. Not closed, 0.
 Not open, number 1 is an example. Not closed, does not contain its supremum.
 
 
-\section*{3.2.4}
+\subsection*{3.2.4}
 \textit{Prove the converse of Theorem 3.2.5 by showing that if
   $x = \lim a_n$ for some sequence $(a_n)$ contained in $A$ satisfying
   $a_n \neq x$, then x is a limit point of $A$.}
@@ -4326,7 +4350,7 @@ $A$, $a_n \in V_\epsilon(x) \cap A$.  Therefore every $\epsilon$-neighborhood
 of $x$ intersects  $A$ in some point other that $x$. Therefore $x$ is a limit
 point, as desired.
 
-\section*{3.2.5}
+\subsection*{3.2.5}
 \textit{Let $a \in A$. Prove that $a$ is an isolated point of $A$ if and only
   if there exists an $\epsilon$-neighborhood $V_\epsilon(a)$ such that
   $V_\epsilon(a) \cap A = \{a\}$ }
@@ -4348,7 +4372,7 @@ Therefore, $\{a, a_n\} \subseteq V_\epsilon(a) \cup A$, which is a
 contradiction. Thus, $a$ is not a limit point and therefore is an isolated
 point, as desired.
 
-\section*{3.2.6}
+\subsection*{3.2.6}
 
 \textit{Prove Theorem 3.2.8}
 
@@ -4379,7 +4403,7 @@ that converges to $x$. Then, this sequence is Cauchy. Thus, we have a Cauchy
 sequence, that is contained in $F$, which converges to a point outside of $F$,
 which is a contradiction.
 
-\section*{3.2.7}
+\subsection*{3.2.7}
 \textit{Let $x \in O$ where $O$ is an open set. If $(x_n)$ is a sequence
   converging to $x$, prove that all but a finite number of the terms of
   $(x_n)$ must be contained in $O$. }
@@ -4391,7 +4415,7 @@ Therefore for this sequence only $N$ or less elements are outside of $O$.
 Therefore for any convergent sequence $(x_n)$ it is true, that all but a finite
 number of terms of $(x_n)$ are outside of $O$, as desired.
 
-\section*{3.2.8}
+\subsection*{3.2.8}
 \textit{Given $A \subseteq R$, let $L$ be the set of all limit points of
   $A$.}
 
@@ -4441,7 +4465,7 @@ it is a closed set.
 Any closed set containing $A$ must contain $L$ as well. This shows, that $\bar A$
 is the smallest closed set containing $A$.
 
-\section*{3.2.9}
+\subsection*{3.2.9}
 
 \textit{(a) If $y$ is a limit point of $A \cup B$, show that $y$ is either a limit
   point of $A$ of a limit point of $B$ (or both).}
@@ -4497,7 +4521,7 @@ some $n \in N$. Same logic applies, closure of any given set is the set itself, 
 the closure of union of sets includes zero.
 
 
-\section*{3.2.10 (De Morgan's Laws)}
+\subsection*{3.2.10 (De Morgan's Laws)}
 \textit{A proof for the De Morgan's Laws in the case of two sets is outlined in Exercise 1.2.3.
   The general argument is simular.}
 
@@ -4544,7 +4568,7 @@ sets. Therefore union
 $$\cup_{\lambda \in \Lambda} E_\lambda^c = (\cap_{\lambda \in \Lambda} E_\lambda)^c$$
 is open. Therefore $\cap_{\lambda \in \Lambda} E_\lambda$ is closed, as desired.
 
-\section*{3.2.11}
+\subsection*{3.2.11}
 \textit{Let $A$ be bounded above so that $s = \sup A$ exists. Show that
   $s \in \overline A$}
 
@@ -4558,7 +4582,7 @@ $$|s - a| < \epsilon$$
 Therefore $a \in V_\epsilon(s)$ for any $\epsilon > 0$. Thus, s is a limit point of
 $A$. Threfore $s \in \overline A$, as desired.
 
-\section*{3.2.12}
+\subsection*{3.2.12}
 \textit{Decide whether the following statements are true or false. Provide counterexamples for those that are false, and supply proofs for those that are true.}
 
 \textit{(a) For any set $A \subseteq \textbf{R}$, $\overline A^c$ is open.}
@@ -4598,7 +4622,7 @@ points, therefore they contain their limit points.
 
 False. $\textbf{R} \setminus \{\sqrt{2}\}$.
 
-\section*{3.2.13}
+\subsection*{3.2.13}
 \textit{Prove that the only sets that are both open and closed are $R$ and
   the empty set $\emptyset$}
 
@@ -4612,7 +4636,7 @@ neither a limit point, nor a isolated point, which is a contradicion.
 Same argument doesn't work on $R$ and $\emptyset$, because of the fact,
 that $\emptyset$ doesn't contain any points.
 
-\section*{3.2.14}
+\subsection*{3.2.14}
 \textit{A set $A$ is called $F_\sigma$ set if it can be written as the
   countable union of closed sets. A set $B$ is called $G_\delta$ set if it
   can be written as the countable intersection of open sets}
@@ -4652,7 +4676,9 @@ $\{R \setminus m: m \in Q\}$
 be a collection of open sets. Then its intersection is equal to $I$.
 Therefore $I$ is a $G_\delta$ set.
 
-\section*{3.3.1}
+\section{Compact Sets}
+
+\subsection*{3.3.1}
 \textit{Show that if $K$ is compact, then $\sup K$ and $\inf K$ both exist
   and are elements of $K$}
 
@@ -4678,7 +4704,7 @@ has a member of $K$ in it. Thus $\sup K$ and $\inf  K$ are limit points of $K$.
 Thus, because $K$ is closed, we can conclude that $\sup K \in K$ and
 $\inf K \in K$, as desired.
 
-\section*{3.3.2}
+\subsection*{3.3.2}
 \textit{Prove the converse of Theorem 3.3.4 by showing that if a set
   $K \subseteq R$ is closed and bounded, then it is compact.}
 
@@ -4699,7 +4725,7 @@ If subsequence doesn't have its limit as its element, then we can state,
 that its limit is a limit point of $K$, and therefore in $K$ by the fact, that
 $K$ is closed.
 
-\section*{3.3.3}
+\subsection*{3.3.3}
 \textit{Show that the cantor set defined in Section 3.1 is compact set. }
 
 I'll not provide a definition here, because it is too lengthy, but you can
@@ -4710,7 +4736,7 @@ the compliment of Cantor set is an open set itself. Thus, we can state
 that a compliment of a compliment (i.e. the set itself) is closed. Thus,
 Cantor set is closed and bounded, and therefore compact, as desired.
 
-\section*{3.3.4}
+\subsection*{3.3.4}
 \textit{Show that if $K$ is compact and $F$ is closed, then $K \cap F$ is
   compact.}
 
@@ -4719,7 +4745,7 @@ therefore $K \cap F$ is closed as well.
 $x \in K \cap F \to x \in K \to |x| \leq M$, where $M$ is a bound of $K$.
 Therefore $K \cap  F $ is bounded. Therefore $K \cap F$ is compact, as desired.
 
-\section*{3.3.5}
+\subsection*{3.3.5}
 \textit{Decide which of the following sets are compact. For those that are not compact,
   show how Definition 3.3.1 breaks down. In other words, give an example of a sequence
   contained in the given set that does not possess
@@ -4752,7 +4778,7 @@ Not compact. $(s_n) = 1/n$ converges to 0, but 0 is not in the set.
 
 Compact.
 
-\section*{3.3.6}
+\subsection*{3.3.6}
 \textit{As some more evidence of the surprising nature of the Cantor set,
   follow these steps  to show that the sum $C + C = \{x + y: x,y \in C\}$ is
   equal to the closed interval $[0,2]$. (Keep in mind that $C$ has zero length
@@ -4836,7 +4862,7 @@ to the same limit. Thus, $(x_{n_k} + y_{n_k}) \to s$. Because same sequence
 cannot converge to two different limits we can conclude that $s = x + y$,
 as desired.
 
-\section*{3.3.7}
+\subsection*{3.3.7}
 \textit{Decide whether the following propositions are true or false. If the claim is valid, supply a short proof, and if the claim is false, provide a counterexample.}
 
 \textit{(a) An arbitrary intersection of compact sets is compact.}
@@ -4870,7 +4896,7 @@ we can find the maximum and minimum of it, therefore it is bounded.
 
 False. $N$ is not bounded, $Q$ is not closed.
 
-\section*{3.3.8}
+\subsection*{3.3.8}
 \textit{Follow these steps to prove the final implication in Theorem 3.3.8.}
 
 \textit{Assume $K$ satisfies (i) and (ii), and let
@@ -4928,7 +4954,7 @@ Therefore $I_{n_0}$ is finitely covered, which is a contradiction. Therefore
 there does not exists an open cover for compact set, for which there is no
 finite subcover, as desired.
 
-\section*{3.3.9}
+\subsection*{3.3.9}
 \textit{Consider each of the sets listed in Exercise 3.3.5. For each one that
   is not compact, find an open cover for which there is no finite subcover.}
 
@@ -4951,7 +4977,7 @@ For
 $$\{1, 1/2, 1/3, 1/4, 1/5\}$$
 it is $(1/n, 2)$.
 
-\section*{3.3.10}
+\subsection*{3.3.10}
 \textit{Let's call a set clompact if it has the property that every closed
   cover (i.e., a cover consisting of closed sets) admits a finite subcover.
   Describe all of the clompact subsets of $R$.}
@@ -4982,8 +5008,9 @@ each one of the points are located, therefore finite sets are clompact.
 
 Therefore set is clompact if and only if it is finite.
 
+\section{Perfect Sets and Connected Sets}
 
-\section*{3.4.1}
+\subsection*{3.4.1}
 \textit{If $P$ is a perfect set and $K$ is compact, is the intersection
   $P \cap K$ always compact? Always perfect?}
 
@@ -4993,7 +5020,7 @@ closed as well. Therefore $P \cap K$ is always compact.
 
 The intersection is not always perfect - $[1, 2] \cap [2, 3] = \{2\}$.
 
-\section*{3.4.2}
+\subsection*{3.4.2}
 \textit{Does there exist a perfect set consisting of only rational numbers?}
 
 If we count empty set as a set, that consists of only rational numbers
@@ -5003,7 +5030,7 @@ then yes.
 If not, then no. This stems from the fact, that the set of rationals is
 countable, and non-empty perfect sets are uncountable.
 
-\section*{3.4.3}
+\subsection*{3.4.3}
 \textit{Review the portion of the proof given for Theorem 3.4.2 and follow
   these steps to complete the argument}
 
@@ -5036,7 +5063,7 @@ Therefore any $x \in C$ is a limit point of $C$. Therefore $C$ is a closed
 set, that does not contain any isolated points. Therefore it is perfect
 (how nice).
 
-\section*{3.4.4}
+\subsection*{3.4.4}
 \textit{Repeact the Cantor construction from Section 3.1 starting with the
   open interval $[0,1]$. This time, however, remove the open middle fourth
   from each component.}
@@ -5095,7 +5122,7 @@ $$\ln{(2)} / \ln{(8/3)} = x$$
 $$x \approx 0.70669505...$$
 Idk why do I need to know this, but here's the answer.
 
-\section*{3.4.5}
+\subsection*{3.4.5}
 \textit{Let $A$ and $B$ be subsets of $\textbf{R}$. Show that if there exist
   disjoint open sets $U$ and $V$ with $A \subseteq U$ and $B \subseteq V$,
   then $A$ and $B$ are separated.}
@@ -5119,7 +5146,7 @@ Thus, $\exists x \in U: x \in V_\epsilon(l) \to
 \exists x \in U: x \in V$. Therefore $U$ and $V$ are not disjoint, which is
 a contradiction.
 
-\section*{3.4.6}
+\subsection*{3.4.6}
 \textit{Prove Theorem 3.4.6}
 
 Firstly, let us state the theorem itself:
@@ -5152,7 +5179,7 @@ $x \in \overline A \cap B \neq \emptyset$. Therefore $A$ and $B$ are not
 separated. Therefore $E$ is connected, as desired.
 
 
-\section*{3.4.7}
+\subsection*{3.4.7}
 \textit{(a) Find an example of disconnected set whose closure is connected}
 
 $Q$
@@ -5190,7 +5217,7 @@ Therefore $A$ is disconnected, which is a contradiction.
 If $A$ is perfect, then it is closed, therefore $A = \overline A$. Therefore
 $\overline A$ is perfect as well.
 
-\section*{3.4.8}
+\subsection*{3.4.8}
 \textit{A set $E$ is totally disconnected if, given two points $x, y \in E$,
   there exist separated $A$ and $B$  with $x \in A$, $y \in B$, and
   $E = A \cup B$}
@@ -5211,7 +5238,7 @@ Yes. It is also true that between two real numbers there exists a rational
 number. Thus, by the same logic as in (a), the set of irrationals is totally
 disconnected.
 
-\section*{3.4.9}
+\subsection*{3.4.9}
 \textit{Follow these steps to show that the Cantor set
   $C = \cap_{n = 0}^{\infty} C_n $ described in Section 3.1 is totally
   disconnected in the sense described in Exercise 3.4.8}
@@ -5243,7 +5270,7 @@ We can take two intervals $A = (-\infty, z) \cap C$ and
 $B = (-\infty, z) \cap C$, which would satisfy the constraint from the
 definition.
 
-\section*{3.4.10}
+\subsection*{3.4.10}
 \textit{Let $\{r_1, r_2, r_3, ... \}$ be an enumeration of the rational
   numbers, and for each $n \in N$ set $\epsilon_n = 1/2$. Define
   $O = \cup_{n = 1}^{\infty}V_{\epsilon_n}(r_n)$, and let $F = O^c$.}
@@ -5298,7 +5325,9 @@ don't define how to produce the $r$'s
 I don't consider this particular exercise to be even close to being correctly
 done, maybe i'll return to it later
 
-\section*{3.5.1}
+\section{Baire's Theorem}
+
+\subsection*{3.5.1}
 \textit{Argue that a set $A$ is a $G_\delta$ set if and only if its complement
   is an $F_\sigma$ set.}
 
@@ -5322,7 +5351,7 @@ Because $s_n$ is an open set, then $s_n^c$ is a closed set. Therefore
 $$F_\sigma^c = \cup_{n = 1}^{\infty} s_n^c$$
 is a $G_\delta$ set.
 
-\section*{3.5.2}
+\subsection*{3.5.2}
 \textit{Replace each \rule{1cm}{0.15mm} with the word finite or countable,
   depending of which is more appropriate}
 
@@ -5334,10 +5363,10 @@ is a $G_\delta$ set.
 
 \textit{(d) The countable intersection of $G_\delta$ sets is an $G_\delta$ set.}
 
-\section*{3.5.3}
+\subsection*{3.5.3}
 \textit{(This exercise has already appeared as Exercise 3.2.14.)}
 
-\section*{3.5.4}
+\subsection*{3.5.4}
 \textbf{Theorem 3.5.2}  If $\{G_1, G_2, G_3, ... \}$ is a countable collections of dense,
 open sets, then the intersection $\cap_{n = 1}^{\infty} G_n $ is not empty.
 
@@ -5369,7 +5398,7 @@ Therefore $\cap I_n \neq \emptyset$. Therefore
 $$\cap_{n = 1}^{\infty} I_n \subseteq
 \cap_{n = 1}^{\infty} G_n \neq \emptyset$$
 
-\section*{3.5.5}
+\subsection*{3.5.5}
 \textit{Show that it is impossible to write}
 $$\textbf{R} = \cup_{n = 1}^{\infty}F_n$$
 \textit{where for each $n \in N$, $F_n$ is a closed set containing
@@ -5392,7 +5421,7 @@ open sets (countable because we sum from n to $\infty$, therefore on N).
 Therefore it cannot be empty. Therefore $\cup_{n = 1}^{\infty}F_n \neq R$,
 which is a contradiction.
 
-\section*{3.5.6}
+\subsection*{3.5.6}
 \textit{Show how the previous exercise implies that the set $I$ of irrationals
   cannot ber a $F_\sigma$ set, and $Q$ cannot be a $G_\delta$ set.}
 
@@ -5415,7 +5444,7 @@ Thus $Q$ cannot be a $G_\delta$ set. Because  $I$ being $F_\sigma$ set implies
 that $Q$ is a $G_\delta$ set, $I$ cannot be a $F_\sigma$ set.
 
 
-\section*{3.5.7}
+\subsection*{3.5.7}
 \textit{Using Exercise 3.5.6 and versions of the statements in Exercise 3.5.2,
   construct a set that is neithter in $F_\sigma$ nor a $G_\delta$.}
 
@@ -5450,7 +5479,7 @@ $((-\infty, 0) \cap I)) \cup ((0, \infty) \cap Q)$ is neither $F_\sigma$ nor
 $G_\delta$. What a shameful waste of an exercise.
 
 
-\section*{3.5.8}
+\subsection*{3.5.8}
 \textit{Show that a set $E$ is nowhere-dense in $R$ if and only if the
   compliment of $\overline E$ is dense in $R$}
 
@@ -5468,7 +5497,7 @@ there exists $z \in (\overline E)^c$ such that $x < z < y$. Therefore
 there does not exist $x_1, y_1 \in R$ such that $(x, y) \subseteq \overline E$.
 Therefore $E$ is nowhere-dense.
 
-\section*{3.5.9}
+\subsection*{3.5.9}
 \textit{Decide whether the following sets are dense in \textbf{R},
   nowhere-dense in \textbf{R}, or somewhere in between}
 
@@ -5493,7 +5522,7 @@ disconnected, and therefore $x < y \in C \to \exists z \in C^c: x < z < y$.
 Therefore it does not contain any open intervals. Therefore it
 is nowhere-dense.
 
-\section*{3.5.10}
+\subsection*{3.5.10}
 \textit{Finish the proof by finding a contradiction to the results in this
   section}
 
@@ -5512,7 +5541,9 @@ open intervals, which is a contradiction.
 
 \chapter{Functional Limits and Continuity}
 
-\section*{4.2.1}
+\section{Functional Limits}
+
+\subsection*{4.2.1}
 \textit{Use Definition 4.2.1 to supply a proof for the following limit statements.}
 
 (a) $\lim_{x \to 2}(2x + 4) = 8$.
@@ -5570,14 +5601,14 @@ $$ |[[x]] - 3| = [[0.1415926...]] = 0 < \epsilon $$
 Suppose that we pick $\delta = 0.1$, then any $x \in V_{\delta}$ will satisfy $|[[x]] - 3| = 0 < \epsilon $
 for any $\epsilon > 0$ as desired.
 
-\section*{4.2.2}
+\subsection*{4.2.2}
 \textit{Assume a particular $\delta > 0$ has been constructed as a suitable response
   to a particular $\epsilon$ challenge. Then, any larger/smaller (pick one) $\delta$ will also suffice.}
 
 Smaller. This follows from the fact, that
 $$\delta_1 < \delta_2 \to V_{\delta_1} \subset V_{\delta_2}$$
 
-\section*{4.2.3}
+\subsection*{4.2.3}
 \textit{Use Corollary 4.2.5 to show that each of the following limits does not exist.}
 
 (a) $\lim_{x\to0} |x|/x$
@@ -5628,7 +5659,7 @@ $$ D(y_n) = 0$$
 
 thus the function is not continous at 1
 
-\section*{4.2.4}
+\subsection*{4.2.4}
 \textit{Review the definition of Thomae’s function t(x) from Section 4.1.}
 
 \textit{(a) Construct three different sequences $(x_n)$, $(y_n)$, and $(z_n)$,
@@ -5693,7 +5724,7 @@ $$ |t(\frac{1}{n_1})| = |\frac{1}{n_1}| <  \frac{1}{n|k|} < \frac{1}{n}$$
 
 thus for each $\epsilon > 0$ we can find a corresponding $\delta > 0$ as desired.
 
-\section*{4.2.5}
+\subsection*{4.2.5}
 Suppose that $\lim_{x \to c} f(x) = L$ and $\lim_{x \to c} g(x) = M$
 
 $(ii)$ $\lim_{x \to c}[f(x) + g(x)] = L + M$
@@ -5857,7 +5888,7 @@ $$|f(x)g(x) - LM| \leq |f(x)||g(x) - M| + |M||f(x) - L| <  \frac{\epsilon}{2} +
 
 therefore $\lim_{x \to c}[f(x) g(x)] = LM$ as desired
 
-\section*{4.2.6}
+\subsection*{4.2.6}
 \textit{Let $g: A\to \textbf{R}$ and assume that $f$ is bounded function on $A \subseteq \textbf{R}$
   (i.e. there exists $M > 0$ satisfying $|f(x| \leq M$ for all $x \in A$). Show that
   if $\lim_{x \to c}g(x) = 0$, then $\lim_{x \to c}g(x)f(x) = 0$ as well.}
@@ -5890,7 +5921,7 @@ therefore
 $$\lim_{x \to c}[f(x)g(x)] = 0$$
 as desired.
 
-\section*{4.2.7}
+\subsection*{4.2.7}
 \textit{(a) The statement $\lim_{x \to 0}1/x^2 = \infty$ certainly makes intuitive sense. Construct a rigirius definition in the "challenge-response" style of Definition 4.2.1 for a limit statement of the form $\lim_{x \to c}f(x) = \infty$ and use it to prove the previous statement }
 
 \textbf{Definition of limit to infinity}
@@ -5943,7 +5974,7 @@ that $f(x) > \epsilon$.
 
 The corresponding example of such a limit  is $f(x) = x$.
 
-\section*{4.2.8}
+\subsection*{4.2.8}
 \textit{Assume $f(x) \geq g(x)$ for all $x$ in some set $A$ on which $f$ and $g$ are defined. Show that for any limit point $c$ of $A$ we must have }
 $$\lim_{x \to c} f(x) \geq \lim_{x \to c} g(x) $$
 
@@ -5967,7 +5998,7 @@ then it follows that there exist a sequence $(a_n) \to c$ such that $f(a_n) \geq
 $n \in \textbf{N}$; Therefore $\lim(f(a_n)) \geq \lim(g(a_n))$ and  but it contradicts our
 initial assumption.
 
-\section*{4.2.9 (Squeeze Theorem)} Let $f,g$ and $h$ satisfy $f(x) \geq g(x) \geq h(x)$ for all
+\subsection*{4.2.9 (Squeeze Theorem)} Let $f,g$ and $h$ satisfy $f(x) \geq g(x) \geq h(x)$ for all
 $x$ in some common domain $A$. If $\lim_{x \to c}f(x) = L$ and $\lim_{x \to c}h(x) = L$ at some
 limit point $c$ of  $A$, show $\lim_{x \to c}g(x) = L$ as well
 
@@ -5985,7 +6016,9 @@ therefore
 $$\lim_{x \to c} g(x) = L  $$
 as desired.
 
-\section*{4.3.1}
+\section{Combinations of Continous Functions}
+
+\subsection*{4.3.1}
 \textit{Let $g(x) = \sqrt[3]{x}$.}
 
 \textit{(a) Prove that g is continous at c = 0}
@@ -6062,7 +6095,7 @@ $$|x - c| < \delta \to |f(x)  - f(c)| < \epsilon$$
 
 Therefore $f(x) = \sqrt[3]{x}$ is continous on \textbf{R}.
 
-\section*{4.3.2}
+\subsection*{4.3.2}
 
 \textit{(a) Supply a proof for Theorem 4.3.9 using the $\epsilon-\delta$
   characterization of continuity.}
@@ -6158,7 +6191,7 @@ itself, we can state that $g(f(x_n)) \to g(f(c))$. Therefore it is true, that
 for every sequence $(x_n) \to c$ it follows, that $g(f(x_n)) \to g(f(c))$.
 Therefore $g(f(x))$ is continous, as desired.
 
-\section*{4.3.3}
+\subsection*{4.3.3}
 \textit{Using the $\epsilon-\delta$ characteriation of continuity (and tus using no previous results anbout the sequences), show that the linear function $f(x) = ax + b$ is continous at every poinnt of \textbf{R}.}
 
 Let's start with our usual stuff
@@ -6169,7 +6202,7 @@ $$|x - c| < \epsilon / a $$
 
 Therefore if we pick $\delta = \epsilon / a$ then it follows that $|f(x) - f(c)| < \epsilon$, as desired.
 
-\section*{4.3.4}
+\subsection*{4.3.4}
 \textit{(a) Show using Definition 4.3.1 that any function $f$ with domain
   \textbf{Z} with necessarily be continous at every point in its domain.}
 
@@ -6194,7 +6227,7 @@ for all $\epsilon > 0$ we have $\delta > 0$ such that
 $$x \in V_\delta(c) \to f(x) = f(c) \in V_\epsilon(c)$$
 as desired.
 
-\section*{4.3.5}
+\subsection*{4.3.5}
 \textit{In Theorem 4.3.4, statement (iv) says that $f(x) / g(x)$ is continous
   at $c$ if both $f$ and $g$ are, provided that the quotent is defined. Show
   that if $g$ is continous at $c$ and $g(c) \neq 0$, then there exists an open
@@ -6206,7 +6239,7 @@ $$ x \in V_\delta \to f(x)/g(x) \in V_\epsilon$$
 
 Thus, $f(x)/g(x)$ is defined on open interval $V_\delta$.
 
-\section*{4.3.6}
+\subsection*{4.3.6}
 \textit{(a) Reffering to the proper theorems, give a formal argument that
   Dirichlet's function from Section 4.1 is nowhere-continous at $R$.}
 
@@ -6278,7 +6311,7 @@ all that other stuff,
 and that method would certainly work, but I consider this particular method
 to be a little more straightforward.
 
-\section*{4.3.7}
+\subsection*{4.3.7}
 \textit{Assume $h: R \to R$ is continous on $R$ and let $K = \{x: h(x) = 0\}$.
   Show that $K$ is a closed set.}
 
@@ -6296,7 +6329,7 @@ $x_n \in K$ it follows
 that $h(x_n) = 0$. Thus $\lim 0 = h(y) \neq 0$, which
 is a contradiction. Therefore $K$ is closed.
 
-\section*{4.3.8}
+\subsection*{4.3.8}
 \textit{(a) Show that if a function is continous on all of \textbf{R} and
   equal to 0 at every rational point, then it nust be identically 0 on all
   of \textbf{R}}
@@ -6324,7 +6357,7 @@ continous under those circumstances is if $f(x) = 0$ for every $x \in R$.
 Only if both  $f$ and $g$ are continous. Also, it doesn't have to be for
 rationals only, it also can be applied to any dense set in $R$.
 
-\section*{4.3.9 (Contraction Mapping Theorem)}
+\subsection*{4.3.9 (Contraction Mapping Theorem)}
 \textit{Let $f$ be a function defined on all of $R$, and assume there is a
   constant $c$ such that $0 < c < 1$ and}
 $$|f(x) - f(y)| \leq c|x - y|$$
@@ -6459,7 +6492,7 @@ which is a contradiction. Therefore the only number, to which $z$ is convergent
 is $0$ (contradiction does not arive when $z = y$, because $|z - y| = 0$,
 thus the equation becomes $0 = 0$).
 
-\section*{4.3.10}
+\subsection*{4.3.10}
 \textit{Let $f$ be a function defined of all of $R$ that satisfies the additive
   condition $f(x + y) = f(x) + f(y)$ for arr $x, y \in R$.}
 
@@ -6543,7 +6576,7 @@ Thus, from out discussion in Exercise 4.3.8 we can conclude,
 that $g(x) = 0$ for all $x \in R$. Thus, $f(x) = h(x)$ for all $x \in R$.
 Therefore $f(x) = kx$ for all $x \in R$, as desired.
 
-\section*{4.3.11}
+\subsection*{4.3.11}
 \textit{For each of the following choices of $A$, construct a function
   $f: R \to R$ that has discontinuities at every point $x \in A$ and is
   continous on $A^c$}
@@ -6585,7 +6618,7 @@ and partial 0)
 \end{equation}
 (here we took into account 0, it is convergent from every direction)
 
-\section*{4.3.12}
+\subsection*{4.3.12}
 \textit{Let C be the Cantor set constructed in Section 3.1. Define
 $g: [0, 1] \to R$ by}
 \begin{equation}
@@ -6629,7 +6662,7 @@ for every $\epsilon > 0$. Therefore $g(x)$ is continous at every point
 $c \notin C$, as desired.
 
 
-\section*{Preliminaries and notes for text of 4.4}
+\subsection*{Preliminaries and notes for text of 4.4}
 
 One thing, that was buggging me is how $x \in (c - 1, c + 1)$ implies that
 $|x| < c + 1$. Here's the proof of it.
@@ -6642,7 +6675,9 @@ $$||x| - |c||  < 1 $$
 $$-1 < |x| - |c|  < 1 $$
 $$-1 + |c| < |x| < 1 + |c|$$
 
-\section*{4.4.1}
+\section{Continous Functions on Compact Sets}
+
+\subsection*{4.4.1}
 
 \textit{(a) Show that $f(x) = x^{3}$ is continuous on all of \textbf{R}.}
 
@@ -6726,7 +6761,7 @@ it is continous at $A$, as desired.
 The last statement in previous paragraph can be justified by proof by
 contradiction and using 4.4.6
 
-\section*{4.4.2}
+\subsection*{4.4.2}
 \textit{Show that $f(x) = 1/x^3$  is uniformly continous on the set
   $[1, \infty)$, but is not on the set $(0, 1]$}
 
@@ -6781,7 +6816,7 @@ $$ = |n^3 - (n ^ 3 + 3 n^2 + 3 n + 1)| = |3n^2 + 3n + 1| \to \infty$$
 
 therefore by \textbf{4.4.6} $f(x)$ is not uniformly continous on $(0, 1]$, as desired
 
-\section*{4.4.3}
+\subsection*{4.4.3}
 \textit{Furnish the details (including an argument for Exercise 3.3.1 if it is not already done) for the proof of the Extreme Value Theorem (Theorem 4.4.3).}
 
 Let me restate here exercise 3.3.1
@@ -6828,7 +6863,7 @@ $$\inf f(K) \leq f(y) \leq \sup f(K) $$
 $$f(x_2) \leq f(y) \leq f(x_1) $$
 as desired.
 
-\section*{4.4.4}
+\subsection*{4.4.4}
 \textit{Show that if $f$ is continous on $[a, b]$ with $f(x) > 0$ for all
   $a \leq x \leq b$, then $1/f$ is bounded on $[a, b]$.}
 
@@ -6837,7 +6872,7 @@ By virtue of the fact, that $f(x) > 0$ we can state, that $f(x) \neq 0$.
 Therefore function $g \circ f = 1/f(x)$ is defined on all $f([a, b])$.
 Therefore $g(f([a, b]))$ is compact. Therefore it is bounded, as desired.
 
-\section*{4.4.5}
+\subsection*{4.4.5}
 \textit{Using the advice that follows Theorem 4.4.6, provide a complete
   proof for criterion for noninform continuity}
 
@@ -6901,7 +6936,7 @@ $$|f(x_n) - f(y_n)| < \delta_n$$
 Therefore we have two sequences $(x_n)$ and $(y_n)$ with desired properties.
 
 
-\section*{4.4.6}
+\subsection*{4.4.6}
 \textit{Give an example of each of the following, or state that such a request is impossible. For any that are impossible, supply a short explanation (perhaps referencing the appropriate theorem(s)) for why this is the case.}
 
 \textit{(a) A continous function $f: (0, 1) \to R$ and a Cauchy sequence
@@ -6928,7 +6963,7 @@ Impossible. Same reason as in (b).
 
 $$f(x) = -|x - 0.5| + 0.5$$
 
-\section*{4.4.7}
+\subsection*{4.4.7}
 \textit{Assume that $g$ is defined on an open interval $(a, c)$ and it is
   known to be uniformly continous on $(a, b]$ and $[b, c)$, where
   $a < b < c$. Prove that $g$ is uniformly continous on $(a, c)$.}
@@ -6957,7 +6992,7 @@ intervals $(a, b], [a_1, c_1], [b, c)$, therefore
 $$|f(x_j) - f(y_j)| < \epsilon_0$$
 which is a contradiction.
 
-\section*{4.4.8}
+\subsection*{4.4.8}
 Firsty I should state that in order to confirm my previous exercise I looked
 up an answer to it online. Their proof was not simular to mine, it employed
 triangular inequality, but the main stuff is the same. This exercise is
@@ -7002,7 +7037,7 @@ therefore it is uniformly convergent at $[1, \infty)$.
 Therefore, using part (a), we can concluse that $f$ is uniformly continous at
 $[0, \infty)$, as desired.
 
-\section*{4.4.9}
+\subsection*{4.4.9}
 \textit{A function $f: A \to R$ is called Lipschitz if there exists a bound
   $M > 0$ such that }
 $$\left|\frac{f(x) - f(y)}{x - y}\right| \leq M$$
@@ -7041,7 +7076,7 @@ $$\left|\frac{\sqrt{x} - \sqrt{y}}{x - y}\right| =
 \frac{1}{|\sqrt{x} - \sqrt{y}|}$$
 which is unbound. Therefore not all uniform functions are Lipschitz.
 
-\section*{4.4.10}
+\subsection*{4.4.10}
 \textit{Do uniforly continous functions preserve boudedness? If $f$ is
   uniformly continous on a bounded set $A$, is $f(A)$ necessarily bounded?}
 
@@ -7073,7 +7108,7 @@ therefore $f$ is not uniformly convergent.
 Therefore if $A$ is convergent and $f$ is uniformly continous on $A$, then
 $f(A)$ is bounded as well.
 
-\section*{4.4.11 (Topological Characterization of continuity)}
+\subsection*{4.4.11 (Topological Characterization of continuity)}
 \textit{Let $g$ be defined on all of $R$. If $A$ is a subset of $R$, define the
   set $g^{-1}(A)$ by }
 $$g^{-1}(A) = \{x \in R: g(x) \in A\}$$
@@ -7109,7 +7144,7 @@ $$x \in V_\delta(x) \to x \in V_\epsilon(g(x))$$
 
 Therefore $g$ is continous on $R$, as desired.
 
-\section*{4.4.12}
+\subsection*{4.4.12}
 \textit{Conctruct an alternate proof of Theorem 4.4.8 using the open cover
   characterization of compactness from Theorem 3.3.8 (iii)}
 
@@ -7165,7 +7200,7 @@ they've done it there before I wrote this one, but failed to recognize
 it as a valid strategy and threw that idea away.
 
 
-\section*{4.4.13}
+\subsection*{4.4.13}
 
 \textit{(a) Show that a uniformly continous function preserves Cauchy
   sequences; that is, if $f: A \to R$ is uniformly continous and
@@ -7266,7 +7301,9 @@ $$|a_1 - b_1| \geq |a - b| - (2 \frac{|a - b|}{p})$$
 Right now I don't feel like pondering on that problem, therefore I'll
 mark this paragraph with TODO and return to it later
 
-\section*{4.5.1}
+\section{IVT}
+
+\subsection*{4.5.1}
 \textit{Show how the Itermediate Value Theorem follows as a corollary
   to Theorem 4.5.2}
 
@@ -7278,7 +7315,7 @@ Therefore for some number $f(a) < L < f(b)$ (or $f(a) > L > f(b)$) it follows
 that $L \in f([a, b])$. Therefore there exists $x \in [a, b]$ such that
 $f(x) = L$, as desired.
 
-\section*{4.5.2}
+\subsection*{4.5.2}
 \textit{Decide the validity of the following conjectures.}
 
 \textit{(a) Continous functions take bounded open intervals to bounded open
@@ -7296,7 +7333,7 @@ False. For the same reason as in (a).
 True. Continous functions preserve compact sets and preserve connected
 sets, therefore they preserve closed intervals.
 
-\section*{4.5.3}
+\subsection*{4.5.3}
 \textit{Is there a continous function on all of $R$ with range $f(R)$ equal
   to $Q$?}
 
@@ -7306,7 +7343,7 @@ $c = f(x)$ for some $x \in R$, but $x \in R \to f(x) \in Q$. Therefore
 $c \notin f(R)$. But $f$ is continous on $R$, therefore $c \in f(R)$, which is
 a contradiction.
 
-\section*{4.5.4}
+\subsection*{4.5.4}
 \textit{A function $f$ is increasing on $A$ if $f(x) \leq f(y)$ for all
   $x < y$ in $A$. Show that the IVT does have a converse if we assume $f$ is
   increasing on $[a, b]$.}
@@ -7360,7 +7397,7 @@ for every $\epsilon > 0$ there exists $\delta > 0$ such that
 $$x \in V_\delta(c)  \to f(x) \in V_\epsilon(f(c))$$
 Therefore the function is continous at $[a, b]$.
 
-\section*{4.5.5}
+\subsection*{4.5.5}
 \textit{Finish the proof of the IVT using the AoC started previously}
 
 Let us consider a case $f(a) < 0 < f(b)$. (Same idea holds for any other
@@ -7428,7 +7465,7 @@ applied to any number other then $0$, therefore any continous
 function has IVP, as desired.
 
 
-\section*{4.5.6}
+\subsection*{4.5.6}
 \textit{Finish the proof of the Intermediate Value Theorem using the Nested Interval Property started previously.}
 
 Consider a case when $L = 0$. 
@@ -7463,7 +7500,7 @@ meaty stuff goto previous exercise)
 
 Therefore the only option which is left is $f(c) = 0$, as desired. 
 
-\section*{4.5.7}
+\subsection*{4.5.7}
 \textit{Let $f$ be a continous function on the closed interval $[0, 1]$ with
   range also contained in $[0, 1]$. Prove that $f$ must have a fixed point;
   that is, show $f(x) = x$ for at least one value of $x \in [0, 1]$.}
@@ -7485,7 +7522,7 @@ contradiction. (Holy moly, that was surprisingly fast)
 By the way, same reasoning applies not only to $[0, 1]$, but (at least) for
 any closed and bounded interval in $R$.
 
-\section*{4.5.8}
+\subsection*{4.5.8}
 \textit{Imagine a clock where the hour hand and the minute hand are
   indistinguishable from each other.
   Assuming the hands move continuously around
@@ -7519,8 +7556,9 @@ This proof is a bit sloppy in the language department, but to my credit
 I can say, that it's pretty hard to explain positions and rotation and whatnot
 of different things without using pictures and in general.
 
+\section{Sets of Discontinuity}
 
-\section*{4.6.1}
+\subsection*{4.6.1}
 \textit{Using modifications of therse functions, construct a function
   $f: R \to R$ so that }
 
@@ -7547,7 +7585,7 @@ Dirichlet's as well
   \end{cases}
 \end{equation}
 
-\section*{4.6.2}
+\subsection*{4.6.2}
 \textit{State a similar definition for the left-hand limit}
 $$ \lim_{x \to c^-}{f(x)} = L$$
 
@@ -7557,7 +7595,7 @@ $$ \lim_{x \to c^-}{f(x)} = L$$
 if for all $\epsilon > 0$ there exists a $\delta > 0$ such that
 $f(x) - L < \epsilon$ whenever $- \delta   < x - c < 0$.
 
-\section*{4.6.3}
+\subsection*{4.6.3}
 \textit{Supply a proof for this proposition}
 
 We are talking here about Theorem 4.6.3, which reads as follows:
@@ -7598,7 +7636,7 @@ therefore
 $$0 < |x - c| < \delta \to |f(x) - L| < \epsilon$$
 as desired.
 
-\section*{4.6.4}
+\subsection*{4.6.4}
 \textit{Let $f: R \to R$ be increasing. Prove that $\lim_{x \to c^{+}{f(x)}}$
   and $\lim_{x \to c^{-}{f(x)}}$ mush exist at every point $c \in R$. Argue
   that the only type of discontinuity a monotone function can have is a
@@ -7643,7 +7681,7 @@ fact that there is no continuity, there still will be a right-hand limit
 and left-hand limit. Therefore on this set those limits cannot be equal.
 Therefore this discontinuity will be a jump discontinuity, as desired.
 
-\section*{4.6.5}
+\subsection*{4.6.5}
 \textit{Construct a bijection between the set of jump discontinuities of a
   monotone function $f$ and a subset of $Q$. Conclude that $D_f$ for a monotone
   function $f$ must  either be finite or countable, but not uncountable.}
@@ -7667,7 +7705,7 @@ This is not my own proof, I've spent too much time on this exercise and looked
 up the answer.
 
 
-\section*{4.6.6}
+\subsection*{4.6.6}
 \textit{Show that in each case we set an $F_\sigma$ set as the set where
   each function is discontinous.}
 
@@ -7683,7 +7721,7 @@ $Z$ can be written as a countable union of singletons
 For $(0, 1]$ we have 
 $$(0, 1] = \cup_{n = 2}^{\infty} [1/n, 1]$$
 
-\section*{4.6.7}
+\subsection*{4.6.7}
 \textit{Prove that, for a fixed $\alpha > 0$, the set $D_\alpha$ is closed}
 
 Set $D_\alpha$ is defined as
@@ -7708,7 +7746,7 @@ Because $J$ is a union of open sets (open intervals are open sets), therefore
 it is itself open. Thus complement of it (which is equal to $D_f$) is closed,
 as desired.
 
-\section*{4.6.8}
+\subsection*{4.6.8}
 \textit{If $a_1 < a_2$, show that $D_{\alpha_2} \subseteq D_{\alpha_1}$}
 
 Suppose that $f$ is $\alpha_1$-continous at $x$. It follows that there exists
@@ -7719,7 +7757,7 @@ Therefore $x$ is $\alpha_2$-continous at $x$. Therefore
 $D_{\alpha_2} \subseteq D_{\alpha_1}$
 as desired.
 
-\section*{4.6.9}
+\subsection*{4.6.9}
 \textit{Let $\alpha > 0$ be given. Show that if $f$ is continous at $x$, then
   it is $\alpha$-continous at $x$ as well. Explain how it follows that
   $D_\alpha \subseteq D_f$.}
@@ -7742,7 +7780,7 @@ Thus $f$ is $\alpha$-continous at $c$.
 Thus $x \in D_f \to x \in D_\alpha$ for any $\alpha > 0$. Thus
 $D_\alpha \subseteq D_f$ for any $\alpha > 0$.
 
-\section*{4.6.10}
+\subsection*{4.6.10}
 \textit{Show that if $f$ is not continous at $x$, then $f$ is not
   $\alpha$-continous for some $\alpha > 0$. Now explain why this guarantees
   that}
@@ -7773,7 +7811,9 @@ as desired.
 
 \chapter{The Derivative}
 
-\section*{5.2.1}
+\section{Derivatives and IVP}
+
+\subsection*{5.2.1}
 \textit{Supply proofs for parts (i) and (ii) of Theorem 5.2.4}
 
 Part (i)  of 5.2.4 states that
@@ -7794,7 +7834,7 @@ k \lim_{x \to c}\frac{f(x) - f(c)}{x - c} = k f'(c)$$
 
 as desired.
 
-\section*{5.2.2}
+\subsection*{5.2.2}
 \textit{(a) Use Definitions 5.2.1 to produce the proper formula for the
   derivative of $f(x) = 1/x$.}
 
@@ -7853,7 +7893,7 @@ $$(f/g)'(c) =
 $$
 as desired.
 
-\section*{5.2.3}
+\subsection*{5.2.3}
 \textit{By imitating the Dirichlet construction in Section 4.1, construct a
   function on $R$ that is differentiable at a single point}
 
@@ -7890,7 +7930,7 @@ $$\lim_{x \to c}\frac{-x^2 - 0}{x - 0} = \lim_{x \to c}\frac{-x^2}{x} = -c
 I think that it'll do. Not sure, that it is correct, but don't see
 anything wring with it.
 
-\section*{5.2.4}
+\subsection*{5.2.4}
 \textit{Let }
 \begin{equation}
   f(x) =
@@ -7949,7 +7989,7 @@ Same idea,
 
 Therefore $a > 2$.
 
-\section*{5.2.5}
+\subsection*{5.2.5}
 \textit{Let }
 \begin{equation}
   g_a(x) =
@@ -8033,7 +8073,7 @@ $3$. (it's actually possible to set $a$ to $(2, 3]$, but 3 will do as well).
 
 The limit of $g''_4$ is not defined, so I'll go with $4$.
 
-\section*{5.2.6}
+\subsection*{5.2.6}
 \textit{(a) Assume that $g$ is differentiable on $[a, b]$ and satisfies
   $g'(a) < 0 < g'(b)$. Show that there exists a point $x \in (a, b)$ where
   $g(a) > g(x)$ and a point $y \in (a, b)$ where $g(y) < g(b)$}
@@ -8080,7 +8120,7 @@ $g(c) < g(a)$ and $g(b) < g(c)$. Thus $g$ does not attain minimum at
 $a$ or $b$. Thus it attains minimum at some point $j \in (a, b)$. Thus, by
 IET. $g'(j) = 0$. Thus, $0  = f'(j) - \alpha \to f'(j) = \alpha$, as desired.
 
-\section*{5.2.7}
+\subsection*{5.2.7}
 \textit{Review the definition of uniform continuity (Definition 4.4.5)
   and also the content of
   Theorem 4.4.8, which states that continous functions on compact sets are
@@ -8127,7 +8167,7 @@ such that $|f(x)| \geq \epsilon$, for any given $\delta$. Thus,
 $$|\frac{f(x) - f(y)}{x - y} - f'(x)| > \epsilon$$
 for some $x \in [0, 1]$
 
-\section*{5.2.8}
+\subsection*{5.2.8}
 \textit{Decide whether each conjecture is true or false. Provide an argument
   for those that are true ad a counterexample for each one that is false.}
 
@@ -8186,7 +8226,9 @@ Not necessarily. We can construct a function
 
 Then our proposition falls apart.
 
-\section*{5.3.1}
+\section{MVT}
+
+\subsection*{5.3.1}
 \textit{Recall from Exercise 4.4.9 that a function $f: A \to R$ is called
   Lipschitz on $A$ if there exists an $M > 0$ such that }
 $$\left|\frac{f(x) - f(y)}{x - y}\right| \leq M$$
@@ -8207,7 +8249,7 @@ $$|\frac{f(x) - f(y)}{x - y}| \leq M$$
 for all $x, y \in [a, b]$. Therefore the function is Lipschitz on $[a, b]$,
 as desired.
 
-\section*{5.3.2}
+\subsection*{5.3.2}
 \textit{Recall from Exercise 4.3.9 that a function $f$ is contractive on a
   set $A$ if there exists a constant $0 < s < 1$ such that }
 $$|f(x) - f(y)| \leq s|x - y|$$
@@ -8232,7 +8274,7 @@ $$|f(x) - f(y)| \leq s|x - y|$$
 for some $0 < s < 1$, as desired.
 
 
-\section*{5.3.3}
+\subsection*{5.3.3}
 \textit{Let $h$ be a differentiable function defined on the interval $[0, 3]$,
   and assume that $h(0) = 1$, $h(1) = 2$, and $h(3) = 2$.}
 
@@ -8269,7 +8311,7 @@ Theorem there exists a point in $(c_1, c_2)$ (or $(c_2, c_1)$, whichever is
 appropriate) such that  $h'(c_1) < 1/4 < h'(c_2) \to h'(c_3) = 1/4$
 
 
-\section*{5.3.4}
+\subsection*{5.3.4}
 \textit{(a) Supply the details for the proof of Cauchy's Generalized Mean
   Value Theorem (Theorem 5.3.5)}
 
@@ -8312,7 +8354,7 @@ I didn't do one, but I'm sure, that wikipedia will have one. Maybe ine day,
 when I'll be studying GNUPlot or something of sorts, I'll do one just for
 fund and ammend this exercise. For now I'll mark this exercise as TODO
 
-\section*{5.3.5}
+\subsection*{5.3.5}
 \textit{ A fixed point of the function $f$ is a value $x$ where $f(x) = x$.
   Show that if $f$ is differentiable on an interval with $f'(x) \neq 1$, then
   $f$ can have at most one fixed point.}
@@ -8327,7 +8369,7 @@ $$f'(c) = \frac{x_2 - x_1}{x_2 - x_1}$$
 $$f'(c) = 1$$
 which is a contradiction.
 
-\section*{5.3.6}
+\subsection*{5.3.6}
 \textit{Let $g: [0, 1] \to R$ be a twice-differentiable (i.e., both $g$ and
   $g'$ are differentiable functions) with $g''(x) \geq 0$ for all
   $x \in [0, 1]$. If $g(0) > 0$ and $g(1) = 1$, show that $g(d) = d$ for some
@@ -8370,7 +8412,7 @@ $f(k) \leq 0$. Therefore by IVT there exists $k_1: f(k_1) = 0$
 (for  $f(k) = 0$ the case is trivial and doesn't require IVT).
 Therefore $g(k_1) - k_1 = 0 \to g(k_1) = k_1$, as desired.
 
-\section*{5.3.7}
+\subsection*{5.3.7}
 \textit{(a) Recall that a function $f: (a, b) \to R$ is increasing on $(a, b)$
   if $f(x) \leq f(y)$ whether $x < y$ in $(a, b)$. Assume $f$ is differentiable
   on $(a, b)$. Show that $f$ is increasing on $(a, b)$ if and only if
@@ -8427,7 +8469,7 @@ does not exist a neighborhood around zero such that the function is
 increasing on it, as desired (we needed to prove for any open interval, but
 this proof will do for it because of the definition of open sets).
 
-\section*{5.3.8}
+\subsection*{5.3.8}
 \textit{Assume $g: (a, b) \to R$ is differentiable at some point
   $c \in (a, b)$. If $g'(c) \neq 0$, show that there exists a
   $\delta$-neighborhood $V_\delta(c) \subseteq (a, b)$ for which
@@ -8452,7 +8494,7 @@ which is a contradiction.
 It folllows that function from 5.3.7(b) has no neighborhood around zero s.t.
 $g(x) = g(c)$.
 
-\section*{5.3.9}
+\subsection*{5.3.9}
 \textit{Assume that $\lim_{x \to c}{f(x)} = L$, where $L \neq 0$, and assume
   $\lim_{x \to c}{g(x)} = 0$. Show that $\lim_{x \to c}|f(x)/g(x)| = \infty$}
 
@@ -8479,7 +8521,7 @@ or in other words
 $$\lim_{x \to c}{f(x)/g(x)} = \infty$$
 as desired.
 
-\section*{5.3.10}
+\subsection*{5.3.10}
 \textit{Let $f$ be a bounded function and assume $\lim_{x \to c}g(x) = \infty$.
   Show that $\lim_{x \to c}f(x)/g(x) = 0$
 }
@@ -8494,7 +8536,7 @@ $$x \in V_\delta(c) \to \frac{|f(x)|}{|g(x)|} < \epsilon$$
 for every $\epsilon > 0$
 Thus $\lim_{x \to c}f(x)/g(x) = 0$, as desired.
 
-\section*{5.3.11}
+\subsection*{5.3.11}
 \textit{Use the Generalized Mean Value Theorem to furnish a proof of the
   $0/0$ case of L'Hopital's rule (Theorem 5.3.6)}
 
@@ -8517,7 +8559,7 @@ $$\left|\frac{f(x) + f(a)}{g(x) + g(a)} - L\right|  < \epsilon$$
 $$\left|\frac{f(x) }{g(x) } - L\right|  < \epsilon$$
 as desired.
 
-\section*{5.3.12}
+\subsection*{5.3.12}
 \textit{Assume $f$ and $g$ are as described in Theorem 5.3.6, but now add the
   the assumption that $f$ and $g$ are differentiable at $a$ and $f'$ and $g'$
   are continous at $a$. Find a short proof for the $0/0$ case of L'Hopital's
@@ -8533,7 +8575,7 @@ $$\lim_{x \to c}\frac{f'(x)}{g'(x)} = \frac{f'(c)}{g'(c)} =
 $$ = \lim_{x \to c} \frac{f(x)} {g(x)}$$
 as desired.
 
-\section*{5.3.13}
+\subsection*{5.3.13}
 \textit{Review the hypothesis of Theorem 5.3.6. What happens if we do not
   assume that $f(a) = g(a) = 0$, but assume only that $\lim_{x \to a}f(x) = 0$
   adn $\lim_{x \to a} g(x) = 0$? Assuming we have a proof for Theorem 5.3.6
@@ -8544,8 +8586,9 @@ We can use a modified function $h$ such that it satisfies the requirements of
 $5.3.6$ to show, that every sequence is convergent to the same limit and thus
 sequences of $f$ converge to the same limit as well.
 
+\section{A Continous Nowhere-Differentiable Function}
 
-\section*{5.4.1}
+\subsection*{5.4.1}
 
 \textit{Sketch a graph of $(1/2)h(2x)$ on $[-2, 3]$. Give a qualitative
   description of the functions}
@@ -8556,7 +8599,7 @@ I haven't draws a graph, but as I understand the main idea here is that the
 functtion becomes more and more "compressed" when the values as values
 of $n$ increase.
 
-\section*{5.4.2}
+\subsection*{5.4.2}
 \textit{Fix $x \in R$. Argue that the series}
 $$\sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
 \textit{converges absolutely and thus $g(x)$ is properly defined.}
@@ -8565,7 +8608,7 @@ $0 \leq h(x) \leq 1$. Therefore
 $$\sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
 is increasing and bounded above by $\sum{1/2^n}$, therefore it is convergent.
 
-\section*{5.4.3}
+\subsection*{5.4.3}
 \textit{Taking the continuity of $h(x)$ as given, reference the proper
   theorems from Chapter 4 that imply that the finite sum}
 $$g_m(x) = \sum_{n = 0}^{m}{\frac{1}{2^n} h (2^nx)}$$
@@ -8579,7 +8622,7 @@ therefore (ACT) $\frac{1}{2^n} h(2^nx)$ is continous, therefore (ACT)
 $\sum_{n = 0}^{m} \frac{1}{2^n} h(2^nx)$ is continous).
 
 
-\section*{5.4.4}
+\subsection*{5.4.4}
 \textit{Show that}
 $$\frac{g(x_m) - g(0)}{x_m - 0} = m + 1$$
 \textit{and use this to prove that $g'(0)$ does not exist.}
@@ -8630,7 +8673,7 @@ where $x_m \neq 0$ and $\lim{f(x_m) } = \infty$. Thus the limit of
 $$\frac{g(x_m) + g(0)}{x_m + 0}$$
 does not exist. Therefore $g'(0)$ does not exist, as desired.
 
-\section*{5.4.5}
+\subsection*{5.4.5}
 \textit{(a) Modify the previous argument to show that $g'(1)$ does not exist.
   Show that $g'(1/2)$ does not exist.}
 
@@ -8782,7 +8825,7 @@ There's a mistake here somewhere but I can't find it. TODO.
 %   dependant on the given exercise. Might come
 %   back to them later. TODO.}
 
-\section*{5.4.6}
+\subsection*{5.4.6}
 \textit{(a) Without working too hard, explain why the partial sum
   $g_m = h_0 + h_1 + .... + h_m$ is differentiable at $x$. Now, prove tht,
   for every value of $m$ we have}
@@ -8798,7 +8841,7 @@ $$|g'_{m + 1}(x) - g'_m(x)| = 1$$
 \textit{(b) Prove the two inequalities}
 $$\frac{g(y_m) - g(x)}{y_m - x} < g'_m(x) < \frac{g(x_m) - g(x)}{x_m - x}$$
 
-\section*{5.4.7}
+\subsection*{5.4.7}
 \textit{Review the argument for the nondifferentiability of $g(x)$ at
   nondyadic points. Does the argument still work if we replase $g(x)$ with
   the sumation $\sum_{n =0}^{infty}{(1/2^n)h(3^n x}$? Does the argument work
@@ -8810,7 +8853,9 @@ $$\frac{g(y_m) - g(x)}{y_m - x} < g'_m(x) < \frac{g(x_m) - g(x)}{x_m - x}$$
 
 \chapter{Sequences and Series of Functions}
 
-\section*{6.2.1}
+\section{Uniform Convergence}
+
+\subsection*{6.2.1}
 \textit{Let}
 $$f_n(x) = \frac{nx}{1 + nx^2}$$
 \textit{(a) Find the pointwise limit of $(f_n)$ for all $x \in (0, \infty)$.}
@@ -8853,7 +8898,7 @@ for $x \in (1, \infty)$
 $$n > \frac{1}{\epsilon} \to n > \frac{\frac{1}{\epsilon}}{x^3} - \frac{1}{x^2}$$
 
 
-\section*{6.2.2}
+\subsection*{6.2.2}
 \textit{Let}
 $$g_n(x) = \frac{nx + \sin{(nx)}}{2n}$$
 \textit{Find the pointwise limit of $(g_n)$ on $R$. Is the convergence on
@@ -8876,7 +8921,7 @@ $\sin$ is bound above by $1$ therefore $n > \frac{1}{2\epsilon}$ will suffice.
 Therefore the function is uniformly convergent on $R$ and by
 extension on $[-10, 10]$.
 
-\section*{6.2.3}
+\subsection*{6.2.3}
 \textit{Consider the sequence of functions}
 $$h_n(x) = \frac{x}{1 + x^n}$$
 \textit{over the domain $[0, \infty)$.}
@@ -8921,7 +8966,7 @@ $$
 for any $x \in [0, 0.5]$. (Once again. can't justify moer than that)
 
 
-\section*{6.2.4}
+\subsection*{6.2.4}
 \textit{For each $n \in N$, find the points on $R$ where the function
   $f_n(x) = x/(1 + nx^2)$ attains its maximum and minimum values. Use this
   to prove $(f_n)$ converges uniformly on $R$. What is the limit function?}
@@ -8963,7 +9008,7 @@ uniformly convergent.
 
 The limit function for this sequence is obviously $f(x) = 0$.
 
-\section*{6.2.5}
+\subsection*{6.2.5}
 \textit{For each $n \in N$, define $f_n$ on $R$ by}
 $$f_n(x) =
 \begin{cases}
@@ -8998,7 +9043,7 @@ continous.
 $$f_n = \frac{1}{x^2 + \frac{1}{n}}$$
 is probably an answer
 
-\section*{6.2.6}
+\subsection*{6.2.6}
 \textit{Using the Cauchy Criterion for convergent sequences of real numbers
   (Theorem 2.6.4), supply a proof for Theorem 6.2.5 (First, define a candidate
   for $f(x)$, and then argue that $f_n \to f$ uniformly)}
@@ -9043,7 +9088,7 @@ we've got $N = N_2$ such that
 $$n \geq N_2 \to |f(n) - f(x)| \leq \epsilon/ 3 < \epsilon$$
 as desired.
 
-\section*{6.2.7}
+\subsection*{6.2.7}
 \textit{Assume that $(f_n)$ converges uniformly to $f$ on $A$ and that each
   $f_n$ is uniformly continous on $A$. Prove taht $f$ is uniformly continous
   on $A$.}
@@ -9069,7 +9114,7 @@ f_n(c) - f(c)  + f_n(x) - f_n(c)| < \epsilon$$
 $$|x - c| < \delta  \to |f(x) - f(c)| < \epsilon$$
 thus $f$ is uniformly continous at $A$, as desired.
 
-\section*{6.2.8}
+\subsection*{6.2.8}
 \textit{Decide which if the following conjectures arre true and which are
   false. Supply a proof for those that are valid and a counterexample for
   each one that is not }
@@ -9143,7 +9188,7 @@ I think, that it is also true, we just need to point out that there
 exists $N_1$ for $x$, $N_2$ for $y$, and then pick $N$ to be the maximum of
 two of them and everything else in (e) will hold.
 
-\section*{6.2.9}
+\subsection*{6.2.9}
 \textit{Assume $(f_n)$ converges uniformly to $f$ on a compact set $K$, and
   let $g$ be a continous function on $K$ satisfying $g(x) \neq 0$. Show
   $(f_n/g)$ converges uniformly on $K$ to $f/g$. }
@@ -9175,7 +9220,7 @@ $$\left|\frac{f(x)}{g(x)} - \frac{f_n(x)}{g(x)}\right|  < \epsilon$$
 for all $x \in K$. 
 Therefore we can state that $f/g$ is uniformly continous at $K$, as desired.
 
-\section*{6.2.10}
+\subsection*{6.2.10}
 \textit{Let $f$ be uniformly continous on all of $R$, and define a sequence
   of functions by $f_n(x) = f(x + \frac 1 n)$. Show that $f_n \to f$ uniformly.
   Give an example to show that this proposition fails if $f$ is only assumed to
@@ -9200,7 +9245,7 @@ which is unbounded as $x$ becomes greater, therefore there does not
 exist single sufficient $n$ for every $x$, therefore convergence is
 not uniform.
 
-\section*{6.2.11}
+\subsection*{6.2.11}
 \textit{Assume $(f_n)$ and $(g_n)$ are uniformly convergent sequences of
   functions.}
 
@@ -9260,7 +9305,7 @@ $$|f(x)g(x)  - f_n(x)g_n(x)| < \epsilon$$
 Thus for any $\epsilon > 0$ there exists $N \in \textbf{N}$, such that
 states equality holds forany $x \in A$, as desired.
 
-\section*{6.2.12}
+\subsection*{6.2.12}
 \textit{Theorem 6.2.6 has a partial converse. Assume $f_n \to f$ pointwise on
   a compact set $K$ and assume that for each $x \in K$ the sequence $f_n(x)$
   is increasing. Follows these steps to show that if $f_n$ and $f$ are
@@ -9332,7 +9377,7 @@ $$|f - f_n| < \epsilon$$
 therefore the function is uniformly continous, as desired.
 
 
-\section*{6.2.13 (Cantor Function)}
+\subsection*{6.2.13 (Cantor Function)}
 \textit{Review the construction of the Cantor set $C \subseteq [0, 1]$ from
   Section 3.1. This exercise makes use of results and notation from this
   discussion.}
@@ -9409,7 +9454,7 @@ because they are at the edges of a Cantor set, therefore 0 and 1 are
 contained in the set, therefore they are
 not changed by our manipulations.
 
-\section*{6.2.14}
+\subsection*{6.2.14}
 \textit{Recall that the Bolzano-Wieierstrass Theorem (Theorem 2.5.5) states
   that every bounded sequence of real numbers has a convergent subsequence. An
   analogous statement for bounded sequences of functions is not true in
@@ -9458,7 +9503,7 @@ $f_2$ to be any function from $(f_{2, k})$, and so on
 get a single subsequence $(f_n)$ that pointwisely converges to any
 point $A$, as desired.
 
-\section*{6.2.15}
+\subsection*{6.2.15}
 \textit{A sequence of functions $(f_n)$ defined on a set $E \subseteq R$ is
   called equicontinous if for every $\epsilon > 0$ there exists a $\delta > 0$
   such that $|f_n(x) - f_n(y)| < \epsilon$ for all $n \in N$ and
@@ -9504,7 +9549,7 @@ that given more thought one might come up with a better one).
 For a second point, each $x^n$ is continous, therefore on a compact set
 $[0, 1]$ it is uniformly continous.
 
-\section*{6.2.16 (Arzela-Ascoli Theorem)}
+\subsection*{6.2.16 (Arzela-Ascoli Theorem)}
 \textit{For each $n \in N$, let $f_n$ be a function defined on $[0, 1]$. If
   $(f_n)$ is bounded on $[0, 1]$ -- that is, there exists an $M > 0$ such that
   $|f_n(x)| \leq M$ for all $n \in N$ and $x \in [0, 1]$ -- and if the
@@ -9583,7 +9628,9 @@ $$|g_s(x) - g_t(x) | < \epsilon$$
 for any $x \in [0, 1]$. Therefore by Cauchy Criterion for Uniform Continuity,
 $(g_n)$ converges uniformly, as desired.
 
-\section*{6.3.1}
+\section{Uniform Convergencee and Differentiation}
+
+\subsection*{6.3.1}
 \textit{(a) Let }
 $$h_n(x) = \frac{\sin{(nx)}}{n}$$
 \textit{Show that $h_n \to 0$ uniformly on $R$. At what points does the
@@ -9611,7 +9658,7 @@ its derivative is equal to
 $$f_n'(x) = 2x \cos{(n x^2)}$$
 which is unbounded on $R$.
 
-\section*{6.3.2}
+\subsection*{6.3.2}
 \textit{Consider the sequence of funcitons defined by }
 $$g_n(x) = \frac{x^n}{n}$$
 
@@ -9645,7 +9692,7 @@ $$
 
 $h$ and $g'$ are definetly not the same and differ at point $1$.
 
-\section*{6.3.3}
+\subsection*{6.3.3}
 \textit{Consider the sequence of functions}
 $$f_n(x) = \frac{x}{1 + nx^2}$$
 \textit{Exercise 6.2.4 contains some advice for how to show that $(f_n)$
@@ -9676,7 +9723,7 @@ $$
 $$
 thus $\lim{f_n'(x)} = f'(x)$ at $x = R \setminus \{0\}$.
 
-\section*{6.3.4}
+\subsection*{6.3.4}
 \textit{Let }
 $$g_n(x) = \frac{nx + x^2}{2n}$$
 \textit{and set $g(x) = \lim{g_n(x)}$. Show that $g$ is differentiable in two
@@ -9749,7 +9796,7 @@ $$|\frac{nx^2 + 4n^2x - 1}{(x + 2n)^2} - x| < \epsilon$$
 for any given epsilon. Therefore the derivative is uniformly convergent at
 $[-M, M]$, therefore $f'(x) = \lim f_n'(x)$, as desired.
 
-\section*{6.3.5}
+\subsection*{6.3.5}
 \textit{Use the following advice to supply a proof for Theorem 6.3.2. To get
   started, observe that the triangle inequality implies that, for any
   $x \in [a, b]$,}
@@ -9822,8 +9869,9 @@ $$ |f_n(x) - f_m(x) |<  \epsilon$$
 for every $x \in [a, b]$. Therefore by Cauchy Criterion for Uniform Convergence
 we can state that $(f_n)$ converges uniformly, as desired.
 
+\section{Series of Functions }
 
-\section*{6.4.1}
+\subsection*{6.4.1}
 \textit{Prove that if $\sum_{n = 1}^{\infty}{g_n}$ converges uniformly, then
   $(g_n)$ converges uniformly to zero}
 
@@ -9836,7 +9884,7 @@ $$|f_n(x)| < \epsilon$$
 $$|f_n(x) - 0| < \epsilon$$
 therefore $f_n$ is uniformly convergent to $0$.
 
-\section*{6.4.2}
+\subsection*{6.4.2}
 \textit{Supply the details for the proof of the Weierstrass M-Test
   (Corollary 6.4.5)}
 
@@ -9868,7 +9916,7 @@ $$|f_{m + 1}(x) + f_{m + 2}(x) + ... + f_n(x)|  < \epsilon$$
 thus by Cauchy Criterion for Uniform Convergence of Series we've got that
 $\sum_{n = 1}^{\infty}{f_n}$ is uniformly convergent, as desired.
 
-\section*{6.4.3}
+\subsection*{6.4.3}
 
 \textit{(a) Show that $g(x) = \sum cos(2^nx)/2n$ is continous on all of $R$.}
 
@@ -9898,7 +9946,7 @@ $|x^n/n^2| \leq 1/n^2$. Thus once again by Weierstrass M-Test we've got that
 $\sum x^n/n^2$ is uniformly convergent once again. Thus we can follow that
 $h(x)$ is continous, as desired.
 
-\section*{6.4.4}
+\subsection*{6.4.4}
 \textit{In Section 5.4, we postponed the argument that the
   nowhere-differentiable function}
 $$g(x) = \sum_{n = 0}^{\infty}{\frac{1}{2^n}h(2^nx)}$$
@@ -9916,7 +9964,7 @@ Therefore $g$ is an infinite sum, which converges uniformly, and each
 memeber of the sum is continous, therefore $g$ is continous as well, as
 desired.
 
-\section*{6.4.5}
+\subsection*{6.4.5}
 \textit{Let }
 $$f(x) = \sum_{k = 1}^{\infty}{\frac{\sin(kx)}{k^3}}$$
 
@@ -9952,7 +10000,7 @@ For which we cannot use our good ol' Weierstrass method because of the
 divergence of harmonic series, and I can't see any other method of assertind
 differentiability.
 
-\section*{6.4.6}
+\subsection*{6.4.6}
 \textit{Observe taht the series }
 $$f(x) = \sum_{n = 1}^{\infty}{\frac{x^n}{n}} = x + \frac{x^2}{2} +
 \frac{x^3}{3} + ... $$
@@ -9963,7 +10011,7 @@ $$f(x) = \sum_{n = 1}^{\infty}{\frac{x^n}{n}} = x + \frac{x^2}{2} +
 For a fixed $x$ we have some $x < c < 1$, and we know that
 $\sum c^n/n$ converges, therefore for given $x$ series converges as well.
 
-\section*{6.4.7}
+\subsection*{6.4.7}
 \textit{Let }
 $$h(x) = \sum_{n = 1}^{\infty}{\frac{1}{x^2 + n^2}}$$
 
@@ -9990,7 +10038,7 @@ For a any bounded interval this sum is uniformly convergent. Therefore
 we can state that on any given $x \in R$ there exists a derivative and
 that derivative is continous.
 
-\section*{6.4.8}
+\subsection*{6.4.8}
 \textit{Let $\{r_1, r_2, ... \}$ be an enumeration of the set of rational
   numbers. For earch $r_n \in Q$, define  }
 $$u_n(x) =
@@ -10029,7 +10077,9 @@ $$|x - i|  < \delta \to
 |u(x) - u(i)| =  \sum_{n = N}^{\infty}{1/2^n} < \epsilon$$
 therefore $u$ is continous at every irrational point.
 
-\section*{6.5.1}
+\section{Power Series}
+
+\subsection*{6.5.1}
 \textit{Consider the function $g$ defined by power series }
 $$g(x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} +
 \frac{x^5}{5} - ... $$
@@ -10074,7 +10124,7 @@ $$\frac{1}{1 - x}$$
 
 Correction: 6.5.6 gives us desired answer.
 
-\section*{6.5.2}
+\subsection*{6.5.2}
 \textit{Find suitable coefficients $(a_n)$ so that the resulting power series
   $\sum a_n x^n$}
 
@@ -10097,7 +10147,7 @@ $$(-1)^n\frac{x^n}{n}$$
 No, because absolute convergence at $x = 1$ implies that sum converges
 absolutely at $x = -1$.
 
-\section*{6.5.3}
+\subsection*{6.5.3}
 \textit{Explain why a power series can converge conditionally for at most
   two points.}
 
@@ -10105,7 +10155,7 @@ Because for for any convergent  $x$ sum converges absolutely
 for any $x_0$ such that $|x_0| < |x|$. Therefore the only choice
 for conditional convergence happens at $x$ and $-x$.
 
-\section*{6.5.4}
+\subsection*{6.5.4}
 \textit{(a) By referencing the proper theorems, produce a detailed argument
   that a power series that converges on the interval $(-R, R)$ necessarily
   represents  a continous function at each point $x \in (-R, R)$.}
@@ -10135,7 +10185,7 @@ pointwise convergence at $(-R, R]$. Therefore by 6.5.5 we've got uniform
 convergence at $[0, R]$. Thus we've got uniform convergence at
 $(-R, R) \cup [0, R] = (-R, R]$, as desired.
 
-\section*{6.5.5}
+\subsection*{6.5.5}
 \textit{Use the Weierstrass M-Test to prove Theorem 6.5.2}
 
 Theorem 6.5.2 states that
@@ -10164,7 +10214,7 @@ Thus by Weierstrass M-Test
 $$\sum_{n = 0}^{\infty}{a_n x^n}$$
 converges uniformly, as desired
 
-\section*{6.5.6}
+\subsection*{6.5.6}
 \textit{Show how Theorem 6.5.1, Theorem 6.5.2, and Abel's Theorem together
   imply that if a power series converges pointwise on a compact set, then the
   convergence is actually uniform on this set.}
@@ -10180,7 +10230,7 @@ therefore the series is convergent uniformly on  $[\inf K, \sup K]$; other
 cases are simular). Because $K \subseteq [\inf K, \sup K]$ we can state that
 the series is convergent uniformly on the compact set $K$.
 
-\section*{6.5.7}
+\subsection*{6.5.7}
 
 \textit{(a) The Ratio Test (from Exercise 2.7.9) states that if $(b_n)$ is
   a sequence of nonzero terms satisfying $\lim{|b_{n + 1}/b_n| = r < 1}$,
@@ -10241,7 +10291,7 @@ is convergent and therefore
 $$\sum{n a_n x^{n - 1}}$$
 is convergent as well, as desired.
 
-\section*{6.5.8}
+\subsection*{6.5.8}
 \textit{Let $\sum{a_n x^n}$ be a power series with $a_n \neq 0$, and assume}
 $$L = \lim_{n \to \infty}{\left|\frac{a_{n + 1}}{a_n}\right|}$$
 \textit{exists}
@@ -10341,7 +10391,7 @@ $$\left|a_{n + 1}x^{n + 1}\right| > |a_n x^n| > ... > |a_1 x| > |a_0| > 0$$
 therefore the given sequence is not convergent to zero, and by that we can
 follow that the series is not convergent, as desired.
 
-\section*{6.5.9}
+\subsection*{6.5.9}
 \textit{Use Theorem 6.5.7 to argue that power series are unique. If we have}
 $$\sum_{n = 0}^{\infty}{a_n x^n} = \sum_{n = 0}^{\infty}{b_n x^n}$$
 \textit{for al $x$ in interval $(-R, R)$, prove that $a_n = b_n$ for all
@@ -10365,7 +10415,7 @@ $$g^{(j)}(0) = \sum_{n = j}{\infty}{\frac{n!}{(n - j)!} a_n x^{n - j}} = a_j
 
 Therefore we can state that $a_j = b_j$ for any $j \in N$, as desired.
 
-\section*{6.5.10}
+\subsection*{6.5.10}
 \textit{Review the definition and results from Section 2.8 concerning products
   of series and Cauchy products in particular. At the end of Section 2.9, we
   mentioned the following result: if both $\sum a_n$ and $\sum b_n$ converge
@@ -10396,7 +10446,7 @@ $$h(x) = f(x)g(x)$$
 thus by continuity of those functions on $[0, 1]$ we get that
 $$\sum d_n = (\sum a_n)(\sum b_n)$$
 
-\section*{6.5.11}
+\subsection*{6.5.11}
 \textit{A series $\sum_{n = 0}^{\infty}{a_n}$ is said to be Abel-summable to
   $L$ if the power series}
 $$f(x) = \sum_{n = 0}^{\infty}{a_n x^n}$$
@@ -10454,7 +10504,7 @@ I'm not really convinced that this conclusion is right.
 Update: after consulting Instructor's manual it turn out that my math is
 correct. Holy moly.
 
-\section*{6.5.12}
+\subsection*{6.5.12}
 \textit{Consider the function $G$ from the opening discussion on branching
   processes, and recall that the increasing monotone sequence of probabilities
   $(d_r)$ has a limit $d = \lim{d_r}$, that satisfies $G(d) = d$. Assume we
@@ -10468,5 +10518,9 @@ This implies that $G(d_n) - d_n < 0$,
 which implies that $G(d_n) < d_n$, which implies that $d_{n + 1} < d_n$, which
 is a contradiction of the fact, that the sequence is increasing. Thus
 every $d_n \leq d_0$, therefore it can converge only to $d_0$, as desired.
+
+\section{Taylor Series}
+
+
 
 \end{document}
