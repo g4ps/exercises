@@ -10521,6 +10521,46 @@ every $d_n \leq d_0$, therefore it can converge only to $d_0$, as desired.
 
 \section{Taylor Series}
 
+\subsection*{6.6.1}
+\textit{Upcoming results in Chapter 7 will justify this equation for all
+  $x \in (-1, 1)$, but notice that this series actually converges when $x = 1$.
+  Assuming that $\arctan(x)$ is continous, explain why the value of the series
+  at $x = 1$ must necessarily be $arctan(1)$. What interesting identity do we
+  get in this case?}
+
+We've proven before somewhere that if derivatives of two functions are
+the same, then it follows that they are either equal to each other, or
+they are different by some constant. Because $\arctan(0) = 0$ and this
+function is equal to zero at zero we can follow that they are the same
+functions.
+
+I don't know for sure what constitutes an interesting identity, but I guess
+that it means that
+$$\sum_{n = 0}^{\infty}{\frac{(-1)^{n + 1}}{1 + 2n}} = \frac{\pi}{4}$$
+or something along the lines
+
+\subsection*{6.6.2}
+\textit{Starting from the identity in equation (1) of this section,
+  find a power series representation for $\ln{(1 + x)}$. For which values
+  of $x$ is this expression valid?}
+
+We've got that
+$$\frac{1}{1 - t} = 1 + t + t^2 + t^3 + ...$$
+thus
+$$\frac{1}{1 + t} = 1 - t + t^2 - t^3 ...$$
+we know that
+$$\ln{(x + 1)} = \int_0^x{\frac{1}{x + 1} dx}$$
+thus
+$$\ln{(x + 1)} = x - \frac{x^2}{2} + \frac{x^3}{3} - ... $$
+this expression is valid for at least $x \in [0, 1]$ at the very least by
+continuity all around. Also we get something at negative numbers, namely
+that it at least converges at $(-1, 1]$.
+
+TODO continue with the section
+
+\chapter{The Riemann Integral}
+
+
 
 
 \end{document}

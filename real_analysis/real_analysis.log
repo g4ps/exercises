@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  21 DEC 2022 21:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  21 DEC 2022 22:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -561,13 +561,13 @@ Overfull \hbox (0.16826pt too wide) detected at line 10493
 cmsy/m/n/10.95 ^^@ [] \OT1/cmr/m/n/10.95 = []
  []
 
-[222] [223] (./real_analysis.aux)
+[222] [223] [224] (./real_analysis.aux)
 Package rerunfilecheck Info: File `real_analysis.out' has not changed.
 (rerunfilecheck)             Checksum: DC05D9B3788ED39E427D4CADF8E75256;5668.
  ) 
 Here is how much of TeX's memory you used:
- 9617 strings out of 478268
- 145528 string characters out of 5846347
+ 9620 strings out of 478268
+ 145560 string characters out of 5846347
  452986 words of memory out of 5000000
  27164 multiletter control sequences out of 15000+600000
  482267 words of font info for 74 fonts, out of 8000000 for 9000
@@ -592,10 +592,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on real_analysis.pdf (224 pages, 842185 bytes).
+Output written on real_analysis.pdf (225 pages, 844839 bytes).
 PDF statistics:
- 1649 PDF objects out of 1728 (max. 8388607)
- 1371 compressed objects within 14 object streams
- 564 named destinations out of 1000 (max. 500000)
+ 1656 PDF objects out of 1728 (max. 8388607)
+ 1377 compressed objects within 14 object streams
+ 567 named destinations out of 1000 (max. 500000)
  273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
