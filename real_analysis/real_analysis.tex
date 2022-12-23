@@ -10556,11 +10556,208 @@ this expression is valid for at least $x \in [0, 1]$ at the very least by
 continuity all around. Also we get something at negative numbers, namely
 that it at least converges at $(-1, 1]$.
 
-TODO continue with the section
+\subsection*{6.6.3}
+\textit{(a) Take derivatives of each side of equation (2), and deduce that
+  $f'(0) = a_1$. In general, prove that if $f$ has a power series expansion,
+  then the coefficients must be given by the formula}
+$$a_n = \frac{f^{(n)}(0)}{n!}$$
+\textit{Supply references to the theorem(s) that justif the manipulations
+  carried out on the series in equation (2)}
+
+By setting $x = 0$ into original sum  we can get that
+$$\sum_{n = 0}^{\infty}{a_n x^n} = a_0 + \sum_{n = 1}^{\infty}{a_n 0^n} =
+a_0 + 0 = a_0$$
+
+By setting $x = 0$ into its derivative we get
+$$\sum_{n = 1}^{\infty}{n a_n x^{n - 1}} = 2a_1 +
+\sum_{n = 1}^{\infty}{a_n 0^n} = 2 a_1  = 2 a_1$$
+
+Same applies to second derivative and so on. In general we've got
+$$f^{(j)} = \sum_{n = j}^{\infty}{n a_n x^{n - j}} = j! a_j +
+\sum_{n = j + 1}^{\infty}{a_n 0^n} = j! a_j  = j! a_j$$
+
+therefore we've got that
+$$f^{(n)} = n! a_n$$
+therefore
+$$ n! a_n = f^{(n)}$$
+and
+$$  a_n = \frac{f^{(n)}}{n!}$$
+as desired.
+
+\subsection*{6.6.4}
+\textit{Use Taylor's formula for $a_n$ from the preceding exercise to
+  produce/verify the so-called Taylor series for $\sin x$ given by}
+$$\sin(x) \sim x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ...$$
+
+
+Let's firstly try to see some of the first terms in sequence
+$$a_0 = \frac{sin(0)}{1} = 0$$
+$$a_1 = \frac{cos(0)}{1} = 1$$
+$$a_2 = -\frac{\sin(0)}{2} = 0$$
+$$a_3 = - \frac{\cos(0)}{3!} = - \frac{1}{3!}$$
+$$a_4 = \frac{\sin(0)}{4!} = 0$$
+
+
+We can see, that after 4'th term we've got that subsequent derivatives of
+given function repeat itself. Thus we are justified to write that
+$$\sin(x) = \sum_{n = 0}^{\infty}{\frac{(-1)^n x^{2n - 1}}{(2n - 1)!}}$$
+(I hope that I didn't messed up the sum, but the idea is there)
+
+\subsection*{6.6.5}
+\textit{Prove that $S_N(x)$ converges uniformly to $\sin(x)$ on $[-2, 2]$.
+  Generaliza this proof to show that the convergence is uniform on any interval
+  $[-R, R]$}
+
+Let $N \in \textbf{N}$. It follows that
+
+$$|f(x) - S_N(x)| = |E_n| =
+\left|\frac{f^{(N + 1)}(c)}{(N + 1)!}x^{N + 1}\right| =
+\left|\frac{f^{(N + 1)}(c) x^{N + 1} }{(N + 1)!}\right| =
+\frac{|f^{(N + 1)}(c) x^{N + 1}|}{|(N + 1)!|} =
+$$
+$$
+= \frac{|f^{(N + 1)}(c) x^{N + 1}|}{(N + 1)!} =
+\frac{|f^{(N + 1)}(c)|| x^{N + 1}|}{(N + 1)!}
+$$
+$|f^{(n)}(x)| = |\sin(x)|$ or $|f^{(n)}(x)| = |\cos(x)|$
+both ow which are bounded  above by $1$. Therefore
+$$
+\frac{|f^{(N + 1)}(c)|| x^{N + 1}|}{(N + 1)!}
+\leq
+\frac{| x^{N + 1}|}{(N + 1)!} \leq
+\frac{|2^{N + 1}|}{(N + 1)!}
+$$
+which is convergent to $0$. Thus for every $\epsilon > 0$ we can get
+$N \in \textbf{N}$ such that
+$$|f(x) - S_N| < \epsilon$$
+for every $x \in [-2, 2]$. Therefore the function is convergent
+uniformly on $[-2, 2]$.
+
+For a general case we get that 
+$$
+\frac{|R^{N + 1}|}{(N + 1)!}
+$$
+converges to zero, thus everything holds for arbitrary $R > 0$.
+
+\subsection*{6.6.6}
+\textit{(a) Generate the Taylor coefficients for the exponential function
+  $f(x) = e^x$, and then prove that the corresponding Taylor series
+  converges uniformly to $e^x$ on any interval of the form $[-R, R]$.}
+
+$$a_0 = \frac{e^0}{0!} = 1$$
+$$a_n = \frac{e^0}{n!} = \frac{1}{n!}$$
+
+therefore
+$$e^x = \sum_{n = 0}^{\infty}{\frac{x^n}{n!}}$$
+
+$$(\frac{x^n}{n!}) \to 0$$
+uniformly for any given $[-R, R]$, thus derived sum converges uniformly to
+given function.
+
+\textit{(b) Verify the formula $f'(x) = e^x$.}
+
+If $g(x) = \sum_{n = 0}^{\infty}{\frac{x^n}{n!}}$, then we can follow that
+$$g'(x) = \sum_{n = 1}^{\infty}{n \frac{x^{n - 1}}{n!}} =
+\sum_{n = 1}^{\infty}{\frac{x^{n - 1}}{(n - 1)!}} =
+\sum_{n = 0}^{\infty}{\frac{x^{n}}{n!}}  = g(x)$$
+as desired.
+
+\textit{(c) Use a substitution to generate the series for $e^{-x}$, and
+  then calculate $e^x * e^{-x}$ by multipling together the two series and
+  collecting common powers of $x$.}
+
+We can state that
+$$e^{-x} = \sum_{n = 0}^{\infty}{\frac{(-x)^n}{n!}}$$
+thus
+$$e^x e^{-x} = \sum_{n = 0}^{\infty}{\frac{(-x)^n}{n!}}
+\sum_{n = 0}^{\infty}{\frac{x^n}{n!}} =
+(1 - x + \frac{x^2}{2} - \frac{x^3}{3} + ... )(
+1 + x + \frac{x^2}{2} + \frac{x^3}{3} + ... ) =
+$$
+$$
+= 1 + (-1 + 1)x + (1/2 - 1 + 1/2)x^2 + (-1/6 + 1/2 - 1/2 + 1/6)x^3 + ... = 1
+$$
+
+
+\subsection*{6.6.7}
+\textit{Explain why the error function $E_N(x) = f_N(x) - S_N(x)$
+  satisfies}
+$$E_N^{(n)}(0) = 0 \text{ for all } n = 0, 1, 2, 3, ..., N$$
+
+By the way of how we've defined the function $S_N(x)$ it follows that
+$$S_N^{(N)}(0) = N! a_n = N! \frac{f^{(N)}(0)}{N!} = f^{(N)}(0)$$
+thus
+$$E_N(0) = f^{(N)}(0) - S_N^{(N)}(0) =  0$$
+
+
+\subsection*{6.6.8}
+
+\textit{Finish the proof of Lagrange's Remainder Theorem}
+
+$$\frac{E_N(x)}{x^{N + 1}} = \frac{E_N'(x_1)}{(N + 1)x_1^{N}}$$
+
+Therefore on interval $[0, x_1]$ therefore exists a point $x_2 \in (0, x_1)$
+such that
+$$\frac{E_N'(x_1)}{x_1^{N}} = \frac{E_N''(x_2)}{Nx_2^{N - 1}}$$
+thus
+$$\frac{E_N(x)}{x^{N + 1}} = \frac{E_N'(x_1)}{(N + 1)x_1^{N}} =
+\frac{E_N''(x_2)}{(N + 1)Nx_2^{N - 1}}$$
+if we continue in this fashion setting $x_n$ and deriving formulas
+by using GMVT we'll get
+$$\frac{E_N(x)}{x^{N + 1}} = \frac{E_N^{(N + 1)}(x_n)}{(N + 1)! x_N^{N - N} } =
+\frac{E_N^{(N)}(x_n)}{(N + 1)!  }$$
+
+From definition of $E_N$ we get thtat
+$$E_N^{(N + 1)}(x) = f^{(N + 1)}(x) - S_N^{(N + 1)}(x)$$
+$S_N$ is a polynomial of $N$'th power, therefore
+$$S_N^{(N + 1)} = 0$$
+thus
+$$E_N^{(N + 1)}(x) = f^{(N + 1)}(x)$$
+therefore if we substitute this result into our equation we'll get
+$$\frac{E_N(x)}{x^{N + 1}} =
+\frac{E_N^{(N + 1)}(x_n)}{(N + 1)!} = \frac{f^{(N)}(x_n)}{(N + 1)!} $$
+if we rename $x_n$ with $c$ we'll get 
+$$\frac{E_N(x)}{x^{N + 1}} = \frac{f^{(N)}(c)}{(N + 1)!} $$
+$$E_N(x) = \frac{f^{(N)}(c)}{(N + 1)!} x^{N + 1}$$
+as desired.
+
+\subsection*{6.6.9}
+\textit{Use the $\infty/\infty$ version of L'Hopital's rule (Theorem 5.3.8) to
+  prove that $g'(0) = 0$}
+
+We're talking here about
+$$g(x) =
+\begin{cases}
+  e^{-1/x^2} \text{ for } x \neq 0 \\
+  0 \text{ for } x = 0 \\
+\end{cases}
+$$
+By definition
+$$g'(0) = \lim_{x \to 0}{\frac{e^{-1/x^2} - 0}{x - 0}} =
+\lim_{x \to 0}{\frac{e^{-1/x^2}}{x}} =
+\lim_{x \to 0}{\frac{x^{-1}}{e^{1/x^2}}}$$
+By L'Hopitals rule we've got that
+$$\lim_{x \to 0}{\frac{- x^{-2}}{-2x^{-3}e^{1/x^2}}} =
+\lim_{x \to 0}{\frac{x^{3}}{2x^{2}e^{1/x^2}}} =
+\lim_{x \to 0}{\frac{x}{2e^{1/x^2}}} = 0 = g'(0)
+$$
+as desired.
+
+\subsection*{6.6.10}
+\textit{Compute $g'(x)$ for $x \neq 0$. Compute $g''(x)$ and $g'''(x)$ for
+  $x \neq 0$. Use these observations and invent whatever notation is need to
+  give general description for the nth derivative $g^{(n)}(x)$ at points
+  diffenet from zero}
+
+for $x \neq 0$ we can use standart rules of differentiation
+$$g'(x) = \frac{2 g(x)}{x^3}$$
+$$g''(x) = \frac{4 g(x)}{x^6} - \frac{6 g(x)}{x^4}$$
+$$g'''(x) = \frac{24 g(x)}{x^5} - \frac{36 g(x)}{x^7} + \frac{8 g(x)}{x^9}$$
+
+TODO
 
 \chapter{The Riemann Integral}
 
 
 
-
-\end{document}
+\end{document}B
