@@ -10758,6 +10758,410 @@ TODO
 
 \chapter{The Riemann Integral}
 
+\section{The Definition of the Riemann Integral}
+
+\subsection*{7.2.1}
+\textit{Let $f$ be a bounded function on $[a, b]$, and let $P$ be an arbitrary
+  partition of $[a, b]$. First, explain why $U(f) \geq L(f, P)$. Now, prove
+  Lemma 7.2.6}
+
+Lemma 7.2.6 states that
+\textit{For any bounded function $f$ on $[a, b]$, it is always the case that
+$U(f) \geq L(f)$.}
+
+By lemma 7.2.4 we can state that
+$$L(f, P) \leq U(f, P_n)$$
+where $P_n$ is an arbitrary partition. From this we can follow that
+$L(f, P)$ is a lower bound for the set
+$$\{U(f, P_n): P_n \in \mathcal{P} \}$$
+Because $U(f)$ is an infinum of this set we can follow that
+$$L(f, P) \leq U(f)$$
+for any $P \in \mathcal{P}$. 
+
+Thus $U(f)$ is an upper bound for the set 
+$$\{L(f, P_n): P_n \in \mathcal{P} \}$$
+Therefore we can follow that for  infinum of this
+set (which is equal to $L(f)$)
+$$U(f) \geq L(f)$$
+as desired
+
+\subsection*{7.2.2}
+\textit{Consider $f(x) = 2x + 1$ over the interval $[1, 3]$. Let $P$ be the
+  partition consisting of the points $\{1, 3/2, 2, 3\}$.}
+
+\textit{(a) Compute $L(f, P)$, $U(f, P)$, and $U(f, P) - L(f, P)$.}
+
+$2x + 1$ is increasing (by common sense and also because
+it has a positive derivative), therefore
+$$L(f, P) = 1/2 f(1) + 1/2 f(3/2) + f(2) = 1.5 + 2 + 5 = 8.5$$
+$$U(f, P) = 1/2 f(3/2) + 1/2 f(2) + f(3) = 2 + 2.5 + 7 = 11.5$$
+$$U(f, P) - L(f, P) = 11.5 - 8.5 = 3$$
+
+\textit{What happens to the value of $U(f, P) - L(f, P)$ when we add the point
+  $5/2$ to the partition?}
+
+We get that
+$$L(f, P) = 1/2 f(1) + 1/2 f(3/2) + 1/2 f(2) + 1/2 f(5/2) =
+1.5 + 2 + 2.5 + 3 = 9$$
+$$U(f, P) = 1/2 f(3/2) + 1/2 f(2) + 1/2 f(5/2) + 1/2 f(3) =
+2 + 2.5 + 3 + 3.5 = 11$$
+$$U(f, P) - L(f, P) = 11 - 9 = 2$$
+therefore it gets smaller
+
+\textit{(c) Find a partition $P'$ of $[1, 3]$ for which
+  $U(f, P') - L(f, P') < 2$.}
+
+Let
+$$P' = P \cup \{1\frac{1}{4}\}$$
+thus
+$$L(f, P) = 1/4 f(1) + 1/4 f(5/4) + 1/2 f(3/2) + 1/2 f(2) + 1/2 f(5/2) =
+3/4 + 7/8 + 2 + 2.5 + 3 = 9.125$$
+$$U(f, P) = 1/4 f(5/4) + 1/4 f(3/2) + 1/2 f(2) + 1/2 f(5/2) + 1/2 f(3) =
+7/8 + 1 + 2.5 + 3 + 3.5 = 10.875$$
+$$U(f, P) - L(f, P) = 10.875 - 9.125 = 1.75 < 2$$
+as desired.
+
+\subsection*{7.2.3}
+\textit{Show directly (without appealing to Theorem 7.2) that the
+  constant function $f(x) = k$ is integrable over any closed interval $[a, b]$.}
+
+For any function $f(x) = k$ and for any partition $P$ we have that 
+$$m_k = \inf\{f(x): x \in [x_{k - 1}, x_k]\} = \inf \{k\} = k =
+\sup \{k\} = \sup\{f(x): x \in [x_{k - 1}, x_k]\} = M_k$$
+
+Therefore for any $P \in \mathcal{P}$
+$$U(f, P) = U(f) = L(f) = L(f, P)$$
+
+Thus if we have a partition $\{a, b\}$ we have
+$$\int_a^b{f} = k(a - b)$$
+as desired.
+
+\subsection*{7.2.4}
+
+\textit{(a) Prove that a bounded function $f$ is integrable on $[a, b]$ if
+  and only if there exists a sequence of partitions $(P_n)_{n = 1}^{\infty}$
+  satisfying }
+$$\lim_{n \to \infty}{[U(f, P_n) - L(f, P_n)]} = 0.$$
+
+\textbf{In forward direction:} Suppose that $f$ is integrable. It follows that
+for the sequence $\epsilon_n = \frac{1}{n}$ there exists a partition
+$P_n$ such that
+$$U(f, P_n) - L(f, P_n) < \epsilon_n$$
+therefore if we put those partitions in sequence we can get
+$$\lim_{n \to \infty}{[U(f, P_n) - L(f, P_n)]} = 0$$
+as desired.
+
+\textbf{In reverse direction:} Suppose that there exists a sequence of
+partitions $(P_n)$ such that
+$$\lim_{n \to \infty}{[U(f, P_n) - L(f, P_n)]} = 0$$
+It follows that for any given $\epsilon > 0$ there exists $N \in \textbf{N}$
+such that $n \geq N$ implies that
+$$[U(f, P_n) - L(f, P_n)] < \epsilon$$
+thus the function is integrable, as desired.
+
+\textit{(b) For each $n$, let $P_n$ be the partition of $[0, 1]$ into $n$
+  equal subsintervals. Find formulas for $U(f, P_n)$ and $L(f, P_n)$ if
+  $f(x) = x$. The formula $1 + 2 + 3 + ... + n = n(n + 1)/2$ will be useful.}
+
+Firstly, the function is increasing. Thus $m_k = x_{k -1}$ and $M_k = x_k$.
+Let $n \in N$. If we divide $[0, 1]$ into n equal pieces we get the partition
+$$P_n = \{0, 1/n, 2/n, ... (n-1)/n, 1\}$$
+thus
+$$x_k = \frac{k}{n}$$
+therefore 
+$$L(f, P_n) = \sum_{k = 1}^{n}{m_k (x_k - x_{k - 1})} =
+\sum_{k = 1}^{n}{x_{k - 1} (x_k - x_{k - 1})} =
+\sum_{k = 1}^{n}{\frac{k - 1}{n} \left(\frac{k}{n} - \frac{k - 1}{n}\right)} =
+$$
+$$
+= \frac{1}{n^2}\sum_{k = 1}^{n}{(k - 1) \left(k - (k - 1)\right)} =
+\frac{1}{n^2}\sum_{k = 1}^{n}{k - 1} =
+\frac{1}{n^2}\sum_{k = 0}^{n - 1}{k} =
+\frac{1}{n^2}\left(0 + \sum_{k = 1}^{n - 1}{k}\right) =
+\frac{1}{n^2} \frac{(n - 1)n}{2} = \frac{n - 1}{2n}
+$$
+and
+$$U(f, P_n) = \sum_{k = 1}^{n}{m_k (x_k - x_{k - 1})} =
+\sum_{k = 1}^{n}{x_{k} (x_k - x_{k - 1})} =
+\sum_{k = 1}^{n}{\frac{k}{n} \left(\frac{k}{n} - \frac{k - 1}{n}\right)} =
+$$
+$$
+= \frac{1}{n^2}\sum_{k = 1}^{n}{k\left(k - (k - 1)\right)} =
+\frac{1}{n^2}\sum_{k = 1}^{n}{k} =
+\frac{1}{n^2} \frac{(n + 1)n}{2} = \frac{n + 1}{2n}
+$$
+as desired.
+
+\textit{(c) Use the sequential criterion for integrability from (a) to show
+  directly that $f(x) = x$ is integrable on $[0, 1]$.}
+
+If we put discussed partitions in a sequence, then we'll get that
+for any $n \in \textbf{N}$
+$$U(f, P_n) - L(f, P_n) = \frac{n + 1}{2n} - \frac{n - 1}{2n} =
+\frac{n + 1 - n + 1}{2n} = \frac{2}{2n} = \frac{1}{n}$$
+which converges to $0$. Thus we can follow that 
+$$\lim{U(f, P_n) - L(f, P_n)} = 0$$
+therefore the function is integrable, as desired.
+
+\subsection*{7.2.5}
+\textit{Assume that, for each $n$, $f_n$ is an integrable function on $[a, b]$.
+  If $(f_n) \to f$ uniformly on $[a, b]$, prove that $f$ is also integrable on
+  this set. (We will see that this conclusion does not necessarily follow if
+  the convergence is pointwise).}
+
+Suppose that $(f_n)$ is the sequence of functions as described in exercise.
+It follows that for any given $\epsilon > 0$ there exists $N \in \textbf{N}$
+such that $n \geq N$ implies that 
+$$|f_n(x) - f(x)| < \epsilon$$
+for any $x \in [a, b]$.
+
+$$|U(f_n, P) - U(f, P)| = |\sum_{k = 1}^{n}{M_k'(x_(k - 1) - x_k)}
+- \sum_{k = 1}^{n}{M_k(x_(k - 1) - x_k)}| =
+|\sum_{k = 1}^n{(M_k' - M_k)(x_{k - 1} - x_k)}| \leq
+$$
+$$\leq
+\sum_{k = 1}^n{|(M_k' - M_k)(x_{k - 1} - x_k)|} =
+\sum_{k = 1}^n{|(M_k' - M_k)|(x_{k - 1} - x_k)} \leq
+$$
+$$ \leq
+\sum_{k = 1}^n{\epsilon(x_{k - 1} - x_k)} =
+\epsilon\sum_{k = 1}^n{(x_{k - 1} - x_k)} = \epsilon(b - a)
+$$
+therefore
+$$|U(f_n, P) - U(f, P)| \leq \epsilon(b - a)$$
+by the same logic
+$$|L(f_n, P) - L(f, P)| \leq \epsilon(b - a)$$
+
+For any $\epsilon > 0$ there exists $N \in \textbf{N}$ such that
+$|f_n(x) - f(x)| < \frac{\epsilon}{3}(b - a)$. Thus we can follow that
+for this $N$ there exists a partition $P$
+such that $U(f_n, P) - L(f_n, P) < \epsilon / 3$. Thus
+$$U(f, P) - L(f, P) = |U(f, P) - L(f, P)| =
+|U(f, P) - U(f_n, P) + U(f_n, P) - L(f_n, P) + L(f_n, P) - L(f, P)| \leq
+$$
+$$ \leq
+|U(f, P) - U(f_n, P)| + |U(f_n, P) - L(f_n, P)| + |L(f_n, P) - L(f, P)| <
+3 \frac{\epsilon}{3} = \epsilon$$
+as desired.
+
+\subsection*{7.2.6}
+\textit{Let $f: [a, b] \to R$ be increasing on the set $[a, b]$
+  (i.e., $f(x) \leq f(y)$ whenever $x < y$). Show that $f$ is integrablee
+  on $[a, b]$.}
+
+If $f$ is increasing we can follow that for any partition $P$ we have
+$M_k = f(x_k)$ and $m_k = f(x_{k - 1})$ as discussed earlier. Thus
+we can follow that 
+$$\sum_{k = 1}^n{M_k - m_k} = f(b) - f(a_1) + f(a_1) - f(a_2) + f(a_2)
+- .... + f(a_n) - f(a) =
+f(b) - f(a)$$
+(this whole manipulation does not exactly spell "rigorous", but we can
+create rigorous definition of telescoping sum, which will give us
+desired result).
+Thus if we divide $[a, b]$ into $n$ equal pieces we'll get that 
+$$U(f, P_\epsilon) - L(f, P_\epsilon) =
+\sum_{k = 1}^n{(M_k - m_k)(x_k - x_{k - 1})} =
+\sum_{k = 1}^n{(M_k - m_k)\frac{1}{n}} = 
+$$
+$$
+= \sum_{k = 1}^n{(M_k - m_k)\frac{1}{n}} =
+\frac{1}{n} \sum_{k = 1}^n{(M_k - m_k)} =
+\frac{1}{n} (f(b) - f(a))
+$$
+
+Thus for any given $\epsilon > 0$ we can set $N \in \textbf{N}$ to satisfy
+$$ \frac{1}{N} (f(b) - f(a)) < \epsilon $$
+$$ \frac{1}{N}  < \frac{\epsilon}{f(b) - f(a)} $$
+$$ N > \frac{f(b) - f(a)}{\epsilon} $$
+and it'll follow that
+$$U(f, P_\epsilon) - L(f, P_\epsilon) < \epsilon$$
+thus $f$ is integrable, as desired.
+
+\section{Integrating Functions with Discontinuities}
+
+\subsection*{7.3.1}
+\textit{Consider the function}
+$$h(x) =
+\begin{cases}
+  1 \text{ for } 0 \leq x < 1 \\
+  2 \text{ for } x = 1
+\end{cases}
+$$
+
+\textit{(a) Show that $L(f, P) = 1$ for every partition $P$ of $[0, 1]$.}
+
+Let $P$ be partition of $[0, 1]$. For all $[x_{k - 1}, x_k]$ such that
+$$1 \notin [x_{k - 1}, x_k] $$
+it follows that
+$$x \in [x_{k - 1}, x_k] \to f(x) = 1$$
+
+For $[a_n, 1]$ it follows that $a_n < 1$ by definition of partition, therefore
+$f(a_n)  = 1$, therefore we can state than
+$$L(h, P) = 1$$
+as desired.
+
+\textit{(b) Construct a partition $P$ for which $U(f, P) < 1 + 1/10$}
+
+$$P = \{0, 0.99, 1\}$$
+$$U(f, P) = 1 (0.99 - 0) + 2(1 - 0.99) = 1.01 < 1 + 1/10$$
+as desired.
+
+\textit{(c) Given $\epsilon > 0$, construct a partition $P_\epsilon$ for which
+  $U(f, P_\epsilon) < 1 + \epsilon$}
+
+$$1 (1 - x - 0) + 2(1 - x) < 1 + \epsilon$$
+$$1 - x + 2 - 2 x < 1 + \epsilon$$
+$$-3x + 3 < 1 + \epsilon$$
+$$-3x  < -2 + \epsilon$$
+$$x  > \frac{2 \epsilon}{3}$$
+
+So let $P = \{0, x, 1\}$.
+
+\subsection*{7.3.2}
+\textit{In Example 7.3.3, we learned that Dirichlet's function $g(x)$ is not
+  Riemann-integrable. Construct a sequence $g_n(x)$ of integrable functions
+  with $g_n \to g$ pointwise on $[0, 1]$. This demonstrates that the pointwise
+  limit of integrable functions need not be integrable. Compare this example
+  to the result requested in Exercise 7.2.5}
+
+Let $R = \{r_1, r_2, r_3, ... \}$ be a set of rationals in $[0, 1]$ and let
+(we are allowed to do so because set $Q$ is countable, therefore
+$Q \cap [0, 1]$ is also countable)
+$$g_n(x) =
+\begin{cases}
+  1 \text{ if } x \in \{r_1, r_2, ... r_n\} \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+
+Thus this sequence of funtions converges poinwise to $g(x)$, and every $g_n(x)$
+is integrable by the fact that finite number of discontinuities is "tolerable".
+
+\subsection*{7.3.3}
+\textit{Here is an alternate explanation for why a function $f$ on $[a, b]$
+  with a finite number of discontinuities is integrable. Supply the missing
+  details.}
+
+\textit{Embed eeach discontinuity in a sufficiently small open interval and
+  let $O$ be the union of these intervals. Explain why $f$ is uniformly
+  continous on $[a, b] \setminus O$, and use this to finish the argument.}
+
+Because $O$ is a finite union of open sets it follows that it is open itself.
+Thus $[a, b] \setminus O$ is a union of closed intervals, and thus it is
+closed. Because it is a subset of $[a, b]$ we can follow that it is bounded.
+Therefore we've got a continous function, that is defined on compact set,
+therefore we can follow that it is uniformly continous on
+$[a, b] \setminus O$.
+
+Thus for any given $\epsilon > 0$ we can have $\delta > 0$ such
+that
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon$$
+Therefore if we create a partition such that each part is smaller than
+$\delta$,  we'll have desired result. (Details are trivial in this case)
 
 
-\end{document}B
+\subsection*{7.3.4}
+\textit{Assume $f: [a, b] \to R$ is integrable.}
+
+\textit{(a) Show that if one value of $f(x)$ is changed at some point
+  $x \in [a, b]$, then $f$ is still integrable and integrates to the same
+  value as before.}
+
+If we change $x \in [a, b]$ to any value, then by 7.3.2 we'll have
+integrability on $[x, b]$ and integrability on $[a, x]$. Thus
+we can have partitions $P_1$ for $[x, b]$ and $P_2$ for $[a, x]$,
+such that
+$$U(f, P_1) - L(f, P_1) < \epsilon$$
+$$U(f, P_2) - L(f, P_2) < \epsilon$$
+thus we'll have
+$$U(f, P_1 \cup P_2) - L(f, P_1 \cup P_2) < \epsilon$$
+as well, as desired. I'm going to skip the point that the value of
+integral does not change, because it's a lot of writing without too
+much thinking.
+
+\textit{(b) Show that the observation in (a) holds if a finite number of
+  values of $f$ is changed.}
+
+By induction.
+
+\textit{(c) Find an example to show that by altering a countable number of
+  values, $f$ may fail to be integrable}
+7.3.2
+
+\subsection*{7.3.5}
+\textit{Let }
+$$f(x) =
+\begin{cases}
+  1 \textit{ if } x = 1/n \text{ for some } n \in N \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+\textit{Show that $f$ is integrable on $[0, 1]$ and compute $\int_0^1f$.}
+
+Let $\epsilon > 0$.
+We can construct a set $\{0, 1 - 1/n, 1\}$, and in
+$[0, 1 - 1/n]$ we'll have a finite number of discontinuities, thus
+we can add some numbers to our set so that  the
+$$U(f, P_{[0, 1/n]}) - L(f, P_{[0, 1/n]}) < \epsilon/2$$
+And for $P_{[1/n, 1]}$ we'll do nothing. Pick sufficient $n$ so everything
+holds, details are tedious, therefore I'll skip them
+
+\subsection*{7.3.6}
+\textit{A set $A \subseteq [a, b]$ has content zero if for every $\epsilon > 0$
+  there exists a finite collection of open intervals
+  $\{O_1, O_2, ..., O_N\}$ that contain $A$ in their uniof, and whose lengths
+  sum to $\epsilon$ or less. Using $|O_n|$ to refer to the length of
+  each interval, we have }
+$$A \subseteq \cup_{n = 1}^N{O_n} \text{ and }
+\sum_{k = 1}^N{|O_n|} < \epsilon$$
+
+\textit{(a) Let $f$ be bounded on $[a, b]$. Show that if the set of
+  discontinous points has content zero, then $f$ is integrable.}
+
+Let $\epsilon > 0$. It follows that we can set
+$$\sum{((x_k - x_{k - 1})(M_k - m_k)) } \leq
+\sum{((x_k - x_{k - 1})2M} < \epsilon/2$$
+where $x_k$ and $x_{k - 1}$ are boundaries of each of $O_n$.
+For any continous parts we can set a partition so that
+$$U(f, P_{[a, b] \setminus (O_1 \cup O_2 ... )}) -
+L(f, P_{[a, b] \setminus (O_1 \cup O_2 ... )}) < \epsilon/2$$
+thus if we get that
+$$U(f, P) - L(f, P) < \epsilon/2 + \epsilon/2 = \epsilon$$
+thus the function is integrable.
+
+\textit{(b) Show that any finite set has content zero}
+If we set
+$$O_n = (x_n - 1/2m, x_n + 1/2m)$$
+for each $x_n \in A$, then it follows that
+$$\sum_{k = 1}^N{|O_n|} = \sum_{k = 1}^N{1/m} = N/m$$
+which converges to $0$.
+
+\textit{(c) Content zero sets do not have to be finite. They do note have to
+  be countable. Show that the Cantor set $C$ defined in Section 3.1 has
+  content zero.}
+
+For $C_1$ we can set $O_1 = (-1/10, 1/3 + 1/10)$ and
+$O_2 = (-1/10 + 2/3, 1 + 1/10)$. In general we can set an open interval
+around each part of $C_n$, so that $O_n$ encapsules each given "continous"
+part of $C_n$ and a bit around it, so that this bit becomes smaller with
+each iteration (for example $1/3^n$), so
+sum of their lengths converges to 0. Because $x \in C \to x \in C_n$ for
+all $n \in N$, we can say, that each of produced $O_n$ contains the whole
+set $C$.
+
+\textit{(d) Prove that}
+$$h(x) =
+\begin{cases}
+  1 \text{ if } x \in C \\
+  0 \text{ if } x \notin C
+\end{cases}
+$$
+\textit{is integrable, and find the value of the integral.}
+
+By the applying the same logic as in (a), we get the desired result. Integral
+is equal to 0.
+
+\section{Properties of the Integral}
+
+
+\end{document}

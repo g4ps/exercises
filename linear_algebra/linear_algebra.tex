@@ -20,9 +20,10 @@ Right now I want to brush up the material once again, put all the
 proofs on a more durable material than paper and to prepare myself to
 what's gonna happen afterwards.
 
-\chapter{1.A $R^n$ and $C^n$}
+\chapter{Vector Spaces}
+\section{$R^n$ and $C^n$}
 
-\section*{1}
+\subsection{}
 \textit{Suppose $a$ and $b$ are real numbers, not both $0$. Find real nuber
   $c$ and $d$ such that }
 $$1/(a + bi) = c + di$$
@@ -34,7 +35,7 @@ $$\frac{a - bi}{(a^2 + b^2)} = c + di$$
 $$\frac{a}{a^2 + b^2} - \frac{b}{a^2 + b^2}i = c + di$$
 Thus $c = \frac{a}{a^2 + b^2}$ and $d = -\frac{b}{a^2 + b^2}$
 
-\section*{2}
+\subsection{}
 \textit{Show that }
 $$\frac{-1  + \sqrt{3}i}{2}$$
 \textit{is a cube root of $1$ (meaning that its cube equals 1)}
@@ -50,7 +51,7 @@ $$
 $$
 as desired.
 
-\section*{3}
+\subsection{}
 \textit{Find two distinct square roots of $i$}
 
 Square root of $i$, I assume, is a number, whose square is equal to $i$.
@@ -60,7 +61,7 @@ So if we set $$a = b = 1/\sqrt{2}$$ this equation holds. Also it holds for
 $$a = b = -1/\sqrt{2}$$
 maxima seems to agree with me on this one
 
-\section*{4}
+\subsection{}
 \textit{Show that $\alpha + \beta = \beta + \alpha$ for all
   $\alpha, \beta \in \textbf{C}$}
 
@@ -69,7 +70,7 @@ $$\alpha + \beta = a_1 + b_1 i + a_2 + b_2 i = a_2 + b_2 i + a_1 + b_1 i =
 \beta  + \alpha$$
 as desired.
 
-\section*{5}
+\subsection{}
 \textit{Show that $(\alpha + \beta) + \lambda = \alpha + (\beta + \lambda)$
   for all  $\alpha, \beta, \lambda \in \textbf{C}$}
 
@@ -79,14 +80,14 @@ $$\alpha + (\beta + \lambda)  = a_1 + b_1 i + (a_2 + b_2 i + a_3 + b_3 i) =
 (a_1 + b_1 i + a_2 + b_2 i) + a_3 + b_3 i = 
 (\alpha + \beta) + \lambda$$
 
-\section*{6}
+\subsection{}
 \textit{Show that $(\alpha \beta) \lambda = \alpha( \beta \lambda)$}
 
 $$\alpha + (\beta + \lambda)  = (a_1 + b_1 i) ((a_2 + b_2 i) + (a_3 + b_3 i)) =
 ((a_1 + b_1 i)(a_2 + b_2 i)) + (a_3 + b_3 i) = 
 (\alpha \beta) \lambda$$
 
-\section*{7}
+\subsection{}
 \textit{Show that for every $\alpha \in \textbf{C}$ there exists a unique
   $\beta \in \textbf{C}$ such that $\alpha + \beta = 0$}
 
@@ -95,7 +96,7 @@ $\alpha + \beta_1 = 0$ and $\alpha + \beta_2 = 0$. It follows that
 $$ \beta_1 = \beta_1 + 0 =  \beta_1 + \alpha + \beta_2 = \alpha + \beta_1  + \beta_2 = 0  + \beta_2 = \beta_2$$
 which is a contradiction. Therefore there exists only one unique $\beta$.
 
-\section*{8}
+\subsection{}
 \textit{Show that for every $\alpha \in \textbf{C}$ with $\alpha \neq 0$
   there exists a unique $\beta \in \textbf{C}$ such that $\alpha \beta = 1$}
 
@@ -107,16 +108,16 @@ $$\beta_1 = 1 *  \beta_1 = \alpha \beta_2 \beta_1  =
 \alpha \beta_1 \beta_2 = 1 * \beta_2 = \beta_2$$
 which is a contradiction. Therefore there exists only one unique $\beta$.
 
-\section*{etc}
+\subsection{}
 The rest of the section is the repetition of this kind of stuff.
 That is a lot of writing, and not a lot of thinking, so I'll skip it.
 I don't ususally like to skip sections, but I have  aa feeling, that I've
 completed this thing on paper somewhere, and there is not much reason to
 rewrite it here.
 
-\chapter{1.B Definition of Vector Space}
+\section{Definition of Vector Space}
 
-\section*{1}
+\subsection{}
 \textit{Prove that $-(-v)= v$ for every $v \in V$.}
 
 For $v$ there exists only one $-v$. For $-v$ there exists only one $-(-v))$.
@@ -125,7 +126,7 @@ Thus
 $$v = v + 0 = v + (-v) + (-(-v)) = 0 + (-(-v)) = -(-v)$$
 as desired (idk if it's true, I'm not good at axioms and stuff)
 
-\section*{2}
+\subsection{}
 \textit{Suppose $a \in F, v \in V$, and $av = 0$. Prove that
   $a = 0$ or $v = 0$.}
 
@@ -136,7 +137,7 @@ $$1v = 0$$
 $$v = 0$$
 which is a contradiction. Thus either $a = 0$ or $v = 0$.
 
-\section*{3}
+\subsection{}
 \textit{Suppose $v, w \in V$. Explain why there exists a unique $x \in V$
   such that $v + 3x = w$.}
 
@@ -149,14 +150,14 @@ which is a contradiction.
 Same can be stated from the fact that $x$ is a unique additive inverse of
 $\frac{1}{3}(v - w)$.
 
-\section*{4}
+\subsection{}
 \textit{The empty set is not a vector space. The empty set fails to satisfy
   only one of the requirements listed in 1.19. Which one?}
 
 Additive indentity. Empty set does not have zero element in it.
 BTW $\{0\}$ is a vector space.
 
-\section*{5}
+\subsection{}
 \textit{Show that n the defintition of a vector space (1.19), the additive
   inverse condition can be replaced with the condition that}
 $$0v = 0 \textit{ for all } v \in V$$
@@ -169,7 +170,7 @@ $$1v - 1v = 0$$
 $$v - v= 0$$
 $$v + (- v)= 0$$
 
-\section*{6}
+\subsection{}
 \textit{Let $\infty$ and $-\infty$ denote two distinct object, neither of
   which is in $R$. Define an addition and multiplication on
   $R \cup \{\infty\} \cup \{-\infty\}$ as you could guess from the notation.
@@ -214,9 +215,9 @@ thus
 $R \cup \{\infty\} \cup \{-\infty\}$ is not associative, therefore it is
 not a vector space.
 
-\chapter{1.C Subspaces}
+\section{Subspaces}
 
-\section*{1}
+\subsection{}
 \textit{For each of the following subsets of $F^3$, determine whether it is a
   subspace of $F^3$:}
 
@@ -249,7 +250,7 @@ It's a subspace, proof is the same as in (a), can be seen more clearly when we
 rewrite constraint as
 $$x_1 = 5x_3 \to x_1 + 0x_2 -5x_3 = 0$$
 
-\section*{2}
+\subsection{}
 \textit{Verify all the assertions in Example 1.35}
 
 \textit{(a) if $b \in F$, then}
@@ -289,7 +290,7 @@ have specific restrictions on derivatives being particular values at particular 
 Here we can take zero to be $(x_n) = 0$. Linearity is implied by aldebraic
 properties of limits of sequences.
 
-\section*{3}
+\subsection{}
 \textit{Show that the set of differentiable real-valued functions $f$ on the
   interval $(-4, 4)$ such that $f'(1) = 3f(2)$ is a subspace of $R^{[-4, 4]}$.}
 
@@ -306,15 +307,15 @@ $$kf'(1) = 3kf(2)$$
 therefore it's closed under multiplication by scalar.
 Therefore we can state that given subset is a vector subspace.
 
-\section*{4}
+\subsection{}
 analogous to previous
 
-\section*{5}
+\subsection{}
 \textit{Is $R^2$ a subspace of the complex vector space $C^2$?}
 
 No, it's not closed under scalar multiplication.
 
-\section*{6}
+\subsection{}
 \textit{(a) Is }
 $$\{(a, b, c) \in R^3: a^3 = b^3\}$$
 \textit{a subspace if $R^3$?}
@@ -331,20 +332,20 @@ $$(1/2 + i\frac{\sqrt{3}}{2}, -1, 0) +
 (1, -1, 0)$$
 thus it's not closed under additon.
 
-\section*{7}
+\subsection{}
 \textit{Give an example of a nonemplty subset $U$ of $R^2$ such that $U$ is
   closed under addition and under additive inverses (meaning $-u \in U$
   whenever $u \in U$), but $U$ is not a subspace of $R^2$}
 
 $Q^2$. On the other thouhgh, $Z$ will do as well.
 
-\section*{8}
+\subsection{}
 \textit{Give an example of a nonempty subset $U$ of $R^2$ such that $U$ is
   closed under scalar multiplication, but $U$ is not a subspace of $R^2$.}
 
 Two lines through origin.
 
-\section*{9}
+\subsection{}
 \textit{A function is called periodic if there exists a positive number
   $p$ such that $f(x) = f(x + p)$ for all $x \in R$. Is the set of
   periodic functions from $R$ to $R$ a subspace of $R^R$? Explain. }
@@ -357,7 +358,7 @@ and $g$ has a period of $p2$. Thus if $p2/p1 \in I$,
 then functions will be constantly out of phase, therefore the set is not
 closed under addition. Thus this subset is not a subspace.
 
-\section*{10}
+\subsection{}
 \textit{Suppose $U_1$ and $U_2$ are subspaces of $V$. Prove that the
   intersection $U_1 \cap U_2$ is a subspace of $V$.}
 
@@ -375,7 +376,7 @@ Therefore the set is closed under addition.
 Thus the set satisfies all requirements to be a subspace. Therefore it is a
 subspace.
 
-\section*{11}
+\subsection{}
 \textit{Prove that the interseection of every collection of subspace of $V$ is
   a subspace of $V$}
 
@@ -397,15 +398,57 @@ $U \in \Lambda$. Therefore it is contained in $\cap \Lambda$.
 
 Thus $\cap \Lambda$ is a vector space.
 
-\section*{12}
+\subsection{}
 \textit{Prove that the union of two subspaces of $V$ is a subspace of $V$
   if and only if one of the subspaces is contained in the other.}
 
 Suppose that a union of two subspaces $U_1 \cup U_2$
-is a subspace of $V$. It follows that for every $u_1, u_2 \in U_1 \cup U_2$
-$$u_1 + u_2 \in U_1 \cup U_2$$
-Therefore 
+is a subspace of $V$.
 
+Zero is included in eveery subspace, so in case of the union we don't worry
+about it.
+Scalar multiplication is also trivial, as we are working only with one vector.
+
+Now for the interesting part: addition. Let $u_1, u_2 \in U_1 \cup U_2$.
+In case when $u_1, u_2$ are contained only in one subspace we've got
+a trivial case. Interesting part comes when $u_1 \in U_1$ and $u_2 \in U_2$.
+
+What we want to prove is that it is impossible to have
+$u_1 \in U_1 \setminus U_2$ and $u_2 \in U_2 \setminus U_1$ and we're going to
+use contradiction. Suppose that
+$u_1 \in U_1 \setminus U_2$, $u_2 \in U_2 \setminus U_1$ and
+$u_1 + u_2 \in U_1 \cup U_2$. Thus it must be the case that
+$u_1 + u_2 \in U_1$ or $u_1 + u_2 \in U_2$. Suppose that the former is true;
+then it follows that $u_1 + u_2 - u_1 = u_2 \in U_1$, which is a contradiction
+(same thing happens if we assume the latter). Thus given case is impossible.
+Therefore there cannot exist $u_1 \in U_1 \setminus U_2$ and
+$u_2 \in U_2 \setminus U_1$. Thus
+$U_1 = U_1 \cup U_2$ or $U_2 = U_1 \cup U_2$.
+
+The reverse case is trivial: if we have two subspaces and
+one of it is a subset of another, then larger subspace is is subspace.
+
+\subsection{}
+\textit{Prove that the union of three subspaces of $V$ is a subspace of
+  $V$ if and only if one of the subspaces contains the other two.}
+
+Same thing applies as in previous exercise: zero and multiplication are
+trivial.
+
+We are going to proceed with a proof by contradiction, but firstly we want
+to state precisely what we want to prove in a first place. We want to state,
+that if a union of three subspaces is a subspace, then this union is equal to
+one of the subpsaces. So let us start: suppose that the union of three subspaces is not equal to one of the subspaces.
+
+Firstly, we can eliminate the case, when one of the subspaces is a
+subset of another subspace, but third isn't, because it will mean that
+union of first two subspaces constitues a subspace, and thus we'll default
+to result in the previous exercise.
+
+Thus let us assume that none of the subspaces is a subset of another subspace.
+Now 
+let $u_1 \in U_1 \setminus (U_2 \cup U_3)$, . It follows that
+$$u_1 + u_2 + u_3 \in U_1 \cup U_2 \cup U_3$$.
 
 
 \end{document}

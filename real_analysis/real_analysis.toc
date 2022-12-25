@@ -32,3 +32,7 @@
 \contentsline {section}{\numberline {6.3}Series of Functions }{208}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Power Series}{213}{section.6.4}%
 \contentsline {section}{\numberline {6.5}Taylor Series}{223}{section.6.5}%
+\contentsline {chapter}{\numberline {7}The Riemann Integral}{230}{chapter.7}%
+\contentsline {section}{\numberline {7.1}The Definition of the Riemann Integral}{230}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Integrating Functions with Discontinuities}{235}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Properties of the Integral}{238}{section.7.3}%
