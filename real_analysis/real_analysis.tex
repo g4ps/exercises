@@ -11163,5 +11163,305 @@ is equal to 0.
 
 \section{Properties of the Integral}
 
+\subsection*{7.4.1}
+
+\textit{(a) Let $f$ be a bounded function on a set $A$, and set}
+$$M = \sup\{f(x): x \in A\}, m = \inf\{f(x): x \in A\}$$
+$$M' = \sup\{|f(x)|: x \in A\}, m' = \inf\{|f(x)|: x \in A\}$$
+\textit{Show that $M - m \geq M' - m'$}
+
+It kinda suriprises me that we've never discussed this sort of thing
+in chapter 1, but we either didn't discuss it, or I can't seem to
+find the proper reference. Therefore let us
+be a little more general and let us  discuss sets
+$B = \{x_1, x_2, ... , x_n, ... \}$ and $|B| = \{|x_1|, |x_2|, ...\}$.
+
+I'm compelled to use here inequality
+$$||a| - |b|| \leq |a - b|$$
+
+Firstly we've got that $M - m = \sup B - \inf B \geq 0$,  therefore
+$$M - m = |M - m|$$
+same logic applies to $M'$ and $m'$, threfore
+$$M' - m' = |M' - m'|$$
+
+After some deliberation I've concluded that we can divide this problem
+into two cases: if $|M| \geq |m|$ and when $|M| < |m|$.
+
+Suppose that the former it true. It follows then that
+$$|M| \geq |x_n|$$ for every $x_n \in B$. Thus $|M|$ is an upper bound for
+$B$. Also it can be shown that $|M|$ is a least lower bound for $|B|$,
+therefore $M' = |M|$.
+
+Same thing applies to $|m|$, therefore $m' = |m|$. Thus we can follow that
+$$M - m = |M - m| \leq ||M| - |m|| = |M' - m'| = M' - m'$$
+as desired.
+
+For the case when $|M| < |m|$ we've got that the values will swap
+and $M' = |m|$ and $m' = |M|$, but the same thing will apply.
+(I know that details are not provided here, I think that
+they are pretty tedious
+and don't suit this particular exercise; maybe I'll add them later, in which
+case results of 1.3.5 will probably help)
+
+Thus we can state that for any set $B$  in general and $A$ in particular we've
+got that 
+$$M - m \geq M' - m'$$
+as desired.
+
+\textit{(b) Show that if $f$ is integrable on the interval $[a, b]$, then
+  $|f|$ is also integrable on this interval.}
+
+Let $\epsilon > 0$ and suppose that $P$ is a particular partition so that
+$$U(f, P) - L(f, P) < \epsilon$$
+thus we can follow that
+$$U(f, P) - L(f, P) = \sum_{k = 1}^n{(M_k - m_k)(x_k - x_{k - 1})} \geq
+\sum_{k = 1}^n{(M_k' - m_k')(x_k - x_{k - 1})} = U(|f|, P) - L(|f|, P)$$
+$$ U(|f|, P) - L(|f|, P) \leq U(f, P) - L(f, P) < \epsilon $$
+therefore for any $\epsilon > 0$ we've got a partition such that
+$$ U(|f|, P) - L(|f|, P) < \epsilon $$
+thus $|f|$ is integrable, as desired.
+
+\textit{(c) Provide the details for the argument that in this case we have
+  $|\int_a^b f| \leq \int_a^b{|f|}$.}
+
+As provided in 7.4.2, this directrly follows from (iv).
+In other words, 
+$$-|f| \leq f \leq |f|$$
+implies
+$$ \int_a^b{-|f|} \leq \int_a^b{f}  \leq \int_a^b{|f|} $$
+$$ - \int_a^b{|f|} \leq \int_a^b{f}  \leq \int_a^b{|f|} $$
+$$|\int_a^b{f}|  \leq \int_a^b{|f|} $$
+as desired.
+
+\subsection*{7.4.2}
+\textit{Review Definition 7.4.3. Show that if $c \leq a \leq b$ and
+  $f$ is integrable on the interval $[c, b]$, then it is still the
+  case that $\int_a^b  f = \int_a^c  f + \int_c^b  f$.}
+
+By definition 7.4.3 we've got that 
+$$\int_a^c  f + \int_c^b  f = - \int_c^a  f + \int_c^b  f =
+- \int_c^a  f + \int_c^a f +  \int_a^b f= \int_a^b f $$
+as desired.
+
+\subsection*{7.4.3}
+\textit{Prove Theorem 7.4.4 including an argument for Exercise 7.2.5 if it
+  is not already done}
+
+Firstly let us state the theorem itself
+
+\textit{\textbf{Theorem 7.4.4} Assume that $f_n \to f$ uniromly on $[a, b]$
+  and that each $f_n$ is integrable. Then, $f$ is integrable and}
+$$\lim_{n \to \infty}{\int_a^b f^n = \int_a^b f^n}$$
+
+7.2.5 is done, therefore $f$ is integtrable.
+
+By properties of integral we've got that
+$$\int_a^b f_n - \int_a^b f = \int_a^b f_n -  f $$
+
+Because $f_n$ converges uniformly to $f$ we've got that
+for any $\epsilon > 0$ there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that 
+$$|f_n(x) - f(x)| < \epsilon$$
+
+Thus if we cleverlty set $n$, in this case so that
+$$|f_n(x) - f(x)| < \epsilon/(b - a)$$
+it'll follow that
+$$\left|\int_a^b f_n - \int_a^b f\right| \leq \int_a^b |f_n -  f|
+\leq \int_a^b \epsilon/(b - a) = \epsilon$$
+thus we can follow that for any $\epsilon > 0$ there exists $N$ so that 
+$$\lim_{n \to \infty}{\int_a^b f^n = \int_a^b f^n}$$
+as desired.
+
+\subsection*{7.4.4}
+
+\textit{Decide which of the following conjectures is true and supply a short
+  proof. For those that are not true give a counterexample.}
+
+\textit{(a) If $|f|$ is integrable on $[a, b]$ then $f$ is also integrable on
+  this set.}
+
+False.
+Suppose that we make a modification of Dirichlet's function
+$$g(x) =
+\begin{cases}
+  -0.5 \text{ if } x \in Q
+  0.5 \text{ otherwise}
+\end{cases}
+$$
+then it follows that $|g(x)| = 0.5$ is differentiable, but original one isn't.
+
+\textit{(b) Assume $g$ is integrable and $g \geq 0$ on $[a, b]$. If $g(x) > 0$
+  for an infinite number of points $x \in [a, b]$, then $\int_a^b g \geq 0$}
+
+False. For interval $[0, 1]$
+$$f(x) =
+\begin{cases}
+  -1 \text{ for } 0 \leq x \leq 0.1 \\
+  1 \text{ for } 0.1 < x \leq 1
+\end{cases}
+$$
+we've got $\int_0^1 f = 0.8$ and the set $[0, 0.1]$ contains infinite amount of
+points.
+
+\textit{(c) If $g$ is continous on $[a, b]$ and $g \geq 0$ with $g(x_0) > 0$
+  for at least one point $x_0 \in [a, b]$, then $\int_a^b g > 0$.}
+
+True. For $x_0$ by continuity of $g$ we've got $\delta$-neighborhood around
+$x_0$ such that $g(x) > 0$ for all $x \in V_\delta$. Thus we can split
+$[a, b]$ into three intervals: before $\delta$-neighborhood, after it,
+and $\delta$-neighborhood itself. On the last one we are guaranteed to have
+$\int g > 0$, on the other ones integral is nonnegative by the fact that
+$g \geq 0$. Thus we have our desired result.
+
+\textit{(d) If $\int_a^b f > 0$, there is an interval
+  $[c, d] \subseteq [a, b]$ and a $\delta > 0$ such that $f(x) \geq \delta$
+  for all $x \in [c, d]$. }
+
+True. Suppose that it is not the case. Then it follows that every
+$[c, d]$ contains $0$ in it. Thus we can follow that $L(f, P) = 0$ for every
+$P$. Thus $0$ is an upper bound for
+$$\{L(f, P): P \in \mathcal{P}\}$$
+Because $f$ is integrable we can follow that $\int_a^b \leq 0$, which is a
+contradiction.
+
+\subsection*{7.4.5}
+\textit{Let $f$ and $g$ be integrable functions on $[a, b]$.}
+
+\textit{(a) Show that if $P$ is any partition of $[a. b]$, then}
+$$U(f + g, P) \leq U(f, P) + U(g, P)$$
+\textit{Provide a precific example where the inequality is strict. What
+does the corresponding inequality for lower sums look like?}
+
+Suppose that we've got a particular interval $[c, d]$. Then by definition
+of supremum
+$$f(x) \leq f(M_{[c, d]})$$
+where $M_{[c, d]} = \sup\{f(x): x \in [c, d] \}$.
+
+$$U(f + g, P) = \sum_{k = 1}^n{M_k(x_k - x_{k -  1})} \leq
+\sum_{k = 1}^n{(M_{g_k} + M_{f_k})(x_k - x_{k -  1})} =
+$$
+$$ =
+\sum_{k = 1}^n{M_{f_k}(x_k - x_{k -  1})} +
+\sum_{k = 1}^n{M_{g_k}(x_k - x_{k -  1})} =
+U(f, P)  + U(g, P)$$
+as desired.
+
+A specific example when this equality is strict happens when $f(x) = k$
+or $g(x) = k$ (or both).
+
+For lower sums we've got that
+$$f(x) \geq f(m_{[c, d]})$$
+thus
+$$L(f + g, P) = \sum_{k = 1}^n{m_k(x_k - x_{k -  1})} \geq
+\sum_{k = 1}^n{(m_{g_k} + m_{f_k})(x_k - x_{k -  1})} =
+$$
+$$ =
+\sum_{k = 1}^n{m_{f_k}(x_k - x_{k -  1})} +
+\sum_{k = 1}^n{m_{g_k}(x_k - x_{k -  1})} =
+L(f, P)  + L(g, P)$$
+$$L(f + g, P) \geq L(f, P)  + L(g, P)$$
+
+\textit{(b) Review the proof of Theorem 7.4.2(ii), and provide an argument for
+  part (i) of this theorem}
+
+From part (a) we get that
+$$U(f + g, P) \leq U(f, P)  + U(g, P)$$
+$$L(f + g, P) \geq L(f, P)  + L(g, P)$$
+thus
+$$- L(f + g, P) \leq - (L(f, P)  + L(g, P))$$
+$$U(f + g, P) - L(f + g, P) \leq U(f, P)  + U(g, P) - (L(f, P)  + L(g, P))$$
+
+Let $\epsilon > 0$. It follows that there exists $P_n$ such that 
+$$U(f, P_f) - L(f, P_f) < \epsilon/2$$
+and
+$$U(g, P_g) - L(g, P_g) < \epsilon/2$$
+thus if we let $P = P_f \cup P_g$ we get 
+$$U(f, P)  + U(g, P) - L(f, P) - L(g, P) < \epsilon$$
+therefore
+$$U(f + g, P) - L(f + g, P) \leq  U(f, P)  + U(g, P) - L(f, P) - L(g, P) < \epsilon$$
+therefore
+$$\lim_{n \to \infty}{U(f + g, P) - L(f + g, P)}  = 0$$
+from this we can state that $(f + g)$ is integrable.
+
+Thus we can follow that
+$$\lim_{n \to \infty}{U(f + g, P) - L(f, P) - L(g, P)} = 0$$
+therefore
+$$\int_a^b (f + g) = \int_a^b f + \int_a^b g$$
+
+\subsection*{7.4.6}
+\textit{Review the discussion immediately preceeding Theorem 7.4.4}
+
+\textit{(a) Produce an example of a sequence $f_n \to 0$ pointwise on $[0, 1]$
+  where $\lim_{n \to \infty}{\int_0^1 f_n}$ does not exist.}
+
+We can probably modify a function that is given to us in the text of the
+section
+$$f_n(x) =
+\begin{cases}
+  n^2 \text{ if } 0 < x < 1/n \\
+  0 \text{ otherwise }
+\end{cases}
+$$
+
+It follows that $f_n$ converges pointwise to $f(x) = 0$, but the integral
+$$\int_0^1{f_n} = 1/n * n^2 = n$$
+which is unbound.
+
+\textit{(b) Produce another example (if necessary) where $f_n \to 0$ and the
+  sequence $\int_0^1 f_n$ is unbounded}
+
+Unnecessary.
+
+\textit{(c) Is it possible to construct each $f_n$ to be continous in the
+  examples of parts (a) and (b)?}
+
+Yeah, we can use some sort of parabola instead our discontinuity, where
+integral of each of the  "humps" will increase when we incrase $n$ in
+the function.
+
+We can also use some sortof piecewise-linear funciton as well, but in this
+case we lose differentiability;
+
+\textit{Does it seen possible to construct the sequence $(f_n)$ to be
+  niformly bounded? (Uniformly bounded means that there exists a
+  single $M > 0$ satisfying $|f_n| \leq M$ for all $n \in N$.)}
+
+Definetely not with this particular example.
+
+I want to say that probably not.
+
+\subsection*{7.4.7}
+\textit{Assume that $g_n$ and $g$ are bounded integrable functions with
+  $g_n \to g$ on $[0, 1]$. The convergence is not uniform; however, the
+  convergence is uniform on any set of the form $[\delta, 1]$ where
+  $0 < \delta < 1$. Show that
+  $\lim_{n \to \infty}{\int_0^1 g_n} = \int_0^1 g$.}
+
+I can only assume that we mean here uniform boundedness, because if
+boundedness is not uniform, then previous exercise presents counterexamples
+for the given proposition.
+
+Suppose that sequence $(g_n)$ is uniformly bounded.
+
+Let $\epsilon > 0$. We can state by uniform boundedness that
+$$-M \delta \leq \int_0^\delta g_n \leq M \delta$$
+thus
+$$-2M \delta \leq \int_0^\delta g_n - g \leq 2M \delta$$
+$$-2M \delta \leq \int_0^\delta g_n - g \leq 2M \delta$$
+
+$$\left|\int_0^1{g_n} - \int_0^1{g}\right| \geq \int_0^{\delta}{|g - g_n|}
++ \int_{\delta}^1{|g - g_n|} $$
+
+Thus if we pick $\delta$ so that
+$$2M \delta < \epsilon/2 $$
+and $N$ such that
+$$\int_{\delta}^1{|g - g_n|} < \epsilon/2$$
+we'll get that
+$$\left|\int_0^1{g_n} - \int_0^1{g}\right| < \epsilon$$
+therefore 
+$$\lim_{n \to \infty}{\int_0^1 g_n} = \int_0^1 g$$
+as desired.
+
+\section{The Fundamental Theorem of Calculus}
 
 \end{document}
