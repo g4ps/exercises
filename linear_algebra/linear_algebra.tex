@@ -446,9 +446,259 @@ union of first two subspaces constitues a subspace, and thus we'll default
 to result in the previous exercise.
 
 Thus let us assume that none of the subspaces is a subset of another subspace.
-Now 
-let $u_1 \in U_1 \setminus (U_2 \cup U_3)$, . It follows that
-$$u_1 + u_2 + u_3 \in U_1 \cup U_2 \cup U_3$$.
+Now we've got two cases to sort out: suppose that if we take $u_2 \in U_2$
+and $u_3 \in U_3$ we get that
+$$u_2 + u_3 \in U_1$$
+for every $u_2 \in U_2$ and $u_3 \in U_3$. Then we can follow, by setting
+$u_2 = 0$ to the case that
+$$\forall u_3 \in U_3 \to u_3 + u_2 \in U_1 \to u_3 + 0 \in U_1 \to
+u_3 \in U_1$$
+thus $U_3$ is a subset of $U_1$, which raises a contradiction (in our
+assumptions that $U_3$ is not a subset of $U_1$  and by extension
+for the default 2-subspace case).
+
+The case when $u_2 \in U_2$, $u_3 \in U_3$ and $u_2 + u_3 \notin
+U_1 \cup U_2 \cup U_3$ implies that $U_1 \cup U_2 \cup U_3$ is
+not a vector space, thus it cannot happen.
+
+The case when $u_2 \in U_2$, $u_3 \in U_3$ and $u_2 + u_3 \notin U_1$
+implies that $u_2 + u_3$ is  in $U_2 \cup U_3$. This raises the case that
+$U_2$ is a subspace of $U_3$, which is a contradiction.
+
+Thus we can follow that there exists $u_1 \in U_1$ such that it
+cannot be represented in terms of vectors from $U_2$ and $U_3$.
+Thus we can follow that analogous  vectors   $u_2 \in U_2$ and $u_3 \in U_3$
+also exist.
+
+Because we are still assuming that $U_1 \cup U_2 \cup U_3$ we can follow that
+$$u_1 + u_2 + u_3 \in U_1 \cup U_2 \cup U_3$$
+Thus this sum is bound to be located in one of the $U_1$, $U_2$ or $U_3$.
+Let us assume for simplicity of notation that it is located in $U_1$. Then
+we can follow that
+$$u_1 + u_2 + u_3 - u_1 = u_2 + u_3 \in U_1$$
+
+Suppose that we take $u_2 \in U_2 \setminus (U_3 \cup U_1)$ and
+$u_3 \in U_3 \setminus (U_1 \cup U_2)$. It follows that
+$u_2 + u_3$ cannot be in either $U_2$ nor in $U_3$ because in this
+case we have that
+$$u_2 + u_3 - u_2 = u_3 \in U_2$$
+which is a contradiction. Thus
+$$u_2 + u_3 \in U_1 \setminus (U_2 \cup U_3)$$
+let us call it $u_1'$. In the same fashion we can define $u_2'$ and $u_3'$.
+
+Thus $u_1' + u_2' + u_3' \in U_1 \cup U_2 \cup U_3$. Thus it needs to
+be in one of $U_1$, $U_2$ or $U_3$. Suppose that it is included in
+$U_1$. Then we can follow that
+$$u_1' + u_2' + u_3' \in U_1$$
+$$u_2' + u_3' \in U_1$$
+$$u_1 + u_3 + u_1 + u_2 \in U_1$$
+$$2u_1 + u_3  + u_2 \in U_1$$
+$$u_3  + u_2 \in U_1$$
+
+TODO
+
+\subsection{}
+\textit{Verify the assertion in Example 1.38}
+
+1.38 states that
+
+\textit{Suppose that $U = \{(x, x, y, y) \in F^4: x, y \in F\}$ and
+  $W = \{(x, x, x, y) \in F^4: x, y \in F\}$. Then }
+$$U + W = \{(x, x, y, z) \in F^4: x, y, z \in F\}$$
+\textit{as you should verify}
+
+Let $u \in U$ and $w \in W$. It follows that
+$$u = (x_1, x_1, x_1, y_1)$$
+$$w = (x_2, x_2, y_2, y_2)$$
+
+Suppose that $q \in U + W$.
+It follows that
+$$q = (x_1 + x_2, x_1 + x_2, x_1 + y_2, y_1 + y_2)$$
+thus we can set $x = x_1 + x_2$, $y = x_1 + y_2$ and $z = y_1 + y_2$
+and call it a day.
+
+\subsection{}
+\textit{Suppose $U$ is a subspace of $V$. What is $U + U$.}
+
+By properties of vector space, if we take $u_1, u_2 \in U$ then
+$$u_1 + u_2 \in U$$
+for every $u_1, u_2 \in U$. Thus we can follow that
+$$U + U = U$$
+
+\subsection{}
+\textit{Is the operation of addition on the subspaces of $V$ commutative? In
+  other words, if $U$ and $W$ are subspaces of $V$, is $U + W = W + U$?}
+
+If $q \in U + W$ it follows that there exists $u \in U$ and $w \i W$
+such that
+$$q = v + w = w + v = q'$$
+where $q' \in W + U$. Thus we can follow that $W + U = U + W$.
+
+\subsection{}
+
+\textit{Is the operation of addition on the subspaces of $V$ associative? In
+  other words, if $U_1$, $U_2$, $U_3$ are subspaces of $V$, is}
+$$(U_1 + U_2) + U_3 = U_1 + (U_2 + U_3)?$$
+
+Yes it is. We can apply the same logic as in the previous exercise and it'll do
+the job.
+
+\subsection{}
+
+\textit{Does the operation of addition on the subspaces of $V$ have an additive
+  identity? Which subspace have additive inverces?}
+
+Every subspace contains zero, therefore
+$$U + 0 = U$$
+thus we've got additive identity.
+
+By adding two subspaces together we get a larger subspace, thus we can follow
+that the only way to get 0 vector space as the result of addition of two
+subspaces is to add
+$$0 + 0 = 0$$
+thus the only subspace that contains additive inverse is $0$.
+
+\textit{Prove or give counterexample: if $U_1$, $U_2$, $W$ are subspaces of
+  $V$, such that }
+$$U_1 + W = U_2 + W$$
+\textit{then $U_1 = U_2$}
+
+This is wrong: suppose that $U_2$ is a nonzero subspace of $W$ and $U_1 = 0$.
+Then it follows that
+$$U_1 + W = 0 + W = W = W + U_2$$
+and
+$$U_1 \neq U_2$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose}
+$$U = \{(x, x, y, y) \in F^4: x, y \in F\}$$
+\textit{Find a subspace $W$ of $F^4$ such that $F^4 = U \bigoplus W$ }
+
+$$W = \{(0, x, y, 0) \in F^4: x, y \in F\}$$
+
+
+\subsection{}
+
+\textit{Suppose}
+$$U = \{(x, y, x + y, x - y, 2x) \in F^5: x, y \in F\}$$
+\textit{Find a subspace $W$ of $F^5$ such that $F^5 = U \oplus W$ }
+
+$$W = \{(0, 0, x, y, z) \in F^5: x, y, z \in F\}$$
+
+\subsection{}
+
+\textit{Suppose}
+$$U = \{(x, y, x + y, x - y, 2x) \in F^5: x, y \in F\}$$
+\textit{Find a thee subspaces $W_1$, $W_2$, $W_3$ of $F^5$
+  such that $F^5 = U \oplus W_1 \oplus W_2 \oplus W_3$ }
+
+$$W_1 = \{(0, 0, x, 0, 0) \in F^5: x \in F\}$$
+$$W_2 = \{(0, 0, 0, y, 0) \in F^5: y \in F\}$$
+$$W_3 = \{(0, 0, 0, 0, z) \in F^5: z \in F\}$$
+
+\subsection{}
+
+\textit{Prove or give a counterexample: if $U_1$, $U_2$, $W$ are subspaces
+  of $V$ such that }
+$$ V = U_1 \oplus W \text{ and } V = U_2 \oplus W $$
+\textit{then $U_1 = U_2$}
+
+This one is false;
+$$U_1 = \{(x, x) \in F^2: x \in F\}$$
+$$U_2 = \{(x, 0) \in F^2: x \in F\}$$
+$$W = \{(0, y) \in F^2: y \in F\}$$
+
+\subsection{}
+
+\textit{A function $f: R \to R$ is called even if }
+$$f(-x) = f(x)$$
+\textit{for all $x \in R$. A function $f: R \to R$ is called odd if }
+$$f(-x) = -f(x)$$
+\textit{for all $x \in R$. Let $U_e$ denote the set of real-valued
+  even functions on $R$ and let $U_o$ denote the set of real-valued odd
+  functions on $R$. Show that }
+$$R^R = U_e \oplus U_o$$
+
+
+
+Let $f: R \to R$ be arbitrary. It follows that
+
+$$f_e(x) =
+\begin{cases}
+  2 f(x) - f(-x) \text{ if } x \geq 0 \\
+  f(x) \text{ if } x = 0 \\
+  2 f(-x) - f(x) \text{ if } x < 0
+\end{cases}
+$$
+
+Every odd function satisfies $f(0) = 0$.
+Therefore for even function we've got to have $f_e(0) = f(0)$
+
+
+$$
+f_e(x) =
+\begin{cases}
+  a_1 f(x) + b_1 f(-x) \text{ if } x > 0 \\
+  a_1 f(-x) + b_1 f(x) \text{ if } x < 0
+\end{cases}
+$$
+
+$$
+f_o(x) =
+\begin{cases}
+  a_2 f(x) + b_2 f(-x) \text{ if } x > 0 \\
+  -a_2 f(-x) - b_2 f(x)  \text{ if } x < 0
+\end{cases}
+$$
+
+$$
+\begin{cases}
+  a_1 + a_2 = 1 \\
+  b_1 + b_2 = 0 \\
+  a_1 - a_2 = 0 \\
+  b_1 - b_2 = 1 \\
+\end{cases}
+$$
+
+$$
+\begin{cases}
+  a_1  = 0.5 \\
+  b_1 = 0.5 \\
+\end{cases}
+$$
+
+$$
+f_e(x) =
+\begin{cases}
+  1/2 f(x) + 1/2 f(-x) \text{ if } x > 0 \\
+  f(x) \text{ if } x = 0 \\
+  1/2 f(x) + 1/2 f(-x)  \text{ if } x < 0
+\end{cases}
+$$
+
+$$
+f_o(x) =
+\begin{cases}
+  1/2 f(x) - 1/2 f(-x) \text{ if } x > 0 \\
+  0 \text{ if } x = 0 \\
+  -1/2 f(-x) + 1/2 f(x)  \text{ if } x < 0
+\end{cases}
+$$
+
+Thus
+$$f_e(x) = f_e(-x)$$
+$$f_o(-x) = -f_o(x)$$
+and
+$$f_e(x) + f_o(x) = f(x)$$
+as desired.
+
+Also, the only function that is odd and even at the same time is $0$,
+therefore we've got a direct sum, as desired.
+
+
+\chapter{Finite-Dimentional Vector Spaces}
 
 
 \end{document}

@@ -36,3 +36,4 @@
 \contentsline {section}{\numberline {7.1}The Definition of the Riemann Integral}{230}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Integrating Functions with Discontinuities}{235}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Properties of the Integral}{239}{section.7.3}%
+\contentsline {section}{\numberline {7.4}The Fundamental Theorem of Calculus}{245}{section.7.4}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  24 DEC 2022 02:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  26 DEC 2022 20:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -291,19 +291,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./linear_algebra.toc)
-\tf@toc=\write4
-\openout4 = `linear_algebra.toc'.
-
-
+(./linear_algebra.toc
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.15 \chapter
-             *{Preface} [1
+l.36 ...umberline {1.3.17}}{14}{subsection.1.3.17}
+                                                  % [1
 
-] [2
+])
+\tf@toc=\write4
+\openout4 = `linear_algebra.toc'.
+
+ [2] [3
 
 ]
 Chapter 1.
@@ -336,7 +336,7 @@ Overfull \hbox (40.39546pt too wide) detected at line 46
 \OT1/cmr/m/n/10 ([])[] = [] = [] = [] =
  []
 
-[3
+[4
 
 ]
 Overfull \hbox (3.87253pt too wide) detected at line 81
@@ -364,18 +364,26 @@ n/10 + \OML/cmm/m/it/10 b[]i\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 ^^L\OT1/cmr/
 m/n/10 )\OML/cmm/m/it/10 ^^U
  []
 
-[4] [5] [6] [7] [8] [9] [10] [11] (./linear_algebra.aux)
+[5] [6] [7] [8] [9] [10] [11] [12] [13]
+
+LaTeX Warning: Command \i invalid in math mode on input line 532.
+
+[14] [15] [16] [17]
+Chapter 2.
+[18
+
+] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 60CCBFFD06B82B63B3690C60C622D884;2019.
+(rerunfilecheck)             Checksum: EA8C88DB2C0278068DB90711A9C5DCC4;2779.
  ) 
 Here is how much of TeX's memory you used:
- 8582 strings out of 478268
- 132482 string characters out of 5846347
- 424636 words of memory out of 5000000
- 26661 multiletter control sequences out of 15000+600000
+ 8611 strings out of 478268
+ 132911 string characters out of 5846347
+ 425628 words of memory out of 5000000
+ 26672 multiletter control sequences out of 15000+600000
  482055 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,63p,245b,345s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,9n,63p,259b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -392,10 +400,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (12 pages, 210344 bytes).
+Output written on linear_algebra.pdf (19 pages, 227175 bytes).
 PDF statistics:
- 313 PDF objects out of 1000 (max. 8388607)
- 264 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 257 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 345 compressed objects within 4 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 345 words of extra memory for PDF output out of 10000 (max. 10000000)
 
