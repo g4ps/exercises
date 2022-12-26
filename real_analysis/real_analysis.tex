@@ -11464,4 +11464,168 @@ as desired.
 
 \section{The Fundamental Theorem of Calculus}
 
+\subsection*{7.5.1}
+\textit{We have seen that not every derivative is continous, but explain how
+  we at least know that every continous function is a derivative.}
+
+We know that every function is integrable. Thus we can state that
+given continous function is a derivative of
+$$F(x) = \int_a^x{f(x)}$$
+
+
+\subsection*{7.5.2}
+
+\textit{(a) Let $f(x) = |x|$ and define $F(x) = \int_{-1}^x{f}$. Find a
+  formula for $F(x)$ for all $x$. Where is $F$ continous? Where is $F$
+  differentible? Where does $F'(x) = f(x)$? }
+
+The desired function is obtained by using standart rules of integration
+$$F(x) =
+\begin{cases}
+  -\frac{x^2}{2} + 1/2  \text{ for } x < 0 \\
+  \frac{x^2}{2} + 1/2\text{ for } x \geq 0
+\end{cases}
+$$
+
+$F$ is continous everywhere. By continuity of $|x|$ it is differentiable
+everywhere. By the same continuity of $|x|$, $F'(x) = |x|$ everywhere.
+
+\textit{(b) Repeat part (a) for the function }
+$$ f(x) =
+\begin{cases}
+  1 \text{ if } x < 0 \\
+  2 \text{ if } x \geq 0
+\end{cases}
+$$
+
+$$F(x) =
+\begin{cases}
+  x + 1  \text{ for } x < 0 \\
+  2x + 1 \text{ for } x \geq 0
+\end{cases}
+$$
+
+Because $f$ is integrable everywhere we can follow that $F$ is continous
+everywhere. By discontinuity of $f$ at $0$ we can follow that $F$ is not
+differentiable at $0$. Therefore $F'(x) = f(x)$ on $R \setminus \{0\}$.
+
+\subsection*{7.5.3}
+\textit{The hypothesis in Theorem 7.5.1 (i) that $F'(x) = f(x)$ for all
+  $x \in [a, b]$ is slightly stronger than it needs to be. Carefully read the
+  proof and state exactly what needs to be assumed with regard to the
+  relationship between $f$ and $F$ for the proof to be valid.}
+
+My proposition is that $F'(x)$ might not need to be equal to all $f(x)$, but
+$f(x)$ needs to be integrable on $[a, b]$ and we need to
+require that $F'(a) = f(a)$ and $F'(b) = f(a)$ and that $F'(x) \neq f(x)$ on
+a finite number of points.
+
+\subsection*{7.5.4 (Natural Logarithm)}
+\textit{Let }
+$$H(x) = \int_1^x{\frac{1}{t} dt}$$
+\textit{where we consider only $x > 0$.}
+
+\textit{(a) What is $H(1)$? Find $H'(x)$.}
+
+$$H(x) = \int_1^1{\frac{1}{t}} = 0$$
+by definition of integral on a point.
+
+Given that $1/t$ is continous at $x > 0$ we can follow that 
+$$H'(x) = \frac{1}{x}$$
+
+\textit{(b) Show that $H$ is strictly increasing; that is, show that if
+  $0 < x < y$, then $H(x) < H(y)$}
+
+$$H'(x) = 1/x > 0$$
+for all $x > 0$. Thus the function is stringly increasing (concrete proof of
+such approach is contained somewhere in exercises of chapter 5).
+
+\textit{(c) Show that $H(cx) = H(c) + H(x)$. (Think of $c$ as a constant and
+  differentiate $g(x) = H(cx)$.)}
+
+Let
+$$g(x) = H(cx)$$
+it follows that
+$$g(x) = \int_1^{cx}{\frac{1}{t}}$$
+$$g'(x) = H'(cx)c = \frac{1}{cx} c = \frac{1}{x}$$
+thus $g'(x) = H(x)$, therefore we can follow that $g(x) - H(x) = k$.
+thus
+$$g(x) = H(x) + k$$
+$$H(cx) = H(x) + k$$
+Because $K$ is a constant we can set $x = 1$ and get that 
+$$H(cx) = H(x) + k$$
+$$H(c) = H(1) + k$$
+$$H(c) =  k$$
+thus
+$$H(cx) = H(x) + H(c)$$
+as desired.
+
+\subsection*{7.5.5}
+\textit{The Fundamental Theorem of Calculus can be used to supply a shorter
+  argument for Theorem 6.3.1 under the additional assumption that the sequence
+  of derivatives is continous.}
+
+\textit{Assume $f_n \to f$ pointwise and $f_n' \to g$ uniformly on $[a, b]$.
+  Assuming each $f_n'$ is continous, we can apply Theorem 7.5.1 to get}
+$$\int_a^x{f_n'} = f_n(x) - f_n(a)$$
+\textit{for all $x \in [a, b]$. Show that $g(x) = f'(x)$.}
+
+Theorem 6.3.1 states that
+\textit{Let $f_n \to f$ pointwise on the closed interval $[a, b]$ ans assume
+  that each $f_n$ is differentiable. If $(f_n')$ converges uniformly on
+  $[a, b]$ to a function $g$, then the function $f$ is differentiable and
+  $f' = g$.}
+
+Because $f_n' \to g$ uniformly we can state that
+$$\int_a^b{g(x)} = \lim_{n \to \infty}{\int_a^b{f_n'}}$$
+
+Because if $f_n' \to g$ uniformly on $[a, b]$ we can follow that
+it convergeu uniformly on any subset $[c, d] \subseteq [a, b]$. Thus
+$$\int_c^d{g(x)} = \lim_{n \to \infty}{\int_c^d{f_n'}}$$
+for any $[c, d] \subseteq [a, b]$. This also appplies to any $[a, x]$, thus
+$$\int_a^x{g(t)} = \lim_{n \to \infty}{\int_a^x{f_n'(x)}}$$
+
+Applying FTC we get
+$$\int_a^x{g(t)} = \lim_{n \to \infty}{f_n(x) - f_n(a)}$$
+by algebraic limit theorem we get
+$$\int_a^x{g(t)} = \lim_{n \to \infty}{[f_n(x)]}
+- \lim_{n \to \infty}{[f_n(a)]}$$
+and by pointwise congergence
+$$\int_a^x{g(t)}= f(x) - f(a)$$
+because $f_n'$ is assumed to be continous we can follow that their limit $g$
+is continous, thus we are justified to use FTC one again and get 
+$$g(t)= f'(x)$$
+as desired.
+
+\subsection*{7.5.6}
+
+\textit{Use part (ii) of Theorem 7.5.1 to construct another proof of part (i)
+  of Theorem 7.5.1 using the following strategy. Given $f$ and $F$ as in part
+  (i), set $G(x) = \int_a^x{f}$. What is the relationship betweeb $F$ and $G$?}
+
+Let 
+$$G(x) = \int_a^x{f(t)dt}$$
+Given that $F'(x) = f(x)$ we can follow that $f(x)$ has IVP, and therefore
+does not contain jump discontinuities. Thus we can follow (assuming that there
+are no essential discontinuities in $f$), that
+$f$ can be modified so that there are no discontinuities and therefore
+let $f$ be continous. Thus we can state that
+$$G'(x) = f(x) = F'(x)$$
+Thus $G(x) = F(x) + k$. From this we can follow that
+$$\int_a^b{f(t)dt} = \int_a^b{f(t)dt} - \int_a^a{f(t)dt} =
+G(b) - G(a) = F(b) + k - F(a) - k = F(b) - F(a)$$
+
+\subsection*{7.5.7 (Average Value)}
+
+\textit{If $g$ is continous on $[a, b]$, show that there exists a point
+  $c \in (a, b)$ where}
+$$g(c) = \frac{1}{b - a}\int_a^b{g}$$
+
+Let
+$$G(x) = \int_a^x{g(t)}$$
+from continuity of $g$ we get that
+$$G'(x) = g(x)$$
+
+TODO
+
 \end{document}
