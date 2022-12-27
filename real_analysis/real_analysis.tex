@@ -11650,4 +11650,162 @@ that $f'$ is continous and therefore $|f'|$ is continous as well. Thus
 we can state that for any given partition
 $$\int_{x_{k - 1}}^{x_k}{f'(x)} = f(x_{k - 1}) - f(x_k)$$
 
+Thus
+$$\sum_{k = 1}^n{|f(x_k) - f(x_{k - 1})|} =
+\sum_{k = 1}^n{\left|\int_{x_{k - 1}}^{x_k}{f'(x)}\right|}$$
+which by properties of integral
+$$\sum_{k = 1}^n{\left|\int_{x_{k - 1}}^{x_k}{f'(x)}\right|} \leq
+\sum_{k = 1}^n{\int_{x_{k - 1}}^{x_k}{|f'(x)|}} = \int_a^b{|f'(x)|}$$
+thus
+$$Vf \leq \int_a^b{|f'(x)|}$$
+as desired.
+
+\textit{(b) USe the Mean Value Theorem to establlish the reverse inequality and
+  conclude that $V_f = \int_a^b{|f'|}$}
+
+For the same interval we can apply MVT so tha there exists a
+point $x_{k - 1} < c < x_k$ such that
+$$f'(c) = \frac{f(x_{k}) - f(x_{k - 1})}{(x_{k} - x_{k - 1})}$$
+$$(x_{k} - x_{k - 1}) f'(c) = f(x_{k}) - f(x_{k - 1})$$
+$$|(x_{k} - x_{k - 1}) f'(c)| = |f(x_{k}) - f(x_{k - 1})|$$
+applying the sum we get
+$$\sum_{k = 1}^n{|(x_{k} - x_{k - 1}) f'(c)|} =
+\sum_{k = 1}^n{|f(x_{k}) - f(x_{k - 1})|} \leq L(f, P)$$
+thus $V f$ is a supremum for lower sums, therefore $V f \geq \int_a^b{|f'|}$
+
+\subsection*{7.5.9}
+\textit{Let }
+$$ h(x) =
+\begin{cases}
+  1 \text{ if } x < 1 \text{ or } x > 1 \\
+  0 \text{ if } x = 1
+\end{cases}
+$$
+\textit{and define $H(x) = \int_0^x{h}$. Show that even though $h$ is not
+  continous at $x = 1$, $H(x)$ is still differentiable at $x = 1$.}
+
+Because $H$ is continous at $1$ and $H(x) = x$ on $x < 0$ and $x > 0$ we
+can follow that $H(0) = 0$. Thus $H(x) = x$ on $R$, therefore it is
+differentiable on $R$ as well.
+We probably could also show that $\int_0^x{h} = \int_0^x{g}$
+where $g(x) = 1$. 
+
+\subsection*{7.5.10}
+\textit{Assume $f$ is integrable on $[a, b]$ and has a "jump discontinuity"
+  at $c \in (a, b)$. SHow that $F(x) = \int_a^x{f}$ is not differentiable at
+  $x = c$}
+
+We can follow this from the fact that derivatives have to posess IVP, and
+given that we have a jump discontinuity we can follow that $F(x)$ is not
+differentiable at $c$.
+
+\subsection*{7.5.11}
+\textit{The Epilogue to Chapter 5 mentions the existence of a continous
+  monotone function that fails to be defferentiable on a dense subset of
+  $R$. Combine the results of Exercise 7.5.10 and Exercise 6.4.8 to show how to
+  construct such a function}
+
+Function from 6.4.8 is defined as such: let $\{ r_1, r_2, ... \}$ be an
+enumeration of the set of rational numbers. For each $r_n \in Q$ define
+$$u_n(x) =
+\begin{cases}
+  1/2^n \text{ for } x > r_n \\
+  0 \text{ for } x \leq r_n
+\end{cases}
+$$
+then
+$$h(x) = \sum_{n = 1}^{\infty}{u_n(x)}$$
+
+Proof that this function is increaesing is presented in 6.4.8. Given that it
+it increasing we can follow by results of 7.2.6 that given function is
+integrable.
+
+By results of 7.6.8 we can state that the function has jump discontinuities
+at every rational point. Thus we can follow that
+
+$$H(x) = \int_0^x{h(t)}$$
+is not differentiable on a dense subset of $R$, as desired.
+
+Also by FCT we've got that it is continous, and by the fact that $h(t) > 0$
+we can state that the function is monotone.
+
+\section{Lebesgue's Criterion for Riemann Integrability}
+
+\subsection*{7.6.1}
+
+\textit{(a) First argue that $L(t, P) = 0$ for any partition $P$ of $[0, 1]$.}
+
+This one's easy: given that any partition contains some irrational numbers
+in given that Thomae's function is non-negaative we can follow that
+every evemet of $L(f, P)$ will be zero, and therefore the sum is equal to zero.
+
+\textit{(b) Consider the set of points
+  $D_{\epsilon/2} = \{x: t(x) \geq \epsilon/2$. How big is $D_{\epsilon/2}$?}
+
+For $\epsilon > 2$ $D_{\epsilon} = \emptyset$.
+For $\epsilon = 2$ we've got $D_{\epsilon/2} = Z$. As $\epsilon$ gets smaller
+we include. In general we have that irrationals are not included because
+$t(x) = 0$ for all irrationals (we are not given that $\epsilon > 0$, but I
+think that it is assumed).
+
+For rationals we have special case of $0$, which is included whenever
+$\epsilon \leq 2$. In general we have inclusion for ratioonals whenever 
+$$t(x) > \epsilon/2$$
+$$1/n  > \epsilon/2$$
+$$n < 2/\epsilon$$
+for $q = m/n \in Q$.
+
+\textit{(c) To complete the argument, explain how to construct a partition
+  $P_\epsilon$ of $[0, 1]$ so that $U(t, P_\epsilon) < \epsilon$}
+
+In order to do this for given $\epsilon > 0$ we need to set partition
+$\{0, 1/n, 2/n, ... (n - 1)/n, 1\}$ where
+$$1/n < \epsilon$$
+$$n > 1/\epsilon$$
+this way we are guaranteed that for every $[x_{k -1}, x_k]$ we've got
+a number $m/n$ in it such that
+$$t(m/n) = 1/n < \epsilon$$
+
+Thus we can follow that wecan create a sequence of partitions $(P_n)$ such that
+$$\lim_{n \to \infty}{[U(f, P) - L(f, P)]}
+= \lim_{n \to \infty}{[U(f, P) - 0]} =
+\lim_{n \to \infty}{[U(f, P)]} = 0$$
+therefore the functions is integrable
+
+Thus we can follow that
+$$\int_0^1{t(x)} = L(f) = L(f, P) = 0$$
+as desired.
+
+\subsection*{7.6.2}
+\textit{Using the fact that $C = \cap_{n = 0}^{\infty}C_n$, where each $C_n$
+  consists of a finite union of closed intervals, argue that $g$ is
+  Riemann-integrable on $[0, 1]$}
+
+Given that we can isolate intervals at which $x \in C$, we can follow that
+for each $\epsilon$ there exists a particular partition such that
+$U(f, P) < \epsilon$. Each interval $[c, d] \subseteq [0, 1]$ has a point
+$c$ in it such that $c \notin C$. Thus for each partition we can state that
+$L(f, P) = 0$. Thus we can follow that $\int_0^1 g = 0$, as desired.
+
+\subsection*{7.6.3}
+\textit{Show that any countable set has measute zero}
+
+I think that we can use sequences here and set $V_\delta(c)$ neighborhood
+around each given $c \in A$. By setting $\delta = \epsilon/(2^{n + 1} )$ we'll
+get that sum of lengths of all intervals will be
+$$\sum_{n = 1}^\infty{\frac{ \epsilon}{2^{n + 1}}} =
+\frac{\epsilon}{2}\sum_{n = 1}^\infty{\frac{1}{2^{n}}} =
+\epsilon/2 < \epsilon
+$$
+as  desired.
+
+
+\subsection*{7.6.4}
+\textit{Prove that the Cantor set (which is uncountable) haas measure zero}
+
+We can state that content zero implies measure zero, thus we can state that
+$C$ has measure zero, as desired.
+
+
+
 \end{document}

@@ -945,7 +945,6 @@ $$1, (x - 6), (x - 6)^2, (x - 6)^3, (x - 6)^4$$
 $$\{c: c \in F\}$$
 
 \subsection{}
-\subsection{}
 \textit{(a) Let $U = \{p \in P_4(F): p''(6) = 0$. Find a basis of $U$.}
 
 $$1, (x - 6), (x - 6)^3, (x - 6)^4$$
@@ -958,5 +957,184 @@ $$1, (x - 6), (x - 6)^2, (x - 6)^3, (x - 6)^4$$
 
 $$ (x - 6)^2$$
 
+
+\subsection{}
+\textit{(a) Let $U = \{p \in P_4(F): p(2) = p(5)$. Find a basis of $U$.}
+
+$$1, (x - 2)(x - 5), (x - 2)^2(x - 5), (x - 2)^2(x - 5)^2$$
+
+\textit{(b) Extend the basis in part (a) to a basis of $P_4(F)$}
+
+$$1, x, (x - 2)(x - 5), (x - 2)^2(x - 5), (x - 2)^2(x - 5)^2$$
+
+\textit{Find a subspace $W$ of $P_4(F)$ such that $P_4(F) = U \oplus W$}
+
+$$ x $$
+
+\subsection{}
+\textit{(a) Let $U = \{p \in P_4(F): p(2) = p(5) = p(6)$. Find a basis of $U$.}
+
+$$1, (x - 2)(x - 5)(x - 6), (x - 2)^2(x - 5)(x - 6)$$
+
+\textit{(b) Extend the basis in part (a) to a basis of $P_4(F)$}
+
+$$1, x, x^2,  (x - 2)(x - 5)(x - 6), (x - 2)^2(x - 5)(x - 6)$$
+
+\textit{Find a subspace $W$ of $P_4(F)$ such that $P_4(F) = U \oplus W$}
+
+$$x, x^2$$
+
+\subsection{}
+\textit{(a) Let $U = \{p \in P_4(F): \int_-1^1{p} = 0 \}$.
+  Find a basis of $U$.}
+
+$$x, x^3$$
+
+\textit{(b) Extend the basis in part (a) to a basis of $P_4(F)$}
+
+$$1, x, x^2, x^3, x^4$$
+
+\textit{Find a subspace $W$ of $P_4(F)$ such that $P_4(F) = U \oplus W$}
+
+$$1, x^2, x^4$$
+
+\subsection{}
+\textit{Suppose $v_1, ... v_m$ is linearly independent in $V$ and $w \in V$.
+  Prove that}
+
+$$\dim span(v_1 + w, ..., v_m + w) \geq m - 1$$
+
+Because $v_1, ... v_m$ is linearly independent we can follow that $w$ is either
+in $span(v_1, ..., v_m)$ or not. In the latter case we've got that the
+case that we increase the span. In the former we've got by linear independence
+of $v_1, ... v_m$ that the maximum decline of degree is $1$. Thus
+$$\dim span(v_1 + w, ..., v_m + w) \geq m - 1$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $p_0, p_1, ..., p_m \in P(F)$ are such taht each $p_j$ has
+  degree $j$. Prove that $p_0, ... p_m$ is a basis of $P_m(F)$. }
+
+Suppose that $p \in P_m(f)$. Because each $p_n$ has a degree of $n$ we can
+follow that there exists only 1 $a_m \in F$ such that 
+of $p_m$ such that
+$$p - a_m p_m \in P_{m - 1}(F)$$.
+
+Bu applying the same procedure  again repeatedly  we get unique
+$a_m, ..., a_0$ such that
+$$\sum{a_n p_m} = p$$
+for every $p \in P_m(f)$. Thus we can follow that given list spans $P_m(F)$
+and by unique representation we get that this list is linearly independent.
+Thus we can follow that given list is a basis of $P_m(F)$, as desired.
+
+
+\subsection{}
+\textit{Suppose that $U$ and $W$ are subspaces of $R^8$ such that $\dim U = 3$,
+  $\dim W = 5$, and $U + W = R^8$. Prove that $R^8 = U \oplus W$.}
+
+We know that
+$$\dim (U_1 + U_2) = \dim U_1 + \dim U_2 - \dim (U_1 \cap U_2)$$
+
+Thus we can follow that in this particular case
+$$\dim (R^8) = \dim U + \dim W - \dim (U \cap W)$$
+$$8 = 3 + 5 - \dim (U \cap W)$$
+$$\dim (U \cap W) = 0$$
+thus we can follow that $U \cap W = \{0\}$. Therefore
+$$U + W = U \oplus W = R^8$$
+as desired.
+
+\subsection{}
+\textit{Suppose that $U$ and $W$ are both five-dimentional subspaces of $R^9$.
+  Prove that $U \cap W \neq \{0\}$}
+
+Once again we get that
+$$\dim R^9 = \dim U + \dim W - \dim (U \cap W)$$
+$$9 = 5 + 5- \dim (U \cap W)$$
+$$\dim (U \cap W) = 1$$
+thus
+$$U \cap W \neq 0$$
+as desired.
+
+\subsection{}
+\textit{Suppose $U$ and $W$ are both 4-dimentional subspaces of $C^6$. Prove
+  that there exists two vectors in $U \cap W$ such that neither of these
+  vectors is a scalar multiple of the other}
+
+Goto previous exercise for concretee explanation if needed, but  we can 
+conclude that
+$$\dim U \cap W = 2$$
+thus there exists a linearly independent list of length 2 in $U \cap W$ (basis)
+so that neither of them is a scalar multiple of another by some exercise in 2.A
+
+\subsection{}
+\textit{Suppose $U_1, ... U_m$ are finite-dimentional subspaces of $V$.
+  Prove that $U_1 + ... + U_m$ is finite-dimentional and }
+$$\dim(\sum U_n) \leq \sum{\dim U_n}$$
+
+We know that 
+$$\dim (U_1 + U_2) = \dim U_1 + \dim U_2 - \dim (U_1 \cap U_2)$$
+given that $\dim W \geq 0$ for any vector space $W$ we follow that
+$$\dim (U_1 + U_2) \leq \dim U_1 + \dim U_2$$
+Thus by induction
+$$\dim(\sum U_n) \leq  \sum \dim U_n $$
+which in presented case get us desired result.
+
+\subsection{}
+\textit{Suppose $V$ is finite-dimentional, with $\dim V = n \geq 1$. Prove
+  that there exist 1-dimentional subspaces $U_1, ... U_n$ of $V$ such that  
+}
+$$V = U_1 \oplus ... \oplus U_n$$
+
+For $V$ there exists a basis of length $n$. Thus by setting
+$$U_j = \{c v_j: c \in F\}$$
+we get desired result.
+
+\subsection{}
+\textit{Suppose $U_1, ..., U_m$ are finite-dimentional subspaces of $V$ such
+  that $U_1 + .. + U_m$ is a direct sum. Prove that $U_1 + ... + U_m$ is
+  finite dimentional and that}
+$$\dim \sum U_n = \sum \dim U_n$$
+
+We can just go by induction on the case that
+$$\dim (U \oplus W) = \dim U + \dim W + \dim (U \cap W) =
+\dim U + \dim W + 0$$
+Or we can use the fact, that we can combine all bases
+of subspaces together in one
+mega-basis for their sum. Both will suffice.
+
+\subsection{}
+\textit{You might guess, by analogy with the formula for the number of elements
+  in the union of three subsets of a finite set, that if $U_1, U_2, U_3$ are
+  subspaces of finite-dimentional vector space, then}
+$$\dim (U_1 + U_2 + U_3) =
+\dim U_1 + \dim U_2 + \dim U_3 - \dim (U_1 \cap U_2) - \dim (U_1 \cap U_3) - $$
+$$
+- \dim (U_2 \cap U_3)
++ \dim (U_1 \cap U_2 \cap U_3)$$
+
+We know that 
+$$\dim (U_1 + U_2) = \dim U_1 + \dim U_2 - \dim (U_1 \cap U_2)$$
+and
+$$U_1 + U_2 + U_3 = (U_1 + U_2) + U_3$$
+thus
+$$\dim (U_1 + U_2 + U_3) = \dim ((U_1 + U_2) + U_3) =
+\dim (U_1 + U_2) + \dim U_3 - \dim ((U_1 + U_2) \cap U_3) =$$
+$$ =
+\dim U_1 + \dim U_2 - \dim U_1 \cap U_2 + \dim U_3 -
+\dim ((U_1 + U_2) \cap U_3) = $$
+here we get a little problem because we don't know how to reduce
+$(U_1 + U_2) \cap U_3$ to some managable pieces. After this discovery
+one might even glance over
+the equation once again in order to try to disprove the theorem.
+And indeed we've found a counterexample: suppose that $U_1, U_2, U_3$ are
+lines through the origin in $R^3$ such that they are located on the same
+plane. Then it follows that left-hand side becomes 2, and the right side is
+equal to 3. Thus we've got a contradiction (which is a shame, because
+the formula looks nice :( ).
+
+\chapter{Linear maps}
+
+\section{The Vector Space of Linear Maps}
 
 \end{document}

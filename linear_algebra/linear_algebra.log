@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  27 DEC 2022 03:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.6)  27 DEC 2022 19:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -296,14 +296,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...umberline {1.3.17}}{14}{subsection.1.3.17}
+l.36 ...umberline {1.3.17}}{15}{subsection.1.3.17}
                                                   % [1
 
-])
+] [2])
 \tf@toc=\write4
 \openout4 = `linear_algebra.toc'.
 
- [2] [3
+ [3] [4
 
 ]
 Chapter 1.
@@ -336,7 +336,7 @@ Overfull \hbox (40.39546pt too wide) detected at line 46
 \OT1/cmr/m/n/10 ([])[] = [] = [] = [] =
  []
 
-[4
+[5
 
 ]
 Overfull \hbox (3.87253pt too wide) detected at line 81
@@ -364,15 +364,15 @@ n/10 + \OML/cmm/m/it/10 b[]i\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 ^^L\OT1/cmr/
 m/n/10 )\OML/cmm/m/it/10 ^^U
  []
 
-[5] [6] [7] [8] [9] [10] [11] [12] [13]
+[6] [7] [8] [9] [10] [11] [12] [13] [14]
 
 LaTeX Warning: Command \i invalid in math mode on input line 532.
 
-[14] [15] [16] [17]
+[15] [16] [17] [18]
 Chapter 2.
-[18
+[19
 
-] [19] [20]
+] [20] [21]
 Overfull \hbox (15.98758pt too wide) detected at line 835
 [] [] \OT1/cmr/m/n/10 = [] [] = [] [] + [] [] = \OML/cmm/m/it/10 w [] [] \OT1/c
 mr/m/n/10 + [] [] = 0
@@ -386,18 +386,33 @@ m/it/10 w \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 V$\OT1/cmr/m/it/10 . Show that $\
 OML/cmm/m/it/10 v[]; :::; v[]; w$
  []
 
-[21] [22] [23] (./linear_algebra.aux)
+[22] [23] [24] [25] [26] [27]
+Overfull \hbox (28.54492pt too wide) detected at line 1122
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[] 
+\OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) = []((\OML/cmm/m/it/10 
+U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 
+U[]\OT1/cmr/m/n/10 ) = [](\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/
+10 U[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 U[] \OMS/cmsy/m/n/10 ^^@ []\OT1/c
+mr/m/n/10 ((\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr
+/m/n/10 ) \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) =
+ []
+
+[28]
+Chapter 3.
+[29
+
+] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 65B92AE9C6DFB21D46A1152B89490EE4;4413.
+(rerunfilecheck)             Checksum: 8ADA4C0874F71DC1E5B4933EAA76E506;5342.
  ) 
 Here is how much of TeX's memory you used:
- 8668 strings out of 478268
- 133816 string characters out of 5846347
- 425645 words of memory out of 5000000
- 26698 multiletter control sequences out of 15000+600000
+ 8700 strings out of 478268
+ 134292 string characters out of 5846347
+ 429644 words of memory out of 5000000
+ 26711 multiletter control sequences out of 15000+600000
  482055 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,9n,63p,259b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,9n,63p,276b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -414,10 +429,10 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (24 pages, 246098 bytes).
+Output written on linear_algebra.pdf (30 pages, 260073 bytes).
 PDF statistics:
- 559 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 95 named destinations out of 1000 (max. 500000)
- 553 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 654 PDF objects out of 1000 (max. 8388607)
+ 584 compressed objects within 6 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 657 words of extra memory for PDF output out of 10000 (max. 10000000)
 
