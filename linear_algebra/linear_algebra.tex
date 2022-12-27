@@ -700,5 +700,263 @@ therefore we've got a direct sum, as desired.
 
 \chapter{Finite-Dimentional Vector Spaces}
 
+\section{Span and Linear Independence}
+
+\subsection{}
+\textit{Suppose $v_1, v_2, v_3, v_4$ spans $V$. Prove that the list }
+$$v_1 - v_2, v_2 - v_3, v_3 - v_4, v4$$
+\textit{also spans $V$.}
+
+Let $v \in V$ be represented as
+$$v = a_1 v_1 + a_2 v_2 + a_3 v_3 + a_4 v_4$$
+
+then we can follow that
+$$v = a_1 (v_1 - v_2) + (a_2 + a_1) (v_2 - v_3)+ (a_3 + a_2 + a_1) (v_3 - v_4) + (a_1 + a_2 + a_3 + a_4) v_4$$
+therefore any $v \in V$ can be represented using given list, therefore
+given list spans $V$, as desired.
+
+\subsection{}
+\textit{Verify the assertion in Example 2.18}
+
+Suppose that $v \in V$. Then it follows from some exercise in previous
+chapter that $a_1 v = 0$ iff $a_1 = 0$ or $v = 0$. Thus if $v \neq 0$ we
+can follow that the only way to represent zero is to set $a_1$ to 0. Thus
+list is linearly independent.
+
+
+Suppose that we've got linearly independent list of two vectors. We therefore
+can follow that the only way to represent 0 is to set
+$a_1 = 0$ and $a_2 = 0$. Thus vectors are not a scalar multiples of each other.
+In other directon we've got a trivial case.
+
+For the list
+$$v_1 = (1, 0, 0, 0), v_2 = (0, 1, 0, 0), v_3 = (0, 0 1, 0)$$
+we've got that
+$$v = a_1 v_1 + a_2 v_2 + a_3 v_3 = (a_1, a_2, a_3, 0)$$
+therefore the only way to represent zero is to set all of a's into 0.
+
+Same case applies for the last one.
+
+\subsection{}
+\textit{Find a number $t$ such that}
+$$(3, 1, 4), (2, -3, 5), (5, 9, t)$$
+\textit{is not linearly inependent in $R^3$}
+
+The only way that this list is not linearly independent is if 
+we can represent last vector as a linear combiination of the other two. Thus
+$$
+\begin{cases}
+  3 a_1 + 2 a_2 = 5
+  1 a_1 - 3 a_2 = 9
+\end{cases}
+$$
+$$
+\begin{cases}
+  3 a_1 + 2 a_2 = 5
+  a_1= 9 +  3 a_2
+\end{cases}
+$$
+$$   3 (9 +  3 a_3) + 2 a_2 = 5 $$
+$$   27 +  9 a_2 + 2 a_2 = 5 $$
+$$ 11 a_2= -22$$
+$$ a_2 = -2$$
+thus
+$$a_1 = 3$$
+therefore
+$$3 * 4 - 5 * 2 = t$$
+$$t = 2$$
+
+\subsection{}
+\textit{Verify the assertion in the second bullet point in Example 2.20}
+
+$c = 8$ is the only solution such that third vector is a
+scalar multipe of first vector plus scalal multiple of second. Thus we
+can follow that the last vector is not in the span of first two, therefore
+the list is linearly independent.
+
+\subsection{}
+\textit{(a) Show that if we think of $C$ as a vector space over $R$, then the
+  list $(1 + i, 1 - i)$ is linearly independent.}
+
+$$(1 + i  + 1 - i)/2 = 1$$
+$$(1 + i - 1 + i)/2 = i$$
+thus the only way to represent $0$ is to set all of a's to zero
+
+\textit{(b) Show that if we think of $C$ as a vector space over $C$, then
+  the list $(1 + i, 1 - i)$ is linearly dependent}
+
+List $(1)$ spans $C$, and its length is less that
+the length of given set. THus given set is linearly dependent.
+
+
+\subsection{}
+\textit{Suppose $v_1, v_2, v_3, v_4$ is linearly independent.
+  Prove that the list }
+$$v_1 - v_2, v_2 - v_3, v_3 - v_4, v4$$
+\textit{is also linearly independent.}
+
+As we've shown before, spans of two sets are equal, therefore the only
+way to represent $0$ is to put all a's to 0.
+
+
+
+\subsection{}
+\textit{Prove or give counterexample: If $v_1, v_2, ... v_m$ is a linearly
+  independent list of vectors in $V$, then}
+$$5v_1 - 4v_2, v_2, v_3, ... v_m$$
+\textit{is linearly independent}
+
+Both sets span the same space and have the same length, therefore they are
+both linearly independent.
+
+\subsection{}
+
+Trivial, equivalent to previous
+
+\subsection{}
+\textit{Prove or give counterexample: If $v_1, ... v_m$ and $w_1, ..., w_m$ are
+  linearly independent lists of vectors in $V$, then
+  $v_1 + w_1, ..., v_m + w_m$ is linearly independent.}
+
+False: set $w_1 = - v_1$ and get the desired result.
+
+\subsection{}
+\textit{Suppose $v_1, ..., v_m$ is linearly independent in $V$ and $w \in V$.
+  Prove that if $v_1 + w, v_2 + w, ... v_m + w$ is linearly dependent,
+  then $w \in span(v_1, v_2, ... v_m)$.}
+
+Suppose that resulting list is linearly dependent. It follows that there
+exists a way to represent 
+$$\sum_{n = 1}^m{a_n (v_n + w)} = 0$$
+such that not all a's are zeroes. Thus
+$$\sum_{n = 1}^m{a_n (v_1 + w)} = \sum_{n = 1}^m{(a_n w + a_n v_n)} =
+\sum_{n = 1}^m{a_n w} + \sum_{n = 1}^m{a_n v_n} =
+w \sum_{n = 1}^m{a_n} + \sum_{n = 1}^m{a_n v_n} = 0
+$$
+$$- w \sum_{n = 1}^m{a_n} =  \sum_{n = 1}^m{a_n v_n}$$
+$\sum_{n = 1}^m{a_n} \neq 0$, because otherwise left side is zero and
+therefore right side is zero, which is not assumed.
+$$w  =  \sum_{n = 1}^m{ - \frac{a_n}{\sum_{j = 1}^m{a_j}} v_n}$$
+thus $w \in span(v_1, v_2, ... v_m)$, as desired.
+
+
+\subsection{}
+\textit{Suppose $v_1, ..., v_m$ is linearly independent in $V$ and $w \in V$.
+  Show that $v_1, ..., v_m, w$ is linearly independent if and only if }
+$$w \notin span(v_1, ..., v_m)$$
+
+Because otherwise we've got a bigger linearly independent list, that spans
+$V$.
+
+\subsection{}
+\textit{Explain why there does not exist a list of six polinomials that is
+  linearly independent of $\mathcal{P_4}(F)$.}
+
+Because the list of length 5 spans this space.
+
+\subsection{}
+\textit{Explain why no list of four polynomials spans $\mathcal{P_4}(F)$.}
+
+Because the list of length 5 spans this space.
+
+\subsection{}
+\textit{Prove that $V$ is infinite-dimentional if and only if there is a
+  sequence $v_1, v_2, ... $ of vectors in $V$ such that $v_1, ... v_m$ is
+  linearly independent for every possible integer $m$.}
+
+Forward is coming from the fact that we can always add new vectors
+to a given linearly independent list of vectors, that are outside of span
+of given list.
+
+Because there always exists list that is bigger than
+given list and is linearly independent in $V$ we can follow that
+no final list of vectors spans $V$, therefore it is infinite-dimentional.
+
+
+\subsection{}
+\textit{Prove that $F^{\infty}$ is infinite-dimentional.}
+
+Infinite list
+$$(1, 0, ....), (0, 1, 0, ...), .... $$
+is all linearly indepenent, therefore no finite set spans the space.
+
+
+\subsection{}
+\textit{PRove that the real vector space of all continous real-valued
+  functions on the interval $[0, 1]$ is infinite-dimentional.}
+
+We can create a countable sequence $(r_1, r_2, ... )$ of rationals in this
+space, and correspod each one of them with some number, thus creating a
+infinite linearly inedependent list.
+
+\subsection{}
+
+\textit{Suppose $p_0, p_1, ... p_n$ are
+  polynomials in $\mathcal{P_m}(F)$ such that
+  $p_j(2) = 0$ for each $j$. Prove tat $p_0, p_1, ... p_m$ is not linearly
+  independent in $\mathcal{P_m}(F)$.}
+
+Because it has the same length as $1, x, x^2 ... $, but doesn't span the same
+space.
+
+\section{Bases}
+
+There are no challenging exercises in this section, just a recap of
+the material. Looked them over, brushed up the material, not gonna waste
+my time writing them down.
+
+\section{Dimention}
+
+\subsection{}
+\textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$ such
+  that $\dim U = \dim V$. Prove that $U = V$}
+
+They have the same length of basis, thus basis of $U$ is a basis of $V$.
+
+\subsection{}
+\textit{Show that the subspaces of $R^2$ are precisely $\{0\}, R^2$ and all
+  lines through the origin}
+
+For 0 dimention we've got null
+
+For dimention 1 we've got scalar multiple of any vector, which are lines
+through the origin
+
+For dimention 2 we've got the space itself
+
+\subsection{}
+\textit{Show that the subspaces of $R^3$ are precisely $\{0\}, R^3$, all
+  lines through the origin, and all planes through the origin}
+
+Same idea as in previos exericise, but list of length 2 defines a plane
+through the origin and 3 defined space itself
+
+\subsection{}
+\textit{(a) Let $U = \{p \in P_4(F): p(6) = 0$. Find a basis of $U$.}
+
+$$(x - 6), (x - 6)^2, (x - 6)^3, (x - 6)^4$$
+
+\textit{(b) Extend the basis in part (a) to a basis of $P_4(F)$}
+
+$$1, (x - 6), (x - 6)^2, (x - 6)^3, (x - 6)^4$$
+
+\textit{Find a subspace $W$ of $P_4(F)$ such that $P_4(F) = U \oplus W$}
+
+$$\{c: c \in F\}$$
+
+\subsection{}
+\subsection{}
+\textit{(a) Let $U = \{p \in P_4(F): p''(6) = 0$. Find a basis of $U$.}
+
+$$1, (x - 6), (x - 6)^3, (x - 6)^4$$
+
+\textit{(b) Extend the basis in part (a) to a basis of $P_4(F)$}
+
+$$1, (x - 6), (x - 6)^2, (x - 6)^3, (x - 6)^4$$
+
+\textit{Find a subspace $W$ of $P_4(F)$ such that $P_4(F) = U \oplus W$}
+
+$$ (x - 6)^2$$
+
 
 \end{document}

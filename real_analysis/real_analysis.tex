@@ -11625,7 +11625,29 @@ Let
 $$G(x) = \int_a^x{g(t)}$$
 from continuity of $g$ we get that
 $$G'(x) = g(x)$$
+by properties of integral we've got that
+$$G(a) = $$
+and also that
+$$G(b) = \int_a^x{g(t)}$$
+thus by MVT there exists a point $c \in (a, b)$ such that 
+$$G'(c) = \frac{\int_a^b{g(t)} - 0}{b - a}$$
+therefore
+$$g(c) = \frac{\int_a^b{g(t)}}{b - a}$$
+$$g(c) = \frac{1}{b - a}\int_a^b{g(t)}$$
+as desired.
 
-TODO
+\subsection*{7.5.8}
+\textit{Given a function $f$ on $[a, b]$, define the total variation of $f$ to
+  be}
+$$Vf = \sup\left\{\sum_{k = 1}^n{|f(x_k) - f(x_{k - 1})|}\right\}$$
+\textit{where the supremum is taken over all partitions $P$ of $[a, b]$.}
+
+\textit{(a) If $f$ is continously differentiable ($f'$ exists as a continous
+  function), use FTC to show $Vf \leq \int_a^b{|f'|}$}
+
+Suppose that $f$ is continously differentiable. Because of this we can follow
+that $f'$ is continous and therefore $|f'|$ is continous as well. Thus
+we can state that for any given partition
+$$\int_{x_{k - 1}}^{x_k}{f'(x)} = f(x_{k - 1}) - f(x_k)$$
 
 \end{document}
