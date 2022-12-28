@@ -11806,6 +11806,39 @@ as  desired.
 We can state that content zero implies measure zero, thus we can state that
 $C$ has measure zero, as desired.
 
+\subsection*{7.6.5}
+\textit{Show that if two sets $A$ and $B$ each have measure zero, then
+  $A \cup B$ has measure zero as well. In addition, discuss the proof of the
+  stronger statement that the countable union of sets of measure zero also has
+  measure zero. (This second statement is true, but a completely rigorous
+  proof requires a result abount double summations discussed in Section 2.8)}
+
+
+For any intervals $O_n = (a, b)$ and $P_m = (c, d)$ we've got that
+$$|O_n| + |P_m| = |a + b| + |c + d|$$
+if $O_n \cup P_m \neq \{0\}$ it follows that $b > c$ and thus we can conclude
+that
+$$|O_n \cup P_m| \leq |O_n| + |P_m|$$
+thus if we've got
+$$\sum O_n < \epsilon/2$$
+$$\sum P_n < \epsilon/2$$
+$$\sum |O_n \cup P_n| \leq  \sum|O_n| + \sum|P_m|$$
+thus we can follow that for two sets of measure zero  $A$ and $B$ we've got
+that
+$$A \cup B \subseteq \cup_{n = 1}^\infty{O_n \cup P_n}$$
+and
+$$\sum |O_n \cup P_n| \leq  \sum|O_n| + \sum|P_m| < \epsilon$$
+thus $A \cup B$ is measure zero
+
+In order to see that countable union of sets of measure zero we need to observe
+that every
+$$ \sum_{m = 1}^\infty{ \sum_{n = 1}^\infty{O_{m_n}}}$$
+we can set $\sum_{n = 1}^\infty{O_m} = \epsilon / 2^m$. Also $|O_n| \geq 0$
+therefore the sum
+is  absolutely convergent, therefore the double infinite sum is convergent.
+Thus we can set that countable union of sets of measure zero is measure zero,
+as desired.
+
 
 
 \end{document}
