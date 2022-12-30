@@ -27,6 +27,8 @@ any reason, then you are free to do so.
 
 \chapter{Real Numbers}
 
+\section{Intro}
+
 \section{Some preliminaries}
 \subsection*{1.2.1}
 \textit{(a) Prove that $\sqrt{3}$ is irrational. Does a simular argument work
@@ -1840,6 +1842,8 @@ adding $2n - 1$ to the set, if the n'th position is 1. Therefore, for
 different by al least two numbers, and therefore not a subset of each other.
 
 \chapter{Sequences and Series}
+
+\section{Intro}
 
 \section{Limit of a Sequence}
 
@@ -4237,6 +4241,8 @@ as desired.
 
 \chapter{Basic Topology of R}
 
+\section{Intro}
+
 \section{Opec and closed sets}
 
 \subsection*{3.2.1}
@@ -5540,6 +5546,8 @@ countable union of closed sets, where each of those sets contain no nonempty
 open intervals, which is a contradiction.
 
 \chapter{Functional Limits and Continuity}
+
+\section{Intro}
 
 \section{Functional Limits}
 
@@ -7811,6 +7819,8 @@ as desired.
 
 \chapter{The Derivative}
 
+\section{Intro}
+
 \section{Derivatives and IVP}
 
 \subsection*{5.2.1}
@@ -8852,6 +8862,8 @@ $$\frac{g(y_m) - g(x)}{y_m - x} < g'_m(x) < \frac{g(x_m) - g(x)}{x_m - x}$$
     I looked up answers, and I'm not going to repeat them here.}}
 
 \chapter{Sequences and Series of Functions}
+
+\section{Intro}
 
 \section{Uniform Convergence}
 
@@ -10758,6 +10770,8 @@ TODO
 
 \chapter{The Riemann Integral}
 
+\section{Intro}
+
 \section{The Definition of the Riemann Integral}
 
 \subsection*{7.2.1}
@@ -11838,6 +11852,297 @@ therefore the sum
 is  absolutely convergent, therefore the double infinite sum is convergent.
 Thus we can set that countable union of sets of measure zero is measure zero,
 as desired.
+
+\subsection*{7.6.6}
+Repeat of 4.6.8
+
+\subsection*{7.6.7}
+Repeat of 4.6.9
+
+\subsection*{7.6.8}
+Repeat of 4.6.7
+
+\subsection*{7.6.9}
+\textit{By imitating the proof of Theorem 4.4.8 show that if, for some fixed
+  $\alpha > 0$, f is $\alpha$-continous at every point on some compact set $K$,
+  then $f$ is uniformly $\alpha$-continous on $K$. By uniformly
+  $\alpha$-continous, we mean that there exists $\delta > 0$ such that
+  whenever  $x$ and $y$ are points in $K$ satisfying
+  $|x - y| < \delta$, it follows that $|f(x) - f(y)| < \alpha$.}
+
+
+Suppose that $f$ is $\alpha$-continous on $K$.
+
+We are going to proceed by contradiction with this one. Suppose that
+$f$ is not uniformly continous on $K$. Then it follows that for every
+$\delta > 0$  there exists $x \in K$ such that
+$$|x - y| < \delta \to |f(x) - f(y)| \geq \alpha$$
+
+Let us set $\delta_n = 1/n$. We can follow that for every such $\delta_n$
+there exists $x_n \in K$ such that
+$$|x_n - y| < \delta_n \to |f(x) - f(y)| \geq \alpha$$
+Thus by doing so we get a sequence $(x_n) \in K$. Given that this is a
+sequence in a compact set $K$ we can follow that there exists subsequence
+$(x_{n_k})$ that converges to some limit in $K$. Let us thus state that
+$(x_{n_k}) \to x \in K$. Thus we can follow that for this $x$ and
+any $\delta > 0$  there exists $y \in K$ such that 
+$$|x - y| < \delta \text{ and } |f(x) - f(y)| \geq \alpha$$
+. Thus we can follow that function is not
+$\alpha$-continous at $x$. But that is a contradiction.
+
+Thus we can state that given $\alpha$-continous  $f$, that is defined on $K$ -
+compact set we can follow that $f$ is uniformly $\alpha$-continous at $K$, as
+desired.
+
+\subsection*{7.6.10}
+
+Partial repeat of 3.3.8
+
+\subsection*{7.6.11}
+\textit{Show that there exists a finite collection of disjoint open invervals
+  $\{G_1, G_2, ..., G_N\}$ whose union contains $D_\alpha$ and that satisfies}
+$$\sum_{n = 1}^N{|G_n|} < \frac{\epsilon}{4M}$$
+
+Given that $D_\alpha \subseteq D$ we can follow that it is measure zero. Thus
+we can follow that there exists countable collection $G_1, G_2, ... $ such that
+$$D_\alpha \subseteq D \subseteq \cup_{n = 1}^\infty{G_n} $$
+Given that $D_\alpha$ is closed and a subset of $[-M, M]$ we can follow that
+it is bounded and therefore compact. Thus $\cup_{n = 1}^\infty{G_n} $
+constitutes an open cover for $D_\alpha$. Thus we can follow that there exists
+a finite subcover $G_1', G_2', ... G_N'$ such that
+$$D_\alpha \subseteq  \cup_{j = 1}^N{G_j}$$
+and given that $G_1, ... G_N$ is a subcover of collection of sets, sum of which
+converges to zero we can follow that by setting particular open cover,
+from which
+we construct finite subcover to be less than desired number we can get that
+$$\sum_{j = 1}^N{G_j'} \leq \sum_{j = 1}^\infty{G_j} <
+\frac{\epsilon}{4M}$$ 
+as desired.
+
+\subsection*{7.6.12}
+\textit{Let $K$ be what remains of the interval $[a, b]$ arter open intervals
+  $G_n$ are all removed; that is, $K = [a, b] \setminus \cup_{n = 1}^N G_n$.
+  Argue that $f$ is uniformly $\alpha$-continous on $K$.}
+
+Given that we've removed all sections where $f$ is not $\alpha$-continous we
+can state that $f$ is $\alpha$-continous on $K$. Given that $K$ is
+compact we can follow that it is uniformly $\alpha$-continous on $K$.
+
+\subsection*{7.6.13}
+\textit{Finish the proof in this direction by explaining how to construct a
+  partition $P_\epsilon$ of $[a, b]$ such that
+  $U(f, P_\epsilon)  - L_(f, P_\epsilon) \leq \epsilon$. It will be helpful
+  to break the sum }
+$$U(f, P_\epsilon) - L(f, P_\epsilon) =
+\sum_{k = 1}^n(M_k - m_k)\Delta x_k$$
+\textit{into two parts, one over those subintervals that contain points
+  $D_\alpha$ and the other over subintervals that do not.}
+
+Here we need to create a partition such that
+$$U(f, P_\epsilon) - L(f, P_\epsilon) = \sum_{k = 1}^n(M_k - m_k)\Delta x_k =
+\sum_{k = 1}^{n_1}(M_k - m_k)\Delta x_k
++ \sum_{k = n_1 + 1}^n(M_k - m_k)\Delta x_k$$
+where each $\Delta x_k$ for $k \in \{1, ... n_1\}$ represents the set
+$\{G_1, G_2, ..., G_N\}$, for which it follows that
+$$\sum_{k = 1}^{n_1}(M_k - m_k)\Delta x_k
+= \frac{\epsilon}{4M} 2M = \frac{\epsilon}{2}$$
+for the sectond sum we can create a partiition, where each partition will
+be less that $\delta$ in length, and for which it will follow by
+uniform $\alpha$-continuity that
+$$\sum_{k = n_1 + 1}^n(M_k - m_k)\Delta x_k \leq 
+\sum_{k = n_1 + 1}^n \alpha \Delta x_k =
+\alpha \sum_{k = n_1 + 1}^n  \Delta x_k <
+\alpha  (b - a) = \frac{\epsilon}{2(b - a)}(b - a) =
+\epsilon/2$$
+and thus we can state that
+$$U(f, P_\epsilon) - L(f, P_\epsilon) = 
+\sum_{k = 1}^{n_1}(M_k - m_k)\Delta x_k
++ \sum_{k = n_1 + 1}^n(M_k - m_k)\Delta x_k <
+\epsilon/2 + \epsilon/2 = \epsilon$$
+thus we can follow that $f$ is Riemann-integrable, as desired.
+
+
+\subsection*{7.6.14}
+
+\textit{(a) Use the subintervals of the partition $P_\epsilon$ to prove that
+  $D_\alpha$ has measure zero. Point out that it is possible to choose a cover
+  for $D_\alpha$ that consists of a finite number of open intervals (Sets for
+  which this is possible are sometimes called content zero. See Exercise 7.3.6)
+}
+
+$$U(f, P_\epsilon) - L(f, P_\epsilon) < \alpha \epsilon$$
+$$\sum_{k = 1}^n{(M_k - m_k) \Delta x_k} < \alpha \epsilon$$
+
+Function $f$ is not $\alpha$-continous on $D_\alpha$, which implies that
+for every $\delta > 0$ and any $x \in D_\alpha$ we get that there
+exist 
+$$ y, z \in V_\delta(x) \text{ and } |f(y) - f(z)| \geq \alpha$$
+thus we can follow that for every $P \in \mathcal P$ such that
+$$D_\alpha \cap P \neq \emptyset \to |M_k - m_k| \geq \alpha \to
+M_k - m_k \geq \alpha$$
+by the virtue of the fact thtat $\sup A \geq \inf A$ for any set $A$.
+Thus we can also state that
+$$D_\alpha \cap P = \emptyset \to |M_k - m_k| < \alpha \to
+M_k - m_k < \alpha$$
+
+Thus if we divide the initial inequality we get
+$$\sum_{P \cap D \neq \emptyset}{(M_k - m_k) \Delta x_k} +
+\sum_{P \cap D = \emptyset}{(M_k - m_k) \Delta x_k}
+< \alpha \epsilon$$
+We know that
+$$\sup A \geq \inf A \to \sup A - \inf A \geq 0 \to M_k - m_k \geq 0$$
+thus
+$$\sum_{P \cap D \neq \emptyset}{(M_k - m_k) \Delta x_k}  < \sum_{P \cap D \neq \emptyset}{(M_k - m_k) \Delta x_k} +
+\sum_{P \cap D = \emptyset}{(M_k - m_k) \Delta x_k}
+< \alpha \epsilon$$
+$$\sum_{P \cap D \neq \emptyset}{(M_k - m_k) \Delta x_k}
+< \alpha \epsilon$$
+$$
+\sum_{P \cap D \neq \emptyset}{\alpha \Delta x_k}
+\leq \sum_{P \cap D \neq \emptyset}{(M_k - m_k) \Delta x_k}
+< \alpha \epsilon$$
+$$
+\sum_{P \cap D \neq \emptyset}{\alpha \Delta x_k}
+< \alpha \epsilon$$
+$$
+\alpha \sum_{P \cap D \neq \emptyset}{ \Delta x_k}
+< \alpha \epsilon$$
+$$ \sum_{P \cap D \neq \emptyset}{ \Delta x_k} <  \epsilon$$
+Given that any $\Delta x_k$ constitutes a closed interval, that contains
+$D_\alpha$ we can set open interval $G_k$ which will be produced from each
+$\Delta x_k$ such that
+$$ \sum_{k = 1}^n{ |G_k|} <  \epsilon$$
+Thus $G_k$ is finite and measure zero.
+Also if we have some $x \in D_k$ being the endpoints of some $\Delta x_k$, then
+it follows by finality of $P$ that there are only a finite number of them.
+Thus we can remedy this little missunderstanding by creating another
+measure zero set just for the endpoints and setting the finite open subcover
+to be the union of two collection, which will be also measure zero and also
+finite.
+
+\textit{(b) Show how this implies that $D$ has measure zero.}
+
+We've used here somewhere the fact that content zero imlies measure zero
+without any proof, but let's do it more rigorously. If we have some finite
+collection of subsets, then we can create countable collection by just
+repeating the same sets and resucing their lengths by the measure of $2^n$ and
+adding them into the collection. Union of sets will be the same, and measures
+will converge to some number, which will be some constant multiple of
+original $\epsilon$. Thus we can follow that content zero implies
+measure zero.
+
+
+\subsection*{7.6.15}
+
+\textit{(a) Find $g'(0)$.}
+
+$$
+g(x) =
+\begin{cases}
+  x^2 sin(1/x) \text{ if } x > 0 \\
+  0 \text{ if } x \leq 0
+\end{cases}
+$$
+
+By the definition of differentiation
+$$g'(0) = \lim \frac{f(c) - f(0)}{c - 0}$$
+if we set $c < 0$ then
+$$g'(0) = \lim \frac{f(c) - f(0)}{c - 0} = \lim \frac{0 - 0}{c - 0} = 0$$
+otherwise if $c > 0$ we get
+$$g'(0) = \lim {\frac{f(c) - f(0)}{c - 0}} =
+\lim {\frac{c^2 \sin (1/c)}{c}} = \lim {c \sin (1/c)} = 0$$
+thus we get that
+$$g'(0) = 0$$
+as desired.
+
+\textit{(b) Use the standard rules of differentiation to compute $g'(x)$ for
+  $x \neq 0$.}
+
+$$g'(x) = 2x \sin(1/x) - x^2 \sin(1/x) \frac{1}{x^2} =
+2x \sin(1/x) - \cos(1/x) $$
+for $x > 0$ and $g'(x) = 0$ for $x < 0$.
+
+\textit{(c) Explain why, for every $\delta > 0$, $g'(x)$ attains every value
+  between $1$ and $-1$ as $x$ ranges over the set $(-\delta, \delta)$. Conclude
+  that $g'$ is not continous at $x = 0$.}
+
+This happens because of the $\cos(1/x)$ term of the sum. Thus we can follow
+that we can create two sequences of $x$ to $0$, such that the resulting
+function will not be continous at $0$.
+
+\subsection*{7.6.16}
+
+\textit{(a) If $c \in C$, what is $\lim_{n \to \infty} f_n(c)$?}
+
+For every $c \in C$ and any $n \in N$ we've got that $f_n(c) = 0$, therefore
+$f(c) = 0$ for $f = \lim f_n$.
+
+\textit{(b) Why does $\lim_{n \to \infty}{f_n(x)}$ exists for
+  $x \notin C$?}
+
+% \textit{Now, set}
+% $$f(x) = \lim_{n \to \infty}{f_n(x)}$$
+
+For some $c \neq C$ there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that $c \neq C_n$. Thus, given the fact that
+once we change a function in some point, we don't change its value
+afterwards, 
+$$f_N(c) = f(c)$$
+as desired.
+
+\subsection*{7.6.17}
+
+\textit{(a) Explain why $f'(x)$ exists for all $x \notin C$.}
+
+Given that $[0, 1] \setminus C$ is an open set we can follow that for any
+$x \notin C$ there exists $\delta > 0$ such that $V_\delta \notin C$. Thus,
+for $c \in V_\delta(x)$ it follows that $f'(c)$ exists (because $f'(c)$ does
+not exists only at the endpoints).
+
+\textit{(b) If $c \in C$, argue that $|f(x)| \leq (x - c)^2$ for all
+  $x \in [0, 1]$. Show how this implies $f'(c) = 0$.}
+
+Suppose that $c \in C$ and let $x \in [0, 1]$. If $x \in C$, then
+$$(x - c)^2 \geq 0 = |f(x)|$$
+otherwise we've got that
+$$(x - c)^2 \geq (x - c_1)^2 \sin (1/x)$$
+for some other $c_1 \in C$ (Making concrete proof is difficult due to the
+nature of the function, but it's pretty evident from the presented graph).
+
+From this we can follow by definition of derivative that
+$$\left|\frac{f(x) - f(c)}{x - c}\right| = \left|\frac{f(x)}{x - c}\right|
+\leq |x - c|$$
+thus we can follow that
+$$f'(c) = 0$$
+for $c \in C$.
+
+\textit{(c) Give a careful argument for why $f'(x)$ fails to be continous on
+  $C$. Remember that $C$ contains many points besides the endpoints of the
+  intervals that make up $C_1, C_2, C_3, ... $.}
+
+Because at the endpoints of $C_1$, $C_2$ and $C_n$ in general limit from
+the side where the interval is not in $C_n$ we get that derivative
+aquires every value from $-1$ to $1$. Thus by discossions we had in previous
+exerscise we get that the derivative is not continous, as desired.
+
+\subsection*{7.6.18}
+
+\textit{Why is $f'(x)$ Riemann-integrable on $[0, 1]$?}
+
+Sets of discontinuities of $f'(x)$ is a subset of a Cantor set, and Cantor set
+has measure zero. Thus we can state that $f'(x)$ is Riemann-integrable, as
+desired.
+
+\subsection*{7.6.19}
+\textit{Show that, under these circumstances, the sum of the lengths of
+  the intervals making up each $C_n$ no longer tends to zero as $n \to
+  \infty$. What is this limit?}
+
+$$\sum_{n = 1}^\infty{2^{n - 1}\left(\frac{1}{3^{n + 1}}\right)} =
+\sum_{n = 1}^\infty{\frac{1}{3}2^{n - 1}\left(\frac{1}{3^{n}}\right)} =
+\frac{1}{3} \sum_{n = 1}^\infty{2^{n - 1}\left(\frac{1}{3^{n}}\right)} =
+1/3
+$$ 
 
 
 
