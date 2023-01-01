@@ -12180,7 +12180,245 @@ as desired.
   $M_k(x_k - x_{k - 1})$ that could appear in one of $U(f, P)$ or $U(f, P')$
   but not the other?}
 
+From the definition of $P$ and $P'$ we've got that
+
+$$P' = P \cup P_\epsilon$$
+thus we can follow that the only way that terms $M_k(x_k - x_{k - 1})$ are
+present in one partition and not in the other happens if we split
+$[x_{k - 1}, x_k]$ such that $x_k \in P$ in the middle with some
+$x_k' \in P_\epsilon$. Thus we can follow that by doing so we get 2 intervals
+in $P'$, that don't appear in $P$. Thus, applying the fact that $|P_\epsilon| = n$
+we can steate that there are $2n - 2$ such intervals in $P'$ and $n - 1$ in
+$P$ for the total of $3n - 3$(1 number is  excluded from each set because
+we are taking into account the boundaries of initial interval, that should appear in
+both partitions).
+
+\textit{(b) Finish the proof in this direction by arguing that}
+$$ U(f, P) - U(f, P') < \epsilon / 3$$
+
+Firstly we need to state here that we've set
+$$\delta = \epsilon/9nM$$
+beforehand in the proof. Thus we can state that
+$$\Delta x_k < \epsilon/9nM$$
+for $x_n \in P$. By extension of that we know that $P'$
+is a refinement of $P$, thus the
+same conclusions apply to it as well. Thus we can follow that
+the difference between the two We can also state that
+$$ U(f, P) - U(f, P') < |3(n - 1)M \epsilon/9M| < \frac{\epsilon}{3} $$
+(we didn't take into account the fact that the sum is actually less then that, we
+just took the maximum difference, slapped it under absolute value, and this relatively
+big number still suffices for our purposes).
+
+\subsection*{8.1.4}
+
+\textit{(a) Show that if $f$ is continous, then it is possible to pick tags
+  $\{c_k\}_{k = 1}^n$ so that}
+$$R(f, P) = U(f, P)$$
+\textit{Similarly, there are tags for which $R(f, P) = L(f, P)$ as well.}
+
+Because $[x_{k - 1}, x_k]$ is compact and $f$ is continous we can follow that
+$f$ attains maximum and minimum at this set. Also, for the same reason
+(and I'm not sure that we need to point that out explicitly), it attains its
+supremum and infinum. Thus, 
+given that $c_k$ can be any number in $[x_{k - 1} - x_k]$ we can follow that
+there exists
+$$c_k = \sup [x_{k - 1}, x_k ]$$
+thus making
+$$R(f, P) = \sum \Delta x_k \sup \Delta x_k = U(f, P)$$
+as desired.
+
+Same applies to infinum, so there exists $R(f, P) = L(f, P)$.
+
+\textit{(b) If $f$ is not continous, it may not be possible to find tags for which
+  $R(f, P) = U(f, P)$. Show, however, that given an arbitrary $\epsilon > 0$, it is possible
+  to pick tags for $P$ so that }
+$$U(f, P) - R(f, P) < \epsilon$$
+\textit{The analogous statement holds for lower sums.}
+
+Given that $P$ is finite we can state that there exists a number close enough
+in $[x_{k - 1}, x_k]$ so that
+$$c_k - \sup [x_{k - 1}, x_k] < \epsilon \frac{\Delta x_k}{b - a}$$
+so that we can state that
+$$\sum M_k \Delta x_k - \sum c_k \Delta x_k < \epsilon$$
+as desired.
+
+Same applies to infinums and thus we can state that same logic
+applies to lower sums.
+
+\subsection*{8.1.5}
+
+\textit{Use the results of the previous exercise to finish the proof of
+  Theorem 8.1.2. It may be easier to first argue that $f$ is integrable using the
+  criterion in Theorem 7.2.8 and then argue that $\int_a^b f = A$.}
+
+Suppose that for every $\epsilon > 0$ we've got $\delta > 0$ such that for any partition
+$(P,\{c_k\})$ that is $\delta$-fine, it follows that 
+$$|R(f, P) - A| < \epsilon$$
+
+Thus let $P$ be a partition such that
+$$|R(f, P) - A| < \epsilon/4$$
+thus we can state that there exists particular tags such that 
+$$U(f, P) - R(f, P) < \epsilon/4$$
+and same goes about
+$$R(f, P) - L(f, P) < \epsilon/4$$
+thus we can follow that for this particular partition
+$$U(f, P) - L(f, P) < \epsilon$$
+
+Thus for every $\epsilon > 0$ there exists a partition $P$ such that
+$$U(f, P) - L(f, P) < \epsilon$$
+therefore the function is integrable.
+
+Given that
+$$U(f, P) \geq R(f, P) \geq L(f, P)$$
+we can follow that $R(f, P)$ converges to the same number as $U(f, P)$. Thus
+$$ \int_a^b f = A$$
+as desired.
+
+\subsection*{8.1.6}
+\textit{Consider the interval $[0, 1]$.}
+
+\textit{(a) If $\delta(x) = 1/9$, find a $\delta(x)$-fine tagged partition of $[0, 1]$. Does the
+  choice of tags matter in this case?}
+
+We can set
+$$x_k = \{0, 0.1, 0.2, ..., 0.9, 1\}$$
+
+Choice of tags does not matter given that the function is constant.
+
+\textit{(b) Let}
+$$
+\delta(x) =
+\begin{cases}
+  1/4 \text{ if } x = 0 \\
+  x/3 \text{ if } 0 < x \leq 1
+\end{cases}
+$$
+\textit{Construct a $\delta(x)$-fine tagged partition of $[0, 1]$.}
+
+Let
+$$P = \{0, 1/4, 1/4 + 0.01, ... 1\}$$
+and
+$$c_k = \{0, 1/4, ... \}$$
+it follows from the fact that for $x \in [1/4, 1]$ we can state that 
+$$1/12 < \delta(x) < 1/3$$
+Thus by setting length of each of the intervals to some significantly smaller number we get the
+desired result.
+
+\subsection*{8.1.7}
+\textit{Apply the previous algorithm to each half and then explain why this procedure
+  must eventually terminate after some finite number of steps.}
+
+Firstly, we don't need this algorithm in order to prove this. The only thing that we have
+to see is that a collection of open gauges constitutes an open subcover for $[a, b]$ and
+therefore we can state that it's got to have a finite subcover.
+
+\subsection*{8.1.8}
+\textit{Finish the argument}
+
+$$|R(f, P) - A_1| < \epsilon/2$$
+$$|R(f, P) - A_2| < \epsilon/2$$
+$$|A_2 - R(f, P)| < \epsilon/2$$
+
+$$|A_1 - A_2| < |R(f, P) - A_1| + |A_2 - R(f, P)| < \epsilon$$
+thus $A_1 = A_2$.
+
+\subsection*{8.1.9}
+\textit{Explain why every function that is Riemann-integrable with
+  $\int_a^b f = A$ must also have generalized Riemann integral $A$.}
+
+We can set $\delta(x) = \delta$, where $\delta$ is a constant, which
+we get from the original definition of Riemann integral.
+
+\subsection*{8.1.10}
+\textit{Show that if $(P, \{c_k\}_{k = 1}^n)$ is a $\delta(x)$-fine partition, then
+  $R(f, P) < \epsilon$. Keep in mind that each rational number $r_k$ can show up as a tag
+  in at most two subintervals of $P$.}
+
+Suppose that $(P, \{c_k\}_{k = 1}^n)$ is a $\delta(x)$-fine partition. It follows that
+it has got a finite number of partitions. Therefore we can follow that
+any number in the sum is greater than zero, thus we can state that
+$$0 \geq \sum_{k = 1}^n g(c_k)(x_k - x_{k - 1}) $$
+
+One more thing - if $c_k \in R$ then it is either in $I$ or $Q$. Thus we can follow that
+$$g(c_k) \leq 1$$. Thus
+$$ \sum_{k = 1}^n g(c_k)(x_k - x_{k - 1}) \leq  \sum_{k = 1}^n (x_k - x_{k - 1}) $$
+
+We also can follow from it that the only $x_k - x_{k - 1}$ that are left are the ones,
+for which $x_k - x_{k - 1} =\delta(r_m)$ for some $r_m$ in $Q \cap [0, 1]$. 
+Because each $r_k$ can appear in the sum at maximum two times and because
+$r_k$ is a decreasing sequence we can follow that
+$$\sum_{k = 1}^n (x_k - x_{k - 1}) \leq \sum_{k = 1}^n{2\delta(r_k)} =
+\sum_{k = 1}^n{2 \epsilon/2^{k + 1}} = \sum_{k = 1}^n{\epsilon/2^{k}} =
+\epsilon \sum_{k = 1}^n{2^{k}} =  \epsilon$$
+
+Thus we can follow that
+$$R(f, P) < \epsilon$$
+as desired.
+
+\subsection*{8.1.11}
+\textit{Show that }
+$$F(b) - F(a) = \sum_{k = 1}^n{[F(x_k) - F(x_{k - 1})]}$$
+
+It's a basic telescopic sum, therefore it collapses. But because I feel extra thorough today,
+let us prove that thing more rigorously:
+
+Let $(x_1, x_2, ..., x_n)$ be a finite sequence in $R$ (In this case finite sequence is defined as
+$f: [1, n] \cap N \to R$; we can also probably get away with setting every number before 1 and
+after n to 0, but I feel, that it's got some unexpected consequences)
+
+Then we need to prove that
+$$ \sum x_k - x_{k - 1} = x_n - x_1$$
+
+We are going to do it by induction; Base case (2 elements) is trivial, thus we need to show that
+$$\sum_{k = 1}^{n + 1}{ x_{k} - x_{k - 1}} = \sum_{k = 1}^n{ [x_{k} - x_{k - 1}]} + x_{n + 1} - x_{n} =
+x_n - x_1 + x_{n + 1} - x_n = x_{n + 1} - x_1$$
+as desired.
+
+\subsection*{8.1.12}
+\textit{For each $c \in [a, b]$, explain why there exists a $\delta(c) > 0$ (a $\delta > 0$
+  depending on $c$) such that}
+$$\left|\frac{F(x) - F(c)}{x - c} - f(c)\right| < \epsilon$$
+\textit{for all $0 < |x - c| < \delta(c)$.}
+
+Given that $F'(x) = f$ we've basically got here the definition of the derivative.
 
 
+\subsection*{8.1.13}
+\textit{(a) For a particulat $c_k \in [x_{k - 1}, x_k]$ of $P$, show that }
+$$|F(x_k) - F(c_k) - f(c_k)(x_k - c_k)| < \epsilon (x_k - c_k) $$
+\textit{and}
+$$|F(c_k) - F(x_{k - 1}) - f(c_k)(c_k - x_{k - 1})| < \epsilon (c_k - x_{k - 1}) $$
+
+Given the conclusion of the prevois exercise we get both of those inequalities by
+multiplying by $(c - x_{k - 1})$ and $(x_k - c)$
+
+\textit{(b) Now, argue that }
+$$|F(x) - F(x_{k - 1}) - f(c_k)(x_k - x_{k - 1})| < \epsilon(x_k - x_{k - 1})$$
+\textit{and use this fact to complete the proof of the theorem.}
+
+Essentially we can add two inequalities together in order to get the desired result.
+Thus we can state that
+$$|F(x) - F(x_{k - 1}) - f(c_k)(x_k - x_{k - 1})| < \epsilon(x_k - x_{k - 1})$$
+$$\sum |F(x) - F(x_{k - 1}) - f(c_k)(x_k - x_{k - 1})| < \epsilon(b - a)$$
+thus we get our desired result.
+
+\subsection*{8.1.14}
+
+\textit{(a) Why are we sure that $(F \circ g)'(x)$ has a generalized Riemann integral?}
+
+Because it's a derivative of a function.
+
+\textit{(b) Use the chain rule and Theorem 8.1.9 to prove that }
+$$\int_a^b (f \circ g) * g' = F(g(b)) - F(g(a))$$
+
+$$(F(g(x)))' = F'(g(x)) g'(x)$$
+thus by provided theorem we've got the desired result
+
+
+\textit{(c) Finish the proof by showing that }
+$$\int_{g(a)}^{g(b)}f = F(g(b)) - F(g(a))$$
+
+$$F' = f$$
+thus for the points $g(a)$ and $g(b)$ we've got the desired result by 8.1.9
 
 \end{document}
