@@ -47,3 +47,4 @@
 \contentsline {section}{\numberline {7.6}Lebesgue's Criterion for Riemann Integrability}{252}{section.7.6}%
 \contentsline {chapter}{\numberline {8}Additional Topics}{261}{chapter.8}%
 \contentsline {section}{\numberline {8.1}The Generalized Riemann Integral}{261}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Metric Spaces and the Baire Category Theorem}{268}{section.8.2}%

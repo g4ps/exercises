@@ -12421,4 +12421,300 @@ $$\int_{g(a)}^{g(b)}f = F(g(b)) - F(g(a))$$
 $$F' = f$$
 thus for the points $g(a)$ and $g(b)$ we've got the desired result by 8.1.9
 
+\section{Metric Spaces and the Baire Category Theorem}
+
+\subsection*{8.2.1}
+\textit{Decide which of the following are metrics on $X = R^2$. For each, we let $x = (x_1, x_2)$
+  and $y = (y_1, y_2)$ be points in the plane.}
+
+\textit{(a) $d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2}$} - metric
+
+\textit{(b) $d(x, y) = 1 \text{ if } x \neq y; \text{ and } d(x, x) = 0$} - metric
+
+\textit{(c) $d(x, y) = \max\{|x_1 - y_1|, |x_2 - y_2|\}$} - metric
+
+\textit{(d) $d(x, y) = |x_1 x_2 + y_1 y_2|$} - not a metric: for $x = (0, 1), y = (1, 0)$ we've
+got $d(x, y) = 0$ but $x \neq y$.
+
+\subsection*{8.2.2}
+\textit{Let $C[0, 1]$ be the collection of continous functions on the closed interval $[0, 1]$.
+  Decide which of the following are metrics on $C[0, 1]$. Decide which of the following are
+  metrics on $C[0, 1]$.}
+
+\textit{(a) $d(x, y) = \sup\{|f(x) - g(x)|: x \in [0, 1]\}$.}
+
+Because this functions is defined as the supremum of the absolute value we can follow that
+its range is greater or equal to zero.
+
+Now suppose that $d(x, y) = 0$. It follows that $\sup\{|f(x) - g(x)|: x \in [0, 1]\}  = 0$,
+from which we can follow that for every $x \in [0, 1]$ $|f(x) - g(x)| \leq 0$. Thus,
+given the fact
+$$0 \leq |f(x) - g(x)| \leq 0$$
+we can follow that $f(x) = g(x)$ for all $x \in [0, 1]$. Thus $f = g$. Reverse case is trivial
+thus we can follow that $d(x, y) = 0$ iff $x = y$. Thus the function satisfies (i).
+
+(ii) is true by the virtue of the fact that $|f(x) - g(x)| = |g(x) - f(x)|$.
+
+(iii) follows from the triangle identity. Thus we can state that this function is indeed a metric.
+
+\textit{(b) $d(f, g) = |f(1) - g(1)|$} - not a metric, violates (i) in case $f(x) = x^2$,
+$g(x) = x$.
+
+\textit{(c) $d(f, g) = \int_0^1 |f - g|$.}
+
+We can state that this function is nonnegative because $|f - g|$ is nonnegative. If
+$d(f, g) = 0$ then we can follow that $|f - g| = 0$ and thus (i) is satisfied.
+
+(ii) is satisfied because $|f - g| = |g - f|$ by properties of absolute value function.
+
+And we've got (iii) by triangle inequality.
+
+\subsection*{8.2.3}
+\textit{Verify that the discrete metric is actually a metric}
+
+(i) follows directly from a definition, and so does the (ii). For (iii) we can
+have two cases - $z \in \{x, y\}$ and $z \notin \{x, y\}$, both of which are satisfied. Thus
+discrete metric is a metric.
+
+\subsection*{8.2.4}
+\textit{Show that a convergent sequence is Cauchy}
+
+Suppose that we've got a sequence $(x_n) \to x$. It follows that
+for given $\epsilon > 0$ there exists $N \in \textbf{N}$ such that $n \geq N$ implies that 
+$$d(x_n, x) < \epsilon / 2$$
+thus we can state if $n, m \geq N$ we can also state that
+$$d(x_m, x) < \epsilon / 2$$
+thus we can follow that
+$$d(x_n, x_m) \leq d(x_n, x) + d(x, x_m) < \epsilon$$
+$$d(x_n, x_m)  < \epsilon$$
+Thus the sequence is Cauchy.
+
+\subsection*{8.2.5}
+\textit{(a) Consider $R^2$ with the metric defined in Exercise 8.2.1 (b). What do Cauchy
+sequences look line in this space? Is $R^2$ complete with respect to this metric?}
+
+In this metric space we've got that every Cauchy sequence is a sequence
+of elements such that for some $N \in \textbf{N}$ we've got that $n \geq N$ implies 
+$$x_n = x_N$$
+by the virtue of the fact that we need it to satisfy
+$$d(x_m, x_n) < 0.5 \to d(x_m, x_n) = 0 \to x_m = x_n$$
+
+$R^2$ is complete in this sense, because $x_N \in R^2$ implies that $x$ is in $R^2$ as well.
+
+In fact, I think that if we've got arbitrary nonzero set, then with respect to
+a discrete metric this space is complete.
+
+\textit{(b) Show that $C[0, 1]$ is complete with respect to the metric in Exercise 8.2.2 (a)}
+
+In order to do that we probably need to use some results from the convergence of functions.
+Suppose that $(f_n)$ is Cauchy with repsprect to a given metric. It follows that by
+Cauchy Criterion for Uniform Convegence the sequence uniformly converges to some function.
+Given that all $f_n$'s are continous and the convergence is uniform we can follow that
+the resulting funciton is continous as well. Thus the space is complete, as desired.
+
+\textit{(c) Define $C^1[0,1]$ to be the collection of differentiable functions on $[0, 1]$,
+  whose derivatives are also continous. Is $C^1[0, 1]$ complete with respect to the metric
+  defined in Exercise 8.2.2(a)?}
+
+Once again. the convergence is uniform. But it is uniform only for the functions themselves,
+and not their derivatives. Therefore the sequence of functions
+$$h_n(x) = x^{1 + \frac{1}{2n - 1}}$$
+which converges to non-differentiable $|x|$ might be a way to produce a counterexample.
+We can easily shift this bad boy by 0.5 to the right so that discontinuity in the derivative
+falls into $[0, 1]$.
+$$h_n(x) = (x - 0.5)^{1 + \frac{1}{2n - 1}}$$
+will do. The only thing that is left is to show that this function is convergent uniformly,
+which is evident from the graph. Thus the given metric space is not complete.
+
+\textit{(d) What does a convergent sequence in $R$ look like when we consider the discrete
+  metric $\rho (x, y)$ examined in Exercise 8.2.3}
+
+Same as we've discussed in part (a) - constant after some term.
+
+\subsection*{8.2.6}
+\textit{Which of these functions on $C[0, 1]$ are continous?}
+
+\textit{(a) $g(f) = \int_0^1{f k}$, where $k$ is some fixed function in $C[0, 1]$}
+
+% Let $\epsilon > 0$ and let
+% $$\left | \int_0^1 {g k} - \int_0^1 {f k}\right| < \epsilon$$
+% The idea here is that we can set $g$ and $f$ to be arbitrarely different at some pont, by creating
+% a thin spike at some point, so that the difference between the functions in this point is
+% big, but difference in their integral is small.
+
+% Then we can set
+% $$
+% g(x) =
+% \begin{cases}
+%   a x + b \text{ for } [0, \alpha] \\
+%   f(x)k(x) \text{ for } [\alpha, 1]
+% \end{cases}
+% $$
+% Thus by manipulating coefficients $a$, $b$ and $\alpha$ we can create a thin spike so that
+% difference between the functions at $0$ is great, but the difference in integral is small.
+
+$$|g(f) - g(h)| = \left| \int_0^1 {f k} - \int_0^1{h k}\right| =
+\left| \int_0^1 {f k - h k}\right| = \left| \int_0^1 {k(f - h)}\right| \leq
+$$
+$$ \leq \int_0^1 {|k(f - h)|} = \int_0^1 {|k||[f - h]|} \leq \int_0^1 {|k| \delta } =
+\delta \int_0^1 {|k|}$$
+
+$$\delta \int_0^1 {|k|} < \epsilon$$
+$$\delta  < \frac{\epsilon}{\int_0^1 {|k|}}$$
+
+Thus given $\epsilon > 0$ we can set $\delta = \frac{\epsilon}{\int_0^1 {|k|}}$ and it'll follow
+that
+$$|g(f) - g(h)| < \epsilon$$
+Thus the function is continous.
+
+\textit{(b) $g(f) = f(1/2)$}
+
+$$|g(f) - g(h)| = |f(1/2) - h(1/2)| < \epsilon$$
+
+we can set $\delta = \epsilon$, and it'll follow that
+$$|f(x) - h(x)| < \delta \to |f(1/2) - h(1/2)| < \delta \to |f(1/2) - h(1/2)| < \epsilon$$
+thus the function is continous.
+
+\textit{(c) $g(f) = f(1/2)$, but this time with respect to the metric in Exercise 8.2.2(c)}
+
+Don't think that this particular function is continous then by the virtue of the fact, that
+we can create a massive difference in particular point without affecting the integral too much.
+
+We can create a spike at the point $1/2$ so that the function is continous, difference in
+integtral is small, but difference at 1/2 is massive.
+
+\subsection*{8.2.7}
+\textit{(a) Describe the $\epsilon$-neighborhood in $R^2$ for each of the different metrics
+  described in Exercise 8.2.1. How about the discrete metric?}
+
+Discrete metric is described under part (b), so we just need to describe all the neighborhoods
+in the exercise.
+
+(a) From standard calculus we know, that neighborhood for 
+$$d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 + y_2)^2}$$
+defines a filled circle on a place.
+
+(b) For this one we have the point itself for $\epsilon <= 1$ and the whole plane
+for $\epsilon > 1$.
+
+
+(c) For this one we have a square with the center in the point
+
+(d) is not a metric, so we don't care.
+
+\textit{(b) What do $\epsilon$-neighborhoods in $R$ look loke using the discrete metric
+  $\rho(x, y)$?}
+
+Single point if $\epsilon \leq 1$ and the whole $R$ in case $\epsilon > 1$.
+
+\subsection*{8.2.8}
+\textit{(a) Let $(X, d)$ be a metric space, and pick $x \in X$. Verify that an
+  $\epsilon$-neighborhood $V_\epsilon(x)$ is an open set. Is the set }
+$$C_\epsilon(x) = \{y \in X: d(x, y) \leq \epsilon\}$$
+\textit{a closed set?}
+
+Let $c \in V_\epsilon(x)$ and $d(c, x) = b$. 
+Now it follows that for $\epsilon_1 = \epsilon - (c, x)$ we've got that
+$$j \in V_{\epsilon_1}(c) \to d(j, c) < \epsilon_1 \to d(j, c) < \epsilon - d(c, x) \to
+d(j, c)  - d(c, x)  < \epsilon $$
+$$d(j, x) < \epsilon \to j \in V_\epsilon(x)$$
+Thus
+$$V_{\epsilon_1} \subseteq V_\epsilon(x)$$
+as desired.
+
+Now suppose that $c \in C_\epsilon(x)$. It follows that
+$$d(c, x) \leq \epsilon$$.
+
+We need to show that $C_\epsilon$ contains its limit points. Suppose that $c$ is a limit point
+of $C_\epsilon$. Thus for any $\epsilon_1 > 0$ we've got that
+$$V_{\epsilon_1}(c) \cap C_\epsilon \neq \emptyset$$
+now let
+$$j \in V_{\epsilon_1}(c) \cap C_\epsilon$$
+It follows that $d(j, x) \leq \epsilon$ and $d(j, c) < \epsilon_1$. Thus
+$$d(c, x) \leq \epsilon + \epsilon_1$$
+thus we can follow that for every $\epsilon_1 > 0$
+$$d(c, x) \leq \epsilon + \epsilon_1$$
+Now because $c$ and $\epsilon$ are fixed and the equation is true for any $\epsilon_1 > 0$ we
+can follow that $d(c, x) = \epsilon$. Thus $c \in C_\epsilon$, as desired.
+
+\textit{(b) Show that the set $Y =\{f \in C[0, 1]: ||f||_\infty \leq 1\}$ is closed in $C[0, 1]$.}
+
+Let $g(x) = 0$. It follows that $g(x)$ and $||f||_\infty = ||f(x) - g(x)|| \leq 1$. Thus we can
+follow that
+$$Y = \{f \in C[0, 1]: d(f, g) \leq 1\}$$
+thus we defafult to the prevous exercise.
+
+\textit{(c) Is the set $T = \{f \in C[0, 1]: f(0) = 0\}$ open, closed or neither in $C[0, 1]$?}
+
+For any $\epsilon$-neighborohood of $t$
+we follow that the function $f(x) = t + \epsilon/2$ is in the neighborhood, but
+$f(0) = t(0) + 1/2\epsilon = 1/2\epsilon  \neq 0$. Thus we conclude that $T$ is not open.
+
+Now suppose that $l$ is a limit point of $T$. We can follow that for any $\epsilon > 0$ there
+exists $t \in T$ such thatn
+$$l(0) + t(0) = 0$$
+thus, because $t$ is arbitrary, we can follow that $l(0) = 0$. Thus we can follow that
+$l \in T$ and therefore $T$ is closed.
+
+\subsection*{8.2.9}
+\textit{(a) Supply a definition for bounded subsets of a metric space $(X, d)$.}
+
+A subset $T$ is called bounded if we have $M > 0 \in R$ and $x \in X$ such that for
+every $t \in T$ it  follows  that $d(x, t) \leq M$.
+
+\textit{(b) Show that if $K$ is a compact subset of the metric space $(X, d)$, then $K$
+  is closed and bounded.}
+
+Because every sequence has a convergent subsequence we can follow that for every limit
+point $k$ we can create a sequence of elements $(x_n)$ by setting that $d(k, x_n) < 1/n$
+Thus we can follow that this sequence converges to $k$, thus every subsequence of
+it also converges to $k$. Thus $k \in K$, therefore $K$ is closed.
+
+Suppose that $K$ is not bounded.
+If we take some element $k \in K$ and start creating sequence $(x_n)$ by setting each
+$d(x_n, k) > n$ we create a sequence, that has a convergent subsequence in $K$. But the
+sequence is divergent, and therefore we have a contradiction.
+
+\textit{(c) Show that $Y \subseteq C[0, 1]$ from Exercise 8.2.8 (b) is closed and bounded but
+  not compact.}
+
+We can state that it is closed and bounded by results of the exercise and the text of the
+exercise respectivelly.
+
+As a counterexample we can take a sequence of functions that is not uniformly convergent
+to some function outside of $C$ - such as $f_n = x^n$.
+
+\subsection*{8.2.10}
+\textit{(a) Show that $E$ is closed if and only if $\overline E = E$. Show that $E$ is open if
+  and only if $E^\circ = E$}
+
+If $E$ is closed, then it contains its limit points. Thus $\overline E = E$.
+If $E = \overline E$, then $E$ contains its limit points. Thus $\overline E$ is closed.
+
+If $E$ is open, then $E = E^\circ$ by the definition. By the same definition, if $E^\circ = E$
+is an open set.
+
+\textit{(b) Show that $\overline{E}^c = (E^c)^\circ$, and similarly that
+  $(E^\circ)^c = \overline{E^c}$}
+
+Suppose that $e \in \overline{E}^c$. It follows that $e$ is not a limit point of $E$, and
+thus there exists a neighborhood $V_\epsilon(e)$ such that
+$$V_\epsilon(e) \cap \overline E = \emptyset$$
+thus $\overline{E}^c \subseteq (E^c)^\circ$
+
+Suppose now that $e \in (E^c)^\circ$. Thus we can follow that there exists a neighborhood
+$V_\epsilon(e) \subseteq E^c$. Thus we can follow that $V_\epsilon(e)$ does not contain any
+points from $E$, and it doesn't contain its limit points (because otherwise we would
+have a heighborhood in $V_\epsilon(e)$ around a limit point in the neighborhood, that
+would intersect $E$). Thus
+$$e \in (E^c)^\circ \to e \in \overline{E}^c$$
+or in other words
+$$(E^c)^\circ \subseteq \overline{E}^c$$
+Thus by mutual inclusion we can conclude that
+$$(E^c)^\circ = \overline{E}^c$$
+as desired.
+
+Now suppose that $e \in (E^\circ)^c$. Thus $e \notin (E^\circ)$. Thus TODO
+
+
 \end{document}
