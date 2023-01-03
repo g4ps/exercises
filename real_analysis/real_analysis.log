@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  2 JAN 2023 05:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  3 JAN 2023 11:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -645,13 +645,18 @@ Chapter 8.
 [261
 
 ] [262] [263] [264] [265] [266] [267] [268] [269] [270] [271] [272]
-[273] (./real_analysis.aux)
+[273] [274] [275] [276] [277]
+Overfull \hbox (25.59486pt too wide) detected at line 12906
+\OT1/cmr/m/n/10.95 = [] = [] \OMS/cmsy/m/n/10.95 ^^T
+ []
+
+[278] [279] (./real_analysis.aux)
 Package rerunfilecheck Info: File `real_analysis.out' has not changed.
 (rerunfilecheck)             Checksum: 9439E33691FE66F8E49B59959B619FAD;8294.
  ) 
 Here is how much of TeX's memory you used:
- 9804 strings out of 478238
- 146576 string characters out of 5850455
+ 9817 strings out of 478238
+ 146708 string characters out of 5850455
  453881 words of memory out of 5000000
  27232 multiletter control sequences out of 15000+600000
  482267 words of font info for 74 fonts, out of 8000000 for 9000
@@ -673,10 +678,10 @@ ic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on real_analysis.pdf (274 pages, 973569 bytes).
+Output written on real_analysis.pdf (280 pages, 989022 bytes).
 PDF statistics:
- 2055 PDF objects out of 2073 (max. 8388607)
- 1723 compressed objects within 18 object streams
- 713 named destinations out of 1000 (max. 500000)
+ 2090 PDF objects out of 2487 (max. 8388607)
+ 1752 compressed objects within 18 object streams
+ 726 named destinations out of 1000 (max. 500000)
  401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

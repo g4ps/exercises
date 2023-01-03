@@ -12714,7 +12714,230 @@ Thus by mutual inclusion we can conclude that
 $$(E^c)^\circ = \overline{E}^c$$
 as desired.
 
-Now suppose that $e \in (E^\circ)^c$. Thus $e \notin (E^\circ)$. Thus TODO
+Now suppose that $e \in (E^\circ)^c$. Thus $e \notin (E^\circ)$. Thus we can follow that
+every neighborhood of $e$ intersects $E^c$ at some point, because otherwise it would be
+in $E^\circ$. Thus we can follow that $e$ is a limit point of $E^c$. Thus $e \in \overline{E^c}$.
+Therefore
+$$(E^\circ)^c \subseteq \overline{E^c}$$
 
+And finally suppose that $e \in \overline{E^c}$. We can follow then that every
+neighborhood of $e$ intersects $E^c$ at some point. Thus we can follow that it is not
+in any neighborhood for any point of $E$, otherwise it wouldn't intersect $E^c$ at every
+neighborhood. Thus we can follow that $e \notin E^\circ$. Thus we can follow that
+$$\overline{E^c} \subseteq (E^\circ)^c $$
+thus by double inclusion we've got that
+$$(E^\circ)^c = \overline{E^c}$$
+as desired.
+
+\subsection*{8.2.11}
+\textit{To keep things from sounding too familiar, find an example of a metric
+  (from somewhere in the preceeding discussion) where }
+$$\overline{V_\epsilon(x)} \neq \{y \in X: d(x, y) \leq \epsilon\}$$
+\textit{for some $\epsilon$-neighborhood in a metric space $(X, d)$.}
+
+Suppose that we take a point in some metric space $X$ with discrete metric. Then
+we can follow that
+$$V_1(x) = \{x\}$$
+thus $\overline{V_1(x)} = \{x\}$, but
+$$\{y \in X: d(x, y) \leq \epsilon\} = X$$
+thus we've got the desired result.
+
+\subsection*{8.2.12}
+\textit{If $E$ is a subspace of a metric space $(X, d)$, show that $E$ is nowhere-dense
+  in $X$ if and only if $\overline{E}^c$ is dense in $X$.}
+
+Suppose that $E$ is nowhere-dense in $X$. Then it follows that $\overline{E}^\circ$ is empty.
+Thus $(\overline{E}^\circ)^c = X = \overline{\overline{E}^c}$.
+Therefore $\overline{E}^c$ is dence in $X$ by definition of density, as desired.
+
+
+Suppose that $\overline{E}^c$ is dense in $X$. Then we can follow that
+$\overline{\overline{E}^c} = X = (\overline{E}^\circ)^c$. Thus $\overline{E}^\circ$ is empty.
+Therefore $E$ is nowhere-dense by definition, as desired.
+
+\subsection*{8.2.13}
+\textit{(a) Give the details on why we know there exists a point
+  $x_2 \in V_{\epsilon_1}(x_1) \cap O_2$ and an $\epsilon_2 > 0$ satisfying
+  $\epsilon_2 < \epsilon_1/2$ with $V_{\epsilon_2}(x_2)$ contained in $O_2$ and}
+$$\overline{V_{\epsilon_2}(x_2)} \subseteq V_{\epsilon_1}(x_1)$$
+
+Because $O_2$ is dense in $X$ we can follow that the intersection of $\overline{O_2} = X$ and
+$V_{\epsilon_1}(x_1)$ is $V_{\epsilon_1}(x_1)$. Now let us look at the point
+$y_2 \in V_{\epsilon_1}(x_1)$. Because $\overline{O_2}$ is closed we can follow that
+every neighborhood of $y_2$ intersects $O_2$ at some point. Also because
+$y_2 \in V_{\epsilon_1}(x_1)$ it has a heignborhood $V_\delta(y_2)$, that is contained
+in $V_{\epsilon_1}(x_1)$. Thus we can follow that there exits a point $x_2$, which
+lies on the intersection of $V_\delta(y_2)$ and $O_2$. Thus this point is in both
+$V_{\epsilon_1}(x_1)$ and $O_2$. Because both of those sets are open
+we can follow that  there exists $\delta_1$ and $\delta_2$ such that
+$$V_{\delta_1}(x_2) \subseteq V_{\epsilon_1}(x_1)$$
+$$V_{\delta_2}(x_2) \subseteq O_2$$
+By picking $\delta_n = \min\{\delta_1, \delta_2\}$ we ensure that
+$$V_{\delta_n}(x_2) \subseteq V_{\epsilon_1}(x_1) \cap O_2$$
+
+Thus if we pick some $\epsilon_2$ such that $\epsilon_2 < \delta_n/2$ and
+$\epsilon_2 < \epsilon_1/2$
+we can follow that
+$$\overline{V_{\epsilon_2}(x_2)} \subseteq V_{\delta_n}(x_2) \subseteq V_{\epsilon_1}(x_1) \cap O_2$$
+and $\epsilon_2 < \epsilon_1/2$, as desired.
+
+\textit{(B) Proceed along this line and use the completeness of $(X, d)$ to produce a single
+  point $x \in O_n$ got every $n \in N$.}
+
+We can create a sequence $(y_n)$ such that
+$$y_n \in \overline{V_{\epsilon_n}(x_n)}$$
+Because sequence of  $\epsilon_n$ is convergent to zero we have a Cauchy sequence, that
+converges to some point in $\cap O_n$, as desired.
+
+\subsection*{8.2.14}
+\textit{If $E$ is nowhere dense in $X$, then what can we cay about $(\overline{E})^c$?
+  Now, complete the proof of the theorem.}
+
+If $E$ is nowhere-dense, then we can follow that $(\overline{E})^c$ is dense in $X$. Because
+$(\overline{E})^c = {E^c}^\circ$ we can follow that this set is open. Thus we have a
+countable collection of dense sets in $X$, and therefore we can state that there
+exists $y \in \cap (\overline{E_n})^c$. Thus we can follow that $y$ is not in any of our
+original nowhere-dence sets, therefore uniour of our original sets is not $X$, as desired.
+
+
+\subsection*{8.2.15}
+\textit{Show that if $f \in C[0, 1]$ is differentiable at a point $x \in [0, 1]$, then
+  $f \in A_{m, n}$ for some pair $m, n \in N$.}
+
+Suppose that $f$ is differentiable at point $x \in [0, 1]$ and $f'(x) = l$.
+By the definition of the derivative we've got that
+$$\lim_{x \to c}{\frac{f(x) - f(c)}{x - c}} = l$$
+By the properties of limit, outlined in some exercise in chapter 4, which I cannot recall
+now, we've got that
+$$\lim_{x \to c}{\left|\frac{f(x) - f(c)}{x - c}\right|} = |l|$$
+Thus we can follow that there exists some number $n \in N$ such that $|l| < n$.
+Therefore if we set $\epsilon = n - l$, then $\epsilon > 0$ and there exists
+$\delta > 0$ such that
+$$|x - c| < \delta \to \left|\frac{f(x) - f(c)}{x - c}\right| < n$$
+
+By Archimedes property we've got that there exists $m \in N$ such that
+$$1/m < \delta $$
+thus we can follow that there exist desired pair $m, n \in N$ such that 
+$$|x - c| < 1/m  \to \left|\frac{f(x) - f(c)}{x - c}\right| < n$$
+and thus $f \in A_{m, n}$, as desired.
+
+\subsection*{8.2.16}
+\textit{(a) The sequence $(x_k)$ does not necessarily converge, but explain why there
+  exists a subsequence $(x_{k_l})$ that is convergent.}
+
+$(x_k)$ is bounded, thus BW applies.
+
+\textit{(b) Prove that $f_{k_l}(x_{k_l}) \to f(x)$.}
+
+We know that $f_k \to f$, and thus $f_{k_l} \to f$. Thus $(f_{k_l}(x)) \to f(x)$.
+Thus we can follow that for every $\epsilon > 0$ we've got corresponding $k_n \in N$ such that
+$$|f_{k_n}(x) - f(x)| < \epsilon/2$$
+and by continuity of $f_{k_l}$ we've got that there exists
+$\delta > 0$ such that
+$$|x - y| < \delta \to |f_{k_l}(x) - f_{k_l}(y)| < \epsilon/2$$
+(because I've spent too much time on this particulat subject, I canoot help
+myself but to  mention that
+by continuity on a compact set we've got uniform continuity here)
+Thus we can state that as long as $|x - y| < \delta$ we can follow that
+$$|f_{k_l}(x) - f_{k_l}(y)| + |f_{k_n}(x) - f(x)| < \epsilon$$
+$$|f_{k_l}(y) - f_{k_l}(x)| + |f_{k_n}(x) - f(x)| < \epsilon$$
+$$ |f_{k_l}(y) - f_{k_l}(x) + f_{k_n}(x) - f(x)|
+\leq |f_{k_l}(y) - f_{k_l}(x)| + |f_{k_n}(x) - f(x)| < \epsilon$$
+$$ |f_{k_l}(y)  - f(x)| < \epsilon$$
+Because $(x_n) \to x$ we can follow that there exists $N \in \textbf{N}$ such that
+$n \geq N$ implies that
+$$|x - x_n| < \delta$$
+and thus
+$$ |f_{k_l}(x_n)  - f(x)| < \epsilon$$
+Therefore we can follow that $(f_{k_l}(x_n)) \to f(x)$ by definition of a limit of sequence,
+as desired.
+
+\textit{(c) Let $t \in [0, 1]$ satisfy $0 < |x - t| < 1/m$. Show that}
+$$\left|\frac{f(x) - f(t)}{x - t}\right| \leq n$$
+\textit{and conclude that $A_{m,n}$ is closed.}
+
+We know that
+$$f_{k_l}(x_{k_l}) \to f(x)$$
+by results in previous exercise and that 
+$$f_{k_l}(t) \to f(t)$$
+by convergence of $f_{k_l}$ to $f$.
+Thus we can follow that
+$$f_{k_l}(x_{k_l}) - f_{k_l}(t) \to f(x) - f(t)$$
+Also 
+$$(x_{k_l}) \to x$$
+therefore 
+$$x_{k_l} - t \to x - t$$
+therefore we can follow that
+$$\frac{f_{k_l}(x_{k_l}) - f_{k_l}(t)}{x_{k_l} - t} \to \frac{f(x) - f(t)}{x - t}$$
+and therefore
+$$\left|\frac{f_{k_l}(x_{k_l}) - f_{k_l}(t)}{x_{k_l} - t}\right| \to
+\left|\frac{f(x) - f(t)}{x - t}\right|$$
+Because
+$$\left|\frac{f_{k_l}(x_{k_l}) - f_{k_l}(t)}{x_{k_l} - t}\right| \leq n$$
+then by order limit theorem we can follow that
+$$\left|\frac{f(x) - f(t)}{x - t}\right| \leq n$$
+Thus we can follow that $f \in A_{m, n}$. Therefore $A_{m, n}$ is closed, as desired.
+
+\subsection*{8.2.17}
+\textit{A function is called piesewise linear if its graph consists of a finite
+  number of line segments.}
+
+\textit{(a) Show that there exists a piecewise linear function $p \in C[0, 1]$
+  satisfying $||f - p||_\infty < \epsilon/2$.}
+
+Because $f$ is continous and is defined on a compact set we can follow that for
+$\epsilon/2$ there exists $\delta > 0$ such that
+$$|x - y| < \delta \to |f(x) - f(y)| < \epsilon/4$$
+Thus if we divide $[0, 1]$ in $\delta$-fine partition $P$ we can follow that
+$$x, y \in [x_{k - 1}, x_k] \to |f(x) - f(y)| < \epsilon/2$$
+Therefore we can set a function
+$$p(x) =
+\frac{f(x_{k + 1}) - f(x_k)}{x_{k + 1} - x_k}(x - x_k) + f(x_k) \text{ for } [x_k, x_{k + 1}]$$
+(I might've f'd up the proper definition, but the idea is there)
+then we can follow that
+$$|f(x) - p(x)| = \left|f(x) - \left[\frac{f(x_{k + 1}) -
+      f(x_k)}{x_{k + 1} - x_k}(x - x_k) + f(x_k)\right]\right| =
+$$
+$$ = 
+\left|f(x) - f(x_k) - \frac{f(x_{k + 1}) -
+    f(x_k)}{x_{k + 1} - x_k}(x - x_k)\right| =
+\left|f(x) - f(x_k) + (f(x_{k}) - f(x_{k + 1}))\frac{x - x_k}{x_{k + 1} - x_k}\right|
+\leq 
+$$
+$$ \leq
+|f(x) - f(x_k)| + \left|(f(x_{k}) - f(x_{k + 1}))\frac{x - x_k}{x_{k + 1} - x_k}\right|
+$$
+$$ \leq
+|f(x) - f(x_k)| + \left|f(x_{k}) - f(x_{k + 1})\right| < \epsilon/4 + \epsilon/4 = \epsilon/2
+$$
+as desired.
+
+\textit{(b) Show that if $h$ is any function $C[0, 1]$ that is bounded by $1$, then the function}
+$$g(x) = p(x) + \frac{\epsilon}{2}h(x)$$
+\textit{satisfies $g \in V_\epsilon(f)$}
+$$|f(x) - g(x)| = \left|  f - p(x) + \frac{\epsilon}{2}h(x)\right| \leq
+|  f - p(x)| + \left|\frac{\epsilon}{2}h(x)\right| \leq
+\frac{\epsilon}{2} + \frac{\epsilon}{2}\left|h(x)\right|
+\leq \frac{\epsilon}{2} +\frac{\epsilon}{2} = \epsilon$$
+
+\textit{(c) Construct a piecewise linear function $h(x)$ in $C[0, 1]$ that is bounded by $1$ and
+  leads to the conclusion $g \neq A_{m, n}$, where $g$ is defined as in (b). Explain how this
+  completes the argument for Theorem 8.2.12}
+
+We can take a page from somewhere in chapter 5, where we've discussed a sawtooth function and
+create a sawtooth function such that $|h'(x)| > \frac{\epsilon}{2}n$. Then it'll follow that
+$$g'(x) = h'(x) + p'(x)$$
+where $h'(x)$ is arbitrary, and therefore $g \notin A_{m, n}$.
+
+From this we can follow that any $\epsilon$-neighborhood of $f \in A_{m, n}$ has a
+function, that is not in $A_{m, n}$. Thus we can follow that for
+$A_{m, n} = \overline{A_{m, n}}$ (proven in 8.2.16)
+$$\overline{A_{m, n}}^\circ = \emptyset$$
+thus the set $A_{m, n}$ is nowhere-dense by definition.
+
+Thus we can follow that
+the set of functions, such that they are differentiable at some point, is a subset
+of a set of first category in $C[0, 1]$, and therefore itself is a set of
+first category in $C[0, 1]$, as desired.
 
 \end{document}
