@@ -1137,6 +1137,235 @@ the formula looks nice :( ).
 
 \section{The Vector Space of Linear Maps}
 
+\subsection{}
+\textit{Suppose $b, c \in R$. Define $T: R^3 \to R^2$ by }
+$$T(x, y, z) = (2x - 4y + 3z + b, 6x + cxyz)$$
+\textit{Show that $T$ is linear if and only of $b = c = 0$.}
+
+Suppose that $T$ is linear. Then it follows that
+$$T(0) = 0 = (0 + b, 0)$$
+thus we can follow that $b = 0$.
+
+Also,
+$$T((1, 1, 1) + (2, 2, 2)) = (6 - 12 + 9, 18 + 27c) = (3, 18 + 27c) =
+$$
+$$
+= T((1, 1, 1)) + T(2, 2, 2) = (2 - 4 + 3, 6 + c) + (4 - 8 + 6, 12 + 8c) =
+(1, 6 + c) + (2, 12 + 8c) = (3, 18 + 9c)$$
+
+Thus
+$$27c = 9c$$
+$$3c = c$$
+$$c = 0$$
+as desired.
+
+Reverse implication is trivial, thus we get the desired result.
+
+\subsection{}
+\textit{Suppose $b, c \in R$. Define $T: \mathcal(P)(R) \to R^2$ by}
+$$Tp = \left(3p(4) + 5p'(6) + bp(1)p(2), \int_{-1}^2{x^3 p(x) dx} + c \sin{p(0)}\right)$$
+\textit{Show that $T$ is linear if and only if $b = c = 0$.}
+
+Suppose that $T$ is linear. Then it follows that if $p(0) = \pi/2$, then latter
+part of resulting vector has additive property only when $c = 0$. For the former
+we've got result that
+$$\lambda^2 b = b$$
+for all $\lambda \in R$, which happens only if $b = 0$. Thus $b = c = 0$.
+
+Reverse implication is trivial, thus we have the desired result.
+
+\subsection{}
+\textit{Suppose $T \in  \mathcal{L}(F^n, F^m)$. Show that there exists scalars
+  $A_{j, k} \in F$ for $j = 1, ..., m$ and $K = 1, ..., n$ such that}
+$$T(x_1, ..., x_n) = (A_{1, 1}x_1 + ... + A_{1, n} x_n, ..., A_{m, 1} x_1 + ... + A_{m, n} x_n)$$
+\textit{for every $(x_1, ..., x_n) \in F^n$.}
+
+Because $(1, 0, ...), (0, 1, ...), ... $ is a basis of $F^n$ we can follow that
+there vector in $F^m$, such that $T(v) \in F^m$. Thus let us denote 
+$$T(1, 0, ...) = (A_{1, 1}, A_{2, 1}, ..., A_{m, 1})$$
+$$T(0, 1, ...) = (A_{1, 2}, A_{2, 2}, ..., A_{m, 2})$$
+$$...$$
+Thus given given arbitrary vector $v = (x_1, x_2, ..., x_n)\in T^n$ we get that 
+$$T(v) = T(x_1, x_2, ...) = T(x_1, 0, 0, ...) + T(0, x_2, 0, ...) + ... =
+x_1T(1, 0, 0, ...) + x_2 T(0, 1, 0, ...) + ... = $$
+$$ = (x_1 A_{1_1}, x_1 A_{2, 1}, ... ) +
+(x_2 A_{1_2}, x_2 A_{2, 2}, ... ) = (x_1 A_{1, 1} + x_2 A_{1, 2} + ..., x_1 A_{2, 1} + x_2 A_{2, 2} + ... )$$
+as desired.
+
+\subsection{}
+\textit{Suppose $T \in \mathcal{L}(V, W)$ and $v_1, v_2, ... v_m$ is a list of vectors in $V$
+  such that $T v_1, ...,, T v_m$ is a linearly inndependent list in $W$. Prove that
+$v_1, v_2, ..., v_m$ is linearly independent.}
+
+Suppose that it isn't. Then we can follow that there exist $w_1 \in W$ such that
+$$w_1 = \sum a_j v_j = 0$$
+and not all of $a_j$'s are zeroes. Thus we can follow that
+$$T(w) = T(\sum a_j v_j) = \sum T (a_j v_j) = \sum a_j T (v_j) = 0$$
+But $T(v_j)$ is a list of linearly independent vectors, and therefore their sum is
+equal to zero iff all $a_j$'s are zeroes, which is false. Thus we've got a contradiction.
+
+\subsection{}
+\textit{Prove the assertion in 3.7}
+
+Let $T_1 = T, T_2 = S, T_3 \in L(V, W)$. Then it follows that
+
+(1) $$(T_1 + T_2)(v) = T_1(v) + T_2(v) = T_2(v) + T_1(v) = (T_2 + T_1)(v)$$
+
+(2) $$(T_1 + (T_2 + T_3))(v) = T_1(v) + (T_2 + T_3)(v) = T_1(v) + T_2(v) + T_3(v) =$$
+$$ = (T_1 + T_2)(v) + T_3(v) = ((T_1 + T_2) + T_3)(v)$$
+
+(3) $$\lambda((S + T)(v)) = \lambda ( S(v) + T(v)) = \lambda S(v) + \lambda T(v)
+= (\lambda S + \lambda T)(v)$$
+
+(4) $$T + 0 = T$$
+
+(5) $$1T = T$$
+
+(6) $$T + -1T = (1 - 1)T = 0T = 0$$
+
+Thus $L(V, W)$ satisfies all reqirements of a vector space, as desired.
+
+\subsection{}
+\textit{Prove the assertion in 3.9}
+
+Let $v \in V$.
+
+(1) Then it follows that
+$$((T_1 T_2)T_3)(v) = (T_1 T_2)( T_3(v)) =  T_1 (T_2( T_3(v))) = T_1 ((T_2 T_3)(v))
+= (T_1(T_2 T_3))(v)$$
+directly from definition. (I wonder if it's  true in general for all functions; it probably
+is).
+
+(2)
+$$ TI v = T(I(v)) = T(v) = I (T(v))$$
+
+(3)
+
+$$(S_1 + S_2)T(v) = (S_1 + S_2)(T(v)) = S_1(T(v)) + S_2(T(v)) = S_1 T v + S_2 T v$$
+$$S(T_1 + T_2)(v) = S((T_1 + T_2)(v)) = S(T_1(v) + T_2(v)) = S(T_1(v)) + S(T_2(v)) = S T_1 v +
+S T_2 v$$
+
+as desired.
+
+\subsection{}
+\textit{Show that every linear map from a 1-dimentional vector space to itself is
+  multiplication by some scalar. More precisely, prove that if $\dim V = 1$ and
+  $T \in L(V, V)$, then there exists $\lambda \in F$ such that $Tv = \lambda v$ for
+  all $v \in V$.}
+
+Because we've got a 1-dimentional space, it follows that there exists a basis of $V$ - $v_1$.
+For this vector we've got that
+$$T v_1 = v_2 = \lambda v_1$$
+Thus we can follow that if $u \in V$ then
+$$T u = T \sigma v_1 =  \sigma T v_1 = \sigma \lambda v_1 = \lambda \sigma v_1 = \lambda u$$
+as desired.
+
+\subsection{}
+\textit{Give an example of a function $\phi: R^2 \to R$ such that }
+$$\phi (av) = a\phi(v)$$
+\textit{for all $a \in R$ and all $v \in R^2$ but $\phi$ is not linear.}
+
+$$\phi(x, y) =
+\begin{cases}
+  x \text{ if } x \neq y \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+
+\subsection{}
+\textit{Give an example of a function $\phi: C \to C$ such that }
+$$\phi (w + z) = \phi(w) + \phi(z)$$
+\textit{for all $w, z \in C$ but $\phi$ is not linear.}
+
+Let us define 
+$$\phi(a + bi) = b + ai$$
+Thus 
+$$\phi(a + bi + c + di) = ai + ci + b + d = \phi(a + bi) + \phi(c + di)$$
+but
+$$i \phi(a + bi) = -a + bi$$
+$$\phi(i(a + bi)) = \phi(ai - b) = -bi + a \neq i \phi(a + bi)$$
+
+\subsection{}
+\textit{Suppose $U$ is a subspace of $V$ with $U \neq V$. Suppose $S \in L(V, W)$ and
+  $S \neq 0$. Define $T: V \to W$ by}
+$$Tv =
+\begin{cases}
+  Sv \text{ if } v \in U \\
+  0 \text{ if } v \in V \text{ and } v \notin U
+\end{cases}
+$$
+\textit{Prove that $T$ is not a linear map on $V$.}
+
+Let $u \neq 0 \in U$ such that $Su \neq 0$ and $v \in V \setminus U$. Then it follows that
+$$v + u \notin U$$
+(because otherwise $-(v + u)$ is in $U$, therefore $u - (v + u) = -v \in U$ and
+thus $v \in U$, which is a contradiction)
+Thus we can follow that
+$$T(v + u) = 0$$
+but
+$$T(v) + T(u) = 0 + Su = Su \neq 0 = T(v + u)$$
+therefore the function is not linear, as desired.
+
+\subsection{}
+\textit{Suppose $V$ is finite-dimentional. Prove that every linear map on a subspace of $V$
+  can be extended to a lineaer map on $V$. In other words, show that if $U$ is a subspace of $V$
+  and $S$ is a subspace of $V$ and $S = L(V, W)$, then there exists $T \in L(V, W)$ such that
+  $Tu = Su$ for all $u \in U$.}
+
+Because $V$ is finite-dimentional and $U$ is a subspace of $V$, we can follow that $U$
+is finite-dimentional as well. Thus we can follow that there exists
+$u_1, ..., u_m$ - basis of $U$. As we know, we can extend this basis to a basis of $V$ -
+$u_1, ..., u_m, v_1, ... v_n$. Therefore we can define a map $P \in L(V, U)$ by 
+$$P(x_1, x_2, ...) = (x_1, x_2, ... x_m, 0, 0, ...)$$
+(basically trim every element of basis that is not in $U$). Thus we can follow that
+$P(u) = u$ if $u \in U$. Proof that $P$ is linear is trivial.
+Thus if $S \in L(U, W)$, then $T = SP \in (V, W)$ with the
+desired properties.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional with $\dim V > 0$, and suppose $W$ is
+  infinite-dimentional. Prove that $L(V, W)$ is infinite-dimentional.}
+
+Let $v_1, ..., v_m$ be a basis of $V$ and
+let $w_1, w_2, ...$ be a list of linearly independent vectors in $W$. Now
+let us look at $T_n: V \to W$
+$$T_n((x_1, x_2, ...) ) = x_1 w_n$$
+Then it follows that by linear independence of $w_n$ there does not exist a linear
+combination of $T_m$ such that
+$$\sum_{m \neq n} a_m T_m \neq T_n$$
+Thus we can follow that list $T_n$ is linearly independent.
+Because list is not finite we can follow that the space $L(V, W)$ is infinite-dimentional,
+as desired.
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_m$ is a linearly dependent list of vectors in $V$. Suppose
+  also that $W \neq \{0\}$. Prove that there exist $w_1, ... w_m \in W$ such that no
+  $T \in L(V, W)$ satisfies $Tv_k = w_k$ for each $k = 1, ..., m$.}
+
+Because $v_1, ..., v_m$ is linearly dependent we can reduce it to a linearly independent list
+$v_1', ..., v_n'$. Thus resulting list will span some subspace of $V$ and will be its basis.
+
+Thus we can take vector $v_j$ from the original list,
+that does not appear in basis.
+Then take some vectors $w_1, ... w_n$ in $W$. We know that there exists a unique map
+$$Tv_n' = w_n$$
+thus by adding to list $w_1, ... w_n$ any vectors from $W$, apart from $T(v_j)$ we create desired
+list.
+
+\subsection{}
+\textit{Suppose $V$ is finite-dimentional with $\dim V \geq 2$. Prove that there
+  exists $S, T, \in L(V, V)$ such that $ST \neq TS$ }
+
+Let $v_1, v_2$ be a basis of $V$ and let
+$$ S(x, y) = (y, x)$$
+$$ T(x, y) = (x, 0)$$
+Then
+$$ST = (0, x)$$
+and
+$$TS = (y, 0)$$
+as desired.
 
 
 \end{document}
