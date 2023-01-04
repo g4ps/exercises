@@ -12940,4 +12940,182 @@ the set of functions, such that they are differentiable at some point, is a subs
 of a set of first category in $C[0, 1]$, and therefore itself is a set of
 first category in $C[0, 1]$, as desired.
 
+\section{Fourier Series}
+
+\subsection*{8.3.1}
+\textit{(a) Verify that}
+$$u(x, t) = b_n \sin(nx) \cos(nt)$$
+\textit{satisfies equations (1), (2), and (3) for any choice of $n \in N$ and $b_n \in R$.
+  What goes wrong if $n \notin N$?}
+
+And thus we find out that promise of needing nothing else, other then knowledge of
+signle=variable calculus was a lie.
+
+By using standart rules of multivariable differentiation we get that
+$$u(x, t)_x = b_n n \cos (nx) \cos (nt)$$
+$$\frac{\partial^2 u}{\partial x^2} = u(x, t)_{x x} = - b_n n^2 \sin (nx) \cos (nt)$$
+$$\frac{\partial u}{\partial t} = u(x, t)_t = - b_n n \sin (nx) \sin (nt)$$
+$$\frac{\partial^2 u}{\partial t^2} = u(x, t)_{tt} = - b_n n^2 \sin (nx) \cos (nt)$$
+
+Thus
+$$\frac{\partial^2 u}{\partial x^2} = \frac{\partial^2 u}{\partial t^2}$$
+$$u(0, t) = 0 \text{ and } u(\pi, t) = 0$$
+$$\frac{\partial u}{\partial t}(x, 0) = 0$$
+as desired.
+
+When $n \neq N$ we get problems with satisfying the initial conditions, but the
+equation itself holds.
+
+\textit{(b) Explain why any finite sum of functions of the form given in part (a) would
+  also satisfy (1), (2), and (3)}
+
+Because the partial derivatives are linear (actually we just need the additivity here)
+we've got that the sum satisfies desired conditions.
+
+\subsection*{8.3.2}
+\textit{Using trigonometric idedntities when necessary, verify the following integrals}
+
+\textit{(a) For all $n \in N$}
+$$\int_{-\pi}^\pi{\cos(nx) dx} = 0 \text{ and } \int_{-\pi}^\pi{\sin(nx) dx} = 0 $$
+
+$$\int_{-\pi}^\pi{\cos(nx) dx} = \left[ \frac{1}{n} \sin (nx) \right]_{-\pi}^\pi =  0 - 0 = 0$$
+$$\int_{-\pi}^\pi{\sin(nx) dx} = \left[ - \frac{1}{n} \cos (nx) \right]_{-\pi}^\pi =
+- \frac{1}{n} \left[\cos (n \pi) - \cos(- n \pi)\right] =
+- \frac{1}{n} \left[\cos (n \pi) - \cos(n \pi)\right] = 0$$
+as desired.
+
+\textit{(b) For all $n \in N$}
+$$\int_{- \pi}^\pi{\cos^2(nx) dx} = \pi \text{ and }\int_{- \pi}^\pi{\sin^2(nx) dx} = \pi$$
+
+$$\int_{- \pi}^\pi{\cos^2(nx) dx} = \int_{- \pi}^\pi{\frac{1 + \cos 2nx}{2} dx}
+= \frac 1 2 \int_{- \pi}^\pi{1 + \cos 2nx dx} 
+= \frac 1 2 \left(\left[\int_{- \pi}^\pi{1 dx}\right] +
+  \left[\int_{- \pi}^\pi{\cos 2nx dx}\right]\right) =$$
+$$ =
+\frac 1 2 \left(2 \pi + 0\right) = \pi
+$$
+
+$$\int_{- \pi}^\pi{\sin^2(nx) dx} = \int_{- \pi}^\pi{\frac{1 - \cos 2nx}{2} dx}
+= \frac 1 2 \int_{- \pi}^\pi{1 - \cos 2nx dx} 
+= \frac 1 2 \left(\left[\int_{- \pi}^\pi{1 dx}\right] -
+  \left[\int_{- \pi}^\pi{\cos 2nx dx}\right]\right) =$$
+$$ =
+\frac 1 2 \left(2 \pi - 0\right) = \pi
+$$
+as desired.
+
+\textit{(c) For all $m, n \in N$,}
+$$\int_{- \pi}^\pi{\cos(mx) \sin(nx) dx} = 0 $$
+\textit{For $m \neq n$}
+$$\int_{- \pi}^\pi{\cos(mx) \cos(nx) dx} = 0 \text{ and } \int_{- \pi}^\pi{\sin(mx) \sin(nx) dx} = 0$$
+
+$$\int_{- \pi}^\pi{\cos(mx) \sin(nx) dx} =
+\int_{- \pi}^\pi{\frac{1}{2}\left[ \sin(mx + nx) + \sin(mx - nx)\right] dx} =
+$$
+$$=
+\frac{1}{2}\left( \int_{- \pi}^\pi{\sin((m + n)x)} + \int_{- \pi}^\pi{\sin((m - n)x)dx} \right)=
+\frac 1 2 (0 + 0) = 0
+$$
+
+Same goes to the other 2, in those cases we just have another identity
+
+\subsection*{8.3.3}
+\textit{Derive the formulas}
+$$a_m = \frac 1 \pi \int_{-\pi}^\pi{f(x) \cos (mx) dx} \text{ and }
+b_m = \frac 1 \pi \int_{-\pi}^\pi{f(x) \sin (mx) dx} $$
+\textit{for all $m \geq 1$.}
+
+After looking at the presented formula and pondering on it a bit, we get the
+idea that by integrating $f \cos(mx)$ instead of $f$, we can get the desired result.
+Here's a little algebra that proves our conjevcture:
+$$ \int_{-\pi}^\pi {f(x) \cos(mx) dx} =  
+\int_{-\pi}^{\pi}{\cos(mx) a_0 + \sum_{n = 1}^\infty{a_n \cos(nx) + b_n \sin(nx)}dx} =
+$$
+$$ =
+\int_{-\pi}^{\pi}{\cos(mx) a_0 + \cos(mx) \sum_{n = 1}^\infty{a_n \cos(nx) + b_n \sin(nx)}dx} = 
+$$
+$$ =
+\int_{-\pi}^{\pi}{\cos(mx) a_0 dx} +
+\int_{-\pi}^{\pi}{\cos(mx) \sum_{n = 1}^\infty{a_n \cos(nx) + b_n \sin(nx)}dx} = 
+$$
+$$ =
+a_0 \int_{-\pi}^{\pi}{\cos(mx)  dx} +
+\int_{-\pi}^{\pi}{ \sum_{n = 1}^\infty{a_n \cos(mx) \cos(nx) + b_n \cos(mx) \sin(nx)}dx} = 
+$$
+$$ =
+a_0 0 +
+\sum_{n = 1}^\infty{\int_{-\pi}^{\pi}{ a_n \cos(mx) \cos(nx) + b_n \cos(mx) \sin(nx)}dx} = 
+$$
+$$ =
+\int_{-\pi}^\pi{a_m \cos^2 (mx) + b_m \sin \cos (mx) dx}
+\sum_{n = 1; n \neq m}^\infty{\int_{-\pi}^{\pi}{ a_n \cos(mx) \cos(nx) + b_n \cos(mx) \sin(nx)}dx} = 
+$$
+$$ = \int_{-\pi}^\pi{a_m \cos^2 (mx) dx} + \int_{-\pi}^\pi{ b_m \sin(mx) \cos (mx) dx } + 0
+= a_m  \int_{-\pi}^\pi{\cos^2 (mx) dx} + 0 =$$
+$$= a_m  \pi $$
+thus
+$$a_m  \pi = \int_{-\pi}^\pi{f(x) \cos(mx) dx }$$
+$$a_m   = \frac 1 \pi  \int_{-\pi}^\pi{f(x) \cos(mx) dx }$$
+as desired.
+
+Same can be derived for $b_m$, when we use $f(x) \sin(mx)$ instead of $f(x) \cos(mx)$. Logic
+e
+
+is the same and the resulting algebra isn't changed much.
+
+\subsection*{8.3.4}
+\textit{(a) Referring to the previous example, explain why we can be sure that the convergence of
+  the partial sums to $f(x)$ is not uniform on any interval containing 0.}
+
+Every function in the partial sums is continous, therefore every partial sum
+is continous, but as a result we get a function, that is not continous. Thus we can follow
+that convergence is not uniform.
+
+\textit{(b) Repeat the computations of Example 8.3.1 for the function $g(x) = |x|$ and
+  examine graphs for some partial sums. This time, make use of the fact that $g$ is
+  even (g(x) = g(-x)) to simplify the calculations. By just looking at the coefficients, how
+  do we know that this series converges uniformly to something?}
+
+Well, I haven't computed anything yet, but my guess right now is that we'll make use
+of Weierstrass M-Test sometime soon.
+
+Because $|x|$ is continous, we can follow that it is also integrable. Thus 
+$$a_0 = \frac{1}{2 \pi} \int_{-\pi}^\pi{f(x) dx} =
+\frac{1}{2 \pi}\left[ \pi^2/2 + \pi^2/2  \right] = \frac{\pi}{2}$$
+
+
+Because $|x|$ and $\cos(nx)$ are both even, we can follow that $|x| \cos(nx)$ is also even.
+Thus, by using integration by parts we get 
+$$a_n = \frac 1 \pi \int_{-\pi}^\pi{|x| \cos (nx) dx} = 2 \int_{0}^\pi{x \cos (nx) dx} =
+\frac 1 \pi 2 \left[\frac{1}{n} x \sin (nx) + \frac{1}{n^2}\cos (nx)\right]_0^\pi = $$
+$$ = \frac 1 \pi 2 \frac{1}{n^2}(\cos (n \pi) - \cos(0) ) =
+\frac 1 \pi 2 \frac{1}{n^2}(\cos (n \pi) - 1 ) $$
+Thus, if we take into account the fact that $n \in N$ we get that
+$$a_n =
+\begin{cases}
+  -4 \frac{1}{n^2 \pi} \text{ if n is odd} \\
+  0 \text{ if n is even }
+\end{cases}
+$$
+$|x| \sin (nx)$ is odd, and thus we can follow that 
+$$b_n = \frac 1 \pi \int_{-\pi}^\pi{|x| \sin (nx) dx} = 0$$
+
+Thus, after using some sum-notation magic, we get
+$$f(x) = \frac{\pi}{2} + \sum_{n = 0}^\infty{- \frac{4}{(2n + 1)^ 2 \pi} \cos((2n + 1)x)} =
+$$
+
+After doing this, we can use my beloved Weierstrass M-test and get that expression in the sum
+$$|- \frac{4}{(2n + 1)^ 2 \pi} \cos((2n + 1)x)| < \frac{c}{n^2}$$
+where $c$ is some constant. Thus we can follow, because
+$\sum \frac c n^2$ is convergent, that our function is convergent uniformly, as desired.
+
+\textit{(c) Use graphs to collect some empirical evidence regarding the question of
+  term-by-term differentiation in our two examples to this point. Is it possible to
+  conclude convergence or divergence of either differentiated series by looking at the
+  resulting coefficients? In Chapter 6, we have a theorem about the legitimacy of
+  term-by-term differentiation. Can it be applied to either of these examples?}
+
+On the graph it looks like we've got the derivatives right. 
+
+
 \end{document}
