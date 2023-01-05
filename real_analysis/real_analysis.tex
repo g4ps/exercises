@@ -13117,5 +13117,73 @@ $\sum \frac c n^2$ is convergent, that our function is convergent uniformly, as 
 
 On the graph it looks like we've got the derivatives right. 
 
+For presented case of $|x|$ we've got that
+$$f_n'(x) \sim \sum_{k = 0}^n{\cos((2k + 1)x)}$$
+which does not converge. Thus we can conclude that any results in Chapter 6 are of no use here.
+
+\subsection*{8.3.5}
+\textit{Explain why $h$ is uniformly convergent on $R$.}
+
+We know that
+$$\lim_{x \to -pi^+}h(x)  = h(\pi)$$
+Thus by continuity of $h(x)$ on $\pi$ we can follow that
+$$\lim_{x \to -\pi^+}h(x) = \lim_{x \to -\pi^-}h(x)$$
+thus we can follow that $h(x)$ is continous on $-\pi$. Thus we can follow that the function
+is continous on $[-\pi, \pi]$. Thus, because $[-\pi, \pi]$ is compact, we can follow that
+$h(x)$ is uniformly continous on $[-\pi, \pi]$.
+
+Let $\epsilon > 0$. We can follow that there exists $2\pi > \delta > 0$ such that
+$$|x - y| < \delta \to |h(x) - h(y)| < \epsilon/2$$
+for $x, y \in [-\pi, \pi]$.
+
+Thus let $x < y \in R$ such that $|x - y| < \delta$.
+
+If $x$ and $y$ are both containted in the same interval $[-\pi + 2 \pi z, \pi + 2 \pi z]$ for
+some $z \in Z$, then it follows that $|h(x) - h(y)| < \epsilon/2 < \epsilon$ by the
+fact that $h$ is periodic.
+
+Otherwise we can state that there exists $z \in Z$ such that $x < 2 \pi z + \pi < y$ for some
+$z \in Z$. THus we can follow that
+$$|h(x) - h(y)| \leq |h(x) - h(2 \pi z + \pi)| + |h(2 \pi z + \pi) - h(y)| =
+|h(x) - h(\pi)| + |h(\pi) - h(y)| < \epsilon$$
+
+Thus we can follow that for every $\epsilon > 0$ there exists $\delta >0$ such that
+$$|x - y| < \delta \to |h(x) - h(y)| < \epsilon$$
+for $x, y \in R$. Thus we can follow that the function is uniformly continous on $R$, as
+desired.
+
+\subsection*{8.3.6}
+\textit{Show that $\int_a^b{h(x) \sin (nx) dx} < \epsilon/n$ , and use this fact to complete the
+  proof.}
+
+Let $[a, b]$ be an interval such that $|a - b| < 2 \pi / n$.
+
+Thus we can make use of some algebra in here:
+
+$$\left|\int_a^b{h(x) \sin(nx)}\right| =
+\left|\int_a^b{h(x) \sin(nx)} - 0\right| =
+\left|\int_a^b{h(x) \sin(nx)} - \int_a^b{\sin(nx)} \right|
+$$
+let us define $c = \in [a, b]$. Thus
+$$\left|\int_a^b{h(x) \sin(nx)} - h(c) \int_a^b{\sin(nx)} \right| 
+=\left|\int_a^b{h(x) \sin(nx)} - \int_a^b{h(c) \sin(nx)} \right| = 
+$$
+$$
+=\left|\int_a^b{h(x) \sin(nx) -  h(c) \sin(nx)} \right| 
+= \left|\int_a^b{\sin(nx) (h(x) -  h(c))} \right| \leq
+\int_a^b{|\sin(nx) ||h(x) -  h(c)|} \leq 
+$$
+$$ \leq \int_a^b{1 \epsilon} = \epsilon(b - a) = \epsilon/n $$
+Which is true for every interval of length $2 \pi /n$. Given that $[-\pi, \pi]$ contains
+$n$ of such intervals, we can follow that
+$$\left|\int_a^b{h(x) \sin(nx)}\right| <  \sum_{k = 1}^n{\epsilon/n} = \epsilon$$
+thus we can follow, that given integrals is indeed convergent to 0, as desired.
+
+\subsection*{8.3.7}
+\textit{(a) First, argue why the integral involving $q_x(u)$ tends to zero as $N \to \infty$.}
+
+We know that $f(x)$ is continous, thus we can follow that $f(u + x)$ is continous and therefore
+$q_x(u)$ is continous. Thus by Riemann-Lebesgue Lemma we've got that the integral tends to
+zero.
 
 \end{document}
