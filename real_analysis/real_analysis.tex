@@ -13186,4 +13186,44 @@ We know that $f(x)$ is continous, thus we can follow that $f(u + x)$ is continou
 $q_x(u)$ is continous. Thus by Riemann-Lebesgue Lemma we've got that the integral tends to
 zero.
 
+\textit{(b) The first integral is a little more subtle because the function $p_x(u)$ has the
+  $\sin(u/2)$ term in the denominator. Use the fact that $f$ is differentiable at $x$ (and a
+  familiar limit from calculus) to prove that the first integral goes to zero as well.}
+
+It is inevitable that we're going to use Riemann-Lebesgue lemma, and thus it is reasonable to
+assume that we need to prove that $p_x(u)$ is continous.
+
+Also, the familiar integral from the calculus is probably
+$$\lim_{x \to 0}{\frac{\sin(x)}{x}} = 1$$
+or maybe
+$$\lim_{x \to 0}{\frac{\cos (x) - 1}{x}} = 0$$
+
+$$p_x(u) = \frac{(f(u + x) - f(x))\cos(u/2)}{\sin(u/2)} =
+\frac{f(u + x)\cos(u/2) - f(x)\cos(u/2)}{\sin(u/2)} =
+\frac{(f(u + x) - f(x))u\cos(u/2)}{u\sin(u/2)} =
+$$
+$$ =
+\frac{(f(u + x) - f(x))}{u} \frac{u}{\sin(u/2)}\cos(u/2)
+$$
+thus
+$$\lim_{u \to 0}{p_x(u)} =
+\lim_{u \to 0}{\frac{(f(u + x) - f(x))}{u} \frac{u/2}{\sin(u/2)}2 \cos(u/2)} =
+f'(x) * 1 * 2  =  2 f'(x) $$
+
+Therefore we make modified function $m_x(u)$, that will be equal to $p_x(u)$ at non-zero points,
+and will be equal to $2f'(x)$ at zero. It follows then that
+$$\int m_x(u)  = \int p_x(u)$$
+and $m_x$ is continous. Thus we can state that
+$$\int_{-\pi}{\pi}{p_x(u) \sin(Nu) du} = \int_{-\pi}{\pi}{m_x(u) \sin(Nu) du} =
+0$$
+by Riemann-Lebesgue lemma, as desireed.
+
+\subsection*{8.3.8}
+Repeat of 2.3.11
+
+\subsection*{8.3.9}
+\textit{Use the previous identity to show that}
+$$\frac{1/2 + D_1(\theta) + D_2(\theta) + ... + D_N(\theta)}{N + 1} =
+\frac{1}{2(N + 1)} \left[ \frac{\sin((N + 1) \frac \theta 2 )}{\sin(\frac \theta 2)}\right]^2$$
+
 \end{document}
