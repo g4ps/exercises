@@ -8,6 +8,8 @@
 \author{Evgeny Markin}
 \date{2022}
 
+
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -1372,7 +1374,7 @@ as desired.
 
 \subsection{}
 
-\textit{Give an example of a linear map $T$ such that $\dim \null T = 3$ and
+\textit{Give an example of a linear map $T$ such that $\dim null T = 3$ and
   $\dim range T = 2$.}
 
 $T(x, y, z) = (x, y)$
@@ -1380,10 +1382,10 @@ $T(x, y, z) = (x, y)$
 \subsection{}
 
 \textit{Suppose $V$ is a vector space and $S, T \in L(V, V)$ are such that }
-$$range S \subset \null T$$
+$$range S \subset null T$$
 \textit{Prove that $(ST)^2 = 0$.}
 
-Let $v \in V$. Then it follows that $S(T(v)) \in range S$. Thus $ST(v) \in \null T$.
+Let $v \in V$. Then it follows that $S(T(v)) \in range S$. Thus $ST(v) \in null T$.
 Therefore $TST(v) = 0$. And thus  $STST = (ST)^2 = 0$, as desired.
 
 \subsection{}
@@ -1401,7 +1403,7 @@ Injectivity
 \subsection{}
 
 \textit{Show that }
-$$ \{T \in L(R^5, R^4): \dim \null T > 2 \}$$
+$$ \{T \in L(R^5, R^4): \dim null T > 2 \}$$
 \textit{is not a subspace of $L(R^5, R^4)$.}
 
 We can set
@@ -1413,22 +1415,22 @@ $$T_4(x, y, z, w, q) = (0, 0, 0, w)$$
 
 all of which are in the desired subset, but their sum is
 $$T(x, y, z, w, q) = (x, y, z, w, 0)$$
-which has $\dim \null = 1$. Thus this subset is not closed under addition and therefore it
+which has $\dim null = 1$. Thus this subset is not closed under addition and therefore it
 is not a subspace.
 
 \subsection{}
 
 \textit{Give an example of a linear map $T: R^4 \to R^4$ such that }
-$$range T = \null T$$
+$$range T = null T$$
 
 $$T(x, y, z, w) = (z, w, 0, 0)$$.
 
 \subsection{}
 
 \textit{Prove that there does not exist a linear map $T R^5 \to R^5$ such that }
-$$range T = \null T$$
+$$range T = null T$$
 
-$\dim$ is always an integer, therefore for $\dim range T = \dim \null T = n$ and
+$\dim$ is always an integer, therefore for $\dim range T = \dim null T = n$ and
 $$\dim T = 2n = 5$$
 which is impossible.
 
@@ -1459,7 +1461,7 @@ that not all of them are equal to zero and
 $$\sum a_n T v_n = 0$$
 Thus we can follow that
 $$T \sum a_n v_n = 0$$
-Thus $\sum a_n v_n \in \null T$. Because $T$ is injective we can follow that
+Thus $\sum a_n v_n \in null T$. Because $T$ is injective we can follow that
 $$\sum a_n v_n = 0$$
 and some of $a_n$'s are not equal to zero. But $v_1, ..., v_n$ is linearly independent, thus
 we get a contradiction.
@@ -1485,14 +1487,14 @@ thus we can follow that $v_1, ..., v_n$ spans the range of $T$, as desired.
 Suppose that $T$ and $S$ are injective such that $ST$ makes sence. Suppose that
 $$STv = 0$$
 Then by injectivity of $S$ we get that $Tv \in null S$ and thus $Tv = 0$. Thus, by injectivity of
-$T$ we get that $v$ = 0. Therefore $\null ST = 0$. Therefore $ST$ is injective.
+$T$ we get that $v$ = 0. Therefore $null ST = 0$. Therefore $ST$ is injective.
 
 The case in the exercise is derived from induction on presented argument.
 
 \subsection{}
 
 \textit{Suppose that $V$ is finite-dimentional and that $T \in L(V, W)$. Prove that there exists
-  a subspace $U$ of $V$ such that $U \cap \null T = 0$ and $range T = \{Tu: u \in U\}$.}
+  a subspace $U$ of $V$ such that $U \cap null T = 0$ and $range T = \{Tu: u \in U\}$.}
 
 Let $N$ be a nullspace of $T$. It follows that it is a subspace of $V$. Now let
 $n_1, ..., n_m$ be a basis of $N$ and extend it to a basis of $V$: $n_1, ..., n_m, v_1, ..., v_n$.
@@ -1503,14 +1505,14 @@ $Tu = w$. Thus $span(v_1, ... v_n)$ is the desired subspace.
 \subsection{}
 
 \textit{Suppose $T$ is a linear map from $F^4$ to $F^2$ such that}
-$$\null T = \{(x_1, x_2, x_3, x_4) \in F^4: x_1 = 5x_2, x_3 = 7x_4\}$$
+$$null T = \{(x_1, x_2, x_3, x_4) \in F^4: x_1 = 5x_2, x_3 = 7x_4\}$$
 \textit{Prove that $T$ is surjective.}
 
-$\dim \null T = 2$, thus $\dim range T = 2$, therefore $T$ is surjective, as desired.
+$\dim null T = 2$, thus $\dim range T = 2$, therefore $T$ is surjective, as desired.
 
 \subsection{}
 \textit{Suppose $U$ is a 3-dimentional subspace of $R^8$ and that $T$ is a linear map from
-  $R^8$ to $R^5$ such that $\null T = U$. Prove that $T$ is surjcetive.}
+  $R^8$ to $R^5$ such that $null T = U$. Prove that $T$ is surjcetive.}
 
 We can follow that $\dim range T = 5$, and therefore $T$ is surjective, as desired.
 
@@ -1535,6 +1537,165 @@ Same
 Same
 
 \subsection{}
+
+\textit{Suppose $W$ is finite-dimentional and $T \in L(V, W)$. Prove that $T$ is injective
+  if and only if there exists $S \in L(W, V)$ such that $ST$ is the identity map on $V$.}
+
+I don't know why it isn't stated explicitly, but by existence of injective $T$ we can
+follow that $\dim V \leq \dim W$, and thus $V$ is finite-dimentional.
+
+\textbf{In forward  direction}:
+
+Suppose that $T$ is injective. Now let $v_1, ..., v_m$ be a basis of $V$. Then we can follow
+that $Tv_1, ..., Tv_n$ is a basis of range $T$. Thus, extend this basis to a basis of $W$:
+$Tv_1, ..., Tv_n, w_1, ..., w_m$. Now let us define $S \in L(W, V)$ such that
+$$S Tv_n = v_n$$ 
+$$S w_n = 0$$
+Which will exist, and by the way, will be unique
+because we're pairing basis of $W$ with a list of vectors in $V$. Thus we
+can follow that if $v \in V$ then
+$$ST v = ST \sum a_n v_n = S \sum T a_n v_n = S \sum a_n T  v_n = \sum a_n v_n = v$$
+thus $ST = I$, as desired.
+
+\textbf{In reverse dierction: }
+
+Suppose that there exists $S \in L(W, V)$ such that $ST$ is an identity map on $V$. Suppose that
+$T$ is not injective.  Then we follow that $null T \neq 0$.
+Then let $v_1 \in null T \neq 0$. Then we can follow that
+$$ST v_1 = S(T v_1) = S(0) = 0 \neq Iv_1$$
+which is a contradiction. Thus we can conclude that $T$ is injective, as desired.
+
+\subsection{}
+
+\textit{Suppose $W$ is finite-dimentional and $T \in L(V, W)$. Prove that $T$ is surjective
+  if and only if there exists $S \in L(W, V)$ such that $TS$ is the identity map on $W$.}
+
+\textbf{In forward direction:}
+
+Suppose that $T$ is surjective and let $w_1, ..., w_n$ be a basis of $W$. Then we can follow
+that there exists $v_1, ..., v_m$ such that $T v_1 = w_1, ... T v_m = w_m$.
+Thus we can follow that there exists a map in $L(W, V)$ such
+that it maps
+$$S w_1 = v_1$$
+$$S w_n = v_n$$
+Thus if $w \in W$, then we can follow that
+$$TS w = TW(\sum a_n w_n) = T(\sum a_n W  w_n) =  T(\sum a_n v_n) =  \sum a_n T v_n =
+\sum a_n w_n = w$$
+for every $w \in W$. Thus we can follow that $TS = I$, as desired.
+
+\textbf{In reverse direction:}
+
+Suppose that there exists a map $S \in L(W, V)$ such that $TS$ is an identity map on $W$. 
+
+Suppose now that $T$ is not surjective. Then we can follow that there exists $w \in W$ such that
+there is no $v \in V$ such that $Tv = w$. But we've got that
+$$TS w = T(Sw) = w$$
+thus we've got a contradiction.
+
+\subsection{}
+
+\textit{Suppose $U$ and $V$ are finite-dimentional vector spaces and $S \in L(V, W)$ andd
+  $T \in L(U, V)$. Prove that }
+$$\dim null ST \leq \dim null S + \dim null T.$$
+
+We know that if $T$ maps a vector to zero, then $STv = S(Tv) = S0 = 0$. Thus we can follow that
+$$\text{null } T \subseteq \text{null } ST$$
+Suppose that $STv = 0$. Then we can follow that $Tv \in null S$. Thus $ null ST $ exhaustively
+decomposes into two sets: $null T$ and $\{u \in U : Tu \in range T \cap null S\}$. We know that
+$$\dim (range T \cap null S) \leq \dim null S$$.
+thus we can follow that
+$$\dim null ST = \dim null T + \dim (range T \cap null S) \leq   \dim null S + \dim null T$$
+as desired.
+
+\subsection{}
+
+\textit{Suppsoe $U$ and $V$ are finite-dimentional vector spaces and $S \in L(V, W)$ and
+  $T \in L(U, V)$. Prove that}
+$$\dim range ST \leq \min\{\dim range S, \dim range T\}$$
+
+Given that $range ST \subseteq range S$ we can follow that
+$$\dim range ST \leq \dim range S$$
+Suppose that $U'$ is a preimage of range of $ST$. Then we can follow that if  $u' \in U'$, then
+$u'$ is also in preimage of range of $T$. Thus we can follow that preimage of $ST$ is
+a subset of preimage of $T$, and thus
+$$\dim range ST \leq \dim range T$$
+Because both equations must hold, in follows that  we  get out desired inequality.
+
+\subsection{}
+\textit{Suppose $W$ is finite-dimentional and $T_1, T_2 \in L(V, W)$. Prove that
+  $null T_1 \subset null T_2$ if and only if there exists $S \in L(W, W)$ such that
+  $T_2 = ST_1$.}
+
+Firstly I should state that proposition in the exercise holds if we state that
+$\subset$ does not donote a proper subset, but a regular subset. 
+
+\textbf{In forward direction}: 
+Suppose $null T_1 \subset null T_2$. This implies that $\dim range T_1 \geq \dim range T_2$.
+Let $v_1, ..., v_n, u_1, ... u_n, r_1, ..., r_n$ be a basis of $V$ such that
+$r_1, ... r_n$ is a basis of $null T_1$,  $u_1, ..., u_n, r_1, ... r_n$ is a basis of $T_2$.
+Then we can follow that
+$T_2 v_1, ..., T_2 v_n$ is a basis of range of $T_2$ and $T_1 v_1, ... T_1 v_n$ is a
+basis of a subspace of range of $T_1$.
+Thus we can create a map $S: W \to W$ such that
+$S T_1 v_n = T_2 v_n$
+Suppose that $v \in V$. Then it follows that
+$$S T_1 v = S T_1 \sum a_n v_n =   \sum a_n ST_1 v_n = \sum a_n T_2 v_n = T_2 v$$
+Thus we get our desired result.
+
+\textbf{In reverse direction:}
+Suppose that there exists $S \in L(W, W)$ such that $T_2 = S T_1$. Suppose that $v \in null T_1$.
+Thus $T_1 v = 0 = S T_1 v = T_2 v$. Thus $v \in  null T_2$. Therefore $null T_1 \subset \null T_2$,
+as desired.
+
+\subsection{}
+
+\textit{Suppose $W$ is finite-dimentional and $T_1, T_2 \in L(V, W)$. Prove that
+  $range T_1 \subset range T_2$ if and only if there exists $S \in L(V, V)$ such that
+  $T_2 = T_1S $.}
+
+\textbf{In forward direction:}
+
+Suppose that $range T_1 \subset range T_2$. Then let $q_1, ... q_n$ be a basis of range of $T_1$.
+Thus we can extend it to be a basis of range of $T_2$ be adding $w_1, ..., w_m, q_1, ..., q_n$.
+Thus we can follow that there exist $v_1, ... v_k \in V$ such that
+$$T_1 v_n = w_n$$
+and $v_1', ..., v_k' \in V$ such that
+$$T_2 v_n' = w_n$$
+Thus we can create a map $S \in L(V, V)$ such that
+$$S v_n = v_n'$$
+and thus
+$$T_2 S v = T_2 S \sum a_n v_n = T_2  \sum a_n S v_n = T_2  \sum a_n  v_n'  = \sum a_n T_1 v_n 
+=T_1 \sum a_n  v_n = T_1 v$$
+as desired.
+
+\textbf{In reverse direction: }
+
+Suppose that there exists $S$ such that $T_1 = T_2 S$. Then it follows that if $u \in range T_1$,
+then $u \in T_2$ as well. Thus $range T_1 \subset T_2$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $D \in L(P(R), P(R))$ is such that $\deg Dp = (deg p) -1$ for every nonconstant
+  polynomial $p \in P(R)$. Prove that $D$ is surjective.}
+
+Let us define a list of polynomials $p_n$ such that $\deg(p_n) = n$. Then it follows that
+the list $D(p_n)$ is a list of polynomials such that $\deg (D(p_n)) = n - 1$, thus it
+spans the space of polynomials. Thus we can follow that $D$ is surjective.
+
+\subsection{}
+\textit{Suppose $p \in P(R)$. Prove that there exists a polynomial $q \in P(R)$ such that
+  $5q'' + 3q' = p$.}
+
+By the exercise above we can state that differentiation is surjective. Thus double differentiation
+is also surjective. Thus there exists $k \in P(R)$ such that $q'' = k'$, therefore
+$5q'' = 5k'$. Thus by surjectivity of differentiation we've got the desired result.
+
+\subsection{}
+\textit{Suppose $T \in L(V, W)$. and $w_1, ..., w_m$ is a basis of range $T$. Prove that there
+  exist $\phi_1, ... \phi_m \in L(V, F)$ such that }
+$$T(v) = \phi_1(v) w_1 + ... \phi_n(v) w_n$$
+\textit{for every $v \in V$}
 
 TODO
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  6 JAN 2023 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  7 JAN 2023 09:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -237,25 +237,25 @@ File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 (./linear_algebra.aux)
 \openout1 = `linear_algebra.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-Package hyperref Info: Link coloring OFF on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+Package hyperref Info: Link coloring OFF on input line 13.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -267,21 +267,21 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count283
 )
-LaTeX Info: Redefining \ref on input line 11.
-LaTeX Info: Redefining \pageref on input line 11.
-LaTeX Info: Redefining \nameref on input line 11.
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
 
 (./linear_algebra.out) (./linear_algebra.out)
 \@outlinefile=\write3
 \openout3 = `linear_algebra.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -307,37 +307,37 @@ l.36 ...umberline {1.3.17}}{15}{subsection.1.3.17}
 Chapter 1.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24.
+(hyperref)                removing `math shift' on input line 26.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 24.
+(hyperref)                removing `superscript' on input line 26.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24.
+(hyperref)                removing `math shift' on input line 26.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24.
+(hyperref)                removing `math shift' on input line 26.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 24.
+(hyperref)                removing `superscript' on input line 26.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 24.
+(hyperref)                removing `math shift' on input line 26.
 
 
-Overfull \hbox (40.39546pt too wide) detected at line 46
+Overfull \hbox (40.39546pt too wide) detected at line 48
 \OT1/cmr/m/n/10 ([])[] = [] = [] = [] =
  []
 
 [5
 
 ]
-Overfull \hbox (3.87253pt too wide) detected at line 81
+Overfull \hbox (3.87253pt too wide) detected at line 83
 \OML/cmm/m/it/10  \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 + \O
 ML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + \O
 ML/cmm/m/it/10 b[]i \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + \
@@ -350,7 +350,7 @@ OML/cmm/m/it/10 b[]i\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 +
  []
 
 
-Overfull \hbox (19.42813pt too wide) detected at line 88
+Overfull \hbox (19.42813pt too wide) detected at line 90
 \OML/cmm/m/it/10  \OT1/cmr/m/n/10 + (\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 + \O
 ML/cmm/m/it/10 ^^U\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + \
 OML/cmm/m/it/10 b[]i\OT1/cmr/m/n/10 )((\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 + \
@@ -364,20 +364,20 @@ m/n/10 )\OML/cmm/m/it/10 ^^U
 
 [6] [7] [8] [9] [10] [11] [12] [13] [14]
 
-LaTeX Warning: Command \i invalid in math mode on input line 532.
+LaTeX Warning: Command \i invalid in math mode on input line 534.
 
 [15] [16] [17] [18]
 Chapter 2.
 [19
 
 ] [20] [21]
-Overfull \hbox (15.98758pt too wide) detected at line 835
+Overfull \hbox (15.98758pt too wide) detected at line 837
 [] [] \OT1/cmr/m/n/10 = [] [] = [] [] + [] [] = \OML/cmm/m/it/10 w [] [] \OT1/c
 mr/m/n/10 + [] [] = 0
  []
 
 
-Overfull \hbox (3.00644pt too wide) in paragraph at lines 845--846
+Overfull \hbox (3.00644pt too wide) in paragraph at lines 847--848
 \OT1/cmr/m/it/10 Suppose $\OML/cmm/m/it/10 v[]; :::; v[]$ \OT1/cmr/m/it/10 is l
 in-early in-de-pen-dent in $\OML/cmm/m/it/10 V$ \OT1/cmr/m/it/10 and $\OML/cmm/
 m/it/10 w \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 V$\OT1/cmr/m/it/10 . Show that $\
@@ -385,7 +385,7 @@ OML/cmm/m/it/10 v[]; :::; v[]; w$
  []
 
 [22] [23] [24] [25] [26] [27]
-Overfull \hbox (28.54492pt too wide) detected at line 1122
+Overfull \hbox (28.54492pt too wide) detected at line 1124
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[] 
 \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) = []((\OML/cmm/m/it/10 
 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 
@@ -398,7 +398,7 @@ mr/m/n/10 ((\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr
 [28]
 Chapter 3.
 
-Overfull \hbox (67.21442pt too wide) detected at line 1154
+Overfull \hbox (67.21442pt too wide) detected at line 1156
 \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 ((1\OML/cmm/m/it/10 ; \OT1/
 cmr/m/n/10 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1)) + \OML/cmm/m/it/10 T\OT1/cmr
 /m/n/10 (2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; \OT1/cmr/m/n/1
@@ -414,7 +414,7 @@ T1/cmr/m/n/10 ) = (3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 18 + 9\OML/cmm/m/it/10 c
 [29
 
 ]
-Overfull \hbox (63.69894pt too wide) detected at line 1190
+Overfull \hbox (63.69894pt too wide) detected at line 1192
 \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) = \OML/c
 mm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; x[]; :::\OT1/cmr/m/n/10 ) = 
 \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]; \OT1/cmr/m/n/10 0\OML/
@@ -429,7 +429,7 @@ it/10 x[]T\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/1
  []
 
 
-Overfull \hbox (20.13945pt too wide) detected at line 1192
+Overfull \hbox (20.13945pt too wide) detected at line 1194
 \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 x[]A[]; x[]A[]; :::\OT1/cmr/m/n/10 ) + (\OM
 L/cmm/m/it/10 x[]A[]; x[]A[]; :::\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 x[]A[] \
 OT1/cmr/m/n/10 + \OML/cmm/m/it/10 x[]A[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 :::
@@ -438,7 +438,7 @@ OT1/cmr/m/n/10 + \OML/cmm/m/it/10 x[]A[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 :::
  []
 
 
-Overfull \hbox (16.8861pt too wide) in paragraph at lines 1198--1199
+Overfull \hbox (16.8861pt too wide) in paragraph at lines 1200--1201
 \OT1/cmr/m/it/10 Suppose $\OML/cmm/m/it/10 T \OMS/cmsy/m/n/10 2 L\OT1/cmr/m/n/1
 0 (\OML/cmm/m/it/10 V; W\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/
 10 v[]; v[]; :::v[]$ \OT1/cmr/m/it/10 is a list of vec-tors in $\OML/cmm/m/it/1
@@ -446,7 +446,7 @@ Overfull \hbox (16.8861pt too wide) in paragraph at lines 1198--1199
  []
 
 [30]
-Overfull \hbox (5.97815pt too wide) detected at line 1235
+Overfull \hbox (5.97815pt too wide) detected at line 1237
 \OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 T[]T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 T[]\
 OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 T[]T[]
 \OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 T[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 v\OT1/c
@@ -459,7 +459,7 @@ n/10 (\OML/cmm/m/it/10 T[]T[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 v\OT1/cmr/m/n/
  []
 
 
-Overfull \hbox (32.46057pt too wide) detected at line 1246
+Overfull \hbox (32.46057pt too wide) detected at line 1248
 \OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 + \OML/
 cmm/m/it/10 T[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) = \OML/cmm
 /m/it/10 S\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 + \OML/cmm/m/i
@@ -472,15 +472,39 @@ r/m/n/10 )) = \OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m
 OML/cmm/m/it/10 ST[]v \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ST[]v
  []
 
-[31] [32] [33] [34] [35] [36] [37] [38] (./linear_algebra.aux)
+[31] [32] [33] [34] [35] [36] [37] [38]
+Overfull \hbox (30.31767pt too wide) detected at line 1583
+\OML/cmm/m/it/10 TSw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 TW\OT1/cmr/m/n/10 ([] \
+OML/cmm/m/it/10 a[]w[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 ([]
+ \OML/cmm/m/it/10 a[]Ww[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 
+([] \OML/cmm/m/it/10 a[]v[]\OT1/cmr/m/n/10 ) = [] \OML/cmm/m/it/10 a[]Tv[] \OT1
+/cmr/m/n/10 = [] \OML/cmm/m/it/10 a[]w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w
+ []
+
+[39]
+Overfull \hbox (31.0601pt too wide) in paragraph at lines 1632--1642
+[]\OT1/cmr/bx/n/10 In for-ward di-rec-tion\OT1/cmr/m/n/10 : Sup-pose $\OML/cmm/
+m/it/10 nullT[] \OMS/cmsy/m/n/10 ^^Z \OML/cmm/m/it/10 nullT[]$\OT1/cmr/m/n/10 .
+ This im-plies that $[] \OML/cmm/m/it/10 rangeT[] \OMS/cmsy/m/n/10 ^^U
+ []
+
+[40]
+Overfull \hbox (30.16632pt too wide) detected at line 1668
+\OML/cmm/m/it/10 T[]Sv \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T[]S [] a[]v[] \OT1/c
+mr/m/n/10 = \OML/cmm/m/it/10 T[] [] a[]Sv[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 
+T[] [] a[]v[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 a[]T[]v[] \OT1/cmr/m/n/10 =
+ \OML/cmm/m/it/10 T[] [] a[]v[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T[]v
+ []
+
+[41] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 5DC423892E46698BB4B5BE92DEFCD622;7386.
+(rerunfilecheck)             Checksum: F98937526E8F4CF0B4BBF4F0A1AD91B2;7778.
  ) 
 Here is how much of TeX's memory you used:
- 8801 strings out of 478238
- 134934 string characters out of 5850455
+ 8818 strings out of 478238
+ 135207 string characters out of 5850455
  430547 words of memory out of 5000000
- 26798 multiletter control sequences out of 15000+600000
+ 26805 multiletter control sequences out of 15000+600000
  482055 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,276b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -498,10 +522,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb>
-Output written on linear_algebra.pdf (39 pages, 289460 bytes).
+Output written on linear_algebra.pdf (42 pages, 301091 bytes).
 PDF statistics:
- 880 PDF objects out of 1000 (max. 8388607)
- 799 compressed objects within 8 object streams
- 158 named destinations out of 1000 (max. 500000)
- 937 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 929 PDF objects out of 1000 (max. 8388607)
+ 844 compressed objects within 9 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 993 words of extra memory for PDF output out of 10000 (max. 10000000)
 
