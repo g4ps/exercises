@@ -1697,7 +1697,54 @@ $5q'' = 5k'$. Thus by surjectivity of differentiation we've got the desired resu
 $$T(v) = \phi_1(v) w_1 + ... \phi_n(v) w_n$$
 \textit{for every $v \in V$}
 
-TODO
+Suppose that $v_1, ..., v_n$ is a basis of $V$. It follows that we can get coefficients
+$$T v_j = A_{j,1} w_1 + ... + A_{j,n} w_n$$
+thus if we set
+$$\phi_j(v) = \phi_j(\sum a_n v_n) = \sum a_j A_{j, n}$$
+then we get that
+$$T v = T \sum a_n v_n = \sum a_n T v_n = \sum {a_n \sum A_{n, j} w_j} =
+\sum {\sum a_n A_{n, j} w_j} = \sum {\phi_n(v) w_n} $$\
+as desired.
+
+\subsection{}
+
+\textit{Suppose $\phi \in L(V, F)$. Suppose $u \in B$ is not in null $\phi$. Prove that}
+$$V = null \phi \oplus \{au: a \in F\}$$
+
+$\phi$ maps into a space of dimention one. Thus we can follow that its range is either
+1 or 0. In this case there exists $u \in V$, such that it is not in null space of $\phi$,
+therefore we can follow that $\dim range \phi = 1$. Thus the space, that is not in $null T$
+has dimention $1$. Thus we can follow that this space is scalar multiples of $u$. Therefore
+$$null \phi + \{au: a \in F\} = V$$
+because $u \notin null \phi$ we follow that 
+$$null \phi \cap \{au: a \in F\} = 0$$
+and thus we can state that
+$$null \phi \oplus \{au: a \in F\} = V$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $\phi_1$ and $\phi_2$ are linear maps from $V$ to $F$ that have the same
+  null space. Show that there exists a constant $c \in F$ such that $\phi_1 = c \phi_2$.}
+
+If $\dim range \phi = 0$, then the case is trivial. Thus let us assume that $\dim range \phi = 1$.
+Because they have the same null space we can follow that they have the same preimage of
+the range. Thus we follow that if $v_1, ..., v_n$ is a basis of nullspace, then
+$v_1, ..., v_n, w$ is a basis of $V$, therefore $w$ is a basis of a preimage. Thus
+$$\phi_1 v = a_{n + 1}  \phi_1 w = a_{n + 1}c_1 $$
+$$\phi_2 v = a_{n + 1}  \phi_2 w = a_{n + 1}c_2 $$
+thus
+$$\phi_1 = c_2 / c_1 \phi_2$$
+as desired.
+
+\subsection{}
+
+\textit{Give an example of two linear maps $T_1$ and $T_2$ from $R^5$ to $R^2$ that have the same
+  null space but are such that $T_1$ is not a scalar multiple of $T_2$}
+
+$$T_1(x, y, z, w, q) = (x, y)$$
+$$T_2(x, y, z, w, q) = (y, x)$$
+
 
 \end{document}
 %%% Local Variables:

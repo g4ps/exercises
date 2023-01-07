@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  7 JAN 2023 09:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  7 JAN 2023 18:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -294,14 +294,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...umberline {1.3.17}}{15}{subsection.1.3.17}
+l.36 ...umberline {1.3.17}}{16}{subsection.1.3.17}
                                                   % [1
 
-] [2])
+] [2] [3])
 \tf@toc=\write4
 \openout4 = `linear_algebra.toc'.
 
- [3] [4
+ [4] [5
 
 ]
 Chapter 1.
@@ -334,7 +334,7 @@ Overfull \hbox (40.39546pt too wide) detected at line 48
 \OT1/cmr/m/n/10 ([])[] = [] = [] = [] =
  []
 
-[5
+[6
 
 ]
 Overfull \hbox (3.87253pt too wide) detected at line 83
@@ -362,15 +362,15 @@ n/10 + \OML/cmm/m/it/10 b[]i\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 ^^L\OT1/cmr/
 m/n/10 )\OML/cmm/m/it/10 ^^U
  []
 
-[6] [7] [8] [9] [10] [11] [12] [13] [14]
+[7] [8] [9] [10] [11] [12] [13] [14] [15]
 
 LaTeX Warning: Command \i invalid in math mode on input line 534.
 
-[15] [16] [17] [18]
+[16] [17] [18] [19]
 Chapter 2.
-[19
+[20
 
-] [20] [21]
+] [21] [22]
 Overfull \hbox (15.98758pt too wide) detected at line 837
 [] [] \OT1/cmr/m/n/10 = [] [] = [] [] + [] [] = \OML/cmm/m/it/10 w [] [] \OT1/c
 mr/m/n/10 + [] [] = 0
@@ -384,7 +384,7 @@ m/it/10 w \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 V$\OT1/cmr/m/it/10 . Show that $\
 OML/cmm/m/it/10 v[]; :::; v[]; w$
  []
 
-[22] [23] [24] [25] [26] [27]
+[23] [24] [25] [26] [27] [28]
 Overfull \hbox (28.54492pt too wide) detected at line 1124
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[] 
 \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) = []((\OML/cmm/m/it/10 
@@ -395,7 +395,7 @@ mr/m/n/10 ((\OML/cmm/m/it/10 U[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 U[]\OT1/cmr
 /m/n/10 ) \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 U[]\OT1/cmr/m/n/10 ) =
  []
 
-[28]
+[29]
 Chapter 3.
 
 Overfull \hbox (67.21442pt too wide) detected at line 1156
@@ -411,7 +411,7 @@ T1/cmr/m/n/10 ) = (3\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 18 + 9\OML/cmm/m/it/10 c
 \OT1/cmr/m/n/10 )
  []
 
-[29
+[30
 
 ]
 Overfull \hbox (63.69894pt too wide) detected at line 1192
@@ -445,7 +445,7 @@ Overfull \hbox (16.8861pt too wide) in paragraph at lines 1200--1201
 0 V$ \OT1/cmr/m/it/10 such that $\OML/cmm/m/it/10 Tv[]; :::; ; Tv[]$
  []
 
-[30]
+[31]
 Overfull \hbox (5.97815pt too wide) detected at line 1237
 \OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 T[]T[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 T[]\
 OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 v\OT1/cmr/m/n/10 ) = (\OML/cmm/m/it/10 T[]T[]
@@ -472,7 +472,7 @@ r/m/n/10 )) = \OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m
 OML/cmm/m/it/10 ST[]v \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ST[]v
  []
 
-[31] [32] [33] [34] [35] [36] [37] [38]
+[32] [33] [34] [35] [36] [37] [38] [39]
 Overfull \hbox (30.31767pt too wide) detected at line 1583
 \OML/cmm/m/it/10 TSw \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 TW\OT1/cmr/m/n/10 ([] \
 OML/cmm/m/it/10 a[]w[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 ([]
@@ -481,14 +481,14 @@ OML/cmm/m/it/10 a[]w[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 T\OT1/cmr/m/n/10 ([]
 /cmr/m/n/10 = [] \OML/cmm/m/it/10 a[]w[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 w
  []
 
-[39]
+[40]
 Overfull \hbox (31.0601pt too wide) in paragraph at lines 1632--1642
 []\OT1/cmr/bx/n/10 In for-ward di-rec-tion\OT1/cmr/m/n/10 : Sup-pose $\OML/cmm/
 m/it/10 nullT[] \OMS/cmsy/m/n/10 ^^Z \OML/cmm/m/it/10 nullT[]$\OT1/cmr/m/n/10 .
  This im-plies that $[] \OML/cmm/m/it/10 rangeT[] \OMS/cmsy/m/n/10 ^^U
  []
 
-[40]
+[41]
 Overfull \hbox (30.16632pt too wide) detected at line 1668
 \OML/cmm/m/it/10 T[]Sv \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T[]S [] a[]v[] \OT1/c
 mr/m/n/10 = \OML/cmm/m/it/10 T[] [] a[]Sv[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 
@@ -496,15 +496,28 @@ T[] [] a[]v[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 a[]T[]v[] \OT1/cmr/m/n/10 =
  \OML/cmm/m/it/10 T[] [] a[]v[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T[]v
  []
 
-[41] (./linear_algebra.aux)
+[42]
+Overfull \hbox (25.97624pt too wide) detected at line 1706
+\OML/cmm/m/it/10 Tv \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T [] a[]v[] \OT1/cmr/m/n
+/10 = [] \OML/cmm/m/it/10 a[]Tv[] \OT1/cmr/m/n/10 = [] [] = [] [] = [] []
+ []
+
+
+Overfull \hbox (16.63228pt too wide) in paragraph at lines 1730--1734
+[]\OT1/cmr/m/n/10 If $[] \OML/cmm/m/it/10 range^^^ \OT1/cmr/m/n/10 = 0$, then t
+he case is triv-ial. Thus let us as-sume that $[] \OML/cmm/m/it/10 range^^^ \OT
+1/cmr/m/n/10 =
+ []
+
+[43] [44] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: F98937526E8F4CF0B4BBF4F0A1AD91B2;7778.
+(rerunfilecheck)             Checksum: B4614205F1B2B8102EB1C9D4A5813AF8;8002.
  ) 
 Here is how much of TeX's memory you used:
- 8818 strings out of 478238
- 135207 string characters out of 5850455
+ 8829 strings out of 478238
+ 135372 string characters out of 5850455
  430547 words of memory out of 5000000
- 26805 multiletter control sequences out of 15000+600000
+ 26809 multiletter control sequences out of 15000+600000
  482055 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,276b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -522,10 +535,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb>
-Output written on linear_algebra.pdf (42 pages, 301091 bytes).
+Output written on linear_algebra.pdf (45 pages, 305141 bytes).
 PDF statistics:
- 929 PDF objects out of 1000 (max. 8388607)
- 844 compressed objects within 9 object streams
- 168 named destinations out of 1000 (max. 500000)
- 993 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 876 compressed objects within 9 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 1025 words of extra memory for PDF output out of 10000 (max. 10000000)
 
