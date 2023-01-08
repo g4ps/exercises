@@ -13226,4 +13226,178 @@ Repeat of 2.3.11
 $$\frac{1/2 + D_1(\theta) + D_2(\theta) + ... + D_N(\theta)}{N + 1} =
 \frac{1}{2(N + 1)} \left[ \frac{\sin((N + 1) \frac \theta 2 )}{\sin(\frac \theta 2)}\right]^2$$
 
+After beating around the bush with my insufficient abilities to derive this kind of stuff
+I've convinced myself to leave the rest of this chapter for better times, when I'll be
+more equipped to sort this thing out properly. Given that it is optional, I'm not too worried
+about the fact, that better times will probably never come. Maybe after completing some
+more approachable course on Fouries Analysis, I'll do this one.
+
+\section{A Construction of $R$ from $Q$}
+
+\subsection*{8.4.1}
+\textit{Fix $r \in Q$. Show that the set $C_r = \{t \in Q: t < r\}$ is a cut. }
+
+It satisfies (c1), because it is neither $\emptyset$, nor it is $Q$.
+
+Let $r' \in C_r$. Then it follows by definition, that $j < r' \to j < r \to j \in C_r$.
+
+Also, if $r' \in C_r$, then let $n \in N$ be such that $1/n < r - r'$. Thus. $r' + 1/n < r$,
+therefore set does not have a maximum
+
+\textit{(b) $S = \{t \in Q: t \leq 2\}$}
+
+$S$ has a maximum, therefore it is not a cut
+
+\textit{(b) $S = \{t \in Q: t^2 < 2 \text{ or } t < 0\}$}
+
+Is a cut
+
+\textit{(c) $S = \{t \in Q: t^2 \leq 2 \text{ or } t < 0\}$}
+
+Is a cut, since there is no rational number such that $t^2 = 2$.
+
+\subsection*{8.4.2}
+
+\textit{Let $A$ be a cut. Show that if $r \in A$ and $s \notin A$, then $r < s$}
+
+Suppose that it is not the case. Then $r \geq s$. The case when $r = s$ is obviously not
+true, thus $r > s$. But in this case $s \in A$, which is a contradiction. Therefore we
+have our desired result.
+
+\subsection*{8.4.3}
+
+\textit{Using the usual definitions of addition and multiplication, determine which of these
+  properties are possessed by $N$, $Z$ and $Q$, respectively}
+
+Commutativity, associativity and distributive properties are possessed by all of them. $N$
+and $Z$ don't have inverses; $N$ doesn't have both, and $Z$ doesn't have multiplicative
+inverse. Also, depending on your flavor of $N$, it might not have an additive identity.
+$Q$ has all the properties of the field.
+
+\subsection*{8.4.4}
+\textit{Show that this defines an ordering on $R$ by verifying properties (o1), (o2) and (o3)
+  from Definition 8.4.5}
+
+(o1) Suppose that $x, y \in R$ and none of  $x \leq y$ or $y \leq x$ is true. Then it follows
+that there exists $r \in Q$ such that  $r \in x$ and $r \notin y$. Thus we can follow that
+every $r' \in y$ is less than $r$, because otherwise it violates (c2). Thus $y \leq x$, which
+is a contradiction. 
+
+(o2) is double inclusion, therefore it is true by some magic of sets, which I'm not qualified
+to prove.
+
+(o3) is a property of a subset, which is once again proven by magic of set theory
+
+\subsection*{8.4.5}
+
+\textit{(a) Show that (c1) and (c3) also hold for $A + B$. Conclude that $A + B$ is a
+  cut.}
+
+$A + B$ is not empty by nonemptyness of $A$ and $B$.
+Also, there exists $r_1$ such that $r_1 > a$ for all $a \in A$. Same goes for $r_2$ and $B$.
+Both of them exist, because we can picj $r_1 \notin A$ and $r_2 \notin B$.
+Thus $r_1 + r_2 \in Q$ and $r_1 + r_2 \notin A + B$. Thus we can follow that $A + B \neq Q$. Thus
+(c1) holds.
+
+Suppose that $r \in A + B$. Then we can follow that there exists $a \in A$ and $b \in B$
+such that $a + b = r$. Thus, there exist $a' > a \in A$ and $b' > b \in B$. Therefore
+$a' + b' > r$. Therefore we can state that $A + B$ does not have a maximum. Thus (c3)
+holds as well.
+
+\textit{(b) Check that addition in $R$ is commutative (f1) and associative (f2).}
+
+This follows directly from commutativity and associativity of rational numbers.
+
+\textit{(c) Show that the cut }
+$$O = \{p \in Q: p < 0\}$$
+\textit{successfully plays the role of the additive identity (f3).}
+
+If $a \in A$, then for any $o \in O$ we can follow that $a + o < a$. Thus $a + o \in A$. Thus
+$A + O \subseteq A$.
+
+Suppose that $a \in A$. then it follows that there exists $a' > a \in A$. Thus we can state,
+that there exists $1/n < a' - a$. We know that by definition $-1/n \in O$. Thus there exists
+$-1/n \in O$ such that $a = a' + (-1/n) \in A + O$. Therefore
+we can follow that $A \subseteq A + O$.
+
+Thus by double inclusion we can state that $A = A + O$. Therefore $O$ is an additive identity,
+as desired.
+
+\subsection*{8.4.6}
+
+\textit{(a) Prove that $-A$ defines a cut.}
+
+Since $A$ is a  cut we can follow that $A \neq Q$. Thus we can follow that there exists
+$t \notin A \in Q$. Therefore by archimedes property, there exists $n \in N$ such that
+such that $t < n$. Given that $N \subset Q$ we can follow that $n \in Q$. Thus
+by field properties of $Q$ we've got that there exists $-n \in Q$. Thus there exists
+$-n \in Q$ such that $t < n$ for some $t \notin A$. Thus $-n \in -A$. Therefore
+$-A \neq \emptyset$.
+
+Suppose that $-A = Q$. Then it follow that for every $r \in Q$. there exists $t \notin A$
+such that $t < -r$. Given inverse property of $Q$  we can follow that for
+every $r \in Q$ there exists $t \notin A$  such that $t < r$. Thus if $q \in A$ there exists
+$q' < q$ such that $q' \in Q$ and $q' \notin A$. But this violates (c2).
+Therefore $A$ is not a cut, which is a contradiction.
+
+Thus $-A \neq \emptyset$ and $-A  \neq Q$, which gives us (c1) property for $-A$.
+
+Suppose that $r \in -A$. We can follow that there exists $t \notin A$ such that
+$t < -r$. Now let $q < r$. By things, that we haven't proven rigorously, but assuming that
+properties of $Q$ are given, we follow that $-q > -r$. Thus $t < -r < -q$. Thus, $q \in -A$.
+This gives us (c2).
+
+Suppose $r \in -A$. Then we can follow that there exists $t \notin A$ such that $t < -r$.
+Therefore by density of $Q$ (which is proven without using AoC or its derivatives)
+we get that there exists $t < -r' < -r$. Therefore $r' \in A$
+and $r' > r$. Therefore $-A$ does not have a maximum, we have (c3) and by extension a
+proof that $-A$ is a cut.
+
+\textit{(b) What goes wrong if we set $-A = \{r \in Q: -r \notin A\}$?}
+
+Suppose that we take a cut $A = \{r \in Q: r < -2\}$. Thus, for $r = 2$, we've got
+that $-r \notin A$. Therefore $-2 \in -A$. Therefore $-A = \{r \in Q: r \leq 2\}$, which
+has a maximum, and therefore it is not a cut.
+
+\textit{(c) If $a \in A$ and $r \in -A$. show $a + r \in O$. This shows $A + (-A) \subseteq O$.
+  Now, finish the proof of property (f4) for addition in Definition 8.4.4.}
+
+Suppose that given thing is true. We know that for any $t \notin A \in Q$ it is true that
+$a < t$. Thus $a - t < 0$. Then it follows that there exists $t \notin A$ such that
+$t < -r$. Thus $-t > r$ and therefore $ a + r < a - t < 0$. Therefore $a + r < 0$ and
+$a + r \in O$. Thus $A + (-A) \subseteq O$.
+
+Suppose that $r \in O$. Because $A \neq Q$ we can follow that there exists $t \notin A$ such
+that $t - |r|/2$ is in $A$ (otherwise we can follow that for all $q \in A$ there exists
+$q + c \in A$, therefore every $k \in Q$ is in $A$, therefore $Q \subseteq A$ and $Q = A$,
+which is a contradiction). Thus, let $b$ be  such that  $t < -b < t + |r|/2$. Then
+it follows that $b \in -A$. Thus
+$$b + t - |r|/2 \in A + (-B)$$
+and
+$$b + t - |r|/2 > -t - |r|/2 + t - |r|/2 = -|r| = r$$
+thus there exists $a \in A$ and $a' \in -A$ such that
+$$a + a' > -r$$
+therefore since $A + (-A)$ is a cut we can follows that  there exists $j \in A + (-A)$ such
+that $j = r$. Therefore $O \subseteq A + (-A)$. Therefore by double inclusion we've got that
+$$A + (-A) = 0$$
+therefore we can follow that for every $A$ there exists an additive inverse.
+
+\textit{(d) Show that property (o3) holds}
+
+We've done it earlier, didn't we?
+
+\subsection{8.4.7}
+
+\textit{(a) Show that AB is a cut}
+
+
+
+
+
+
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -14,6 +14,87 @@
 Exercises for Introduction to Algorithms by Cormen et al., 4th ed. It has some
 exercises, that should be written down, moslty in math and whatnot.
 
+\part{Foundations}
+
+\chapter{The Role of Algorithms in Computing}
+
+\section{Algorithms}
+
+\subsection{}
+
+\textit{Describe your own real-world example that required sorting. Describe one
+  that required finding the shortest distance between two points.}
+
+I've needed both when I was creating 8-puzzle program
+
+\subsection{}
+
+\textit{Other than speed, what other measures of efficiency migh you need to consideer
+  in a real-world setting?}
+
+Memory and parallellability.
+
+\subsection{}
+
+\textit{Select a data structure that you've seen, and discuss its strengths and limitations.}
+
+Linked lists. They are perfect in everything, apart from sorting; but even then you can define
+any data structure through linked lists, which makes them just perfect (especially
+omnidirectional ones).
+
+\subsection{}
+
+\textit{Suggest a real-world problem in which only the best solution will do. Then come up
+  with one in which "approximately" the best solution is good enough.}
+
+Sorting has to be perfect, otherwise it's borderline useless. Estimated time to
+complete the task can tolerate imperfections.
+
+\subsection{}
+
+\textit{Describe a real-world problem in which sometimes the entire input is available
+  before you need to solve the problem, but other times the input is not
+  entirely available in advance and arrives over time}
+
+Traffic on maps does this thing. Sometimes you have all the input, sometimes it changes.
+
+
+\section{Algorithms as a technology}
+
+\subsection{}
+
+\textit{Give an example of an application that requires algorithmic content at the
+  application level, and discuss the function of the algorithms involved.}
+
+Path finding on maps will do. It requires to triverse graphs and whatnot.
+
+\subsection{}
+
+\textit{Suppose that for inputs of size $n$ on a particular computer, insertion sort
+  runs in $8n^2$ steps and merge sort runs in $64n \lg n$ steps. For which values of $n$
+  does insertion sort beat merge sort?}
+
+For
+$$8 n^2 < 64 n \lg n$$
+$$n <8 \lg n$$
+$$\frac{n}{lg n} < 8$$
+$$n \approx 44$$
+cases.
+
+
+\subsection{}
+
+\textit{What is the smallest value of $n$ such that an algorithm whose running time is $100n^2$
+  runs faster than an algorithm whose running time is $2^n$ on the same machine?}
+
+Calculator says 15
+
+\chapter{Getting Started}
+
+
+
+
+
 \part{Appendix: Mathematical Background}
 \chapter{Summations}
 
@@ -214,3 +295,7 @@ $$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
 
 
 \end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
