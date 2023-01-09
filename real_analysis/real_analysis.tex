@@ -13386,18 +13386,114 @@ therefore we can follow that for every $A$ there exists an additive inverse.
 
 We've done it earlier, didn't we?
 
-\subsection{8.4.7}
+\subsection*{8.4.7}
 
 \textit{(a) Show that AB is a cut}
 
+We know, that for both $A$ and $B$ there exits $t_a \notin A$ and $t_b \notin B$ for which
+it is true that $t_a > a$ and $t_b > b$ for all $a \in A$ and $b \in B$. Thus we can follow that
+$t_a t_b  > ab$ and therefore $t_a t_b \notin AB$. Therefore $AB \neq Q$.
+
+Any $x < 0$ is in $AB$, therefore $AB \neq \emptyset$. Thus we've got (c1).
+
+Suppose now that $r \in A$. If $r \leq 0$, then we've got everything covered by the
+right-hand side of the union. Otherwise we follow that $r = ab$ and let $s < r$. If $s < 0$,
+then it's in the right set. If $s = 0$, then by setting $a = 0$ and $b$ to any number in $B$
+we get that $s = ab$. Otherwise fix $a$ and let
+$$s = ab'$$
+$$s/a = b'$$
+given that $s < r$ we've got that $s/a < r/a = b$. Therefore because   $B$ is a cut,
+there exists $b' \in B$  such that the equation holds. Thus we can follow that if $s < r$ and
+$r \in AB$, then $s \in AB$, which gives us (c2).
+
+Suppose that $r \in AB$. If $r < 0$, then we've got a bigger number in right set. If
+$A = O$ and $B = O$, then we've got that left set in $AB$ is empty, given that
+no numbers in there are greater or equal to $0$. Thus if $r \geq 0$, then the left set is
+not empty and we can conclude, that there exist $a \in A$ and $b \in B$ such that
+$ab = r$. Picking $a' > a$ we get that $a'b > r$, therefore the resulting set does not have a
+maximum and we conclude that we have (c3).
+
+Thus we get that the resulting set has every property of a cut, and therefor $AB$ is a cut, as
+desired.
+
+\textit{(b) Prove property (o4) from Definition 8.4.5}
+
+(o4) states that if $y \leq z$, then $x + y \leq x + z$.
+
+Let $X$ be arbitrary.
+If $r \in X + Y$, then there exists $x \in X$ and $y \in Y$ such that $r = x + y$. Given that
+$y \leq z$ we follow that $Y \subseteq Z$. Thus $y \in Z$ and therefore $x + y \in X + Z$.
+Therefore $X + Y \subseteq X + Z$. Therefore $x + y \leq x + z$, as desired.
+
+\textit{(c) Propose a good candidate for the multiplicative identity (1) on $R$ and show
+  that this works for all cuts $A \geq O$.}
+
+Well, $1$ is probably a good candidate for multiplicative identity.
+
+Suppose that $A \geq O$.  Suppose that $r \in 1A$.
+If $r < 0$, then $r \in A$ by the virtue of the fact that $A \geq O$. If $r \geq 0$, then
+there exists $a \in A$ and $b \in 1$ such that $r = ab$. Given that $b < 1$ we've got that
+$r = ab < a$. Thus, because $A$ is a cut we follow that $r \in A$.
+Thus $1A \subseteq A$.
+
+Now suppose that $r \in A$. Because $A$ is a cut we follow that $r$ is not a maximum of this
+set. Thus there exists $s \in A$ such that $r < s$. Thus, we follow that $r/s < 1$ and therefore
+$r/s \in 1$. Thus we get $s \in A$ and $r/s \in 1$ such that $s r/s = r$. Thus $A \subseteq 1A$.
+
+Thus by double inclusion we get that $1A = A$. Therefore $1$ is desired multiplicative identity.
+
+\textit{(d) Show that $AO = O$ for all cuts $A \geq O$.}
+
+For $AO$ we've got that left set is equal to emptyset, since there is no $o \in O$ such
+that $o \geq 0$. Thus it is equal to the right hand set, which is precisely $O$.
+
+\subsection*{8.4..8}
+\textit{Let $\mathcal A \subseteq R$ be nonempty and bounded above, and let $S$ be the union
+  of all $A \in \mathcal A$.}
+
+\textit{(a) First, prove that $S \in R$ by showing tha it is a cut.}
+
+By its boundedness we've got that it is not equal to $Q$. By the fact that it is a union of
+nonempty sets, we follow that it is not equal to $\emptyset$. Thus we've got (c1).
+
+Suppose that $r \in S$. Then it follows that it is a member of a cut, and therefore
+we've got (c2). By the same reason we've got (c3). Thus it is a cut.
 
 
+\textit{(b) Now, show that $S$ is the least upper bound for $\mathcal A$.}
+
+Suppose that $A \in \mathcal A$. Thus we follow that $A \subseteq S$, sinse $S$ is a union
+of all of those cuts. Thus $S$ is an upper bound.
+
+Now suppose that $C$ is an upper bound. Then it follows that $A \subseteq C$ for all
+$A \in \mathcal A$. Thus $C \subseteq \cup A$. Therefore $C \subseteq S$. Therefore $S$ is
+a least upper bound, as desired.
+
+\subsection*{8.4.9}
+\textit{Consider the collection of so-called "rational" cuts of the form}
+$$C_r = \{t \in Q: t < r\}$$
+\textit{where $r \in Q$.}
+
+\textit{(a) Show that $C_r + C_s = C_{r + s}$ for all $r, s \in Q$. Verify $C_r C_s = C_{rs}$ for
+  the case when $r, s \geq 0$.}
+
+If $r \in C_r$ and $s \in C_s$, then $r + s \in C_{r + s}$ by definition. $q \in C_{r + s}$
+implies that $q < r + s$. Thus we can pick $r \in C_r$ and $s \in C_s$ such that
+$r + s = q$ (we can go about defining $\epsilon$ and whatnot, but it's pretty evident that
+this is true). Thus by double inclusion we've got tha $C_r + C_s = C_{r + s}$.
+
+Suppose that $r, s \geq 0$. If $r = 0$ or $s = 0$, then we default to the case in previous
+exercise. Thus let $r, s > 0$. Then we can follow that $rs \in C_{rs}$ by definition. For
+reverse inclusion we can state that if  $q \in C_{rs}$, then $q/r \in C_s$. Because $C_s$ does
+not have a maximum we can follow that there exists $b > q/r \in C_s$. Thus $q/b < r$ and
+$q/b \in C_r$. Thus we've got $q/b \in C_r$ and $b \in C_s$ such that $q/b * b = q \in C_{rs}$.
+Thus by double inclusion we've got that $C_s C_r = C_{sr}$.
+
+\textit{(b) Show that $C_r \leq C_s$ if and only if $r \leq s$ in $Q$.}
+
+Suppose that $C_r \leq C_s$. Then it follows that there does not exist $q \in Q$ such that
+$q > r$ and $q < s$. Thus $r = s$. Reverse is true by definition of a cut.
 
 
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
