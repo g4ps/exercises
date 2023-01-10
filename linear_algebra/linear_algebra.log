@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  7 JAN 2023 18:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  10 JAN 2023 18:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -511,13 +511,13 @@ he case is triv-ial. Thus let us as-sume that $[] \OML/cmm/m/it/10 range^^^ \OT
 
 [43] [44] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: B4614205F1B2B8102EB1C9D4A5813AF8;8002.
+(rerunfilecheck)             Checksum: 92E4F924E750EF9FCEA972638A376503;8263.
  ) 
 Here is how much of TeX's memory you used:
- 8829 strings out of 478238
- 135372 string characters out of 5850455
- 430547 words of memory out of 5000000
- 26809 multiletter control sequences out of 15000+600000
+ 8837 strings out of 478238
+ 135498 string characters out of 5850455
+ 430549 words of memory out of 5000000
+ 26813 multiletter control sequences out of 15000+600000
  482055 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,276b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -535,10 +535,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb>
-Output written on linear_algebra.pdf (45 pages, 305141 bytes).
+Output written on linear_algebra.pdf (45 pages, 308507 bytes).
 PDF statistics:
- 964 PDF objects out of 1000 (max. 8388607)
- 876 compressed objects within 9 object streams
- 175 named destinations out of 1000 (max. 500000)
- 1025 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 896 compressed objects within 9 object streams
+ 179 named destinations out of 1000 (max. 500000)
+ 1057 words of extra memory for PDF output out of 10000 (max. 10000000)
 

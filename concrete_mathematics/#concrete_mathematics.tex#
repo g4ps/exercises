@@ -1,0 +1,98 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My concrete mathematics exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Recurrent Problems}
+
+\section{}
+
+\textit{Too long of a text of exercise}
+
+By saying that 2 through n horses have the same color, we imply that for any given
+set of horses of length $n - 1$ we follow that they have the same color. But we've assumed
+that for a given set (or even better - list) of horses $[1, n - 1]$, we've got that
+if $x, y \in [1, n - 1]$, then $x$ and $y$ have the same color.
+
+\section{}
+
+\textit{Find the sortest sequence of moves that transfers a tower of $n$ disks from the
+  left peg $A$ to the right peg $B$, if direct moves between $A$ and $B$ are disallowed. (Each
+  move must be to or from the middle peg. As usual, a larger disk must never apper above
+  a smaller one.)}
+
+By doing some mental gymnastics we get that
+$$n = 1 \to f(n) = 2$$
+$$n = 2 \to f(n) = 8$$
+$$n = 3 \to f(n) = 26$$
+which doesn't give me much of a clue.
+
+Then we conclude, that in order to move  n disks from $A$ to $B$, we need to move $n - 1$ disks
+from $A$ to $B$, then move $n$'th disk to the middle peg, then move $n - 1$ disks back from $B$
+to $A$, then move the $n$'th disk to its final place at the bottom of $B$, and to finish
+it all we need to move $n - 1$ disks again from $A$ to $B$ (During this discuttion I realized,
+that good guess for the initial values would be $3^n - 1$ ). Thus we can follow that
+$$f(1) = 2$$
+$$f(n) = f(n - 1) + 1 + f(n - 1) + 1 + f(n - 1) = 3f(n - 1) + 2$$
+
+Thus let us prove that our guess is correct. We're going to do it by induction. Base case is
+covered, therefore we can assume that our guess is true for $n - 1$. Thus
+$$3f(n - 1) + 2 = 3* (3^{n - 1} - 1) + 2 = 3^n - 3 + 2 = 3^n - 1$$
+as desired.
+
+\section{}
+
+\textit{Show that, in the process of transferring a tower under the restrictions of the preceding
+  exercise, we will actually encounter every properly stacked arrangement of $n$ disks
+  on three pegs.}
+
+I think that we can even do this one by induction. Base case with 1 disk is clear, we gotta
+move it firstly to the middle one, then to the last one, making it all the possible arrangements.
+Because we use a language of "bottom disk" in further proof we can probably kick it up a notch
+and make the case for 2 disks as base one, just in case that it matters.
+
+Now assume that we get this property for the case of $n - 1$ disks. Then it follows that
+there are 3 possible positions for the bottom disk, and for all of them we move all other disks
+from first peg to the last peg, or vice versa, making all the possible combinaitons on the way.
+Thus we can conclude that disks make all the possible arrangements in the case of $n$ disks,
+providing us with the desired iteration.
+n
+\section{}
+
+\textit{Are there any starting and ending configurations of $n$ disks on three pegs that
+  are more than $2^n - 1$ moves apart, under Lucas's original rules?}
+
+I want to say "no" on this one. Maybe some sort of a shift is the counterexample. It seems
+like it isn't. Maybe we can somehow show that $2^n - 1$ is the  maximum.
+Suppose that we've arranged
+disks in order and then we proceed with the fact, that it takes $2T_{n - 1} + 1$ moves to move
+$n$'th largest disk from its original place to some other place. Thus we can follow that
+$2^n - 1$ is indeed the largest amount of moves, because it moves every disk from one
+place to another.
+
+\section{}
+
+\textit{A Venn diagram with three overlapping circles is often used to illustrate the eight
+  possible subsets associated with three given sets. Can the sixteen possibilities that arise
+  with four given sets be illustrated by four overlapping circles?}
+
+Nope. 
+
+\section{}
+
+\textit{Some of the regions defined by $n$ lines in the plane are infinite, while other are
+  bounded. What's the maximum possible number of bounded regions?}
+
+I think that it is the same as with any regions, but shifted by 3, because we need to bound the
+first region, and then proceed with its dissection as per normal rules.
+
+
+
+\end{document}

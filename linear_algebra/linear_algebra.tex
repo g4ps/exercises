@@ -1745,6 +1745,43 @@ as desired.
 $$T_1(x, y, z, w, q) = (x, y)$$
 $$T_2(x, y, z, w, q) = (y, x)$$
 
+\section{Matrices}
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional and $T \in L(V, W)$. Show that with respect
+  to each choice of bases of $V$ and $W$, the matrix of $T$ has at least $\dim range T$ nonzero
+  entries.}
+
+Suppose that we've there exists a choice of bases of $V$ and $W$, such that matrix of this
+linear map has less nonzero entries, then $\dim range T$. Then it follows, that
+$\dim range T$ is spanned by list of vectors, that has length less than $\dim range T$,
+which is impossible.
+
+
+\subsection{}
+
+\textit{Suppose $D \in L(P_3(R), P_2(R))$ is the differentiation map defined by $Dp = p'$. Find
+  a basis of $P_3(R)$ and a basis of $P_2(R)$ such that the matrix of $D$ with resprect to these
+  bases is }
+$$
+A =
+\begin{pmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+\end{pmatrix}
+$$
+
+I think that we can use standart basis for $P_3(R)$, and for $P_2(R)$ we gotta use
+basis $1, 2x, 3x^2$.
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional and $T \in L(V, W)$. Prove that there exist
+  a basis of $V$ and a basis of $W$. such that with respect to these bases, all entries of $M(T)$
+  are 0 except that the entries in row $j$, column $j$, equal $1$ for
+  $1 \leq j \leq \dim range T$.}
 
 \end{document}
 %%% Local Variables:
