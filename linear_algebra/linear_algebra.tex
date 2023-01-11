@@ -1,12 +1,10 @@
-\documentclass[10pt,oneside,titlepage]{book}
+\documentclass[11pt,oneside,titlepage]{book}
 \title{My linear algebra exercises}
-\usepackage{amsmath,amssymb}
-% \usepackage{geometry}
-% \usepackage{pdfpages}
-% \usepackage{tocloft}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
 \usepackage{hyperref}
 \author{Evgeny Markin}
-\date{2022}
+\date{2023}
 
 
 
@@ -1783,8 +1781,27 @@ basis $1, 2x, 3x^2$.
   are 0 except that the entries in row $j$, column $j$, equal $1$ for
   $1 \leq j \leq \dim range T$.}
 
+We can create a basis out of preimage of range of $T$. Thus if we set $v_1, ..., v_n$ to be a
+basis of preimage and $T v_1, ..., T v_n$ to be the basis of range. Thus if we extend those
+lists to be a bases of $V$ and $W$ respectively, we get the desired result.
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_m$ is a basis of $V$ and $W$ is finite-dimentional. Suppose
+  $T \in L(V, W)$. Prove that there exists a basis $w_1, ..., w_n$ of $W$ such that
+  all the entries in the first column of $M(T)$ (with respect to the bases $v_1, ..., v_m$ and
+  $w_1, ..., w_m$) are 0 except for possibly a 1 in the first row, first column.}
+
+We can plug in $v_1$ into $T$ to get $T v_1$. If $T v_1 = 0$, then $v_1$ is in the nullspace
+and any basis will do. Otherwise we can extend $T v_1$ to a basis of $W$ and get the desired
+result.
+
+\subsection{}
+
+\textit{Suppose $w_1, ..., w_n$ is a basis of $W$ and $V$ is finite-dimentional. Suppose
+  $T \in L(V, W)$. Prove that there exists a basis $v_1, ..., v_m$ of $V$ such that
+  all the entries in the first row of $M(T)$ (with respect to the bases $v_1, ..., v_m$ and
+  $w_1, ..., w_n$) are 0 except for possibly a 1 in the first row, first column.}
+
+TODO
 \end{document}
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
