@@ -1803,5 +1803,136 @@ result.
   all the entries in the first row of $M(T)$ (with respect to the bases $v_1, ..., v_m$ and
   $w_1, ..., w_n$) are 0 except for possibly a 1 in the first row, first column.}
 
-TODO
+Suppose that we've got a random basis $v_1, ..., v_n$  of $V$ and then
+map it through $T$. Then pick a vector $v_j$ such that $T v_j = a_1 w_1 + ... + a_m w_m$
+such that $a_1 \neq 0$. If there is no such vector, then we're set. Otherwise go
+through all the other vecrors $v_k$ and look at the representation
+$$v_k = a_1' w_1 + ... + a_m' w_m$$
+and set 
+$$v_k'  = v_k - b_n v_n$$
+where $b_n$ satisfies $a_1/a_1'$ (or vice versa) such that $v_k'$ represented as
+$$T v_k' = 0 w_1 + ... + a_m w_m$$
+Thus by linear independence of $v_1, ..., v_n$ we've got that $v_j, ..., v_1', ..., v_n'$ is
+also linearly independent. Then, by plugging this vector into a matrix in this order, we
+get the desired result.
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional and $T = L(V, W)$. Prove that
+  $\dim range T = 1$ if and only if there exist a basis of $V$ and a basis of $W$
+  such that with respect to these bases, all entries of $M(T)$ equal 1.}
+
+\textbf{In forward direction: }
+Suppose that we've got $T$ and $\dim range T = 1$.
+Suppose that $v_1, ..., v_n$ is the resulting basis of $V$. Thus we can follow that
+$T v_1 = T v_2 = ... = T v_n = w \neq 0$. Thus we can follow that $w_1 + ... + w_m = w$ is
+the basis of range of $T$.
+
+Thus we can create a vector $v_1$ such that $T v_1 = w$, then expand it to a basis of
+$V$ $v_1, ..., v_n$ and then it'll follow that $v_2, ..., v_n$ is a basis of a nullspace.
+Thus we can make a list $v_1, v_2 + v_1, v_3 + v_1, ..., v_n + v_1$, that will also a
+basis of $V$ and for it it'll follow that
+$$T v_j' = T (v_j + v_1) = 0 + w = w$$
+Thus the only thing that is left is to create a basis of $W$ such that
+$$w_1 + ... + w_n = w$$
+we can actually do it by expanding $w$ to a basis of $W$, and getting $w, w_1, ..., w_n$. Then
+we can set the first vector to be $w - w_1 - w_2 - ... - w_n$ and we'll get the desired
+property. Thus we can construct the bases such that we have the desired property.
+
+\textbf{In reverse direction: }
+Suppose that there exist a basis of $V$ and basis of $W$ such that all entries of $M(T)$  are
+equal to 1. Then we can follow that if we plug any vector into $T$, then we'll get the
+constant multiple of the vector $w_1 + ... + w_n$. Thus we can follow that
+$\dim range T = 1$, as desired.
+
+\subsection{}
+\textit{Verify 3.36}
+
+3.36 states that if $S, T \in L(V, W)$, then $M(S + T) = M(S) + M(T)$.
+
+Suppose that $S, T \in L(V, W)$, $v_1, ..., v_n$ is a basis of $V$ and
+$w_1, ..., w_m$ is a basis of $W$. Then we can follow that
+values at $j$'th column of $M(S + T)$ are obtained through
+$$(S + T)(v_j) =  S(v_j) + T(v_j) = (a_1 + a_1') w_1 + ... + (a_m + a_m')w_m$$
+where $a_1, ... a_m$ will be numbers in $j$'th row of $M(S)$ and $a_1', ..., a_m'$ will
+be numbers in $j$'th row of $M(T)$. Thus we can follow that $M(S + T) = M(S) + M(T)$.
+
+\subsection{}
+
+\textit{Verify 3.38}
+
+3.38 states that if $\lambda \in F$ and $T \in L(V, W)$, then $M(\lambda T) = \lambda M(T)$
+$$(\lambda T) v_j = \lambda a_1 w_1 + ... + \lambda a_m w_m =
+\lambda (a_1 w_1 + ... + a_m w_m) = 
+\lambda(T v_j)$$
+thus by the same reasoning as in previous exercise we've got that $M(\lambda T) = \lambda M(T)$,
+as desired.
+
+\subsection{}
+
+\textit{Verify 3.52}
+
+Follows directrly from the definition.
+
+\subsection{}
+
+\textit{Suppose $A$ is an $m$-by-$n$ matrix and $C$ is an $n$-by-$p$ matrix. Prove that }
+$$(AC)_{j, \cdot} = A_{j, \cdot}C$$
+\textit{for $1 \leq j \leq m$. In other words, show that row $j$ of $AC$ equals (row $j$ of $A$)
+  times $C$.}
+
+$$(AC)_{j, k} = A_{j, \cdot} C_{k, \cdot}$$
+thus
+$$(AC)_{j, \cdot} = (A_{j, \cdot} C_{1, \cdot}, A_{j, \cdot} C_{2, \cdot}, ..., A_{j, \cdot} C_{k, \cdot}) =
+A_{j, \cdot} C
+$$
+
+\subsection{}
+
+\textit{Suppose $a = (a_1, ..., a_n)$ is a $1$-by-$n$ matrix and $C$ is an $n$-by-$p$ matrix.
+  Prove that }
+$$aC = a_1 C_{1, \cdot} + ... + a_n C_{n, \cdot}$$
+\textit{In other words, show that $aC$ is a linear combination of the rows of $C$,
+  with the scalars that multiply the rows coming from $a$.}
+
+This follows directly from a definition of matrix multiplication.
+
+\subsection{}
+
+\textit{Give an example with 2-by-2 matrices to show that matrix multiplication is not
+  commutative. In other words, find 2-by-2 matrices $A$ and $C$ such that
+  $AC \neq CA$}
+
+$$A =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & 0
+\end{pmatrix}
+$$
+
+$$C =
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}
+$$
+
+$$AC =
+\begin{pmatrix}
+  0 & 1 \\
+  0 & 0
+\end{pmatrix}
+$$
+
+$$CA =
+\begin{pmatrix}
+  0 & 0 \\
+  1 & 0
+\end{pmatrix}
+$$
+
+\textit{The rest of the exercises are just basic applications of definitions, and equating them
+rigorously. Nothing interesting in there}
+
 \end{document}
+

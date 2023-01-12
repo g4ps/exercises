@@ -6,6 +6,8 @@
 \author{Evgeny Markin}
 \date{2022}
 
+\DeclareMathOperator\erf{erf}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -128,12 +130,124 @@ $$f'(x) = \frac{2x + 3}{\ln (8) (x^2 + 3x)}$$
 
 \subsection{}
 
+$$f(x) = \sin^{-1}(5x)$$
+$$f'(x) = \frac{5}{\sqrt{1 - (5x)^2}}$$
 
- 
+\subsection{}
+
+$$f(x) = \sec^{-1}(e^x)$$
+$$f'(x) = \frac{2 e^{2x}}{e^x \sqrt{e^{2x} - 1}}$$
+
+\subsection{}
+
+$$ f(x) = \tan^{-1}(\sqrt{x - 1})$$
+$$ f'(x) = \frac{1}{2 \sqrt{x - 1}(1 + |x - 1|)}$$
+
+\subsection{}
+
+$$f(x) = \tan^{-1}(x^2) $$
+$$f'(x) = \frac{2x}{1 + x^4}$$
+
+\subsection{}
+
+$$f(x) = (\tan^{-1}x)^2$$
+$$f'(x) = \frac{2(\tan^{-1}x)}{1 + x^2}$$
+
+\subsection{}
+
+$$f(x) = \arccos\sqrt{x}$$
+$$f'(x) = \frac{1}{2 \sqrt{x} \sqrt{1 - |x|}}$$
+
+\subsection{}
+
+$$f(x) = (\arcsin x) \ln x$$
+$$f'(x) = \frac{\ln x}{\sqrt{1 - x^2}} + \frac{\arcsin x}{x}$$
+
+
+\subsection{}
+
+$$ f(x) = \ln(\arctan(x^4))$$
+$$ f'(x) = \frac{4 x^3}{(1 + x^8)\arctan x^4}$$
+
+\subsection{}
+
+$$f(x) = e^{\arcsin(x^2)}$$
+$$f'(x) = e^{\arcsin(x^2)}\frac{2x}{\sqrt{1 - x^4}}$$
+
+
+\chapter{Basic integration}
+
+\section{Basic integrals}
+
+\subsection{}
+$$\int_1^3{(x^2 + 2x - 4)dx} =
+[\frac{x^3}{3} + x^2 - 4x]_1^3 = (9 + 9 - 12) - (1/3 + 1 - 4) = 6 + \frac{8}{3} = \frac{26}{3}$$
+
+\subsection{}
+\textit{The error function}
+$$\erf(x) = \frac{2}{\sqrt{\pi}}\int_0^x{e^{-t^2}dt}$$
+
+\textit{(a) Show that }
+$$\int_a^b{e^{-t^2}dt} = \frac{1}{2} \sqrt{\pi} [\erf(b) - \erf(a)]$$
+
+$$\erf(x) = \frac{2}{\sqrt{\pi}}\int_0^x{e^{-t^2}dt}$$
+$$\frac{\sqrt{\pi} }{2} \erf(x) = \int_0^x{e^{-t^2}dt}$$
+$$\frac{\sqrt{\pi} }{2} \erf(a) = \int_0^a{e^{-t^2}dt}$$
+$$\frac{\sqrt{\pi} }{2} \erf(b) - \frac{\sqrt{\pi} }{2} \erf(a) =
+\int_0^b{e^{-t^2}dt} - \int_0^a{e^{-t^2}dt}$$
+$$\frac{\sqrt{\pi} }{2} \erf(b) - \frac{\sqrt{\pi} }{2} \erf(a) =
+\int_0^b{e^{-t^2}dt} + \int_a^0{e^{-t^2}dt}$$
+$$\frac{\sqrt{\pi} }{2} \erf(b) - \frac{\sqrt{\pi} }{2} \erf(a) =
+\int_a^b{e^{-t^2}dt}$$
+$$\frac{1}{2} \sqrt{\pi}  [\erf(b) - \erf(a)] = \int_a^b{e^{-t^2}dt}$$
+
+\textit{(b) Show that the function $y = e^{x^2}\erf(x)$ satisfies the differential equation
+  $$y' = 2xy + 2 / \sqrt{\pi}$$}
+
+$$y' = 2x e^{x^2} \erf(x) + e^{x^2} \frac{2}{\pi} e^{-x^2} =
+2x e^{x^2} \erf(x) +  \frac{2}{\pi}
+$$
+
+$$2xy + 2/\sqrt \pi = 2x e^{x^2}\erf(x) + 2/\sqrt \pi$$
+as desired.
+
+\section{Substitution}
+
+\subsection{}
+$$\int{\cos 2x dx}$$
+$$u = 2x$$
+$$\int{\cos 2x dx} = \int{\frac 1 2 2 \cos 2x dx} = \int{\frac 1 2 \cos u du} =
+\frac 1 2  \int{\cos u du} = 
+\frac 1 2 \sin u = \frac 1 2 \sin 2x$$
+
+\subsection{}
+
+$$\int{x e^{-x^2}dx} =
+\int{(- \frac 1 2) -2 x e^{-x^2}dx} =
+- \frac 1 2 \int{  e^{u}dx} = - \frac 1 2 e^u = - \frac 1 2 e^{-x^2}
+$$
+
+\subsection{}
+
+$$\int{x^2 \sqrt{x^3 + 1}dx} =
+\int{\frac{1}{3} 3 x^2 \sqrt{x^3 + 1}dx} =
+\frac{1}{3} \int{ \sqrt{u}dx} = \frac{1}{3} u^{3/2} \frac 2 3 = \frac 2 9 (x^3 + 1)^{3/2}
+$$
+
+\subsection{}
+
+$$\int{\sin^2 x \cos x} =
+\int {u^2} = \frac {u^3} 3= \frac {\sin x} 3
+$$
+
+\section{Integration by parts}
+
+\subsection{}
+
+$$ \int {x e^{2x}} =
+ x \frac 1 2 e^{2x} - \int {\frac 1 2 e^{2x}} =  \frac 1 2  x e^{2x} - \frac 1 2 e^{2x} 
+$$
+
 
 \end{document}
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
