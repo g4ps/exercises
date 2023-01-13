@@ -6,6 +6,11 @@
 \author{Evgeny Markin}
 \date{2023}
 
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
 
 
 \begin{document}
@@ -19,6 +24,10 @@ I've already read this book before and completed some exercises from it.
 Right now I want to brush up the material once again, put all the
 proofs on a more durable material than paper and to prepare myself to
 what's gonna happen afterwards.
+
+\chapter*{Glossary}
+
+FTLM - Fundamental Theorem of Linear Maps 
 
 \chapter{Vector Spaces}
 \section{$R^n$ and $C^n$}
@@ -1932,7 +1941,289 @@ $$CA =
 $$
 
 \textit{The rest of the exercises are just basic applications of definitions, and equating them
-rigorously. Nothing interesting in there}
+  rigorously. Nothing interesting in there}
+
+\section{Invertibility and Isomorphic Vector Spaces}
+
+\subsection{}
+
+\textit{Suppose $T \in \map (U, V)$ and $S \in \map (V, W)$ are both invertible linear maps.
+  Prove that $ST \in \map(U, W)$ is invertible and that $(ST)^{-1} = T^{-1} S^{-1}$}
+
+Let $u \in U$. Then
+$$u = Iu = (T \inv T) u = T \inv (T u) = T \inv I (T u) = T \inv (S \inv S) (T u) =
+(T \inv S \inv) (S T) u $$
+thus we can follow that $(ST)$ is invertible and $(T \inv S \inv) = (ST) \inv$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\dim V > 1$. Prove that the set of
+  noninvertible operators on $V$ is not a subspace of $\map(V)$.}
+
+We can have
+$$S_1(a_1 v_1 + ... a_n + v_n) = a_1 v_1 + ... a_j + v_j$$
+$$S_2(a_1 v_1 + ... a_n + v_n) = a_{j + 1} v_{j + 1} + ... a_n + v_n$$
+for some $1 \leq j < n$. (you can interpret it as an upper part of the identity and a lower
+part). Both of them are non-invertible (by non-surjectivity), but their sum is the identity,
+which is invertible. Thus the subset is not closed under addition and therefore it is not a
+subspace.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $U$ is a subspace of $V$, and $S \in \map (U, V)$.
+  Prove that there exists an invertible operator $T \in \map(V)$ such that $T(u) = S(u)$ for
+  every $u \in U$ if and only if $S$ is injective.}
+
+\textbf{In forward direction: }
+Suppose that there exists such an operator and $S$ is not injective. Thus there exists
+$u_1$ such that $u_1 \neq 0$ and $S u_1 = 0$. Thus $T u_1 = S u_1 = 0$, therefore
+$T$ is not injective, therefore it is not invertible, which is a contradiction.
+
+\textbf{In reverse direction: }
+Suppose that $S$ is injective. Let $u_1, ..., u_n, v_1, ..., v_m$ be a basis of $V$ such
+that $u_1, ..., u_n$ is a basis of $U$. Thus, by FTLM we've got that 
+$$\dim U  = \dim \range S + \dim \ns S$$
+Given that $S$ is injective, we can follow that $\dim \ns S = 0$. Thus
+$$\dim U  = \dim \range S$$
+Thus, because $\range S$ is a subspace,  we can create a basis of it
+$u_1', ..., u_n'$, which will have the same length as the basis of $U$. By expanding this basis
+to a basis of $V$ we can create $u_1', ..., u_n', v_1', ..., v_m'$.
+Then if we map $u_1, ..., u_n, v_1, ..., v_m$ to $u_1', ..., u_n', v_1', ..., v_m'$, we'll
+get $T \in \map(V)$, which  by uniqueness of representation that will have
+$$Tu = Su$$
+and because $u_1', ..., u_n', v_1', ..., v_m'$ is a basis of $V$ we'll get that $T$ is
+surjective, and thus invertible, as desired.
+
+\subsection{}
+
+\textit{Suppose $W$ is finite-dimentional and $T_1, T_2 \in \map(V, W)$. Prove that
+  $\ns T_1 = \ns T_2$ if and only if there exists an invertible operator $S \in \map(W)$ such that
+  $T_1 = S T_2$.}
+
+\textbf{In forward direction: }
+Suppose that $\ns T_1 = \ns T_2$. Then we can follow that $\dim \range T_1 = \dim \range T_2$.
+We can also follow that there exists $v_1, ... v_n$ - basis of preimage of $T_1$ and $T_2$.
+Thus, $T_1 v_1, ... T_1 v_n$ is a basis of $\range T_1$ and $T_2 v_1, ..., T_2 v_n$ is a
+basis of $\range T_2$. Thus we can create a unique map $S \in \map(\range T_2, \range T_1)$
+$$S'(a_1 T_2 v_1 +  ... +  a_n T_2 v_n) = a_1 T_1 v_1 +  ... +  a_n T_1 v_n$$
+Thus, if $v \in V$, then
+$$S T_2 v = S (a_1 T_2 v_1 + ... + a_n T_2 v_n) = a_1 T_1 v_1 + ... + a_n T_1 v_n =
+T_1(a_1 v_1 + ... + a_n v_n) = T_1 v$$
+
+Given that $S'$ is injective and $S' \in (\range T_2, \range T_1) \to S' \in (\range T_2, W)$
+(because $\range T_2 \subseteq W$) , we can follow by results of our previous exercise, that there
+exists invertible  $S \in \map (W)$ such that
+$$S(w) = S'(w)$$
+and therefore
+$$T_1 = S T_2$$
+as desired.
+
+\textbf{In reverse direction: }
+Suppose that there exists invertible $S \in \map(W)$ such that $T_1 = S T_2$.
+Thus if $v \in \ns T_1$, then we can follow that $S T_2 v = 0$. By invertability of $S$ we've got
+that there exists $S \inv$ and therefore
+$$S T_2 v = 0$$
+$$S \inv S T_2 v = S \inv 0$$
+$$T_2 v = 0$$
+Thus, $v \in \ns T_2$. Therefore we can follow that $\ns T_1 \subseteq \ns T_2$. By the same
+logic, but in other direction we've got that $\ns T_2 \subseteq \ns T_1$, thus
+$$\ns T_1 = \ns T_2$$
+as desired.
+
+
+\subsection{}
+
+\textit{Suppose that $V$ is finite-dimentional and $T_1, T_2 \in \map(V, W)$. Prove that
+  $\range T_1 = \range T_2$ if and only if there exists an invertible operator $S \in \map (W)$
+  such that $T_1 = T_2 S$.}
+
+\textbf{In forward direction: }
+Let $w_1, ... w_n$ be a basis of $\range T_1 = \range T_2$. Thus we can follow that there exists
+basis $v_1, ... v_n \in V$ of preimage of $T_1$  and $v_1', ... v_n' \in V$  - basis of preimage
+of $T_2$ such that $T_1 v_j = w_j = T_2 v_j'$.
+Because those lists are linearly independent and have the same length, we
+can follow that there exists an isomorphy $S \in \map (V)$ such that
+$$S(a_1 v_1 + ... a_n v_n) = a_1 v_1' + ... a_n v_n'$$
+Thus we can follow that for $v \in V$
+$$T_2 S v = T_2 S (a_1 v_1 + ... a_n v_n) = a_1 w_1 + ... + a_n w_n = T_1 v$$
+as desired.
+
+\textbf{In reverse direction: }
+Suppose that there exists $S \in \map (W)$ such that $T_1 = T_2 S$. Then it is obvious that
+$\range T_1 = \range T_2$.
+
+\subsection{}
+
+\textit{Suppose that $V$ and $W$ are finite-dimentional and $T_1, T_2 \in \map (V, W)$. Prove that
+  there exists invertible operators $R \in \map L(V)$ and $S \in L(W)$ such that
+  $T_1 = S T_2 R$ if and only if $\dim \ns T_1 = \dim \ns T_2$.}
+
+\textbf{In forward direction: }
+By resullts of previous exercise we can follow that $\ns T_1 = \ns T_2 R$.
+Thus by injectivity of $R$ we've got that $\dim \ns T_1 = \dim \ns T_2$.
+
+\textbf{In reverse direction: }
+Suppose that $\dim \ns T_1 = \dim \ns T_2$. We can follow that there exists isomorphism
+$S \in \map (W)$ such that $\ns T_1 = \ns T_2 R$. Thus, by results of previous exercises we
+can folllow that there exists $S \in \map (V)$ such that $T_1 = S T_2 R$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional. Let $v \in V$. Let }
+$$E = \{T \in \map(V, W): Tv = 0 \}$$
+
+\textit{(a) Show that $E$ is a subspace of $\map (V, W)$.}
+
+Suppose that $S, T \in E$. Then for $v \in V$ we've got that 
+$$(S + T)v = S(v) + T(v) = 0$$
+thus $S + T \in E$ and $E$ is closed under addition.
+
+Let $\lambda \in F$.  Then
+$$(\lambda T)v = \lambda (T v) = \lambda 0 = 0$$
+thus $(\lambda T) \in E$, therefore $E$ is closed under scalar multiplication. Given that
+$\map (V, W)$ is a vector space we can follow that $E$ is a subspace, as desired.
+
+\textit{(b) Suppose $v \neq 0$. What is $\dim E$?}
+
+Extend $v$ to a basis $v, v_1 ... v_{n - 1}$  of $V$ and let $w_1, ..., w_n$ be
+arbitrary basis of $W$. Because $Tv = 0$, we require that first column  of $M(T)$ will be
+zeroes. Then we can follow that $\mathcal M$ is an
+isomorphism between $E$ and $F^{m, (n - 1)}$. Thus
+$$\dim E = (\dim V - 1)(\dim W)$$
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $T: V \to W$ is a surjective linear map
+  of $V$ onto $W$. Prove that there is a subspace $U$ of $W$ such that
+  $T|_U$ is an isomorphism of $U$ onto $W$. }
+
+Let $v_1, ..., v_n$ be a basis of $\ns V$. Then we can extend it to  $v_1, ..., v_n, u_1, ..., u_m$,
+which will be a basis of $V$. Let $U = \Span(u_1, ..., u_m)$. We can follow by FTLM that
+$\dim U = \dim \range T$. Also, because $U$ is surjective, we can follow that it is invertible
+and therefore is isomorphism, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $S, T \in \map(V)$. Prove that $ST$ is invertible
+  if and only if both $S$ and $T$ are invertible.}
+
+\textbf{In forward direction: }
+
+Suppose that $ST$ is invertible. Suppose that $T$ is not invertible. Then it is not injective.
+Therefore theree exists $v \in V \neq 0$ such that $Tv = 0$. Therefore $STv = S0 = 0$, which
+is a contradiction. Thus $T$ is injective and therefore invertible.
+
+Suppose that $S$ is not invertible. Then we can follow that there exists $v \in V \neq 0$ such
+that $Sv = 0$. Given that $T$ must be invertible we can follow that there exists $w \in V \neq 0$
+such that $Tw = v$. Thus $STw = Sv = 0$. Therefore $ST$ is not injective, which is a contradiction.
+
+Thus we can follow that in order for $ST$ to be invertible, both $S$ and $T$ must be invertible
+as well, as desired.
+
+\textbf{In reverse direction: }
+Suppose that $S$ and $T$ are invertible. Then we can follow that both of them are injective.
+Thus by some exercise 
+in this chapter (looked it up, it's 3.2.11) $ST$ is injective as well. Thus $ST$ is invertible, as
+desired.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite0dimentional and $S, T \in \map(V)$. Prove that $ST = I$ if
+  and only if $TS = I$.}
+
+From previous exercise we can follow that both $S$ and $T$, as well as $ST$ and $TS$ are
+invertible.
+
+All of the following are equivalences and not  implications, therefore we can prove everything
+in one go.
+$$ST = I$$
+$$STS = IS$$
+$$STS = SI$$
+$$TS = I$$
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $S, T, U \in \map(V)$ and $STU = I$.
+  Show that $T$ is invertible and that $T \inv = US$.}
+
+Firstly I should state that we assume here that $S$ and $U$ are invertible, otherwise we default
+to one of the previous exrecises. 
+
+Suppose that $T$ is not invertible. Then it isn't injective, and therefore there exists
+$v \in V \neq 0$ such that $Tv = 0$. Because $U$ is invertible we can follow that there exists
+$w \in V \neq 0$ such that $Uw = v$. Thus
+$$STUw = STv = S0 = 0 \neq w$$
+Therefore $STU \neq I$, which is a contradiction.
+
+Now we can use some algebra in here
+$$STU = I$$
+$$TU = S \inv I$$
+$$TU = S \inv U \inv$$
+$$T = S \inv U \inv$$
+and by first exercise in this chapter
+$$T \inv = (S \inv U \inv) \inv = US$$
+as desired.
+
+\subsection{}
+
+\textit{Show that the result in the previous exercise can fail withoud the hypothesis that $V$
+  is finite-dimentional}
+
+We can set $U$ to be $I$,
+$$T(x_1, x_2, ...) = (0, x_1, x_2, ...)$$
+$$S(x_1, x_2, ...) = (x_2, x_3, x_4, ...)$$
+and so on. Then $T$ will not be surjective, and therefore will not be invertible (which doesn't
+follow from our usual equivalence, but by the fact that there does not exist a map such
+that $TS = I$, because there is no way to represent (1, 1, ...))
+
+\subsection{}
+
+\textit{Suppose $V$ is a finite-dimentional vector space and $R, S, T \in \map(V)$. are
+  such that $RST$ is surjective. Prove that $S$ is injective.}
+
+Suppose that it isn't. We can follow that $RST$ is invertible.
+Then we can follow that there exits $v \in V \neq 0$ such that
+$Sv = 0$. By invertability of $T$ we follow that there exists $w \in V \neq 0$
+such that $Tw = v$. thus
+$$RSTw = RSv = R0 = 0$$
+Thus $RST$ is not invertible and isn't surjective, which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_n$ is a basis of $V$. Prove that the map $T: V \to F^{n, 1}$
+  defined by }
+$$Tv = \mathcal M (v)$$
+\textit{is an isomorphism of $V$ onto $F^{n, 1}$.}
+
+Only way to represent 0 in $M(v)$ is that if $v = 0$, therefore the map is injective. Also,
+by common sense, map is surjective. Thus it is invertible and therefore it is an isomorphism.
+
+\subsection{}
+
+Trivial, seen simular in previous chapter
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $T \in \map(V)$. Prove that $T$ is a scalar
+  multiple of the identity if and only if $ST = TS$ for every $S \in \map (V)$.}
+
+Forward direction is trivial.
+
+Suppose that $ST = TS$ for every $S \in \map(V)$. Suppose that $T$ is not a scalar multiple
+of the identity. Then there exists $v \in V$ such that $Tv \neq \lambda v$ for some
+$\lambda \in F$. Because of this we can follow that
+
+$$ STv = TSv $$
+$$ Tv = S \inv TSv $$
+
+TODO
+
+
 
 \end{document}
 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
