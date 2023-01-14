@@ -2210,20 +2210,169 @@ Trivial, seen simular in previous chapter
 
 Forward direction is trivial.
 
-Suppose that $ST = TS$ for every $S \in \map(V)$. Suppose that $T$ is not a scalar multiple
-of the identity. Then there exists $v \in V$ such that $Tv \neq \lambda v$ for some
-$\lambda \in F$. Because of this we can follow that
+Suppose that $ST = TS$ for every $S \in \map(V)$. Suppose that $Tv \neq \lambda v$ for some
+$v \neq 0$ and $\lambda \in F$. Then we can follow that there exsits $S$ such that
+$$S(Tv) = v$$
+and
+$$S(v) = 0$$
+Thus
+$$ S (Tv) = v \neq 0 = S(v) = T(Sv)$$
 
-$$ STv = TSv $$
-$$ Tv = S \inv TSv $$
+Thus we can follow that for every $v \in V$ there exists $a \in F$ such that $Tv = av$.
 
-TODO
+Now suppose that $v, w \in V$. If $v \neq \lambda w$, then
+$$T(v + w) = a_{v + w}(v + w) = a_{v + w}v + a_{v + w}w = T(v) + T(w) = a_v v + a_w w$$
+thus
+$$a_v = a_w = a_{v + w}$$
+by the unique representation of zero.
 
+If $v = \lambda w$,  then
+$$Tv = a_v v = T(\lambda w) = a_w \lambda w$$
+$$a_v v =  a_w \lambda w$$
+$$a_v v =  a_w v$$
+thus $a_v = a_w$. Therefore for any given $v, w$ we follow that $a_v = a_w$. Thus, $T$ is a
+scalar multiple of $I$, as desired. (Proof aquired after reading another proof in supplimentary
+material).
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\mathcal E$ is a subspace of $\map(V)$ such
+  that $ST \in  \mathcal E$ and $TS \in \mathcal E$ for all $S \in \map(V)$ and all
+  $T \in \mathcal E$. Prove that $\mathcal E  = \{0\}$ or $\mathcal E = \map(V)$.}
+
+It's trivial to proof that $\{0\}$ and $\map(V)$ are such supspaces. We also should
+mention that in order for it not to be a trivial case we assume that $\dim V > 1$ (otherwise
+we don't have any other subspaces other than $\map (V)$ and $\{0\}$).
+
+Our strategy with this proof is to show that there exists an invertible map in $\mathcal E$.
+If we've got that, then the rest of the proof is trivial.
+
+Thus suppose that
+$E \neq \{0\}$ and $E \neq \map(V)$. Then we can follow that there exists a map
+$T \in E$ such that $T \neq 0$. Because we want to prove that there exists an invertible map
+in $E$, suppose that $T$ is not invertible (otherwise $T T \inv = I \in \mathcal E$, and we
+can skip to the later part).
+Thus there exists a vector $v \in V \neq 0$ such that 
+$Tv \neq 0$ and $w \in V \neq 0$ such that $Tw = 0$.
+Therefore extend $v$ to a basis $v, v_1, ..., v_n$ of $V$ and make a map
+$$S (v) = v$$.
+$$S (v_k) = 0$$.
+Then it follows that there exist maps $T S \in E_j$ such that
+$$TS(a_0 v + a_1 v_1 + ... a_n v_n) = Ta_0 v = a_0 T v$$
+Thus there exists a map 
+$$Q_j (a_0 v + ... + a_n v_n) = a_j v_j$$
+also in $\mathcal E$.
+Thus we can follow that $I \in \mathcal E$. Thus we can follow that for every $S \in \map(V)$
+we've got that
+$$SI = S$$
+is also in $\mathcal E$. Thus $\map(V) \subseteq \mathcal E$. Thus  we can follow that
+$\map(V) = \mathcal E$, which is a contradiction.
+
+Thus we can follow that $\mathcal E$ is either $\map(V)$ and $\{0\}$, as desired.
+
+\subsection{}
+
+\textit{Show that $V$ and $\map(F, V)$ are isomorphic vector spaces.}
+
+For finite-dimentional spaces we've got that
+
+$$\dim \map (F, V) = (\dim F)(\dim V) = 1 (\dim V) = \dim V$$
+
+Thus they are isomorphic.
+
+Otherwise we suppose that $v_1, ...$ is a basis of $V$. Given that
+$$v = \sum a_j v_j$$
+we can follow that we've got bijectivity between $\map(F, V)$ and $V$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(P(R))$ is such that $T$ is injective and $\deg Tp \leq \deg p$
+  for every nonzero polynomial $p \in P(R)$.}
+
+\textit{(a) Prove that $T$ is surjective.}
+
+Because $T$ is injective, we can follow that $\ns T = \{0\}$ (looked it up, this one applies
+to any vector space).
+
+Now let's try to prove that $\deg Tp = \deg p$.
+We probably don't need the induction here, but we'll use it anyways.
+
+For $p = 0$ we've got that $Tp = 0$. Let us prove that this is the case also
+for $\deg p = 0$, just in case. Suppose that $\deg p = 0$ and $\deg Tp < 0$, then $\ns T$ is
+not equal to zero, which is a contradiction.
+
+For inductive step let us assume that $\deg Tp = \deg p$ for $p$ such that  $\deg p = n - 1$.
+Now suppose that $\deg p = n$ and $\deg Tp < n$. By our assumption,  it follows that there exists
+a basis $p_0, ..., p_{n - 1}$ such that $\deg T p_j = j$. Thus we can follow that $T p_0, ... T p_n$
+spans $P_{n - 1}(R)$. Thus we follow that there exists $a_0, ... a_{n - 1}$ such that
+$$a_0 T p_0 + ... a_{n - 1} T p_{n - 1} = T p$$
+then it follows that $T$ is not injective, which is a contradiction.
+
+This concludes the proof that $\deg p = \deg Tp$. By this we can follow that
+given $p \in P(R)$ with $\deg p = n$ there exists $p_0, ... p_n$ and by extension
+$T p_0, ... Tp_n$ such that $p \in \range(T p_0, ... Tp_n)$. Thus there exists
+$p' \in P(R)$ such that $Tp' = p$. Thus $T$ is surjective, as desired (this dragged
+on for waaay too long).
+
+\subsection{}
+
+not gonna repeat the text of the exercise, but it basically reduces to our usual eqivalence
+of surjectivity/injectivity on finite-dimentional operators.
+
+\section{Products and Quotients of Vector Spaces}
+
+\subsection{}
+
+\textit{Suppose $T$ is a function from $V$ to $W$. The graph of $T$ is the subset of
+  $V \times W$ defined by }
+$$\text{graph of } T = \{(v, Tv) \in V \times W: v \in V\}$$
+\textit{Prove that $T$ is a linear map if and only if the graph of $T$  is a subspace
+  of $V \times W$.}
+
+Firstly, $G(T)$ denotes the graph of $T$. 
+
+\textbf{In forward direction: }
+Suppose that $T$ is a linear map. Suppose that $v, w \in G(T)$. Then it follows that
+$$v + w = (v + w, T(v + w))$$
+Thus $G(T)$ is closed under addition.
+$$\lambda v = (\lambda v, \lambda Tv)$$
+thus it is also closed under scalar multiplication. Given that $G(T)$ is a subset of
+a product of vector spaces, which is a vector space, we follow that $G(T)$ is a subspace,
+as desired.
+
+\textbf{In reverse direction: }
+
+Suppose that $G(T)$ is a subspace of $V \times W$. Suppose that $v, w \in V$. Then
+$$T(v + w) = T(v) + T(w)$$
+and
+$$\lambda T(v) = T(\lambda v)$$
+by properties of a product of vector spaces. Thus we can follows that $T$ is linear, as desired.
+
+\subsection{}
+
+\textit{Suppose $V_1, ..., V_m$ are vector spaces such that $V_1 \times ... \times V_m$ is
+  finite-dimentional. Prove that $V_j$ is finite-dimentional for each $j = 1, ..., m$.}
+
+We can follow that the combined list of bases of $V_n$'s spans $V_1 \times ... \times V_m$
+and is linearly independent. Given that this list is finite, we
+can follow that  $V_1 \times ... \times V_m$ is finite-dimentional, as desired.
+
+
+\subsection{}
+
+\textit{Give an example of a vector space $V$ and subspaces $U_1, U_2$ of $V$ such that
+  $U_1 \times U_2$ is isomorphic to $U_1 + U_2$, but $U_1 + U_2$ is not a direct sum.}
+
+$$U_1 = (0, x_1, 0, x_2, 0, x_3, ...)$$
+$$U_2 = (x_1, x_2, x_3, 0, x_4 ...)$$
+
+\subsection{}
+
+\textit{Suppose $V_1, ... V_m$ are vector spaces. Prove that $\map(V_1 \times ... \times V_m, W)$
+  and $\map(V_1, W) \times ... \times \map(V_m, W)$ are isomorphic vector spaces.}
+
+This problem reduces down to just spaces $V_1$ and $V_2$. Suppose that $S \in \map(V_1, W)$
+and $T \in \map(V_2, W)$. Then it follows that for it there exists TODO
 
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:

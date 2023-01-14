@@ -156,3 +156,12 @@
 \contentsline {subsection}{\numberline {3.4.14}}{58}{subsection.3.4.14}%
 \contentsline {subsection}{\numberline {3.4.15}}{58}{subsection.3.4.15}%
 \contentsline {subsection}{\numberline {3.4.16}}{58}{subsection.3.4.16}%
+\contentsline {subsection}{\numberline {3.4.17}}{59}{subsection.3.4.17}%
+\contentsline {subsection}{\numberline {3.4.18}}{60}{subsection.3.4.18}%
+\contentsline {subsection}{\numberline {3.4.19}}{60}{subsection.3.4.19}%
+\contentsline {subsection}{\numberline {3.4.20}}{61}{subsection.3.4.20}%
+\contentsline {section}{\numberline {3.5}Products and Quotients of Vector Spaces}{61}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}}{61}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}}{62}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}}{62}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}}{62}{subsection.3.5.4}%
