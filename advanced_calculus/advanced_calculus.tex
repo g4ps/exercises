@@ -1,0 +1,96 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My advanced calculus exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \inv {^{-1}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Starting points}
+
+\section{}
+
+\textit{Evaluate }
+$$\int_0^\infty{\frac{dx}{1 + x^2}}$$
+\textit{and}
+$$\int_{-\infty}^1{\frac{dx}{1 + x^2}}$$
+
+$$\int_0^\infty{\frac{dx}{1 + x^2}} = [\tan \inv]_0^\infty = \pi/2 - 0 = \pi/2 $$
+
+$$\int_{-\infty}^1{\frac{dx}{1 + x^2}} = [\tan \inv]_{-\infty}^1 = [\pi/4 + \pi/2] = \frac{3}{4} \pi$$
+
+
+\section{}
+
+\textit{Determine}
+$$\int{\frac {x dx}{1 + x^2}}$$
+\textit{Which type of substitution did you use?}
+
+$$\int{\frac {x dx}{1 + x^2}} = \frac 1 2 \int{ \frac {2 x  dx}{1 + x^2}}$$
+let $u(x) = 1 + x^2$. Then $u'(x) = 2x$ and therefore
+$$\frac 1 2 \int{ \frac {2 x  dx}{1 + x^2}} =
+\frac 1 2 \int{ \frac {du}{u}} = \frac{1}{2} \ln(u) = \frac{1}{2} \ln(1 + x^2)$$
+
+I've used push-forward substitution here.
+
+\section{}
+
+\textit{Carry out a change of variables to evaluate the integral and determite the type
+of substitution used.}
+$$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx}$$
+
+
+
+Let's try $x = R \sin(s)$ (the idea is to use the identity $\sin^2(x) + \cos^2(x) = 1$ here
+somewhere)
+
+$$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx} =
+\int_{-R}^{R}{\sqrt{R^2 - R^2 \sin^2(s)} R\cos(x) ds} =
+\int_{-R}^{R}{|R|R \sqrt{1 -  \sin^2(s)} \cos(s) ds} =$$
+$$ = 
+|R|R  \int_{-R}^{R}{|\cos(s)| \cos(s) ds}
+$$
+
+
+Although this one didn't give us the desired result, given that expression under the intergral
+is pretty awful, this gave us a pretty interesting idea. $\cos(x) = |\cos(x)|$ for
+$- \pi/2 < x < \pi/2$. Thus
+$$- \frac{\pi}{2} < x < \frac{\pi}{2}$$
+$$- 1 <  \frac{2 x }{\pi} < 1$$
+$$- R <  \frac{2 R x }{\pi} < R$$
+therefore for $$- R <  \frac{2 R }{\pi} x < R$$, we've got that $\cos(\frac{2 R}{\pi} x) =
+\left|\cos(\frac{2 R }{\pi} x)\right|$. Therefore let's try to plug in this god-awful
+thing into our intergral
+
+Let $x = R\sin(\frac{2 R s }{\pi})$. Then we get that
+$dx =  \frac{2 R^2  }{\pi}\cos(\frac{2 R s }{\pi}) ds $. Thus
+
+$$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx} =
+\int_{-R}^{R}{\sqrt{R^2 - R^2\sin^2(\frac{2 R s }{\pi})}
+  \frac{2 R^2}{\pi}\cos(\frac{2 R s }{\pi}) ds} =
+$$
+$$ =
+\int_{-R}^{R}{|R| |\cos(\frac{2 R s }{\pi})|
+  \frac{2 R^2}{\pi}\cos(\frac{2 R s }{\pi}) ds} =
+  \frac{2 R^2|R|}{\pi} \int_{-R}^{R}{|\cos(\frac{2 R s }{\pi})|
+\cos(\frac{2 R s }{\pi}) ds} =
+$$
+$$ =
+\frac{2 R^2|R|}{\pi} \int_{-R}^{R}{\cos^2(\frac{2 R s }{\pi}) ds} =
+R|R| \frac 1 2 [\sin( 2
+$$
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
