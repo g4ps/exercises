@@ -2371,7 +2371,108 @@ $$U_2 = (x_1, x_2, x_3, 0, x_4 ...)$$
 \textit{Suppose $V_1, ... V_m$ are vector spaces. Prove that $\map(V_1 \times ... \times V_m, W)$
   and $\map(V_1, W) \times ... \times \map(V_m, W)$ are isomorphic vector spaces.}
 
-This problem reduces down to just spaces $V_1$ and $V_2$. Suppose that $S \in \map(V_1, W)$
-and $T \in \map(V_2, W)$. We know, that $x$ 
+For finite-dimentional spaces we can just follow the standard equations for calculating the
+dimentions of given spaces and produce the desired result.
+
+
+Conversely, if any of the spaces is infinite-dimentional, then we gotta produce the bijective
+map between the two spaces.
+
+
+Our strategy here will be to prove that there exists a bijective map between the two.
+Let $T: \map(V_1 \times ... \times V_m, W) \to \map(V_1, W) \times ... \times \map(V_m, W)$
+be defined by
+
+$$T(S) = S_1 \times ... \times S_n$$
+where
+$$S_j(v_j) = S(0, ..., v_j, .., 0) = w_j$$
+thus
+$$T(\lambda S) = \lambda S_1 \times ... \times \lambda S_n$$
+and
+$$T(S + M) = (S + M)_1 \times ... \times (S + M)_n = S_1 \times ... \times S_n +
+M_1 \times ... \times M_n$$
+thus it is linear.
+
+Injectivity and surjectivity are given with this one. Thus we follow that there exists a linear
+bijectivity between the two, thus they are isomorphic.
+
+We can actually follow here that if the space is infinite-dimentional, then they are isomorhic
+by default.
+
+\subsection{}
+
+\textit{Suppose $W_1, ... W_m$ are vector spaces. Prove that
+  $\map(V, W_1 \times  ... W_n)$ and $\map(V, W_1) \times ... \times \map(V, W_n)$ are isomorphic }
+
+Same logic as in previous ones works on this oen too.
+
+\subsection{}
+
+\textit{For a posisitivee integer $n$, define $V^n$ by}
+$$V^n = V \times ...\text{ n times }... V$$
+\textit{Prove that $V^n$ and $\map(F^n, V)$ are isomorphic vector spaces.}
+
+$$\dim \map(F^n, V) = (\dim F^n) ( \dim V) =  n \dim V = \dim V^n$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $v, x$ are vectors in $V$ and $U, W$ are subspaces of $V$ such that
+  $v + U = x + W$. Prove that $U = W$.}
+
+Let $v'= x - v$. It follows that $x = v + v'$. Given that $v + U = x + W$ we follow
+that there exists $-w \in W$ such that $x - w = v + 0$. Thus
+$$x - w = v + 0$$
+$$v + v' - w = v$$
+$$v' - w = 0$$
+$$v' = w$$
+Thus we follow that $v' \in W$. Therefore we've got that
+$$x + W = v + v' + W = v + W = v + U$$
+thus we follow that
+$$W = U$$
+as desired.
+
+\subsection{}
+
+\textit{Prove that a nonempty subset $A$ of $V$ is an affine subset of $V$ if and only if
+  $\lambda v + (1 - \lambda)w \in A$ for all $v, w \in A$ and all $\lambda \in F$.}
+
+\textbf{In forward direction: }
+
+Suppose that $A$ is an affine subset of $V$. Then we follow that there exists vector
+$x \in V$ and subspace $U \subseteq V$ such that
+$$A = x + U$$
+Now let $v, w \in A$. Then we can follow that there exist $v', w' \in U$ such
+that
+$$v = x + v'$$
+$$w = x + w'$$
+
+Thus we follow that
+
+$$\lambda v + (1 - \lambda) w = \lambda x + \lambda v' + x + w' - \lambda x - \lambda w' =
+\lambda v' + x + w' - \lambda w' $$
+Because $v', w' \in U$ we follow that
+$$\lambda v' + w' - \lambda w' \in U$$
+thus
+$$\lambda v' + x + w' - \lambda w' \in A$$
+as desired.
+
+\textbf{In reverse direction: }
+
+Suppose that for every $\lambda \in F$ and $v, w \in A$ we've got that
+$$\lambda v + (1 - \lambda) w \in A $$
+
+Let $x \in A$ and suppose that $v, w \in A$. Then it follows that
+$$ \lambda(v  - x) = \lambda v  - \lambda x =
+\lambda v  - \lambda x + x - x =
+(\lambda v  - (1 - \lambda) x) - x = 
+$$
+Thus space $A - x$ is closed under multiplication. And
+
+$$(v - x) + (w - x) = \lambda v + (1 - \lambda)w - x$$
+$$(v - x) + (w - x) = \lambda v + (1 - \lambda)w - x + x - x$$
+$$(v - x) + (w - x) = \lambda v + w - \lambda w  - x + x - x$$
+$$(v - x) + (w - x) = \lambda v - x + w - x - \lambda w + x $$
 
 \end{document}
+
