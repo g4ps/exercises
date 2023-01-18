@@ -2462,17 +2462,117 @@ as desired.
 Suppose that for every $\lambda \in F$ and $v, w \in A$ we've got that
 $$\lambda v + (1 - \lambda) w \in A $$
 
-Let $x \in A$ and suppose that $v, w \in A$. Then it follows that
+Fix $x \in A$ and suppose that $v, w \in A$. Then it follows that
 $$ \lambda(v  - x) = \lambda v  - \lambda x =
 \lambda v  - \lambda x + x - x =
-(\lambda v  - (1 - \lambda) x) - x = 
+(\lambda v  - (1 - \lambda) x) - x
 $$
-Thus space $A - x$ is closed under multiplication. And
+Thus space $A - x$ is closed under scalar multiplication. And
+$$ (v - x) + (w - x) = 2(v/2 + w/2 - x) = 2(\frac{1}{2} v + (1 - \frac 1 2) w - x) $$
+by the fact that $v, w \in A \to \frac{1}{2} v + (1 - \frac 1 2) w \in A$ we follow that
+$(\frac{1}{2} v + (1 - \frac 1 2) w - x) \in A - x$. Thus, by the fact that
+$A - x$ is close under scalar multiplication we follow that
+$$2(\frac{1}{2} v + (1 - \frac 1 2) w - x) \in A - x$$
+thus we can conclude that $A - x$ is a subspace of $V$. Thus, $A - x + x = A$ is an affine
+subset of $V$, as desired.
 
-$$(v - x) + (w - x) = \lambda v + (1 - \lambda)w - x$$
-$$(v - x) + (w - x) = \lambda v + (1 - \lambda)w - x + x - x$$
-$$(v - x) + (w - x) = \lambda v + w - \lambda w  - x + x - x$$
-$$(v - x) + (w - x) = \lambda v - x + w - x - \lambda w + x $$
+\subsection{}
+
+\textit{Suppose $A_1$ and $A_2$ aare affine subsets of $V$. Prove that the intersection
+  $A_1 \cap A_2$ is either an affine subset of $V$ or the empty set.}
+
+Fisrtly, let us denote that
+$$A_1 = x_1 + U_1$$
+$$A_2 = x_2 + U_2$$
+
+Firstly, if $A_1$ and $A_2$ are parallel, then they are either equal to each other (in which
+case their intersection is an affine subset), or empty. Thus we can follow that
+intersection of two affine subsets can be empty.
+
+Suppose that their intersection is nonempty and let $x \in A_1 \cap A_2$. Then it follows
+that $U_1 = A_1 - x$ and $U_2 = A_2 + x$. Intersection of two vector spaces is a vector
+space, thus we follow that
+$$x + U_1 \cap U_2 = A_1 \cap A_2$$
+is an affine space, as desired.
+
+\subsection{}
+
+\textit{Prove that the intersection of every collection of affine subsets of $V$ is either
+  an affine subset of $V$ or the empty set}
+
+It follows by induction from the previous exercise.
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_m \in V$. Let }
+$$A = \{\lambda_1 v_1 + ... + \lambda_m v_m: \lambda_{[1, m]} \in F \text{ and }
+\sum \lambda_j = 1\}$$
+
+\textit{(a) Prove that $A$ is an affine subset of $V$.}
+
+Let $v, m \in A$. Then it follows that
+$$\kappa v + (1 - \kappa) w =
+\kappa (\lambda_1 v_1 + ... + \lambda_m v_m) + (1 - \kappa)
+(\lambda_1' v_1 + ... + \lambda_m' v_m) =
+$$
+$$=
+\kappa (\lambda_1 v_1 + ... + \lambda_m v_m) + (1 - \kappa)
+(\lambda_1' v_1 + ... + \lambda_m' v_m) = (\kappa \lambda_1 + (1 - \kappa) \lambda_1') v_1 + ...
+(\kappa \lambda_n + (1 - \kappa) \lambda_n') v_n $$
+Thus the sum of the coefficients is equal to
+$$\sum{(\kappa \lambda_n + (1 - \kappa) \lambda_n')} =
+\sum{(\kappa \lambda_n)} + \sum{[(1 - \kappa) \lambda_n']} =
+\kappa \sum{( \lambda_n)} + (1 - \kappa) \sum{[ \lambda_n']} =
+\kappa  + (1 - \kappa)  = 
+$$
+$$
+= 1
+$$
+Thus we follow that $A$ is an affine subset by equivalence, that was proven in a couple
+of exercises above.
+
+\textit{(b) Prove that every affine subspae of $V$ that contains $v_1, ..., v_m$ also
+  contains $A$}
+
+Suppose that some affine subset $B$ contains $v_1, ..., v_m$.
+Let $a \in A$. 
+
+We know that there exists $U \subseteq V$ such that $v_1 + U = A$ and $W \in V$ such
+that $B = v_1 + W$.
+Thus we follow that $v_2 - v_1 \in B - v_1$, ..., $v_n - v_1 \in B - v_1$. Thus
+$$\Span(v_2 - v_1, ... v_n - v_1) \subseteq B - v_1$$
+Suppose that $a \in A$. Then
+$$a - v_1 \in \Span(v_2 - v_1, ... v_n - v_1)$$
+Thus
+$$a - v_1 \in B$$
+as desired.
+
+\textit{(c) Prove that $A = v + U$ for some $v \in V$ and some subspace $U$ of $V$
+  with $\dim U \leq m - 1$}
+
+We know, that the list $(v_2 - v_1, ... v_m - v_1)$ spans $A - v_1$. Therefore we can follow
+that $\dim U \leq m - 1$.
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$ such that $V/U$ is finite-dimentional. Prove that
+  $V$ is isomorphic to $U \times (V / U)$.}
+
+For finite-dimentional case is trivial, for infinite-dimentional we have isomorphism by default.
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$ and $v_1 + U, ..., v_m + U$ is a basis of $V/U$
+  and $u_1, ..., u_n$ is a basis of $U$. Prove that $v_1, ..., v_m, u_1, ..., u_m$ is a basis
+  of $V$.}
+
+Because $v_1 + U, ..., v_m + U$ is a basis of $V/U$, we can follow that $v_1, ..., v_m$ is
+linearly independent in $V$.
+
+If $v_j \in U$, then $v_j + U = U = 0 + U$, therefore we follow that $v_j \notin U$.
+
+Because of this we follow that
+
+
 
 \end{document}
-
