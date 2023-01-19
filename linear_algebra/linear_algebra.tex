@@ -2571,8 +2571,42 @@ linearly independent in $V$.
 
 If $v_j \in U$, then $v_j + U = U = 0 + U$, therefore we follow that $v_j \notin U$.
 
-Because of this we follow that
+Thus we can follows that $v_1, ..., v_n, u_1, ..., u_m$ is a linearly independent list of
+vectors.
 
+Given that $v_1, ..., v_n, u_1, ..., u_m$ is a list of vectors in $V$, we can follow that
+$\Span(v_1, ..., v_n, u_1, ..., u_m)$ is a subspace of $V$.
+
+Now suppose that $v \in V$ and $v \notin \Span(v_1, ..., v_n, u_1, ..., u_m)$. We can follow that
+$v \notin U$. Thus we can follow that $v + U$ is an element of $V/U$. In this case we
+follow that $v \in \Span(v_1, ..., v_n)$, which is a contradiction. Thus we conclude that
+such a vector does not exist and therefore $V = \Span(v_1, ..., v_n, u_1, ..., u_m)$.
+Given that $v_1, ..., v_n, u_1, ..., u_m$ is linearly independent, we follow that
+it is a basis of $V$, as desired.
+
+\subsection{}
+
+\textit{Suppose
+  $U = \{(x_1, x_2, ...) \in F^{\infty}: x_j \neq 0 \text{ for only finitely many }j\}$ }
+
+\textit{(a) Show that $U$ is a subspace of $F^{\infty}$}
+
+Let $v, u \in U$. We can follow, that sinse finitely many x's are not zero, then we
+follow that for $v + u$
+$$\{j_1, ..., j_n\} \cup \{j_1', ..., j_n'\} $$
+is a set of positions, in which the $v + u$ might not be zero. Since union of finite sets is
+finite, we follow that $U$ is closed undeer addition. The same reasoning, but applied to
+intersection, rather then union, can be applied to  get closure for multiplication.
+Thus we follow that $U$ is a subspace of $F^\infty$.
+
+\textit{(b) Prove that $F^\infty/U$ is infinite-dimentional}
+
+Suppose that it isn't. We can follow 
 
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
