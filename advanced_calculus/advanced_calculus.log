@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  15 JAN 2023 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  20 JAN 2023 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -359,15 +359,15 @@ l.16 \chapter
 Chapter 1.
 [2
 
-] [3] (./advanced_calculus.aux)
+] [3] [4] [5] [6] [7] [8] (./advanced_calculus.aux)
 Package rerunfilecheck Info: File `advanced_calculus.out' has not changed.
-(rerunfilecheck)             Checksum: B9077648FA637DF652A93513366BEEB6;259.
+(rerunfilecheck)             Checksum: 01E55FE825B22FC1FA761258234441D7;536.
  ) 
 Here is how much of TeX's memory you used:
- 9013 strings out of 478238
- 138319 string characters out of 5850455
- 438895 words of memory out of 5000000
- 27156 multiletter control sequences out of 15000+600000
+ 9030 strings out of 478238
+ 138493 string characters out of 5850455
+ 440895 words of memory out of 5000000
+ 27162 multiletter control sequences out of 15000+600000
  478575 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,234b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -383,10 +383,10 @@ cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></
 usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmti10.pfb>
-Output written on advanced_calculus.pdf (4 pages, 153524 bytes).
+Output written on advanced_calculus.pdf (9 pages, 179855 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

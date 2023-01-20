@@ -49,43 +49,245 @@ $$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx}$$
 
 
 Let's try $x = R \sin(s)$ (the idea is to use the identity $\sin^2(x) + \cos^2(x) = 1$ here
-somewhere)
+somewhere). It follows that $s = \arcsin(\frac{x}{R})$
+
+
 
 $$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx} =
 \int_{-R}^{R}{\sqrt{R^2 - R^2 \sin^2(s)} R\cos(x) ds} =
-\int_{-R}^{R}{|R|R \sqrt{1 -  \sin^2(s)} \cos(s) ds} =$$
+\int_{-R}^{R}{R^2 \sqrt{1 -  \sin^2(s)} \cos(s) ds} =$$
 $$ = 
-|R|R  \int_{-R}^{R}{|\cos(s)| \cos(s) ds}
+R^2  \int_{-R}^{R}{\cos^2(s) ds} =
+\frac{R^2}{2}  \int_{-R}^{R}{1 + \cos(2s)  ds} =
+\frac{R^2}{2}\left[s + \frac{1}{2} \sin(2s)\right]_{-R}^R
+=
 $$
 
-
-Although this one didn't give us the desired result, given that expression under the intergral
-is pretty awful, this gave us a pretty interesting idea. $\cos(x) = |\cos(x)|$ for
-$- \pi/2 < x < \pi/2$. Thus
-$$- \frac{\pi}{2} < x < \frac{\pi}{2}$$
-$$- 1 <  \frac{2 x }{\pi} < 1$$
-$$- R <  \frac{2 R x }{\pi} < R$$
-therefore for $$- R <  \frac{2 R }{\pi} x < R$$, we've got that $\cos(\frac{2 R}{\pi} x) =
-\left|\cos(\frac{2 R }{\pi} x)\right|$. Therefore let's try to plug in this god-awful
-thing into our intergral
-
-Let $x = R\sin(\frac{2 R s }{\pi})$. Then we get that
-$dx =  \frac{2 R^2  }{\pi}\cos(\frac{2 R s }{\pi}) ds $. Thus
-
-$$\int_{-R}^{R}{\sqrt{R^2 - x^2}dx} =
-\int_{-R}^{R}{\sqrt{R^2 - R^2\sin^2(\frac{2 R s }{\pi})}
-  \frac{2 R^2}{\pi}\cos(\frac{2 R s }{\pi}) ds} =
 $$
-$$ =
-\int_{-R}^{R}{|R| |\cos(\frac{2 R s }{\pi})|
-  \frac{2 R^2}{\pi}\cos(\frac{2 R s }{\pi}) ds} =
-  \frac{2 R^2|R|}{\pi} \int_{-R}^{R}{|\cos(\frac{2 R s }{\pi})|
-\cos(\frac{2 R s }{\pi}) ds} =
+= \frac{R^2}{2}\left[\arcsin(\frac{x}{R}) + \frac{1}{2} \sin(2\arcsin(\frac{x}{R}))\right]_{-R}^R =
 $$
-$$ =
-\frac{2 R^2|R|}{\pi} \int_{-R}^{R}{\cos^2(\frac{2 R s }{\pi}) ds} =
-R|R| \frac 1 2 [\sin( 2
 $$
+=
+\frac{R^2}{2} \left[\arcsin(1) + \frac{1}{2} \sin (2 \arcsin(1)) - \arcsin(-1) -
+  \frac{1}{2} \sin (2 \arcsin(-1))\right]= 
+$$
+$$
+=
+\frac{R^2}{2} \left[\pi/2 + \frac{1}{2} \sin (\pi) + \pi/2 -
+  \frac{1}{2} \sin (-\pi)\right]=
+\frac{R^2}{2} \pi = \frac{\pi R^2}{2}
+$$
+Which is goot enough for me. We used the pullback approach here
+
+\section{}
+
+\textit{Determine }
+$$\int {\frac{\arctan(x)}{1 + x^2} dx}$$
+\textit{and show }
+$$\int_0^\infty {\frac{\arctan(x)}{1 + x^2} dx} = \pi^2/8$$
+
+$$\int {\frac{\arctan(x)}{1 + x^2} dx} $$
+let $u = \arctan(x)$. Then
+$$\int {\frac{\arctan(x)}{1 + x^2} dx} = \int u = u^2/2 = \arctan(x)^2/2$$
+thus
+$$\int_0^\infty {\frac{\arctan(x)}{1 + x^2} dx} = \pi^2/8$$
+as desired.
+
+\section{}
+
+\textit{(a) Detrmine }
+$$\int{\frac{1}{w (\ln(w))^p} dw}$$.
+\textit{Which type of substitution did you use?}
+
+Let $u = \ln(w)$. It follows that $du = \frac{1}{w} dw$. Thus
+$$\int{\frac{1}{w (\ln(w))^p} dw} =
+\int{\frac{1}{w } (\ln(w))^{-p} dw} =
+\int{(u)^{-p} du} =  \frac{u^{-p - 1}}{-p - 1} = \frac{(\ln(w))^{-p - 1}}{-p - 1}
+$$.
+Given that $p \neq -1$.
+
+Othersise it is $\ln(\ln(w))$.
+
+\textit{(b) Evaluate }
+$$I = \int_2^\infty{\frac{1}{w (\ln(w))^p} dw}$$.
+\textit{for which values of $p$ is $I$ finite?}
+
+For $p = 1$ we've got that
+$$\lim{\ln(\ln(w))} = \infty$$
+thus it diverges
+
+For $p \neq -1$ we've got
+$$I = \int_2^\infty{\frac{1}{w (\ln(w))^p} dw} =
+\lim_{w \to \infty}{\left[\frac{(\ln(w))^{-p - 1}}{-p - 1}\right]} - \frac{(\ln(2))^{-p - 1}}{-p - 1}
+$$
+The only thing that bothers us is that whether
+$$(\ln(w))^{-p - 1} = (\frac{1}{(\ln(w))})^{p - 1}$$
+converges. This happens whenever $p > 1$ (in that case we got that $\ln(w) \to \infty$).
+Otherwise it diverges.
+
+\section{}
+
+\textit{State a condition that guarantees a function $x = \phi(s)$ has an inverse. Then use
+  your condition to decide whether each of the following functions is invertible. When possible,
+  find a formula for the inverse of each function that is invertible.}
+
+Such a condition is bijectivity on a given domain and codomain.
+
+\textit{(a)}
+$$x = 1/s$$
+
+Is bijective on a domain $R \setminus \{0\}$. Inverse is $s = 1/x$.
+
+\textit{(b)}
+$$x = s + s^3$$
+
+This one is bijective (because it is strictly increasing and unbounded below and above).
+$$x = s + s^3$$
+$$s^3 + s - x = 0$$
+Maxima gives some god-awful result for an inverse function, but it can be obtained by solving the
+cubic polinomial.
+
+\textit{(c)}
+$$x = \frac{s}{1 + s^2}$$
+
+It is not surjective on $R$, and in addition, it is not injective. Thus it cannot be used
+without some heavy restrictions on the domain and codomain.
+
+\textit{(d)}
+$$x = \sinh s = \frac{e^s - e^{-s}}{2}$$
+
+Looks solid to me.
+
+$$s = \text{asinh}(s)$$
+is a desired inverse function;
+
+\textit{(e)}
+$$x = \frac{s}{\sqrt{1 - s^2}}$$
+
+Is bijective on restricted domain. I'm not sure if we can have an analytical inverse of this
+function.
+
+\textit{(f)}
+$$x = ms + b$$
+
+Is a standart linear function. If $m \neq 0$, then we've got inverse on whole $R$.
+
+\textit{(g)}
+$$x = cosh(s)$$
+
+Is bijective on restricted domain. Reverse is $s = \text{acosh}(x)$.
+
+\textit{(h)}
+$$x = s - s^3$$
+
+Is bijective on restricted domain. Inverse is terrible.
+
+
+\textit{(i)}
+$$x = tanh(s)$$
+
+Also bijective on restricted domain. Inverse is
+$$s = \text{atanh}(x)$$
+
+\textit{(j)}
+$$x = \frac{1 - s}{1 + s}$$
+
+BIjective on restricted domain.
+
+\section{}
+
+\textit{(a) Obtain formulas for $f(s) = \cos(\arcsin(s))$ and $g(s) = \tan(\arcsin(s))$
+  directly as funtions of $s$ that involve neither trigonometric nor inverse trigonometric
+  functions. Your answer will involve the square root function and polynomical expressions
+  in $s$.}
+
+$$f(s) = \cos(\arcsin(s)) $$
+$$\cos(\arcsin(s)) = \sin(\pi/2 - \arcsin(s)) =
+\sin(\pi/2)\cos(\arcsin(s)) - \sin(\arcsin(s)) \cos(\pi/2) = $$
+$$ = \sin(\pi/2)\cos(\arcsin(s)) = \cos(\arcsin(s)) $$
+
+$$\cos(\arcsin(s)) = \sqrt{1 - \sin^2(\arcsin(s))} = \sqrt{1 - s^2}$$
+
+$$g(s) = \tan(\arcsin(s))$$
+$$\tan(\arcsin(s)) = \frac{\sin(\arcsin(s))}{\cos(\arcsin(s))} = \frac{s}{\sqrt{1 - s^2}}$$
+
+
+\textit{(b) Compute teh derivative of $\cos(\arcsin(s))$ using the chain rule and the
+  derivatives of $\cos u$ and $\arcsin s$. Then compute the derivative of $f(s)$ using
+  your expressions in part (a). Compare the two derivatives. Do the same for $\tan(\arcsin(s))$
+  and $g(s)$}
+
+$$f'(s) = -\sin(\arcsin(s)) \frac{1}{\sqrt{1 - s^2}} = - \frac{s}{\sqrt{1 - s^2}}$$
+$$f'(s) = -2s \frac{1}{2\sqrt{1 - s^2}} = - \frac{s}{\sqrt{1 - s^2}}$$
+They are the same.
+
+$$g'(s) = \sec^2(\arcsin(s)) \frac{1}{\sqrt{1 - s^2}} =
+\frac{1}{\cos^2(\arcsin(s))} \frac{1}{\sqrt{1 - s^2}} =
+\frac{1}{(1 - s^2)\sqrt{1 - s^2}} 
+$$
+
+$$g'(s) = \frac{\sqrt{1 - s^2} - s(- \frac{s}{\sqrt{1 - s^2}})}{1 - s^2} =
+\frac{\sqrt{1 - s^2} + \frac{s^2}{\sqrt{1 - s^2}}}{1 - s^2} =
+\frac{\frac{1 - s^2 + s^2}{\sqrt{1 - s^2}}}{1 - s^2} =
+\frac{\frac{1}{\sqrt{1 - s^2}}}{1 - s^2} =
+\frac{1}{(1 - s^2) \sqrt{1 - s^2}} 
+$$
+
+They are also the same.
+
+\section{}
+
+\textit{Use $x = \arcsin s$ to show $\int {\cos^3 x dx} = \sin(x) - \frac{\sin^3 x}{3}$.}
+
+$$s = \sin(x)$$
+
+$$dx = \frac{1}{\sqrt{1 - x^2}}ds$$
+
+$$\int{\cos^3 (x) dx} = \int{\cos^3 (\arcsin(s)) \frac{1}{\sqrt{1 - s^2}} ds} =
+\int{(\sqrt{1 - s^2})^3 \frac{1}{\sqrt{1 - s^2}} ds} =
+$$
+$$
+\int{1 - s^2 ds} = s - \frac{s^3}{3} = \sin(x) - \frac{\sin^3(x)}{3}
+$$
+
+as desired.
+
+\section{}
+
+\textit{(a) Write the microscope equation (i.e. the linear approximation) for
+  $\phi(s) = \sqrt{s}$ at $s = 100$.}
+
+$$\phi'(s) = \frac{1}{2 \sqrt{s}}$$
+$$\phi'(100) = \frac{1}{2 \sqrt{100}} = 1/20 = 0.05$$
+Thus
+$$\Delta \phi = 0.05 \Delta s$$
+
+\textit{(b) Use the microscope equation from part (a) to estimate $\sqrt{102}$ and $\sqrt{99.4}$}
+
+For the first one we've got that
+$$\Delta s = |102 - 100| = 2$$
+thus
+$$\Delta \phi = 0.05 * 2 = 0.1$$
+Therefore
+$$\phi(102) \approx \phi(100) + 0.1 = 10 + 0.1 = 10.1$$
+
+For the second one we've got
+$$\Delta s = |100 - 99.4| = 0.06$$
+thus
+$$\Delta \phi = 0.06 * 0.05 = 0.03$$
+and since $99.4 < 100$ we follow that
+$$\phi(99.4) \approx \phi(100) - \Delta \phi = 10 - 0.03 = 9.97$$
+
+\textit{(c) How far are your estimate from those given by a calculator?}
+
+$$\sqrt{102} \approx 10.0995049$$
+$$\sqrt{99.4} \approx 9.969955$$
+thus we've got  error of approximately $10^{-3}$ in the first case and $10^{-4}$ in the second.
+
+\textit{(d) Your estimates should be greater than the calculator values; use the graph of
+  $x = \phi(s)$ to explain why this is so.}
+
+This is because derivative of this function is a  decreasing function around 100.
 
 
 \end{document}
