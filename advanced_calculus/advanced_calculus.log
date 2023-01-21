@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  20 JAN 2023 19:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  20 JAN 2023 21:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -359,15 +359,32 @@ l.16 \chapter
 Chapter 1.
 [2
 
-] [3] [4] [5] [6] [7] [8] (./advanced_calculus.aux)
+] [3] [4] [5] [6] [7]
+./advanced_calculus.tex:308: Missing $ inserted.
+<inserted text> 
+                $
+l.308 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./advanced_calculus.tex:308: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.308 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[8] (./advanced_calculus.aux)
 Package rerunfilecheck Info: File `advanced_calculus.out' has not changed.
-(rerunfilecheck)             Checksum: 01E55FE825B22FC1FA761258234441D7;536.
+(rerunfilecheck)             Checksum: A3E1BD266D1DF912ACA486E9FAD45531;584.
  ) 
 Here is how much of TeX's memory you used:
- 9030 strings out of 478238
- 138493 string characters out of 5850455
- 440895 words of memory out of 5000000
- 27162 multiletter control sequences out of 15000+600000
+ 9032 strings out of 478238
+ 138519 string characters out of 5850455
+ 440897 words of memory out of 5000000
+ 27163 multiletter control sequences out of 15000+600000
  478575 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,234b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -383,10 +400,10 @@ cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></
 usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmti10.pfb>
-Output written on advanced_calculus.pdf (9 pages, 179855 bytes).
+Output written on advanced_calculus.pdf (9 pages, 180702 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 178 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

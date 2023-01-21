@@ -2606,6 +2606,7 @@ $$x_j = (0, 0, 0, ...\text{ j times }... 0, 1, 1, 1...)$$
 such that each $x_j$ is linearly independent from one another. Since $x_j \notin U$, we can
 follow that there is no basis of $F^\infty/U$, therefore it is infinite-dimentional, as desired.
 
+
 \subsection{}
 
 \textit{Suppose $\phi \in \map(V, F)$ and $\phi \neq 0$. Prove that $\dim V / (\ns \phi) = 1$}
@@ -2617,9 +2618,99 @@ $\range \phi$, we follow that its dimention is also one, as desired.
 
 \subsection{}
 
+\textit{Suppose $U$ is a subspace of $V$ such that $\dim V/U = 1$. Prove that there exists
+  $\phi \in \map(V, F)$ such that $\null \phi = U$.}
+
+Given that $\dim V/U = 1$ we can follow that there exists $v \in V$ such that $v \notin U$.
+Thus $v$ is a basis for $V/U$. Thus we can define $g: V/U \to F$
+$$g(kv + U) = k$$
+
+Then, by plugging $\pi: V \to V/U$ such that  $\pi(v) = v + U$ and
+making
+$$\phi(v) = g(\pi(v))$$
+we get $\phi: V \to F$ such that $u \in U \to \phi(u) = 0$. Thus $U \subseteq \ns \phi$.
+
+Then suppose that $v \neq 0$ and $v \notin U$. Then it follows that $\phi(v) \neq 0$. Thus
+we can conclude that $\ns \phi = U$, as desired.
+
+\subsection{}
+
 \textit{Suppose $U$ is a subspace of $V$ such that $V/U$ is finite-dimentional. Prove that
   there exists a subspace $W$ of $V$ such that $\dim W = \dim V/U$ and
   $V = U \oplus W$.}
+
+Because $V/U$ is finite-dimentional, we can follow that there exists a basis of $V$.
+$$v_1 + U, ..., v_n + U$$
+We can follow that $v_1, ..., v_n$ is linearly independent. It is also will be helpful
+later to mention that none of $v_j$'s are in $U$. Then, define
+$$W = \Span(v_1, ..., v_n)$$
+
+Suppose that $v \in V$. Then we can follow that $v \in v' + U$ for some $v$.
+Thus we follow that $v' = a_1 v_1 + ... a_n v_n$ and therefore
+there exists $u \in U$ and $v' \in W$ such that $v = u + v'$. Thus $V = W + U$.
+
+Suppose that $w \in W$ and $w \in U$. Then it follows that
+$$w = a_1 v_1 + ... a_n v_n$$
+given that none of  $v_1, ... v_n$ are in $U$, we follow that the only way that it is
+possible is when $a_1, ..., a_n = 0$. Thus we follow that
+$$W \cap U = \{0\}$$.
+Thus we can conclude that
+$$V = W \oplus V$$
+as desired.
+
+
+
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V, W)$ and $U$ is a subspace of $V$. Let $\pi$ denote the
+  quotient map from $V$ onto $V/U$. Prove that there exists $S \in (V/U, W)$
+  such that $T = S \circ \pi$ if and only if $U \subset \ns T$. }
+
+\textbf{In forward direction: }
+
+Suppose that there exists $S$ such that $T = S \circ \pi$.
+Let $u \in U$. Then it follows that
+$$\pi(u) = u + U = 0 + U$$
+
+Because $S$ is a linear function, we follow that $S(0) = S(U) = 0$. Thus we follow that
+$u \in \ns T$. Thus we can conclude that $U \subseteq T$
+
+\textbf{In reverse direction: }
+
+Suppose that $U \subseteq \ns T$. Then we follow that $\pi(U) = 0$. Create a map
+$S': V/U \to V/U$ such that $\ns (S' \circ \pi ) = \ns T$. Then there exists
+an invertible operator $R$ such that $R S' \circ \pi = T$. Thus we follow that
+there exists a map $RS' = S$ such that $S \circ \pi = T$, as desired.
+
+\subsection{}
+
+\textit{Find a correct statement analogous to 3.78 that is applicable to finite sets, with
+  unions analogous to sums of subspaaces and disjoint unions analagous to direct sums }
+
+Suppose $A$ is a finite set and $U_1, ..., U_m$ are subsets of $A$. Then
+$$U_1 \cap ... \cap U_n = A$$
+is a disjoint union if and only if
+$$\sum |U_j| = |A|$$
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$. Define $\Gamma: \map(V/U, W) \to \map(V, W)$ by}
+$$\Gamma(S) = S \circ \pi$$
+
+\textit{(a) Show that $\Gamma$ is a linear map}
+
+Let $S, T \in \map(V/U, W)$. Then
+$$\Gamma(S + T) = (S + T) \circ \pi = S \circ \pi + T \circ \pi = \Gamma(S) + \Gamma(T)$$
+
+If $\lambda \in F$, them
+$$\Gamma(\lambda S) = (\lambda S) \circ \pi = \lambda S \circ \pi = \lambda \Gamma(S)$$
+Therefore we can follow that $\Gamma$  is linear
+
+\textit{(b) Show that $\Gamma$ is injective}
+
+Let $\Gamma(T) = 0$. It follows that
+$$T \circ \pi = 0$$
 
 
 
