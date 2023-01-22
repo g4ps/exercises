@@ -2,6 +2,7 @@
 \title{My algorithms exercises}
 \usepackage{amsmath,amssymb}
 \usepackage{geometry}
+\usepackage[linesnumbered, ruled]{algorithm2e}
 \usepackage{hyperref}
 \author{Evgeny Markin}
 \date{2022}
@@ -94,12 +95,72 @@ Calculator says 15
 
 \section{Inserition sort}
 
+\subsection{}
+
 \textit{Using Figure 2.2 as a model, illustrate the operation of Insertion-Sort on an
   array initially containing the sequence $[31, 41, 59, 26, 41, 58]$}
 $$[31, 41, 59, 26, 41, 58]$$
 $$[26, 31, 41, 59, 41, 58]$$
 $$[26, 31, 41, 41, 59, 58]$$
 $$[26, 31, 41, 41, 58, 59]$$
+
+\subsection{}
+
+\textit{State loop invariant for the Sum-Array procedure.}
+
+\textbf{Initialization: }
+
+Firstly, we've got 0 as the sum. Given that we've summed 0 elements so far, we can conclude
+that this is indeed a correct value to set it.
+
+\textbf{Maintenance: }
+
+For each iteration of $i$ we've got that we add a i'th element from the array to our sum and
+incrementing $i$. Thus before iterating through $i$ we had a sum of all of the elements
+before $i$, and after iterating through it we create a sum of elements before $i$ and
+the $i$'th element as well. Thus the sum after iterating through $i$ is correct.
+
+\textbf{Termination: }
+
+Given that the array is finite, we follow that because we are incrementing $i$ at each
+iteration the algoritm will terminate. Because we increment through elements, we follow that
+we've added every element of the array to the sum at the point of termination.
+
+\subsection{}
+
+\textit{Rewrite the Insertion-Sort procedure to sort into monotonically decreasing instead
+  of monotonically increasing order.}
+
+Done it in the progs section; long story short: reverse the ordering function in inner loop,
+replace  $A[j] > key$ with $A[j] < key$.
+
+\subsection{}
+
+\textit{Consider the seqrching problem}
+
+\textit{Input: A sequence of $n$ numbers $[a_1, ... a_n]$ stored in array $A[1:n]$ and a
+  value x.}
+
+\textit{Output: An index $i$ such that $x$ equals $A[i]$ or the special value $NIL$ if $x$
+  does not appear in $A$.}
+
+\textit{Write pseudocode for linear search, which scans through the array from beginning to
+  end, looking for $x$. Using a loop invariant, prove that youralgorythm is correct.
+  Make sure that your loop invariant fufills the three necessary properties.}
+
+% \begin{function}
+%   \caption{Linear-search (A, x)}
+%   ret = NIL \;
+%   \For{($i = 1 \to n$)}{
+%     \eIf{$A[i] = x$} {
+%     }
+%     \Return{ ret};
+%   }
+
+%   \end{function}
+%   TODO : maybe add pseudocode here
+
+TBD
 
 
 \part{Appendix: Mathematical Background}
@@ -299,9 +360,5 @@ have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
 The tuple is actually just a re-writing of particular set
 $$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
 \{a_1, a_2, a_3, ..., a_n\}\}$$
-
-
-
-
 
 \end{document}

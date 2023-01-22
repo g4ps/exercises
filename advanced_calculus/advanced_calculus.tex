@@ -302,10 +302,242 @@ And
 $$\Delta \phi = -0.25 \Delta s$$
 
 We can get
-$$\Delta s = |2 - 2.03| = 0.3$$
-tehrefore
+$$\Delta s = |2 - 2.03| = 0.03$$
+therefore
+
+$$\phi(2.03) \approx 1/2 - 0.25 * 0.03 = 0.4925$$
+
+For the second one we've got
+$$\Delta s = |2 - 1.98| = 0.02$$
+$$\phi(1.98) \approx 1/2 + 0.25 * 0.02 = 0.505$$
+
+\textit{(b) How far are your estimates from the values given by a calculator?}
+
+$$\phi(2.03) = 0.49261083743842...$$
+thus our error is
+$$0.00011083743842371652$$
+
+and for the latter we've got
+$$\phi(1.98) = 0.5050505050505051...$$
+and our error is
+$$\approx -5 * 10^{-5}$$
+
+\textit{(c) Your estimates should be lower than the calculator values; use the graph of
+  $x = \phi(s)$ to explain why this is so.}
+
+This is because the derivative is increasing, and thus our estimates will be lower.
+
+
+\section{}
+
+\textit{Show that $\sqrt{1 + 2h} \approx 1 + h$ when $h \approx 0$}
+
+Let
+$$f(h) = \sqrt{1 + 2h}$$
+$$g(h) = 1 + h$$
+then
+$$f'(x) = \frac{1}{\sqrt{1 + 2h}}$$
+and thus
+$$f(0) = 1$$
+$$f(0) = 1$$
+$$f'(0) = 1$$
+$$g'(0) = 1$$
+Given that the function is contionus and differentiable around zero, we can conclude by the
+same reasoning as in our  "microscope equation" section, that functions are approximately
+equal in this range.
+
+In case if we've got some shenannigans happening right after the 0, I've looked at the graphs
+of those functions side by side in the range $[-0.1, 0.1]$ and concluded that they look pretty
+simular at this range.
+
+\section{}
+
+\textit{(a) Determine the microscope equation for $x = \tan(s)$ at $s = \pi/4$}
+
+$$x' = \sec^2(s)$$
+$$x'(0) = 1$$
+thus
+$$\Delta x \approx \Delta s$$
+
+\textit{(b) Show that $\tan(h + \pi/4) \approx 1 + 2h$ when $h \approx 0$. Is this estimate larger
+  or smaller than the true value? Explain why.}
+
+Their derivatives are equal at this point, and they are equal at zero too. Thus we can conclude
+that they are simular around zero.
+
+Also, I don't know why it didn't cross my mind earlier, but it also happens
+because $1 + 2h$ is a linear approximation of this function at this point.
+
+This estimate is lower then the true value, because the derivative of the function is increasing
+around zero.
+
+\section{}
+
+\textit{Determine the local lentgth multiplier for $x = \sin(s)$ at each of the
+  points $\{0, \pi/4, \pi/2, 2\pi/3, \pi\}$}
+
+$$x' = \cos(x)$$
+$$x'(0) = 1$$
+$$x'(\pi/4) = 1/\sqrt{2}$$
+$$x'(\pi/2) = 0$$
+$$x'(2 \pi/3) = -1/2$$
+$$x'(\pi) = -1$$
+
+\section{}
+
+\textit{What is true about the map $\phi: s \to x$ at a point $s_0$ where the local length
+  multiplier is negative?}
+
+It means that the funciton is decreasing
+
+\section{}
+
+\textit{Consider the hyperbolic sine and hyperbolic cosine functions, $\sinh s$ and
+  $\cosh s$. Show each is the derivative of the other, and show }
+$$\cosh^2 s - \sinh^2 s = 1$$
+\textit{for all $s$}
+
+$$f(x) = \cosh(x) = \frac{e^x + e^{-x}}{2}$$
+by algebraic properties of the derivative and the chain rule we've got that
+$$f'(x) = \frac{1}{2}(e^x - e^{-x}) = \sinh(x)$$
+
+$$g(x) = \sinh(s) = \frac{e^x - e^{-x}}{2}$$
+same applies to this one
+$$g'(x) = \frac{1}{2}(e^x +  e^{-x}) = \cosh(x)$$
+
+$$\cosh^2(x) - \sinh^2(x) = \left(\frac{e^x + e^{-x}}{2} \right)^2 -
+\left(\frac{e^x - e^{-x}}{2} \right)^2 = 
+\frac{(e^x + e^{-x})^2 - (e^x - e^{-x})^2}{4} = 
+$$
+$$ =
+\frac{e^{2x} + 2e^xe^{-x} + e^{-2x} - (e^{2x} - 2e^xe^{-x} + e^{-2x})}{4} =
+$$
+$$ =
+\frac{4e^xe^{-x}}{4} = \frac{4e^0}{4} = \frac{4}{4} = 1
+$$
+as desired.
+
+\section{}
+
+\textit{Use the substitution $x = \sinh s$ to determine }
+$$\int{\frac{dx}{\sqrt{1 + x^2}}}$$
+
+Let $x = \sinh s$. It follows that
+$$\frac{dx}{ds} = \cosh(s)$$
+$$dx = \cosh(s) ds$$
+(just a reminder: this is not a  rigorous equation, just a useful mneumonic)
+
+Thus we follow that
+$$\int{\frac{dx}{\sqrt{1 + x^2}}}
+= \int{\frac{\cosh(s) ds}{\sqrt{1 + (\sinh( s))^2}}}
+$$
+we know that 
+$$\cosh^2 (x) - \sinh^2(x) = 1 \to \cosh^2 (x) = 1 + \sinh^2(x)$$
+thus
+$$\int{\frac{\cosh(s) ds}{\sqrt{1 + (\sinh( s))^2}}} =
+\int{\frac{\cosh(s) ds}{\cosh(s)}} = \int{ds} = s = \text{asinh}(x)$$
+
+\section{}
+
+\textit{Determine the work done by the constant force $F = (2, -3)$ in displacing an
+  object along}
+
+\textit{(a) $\Delta x = (1, 2)$}
+
+$$\Delta x \cdot F = 2 - 6 = -4$$
+
+\textit{(b) $\Delta x = (1, -2)$}
+
+$$\Delta x \cdot F = 2 + 6 = 8$$
+
+\textit{(c) $\Delta x = (-1, 0)$}
+
+$$\Delta x \cdot F = 2 $$
+
+\section{}
+
+\textit{Determine the work done by the constant force $F = (7, -1, 2)$ in displacing an
+  object along}
+
+\textit{(a) $\Delta x = (0, 1, 1)$}
+
+$$\Delta x \cdot F = 0 - 1 + 2 = 1 $$
+
+\textit{(b) $\Delta x = (1, -2, 0)$}
+
+$$\Delta x \cdot F = 7 + 2 + 0 = 9$$
+
+\textit{(c) $\Delta x = (0, 0, 1)$}
+
+$$\Delta x \cdot F = 0 + 0 + 2  = 2$$
+
+\section{}
+
+\textit{Suppsoe a constant force $F$ in the place does $7$ units of work in displacing an
+  object along $\Delta x = (2, -1)$ and $-3$ units of work along $\Delta x = (4, 1)$. How
+  much work does $F$ do in displacing an object along $\Delta x = (1, 0)$? Along
+  $\Delta x = (0, 1)$? Find a nonzero displacement $\Delta x$ along which $F$ does no work.}
+
+We can follow that $F = (v_1, v_2)$ for which it will be true that
+$$
+\begin{cases}
+  4 v_1 + v_2 = 7 \\
+  2 v_1 - v_2 = -3
+\end{cases}
 $$
 
+$$
+\begin{cases}
+  3v_2  = 13 \\
+  2 v_1 - v_2 = -3
+\end{cases}
+$$
+
+$$
+\begin{cases}
+  v_2  = 4 + 1/3 \\
+  2 v_1 - 4 - 1/3 = -3
+\end{cases}
+$$
+
+$$
+\begin{cases}
+  v_1 = 2/3 \\ 
+  v_2  = 13/3 \\
+\end{cases}
+$$
+
+$$F = (2/3, 13/3)$$
+
+Thus for $\Delta x = (1, 0)$ we've got
+$$W  = 2/3$$
+and for $\Delta x = (0, 1)$ we've got
+$$W  = 13/3$$
+
+In order to have a desired vector we've gotta have $v = (x_1, x_2)$ such that $F \cdot v = 0$.
+Applying some formulas we get 
+$$2/3 x_1 + 13/3 x_2 = 0$$
+$$2 x_1 + 13 x_2 = 0$$
+$$x_1 = -6.5 x_2$$
+Thus we can get $v = (1, -6.5)$ with the desired properties.
+
+\section{}
+
+\textit{Let $W(F, \Delta x)$ be the work done by the constant force $F$ along the linear
+  displacement $\Delta x$. Show that $W$ is a linear function of the vectors $F$ and
+  $\Delta x $.}
+
+Given that $W = F \cdot \Delta x$ and we are working with the real numbers here only,
+we can follow, that by properties of the inner product (specifically linearity in the first slot
+and conjugate symmetry) we've got the desired linearity in both slots, as desired.
+
+\section{}
+
+\textit{Suppose $F = (P, Q)$. Determine the unit displacement $\Delta u$
+  that yield the maximum and minimum values of $W$.}
+
+$$u = (P, Q) \frac{1}{\sqrt{P^2 + Q^2}}$$
+gives the maximum. $-u$ will give us minimum.
 
 \end{document}
 

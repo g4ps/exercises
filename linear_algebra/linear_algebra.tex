@@ -2711,6 +2711,33 @@ Therefore we can follow that $\Gamma$  is linear
 
 Let $\Gamma(T) = 0$. It follows that
 $$T \circ \pi = 0$$
+Then we can follow that for $v \in V$
+$$T \circ \pi(v) = 0 = T(v + U)$$
+Thus $T = 0$. Therefore we follow that $\ns \Gamma = \{0\}$, therefore it is injective.
+
+\textit{(c) Show that $\range \Gamma = \{T \in \map(V, W): Tu = 0 \text{ for every } u \in U \}$}
+
+Suppose that $T \in \range \Gamma$. Then it follows that there exists $S \in \map(V/U, W)$
+such that
+$$S \circ \pi = T$$
+thus if $u \in U$ then
+$$S \circ \pi (u) = S(u + U) = S(U) = 0$$
+
+Suppose that $S \in \{T \in \map(V, W): Tu = 0 \text{ for every } u \in U \}$. Then
+it follows by the results in exercise 18, that there exists $T \in \map(V/U, W)$ such
+that
+$$T = S \circ \pi$$
+therefore by double inclusion we've got that 
+$\range \Gamma = \{T \in \map(V, W): Tu = 0 \text{ for every } u \in U \}$
+as desired.
+
+
+\section{Duality}
+
+TBD
+
+\chapter{Polynomials}
+
 
 
 

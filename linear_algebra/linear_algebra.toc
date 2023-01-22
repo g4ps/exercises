@@ -181,3 +181,5 @@
 \contentsline {subsection}{\numberline {3.5.18}}{68}{subsection.3.5.18}%
 \contentsline {subsection}{\numberline {3.5.19}}{69}{subsection.3.5.19}%
 \contentsline {subsection}{\numberline {3.5.20}}{69}{subsection.3.5.20}%
+\contentsline {section}{\numberline {3.6}Duality}{70}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Polynomials}{71}{chapter.4}%
