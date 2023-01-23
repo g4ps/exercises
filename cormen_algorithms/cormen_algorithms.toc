@@ -16,6 +16,7 @@
 \contentsline {subsection}{\numberline {2.1.2}}{6}{subsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.1.3}}{7}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}}{7}{subsection.2.1.4}%
-\contentsline {part}{II\hspace {1em}Appendix: Mathematical Background}{8}{part.2}%
-\contentsline {chapter}{\numberline {3}Summations}{9}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Sets, Etc.}{13}{chapter.4}%
+\contentsline {subsection}{\numberline {2.1.5}}{8}{subsection.2.1.5}%
+\contentsline {part}{II\hspace {1em}Appendix: Mathematical Background}{9}{part.2}%
+\contentsline {chapter}{\numberline {3}Summations}{10}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Sets, Etc.}{14}{chapter.4}%

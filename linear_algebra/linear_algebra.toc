@@ -182,4 +182,9 @@
 \contentsline {subsection}{\numberline {3.5.19}}{69}{subsection.3.5.19}%
 \contentsline {subsection}{\numberline {3.5.20}}{69}{subsection.3.5.20}%
 \contentsline {section}{\numberline {3.6}Duality}{70}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Polynomials}{71}{chapter.4}%
+\contentsline {subsection}{\numberline {3.6.1}}{70}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}}{70}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}}{70}{subsection.3.6.3}%
+\contentsline {subsection}{\numberline {3.6.4}}{70}{subsection.3.6.4}%
+\contentsline {subsection}{\numberline {3.6.5}}{71}{subsection.3.6.5}%
+\contentsline {chapter}{\numberline {4}Polynomials}{72}{chapter.4}%

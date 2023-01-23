@@ -5,15 +5,26 @@
 \usepackage[linesnumbered, ruled]{algorithm2e}
 \usepackage{hyperref}
 \author{Evgeny Markin}
-\date{2022}
+\date{2023}
 
 \begin{document}
 \maketitle
 \tableofcontents
 
 \chapter*{Preface}
-Exercises for Introduction to Algorithms by Cormen et al., 4th ed. It has some
+Exercises for Introduction to Algorithms by Cormen et al., 4th ed. It has
 exercises, that should be written down, moslty in math and whatnot.
+
+Some of the exercises require that you code something (sometimes it's not
+explicitely required, but that would be nice to code it anyways), and this
+code is presented in the progs folder. Everything is written in C, because I'm most
+familiar with it. 
+
+Pseudocode is written by using package \textbf{algorithm2e}, which does not really correspond
+to the one, that is used in the book, but it still does the job.
+
+Same rules as usual apply, if you want to use this book for any reason -- go right ahead, it's
+free, just be aware that it is full of mistakes.
 
 \part{Foundations}
 
@@ -131,7 +142,7 @@ we've added every element of the array to the sum at the point of termination.
 \textit{Rewrite the Insertion-Sort procedure to sort into monotonically decreasing instead
   of monotonically increasing order.}
 
-Done it in the progs section; long story short: reverse the ordering function in inner loop,
+Done it in the progs section; long story short: reverse the ordering function in the inner loop,
 replace  $A[j] > key$ with $A[j] < key$.
 
 \subsection{}
@@ -145,22 +156,79 @@ replace  $A[j] > key$ with $A[j] < key$.
   does not appear in $A$.}
 
 \textit{Write pseudocode for linear search, which scans through the array from beginning to
-  end, looking for $x$. Using a loop invariant, prove that youralgorythm is correct.
+  end, looking for $x$. Using a loop invariant, prove that your algorythm is correct.
   Make sure that your loop invariant fufills the three necessary properties.}
 
-% \begin{function}
-%   \caption{Linear-search (A, x)}
-%   ret = NIL \;
-%   \For{($i = 1 \to n$)}{
-%     \eIf{$A[i] = x$} {
-%     }
-%     \Return{ ret};
-%   }
+\begin{function}
+  \caption{Linear-search (A, x)}
+  \For{($i = 1 \to n$)}{
+    \If{$A[i] = x$} {
+      \Return {i} \;
+    }
+  }
+  \Return{NIL}\;
 
-%   \end{function}
-%   TODO : maybe add pseudocode here
+\end{function}
 
-TBD
+\textbf{Initialization: }
+Null case is when we haven't gone through any of the elements yet;
+because we haven't searched anything, we
+can follow that we haven't found anything, thus the base case is correct
+
+\textbf{Maintenance: }
+Suppose that $i = j + 1$. Then we follow that $A[1:j]$ does not contain our element by our
+induction hypothesis (not sure that we can use this kind of language here, but it's
+my book and I can do whatever I want). Then $i$'th element is cheched for the necessary
+equality and returned in case of the equality; otherwise we increment $i$ and make it so
+$A[1: j + 1]$ is the array of processed values. Thus before and after the loop iteration
+we have a correct solution.
+
+\textbf{Termination: }
+We terminate either after going through every element, or some time before it.
+
+Example of this thing in C is presented in progs directory
+
+
+\subsection{}
+
+\textit{Consider the problem of adding two $n$-bit binary integers $a$ and $b$, stored in
+  two $n$-element arrays $A[0: n - 1]$ and $B[0: n - 1]$, where each element is either 0 or 1,
+  $a = \sum_{n = 0}^{n - 1}A[i] * 2^i$ and $b = \sum_{n = 0}^{n - 1}B[i] * 2^i$. The
+  sum $c = a + b$ of the two integers should be stored in binary form in an $(n + 1)$-element array
+  $C[0:n]$, where   $c = \sum_{n = 0}^{n - 1}C[i] * 2^i$. Write a procedure Add-Binary-Integers
+  that takes an input arrays $A$ and $B$, along with the length $n$, and returns array $C$ holding
+  the sum.}
+
+
+\begin{function}
+  \caption{Add-Binary-Integers (A, B, n)}
+  define C[0: n + 1] and fill it with zeroes\;
+  \tcc{carry stores overflow from the previous iteration} 
+  $carry \leftarrow 0$\;
+  \For{($i = 0 \to n + 1$)}{
+    \tcc{Initializing temporary variable with carry bit; we need to sum carry, A[i], and B[i],
+    so we can just initialize temp with carry}
+  $r \leftarrow carry$ \;
+  \tcc{if it is not the last bit, where A nor B are not defined; We can just define it to be zero
+  with the same result}
+    \If{$i \neq n + 1$} {
+      $r \leftarrow A[i] + B[i] + r$ \;
+    }
+    \tcc{If we've got an overflow as the result, set carry bit and result of summation
+      appropriately  }
+    \eIf{$r > 1$}{
+      $carry \leftarrow 1$ \;
+      $r \leftarrow r \% 2$\;
+    }{
+      \tcc{otherwise zero the carry bit}
+      $carry \leftarrow 0$\;
+    }
+    \tcc{lastly, put the result of the partial summation into the resulting array}
+    $C[i] \leftarrow r$\;
+  }
+  \Return{C}\;
+
+\end{function}
 
 
 \part{Appendix: Mathematical Background}
@@ -362,3 +430,8 @@ $$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
 \{a_1, a_2, a_3, ..., a_n\}\}$$
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

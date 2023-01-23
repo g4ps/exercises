@@ -2734,11 +2734,62 @@ as desired.
 
 \section{Duality}
 
-TBD
+\subsection{}
+
+\textit{Explain why every linear functional is either surjective or the zero map}
+
+Dimention of its codomain is 1, therefore we've got that range is either 1 or 0. In former
+case it is surjective, in latter it's a null map.
+
+\subsection{}
+
+\textit{Give three distinct examples of linear functionals on $R^{[0, 1]}$}
+
+$$f(1) - f(0)$$
+$$f(0.5)$$
+$$f(0.2) + f(0.3)$$
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $v \in V$ with $v \neq 0$. Prove that there exists
+  $\phi \in V'$ such that $\phi(v) = 1$}
+
+We can extend $v$ to a basis $v, v_1, ..., v_n$ of $V$, then define the dual basis
+$\phi, \phi_1, ..., \phi_n$ on this basis, and then get the desired function.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$ such that $U \neq V$. Prove
+  that there exists $\phi \in V'$ such that $\phi = 0$ for every $u \in U$ but $\phi \neq 0$.}
+
+Simular to the previous one, we define $u_1, ..., u_n$ to be the basis of $U$, then expand it
+to a basis of $V$ - $v_1, ..., v_m, u_1, ..., u_n$, and define dual basis on this basis.
+
+The property that $U \neq V$ guaranteed that there exists $v_1$, therefore
+there exists $\phi_1$ such that
+$$\phi_1(v_1 ) = 1$$
+thus $\phi_1 \neq 0$. And by definition of dual basis we get that $\phi_1 (u_j) = 0$.
+Thus we follow that
+$$u \in U \to u \in \Span(u_1, ..., u_n) \to \phi(u) = \phi(a_1 u_1) + ... + \phi(a_n u_n) = 0$$
+as desired.
+
+\subsection{}
+
+
+\textit{Suppose $V_1, ..., V_m$ are vector spaces. Prove that $(V_1 \times  ... \ V_m)'$
+  and $V_1' \times ... \times V_m'$ are isomorphic vector spaces.}
+
+We can give this one our usual treatment with "it's basic if it's finite and otherwise it
+defaults to the infinite case", but it's not fun.
+
+Let us define $Q \in \map(V, \map(V, F))$ as
+$$Q(v) = Q(a_1 v_1 + ...) = \phi(a_1 v_1 + ... ) = a_1 + a_2 + ... $$
+We can follow then it's linear by common sense
+
+
+
 
 \chapter{Polynomials}
-
-
 
 
 \end{document}
