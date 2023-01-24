@@ -539,6 +539,36 @@ and conjugate symmetry) we've got the desired linearity in both slots, as desire
 $$u = (P, Q) \frac{1}{\sqrt{P^2 + Q^2}}$$
 gives the maximum. $-u$ will give us minimum.
 
+\section{}
+
+\textit{Suppose the constant force $F = (P, Q)$ does the work $A$ along the displacement
+  $(a, c)$ and the work $B$ along the displacement $(b, d)$. Determine $P$ and $Q$. What
+  condition (on $a, b, c$ and $d$) must be satisfied for $P$ and $Q$ to be found?}
+
+$$W_1 = (P, Q) \cdot (a, c) = Pa + Qc$$
+$$W_2 = (P, Q) \cdot (b, d) = Pc + Qd$$
+
+$$P = \frac{W_1 - Qa}{c}$$
+$$P = \frac{W_2 - Qb}{d}$$
+
+$$\frac{W_1 - Qa}{c} = \frac{W_2 - Qb}{d}$$
+$$\frac{W_1}{c} - Q \frac{a}{ c} = \frac{W_2}{d} - Q\frac{b}{d}$$
+$$\frac{W_1}{c} - \frac{W_2}{d}  =  - Q\frac{b}{d} + Q \frac{a}{ c}$$
+$$\frac{W_1}{c} - \frac{W_2}{d}  =   Q \frac{a}{ c} - Q\frac{b}{d} $$
+$$\frac{W_1}{c} - \frac{W_2}{d}  =   Q \left( \frac{a}{ c} - \frac{b}{d} \right) $$
+$$\frac{W_1 d - W_2 c}{cd}  =   Q  \frac{ad - bc }{ cd} $$
+$$\frac{W_1 d - W_2 c cd}{cd (ad - bc)}  =   Q   $$
+$$
+\begin{cases}
+  Q = \frac{W_1 d - W_2 c }{ad - bc} \\
+  P = \frac{W_1 - \frac{W_1 d - W_2 c }{ad - bc} a}{c}
+\end{cases}
+$$
+
+We need $(a, c)$ and $(b, d)$ to be linearly independent. In this particular case we need
+the $(a, c) \neq \lambda (b, d)$ for some $\lambda \neq 0 \in R$.
+
+
 \end{document}
 
 %%% Local Variables:

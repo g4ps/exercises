@@ -119,6 +119,9 @@ $$[26, 31, 41, 41, 58, 59]$$
 
 \textit{State loop invariant for the Sum-Array procedure.}
 
+At the start of each iteration of the for loop, the $sum$ variable contains the sum of elements
+in $A[1: i]$.
+
 \textbf{Initialization: }
 
 Firstly, we've got 0 as the sum. Given that we've summed 0 elements so far, we can conclude
@@ -169,6 +172,8 @@ replace  $A[j] > key$ with $A[j] < key$.
   \Return{NIL}\;
 
 \end{function}
+
+At each iteration of the for loop, we've got that elements $A[1:i]$ do not contain $x$.
 
 \textbf{Initialization: }
 Null case is when we haven't gone through any of the elements yet;
@@ -229,6 +234,81 @@ Example of this thing in C is presented in progs directory
   \Return{C}\;
 
 \end{function}
+
+\section{Analyzing algorithms}
+
+\subsection{}
+
+\textit{Express the function $n^3/1000 + 100n^2 - 100n + 3$ in terms of $\Theta$-notation}
+
+$$n^3/1000 + 100n^2 - 100n + 3 \in \Theta(n^3)$$
+
+\subsection{}
+
+\textit{Consider sorting $n$ numbers strored in array $A[1: n]$ by first finding the smallest
+  element of $A[1:n]$ and exchanging it with the element in $A[1]$. Continue in this manner for
+  the first $n - 1$ elements of $A$. Write a pseudocode for this algorithm, which is known as
+  selection sort. What loop invarian does this algorithm maintain? Why does it need to run
+  for only the first $n - 1$ elements, rather than for all $n$ elements? Give the worst-case
+  running time fo selection sort in $\Theta$-notation. Is the best-case running time
+  any better?}
+
+
+\begin{function}
+  \caption{Selection-Sort (A, n)}
+  \For{$i = 1 \to n - 1$} {
+    $minPos \leftarrow i$\;
+    \For {$j = i \to n$} {
+      \If {$A[j] < A[i]$} {
+        $minPos \leftarrow j$
+      }
+    }
+    $temp \leftarrow A[i]$\;
+    $A[i] \leftarrow A[minPos]$\;
+    $A[j] \leftarrow temp$\;
+  }
+\end{function}
+
+(this function in C is located in progs )
+
+Algorithm maintains that every $A[1:i]$ is sorted and any element in  $A[i + 1:n]$ is greater
+or equal to every element of $A[1:i]$. It needs to run only for $n - 1$ times, because the last
+element $n$ will be greater or equal then any element in $A[1:n - 1]$ and therefore will
+be places in its rightful place.
+
+Worst-case running time of this algorithm is $\Theta(n^2)$, because we compute that
+coefficient for $c_4$ is $\sum_{i = 1}^n i = \Theta(n^2)$, while all the other coeffitients
+are linear.
+
+Given coefficient for $c_4$ is not changed depending on the input, we follow that
+the best running time and worst running time are the same
+
+\subsection{}
+
+\textit{Consider linear search again. How many elements of the input array need to be checked on
+  the average, assuming that the element being searched for is equaly likely to be any element
+  in the array? How about the worst case? Using $\Theta$-notation, give the average-case and
+  worst-case running times of linear search. Justify your answers.}
+
+The low-hanging answer here is that we need to check the first half of the array in order to
+find the needed input. It is wrong though.
+
+Assuming that $A[i] = x$ with probability $p$, we follow that we need to check first
+$1/p$ elements in order to get the desired element (I can be wrong here, I'm not good with
+probabilities).
+
+Assuming that I'm right about it, we follow that $pn \in \Theta(n)$ for the average case.
+
+The worst case is if $A$ does not contain $x$, in which case we've got the
+running time of $n$. It is also in $\Theta(n)$.
+
+\subsection{}
+
+\textit{How can you modify any sorting algorithm to have a good best-case running time?}
+
+We can throw a check for the case if $A$ is sorted from the start in the start of the
+sorting algorithm. Thus we can follow, that the best case for any such algorithm is
+when we get the sorted input, and we get linear best-case running time.
 
 
 \part{Appendix: Mathematical Background}
