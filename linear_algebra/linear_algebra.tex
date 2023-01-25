@@ -2793,8 +2793,108 @@ future.}
 
 \chapter{Polynomials}
 
+\section{Polynomials}
 
 
+\subsection{}
+
+\textit{Verify all assertions in 4.5 except the last one.}
+
+Firstly, let us state that $z, w \in C$ and
+$$z = a + bi$$
+$$w = c + di$$
+
+Then we follow that 
+$$z + \overline{z} = a + bi + a - bi = 2a = 2 Re(z)$$
+$$z - \overline{z} = a + bi - a + bi = 2bi = 2 Im(z) i$$
+$$z \overline{z} = (a + bi) (a - bi) = a^2 + abi - abi - b^2 = a^2 + b^2 =
+(\sqrt{a^2 + b^2})^2 = (\sqrt{Re(z)^2 + Im(z)^2})^2 = |z|^2$$
+$$\overline{w + z} = \overline(a + bi + c + di) =
+\overline(a + c + (b + d)i) = a + c - (b + d)i = a - bi + c - di = \overline{z} + \overline{w}$$
+$$\overline{\overline{z}} = \overline{\overline{a + bi}}  =
+\overline{a - bi} = a + bi = z$$
+$$|a^2|  = a^2 \leq a^2 + b^2 = |a^2 + b^2| \to |a|^2 \leq a^2 + b^2 \to |a| \leq \sqrt{a^2 + b^2}
+\to  |Re(z)| \leq |z| $$
+$$|\overline{z}| = \sqrt{a^2 + (-b)^2} = \sqrt{a^2 + b^2} = |z|$$
+$$|wz| = |(a + bi) (c + di)| = |ac + adi + cbi - bd| = |ac - bd +  (ad + cb)i| =
+\sqrt{(ac - bd)^2 + (ad + cb)^2} = $$
+$$ = \sqrt{(ac)^2 - 2abcd + (bd)^2 + (ad)^2 + 2abcd  + (cb)^2} =
+\sqrt{(ac)^2  + (bd)^2 + (ad)^2  + (cb)^2} = $$
+$$ = \sqrt{a^2(c^2 + d^2)  + b^2(d^2 + c^2)}  = \sqrt{(a^2 + b^2)(c^2 + d^2))}  = |z||w| = |w||z|$$
+
+\subsection{}
+
+\textit{Suppose $m$ is a positive integer. Is the set}
+$$ \{0\} \cup \{p \in \mathcal{P}(F): \deg p = m\}$$
+\textit{a subspace of $\mathcal{P}(F)$?}
+
+Suppose $m \neq 1$
+Let $p_1 = x^m + 1$ and $p_2 = -x^m + 1$. Then we follow that
+$$\deg(p_1 + p_2) = \deg(2) = 0 \neq m $$
+(we use the fact that $m$ must be positive). Thus given set is not closed under addition,
+therefore it is not a subspace.
+
+\subsection{}
+
+\textit{Is the set}
+$$\{0\} \cup \{p \in \mathcal{P}(F): \deg p \text{ is even}\}$$
+\textit{a subspace of $\mathcal P (F)$?}
+
+Let $p_1 = x^2 + x$ and $p_2 = -x^2 + x$. Then we follow that
+$$\deg(p_1 + p_2) = \deg(2x) = 1$$
+thus the space is not closed under addition, therefore it is not a subspace.
+
+\subsection{}
+
+\textit{Suppose $m$ and $n$ are positive integers with $m \leq n$, and suppose
+  $\lambda_1, ..., \lambda_m \in F$. Prove that there exists a polynomial $p \in P(F)$
+  with $\deg(p) = n$ such that $0 = p(\lambda_1) = ... = p(\lambda_n)$ and such that
+  $p$ has no other zeroes.}
+
+Let
+$$p = (z - \lambda_1) ... (z - \lambda_m)^{m - n + 1}$$
+Then we can follow that the only zeroes of $p$ are precisely zeroes of
+$$p_1 = (z - \lambda_1) ... (z - \lambda_{m})$$
+which are $\lambda_1, ..., \lambda_{m}$
+Then  we follow that zeroes of
+$$p_2 = (z - \lambda_1) ... (z - \lambda_{m})^2 = p_1(z - \lambda_m)$$
+are zeroes of $p_1$ and $\lambda_m$. Given that zeroes of $p_1$ already have $\lambda_m$, we
+follow that $p_1$ and $p_2$ have the same zeroes. Then by induction we follow that
+zeroes of $p$ are zeroes of $p_1$, which are $\lambda_1, ..., \lambda_m$, as desired.
+
+\subsection{}
+
+\textit{Suppose $m$ is nonnegative integer, $z_1, ..., z_{m + 1}$ are distinct elements of $F$,
+  and $w_1, ..., w_{m + 1} \in F$. Prove that there exists a unique polynomial $p \in P_m(F)$
+  such that }
+$$p(z_j) = w_j$$
+\textit{for $j = 1, ... m + 1$.}
+
+Let $T: P_m(F) \to F^{m + 1}$ be defined as
+$$T(p) = (p(z_1), p(z_2), ..., p(z_{m + 1}))$$
+We can follow that if
+$$T(p) = 0$$
+then
+$$p(z_1) = p(z_2) = ... = p(z_{m + 1}) = 0$$
+But if $p \neq 0$, then it has at most $m$ roots. Thus we follow that $p = 0$. Therefore $T$ is
+injective. By FTLM we have that
+$$\dim V = \dim \ns T + \dim \range T$$
+Therefore for this case we have
+$$\dim P_m(F) = \dim \ns T + \dim \range T$$
+$$m + 1 =  \dim \range T$$
+given that $\dim F^{m + 1} = m + 1$ we follow that $\range T = F^{m + 1}$. Therefore we
+follow that it is surjective. Thus for any vector $(w_1, ..., w_{m + 1}) \in F^{m + 1}$
+there exists $p \in P_m(F)$ such that
+$$p(z_j) = w_j$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $p \in \mathcal P(C)$ has degree $m$. Prove that $p$ has $m$ distinct zeroes if
+  and only if $p$ and its derivative $p'$ have no zeroes in common}
+
+Suppose that $p$ has $m$ distinct zeroes and suppose that $p'(\lambda) = p(\lambda) = 0$ for
+some $\lambda \in F$. Then we follow that 
 
 \end{document}
 

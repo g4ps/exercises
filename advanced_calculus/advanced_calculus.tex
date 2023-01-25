@@ -569,6 +569,65 @@ We need $(a, c)$ and $(b, d)$ to be linearly independent. In this particular cas
 the $(a, c) \neq \lambda (b, d)$ for some $\lambda \neq 0 \in R$.
 
 
+\section{}
+
+\textit{(a) Sketch the curve in the $(x, y)$-plane given parametrically as }
+$$x = \frac{2t}{1 + t^2}$$
+$$y = \frac{1 - t^2}{1 + t^2}$$
+
+Done it in graphing software, it's a circle around zero; TODO: add pictures
+
+\textit{(b) Each of the following limits exists; determine the loration of each as a
+  point in the (x, y)-plane: }
+
+$$\lim_{t \to \infty}{(x(t), y(t))} = (0, -1)$$
+$$\lim_{t \to -\infty}{(x(t), y(t))} = (0, -1)$$
+
+\textit{(c) Compute $\alpha = x(t)^2 + y(t)^2$; your result should be constant; What is the curve
+  and how does $\alpha$ relate to it?}
+
+once again, it's a circle; $\alpha$ is a square of the radius;
+
+$$\alpha = \frac{4t^2}{1 + 2t^2 + t^4} + \frac{1 - 2t^2 + t^4}{1 + 2t^2 + t^4} =
+\frac{1 + 2t^2 + t^4}{1 + 2t^2 + t^4} = 1$$
+
+\subsection{}
+
+\textit{Determine the work done by the force field $F$ in moving a particle along the
+  oriented curve $C$, where }
+
+\textit{(a) $F = (x, 3y)$, $C = (t^2, t^3)$, $1 \leq t \leq 2$}
+
+$$W = \int_1^2{F(x(t)) \cdot x'(t)dt} = \int_1^2{(t^2, 3t^3) \cdot (2t, 3t^2)dt} =
+\int_1^2{2t^3 + 9t^5dt} = \left[\frac{t^4}{2} + \frac{3t^6}{2}\right]_1^2 =$$
+$$=
+(8 + 96) - (1/2 + 3/2) = 104 - 2 = 102$$
+
+\textit{(b) $F = (-y, x)$, $C$: semicircle of radius 2 at origin, counterclockwise from
+  $(2, 0)$ to $(-2, 0)$}
+
+firstly, we gotta move the description of $C$ into sensible domain.
+Given that it is a semicircle and whatnot, we get that
+$$x = -\sin(t)$$
+$$y = \cos(t)$$
+for $0 < t < \pi$. Thus $x(t) = (-\sin(t), \cos(t))$ and $x'(t) = (-\cos(t), -\sin(t))$.
+
+Therefore
+$$W = \int_0^\pi{F(x) \cdot x'(t) dt} =
+\int_0^\pi{(-\cos(t), -\sin(t) \cdot (-\cos(t), -\sin(t)) dt} =$$
+$$ = 
+\int_0^\pi{\cos^2(t) + \sin^2(t)) dt} =  \int_0^\pi{ 1 dt} =  [x]_0^\pi = \pi$$
+
+\textit{(c) $F=(y, x)$, $C$: any path from (5, 2) to (7, 11)}
+
+We'll do the simpliest: $x(t) = (5 + 2t, 2 + 9t)$ for $0 < t < 1$
+Thus $x'(t) = (2, 9)$. Therefore
+$$W = \int_0^1{F(x(t)) \cdot x'(t) dt} =  \int_0^1{(2 + 9t, 5 + 2t) \cdot (2, 9) dt} = $$
+$$=
+\int_0^1{4 + 18t + 25 + 18t dt} = \int_0^1{29 + 36t dt} = [29t + 18t^2]_0^1 = 29 + 18 = 47$$
+
+
+
 \end{document}
 
 %%% Local Variables:
