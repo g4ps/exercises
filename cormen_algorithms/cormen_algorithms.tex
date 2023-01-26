@@ -310,6 +310,184 @@ We can throw a check for the case if $A$ is sorted from the start in the start o
 sorting algorithm. Thus we can follow, that the best case for any such algorithm is
 when we get the sorted input, and we get linear best-case running time.
 
+\section{Designing algorithms}
+
+\subsection{}
+
+\textit{Using Figure 2.4 as a model, illustrate the operation of merge sort on an array
+  initially containing the sequence }
+$$[3, 41, 52, 26, 38, 57, 9, 49]$$
+$$[3, 41, 52, 26] [ 38, 57, 9, 49]$$
+$$[3, 41] [52, 26] [38, 57] [9, 49]$$
+$$[3] [41] [52] [26] [38] [57] [9] [49]$$
+$$[3, 41] [26, 52] [38, 57] [9, 49]$$
+$$[3, 26, 41,  52] [9, 38, 49, 57]$$
+$$[3, 9, 26, 38, 41, 49, 52, 57]$$
+
+\subsection{}
+
+\textit{The test in line 1 of the Merge-Sort procedure reads "if $p \geq r$" rather than
+  "if $p \neq r$". If Merge-Sort is called with $p > r$, then the subarray $A[p:r]$ is
+  empty. Argue that as long as the initial call of Merge-Sort(A, 1, n) has $n \geq 1$, the
+  test "if $p \neq r$" suffices to ensure that no recursive call has $p > r$.}
+
+For a general case when $p \leq r$ we've got that
+$$p = 2p/p = (p + p)/2 \leq \lfloor(p + r)/2\rfloor = q$$
+thus $p \leq q$ and call on line 4 will be done with the condition that $p \leq q$.
+
+Focusing our attension on $r$, we get that by condition on lines 1 and 2 we follow that
+the function returns if $p = r$. Thus we follow that $p \neq r$, and by our assumption
+we get that by the line 3 we get if $p < r$. Given that both  $p$ and $r$ are integers,
+we follow that
+$$(p + r)/2 \leq (p + p + 1)/2  = p + 1/2$$
+thus
+$$\lfloor(p + r)/2\rfloor \leq  \lfloor p + 1/2 \rfloor = p$$
+Therefore we follow that
+$$q \leq r - 1$$
+$$q + 1\leq r$$
+thus we can follow that the call to the Merge-Sort on line 5 happens also with the condition
+that $p \leq r$.
+
+Thus we can state that given that $p \leq r$ we can follow that all the other calls
+to Merge-Sort, that happen inside of it  will have the same restriction.
+Therefore we follow that if initical call to Merge-Sort happens with $n \geq 1$, then the test
+"if $p \geq r$" is equivalent to the test "if $p \neq r$".
+
+\subsection{}
+
+\textit{State a loop invariant for the while loop of lines 12-18 of the Merge procedure. Show
+  how to use it, along with the while loops 20-23 and 24-27, to prove that the Merge procedure
+  is correct.}
+
+At the start of each iteration of the while loop of lines 12-18, the subarray $A[1:k]$ consists
+of th elements, originally in $L[1:i]$ or $R[1:j]$ in sorted order and any element
+in $A[1:k]$ is less or equal to any element of $L[i + 1, n_L]$ and $R[i + 1, n_R]$.
+
+Base case is trivial, sinse none of the subarrays contain any elements.
+
+For maintenance we've got that we take the lowest element of $L[i:n_L]$ or
+$R[j:n_R]$ (which happens to be the lowest  of the  first elements of those subarrays, given that
+both of those arrays are sorted), and placing them at $A[k]$. Because of
+our restrictions on $L[i + 1, n_L]$ and $R[ + 1, n_R]$ we follow that $A[k]$ will be less or
+equal then any element of $L[i + 1, n_L]$ and $R[j + 1, n_R]$. And given that it
+is originally from $L[i + 1, n_L]$ or $R[i + 1, n_R]$, we follow that $A[k]$ is
+greater or equal then any of $A[1:k - 1]$. Thus we can follow that $A[1:k]$ is sorted.
+Thus at the end of the loop we've got our loop invariant.
+
+Termination happens whenever we run out of elements in $L$ or $R$, at which point we still have
+our invariant.
+
+We follow then that after our loop, one of the arrays $L$ or $R$ will be empty, and
+will contain elements, that are greater or equal then $A[1:k]$. Thus we just append
+remaining elements of either of the arrays to $A$.
+
+
+Given that $L$ and $R$ are two subarrays of $A[k]$, whose disjoint union is $A$, we follow that
+merge indeed merges two subarrays of $A[k]$ into one sorted array, as desired.
+
+\subsection{}
+
+\textit{Use mathematical induction to show that when $n \geq 2$ is an exact power of 2, the
+  solution of the recurrence }
+$$T(n) =
+\begin{cases}
+  2 \text{ if }n = 2 \\
+  2T(n/2) + n \text{ if } n > 2\\
+\end{cases}
+$$
+\textit{is $T(n) = n \lg(n)$.}
+
+Our domain here is $(n_k) = 2^k$
+
+For base case $k = 1 \to n = 2$ we've got
+$$T(2) = 2 = 2 * 1 = 2 \lg(2)$$
+
+Our hypothesis is that for $k - 1 < n$ and $n_{k - 1}$ we've got that
+$T(n_{k - 1}) = n_{k - 1} \lg(n_{k - 1})$
+
+Thus we follow that if $n$ is an exact power of $2$ and $n \geq 2 > 0$ we've got that
+$n/2 < n$. Thus we follow that
+$$T(n) = 2T(n/2) + n = 2 n/2 \lg(n/2) = n \lg(n/2) + n = n(\lg(n/2) + 1) =$$
+$$= n(\lg(n * 2^{-1}) + 1) =
+n(\lg(n) - 1 + 1) = n \lg(n)$$
+
+Therefore for $x \in (n_k)$ we've got that $T(x) = x \lg(x)$, as desired.
+
+\subsection{}
+
+\textit{You can also think of insertion sort as a resursive algorithm. In order to sort
+  $A[1:n]$, recursively sort the subarray $A[1:n - 1]$ and then insert $A[n]$ into the
+  sorted subarray $A[1: n - 1]$. Write a pseudocode for this recursive version of insertion
+  sort. Give a recurrence for its worst-case running time.}
+
+\begin{function}
+  \caption{Recursive-insertion-Sort (A, n)}
+  \tcc{Ensure termination and sane inputs}
+  \If {$n \leq 1$}{
+    \Return{}\;
+  }
+  \tcc{Sort everything in A[1:n - 1]}
+  Recursive-insertion-Sort (A, n - 1)\;
+  $i \leftarrow n - 1$ \;
+  \While{$A[i] > A[n]$ and $i \geq 1$}
+  {
+    $i \leftarrow i - 1$
+  }
+  \tcc{Swapping $A[n]$ and $A[i]$}
+  $temp \leftarrow A[i]$ \;
+  $A[i] \leftarrow A[n]$ \;
+  $A[n] \leftarrow temp$ \;
+\end{function}
+
+For the worst-case we've got
+$$T(n) = T(n - 1) + n$$
+which reduces to
+$$T(n) = n(n + 1)/2$$
+
+
+\subsection{}
+
+\textit{Referring back to the searching problem (see Exercise 2.1-4), observe that if the
+  subarray being searched is already sorted, the searching algorithm can check the
+  midpoint of the subarray against v and eliminate half of the subarray from further
+  consideration. The binary search algorithm repeats this procedure, halving the
+  size of the remaining portion of the subarray each time. Write pseudocode, either
+  iterative or recursive, for binary search. Argue that the worst-case running time of
+  binary search is $\Theta(\lg(n))$}
+
+\begin{function}
+  \caption{Binary-Sort (A, x, s, f)}
+  \If{$s = f$} {
+    \Return{NIL}\;
+  }
+  $q \leftarrow \lfloor (s + f)/2\rfloor$\;
+  \eIf{$A[q] = x$} {
+    \Return{q};
+  }{
+    \eIf{$A[q] < x$}
+    {
+      \Return{Binary-Sort (A, x, q + 1, f)} \;
+    }
+    {
+      \Return{Binary-Sort (A, x, s, q - 1)} \;
+    }
+  }
+\end{function}
+
+For this one we conclude that its worst-case is $\Theta(\lg n)$ by the same logic as in merge,
+but we go through only one branch.
+
+\subsection{}
+
+\textit{The while loop of lines 537 of the Insertion-Sort procedure in Section 2.1
+  uses a linear search to scan (backward) through the sorted subarray $A[1:j - 1]$.
+  What if insertion sort used a binary search (see Exercise 2.3-6) instead of a linear
+  search? Would that improve the overall worst-case running time of insertion sort
+  to $\Theta(n \lg(n))$?}
+
+
+
+
 
 \part{Appendix: Mathematical Background}
 \chapter{Summations}
@@ -508,6 +686,8 @@ have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
 The tuple is actually just a re-writing of particular set
 $$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
 \{a_1, a_2, a_3, ..., a_n\}\}$$
+
+
 
 \end{document}
 

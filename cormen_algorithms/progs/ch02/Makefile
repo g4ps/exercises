@@ -1,4 +1,4 @@
-all: sort search  selection_sort
+all: sort search  selection_sort merge_sort
 
 CFLAGS =  -lalgo -I ../lib -L ../lib
 
@@ -10,3 +10,6 @@ search: search.c
 
 selection_sort: selection_sort.c
 	gcc -g sort.c -o $@  $(CFLAGS)
+
+merge_sort: merge_sort.c
+	gcc -g merge_sort.c -o  $@ $(CFLAGS)
