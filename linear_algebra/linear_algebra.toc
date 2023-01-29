@@ -186,7 +186,8 @@
 \contentsline {subsection}{\numberline {3.6.2}}{71}{subsection.3.6.2}%
 \contentsline {subsection}{\numberline {3.6.3}}{71}{subsection.3.6.3}%
 \contentsline {subsection}{\numberline {3.6.4}}{71}{subsection.3.6.4}%
-\contentsline {subsection}{\numberline {3.6.5}}{72}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.5}}{71}{subsection.3.6.5}%
+\contentsline {subsection}{\numberline {3.6.6}}{72}{subsection.3.6.6}%
 \contentsline {chapter}{\numberline {4}Polynomials}{73}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Polynomials}{73}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}}{73}{subsection.4.1.1}%

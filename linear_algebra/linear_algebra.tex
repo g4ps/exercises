@@ -2779,16 +2779,61 @@ as desired.
 \textit{Suppose $V_1, ..., V_m$ are vector spaces. Prove that $(V_1 \times  ... \ V_m)'$
   and $V_1' \times ... \times V_m'$ are isomorphic vector spaces.}
 
-We can give this one our usual treatment with "it's basic if it's finite and otherwise it
-defaults to the infinite case", but it's not fun.
+We follow it from the exercise 3.5.4.
 
-Let us define $Q \in \map(V, \map(V, F))$ as
-$$Q(v) = Q(a_1 v_1 + ...) = \phi(a_1 v_1 + ... ) = a_1 + a_2 + ... $$
-We can follow then it's linear by common sense
+\subsection{}
 
+\textit{Suppose $V$ is finite-dimentional and $v_1, ..., v_m \in V$. Define a linear
+  map $\Gamma: V' \to F^m$ by}
 
-\textit{I'm going to mark this chapter as TODO, and complete it in the near
-future.}
+$$\Gamma(\phi) = (\phi(v_1), ..., \phi (v_m))$$
+
+\textit{(a) Prove that $v_1, ..., v_m$ spans $V$ if and only if $\Gamma$ is injective.}
+
+\textbf{In forward direction: }
+Suppose that $v_1, ... v_m$ spans $V$. Let $\phi \in V'$ be such that
+$$\Gamma(\phi) = 0$$
+Then we follow that
+$$\Gamma(\phi) = (0, 0, ..., 0)$$
+thus for $1 \leq j \leq m$ we've got that
+$$\phi(v_j) = 0$$
+Because $v_1, ..., v_m$ spans $V$ we follow that if $v \in V$ then there exist
+$a_1, ..., a_m$ such that
+$$v = \sum{a_j v_j}$$
+thus we follow that
+$$\phi v = \sum {\phi v_j} = 0$$
+for any $v \in V$. Thus $\phi = 0$. Therefore we've got that
+$$\Gamma \phi = 0 \to \phi = 0$$
+thus we can follow that $\Gamma$ is injective.
+
+\textbf{In reverse direction: }
+Suppose that $\Gamma$ is injective. We've going to proceed with a proof by contradiction on
+this one.
+
+Suppose that $v_1, ..., v_m$ does not span $V$. Then we follow that we can create 
+linearly independent list  $v_1, ..., v_n$ by removing some elements from $v_1, ..., v_m$, if
+it is not already linearly independent. Then we can expand this list to
+$v_1, ..., v_n, v_1', ...$ - basis of $V$. Then we can create a dual basis for this basis
+and get our $\phi'$, which will be a dual basis for $v_1'$. Given that $\phi'(v_j) = 0$
+by definition of the dual basis, we follow that
+$$\Gamma(\phi') = 0$$
+Given that $\phi'(v_1') \neq 0$ we follow that $\phi' \neq 0$. Thus
+$\ns \Gamma \neq \{0\}$, therefore it is not injective, which is a contradiction.
+
+\textit{(b) Prove that $v_1, ..., v_m$ is linearly independent if and only if $\Gamma$
+  is surjective }
+
+\textbf{In forward direction: }
+Suppose that $v_1, ..., v_m$ is linearly independent. Then  we follow that there exists
+a dual basis $\phi_1, ..., \phi_m$ of $v_1, ..., v_m$. Thus we follow that range of $\Gamma$
+has
+$$(\phi_1(v_1), ..., \phi_1(v_m)) = (1, 0, ..., 0)$$
+Therefore we can conclude that range of $\Gamma$ contains a list of length  $m$  of linearly
+independent vectors. Given that $\dim (F^m) = m$, we follow that $F^m = \range \Gamma$. Thus
+$\Gamma$ is surjective, as desired.
+
+\textbf{In reverse direction: }
+Suppose that $v_1, ..., v_m$ are linearly independent. Then we follow 
 
 
 \chapter{Polynomials}
@@ -2894,7 +2939,9 @@ as desired.
   and only if $p$ and its derivative $p'$ have no zeroes in common}
 
 Suppose that $p$ has $m$ distinct zeroes and suppose that $p'(\lambda) = p(\lambda) = 0$ for
-some $\lambda \in F$. Then we follow that 
+some $\lambda \in F$. Then we follow that
+
+
 
 \end{document}
 
