@@ -2833,8 +2833,172 @@ independent vectors. Given that $\dim (F^m) = m$, we follow that $F^m = \range \
 $\Gamma$ is surjective, as desired.
 
 \textbf{In reverse direction: }
-Suppose that $v_1, ..., v_m$ are linearly independent. Then we follow 
+Suppose that $v_1, ..., v_m$ are linearly independent. Then we follow
+that there exists a space $\Span(v_1, ..., v_m)$, for which $v_1, ..., v_m$ is a basis.
+Thus we follow that for this basis there exists a dual basis $\phi_1, ..., \phi_m$,
+where $\phi_j \in V'$. Thus we follow that
+$$\Gamma(\phi_1) = (\phi_1(v_1), ..., \phi_1(v_m)) = (1, 0, ... 0) \in \range \Gamma$$
+$$\Gamma(\phi_j) = (\phi_j(v_1), ..., \phi_j(v_j), ..., \phi_1(v_m)) = (0, ..., 1, ... 0)
+\in \range \Gamma $$
+Thus we follow that there exist a linearly independent list of length $m$ in $\range \Gamma$. Thus
+we can follow that the dimention of $\range \Gamma$ is at least $m$. Then we can state, that
+because $\dim F^m = m$, $\range \Gamma$ is a subspace of $F^m$ and the fact that
+a subspace has a dimention less or equal to the original space, we can follow that
+$\range \Gamma = F^m$. Thus we follow that $\Gamma$ is surjective, as desired.
 
+\subsection{}
+
+\textit{Suppose $m$ is a positive integer. Show that the dual basis of the basis
+  $1, x, x^2, ..., x^m$ of $P_m(R)$ is $\phi_0, ..., \phi_m$ where
+  $\phi_j(p) = \frac{p^{(j)}(0)}{j!}$.}
+
+It's straightforward to check that $(x^j)^{(j)} =  j!$ (proof by induction will be useful in this
+case). Thus we follow that
+$$\phi_j(x^j) = 1$$
+If $k < j$, then we can follow that
+$$\phi_j(x^k) = 0$$
+and if $k > j$, then 
+$$\phi_j(x^k) = \frac{k!}{j!}0^{k - j} = 0$$
+thus we get that
+$$\phi_j(p_k) =
+\begin{cases}
+  0 \text{ if } k \neq j \\
+  1 \text{ if } k = j 
+\end{cases}
+$$
+thus it is a dual basis by definition.
+
+\subsection{}
+
+\textit{Suppose $m$ is a positive }
+
+\textit{(a) Show that $1, x - 5, ..., (x - 5)^m$ is a basis for $P_m(R)$.}
+
+All of them are linearly independent, since all of them  have different degrees, and the fact
+that length of the list is equal to the dimention of the space that it is in, implies that
+it is a basis for this space.
+
+\textit{(b) What is a dual basis of the basis in part (a)}
+
+If we try to create this basis by drawing inspiration from the previous exercise, then we'll
+get
+$$\phi_j(p_k) = \frac{p_k^{(j)}(5)}{j!}$$
+some basic implication will show that it is indeed the dual basis for given basis.
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_m$ isi a basis of $V$ and $\phi_1, ..., \phi_n$ is the
+  corresponding dual basis of $V'$. Suppose $\psi \in V'$. Prove that}
+$$\psi = \sum \psi(v_j) \phi_j$$
+
+We know that beacause $\phi_1, ..., \phi_m$ is a basis of $V'$ that
+$$\psi = \sum a_j\phi_j $$
+for some $a_1, ..., a_m \in F$. Thus we follow that
+$$\psi(v_j) =  \sum a_j \phi_j(v_j) = \sum_{k \neq j} {[a_k \phi_k(v_j)]} + a_j \phi_j(v_j) =
+0 +  a_j * 1 =  a_j$$
+thus
+$$\psi = \sum {a_j \phi_j} = \sum{ \psi(v_j) \phi_j}$$
+as desired.
+
+\subsection{}
+
+\textit{Prove the first two bullet points in 3.101}
+
+Specifically we want to prove that
+$$(S + T)' = S' + T'$$
+$$(\lambda T)' = \lambda T'$$
+
+$$(S + T)'(\phi) = \phi (S + T) = \phi S + \phi T = S' + T'$$
+where the second equality comes from distributive properties of linear maps.
+$$(\lambda T)'(\phi) = \phi (\lambda T) = \lambda \phi T = \lambda T'$$
+
+\subsection{}
+
+\textit{Suppose $A$ is an $m$-by-$n$ matrix with $A \neq 0$. Prove that the rank of $A$ is
+  $1$ if and only if there exist $(c_1, ..., c_m) \in F^m$ and $(d_1, ..., d_n) \in F^n$
+  such that $A_{j, k} = c_j d_k$ for every $j = 1, ..., m$ and every $k = 1, ..., n$.}
+
+\textbf{In forward direction: }
+Suppose that rank of $A$ is equal to 1. Then we follow that the dimension of span of columns is 1.
+Thus we follow that every column is a scalar multiple of the first non-zero column. Thus
+we can set
+$$v_j = a_j v_m$$
+where $v_m$ is the first non-zero  column and $a_j$ is corresponding coefficient. Thus
+we can create $(1, a_2, ..., a_m)$ - vector of corresponding multiplicities. Thus we can conclude
+that there exists vectors $v_1$ and $(1, a_2, ..., a_m)$ with the desired properties.
+
+\textbf{In reverse direction: }
+Suppose that there exist two vectors, as defined in the exercise. Then we can follow that
+every column is a scalar multiple of the first non-zero column. Therefore we follow that
+the column rank of given matrix is 1, as desired.
+
+\subsection{}
+
+\textit{Show that the dual map of the identity map on $V$ is the identity map on $V'$}
+
+Let $I'$ be the dual map of the identity. Then we can follow that for every $\phi \in V'$
+$$I'(\phi) = \phi I = \phi$$
+thus $I'$ is the identity on $V'$, as desired.
+
+\subsection{}
+
+\textit{Define $T: R^3 \to R^2$ by $T(x, y, z) = (4x + 5y + 6z, 7x + 8y + 9z)$. Suppose
+  $\phi_1, \phi_2$ denotes the dual basis of the standart basis of $R^2$ and
+  $\psi_1, \psi_2, \psi_3$ denotes the dual basis of the standard basis of $R^3$.}
+
+\textit{(a) Describe the linear functions $T'(\phi_1)$ and $T(\psi_2)$}
+
+We can follow that
+$$M(T) = 
+\begin{pmatrix}
+  4 & 5 &  6 \\
+  7 & 8 & 9
+\end{pmatrix}
+$$
+thus 
+$$M(T') = (M(T))^t = 
+\begin{pmatrix}
+  4 & 7 \\
+  5 & 8 \\
+  6 & 9 \\
+\end{pmatrix}
+$$
+also, $\phi_1$ is represented by $(1, 0)$ and $\phi_2$ is represented by $(0, 1)$.
+Therefore
+$$M(T'(\phi_1)) =
+\begin{pmatrix}
+  4 &
+  5 &
+  6 
+\end{pmatrix}
+$$
+and
+$$M(T'(\phi_2)) =
+\begin{pmatrix}
+  7 &
+  8 &
+  9 
+\end{pmatrix}
+$$
+thus
+$$T'(\phi_1) = 4x + 5y + 6z$$
+$$T'(\phi_2) = 7x + 8y + 9z$$
+
+\textit{(b) Write $T'(\phi_1)$ and $T'(\phi_2)$ as linear combinations of
+  $\psi_1, \psi_2, \psi_3$.}
+
+Given that
+$$\psi_1 = (1, 0, 0)$$
+$$\psi_2 = (0, 1, 0)$$
+$$\psi_3 = (0, 0, 1)$$
+we follow that
+
+$$T'(\phi_1) = 4 \psi_1 + 5 \psi_2 + 6 \psi_3$$
+$$T'(\phi_2) = 7 \psi_1 + 8 \psi_2 + 9 \psi_3$$
+
+% \subsection{}
+
+% \textit{}
 
 \chapter{Polynomials}
 
