@@ -456,7 +456,7 @@ $$T(n) = n(n + 1)/2$$
   binary search is $\Theta(\lg(n))$}
 
 \begin{function}
-  \caption{Binary-Sort (A, x, s, f)}
+  \caption{Binary-Search (A, x, s, f)}
   \If{$s = f$} {
     \Return{NIL}\;
   }
@@ -466,10 +466,10 @@ $$T(n) = n(n + 1)/2$$
   }{
     \eIf{$A[q] < x$}
     {
-      \Return{Binary-Sort (A, x, q + 1, f)} \;
+      \Return{Binary-Search (A, x, q + 1, f)} \;
     }
     {
-      \Return{Binary-Sort (A, x, s, q - 1)} \;
+      \Return{Binary-Search (A, x, s, q - 1)} \;
     }
   }
 \end{function}
@@ -479,14 +479,59 @@ but we go through only one branch.
 
 \subsection{}
 
-\textit{The while loop of lines 537 of the Insertion-Sort procedure in Section 2.1
+\textit{The while loop of lines 5-7 of the Insertion-Sort procedure in Section 2.1
   uses a linear search to scan (backward) through the sorted subarray $A[1:j - 1]$.
   What if insertion sort used a binary search (see Exercise 2.3-6) instead of a linear
   search? Would that improve the overall worst-case running time of insertion sort
   to $\Theta(n \lg(n))$?}
 
+If we use binary search instead of the linear search, then we'll undoubtably  have a
+better running time on a real machine, given that the the binary search uses less instructions
+then the linear search.
 
+But in order to put the required value in the needed place, we'll still have to go
+through the entire array in a worst-case scenario ( array sorted in reverse order). Thus
+it can be argued that the overall asympomatic approximation will be the same.
 
+\subsection{}
+
+\textit{Describe an algorithm that, given a set $S$ of $n$ integers and another integer $x$,
+determines whether $S$ contains two elements that sum exactly to $x$. Your algorithm
+should take $\Theta (n \lg n)$ time in the worst case.}
+
+The obvious case with just going through the whole array will not do, as it will give us
+worst-case scenario of $\Theta(n^2)$.
+
+So the main strategy here will be to sort the whole array and then make a linear search for
+the desired values.
+
+Thus we'll get something that looks like Sum-of-ints
+\begin{function}
+  \caption{Sum-of-ints (A, n, x)}
+  Merge-Sort(A) \;
+  $i \leftarrow 1$\;
+  $j \leftarrow n$\;
+  \While{$i \neq j$}{
+    \eIf {$A[i] + A[j] > x$}{
+      $j \leftarrow j - 1$ \;
+    }
+    {
+      \eIf{$A[i] + A[j] > x$} {
+        $i \leftarrow i + 1$ \;
+      }
+      {
+        \Return{$[A[i], A[j]]$}\;
+      }
+    }
+  }
+  
+\end{function}
+
+The last while iterates once through the array, therefore we can (non-rigorously) follow that
+everything except for the search runs at $\Theta(n)$. Thus the whole thing goes
+through the array at time $\Theta(n \lg(n))$  (or at the very least I think so; once again we've
+got non-rigorous approach here, but I'm sure that in subsequent chapters we'll have some
+more sophisticated tools at our hands to prove me right).
 
 
 \part{Appendix: Mathematical Background}

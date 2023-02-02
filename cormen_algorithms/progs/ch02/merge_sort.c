@@ -51,7 +51,7 @@ void i_merge_sort(int *arr, int start, int end)
   merge(arr, start, q, end);
 }
 
-void merge_sort(int *arr, int size)
+void m_merge_sort(int *arr, int size)
 {
   i_merge_sort(arr, 0, size - 1);
 }

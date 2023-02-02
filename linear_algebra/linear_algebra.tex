@@ -2996,9 +2996,138 @@ we follow that
 $$T'(\phi_1) = 4 \psi_1 + 5 \psi_2 + 6 \psi_3$$
 $$T'(\phi_2) = 7 \psi_1 + 8 \psi_2 + 9 \psi_3$$
 
-% \subsection{}
+\subsection{}
 
-% \textit{}
+\textit{Define $T: P(R) \to P(R)$ by $(Tp)(x) = x^2p(x) + p''(x)$ for $x \in R$.}
+
+\textit{(a) Suppose $\phi \in P(R)'$ is defined by $\phi(p) = p'(4)$. Describe the linear
+  functional $T'(\psi)$ on $P(R)$.}
+
+$$T'(\psi)(p) = \psi (Tp) = \phi(x^2p + p''(x)) = 2xp + x^2p + p'''(x)$$
+
+\textit{(b) Suppose $\phi \in P(R)'$ is defined by $\phi(p) = \int_0^1{p(x) dx}$. Evaluate
+  $(T'(\phi))(x^3)$}
+
+$$T'(\phi)(p) = \phi(Tp) = \phi( x^2p + p''(x)) = \phi( x^2 x^3 + 6x) = \phi(x^5 + 6x) = $$
+$$ =  \int_0^1{x^5 + 6x} = [x^6/6 + 3x^2]_0^1 = 1/6 + 3 = 3 \frac{1}{6}$$
+
+\subsection{}
+
+\textit{Suppose $W$ is finite-dimentional and $T \in \map(V, W)$. Prove that $T' = 0$
+  if and only if $T = 0$.}
+
+\textbf{In forward direction: }
+Suppose that $T' = 0$. Then we can follow that $\phi T (v) = 0$ for every
+$\phi \in W'$ and $v \in v$. Suppose that $T \neq 0$. Then there exists $v \in V$ such that
+$Tv \neq 0$. Thus we can create a basis $Tv, w_1, ..., w_m$ of $W$ and define the dual
+basis of this basis. Thus we follow that there exists $\phi_1$ such that 
+$$\phi_1(Tv) = 1$$
+Thus
+$$\phi_1(Tv) = T'(\phi)(v) \neq 0$$
+therefore we follow that $T' \neq 0$, which is a contradiction. Thus we can conclude that
+$T' = 0$ implies that $T = 0$.
+
+\textbf{In reverse direction: }
+Suppose that $T = 0$. Then we follow that $\phi Tv = T'(\phi)(v) = \phi 0 = 0$. Thus we
+conclude that for any $\phi \in V$ $T'(\phi) = 0$. Thus $T' = 0$.
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional. Prove that the map that takes
+  $T \in \map(V, W)$ to $T' \in \map(W', V')$ is an isomorphism of
+  $\map(V, W)$ onto $\map(W', V')$.}
+
+Let us denote this map as  $\pi: \map(V, W) \to \map(W', V')$
+
+We know that
+$$\pi(S + T) = (S + T)' = S' + T' = \pi S + \pi T$$
+and
+$$\pi(\lambda T) = (\lambda T)' = \lambda (T') = \lambda (\pi T)$$
+thus we can follow that $\pi$ is a linear map.
+
+We've already proven that $T = 0$ if and only if $T' = 0$, thus we can follow that
+given map is injective.
+
+Because $V$ and $W$ are finite-dimentional, we can follow that $\map(V, W)$ and $\map(W', V')$ are
+finite dimentional. Thus we can make bases of those vector spaces
+$$\kappa_1, ..., \kappa_m \in \map(V, W)$$
+$$\gamma_1, ..., \gamma_n \in \map(W', V)$$
+and create an invertible map $\zeta \in \map(\map(V, W) , \map(W', V'))$ such that
+$$\zeta (\sum a_j \kappa_j) = \sum a_j \gamma_j$$
+therefore we can follow that $\pi \zeta^{-1}$ is an operator on $\map(W', V')$. By invertibility
+of $\zeta$ we follow that $\zeta^{-1}$ is invertible as well and therefore it is injective.
+Thus $\pi \zeta^{-1}$ is a composition of injective linear maps, and therefore it is itself
+injective. Given that $\pi \zeta^{-1}$ is an operator on a finite-dimentional vector space, we
+follow that its injectivity implies inversibility. Therefore we can follow that $\pi$ is
+also inversible, as desired. (I just wanted to go this road to get surjectivity, but got
+the whole inversibility from it.)
+
+\subsection{}
+
+\textit{Suppose $U \subseteq V$. Explain why $U^0 = \{\phi \in V': U \subseteq \ns \phi\}$}
+
+Suppose that $\phi \in U^0$. Then we can follow that $\phi(u) = 0$, therefore $u \in \ns \phi$
+for every $u \in U$. Thus $U \subseteq \ns \phi$. Thus
+$U^0 \subseteq \{\phi \in V': U \subseteq \ns \phi\}$.
+
+Now let $\phi$ be such that $U \subseteq \ns \phi$. Then we can follow that for all
+$u \in U$
+$$\phi(u) = 0$$
+thus $\phi \in U^0$. Therefore $U^0 \supseteq \{\phi \in V': U \subseteq \ns \phi\}$
+Therefore by double inclusion we've got the desired equality.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $U \subseteq V$.
+  Show that $U = \{0\}$ is and only if $U^0  =V'$.} 
+
+\textbf{In forward direction: }
+Suppose that $U = \{0\}$. Then we can follow that
+$$U^0 = \{\phi \in V': \phi(u) = 0 \text{ for all } u \in U\}$$
+$U^0$ is a subspace of $V'$, therefore we've got that $U^0 \subseteq V'$.
+Suppose that $\phi \in V'$. Then it follows that
+$$\phi(0) = 0$$
+because it's a linear function. Thus we follow that $V \subseteq U^0$. Thus
+by double inclusion we've got that $V' = U^0$.
+
+\textbf{In reverse direction: }
+Suppose that $U^0 = V'$. Now suppose that $u \in U$.
+Then we can follow that there exist $a_1, ..., a_m$ such that
+$$u = \sum a_j v_j$$
+for some basis $v_1, ..., v_m$ of $V$. For this basis there exists a dual basis
+$\phi_1, ..., \phi_m$. Thus we can follow that
+$$0 = \phi_j(u) = \phi(\sum a_k v_k) = \phi_j(\sum_{k \neq j}a_k v_k) + \phi(a_j v_j)=
+a_j$$
+Thus $a_1 = ... = a_m = 0$. Therefore $u = 0$. Thus $U = \{0\}$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $U$ is a subpace of $V$. Show that
+  $U = V$ if and only if $U^0 = \{0\}$.}
+
+\textbf{In forward direction: }
+Suppose that $U = V$. Then it follows that $\dim U = \dim V$. Thus
+$$\dim V = \dim U + \dim U^0$$
+$$\dim V = \dim V + \dim U^0$$
+$$\dim U^0 = 0$$
+thus $U^0 = \{0\}$.
+
+\textbf{In reverse direction: }
+
+Suppose that $U^0 = 0$. Then
+$$\dim V = \dim U + \dim U^0$$
+$$\dim V = \dim U$$
+Thus $U = V$. 
+
+\subsection{}
+
+\textit{Suppose $U$ and $W$ are subsets of $V$ with $U \subseteq W$. Prove that
+  $W^0 \subseteq U^0$.}
+
+Suppose that $\phi \in W^0$. Then we follow that
+if $u \in U$ then $u \in W$, and therefore $\phi(u) = 0$ for any $u \in U$. Thus $\phi \in U^0$.
+Therefore $\phi \in W^0 \to \phi \in U^0$. Thus $W^0 \subseteq U^0$, as desired.
+
 
 \chapter{Polynomials}
 
@@ -3104,6 +3233,7 @@ as desired.
 
 Suppose that $p$ has $m$ distinct zeroes and suppose that $p'(\lambda) = p(\lambda) = 0$ for
 some $\lambda \in F$. Then we follow that
+
 
 
 

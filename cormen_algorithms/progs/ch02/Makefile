@@ -1,4 +1,4 @@
-all: sort search  selection_sort merge_sort
+all: sort search  selection_sort merge_sort sum_of_ints
 
 CFLAGS =  -lalgo -I ../lib -L ../lib
 
@@ -13,3 +13,6 @@ selection_sort: selection_sort.c
 
 merge_sort: merge_sort.c
 	gcc -g merge_sort.c -o  $@ $(CFLAGS)
+
+sum_of_ints: sum_of_ints.c
+	gcc -g sum_of_ints.c -o $@ ${CFLAGS}
