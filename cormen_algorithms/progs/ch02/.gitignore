@@ -3,3 +3,5 @@ sort
 selection_sort
 merge_sort
 sum_of_ints
+bubble_sort
+comparison

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  2 FEB 2023 21:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  4 FEB 2023 01:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -459,7 +459,7 @@ MS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 T \OMS/cmsy/m/n/10.95 2 []\OT1/cmr/m/n/1
 [70] [71] [72] [73] [74] [75] [76] [77] [78] [79]
 Chapter 4.
 
-Overfull \hbox (11.95113pt too wide) detected at line 3154
+Overfull \hbox (11.95113pt too wide) detected at line 3153
 \OML/cmm/m/it/10.95 z[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 a \OT1/cmr/m/
 n/10.95 + \OML/cmm/m/it/10.95 bi\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 a \OMS
 /cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 bi\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/
@@ -471,7 +471,7 @@ b[] \OT1/cmr/m/n/10.95 = ([])[] = ([])[] = \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/1
  []
 
 
-Overfull \hbox (14.65158pt too wide) detected at line 3163
+Overfull \hbox (14.65158pt too wide) detected at line 3162
 \OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 wz\OMS/cmsy/m/n/10.95 j \OT1/cmr/m/n/1
 0.95 = \OMS/cmsy/m/n/10.95 j\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a \OT1/cmr/
 m/n/10.95 + \OML/cmm/m/it/10.95 bi\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 c \O
@@ -488,7 +488,7 @@ msy/m/n/10.95 j \OT1/cmr/m/n/10.95 = [] =
 [80
 
 ]
-Overfull \hbox (1.66493pt too wide) in paragraph at lines 3212--3213
+Overfull \hbox (1.66493pt too wide) in paragraph at lines 3211--3212
 \OT1/cmr/m/it/10.95 Suppose $\OML/cmm/m/it/10.95 m$ \OT1/cmr/m/it/10.95 is non-
 neg-a-tive in-te-ger, $\OML/cmm/m/it/10.95 z[]; :::; z[]$ \OT1/cmr/m/it/10.95 a
 re dis-tinct el-e-ments of $\OML/cmm/m/it/10.95 F$\OT1/cmr/m/it/10.95 , and $\O
@@ -521,7 +521,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (83 pages, 414444 bytes).
+Output written on linear_algebra.pdf (83 pages, 414312 bytes).
 PDF statistics:
  1586 PDF objects out of 1728 (max. 8388607)
  1452 compressed objects within 15 object streams

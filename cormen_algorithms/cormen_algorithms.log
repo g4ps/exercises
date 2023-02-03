@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  2 FEB 2023 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  4 FEB 2023 01:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -422,28 +422,28 @@ Chapter 1.
 Chapter 2.
 [7
 
-] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17
+] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19
 
 ]
 Chapter 3.
-[18
+[20
 
-] [19] [20] [21]
+] [21] [22] [23]
 Chapter 4.
-[22
+[24
 
-] [23] (./cormen_algorithms.aux)
+] [25] (./cormen_algorithms.aux)
 Package rerunfilecheck Info: File `cormen_algorithms.out' has not changed.
-(rerunfilecheck)             Checksum: F553B1AD889AFA2E1F01269B1DDFF2B0;3001.
+(rerunfilecheck)             Checksum: 008F1E1FABECD9A432E25D211363740A;3592.
  ) 
 Here is how much of TeX's memory you used:
- 10274 strings out of 478238
- 159165 string characters out of 5850455
- 467431 words of memory out of 5000000
- 28247 multiletter control sequences out of 15000+600000
+ 10282 strings out of 478238
+ 159271 string characters out of 5850455
+ 467434 words of memory out of 5000000
+ 28250 multiletter control sequences out of 15000+600000
  479359 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,19n,63p,318b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,19n,63p,362b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -458,10 +458,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on cormen_algorithms.pdf (24 pages, 267703 bytes).
+Output written on cormen_algorithms.pdf (26 pages, 275305 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 444 compressed objects within 5 object streams
- 159 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 534 PDF objects out of 1000 (max. 8388607)
+ 467 compressed objects within 5 object streams
+ 164 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 

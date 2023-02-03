@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <sys/time.h>
 
 
 void fill_rand_arr(int *arr, int size) {
@@ -73,4 +74,47 @@ void ii_merge_sort(int *arr, int start, int end)
 void merge_sort(int *arr, int size)
 {
   ii_merge_sort(arr, 0, size - 1);
+}
+
+void bubble_sort(int *arr, int size)
+{
+  int temp;
+  for (int i = 0; i < size - 1; i++) {
+    for (int j = size - 1; j > i; j--) {
+      if (arr[j] < arr[j - 1]) {
+	temp = arr[j];
+	arr[j] = arr[j - 1];
+	arr[j - 1] = temp;
+      }
+    }
+  }
+}
+
+void insertion_sort(int *arr, int size) {
+  for (int i = 1; i < size; i++) {
+    int key = arr[i];
+    /* int j = i - i; */
+    int j;
+    for (j = i - 1; j >= 0 && arr[j] > key; j--) {
+      arr[j + 1] = arr[j];      
+    }
+    arr[j + 1] = key;
+  }
+}
+
+unsigned long get_time_ms() 
+{
+  struct timeval t;
+  gettimeofday(&t, NULL);
+  return t.tv_sec * 1000 + t.tv_usec / 1000;
+}
+
+int is_sorted(int *arr, int size)
+{
+  for (int i = 1; i < size; i++) {
+    if (arr[i] < arr[i - 1]) {
+      return 0;
+    }
+  }
+  return 1;
 }

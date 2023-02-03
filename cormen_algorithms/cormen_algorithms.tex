@@ -529,9 +529,134 @@ Thus we'll get something that looks like Sum-of-ints
 
 The last while iterates once through the array, therefore we can (non-rigorously) follow that
 everything except for the search runs at $\Theta(n)$. Thus the whole thing goes
-through the array at time $\Theta(n \lg(n))$  (or at the very least I think so; once again we've
+through the array at time
+$$\Theta(n) + \Theta(n \lg(n)) = \Theta(n \lg(n))$$
+(or at the very least I think so; once again we've
 got non-rigorous approach here, but I'm sure that in subsequent chapters we'll have some
 more sophisticated tools at our hands to prove me right).
+
+
+\section{Problems}
+
+\subsection{Insertion sort on small arrays in merge sort}
+
+\textit{(a) Show that insertion sort can sort the $n/k$ sublists, each of length $k$,
+  in $\Theta(nk)$ worst-case time}
+
+We know that the insertion sort sorts an array with worst-case performance of
+$\Theta(n^2)$, and therefore its worst case performance for the
+array of length $k$ is $\Theta(k^2)$. Thus we can follow that it sorts
+$n/k$ sublists of the original array at time
+$$n/k * \Theta(k^2) = n/k * ck^2 = cnk = \Theta(nk)$$
+
+\textit{(b) Show how to merge the sublists in $\Theta(n \lg(n/k))$ worst-case
+  time}
+
+We can probably get it by applying standart merge in pairs, and then recursively. More
+explicitely we first merge first and the second, third and fourth, and so on, getting in the
+end roughly $n/2k$ sorted subarrays. Then we can relabel resulting arrays, so that
+the result of the merge on first and second subarray becomes first array, result of
+merging third and fourth becomes second array and so forth.
+
+By doing that we iterate through the whole array at every inetration, and we go through roughly
+$\lg(n/k)$ iterations, because every time we reduce the number of subarrays in half.
+
+\textit{(c) Given taht the modified algorithm runs in $\Theta(nk + n\lg(n/k))$ worst-case time,
+  what is the largest value of $k$ as a function of $n$ for which the modified algorithm has the
+  same running time as standart merge sort, in terms of $\Theta$-notation?}
+
+With our rough definition of $\Theta$-notation, we get that the approximate times of the
+algorithms are roughly proportional to the times inside $\Theta$. Thus there must exist
+$c_1, c_2$ such that
+
+$$c_1(nk + n\lg(n/k)) = c_2(n \lg(n))$$
+$$c_1n(k + \lg(n/k)) = c_2 n\lg(n)$$
+$$c_1(k + \lg(n/k)) = c_2\lg(n)$$
+$$c_1(k + \lg(n) - \lg(k)) = c_2\lg(n)$$
+$$k - \lg(k) = (c_1 - c_2)\lg(n)$$
+$$\lg(2^k) - \lg(k) = (c_1 - c_2)\lg(n)$$
+$$\lg(2^k/k) = (c_1 - c_2)\lg(n)$$
+$$2^k/k = 2^{(c_1 - c_2)}n$$
+
+I'm sure that I've made a mistake here somewhere, but it's the best that I can do.
+
+\textit{(d) How should you choose $k$ in practice? }
+
+By trial and error, I suppose. I'd stick to one sort in general and not overcomplicate the things,
+but if we try to overcomplicate things, then we can go through the cases when the linear
+sort outperform the merge, get somewhat concrete number and divide the first sort based on this
+number.
+
+\subsection{Correctness of bubblesort}
+
+\textit{(a) Let $A'$ denote the array $A$ after $Bubblesort(A, n)$ is executed. To prove that
+  Bubblesort is correct, you need to prove that it terminates and that
+  $$A'[1] \leq A'[2] \leq ... \leq A'[n]$$
+  In order to show that Bubblesort actually sorts, what else do you need to prove? }
+
+That $A'$ consists of elements, that were originally in $A$.
+
+\textit{(b) State precicely a loop invariant for the for loop in lines 2-4, and prove that
+  this loop invariant holds.}
+
+$A[j]$ is the smallest element of $A[j:n]$. Elements of $A[i + 1: n]$ remain to be the same,
+but their order might change.
+
+\textbf{Initialization: }
+$A[j:n]$ consists of one element, therefore $A[j]$ is the smallest element of it. No
+manipulations to $A[i + 1: n]$ were applied, therefore the elements of it are the same.
+
+\textbf{Maintenence: }
+If $A[j - 1]$ is greater then $A[j]$, then we swap their places. Thus we follow that
+before the next iteration $A[j]$ will be the smallest element of $A[j:n]$. The only performed
+operation is the possible swap, therefore we can follow that elements remain to be the same.
+
+\textbf{Termination: }
+Loop terminates, because at each iteration we reduce $j$ by 1. Nothing happens to the loop
+invariant, therefore it still holds.
+
+\textit{(c) Using the termination condition of the loop invariant proved in part (b), state
+  a loop invariant for the for loop in lines 1-4 that allows you to prove inequality
+  (2.5). Your proof should use the structure of the loop-invariant proof presented
+  in this chapter.}
+
+
+$A[1:i - 1]$ are the smallest values of $A[1:n]$, but in sorted order.
+Values of $A[1:n]$ remain the same, but their place may change.
+
+\textbf{Initialization: }
+$A[1:i - 1]$ is empty, therefore first part holds. No manipulations were performed on the
+array, therefore the second condition also holds.
+
+\textbf{Maintenence: }
+As we've discussed earlier, inner for makes it so that we push the smallest element of $A[i:n]$
+to $A[i]$. Given that $A[1: i-1]$ has the smallest values, we follow that the smallest value
+of $A[i:n]$ is greater or equal to any value in $A[1:i-1]$. THus we follow that $A[1:i - 1]$
+will be sorted before the next iteration. Thus the first part holds.
+
+Conditions, that are imposed in loop invariant of inner for guarantees us the second condition
+of the loop invariant.
+
+\textbf{Termination: }
+We increment $i$ at every iteration and $n$ remains unchanged, therefore we follow that
+loop terminates. All of the requirements of loop invariant are implied by maintenence clause.
+
+\textit{(d) What is the worst-case running time of Bubblesort? How does it compare with
+  the running time of Insertion-Sort?}
+
+Worst-case is once again the reversely sorted array. In that case we need to
+execuse line 4
+$$\Theta(\sum_{j = 1}^n{j}) = \Theta(n^2)$$
+times. In the best case we've got the same case, but now with the line 3.
+
+This sort has the same asymptotic time as the Insertion sort, although the practice shows, that it
+it absolutely horrible when it comes to the machine test.
+
+\subsection{Correctness of Horner's rule}
+
+\textit{(a) In terms of $\Theta$-notation, what is the running time of this procedure? }
+
+Linear with respect to $n$ ($\Theta(n)$).
 
 
 \part{Appendix: Mathematical Background}

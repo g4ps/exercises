@@ -1,4 +1,4 @@
-all: sort search  selection_sort merge_sort sum_of_ints
+all: sort search  selection_sort merge_sort sum_of_ints bubble_sort comparison
 
 CFLAGS =  -lalgo -I ../lib -L ../lib
 
@@ -16,3 +16,9 @@ merge_sort: merge_sort.c
 
 sum_of_ints: sum_of_ints.c
 	gcc -g sum_of_ints.c -o $@ ${CFLAGS}
+
+bubble_sort: bubble_sort.c
+	gcc -g bubble_sort.c -o $@ ${CFLAGS}	
+
+comparison: comparison.c
+	gcc -g comparison.c -o $@ ${CFLAGS}		
