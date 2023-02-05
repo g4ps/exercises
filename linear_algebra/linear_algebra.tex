@@ -3133,7 +3133,79 @@ Therefore $\phi \in W^0 \to \phi \in U^0$. Thus $W^0 \subseteq U^0$, as desired.
 \textit{Suppose $V$ is finite-dimetionmal and $U$ and $W$ are subspaces of $V$ with
   $W^0 \subseteq U^0$. Prove that $U \subseteq W$.}
 
-Suppose that $u \in U$. Then we can follow that 
+Let $w_1, ..., w_m$ be a basis of $W$ and let us extend this basis to basis
+$w_1, ..., w_m, ..., w_n$ of $V$. Then we can follow that there exists a dual
+basis $\phi_1, ..., \phi_m, ..., \phi_n$ of $V$. Therefore we can follow that
+if $\psi \in \Span(\phi_{m + 1}, ..., \phi_n)$, then
+$$\psi(w) = 0$$
+therefore $\Span(\phi_{m + 1}, ..., \phi_n) \subseteq W^0$. Conversely if $\psi \in W^0$, then
+we can follow that
+$$\psi = 0 \phi_1 + ... + 0 \phi_m + a_{m + 1} \phi_{m + 1} + ...$$
+(otherwise $\psi(w_j) \neq 0$.)
+Therefore we can follow that $W^0 \subseteq \Span(\phi_{m + 1}, ..., \phi_n)$. Thus
+we've got that $W^0 = \Span(\phi_{m + 1}, ..., \phi_n)$. Therefore
+$\phi_{m + 1}, ..., \phi_n$ is a basis for $W^0$.
+
+Suppose now that there exists $u \in U$ such that $u \notin W$. Then we can follow that
+$$u = \sum{a_j w_j}$$
+Because $u \notin W$ we can follow that there exists $k > m$ such that  $a_k \neq 0$.
+Thus $\phi_k(u) = a_k \neq 0$. Given that $k > m$, we follow that $\phi_k \in W^0$. Thus we
+follow that $\phi_k \in U^0$. Therefore $\phi_k(u) = 0$, which is a contradiction.
+
+Therefore we follow that there does not exist $u \in U$ such that $u \notin W$. Thus
+we can follow that $u \in U \to u \in W$. Therefore $U \subseteq W$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $U, W$ are subspaces of $V$. Show that $(U + W)^0 = U^0 \cap W^0$.}
+
+Suppose that $\phi \in (U + W)^0$. Then we can follow that for every $u \in U$, $\phi(u) = 0$.
+therefore $\phi \in U^0$. By the same logic we have that $\phi \in W^0$. Thus we
+can follow that
+$$\phi \in (U + W)^0 \to \phi \in U^0 \land \phi \in W^0$$
+$$\phi \in (U + W)^0 \to \phi \in U^0 \cap W^0$$
+$$(U + W)^0 \subseteq U^0 \cap W^0$$
+
+Conversely, suppose that $\phi \in U^0 \cap W^0$. Then we follow that
+if $v = u + w \in U + W$, then
+$$\phi(v) = \phi(u + w) = \phi(u) + \phi(w) = 0 + 0 = 0$$
+Thus we follow that
+$$\phi \in U^0 \cap W^0 \to \phi \in (U + W)^0$$
+$$U^0 \cap W^0 \subseteq (U + W)^0$$
+thus by double inclusion we've got the desired equality.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $U$ and $W$ are subsets of $V$. Prove that
+  $(U \cap W)^0 = U^0 + W^0$}
+
+Because $V$ is finite-dimentional we can follow that $U$ and $W$ are both finite-dimentional,
+and therefore $U \cap W$ is finite dimentional (the fact that it is a subspace was proven in the
+exercises before). We can therefore make a basis $u_1, ..., u_n, ..., u_m, ..., u_l, ..., u_k$
+where $u_n, ..., u_m$ is a basis of $U \cap W$ (empty in case if the dimention of intersection
+is zero), $u_1, ..., u_{n - 1}$ is the basis of $U$, $u_{m + 1}, ..., u_l$ is the rest of the
+basis of $W$ and the rest is the basis of $V$. Then we can create a dual basis on this basis and
+get that
+$$U^0 + W^0 = \Span(\phi_1, ..., \phi_{n - 1}, ..., \phi_{m + 1}, ..., \phi_k) = (U \cap W)^0$$
+as desired.
+
+\subsection{}
+
+\textit{Prove 3.106 using the ideas scketched in the discussion before the statement of 3.106}
+
+We've outlined this proof in 3.6.21.
+
+% \subsection{}
+
+% \textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$. Show that }
+% $$U = \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$$
+
+% Suppose that $u \in U$. Then it follows that $\phi \in U^0 \to \phi(u) = 0$. Thus we've got that
+% $U \subseteq  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$.
+
+% Conversely, let $v \in  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$ and
+% suppose that $v \notin U$. Then we can follow that 
 
 
 \chapter{Polynomials}
