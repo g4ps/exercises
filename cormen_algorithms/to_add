@@ -1,0 +1,199 @@
+\part{Appendix: Mathematical Background}
+\chapter{Summations}
+
+\section*{1-1}
+\textit{Prove that $\sum_{k  = 1}^n{O(f_k(i))} = O(\sum_{k  = 1}^n{f_k(i)})$}
+
+Short answer:
+$$\sum cg(x) = c\sum{g(x)}$$
+
+Long answer:
+
+Suppose that $g \in O(f_k(i))$. It follows that there exists $n_i$ and $c_i$
+such that $0 \leq g(n) \leq cf_i(n)$. Thus we can pick
+$n = \max\{n_0, n_1, ...\}$ and $c = \max\{c_0, c_1, ... \}$. We know that
+both $n$ and $c$ will work all of functions $f_k$. Therefore by
+linearity of summations
+$$\sum_{k  = 1}^n{O(f_k(i))}
+= \sum_{k  = 1}^n{cf_k(i)} =
+= c\sum_{k  = 1}^n{f_k(i)} = 
+= O(\sum_{k  = 1}^n{f_k(i)})$$
+(notation is a little abused and there is nothing is rigorously
+proven, but it'll do).
+
+\section*{1-2}
+\textit{Find a simple formula for $\sum_{k = 1}^n{(2k - 1)}$.}
+
+$$\sum_{k = 1}^n{(2k - 1)} =
+\sum_{k = 1}^n{(2k)} - \sum_{k = 1}^n{(1)} =
+2\sum_{k = 1}^n{(k)} - n =
+2\frac{n(n + 1)}{2} - n =
+n(n + 1) - n =
+n^2
+$$
+
+
+\section*{1-3}
+\textit{Interpret the decimal number $111,111,111$ in light of equation A.6}
+
+$$111,111,111 = \sum_{k = 0}^{9}{10^k} = \frac{10^{10} - 1}{10 - 1}$$
+
+\section*{1-4}
+\textit{Evaluate the infinite series $1 - \frac 1 2 + \frac 1 4 - \frac 1 8
+  + \frac{1}{16} - ...$}
+
+The series converges absolutely to 2, so we are free to do anything with it.
+
+$$1 - \frac 1 2 + \frac 1 4 - \frac 1 8
++ \frac{1}{16} - ... = 
+\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}}
+- \sum_{k = 0}^{\infty}{\frac{1}{2}^{1 + 2k}} =
+\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}}
+- \frac{1}{2}\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}} =
+\left(1 - \frac{1}{2}\right)\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}} = 
+$$
+$$
+= \left(1 - \frac{1}{2}\right)\sum_{k = 0}^{\infty}{\frac{1}{4}^{k}}
+= \left(1 - \frac{1}{2}\right)\frac{1}{1 - \frac{1}{4}}
+= \frac 1 2 *  \frac 4 3 = \frac 2 3
+$$
+
+\section*{1-5}
+\textit{Let $c \geq 0$ be a constant. Show that
+  $\sum_{k = 1}^{n}{k^c} = \Theta(n^{c + 1})$}
+
+$$
+\sum_{k = 1}^{n}{k^c} = \sum_{k = 1}^{n - 1}{k^c} + n^c =
+n^c\sum_{k = 1}^{n}{\frac{k^c}{n^c}} =
+$$
+
+Let $f(n) = n^c$.
+It can be seen from the graph that
+$$\int_{0}^{n}{f(x)dx} \leq \sum_{k = 1}^{n}{k^c} \leq
+\int_{0}^{n}{f(x + 1)dx}$$
+
+Thus 
+$$\int_0^n{f(x)dx} = \int_0^n{x^c} = \frac{n^{c + 1}}{c + 1} \in$$
+$$\int_0^n{f(x + 1)dx} = \int_0^n{(x + 1)^c} = \frac{(n + 1)^{c + 1}}{c + 1}$$
+
+Thus we can state that $\sum_{k = 1}^{n}{k^c} = \Theta(n^{c + 1})$
+(I'm not good enough yet to show that $\frac{(n + 1)^{c + 1}}{c + 1} \in
+\Theta(n^{c + 1})$, but I'm pretty sure that it's true TODO).
+
+
+
+\section*{1-6}
+\textit{Show that $\sum_{k=0}^{\infty}{k^2 x^k} = x(1 + x)/(1 - x)^3$ for
+  $|x| < 1$}
+
+We know that for $|x| < 1$
+$$\sum_{k = 0}^{\infty}{kx^k} = \frac{x}{(1 - x)^2}$$
+thus if we differentiate both sides we get
+$$\sum_{k = 0}^{\infty}{k^2x^{k - 1}} = \frac{2x}{(1 - x)^3}
++ \frac{1}{(1 - x)^2} $$
+and then if we multiply all of it by $x$ we'll get
+$$\sum_{k = 0}^{\infty}{k^2x^k} = \frac{2x^2}{(1 - x)^3}
++ \frac{x}{(1 - x)^2} $$
+thus if we factor all of this jazz we'll get
+$$\sum_{k = 0}^{\infty}{k^2x^k} = - \frac{x(x + 1)}{(x - 1)^3}$$
+and if we tuck this minus into denominator we'll get (which we can do because
+the power is odd)
+$$\sum_{k = 0}^{\infty}{k^2x^k} = \frac{x(x + 1)}{(1 - x)^3}$$
+as desired.
+
+\section*{1-7}
+\textit{Prove that $\sum_{k = 1}^n{\sqrt{k \lg k}} = \Theta(n^{3/2}\lg^{1/2}n)$}
+
+$$\int \sqrt{k \lg k} = $$
+
+\section*{1-9}
+\textit{Show that}
+$$\sum_{k = 0}^{\infty}{(k - 1)/2^k} = 0$$
+
+$$\sum_{k = 0}^{\infty}{(k - 1)/2^k} = \sum_{k = 0}^{\infty}{k/2^k} - \sum_{k = 0}^{\infty}{1/2^k} =
+\sum_{k = 0}^{\infty}{k/2^k} - 2 = 0$$
+
+$$\sum_{k = 0}^{\infty}{k/2^k} - 2 = 0$$
+$$\sum_{k = 0}^{\infty}{k/2^k} = 2$$
+$$\sum_{k = 0}^{\infty}{k/2^k - 2} = 0$$
+$$\sum_{k = 0}^{\infty}{\frac{k - 2^{k + 1}}{2^k}} = 0$$
+
+
+\chapter{Sets, Etc.}
+
+\section*{1-1}
+\textit{Draw Venn diagrams that illustrate the first of the distributive laws
+(B.1)}
+
+TODO, add picture here
+
+\section*{1-2}
+\textit{Prove the generalization of DeMorgan's laws to any finite collection
+  of sets}
+
+\textit{Copy from real analysis exercises}
+
+Suppose that $x \in \left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$. It
+follows, that $x$ is not in the union of given sets. Therefore there is no
+set $E_n$ such that $x \in E_n$ (because if there would be such a set, then $x$
+wouldn't be in $\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$).
+Therefore $x \in \cap_{\lambda \in \Lambda} E_\lambda^c$. Therefore 
+$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c \subseteq
+\cap_{\lambda \in \Lambda} E_\lambda^c$$
+
+The proof of reverse inclusion is the same as with the forward, but in reverse
+order.
+
+$x \in \left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c$ implies that
+$x$ is not in every $E_n$. Therefore there exists $x \in E_n^c$ for some $E_n$.
+therefore it is in $\cup_{\lambda \in \Lambda} E_\lambda^c$. The proof of
+reverse inclusion uses the same argument, but in other direction.
+
+\section*{1-3}
+TODO
+
+\section*{1-4}
+\textit{Show that the set of odd natural numbers is countable.}
+
+Let us set a function $f: A \to N$, where $A$ denotes the set of
+odd natural numbers
+$$f(n) = (n + 1) / 2$$
+for this function  we've got
+$$f^{-1}(n) = 2n - 1$$
+
+Both funcitons are injective and therefore $f$ is bijective. Therefore
+we've got a bijective function betweeen $A$ and $N$, therefore
+$A \sim N$, therefore it is conuntable, as desired.
+
+\section*{1-5}
+\textit{Show that for any finite set $S$, the power set $2^S$ has
+  $2^{|S|}$ elements (that is, there are $2^{|S|}$ distinct subsets of $S$).}
+
+\textit{Another copy from real analysis}
+
+This proof is dumb, but intuitive:
+
+Every subset is corresponding to a number in binary system: 0 for excluded,
+1 for included. Therefore there exist $2^n$ possible combinations.
+
+For a more concrete proof let's resort to induction.
+
+Base case(s): subsets of $\emptyset$ are $\emptyset$ itseft
+($2^0 = 1$ in total). Subsets of
+set with one element are $\emptyset$ and set itself ($2^1 = 1$ in total).
+
+Proposition is that set with n elements has $2^n$ subsets.
+
+Inductive step is that for set with $n + 1$ elements can either have or hot
+have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
+2^{n + 1}$ subsets, as desired.
+
+\section*{1-6}
+\textit{Give an inductive definition for an $n$-tuple by extending the
+  set-theoretic definition for an ordered pair.}
+
+The tuple is actually just a re-writing of particular set
+$$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
+\{a_1, a_2, a_3, ..., a_n\}\}$$
+
+

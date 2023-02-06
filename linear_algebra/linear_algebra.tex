@@ -3196,16 +3196,191 @@ as desired.
 
 We've outlined this proof in 3.6.21.
 
-% \subsection{}
+\subsection{}
 
-% \textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$. Show that }
-% $$U = \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$$
+\textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$. Show that }
+$$U = \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$$
 
-% Suppose that $u \in U$. Then it follows that $\phi \in U^0 \to \phi(u) = 0$. Thus we've got that
-% $U \subseteq  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$.
+Let $u_1, ..., u_n$ be a basis of $U$, and extend this basis to $u_1, ..., u_n, ..., u_m$ - a
+basis of $V$. Then let us define dual basis on this basis $\phi_1, ..., \phi_m$, and it'll
+follow that if $v \notin U$, then there will exist $\phi_k$ for some $k > n$ such that
+$$\phi_k(v) \neq 0$$
+Thus we can follow that
+$$v \notin U \to v \notin  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$$
+and therefore 
+$$ v \in  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \} \to v \in U$$
+thus
+$$\{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \} \subseteq U$$
 
-% Conversely, let $v \in  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$ and
-% suppose that $v \notin U$. Then we can follow that 
+Conversely, suppose
+that $u \in U$. Then it follows that $\phi \in U^0 \to \phi(u) = 0$. Thus we've got that
+$U \subseteq  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$.
+
+Thus by double inclusion we've got our desired equality.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\Gamma$ is a subspace of $V'$. Show that }
+$$\Gamma = \{v \in V: \phi(v) = 0 \text{ for every } \phi \in \Gamma \}^0$$
+
+Suppose that $\Gamma$ is a subspace of $V'$. Then we can follow that there exists a
+basis of $\Gamma$ -  $\phi_1, ..., \phi_n$, and that we can extend this basis to a basis of
+$V'$ - $\phi_1, ..., \phi_m$.
+
+For every $\phi_j$ we've got that $\phi_j \neq 0$ and therefore by FTOLM we've got that
+$$\dim V' = \dim \ns \phi_j + \dim \range \phi_j$$
+$$\dim V' = \dim \ns \phi_j + 1$$
+$$\dim V' - 1 = \dim \ns \phi_j$$
+thus we can follow that if we take a basis of $\ns \phi_j$, extend it to a basis of $V$ by adding
+one vector $v_j'$, then
+$$\phi_j v_j' \neq 0$$
+then we can define
+$$v_j = v_j' * \frac{1}{\phi_j v_j}$$
+so that
+$$\phi_j(v_j) = 1$$
+By making $v_j$ for each corresponding $\phi_j$ we can get the list $v_1, ..., v_m$.
+Because every $\phi_m$ has a diffenent nullspace (otherwise they are scalar multiple
+of each other) we can follow that they have different preimage, and therefore
+$v_1, ..., v_m$ is linearly independent. By length of this linearly independent list we
+can follow that it is a basis of $V$.
+
+Then we can follow that there exist vectors
+$v_1, ..., v_m$ such that
+$$\phi_j(v_j) = 1$$
+and for $k \neq j$
+$$\phi_k(v_j) = 0$$
+Therefore we'll have a subspace $U = \Span(v_{n + 1}, ..., v_m)$. Then it follows that
+$$\Gamma = U^0$$
+and by results of our previous exercise we'll have that
+$$U =  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}$$
+$$U^0 =  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in U^0 \}^0$$
+$$\Gamma =  \{v \in V: \phi(v) = 0 \text{ for every } \phi \in \Gamma \}^0$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(P_5(R), P_5(R))$ and $\ns T' = \Span(\phi)$, where $\phi$ is
+  the linear functional on $P_5(R)$ defined by $\phi(p) = p(8)$. Prove that
+  $\range T = \{p \in P_5(R): p(8) = 0\}$.}
+
+By a theorem in the chapter we've got that
+$$\ns T' = (\range T)^0$$
+and by results of the previous exercise we've got that
+$$\Span(\phi) = \{p \in P_5(R): \phi(p) = 0\}^0$$
+(we've shortened the right-hand side, since
+$\psi \in \Span(\phi) \land \psi(v) = 0 \to \phi(v) = 0$).
+thus we can follow taht 
+$$\ns T' =  \Span(\phi)$$
+is equivalent to stating that 
+$$(\range T)^0 = (\{p \in P_5(R): \phi(p) = 0\})^0$$
+
+For the next implication we'll probably need a little lemma
+
+\textbf{Lemma: Equivalent annihilators implies equivalent subspaces}
+
+\textit{
+  Suppose that $V$ is finite-dimentional, 
+  $U$ and $W$ are subspaces of $V$. Then $U^0 = W^0$ implies $U = W$.
+}
+
+By exercise 21 in this chapter we've got that
+$$W^0 \subseteq U^0 \to U \subseteq W$$
+thus we follow that
+$$W^0 = U^0 \to W^0 \subseteq U^0 \land U^0 \subseteq W^0 \to
+U \subseteq W \land W \subseteq U \to W = U$$
+as desired. (If we think about it, exercise 20 gives us that this statement is actually an
+equivalence and not implicaton. For infinite-dimentional vector spaces we probably got
+just the implication)
+
+Thus we can indeed follow that
+$$(\range T)^0 = (\{p \in P_5(R): \phi(p) = 0\})^0$$
+implies that
+$$\range T = \{p \in P_5(R): \phi(p)$$
+as desired
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional, $T \in \map (V, W)$, and there exists
+  $\phi \in W'$ such that $\ns T' = \Span \phi$. Prove that $\range T = \ns \phi$}
+
+
+This is a generalization of the previous exercise
+
+$$\{v \in V: \psi(v) = 0 \text{ for every } \psi \in \Span(\phi)\} =
+\{v \in V: \lambda \phi(v) = 0 \} = \{v \in V: \phi(v) = 0 \} = \ns \phi$$
+Thus
+$$\ns T = (\range T)^0 = (\ns \phi)^0$$
+thus
+$$\range T = \ns \phi$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ and $W$ are finite-dimentional, $T \in \map (V, W)$, and there exists
+  $\phi \in V'$ such that $\range T' = \Span \phi$. Prove that $\ns T = \ns \phi$}
+
+$$\range T' = (\ns T)^0 = \Span \phi = (\ns \phi)^0$$
+thus
+$$(\ns T)^0 = (\ns \phi)^0$$
+$$\ns T = \ns \phi$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\phi_1, ..., \phi_m$ is a linearly independent
+  list in $V'$. Prove that }
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) = (\dim V) - m$$
+
+We know that since $\phi_j \neq 0$, then by FTOLM we've got that
+$$\dim V = \dim \ns \phi_j + \dim \range \phi_j$$
+$$\dim V = \dim \ns \phi_j + 1$$
+$$\dim \ns \phi_j = \dim V - 1 $$
+
+Let $k \neq j$. Then suppose that  $\ns \phi_k = \ns \phi_j$. Then it follows that
+there exists a basis $v_1, ..., v_n$ such that
+$$\ns \phi_k = \ns \phi_j = \Span(v_1, ..., v_k)$$
+Sinse $\dim(\ns \phi_k) = \dim(V) - 1$, we can conclude that there exists a vector $v_{n + 1} \in U$
+such that $v_1, ..., v_n, v_{n + 1}$ is a basis of $V$. Therefore we follow that
+there must exist $\lambda \in F$ such that
+$$\phi_k v_{n + 1} = \lambda \phi_j v_{n + 1}$$
+Now let $v \in V$. Then it follows that
+$$v = \sum a_j v_j$$
+therefore
+$$\phi_k (v) = \phi_k \left(\sum_{j = 1}^{n + 1}{ a_j v_j}\right)  = $$
+$$=
+\phi_k \left(\sum_{j = 1}^{n}{ a_j v_j}\right) + \phi_k(a_{n + 1} v_{n + 1}) =
+a_{n + 1} \phi_k( v_{n + 1}) = \lambda a_{n + 1} \phi_j ( v_{n + 1}) = \lambda \phi_j(v)$$
+Thus we can follow that $\phi_k = \lambda \phi_j$. Therefore we can follow that
+they are not linearly independent, which is a contradiction. Therefore we conclude
+that $k \neq j$ implies that $\ns \phi_j \neq \ns \phi_k$.
+
+Now we can follow that there exists $v \in \phi_k$ such that $v \notin \phi_j$ (otherwise
+$\ns \phi_k$ is a subset of $\ns \phi_j$, given that it is a subspace of $V$ we can follow that
+it is a vector space therefore it is a subspace of $\ns \phi_j$, and given that
+they have the same dimention we follow that they are equal, which is a contradiction).
+
+We probably need to prove that $\ns \phi_k + \ns \phi_j \cap ... \cap \ns \phi_l = V$. In order
+to do this we need to prove that $\ns \phi_j \cap ... \cap \ns \phi_l$ is not a subspace of
+$\ns \phi_k$. Suppose that it is not the case. Thus there exits a basis $w_1, ..., w_h$ of
+$\ns \phi_l \cap \ns \phi_l$ and there exists
+a vector $u_1 \in \ns \phi_j$, that is not in $\ns \phi_l$, and there exists a vector
+$u_2 \in \ns \phi_l$, that is not in $\phi_j$. Then we can follow that if
+$u_1 \in \Span(w_1, ..., w_h, u_2)$, then $u_1 \in \ns \phi_l$, and therefore
+$\ns \phi_j = \ns \phi_l$, which is a contradiction. Thus we can follow that
+the list of length $\dim V + 1$ is linearly independent in $V$, which is a contradiction.
+Thus we can follow that $\phi_j \cap \phi_l$ is not a subspace of $\phi_k$. FALSE
+
+
+Thus we need to prove that there exsits a vector $u \in \ns  \phi_j, ..., \ns \phi_l$
+such that $u \notin \ns \phi_j$. 
+
+$$\ns \phi_j + \ns \phi_k = V$$
+$$\dim V = \dim V - 1 + \dim V - 1 - \dim (\ns \phi_j \cap \ns \phi_k)$$
+$$- \dim V + 2 = \dim (\ns \phi_j \cap \ns \phi_k)$$
+$$\dim V - 2 = \dim (\ns \phi_j \cap \ns \phi_k)$$
+
+Since $\ns \phi_j \neq \ns \phi_k$, we can follow that
+$$\dim (\ns \phi_j \cap \ns \phi_k) = \dim \ns \phi_j -  1$$
 
 
 \chapter{Polynomials}

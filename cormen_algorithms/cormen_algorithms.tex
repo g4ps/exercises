@@ -26,6 +26,21 @@ to the one, that is used in the book, but it still does the job.
 Same rules as usual apply, if you want to use this book for any reason -- go right ahead, it's
 free, just be aware that it is full of mistakes.
 
+\chapter*{Usefull stuff}
+
+\subsection{Triangular numbers}
+Triangular numbers refer to the sum
+$$1 + 2 + 3 + 4 ...$$
+They are called so because when we stack 1, 2, 3, etc, things on top of the other, we get a
+triangle. For a useful visual reference, google (or just imagine) bowling pins.
+
+The sum evaluates to
+$$S(n) = \sum_{i = 1}^{n}{i} = \frac{n(n + 1)}{2}$$
+(for a proof I'll sudgest using induction, or you can look a pretty interesting proof in the
+book "Concrete mathematics" by Knuth et. al.)
+for which it is true that
+$$\Theta(S(n)) = \Theta(n^2)$$.
+
 \part{Foundations}
 
 \chapter{The Role of Algorithms in Computing}
@@ -658,206 +673,72 @@ it absolutely horrible when it comes to the machine test.
 
 Linear with respect to $n$ ($\Theta(n)$).
 
+\textit{(b) Write pseudocode to implement the naive polynomial-evaluation algorithm that
+  computes each term of the polynomial from scratch. What is the running time
+  of this algorithm? How does it compare with Horner?}
 
-\part{Appendix: Mathematical Background}
-\chapter{Summations}
+\begin{function}
+  \caption{Naive-poly-eval (A, n, x)}
+  $p = 0$\;
+  \For {$i = 0 \to n$} {
+    $pw \leftarrow 1$ \;
+    \For{$j = 0 \to i$} {
+      $pw = pw * x$\;
+    }
+    $p = A[i] * pw + p$\;
+  }
+  \Return{p}\;  
+\end{function}
 
-\section*{1-1}
-\textit{Prove that $\sum_{k  = 1}^n{O(f_k(i))} = O(\sum_{k  = 1}^n{f_k(i)})$}
+Worst case running time of this algorithm is a triangular number (beccause of the inner for),
+therefore it is $\Theta(n^2)$.
 
-Short answer:
-$$\sum cg(x) = c\sum{g(x)}$$
+With a Horner it comperes badly.
 
-Long answer:
+\textit{(c) Consider the following look invariant for the procedure Horner: }
 
-Suppose that $g \in O(f_k(i))$. It follows that there exists $n_i$ and $c_i$
-such that $0 \leq g(n) \leq cf_i(n)$. Thus we can pick
-$n = \max\{n_0, n_1, ...\}$ and $c = \max\{c_0, c_1, ... \}$. We know that
-both $n$ and $c$ will work all of functions $f_k$. Therefore by
-linearity of summations
-$$\sum_{k  = 1}^n{O(f_k(i))}
-= \sum_{k  = 1}^n{cf_k(i)} =
-= c\sum_{k  = 1}^n{f_k(i)} = 
-= O(\sum_{k  = 1}^n{f_k(i)})$$
-(notation is a little abused and there is nothing is rigorously
-proven, but it'll do).
+\textit{At the start of each iteration of the foor loop of lines 2-3,}
+$$p = \sum_{k = 0}^{n - (i + 1)}{A[k + i + i] * x*k}$$
 
-\section*{1-2}
-\textit{Find a simple formula for $\sum_{k = 1}^n{(2k - 1)}$.}
+\textit{Interpret a summation with no terms as equating 0. Use this loop invariant to
+show taht, at terminatiom, $p = \sum{A[k] * x*k}$.}
 
-$$\sum_{k = 1}^n{(2k - 1)} =
-\sum_{k = 1}^n{(2k)} - \sum_{k = 1}^n{(1)} =
-2\sum_{k = 1}^n{(k)} - n =
-2\frac{n(n + 1)}{2} - n =
-n(n + 1) - n =
-n^2
-$$
+\textbf{Initialization: }
+Since $p = 0$, we can follow that the loop invariant holds for the case before the initialization.
 
+\textbf{Maintenence: }
+Following the Horner rule definition, we can see taht after completing another
+loop cycle, we get to the next parenthesis in the Horner rule's parenthesization. Thus
+we've got the desired result at the output.
 
-\section*{1-3}
-\textit{Interpret the decimal number $111,111,111$ in light of equation A.6}
+\textbf{Termination: }
+Algorihm terminates, since we don't modify $i$ in the loop itself. Thus, according
+to our loop invariant, this procedure indeed returns the $\sum{A[k] * x*k}$, as desired.
 
-$$111,111,111 = \sum_{k = 0}^{9}{10^k} = \frac{10^{10} - 1}{10 - 1}$$
+(Not sure that this is right, but got no intentions to do a proper one.)
 
-\section*{1-4}
-\textit{Evaluate the infinite series $1 - \frac 1 2 + \frac 1 4 - \frac 1 8
-  + \frac{1}{16} - ...$}
+\subsection{}
 
-The series converges absolutely to 2, so we are free to do anything with it.
+\textit{(a) List the five inversions of the array $\{2. 3, 8, 6, 1\}$}
 
-$$1 - \frac 1 2 + \frac 1 4 - \frac 1 8
-+ \frac{1}{16} - ... = 
-\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}}
-- \sum_{k = 0}^{\infty}{\frac{1}{2}^{1 + 2k}} =
-\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}}
-- \frac{1}{2}\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}} =
-\left(1 - \frac{1}{2}\right)\sum_{k = 0}^{\infty}{\frac{1}{2}^{2k}} = 
-$$
-$$
-= \left(1 - \frac{1}{2}\right)\sum_{k = 0}^{\infty}{\frac{1}{4}^{k}}
-= \left(1 - \frac{1}{2}\right)\frac{1}{1 - \frac{1}{4}}
-= \frac 1 2 *  \frac 4 3 = \frac 2 3
-$$
+$$(6, 1), (8, 1), (3, 1), (2, 1), (8, 6)$$
 
-\section*{1-5}
-\textit{Let $c \geq 0$ be a constant. Show that
-  $\sum_{k = 1}^{n}{k^c} = \Theta(n^{c + 1})$}
+\textit{(b) What array with elements from the set $\{1, 2, ... n\}$ has the most
+  inversions? How many does it have?}
 
-$$
-\sum_{k = 1}^{n}{k^c} = \sum_{k = 1}^{n - 1}{k^c} + n^c =
-n^c\sum_{k = 1}^{n}{\frac{k^c}{n^c}} =
-$$
+I think that the reversel sorted one gets the cake. It has a triangular number of inversions
+(obvious, when counting from the end).
 
-Let $f(n) = n^c$.
-It can be seen from the graph that
-$$\int_{0}^{n}{f(x)dx} \leq \sum_{k = 1}^{n}{k^c} \leq
-\int_{0}^{n}{f(x + 1)dx}$$
+\textit{(c) What is the relationship between the running time of the insertion sort and the
+  number of inversions in the input array? Justify your answer.}
 
-Thus 
-$$\int_0^n{f(x)dx} = \int_0^n{x^c} = \frac{n^{c + 1}}{c + 1} \in$$
-$$\int_0^n{f(x + 1)dx} = \int_0^n{(x + 1)^c} = \frac{(n + 1)^{c + 1}}{c + 1}$$
+It's proportional to the number of inversions, since it essentially corrects them one by one
+in decreasing order of the second number of the pair.
 
-Thus we can state that $\sum_{k = 1}^{n}{k^c} = \Theta(n^{c + 1})$
-(I'm not good enough yet to show that $\frac{(n + 1)^{c + 1}}{c + 1} \in
-\Theta(n^{c + 1})$, but I'm pretty sure that it's true TODO).
+\textit{(d) Give an algorithm that determines the number of inversions in any permutation
+  on n elements in $\Theta(n \lg(n))$ worst-case time.}
 
-
-
-\section*{1-6}
-\textit{Show that $\sum_{k=0}^{\infty}{k^2 x^k} = x(1 + x)/(1 - x)^3$ for
-  $|x| < 1$}
-
-We know that for $|x| < 1$
-$$\sum_{k = 0}^{\infty}{kx^k} = \frac{x}{(1 - x)^2}$$
-thus if we differentiate both sides we get
-$$\sum_{k = 0}^{\infty}{k^2x^{k - 1}} = \frac{2x}{(1 - x)^3}
-+ \frac{1}{(1 - x)^2} $$
-and then if we multiply all of it by $x$ we'll get
-$$\sum_{k = 0}^{\infty}{k^2x^k} = \frac{2x^2}{(1 - x)^3}
-+ \frac{x}{(1 - x)^2} $$
-thus if we factor all of this jazz we'll get
-$$\sum_{k = 0}^{\infty}{k^2x^k} = - \frac{x(x + 1)}{(x - 1)^3}$$
-and if we tuck this minus into denominator we'll get (which we can do because
-the power is odd)
-$$\sum_{k = 0}^{\infty}{k^2x^k} = \frac{x(x + 1)}{(1 - x)^3}$$
-as desired.
-
-\section*{1-7}
-\textit{Prove that $\sum_{k = 1}^n{\sqrt{k \lg k}} = \Theta(n^{3/2}\lg^{1/2}n)$}
-
-$$\int \sqrt{k \lg k} = $$
-
-\section*{1-9}
-\textit{Show that}
-$$\sum_{k = 0}^{\infty}{(k - 1)/2^k} = 0$$
-
-$$\sum_{k = 0}^{\infty}{(k - 1)/2^k} = \sum_{k = 0}^{\infty}{k/2^k} - \sum_{k = 0}^{\infty}{1/2^k} =
-\sum_{k = 0}^{\infty}{k/2^k} - 2 = 0$$
-
-$$\sum_{k = 0}^{\infty}{k/2^k} - 2 = 0$$
-$$\sum_{k = 0}^{\infty}{k/2^k} = 2$$
-$$\sum_{k = 0}^{\infty}{k/2^k - 2} = 0$$
-$$\sum_{k = 0}^{\infty}{\frac{k - 2^{k + 1}}{2^k}} = 0$$
-
-
-\chapter{Sets, Etc.}
-
-\section*{1-1}
-\textit{Draw Venn diagrams that illustrate the first of the distributive laws
-(B.1)}
-
-TODO, add picture here
-
-\section*{1-2}
-\textit{Prove the generalization of DeMorgan's laws to any finite collection
-  of sets}
-
-\textit{Copy from real analysis exercises}
-
-Suppose that $x \in \left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$. It
-follows, that $x$ is not in the union of given sets. Therefore there is no
-set $E_n$ such that $x \in E_n$ (because if there would be such a set, then $x$
-wouldn't be in $\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c$).
-Therefore $x \in \cap_{\lambda \in \Lambda} E_\lambda^c$. Therefore 
-$$\left(\cup_{\lambda \in \Lambda} E_\lambda \right)^c \subseteq
-\cap_{\lambda \in \Lambda} E_\lambda^c$$
-
-The proof of reverse inclusion is the same as with the forward, but in reverse
-order.
-
-$x \in \left(\cap_{\lambda \in \Lambda} E_\lambda \right)^c$ implies that
-$x$ is not in every $E_n$. Therefore there exists $x \in E_n^c$ for some $E_n$.
-therefore it is in $\cup_{\lambda \in \Lambda} E_\lambda^c$. The proof of
-reverse inclusion uses the same argument, but in other direction.
-
-\section*{1-3}
-TODO
-
-\section*{1-4}
-\textit{Show that the set of odd natural numbers is countable.}
-
-Let us set a function $f: A \to N$, where $A$ denotes the set of
-odd natural numbers
-$$f(n) = (n + 1) / 2$$
-for this function  we've got
-$$f^{-1}(n) = 2n - 1$$
-
-Both funcitons are injective and therefore $f$ is bijective. Therefore
-we've got a bijective function betweeen $A$ and $N$, therefore
-$A \sim N$, therefore it is conuntable, as desired.
-
-\section*{1-5}
-\textit{Show that for any finite set $S$, the power set $2^S$ has
-  $2^{|S|}$ elements (that is, there are $2^{|S|}$ distinct subsets of $S$).}
-
-\textit{Another copy from real analysis}
-
-This proof is dumb, but intuitive:
-
-Every subset is corresponding to a number in binary system: 0 for excluded,
-1 for included. Therefore there exist $2^n$ possible combinations.
-
-For a more concrete proof let's resort to induction.
-
-Base case(s): subsets of $\emptyset$ are $\emptyset$ itseft
-($2^0 = 1$ in total). Subsets of
-set with one element are $\emptyset$ and set itself ($2^1 = 1$ in total).
-
-Proposition is that set with n elements has $2^n$ subsets.
-
-Inductive step is that for set with $n + 1$ elements can either have or hot
-have the $n + 1$'th element. Therefore there exist $2^n + 2^n = 2 * 2^n =
-2^{n + 1}$ subsets, as desired.
-
-\section*{1-6}
-\textit{Give an inductive definition for an $n$-tuple by extending the
-  set-theoretic definition for an ordered pair.}
-
-The tuple is actually just a re-writing of particular set
-$$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
-\{a_1, a_2, a_3, ..., a_n\}\}$$
-
-
+TODO on a later date
 
 \end{document}
 
