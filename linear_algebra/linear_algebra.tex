@@ -3331,57 +3331,218 @@ as desired.
   list in $V'$. Prove that }
 $$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) = (\dim V) - m$$
 
-We know that since $\phi_j \neq 0$, then by FTOLM we've got that
-$$\dim V = \dim \ns \phi_j + \dim \range \phi_j$$
-$$\dim V = \dim \ns \phi_j + 1$$
-$$\dim \ns \phi_j = \dim V - 1 $$
 
-Let $k \neq j$. Then suppose that  $\ns \phi_k = \ns \phi_j$. Then it follows that
-there exists a basis $v_1, ..., v_n$ such that
-$$\ns \phi_k = \ns \phi_j = \Span(v_1, ..., v_k)$$
-Sinse $\dim(\ns \phi_k) = \dim(V) - 1$, we can conclude that there exists a vector $v_{n + 1} \in U$
-such that $v_1, ..., v_n, v_{n + 1}$ is a basis of $V$. Therefore we follow that
-there must exist $\lambda \in F$ such that
-$$\phi_k v_{n + 1} = \lambda \phi_j v_{n + 1}$$
-Now let $v \in V$. Then it follows that
-$$v = \sum a_j v_j$$
-therefore
-$$\phi_k (v) = \phi_k \left(\sum_{j = 1}^{n + 1}{ a_j v_j}\right)  = $$
-$$=
-\phi_k \left(\sum_{j = 1}^{n}{ a_j v_j}\right) + \phi_k(a_{n + 1} v_{n + 1}) =
-a_{n + 1} \phi_k( v_{n + 1}) = \lambda a_{n + 1} \phi_j ( v_{n + 1}) = \lambda \phi_j(v)$$
-Thus we can follow that $\phi_k = \lambda \phi_j$. Therefore we can follow that
-they are not linearly independent, which is a contradiction. Therefore we conclude
-that $k \neq j$ implies that $\ns \phi_j \neq \ns \phi_k$.
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) +
+\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m))^0= (\dim V) $$
+Thus what we probably are intended to prove is that
+$$((\ns \phi_1) \cap ... \cap (\ns \phi_m))^0 = \Span(\phi_1, ..., \phi_m)$$
 
-Now we can follow that there exists $v \in \phi_k$ such that $v \notin \phi_j$ (otherwise
-$\ns \phi_k$ is a subset of $\ns \phi_j$, given that it is a subspace of $V$ we can follow that
-it is a vector space therefore it is a subspace of $\ns \phi_j$, and given that
-they have the same dimention we follow that they are equal, which is a contradiction).
+By exercise 26 we can get that
+$$\Span(\phi_1, ..., \phi_m) = \{v \in V: \phi(v) = 0 \text{ for every } \phi \in \Gamma\}^0$$
+Since $\phi \in \Span(\phi_1, ..., \phi_m) \to \phi = \sum a_j \phi_j$, we follow that
+$$\Span(\phi_1, ..., \phi_m) = \{v \in V: \phi_j(v) = 0 \text{ for every } \phi_j\}^0$$
+If $\phi_j(v) = 0$ for every $\phi_j$, then $v \in \ns \phi_1 \cap ... \cap \ns \phi_m$
+du definition of nullspace. If $v \in \ns \phi_1 \cap ... \cap \ns \phi_m$, then it is
+obliously true that $\phi_j(v)  = 0$ by the same definition. Thus by double inclusion we get
+that
+$$\{v \in V: \phi(v) = 0 \text{ for every } \phi \in \Gamma\} =
+\ns \phi_1 \cap ... \cap \ns \phi_m$$
+thus 
+$$\Span(\phi_1, ..., \phi_m) = (\ns \phi_1 \cap ... \cap \ns \phi_m)^0$$
+and therefore
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) +
+\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m))^0= (\dim V) $$
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) +
+\dim \Span(\phi_1, ..., \phi_m) = (\dim V) $$
+since $\phi_1, ..., \phi_m$ are linearly independent, we can follow that
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) +
+m = (\dim V) $$
+$$\dim ((\ns \phi_1) \cap ... \cap (\ns \phi_m)) +
+= (\dim V) - m$$
+as desired.
 
-We probably need to prove that $\ns \phi_k + \ns \phi_j \cap ... \cap \ns \phi_l = V$. In order
-to do this we need to prove that $\ns \phi_j \cap ... \cap \ns \phi_l$ is not a subspace of
-$\ns \phi_k$. Suppose that it is not the case. Thus there exits a basis $w_1, ..., w_h$ of
-$\ns \phi_l \cap \ns \phi_l$ and there exists
-a vector $u_1 \in \ns \phi_j$, that is not in $\ns \phi_l$, and there exists a vector
-$u_2 \in \ns \phi_l$, that is not in $\phi_j$. Then we can follow that if
-$u_1 \in \Span(w_1, ..., w_h, u_2)$, then $u_1 \in \ns \phi_l$, and therefore
-$\ns \phi_j = \ns \phi_l$, which is a contradiction. Thus we can follow that
-the list of length $\dim V + 1$ is linearly independent in $V$, which is a contradiction.
-Thus we can follow that $\phi_j \cap \phi_l$ is not a subspace of $\phi_k$. FALSE
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\phi_1, ..., \phi_n$ is a basis of $V'$.
+  Show that there exists a basis of $V$, whose dual basis is $\phi_1, ..., \phi_n$.}
+
+From previous exercice we can follow that there for given basis there exists a space
+$$U_k = \cap_{i \neq k} {\ns \phi_i}$$
+such that
+$$\dim U_k = \dim V - (n - 1) = n - (n - 1) = 1$$
+From the definition we can follow that
+$$u \in U_k \to u \in \ns \phi_{i \neq k} \to  \phi_{i \neq k}(u) = 0$$
+
+Suppose that $u \neq 0$. Then we can follow that we can extend this vector to the basis of $V$.
+Thus we can follow that we can create a map $\psi \in \map(V, F) \iff \psi \in V'$ such that
+$$\psi(u) = 1$$
+Given that $\phi_1, ..., \phi_n$ spans $V'$, we can follow that there exist $a_1, ..., a_n$
+such that
+$$\psi = \sum {a_j \phi_j}$$
+from this we can follow that
+$$\psi(u) = \sum {a_j \phi_j}(u) = \sum_{j \neq k} {a_j \phi_j}(u) + a_k \phi_k(u) = 0 +
+a_k \phi(u) = a_k \phi_k(u)$$
+Thus we can follow that
+$$a_k \phi(u) = \psi(u) = 1$$
+$$a_k \phi(u) = 1$$
+thus we follow that $a_k \neq 0$ and $\phi(u) \neq 0$. Thus we follow that $\phi(a_k u) = 1$.
+Set $v_k = a_k u$.
+
+In this fashion we can create list $v_1, ..., v_n$ with the property that
+$$\phi_k (v_k) = 1$$
+$$\phi_{i \neq k}(v_k) = 0$$
+
+The only thing that is left is to show that this list is linearly independent.
+Suppose that it isn't. Then it follows that
+$$v_k = \sum_{j \neq k} a_j v_j$$
+thus
+$$\phi_k(v_k) = \phi_k(\sum_{j \neq k} a_j v_j)$$
+$$1 = 0$$
+which is false. Thus we follow that $v_1, ..., v_n$ is linearly independent list with desired
+properties in $V$. Given that its length is the dimention of the space, we follow that
+it is a basis, for which $\phi_1, ..., \phi_n$ is dual basis, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$, and $u_1, ..., u_n$ and $v_1, ..., v_n$ are bases of $V$. Prove
+  that the following are equivalent: }
+
+\textit{(a) $T$ is invertible}
+
+\textit{(b) The columnns of $M(T)$ are linearly independent in $F^{n, 1}$.}
+
+\textit{(c) The columns of $M(T)$ span $F^{n, 1}$}
+
+Because $T$ is invertible, we can follow that the dimention of its range is equal to $n$.
+Thus we can follow that rank of its matrix is $n$. Therefore its row rank and column rank is $n$.
+Thus (a) implies (b). By the size of the mateix we get that (b) implies (c). And (c) implies that
+with given bases the function is invertible, therefore (c) implies (a).
+
+Because $T$ is invertible if and only if $T'$ is invertible,  we get the (d) and
+(e) for free.
+
+\subsection{}
+
+\textit{Suppose $m$ and $n$ are positive integers. Prove that teh function that takes
+  $A$ to $A^t$ is a linear map from $F^{m, n}$ to $F^{n, m}$. Furtermore, prove that this linear
+  maps is invertible.}
 
 
-Thus we need to prove that there exsits a vector $u \in \ns  \phi_j, ..., \ns \phi_l$
-such that $u \notin \ns \phi_j$. 
+Linearity follows directly from definitions of the transpose, matrix addition and scalar
+multiplication. Invertability follows directily from injectifity and surjectivity of this
+transformation.
 
-$$\ns \phi_j + \ns \phi_k = V$$
-$$\dim V = \dim V - 1 + \dim V - 1 - \dim (\ns \phi_j \cap \ns \phi_k)$$
-$$- \dim V + 2 = \dim (\ns \phi_j \cap \ns \phi_k)$$
-$$\dim V - 2 = \dim (\ns \phi_j \cap \ns \phi_k)$$
+\subsection{}
 
-Since $\ns \phi_j \neq \ns \phi_k$, we can follow that
-$$\dim (\ns \phi_j \cap \ns \phi_k) = \dim \ns \phi_j -  1$$
+\textit{The double dual space of $V$, denoted $V''$, is defined to be the dual space of $V'$. In
+  other words, $V'' = (V')'$. Define $\Lambda: V \to V''$ by}
+$$(\Lambda(v))(\phi) = \phi(v)$$
+\textit{for $v \in V$ and $\phi \in V'$}
 
+Since I haven't fully understood the definition, I'll try to dumb it down a notch. Suppose that
+$v \in V$. Then we follow that there exists $\kappa \in V''$ such that
+$$\Lambda(v) = \kappa$$
+
+Thus
+$$\kappa \in V'' \to \kappa \in (V')' \to \kappa \in \map(V', F)
+\to \kappa \in \map(\map(V, F), F)$$
+Thus we can plug in some $\phi \in V'$ into $\kappa$, and get some number from it.
+
+What could be an example of such a map? Suppose that
+$p \in P(R)$. Then we can define $\phi(p) = \int_0^1{p}$. And thus we can define
+$\Lambda$ to be a function, that inputs a polynomial, and returns a function, that
+inputs a linear functional on a polynomial, and returns the result of applying inputed
+polynomial into the linear functional.
+
+That kind of made a dent in the understanding of what the hell is going on, but nothing major
+had happened.
+
+\textit{(a) Show that $\Lambda$ is a linear map from $V$ to $V''$.}
+
+$$(\Lambda (\lambda v))(\phi) = \phi(\lambda v) = \lambda (\phi (v)) =
+\lambda ((\Lambda(v))(\phi))$$
+$$(\Lambda (v + w))(\phi) = \phi(v + w) = \phi(v) + \phi(w) = (\Lambda(w))(\phi) +
+(\Lambda(w))(\phi)$$
+
+Thus we follow that $\Lambda$ is linear, as desired.
+
+\textit{(b) Show that if $T \in \map(V)$, then $T'' \circ \Lambda = \Lambda \circ T$, where
+  $T'' = (T')'$.}
+
+Let $v \in V$ and $\phi \in V'$. Then we can follow that
+$$(T '' \circ (\Lambda v)) (\phi) =  (\Lambda v) (T'(f)) = (T'f)(v) = f(T(v)) = \Lambda (Tv) (f)$$
+as desired.
+
+\textit{(c) Show that if $V$ is finite-dimentional, then $\Lambda$ is an isomorphism from
+  $V$ onto $V''$}
+
+If $V$ is finite-dimentional, then $V''$ is finite-dimentional, and their dimentions are the same.
+Thus injectivity of $\Lambda$ implies the invertibility. Suppose that $\Lambda v = 0$. Then we
+follow that $\phi(v) = 0$ for any $\phi \in V'$. By exercise 19 we've got that it happens if
+and only if $v = 0$. Thus $\Lambda$ is injective, and therefore invertible, as desired.
+
+
+\subsection{}
+
+\textit{Show that $(P(R))'$ and $R^\infty$ are isomorphic.}
+
+$P(R)$ and $(P(R))'$ are isomorphic, $P(R)$ and $R^\infty$ are also isomorphic, therefore
+$(P(R))'$ and $R^\infty$ are isomorphic, as desired.
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$. Let $i: U \to V$ be the inclusion map defined
+  by $i(u) = u$. Thus $i' \in \map(V', U')$.}
+
+\textit{(a) Show that $\ns i' = U^0$}
+
+$$\ns i' = (\range i)^0 = U^0$$
+
+\textit{(b) Prove that if $V$ is finite-dimentional, then  $\range i' = U'$.}
+
+Let $v_1, ..., v_n, ..., v_m$ be a basis of $V$, where $v_1, ..., v_n$ is a basis of $U$. Define
+dual basis of it. Then we follow that $v_{n + 1}, ..., v_n$ is a basis of $\ns i$, and therefore
+$\psi_1, ... \psi_n$ is a basis of $(\ns i)^0$, which is equal to basis of $U'$. THus
+$$(\ns i)^0 = U'$$
+and since
+$$\range i' = (\ns i)^0$$
+we follow that
+$$\range i' = U'$$
+as desired.
+
+\textit{(c) Prove that if $V$ is finite-dimentional, then $\overline{i'}$ is an isophormism from
+  $V'/U^0$ onto $U'$.}
+
+$$\dim V'/U^0 = \dim V' - \dim U^0 = \dim V - (\dim V - \dim U) = \dim U$$
+and
+$$\dim U' = \dim U$$
+thus we follow that the dimentions of those vector spaces are the same.
+
+Since $\range i' = U'$, we can follow that $\range \overline{i'} = \range i' = U'$. Thus we
+follow that this map is sujective, and therefore by their identical dimention we follow that
+$\overline{i'}$ is an isomorphism, as desired.
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$. Let $\pi: V \to V/U$ be the usual quotent map.
+  Thus $\pi' \in \map((V/U)', V')$.}
+
+\textit{(a) Show that $\pi'$ is injective.}
+
+Sinse $\pi$ is surjective (suppose that $a \in (V/U)$, then $a = v + U$, then there exists
+$v \in V$, then $\pi(v) = v + U$, therefore it is surjective.)
+we can follow that $\pi'$ is injective, as desired.
+
+\textit{(b) Show that $\range \pi' = U^0$.}
+
+$$\range \pi' = (\ns \pi)^0 = U^0$$
+(the fact that $\ns \pi = U$ is somewhat followed in the proof of 3.89, where it is derived from
+3.85)
+
+\textit{(c) Conclude that $\pi'$ is an isomorphism from $(V/U)'$ onto $U^0$.}
+
+$\pi'$ is inhective and is surjective, if we restrict its codomain to $U^0$. Thus it is invertible,
+therefore it is an isomorphism.
 
 \chapter{Polynomials}
 
