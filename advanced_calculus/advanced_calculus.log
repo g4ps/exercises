@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  25 JAN 2023 23:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  8 FEB 2023 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -369,16 +369,27 @@ OT1/cmr/m/it/10.95 at each of the points $\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.
 ^^Y=\OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; ^^Y\OMS/cmsy/m/n/10.95 g$ 
  []
 
-[10] [11] [12] [13] [14] [15] [16] (./advanced_calculus.aux)
+[10] [11] [12] [13] [14] [15] [16]
+Overfull \hbox (18.03023pt too wide) detected at line 676
+[][] [] \OT1/cmr/m/n/10.95 = [][] [] = [][] [] =
+ []
+
+
+Overfull \hbox (43.38419pt too wide) detected at line 680
+\OT1/cmr/m/n/10.95 = [][] [] = [][] [] = [][] [] = [\OML/cmm/m/it/10.95 t\OT1/c
+mr/m/n/10.95 ][] = 8\OML/cmm/m/it/10.95 ^^Y
+ []
+
+[17] (./advanced_calculus.aux)
 Package rerunfilecheck Info: File `advanced_calculus.out' has not changed.
-(rerunfilecheck)             Checksum: F4E6D2AB599893FFA6DD7F4525DC0D40;1264.
+(rerunfilecheck)             Checksum: 7D00C9E49FD4B37764F34DC9DE1FB124;1352.
  ) 
 Here is how much of TeX's memory you used:
- 9069 strings out of 478238
- 138963 string characters out of 5850455
- 440908 words of memory out of 5000000
- 27178 multiletter control sequences out of 15000+600000
- 478882 words of font info for 63 fonts, out of 8000000 for 9000
+ 9073 strings out of 478238
+ 138997 string characters out of 5850455
+ 440900 words of memory out of 5000000
+ 27179 multiletter control sequences out of 15000+600000
+ 478575 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,8n,63p,234b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
@@ -395,10 +406,10 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on advanced_calculus.pdf (17 pages, 224834 bytes).
+Output written on advanced_calculus.pdf (18 pages, 229045 bytes).
 PDF statistics:
- 298 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 

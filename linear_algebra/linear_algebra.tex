@@ -3649,7 +3649,20 @@ as desired.
 Suppose that $p$ has $m$ distinct zeroes and suppose that $p'(\lambda) = p(\lambda) = 0$ for
 some $\lambda \in F$. Then we follow that
 
+$$p = a(x - \lambda_1) (x - \lambda_2) ... (x - \lambda_n)$$
+$$p' = a((x - \lambda_2)  ... (x - \lambda_n) + (x - \lambda_1) ... (x - \lambda_n) + ...
++ (x - \lambda_1) ... (x - \lambda_{n - 1}))$$
 
+\subsection{}
+
+\textit{Prove that every polynomial of odd degree with real coefficient has a real zero.}
+
+Suppose that $p$ is a polynomial of an odd degree $m$. Then it follows that
+it has can be factorized as
+$$p(z) = c (z - \lambda_1) ... (z - \lambda_m)$$
+By the fact that $p(\lambda ) = 0 \to p(\overline{\lambda} ) = 0$ we can follow that there must
+exsist $\lambda_j$ such that $\lambda_j = \overline{\lambda_j}$, therefore $\lambda_j \in R$, as
+desired.
 
 
 \end{document}
