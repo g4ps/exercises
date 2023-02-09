@@ -12,6 +12,11 @@
 \maketitle
 \tableofcontents
 
+\chapter*{Preface}
+
+
+Exercises are from Advanced Calculus: A Geometric View by Callahan, 1st ed.
+
 
 \chapter{Starting points}
 
@@ -688,6 +693,258 @@ $$
   $$r(u) = \left(\frac{4u}{u^2 + 1}, \frac{2u^2 - 2}{u^2 + 1}\right),
   2 - \sqrt{3} \leq u \leq 2 + \sqrt{3}$$
 parametrizes $C$. }
+
+It doesn't. Error in the exericise; skipping;
+
+
+\section{}
+
+\textit{(a) In a coordinate system $(x, y, z)$ where the z-axis is vertical, the gravitational
+  force field at the surface of the eqarth can be written as $F = (0, 0, -gm)$, where $g$ is the
+  acceleration due to gravity and $m$ is the mass of a falling object. Show that $\Phi(x, y, z) =
+  -gmz$ is a potential function for $F$, demonstrating that $F$ is a conservative field.}
+
+We can follow that
+$$\frac{\partial}{\partial x}\Phi = 0$$
+$$\frac{\partial}{\partial y}\Phi = 0$$
+$$\frac{\partial}{\partial z}\Phi = -gm$$
+thus we follow that
+$$F = \Delta \Phi$$
+therefore $\Phi$ is a potential function for $F$.
+
+\textit{(b) What is the work done by gravity in moving an object of mass $m$ from
+  the point $(a, b, c)$ to $(\alpha, \beta, \gamma)$? Is this negative if $c < \gamma$?
+  What is the meaning of "negative" work?}
+
+We follow that
+$$W = -mg(\gamma - c)$$
+It is negative if $c < \gamma$. By negative work we mean that it takes work to move the particle
+through this particular path.
+
+\textit{(c) What is the net work done by gravity in moving an object of mass $m$ from the point
+  $(a, b, c)$ to another point $(\alpha, \beta, c)$ at the same vertical height as the first? }
+
+It's zero.
+
+\section{}
+
+\textit{If $x = (x, y, z)$ is the position of a planet in terms of a coordinate system
+  centered at the sum, then the force of the sun's gravity on the planet is given by
+  $F(x) = \mu x/r^3$, where $\mu$ is a constant, and $r = ||x||$.}
+
+\textit{(a) Write $F$ explicitly in terms of the space variables $x, y$ and $z$}
+
+$$F(x, y, z) =(- \mu x/(x^2 + y^2 + z^2)^{3/2},
+- \mu y/(x^2 + y^2 + z^2)^{3/2}, - \mu z/(x^2 + y^2 + z^2)^{3/2})$$
+
+\textit{(b) Show that the gravitational force obeys the "inverse square" law:
+  $$||F|| = \mu/r^2$$}
+
+I'm assuming that $\mu \geq 0$.
+
+$$||F|| = \sqrt{\mu^2 x^2/(x^2 + y^2 + z^2)^{3} + \mu^2 y^2/(x^2 + y^2 + z^2)^{3}  + 
+  \mu^2 z^2/(x^2 + y^2 + z^2)^{3}} =  $$
+$$
+= \sqrt{\sum_{i \in \{x, y, z\}}{\mu^2 i^2/(x^2 + y^2 + z^2)^{3}}} =
+\mu \frac{1}{(x^2 + y^2 + z^2)^{3/2}} \sqrt{\sum_{i \in \{x, y, z\}}{ i^2}} = 
+$$
+$$ =
+\frac{\mu}{r^3}  r = \frac{\mu}{r^2}
+$$
+as desired.
+
+\textit{(c) Write $\Phi(x) = \mu /r$ explicitly in terms of the space variable, and show that $\Phi$
+  is a potential for $F: \text{ grad } \Phi = F$. This demonstrates that the gravitational
+  field is conservative.}
+
+$$\Phi(x) = \mu / \sqrt{x^2 + y^2 + z^2}$$
+
+for $i \in \{x, y, z\}$
+$$\frac{\partial}{\partial i} = \frac{- \mu i}{(x^2 + y^2 + z^2)^{3/2}} = \frac{\mu i}{r}$$
+thus we follow that $\text{grad} \Phi = F$, therefore making $F$ conservative.
+
+\textit{(d) Suppose we choose a unit for distance in such a way that $r = 10$ when our
+  planet is farthest from the sun and $r = 3$ when it is closest to the sun. How much work
+does the sun's gravitational field do in moving the planet from aphelion to perihelion?}
+
+It does
+$$\left[\Phi(r)\right]_{10}^3 = (\mu/10 - \mu/3) = 7/30 \mu$$
+
+\textit{(e) What is the net work done on the planet by the sun's gravity when the planet
+  traverses one complete orbit? }
+
+Zero, it's conservative.
+
+\section{}
+
+\textit{Determine the arc length of each of the following curves.}
+
+\textit{(a) $x(t) = (3t^2, 4t^2), 0 \leq t \leq 1$.}
+
+$$\int_c{ds} = \int_0^1{||x'(t)|| dt} = \int_0^1{||(6t, 4t)|| dt} =
+\int_0^1{\sqrt{36t^2 + 64t^2} dt} = \int_0^1{\sqrt{100t^2} dt} =
+\int_0^1{10t dt} = [5t^2]_0^1 = 5$$
+
+\textit{(b) $x(t) = (t^2, t^3), 1 \leq t \leq 3$}
+
+$$x'(t) = (2t, 3t^2)$$
+$$||x'(t)|| = \sqrt{4t^2 + 9t^4} = t\sqrt{4 + 9t^2}$$
+thus
+$$\int_1^3{t\sqrt{4 + 9t} dt} = \int_1^3{t\sqrt{4 + 9t^2} dt} =
+$$
+$$= 
+\int_{13}^{85}{1/ 18 u'\sqrt{u} dt} = \int_{13}^{85}{1/ 18 \sqrt{u} du} =
+\left[2 * u^{3/2}/54\right]_{13}^{85} = 1/27(85^{3/2} - 13^{3/2}) \approx 27.28848564032828$$
+
+\textit{(c) $x(t) = (e^t \cos t, e^t \sin t), a \leq t \leq b$.}
+
+$$x'(t) = (e^t \cos t - e^t \sin t, e^t \cos t + e^t \sin t)$$
+$$||x'(t)|| = \sqrt{e^t(\cos^2 - 2 \sin \cos + \sin^2 + \cos^2 + 2 \cos \sin + \sin^2)} =
+\sqrt{e^t(1 +  1 )} =  \sqrt{2} e^{t/2} $$
+thus
+$$\int_a^b{\sqrt{2} e^{t/2} dt} = \sqrt{2} [2  * e^{t/2}]_a^b = 2 \sqrt{2} (e^{b/2} - e^{a/2})$$
+
+\textit{The rest of this exercise is skipped.}
+
+\section{}
+
+\textit{(a) Determine the arc-length function $s(t)$ for the circle $C$ of radius $R$
+  parametrized as $x(t) = (R \cos t, R \sin t)$.}
+
+
+$$x'(t) = (- R \sin t, R \cos t)$$
+$$|| x'(t) || = |R| \sqrt{ \sin^2 + \cos^2 } = |R|$$
+thus
+$$l(t) = |R|t$$
+
+\textit{(b) Determine the inverse $t = \sigma(s)$ of the arc-length function and then the
+  corresponding arc-length parametrization $y(s) = x( \sigma(s))$}
+
+$$\sigma(s) = l(t)/|R| = s/|R|$$
+then we follow that
+$$y(s) = (R \cos (s/|R|), R \sin (s/|R|))$$
+
+\section{}
+
+\textit{Determine the arc-length function $s(t)$ (with $s(0) = 0$) and the arc-length
+  parametrization $y(s)$ of the curve parametrized as}
+$$x(t) = (\frac{1 - t^2}{1 + t^2}, \frac{2t}{1 + t^2})$$
+
+we can follow that
+$$x'(t) = (\frac{-2t(1 + t^2) - (1 - t^2)2t}{(1 + t^2)^2},
+\frac{2(1 + t^2) - 2t(2t)}{(1 + t^2)^2})$$
+$$x'(t) = (\frac{-2t -2t^3 - 2t + 2t^3}{(1 + t^2)^2},
+\frac{2 + 2t^2 - 4t^2}{(1 + t^2)^2})$$
+$$x'(t) = (\frac{-4t}{(1 + t^2)^2},
+\frac{2 - 2t^2)}{(1 + t^2)^2})$$
+thus
+$$||x'(t)|| = \frac{1}{(1 + t^2)^2}\sqrt{16t^2 + 4 - 8t^2 + 4t^4} =
+\frac{1}{(1 + t^2)^2}\sqrt{8t^2 + 4 + 4t^4} = \frac{1}{(1 + t^2)^2}\sqrt{4(t^2 + 1)^2} = $$
+$$
+= \frac{1}{(1 + t^2)^2}2(t^2 + 1) = 2/(1 + t^2)
+$$
+thus
+$$s(t) = \int_0^t{2/(1 + x^2) dx} = 2 \arctan{t}$$
+thus we follow that
+$$\sigma(s) = \tan(s/2)$$
+thus
+$$y(s) = (\frac{1 - \tan(s/2)^2}{1 + \tan(s/2)^2}, \frac{2\tan(s/2)}{1 + \tan(s/2)^2})$$
+as desired.
+
+\section{}
+
+\textit{Let $C$ be a thin wire formed into the circle of radius $R$ cm centered at the
+  origin. Suppose the mass density of the wire at the point $(x, y)$ is $1 + x^2$ gm/cm.
+  Determine the total mass of the wire.}
+
+We can follow that parametrization of path is
+$$x(t) = (R \cos t, R \sin t)$$
+thus we've got that
+$$M = \int_0^{2 \pi}{(1 + (R \cos(t))^2, 0) ||x'(t)|| dt}=
+\int_0^{2 \pi}{(1 + (R \cos(t))^2) R dt}=  \int_0^{2 \pi}{R + R^3 \cos(t))^2 dt}=$$
+$$ = 
+2\pi R + R^3[\sin(2x)/4 + x/2]_0^{2\pi} = 2\pi R + R^3\pi$$
+
+\section{}
+
+\textit{Let $C$  be the helix $(x, y, z) = (\cos t, \sin t, t), 0 < t < 4\pi$, and
+  let $s$ be arc length on $C$. Determine }
+$$\int_C{z ds} \text{ and } \int_C{z^2 ds}$$
+
+$$x'(t) = (-\sin t, \cos t, 1)$$
+$$||x'(t)|| = \sqrt{\sin^2 + \cos^2 + 1} = \sqrt{2}$$
+
+$$\int_c{z ds} = \int_0^4{t ||x'(t)|| dt} = \int_c{t \sqrt{2} dt} = [\sqrt{2}t^2/2]_0^{4\pi} =
+8\pi^2\sqrt{2}  $$
+
+$$\int_C{z^2 ds} = \int_0^{4\pi}{t^2 \sqrt{2} dt} = \sqrt{2}[t^3/3]_0^{4\pi} = \sqrt{2}64 \pi^3/3$$
+
+\section{}
+
+\textit{Let $C$ be the circle of radius 5 centered at the point $(4, -3)$, and let $s$ be the
+  arc-length parameter along $C$, as measured counterclockwise from the origin. Propose a
+  definition for the path integrals}
+$$\oint{\cos {s} ds } \text{ and } \oint{\cos^2{s} ds}$$
+\textit{and then determine their values.}
+
+We can set $\oint = \int_C$, where the start and the end of $C$ are the same (i.e. it completes
+the whole path).
+
+Thus we can follow that length of the whole path is $10 \pi$ and thus
+
+$$\oint_C{\cos{s} ds} = \oint_0^{10\pi}{\cos{s} ds} = [\sin s]_0^{10 \pi} = 0 $$
+$$\oint_C{\cos^2{s} ds} = \oint_0^{10\pi}{\cos^2{s} ds} = [\sin (2s)/4 + s/2 ]_0^{10 \pi} = 5 \pi $$
+
+\section{}
+
+\textit{Is the change from Cartesian to polar coordinates either a pullback or a push-forward
+  substitution, or is it some new type?}
+
+The change from Cartesian to polar coordinates are when we substitute
+$$x = r \sin\theta $$
+and
+$$y = r \cos \theta$$
+thus we can conclude that it is pull-back substitution.
+
+\section{}
+
+\textit{(a) Sketch the region $D$ that lies in the first quadrant in the $(x,y)$-plane
+  between the circles $x^2 + y^2 = 1$ and $x^2 + y^2 = 10$.}
+
+TODO: add sketch.
+
+\textit{(b) Describe $D$ in polar coordinates.}
+
+We can follow that
+$$x = r \sin \theta$$
+$$x = y \cos \theta$$
+for $0 \leq \theta \leq \pi/2$ and $1 \leq r \leq \sqrt{10}$.
+
+\textit{(c) Change to polar coordinated to evaluate the double integral}
+$$\iint_D{\sin{(x^2 + y^2)} dx dy}=
+\int_0^{\pi/2}{\int_1^{\sqrt{10}}{\sin{(r^2)r dr}  d\theta}}= [-\cos{r^2}/2]_1^{\sqrt{10}} = $$
+$$=  [1/2(\cos(1) - \cos(10))]_0^{\pi/2} = \pi/4(\cos(1) - \cos(10)) $$
+
+\section{}
+
+\textit{Let $g_{\mu, \sigma}(x) = e^{-(x - \mu)^2/2\sigma^2}$, as in the text}
+
+\textit{(a) Show $g_{\mu, \sigma}$ takes its maximum  at $x = \mu$ and  the graph of
+  $g_{\mu, \sigma}$ has inflection points at $x = \mu \pm \sigma$. Sketch the graph
+  of $z = g_{\mu, \sigma}(x)$ for $\mu - 3 \sigma \leq x \leq \mu + 3\sigma$. Do this first
+  with $\mu = 5$ and $\sigma = 2$ and then symbolically with general values for $\mu$ and \
+  $\sigma$.}
+
+$$g_{\mu, \sigma}'(x) = \frac{(x - \mu)}{\sigma^2} e^{-(x - \mu)^2/2\sigma^2} =
+\frac{(x - \mu)}{\sigma^2} g_{\mu, \sigma}(x)$$
+$g_{\mu, \sigma}'(x)$ has critical points at $x = \mu$ since $e^{-(x - \mu)^2/2\sigma^2} > 0$. From
+the graph we can follow that it's a maximum.
+
+$$g_{\mu, \sigma}''(x) = \frac{(x - m)^2}{s^4}g_{\mu, \sigma}(x) - \frac{1}{\sigma^2}g_{\mu, \sigma}(x)$$
+
+for which critical points are $x = m \pm s$.
+
+
 
 \end{document}
 
