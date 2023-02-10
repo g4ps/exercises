@@ -3646,12 +3646,22 @@ as desired.
 \textit{Suppose $p \in \mathcal P(C)$ has degree $m$. Prove that $p$ has $m$ distinct zeroes if
   and only if $p$ and its derivative $p'$ have no zeroes in common}
 
-Suppose that $p$ has $m$ distinct zeroes and suppose that $p'(\lambda) = p(\lambda) = 0$ for
+Suppose that $p$ has $m$ distinct zeroes and suppose that $p(\lambda_j) = 0$ for
 some $\lambda \in F$. Then we follow that
 
 $$p = a(x - \lambda_1) (x - \lambda_2) ... (x - \lambda_n)$$
-$$p' = a((x - \lambda_2)  ... (x - \lambda_n) + (x - \lambda_1) ... (x - \lambda_n) + ...
-+ (x - \lambda_1) ... (x - \lambda_{n - 1}))$$
+By the product rule of differentiation we've got that 
+$$p' = a (\prod_{i \neq j}(x - \lambda_i) + ...\text{ some terms that have }(x - \lambda_j)...)$$
+and therefore
+$$p'(\lambda_j) = a (\prod_{i \neq j}{\lambda_j - \lambda_i)}$$
+Given that every $\lambda$ is distinct, we follow that $(\lambda_j - \lambda_i) \neq 0$, and
+therefore $p'(\lambda_j) \neq 0$. Thus $\lambda_j$ is not a zero for $p'$. for any
+$1 \leq  j \leq n$.
+
+Now supppose that $p$ and $p'$ don't have any zeroes in common. Thus we can follow that 
+$$p' = a (\sum_{i = 1}^{n}{\prod_{i \neq j}{(x - \lambda_i)}})$$
+thus we follow that if $p$ has less then $m$ distinct values, then $p'(\lambda) = 0$, therefore
+we've got that the polinomial and its derivative does not have any common zeroes.
 
 \subsection{}
 
@@ -3663,6 +3673,92 @@ $$p(z) = c (z - \lambda_1) ... (z - \lambda_m)$$
 By the fact that $p(\lambda ) = 0 \to p(\overline{\lambda} ) = 0$ we can follow that there must
 exsist $\lambda_j$ such that $\lambda_j = \overline{\lambda_j}$, therefore $\lambda_j \in R$, as
 desired.
+
+
+\subsection{}
+
+\textit{Define $T: P(R) \to R^R$ by}
+$$Tp =
+\begin{cases}
+  \frac{p - p(3)}{x - 3} \text{ if } x \neq 3 \\
+  p'(3) \text{ if } x = 3
+\end{cases}
+$$
+\textit{Show that $Tp \subseteq P(R)$ for every polynomial $p \in P(R)$ and that $T$ is a
+  linear map.}
+
+We know that $p$ is a polynomial, therefore $p(3)$ is a constant, which is also a polynomial.
+Thus $p(x) - p(3)$ is a polynomial. Thus if $x = 3$, then $p(x) - p(3) = 0$. Thus we can follow
+that $p(x) - p(3)$ has a factorization
+$$p(x) - p(3) = (x - 3)q(x)$$
+thus
+$$  \frac{p - p(3)}{x - 3} = \frac{(x - 3)q(x)}{x - 3}$$
+given that $x \neq 3$ we follow that
+$$\frac{(x - 3)q(x)}{x - 3} = q(x)$$
+
+When I looked at this thing one more time, I've noticed that it looks suspiciously
+simular to a definition of the derivative of the polynomial.
+
+Thus we can conclude that by definition of derivative 
+$$p'(3) = \lim_{x \to 3}{\frac{p(x) - p(3)}{x - 3}} = \lim_{x \to 3}{\frac{(x - 3)q(x)}{x - 3}} =
+\lim_{x \to 3}{q(x)} = q(3)$$
+
+Thus we can follow that $Tp = q$, where $q$ is a polynomial.
+
+Proof of linearity is trivial, therefore I'll skip it.
+
+\subsection{}
+
+\textit{Suppose $p \in P(C)$. Define $q: C \to C$ by}
+$$q(z) = p(z) \overline{p(\overline z)}$$
+\textit{Prove that $q$ is a polynomial with real coefficients.}
+
+Given that $p(z)$ is a polynomial, we can state that we can factor it as 
+$$p(z) = c \prod{(z - \lambda_j)}$$
+thus
+$$\overline{p(\overline{z})} = \overline{c \prod{(\overline z - \lambda_j)}} =
+\overline{c} \prod{\overline {(\overline z - \lambda_j)}} =
+\overline{c} \prod{(z - \overline  \lambda_j)}$$
+Thus we follow that
+$$q(z) = p(z) \overline{p(\overline z)} =
+c \prod{(z - \lambda_j)} \overline{c} \prod{(z - \overline  \lambda_j)} =
+|c|^2 \prod{(z - \overline  \lambda_j)(z - \lambda_j)} =$$
+$$ = 
+|c|^2 \prod{(z^2 - z(\overline  \lambda_j + \lambda_j) + |\lambda_j|^2)} =
+|c|^2 \prod{(z^2 - 2\Re(\lambda_j)z  + |\lambda_j|^2)} $$
+Since every expression in the parenthesis is a polynomial in real coefficients, we follow that
+their product is a polynomial in real coefficients. And given that $|c|^2$ is a polynomial
+in real coefficients as well, we conclude that $q(z)$ is a polynomial in real coefficients,
+as desired.
+
+\subsection{}
+
+\textit{Suppose $m$ is a nonnegative integer and $p \in P_m(C)$ is such that there exist
+  distinct real numbers $x_0, ..., x_m$ such that $p(x_j) \in R$ for
+  $j = 0, 1, ..., m$. Prove that all the coefficients of $p$ are real.}
+
+We can follow that from the exercise 5, where we add a  restriction that  $F = R$.
+
+From the uniqueness clause in the exercise, we can follow that for any
+set $x_0, ..., x_m \in R$ we'll have unique collection of real coefficients.
+
+\subsection{}
+
+\textit{Suppose $p \in P(F)$ with $p \neq 0$. Let $U = \{pq: q \in P(F)\}$.}
+
+\textit{(a) Show that $\dim P(F)/U = \deg p$.}
+
+We know that
+$$p = sq + r$$
+thus we can follow that
+$$P(F) = U \oplus P_{(\deg p - 1)}(F)$$
+thus we conclude that
+$$\dim (P(F)/U) = \deg p$$
+
+\textit{(b) Find a basis of $\dim P(F)/U$.}
+
+$$1 + U, x + U, ... x^m + U$$
+
 
 
 \end{document}

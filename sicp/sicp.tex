@@ -107,6 +107,15 @@ expression is evaluated first, and the result determines
 whether to evaluate the consequent or the alternative expression.)
 }
 
+If the interpreter uses the applicative-order evaluation, then it would
+firstly evaluate the expressions in the test, before applying test. In this case
+we go into an infinite loop, since $(p)$ produces anoter $(p)$.
+
+If the interpretes uses the normal-order evaluateion, then it would apply
+the test procedure, then evaluated if and returned with an answer.
+
+
+
 \end{document}
 
 
