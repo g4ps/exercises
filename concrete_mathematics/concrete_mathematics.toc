@@ -1,7 +1,13 @@
-\contentsline {chapter}{\numberline {1}Recurrent Problems}{2}{chapter.1}%
-\contentsline {section}{\numberline {1.1}}{2}{section.1.1}%
-\contentsline {section}{\numberline {1.2}}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}}{3}{section.1.4}%
-\contentsline {section}{\numberline {1.5}}{3}{section.1.5}%
-\contentsline {section}{\numberline {1.6}}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {1}Recurrent Problems}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}}{5}{section.1.7}%
+\contentsline {section}{\numberline {1.8}}{5}{section.1.8}%
+\contentsline {section}{\numberline {1.9}}{6}{section.1.9}%
+\contentsline {section}{\numberline {1.10}}{8}{section.1.10}%
+\contentsline {section}{\numberline {1.11}}{10}{section.1.11}%
+\contentsline {section}{\numberline {1.12}}{10}{section.1.12}%

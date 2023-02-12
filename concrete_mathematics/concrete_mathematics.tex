@@ -10,6 +10,13 @@
 \maketitle
 \tableofcontents
 
+\chapter*{Preface}
+
+Exercises are from Concrete Mathematics, 2nd ed., by Graham, Knuth and Patashnik.
+
+Probably going to cover warmup, basic and homework exercises, while the rest are
+going to be left for the better times.
+
 \chapter{Recurrent Problems}
 
 \section{}
@@ -93,4 +100,233 @@ Nope.
 I think that it is the same as with any regions, but shifted by 3, because we need to bound the
 first region, and then proceed with its dissection as per normal rules.
 
+\section{}
+
+\textit{Let $H(n) = J(n + 1) - J(n)$. Equation (1.8) tells us that $H(2n) = 2$ and
+  $H(2n + 1) = J(2n + 2) - J(2n + 1) = (2J(n + 1) - 1) - (2J(n) + 1) = 2H(n) - 2$
+  for all $n \geq 1$. Therefore it seems possible to prove that $H(n) = 2$ for all n,
+  by induction on n. What's wrong here?}
+
+$$H(2n) = J(2n + 1) - J(2n) = 2J(n) + 1 - 2J(n) + 1 = 2$$
+So everything holds for $H(2n)$.
+
+$$H(2n + 1) = J(2n + 2) - J(2n + 1) = J(2(n + 1)) - J(2n + 1) = $$
+$$ = 2J(n + 1) - 1 - 2J(n) - 1 = 2(J(n + 1) - J(n)) - 2 = 2H(n) - 2$$
+Thus our math holds for odd numbers, that are greater then 2.
+
+This thing doesn't work on $n = 1$, therefore we need to have our base case to be set at $n = 2$.
+Thus we're assuming that it's true for $n \geq 2$ and our induction hypothesis
+states that if $n \geq 2$, then $H(n) = 2$. Thus we can't follow anything for the induciton
+step, therefore the whole thing is false.
+
+
+\section{}
+
+\textit{Solve the recurrence }
+$$Q_0 = a$$
+$$Q_1 = b$$
+$$Q_n = (1 + Q_{n - 1})/Q_{n - 2}$$
+\textit{Assume that $Q_n \neq 0$ for all $n \geq 0$}
+
+Let's try to extend this thing a bit
+$$Q_2 = \frac{1 + b}{a}$$
+$$Q_3 = \frac{1 + \frac{1 + b}{a}}{b} =
+\frac{\frac{a + 1 + b}{a}}{b} = \frac{a + 1 + b}{ab}
+$$
+$$Q_4 = \frac{1 + \frac{a + 1 + b}{ab}}{\frac{1 + b}{a}} =
+\frac{ab + a + 1 + b}{ab} \frac{1}{\frac{1 + b}{a}} =
+\frac{ab + a + 1 + b}{\frac{ab(1 + b)}{a}} =
+\frac{ab + a + 1 + b}{b(1 + b)} = \frac{a(b + 1) + 1(b + 1)}{b(1 + b)} =
+$$
+$$ = 
+\frac{(a + 1)(b + 1)}{b(1 + b)} = \frac{a + 1}{b}
+$$
+$$Q_5 = \frac{1 + \frac{1 + a}{b}}{\frac{a + 1 + b}{ab}} =
+\frac{\frac{(b + 1 + a)}{b}}{\frac{a + 1 + b}{ab}} = \frac{1}{b} ab = a
+$$
+$$Q_6 = \frac{1 + a}{\frac{a + 1}{b}} = b$$
+Thus we come a full circle and conclude that
+$$Q(n) = Q(n \mod 5)$$
+and all of the others are computed. Good ol' brute force, nothing beats that.
+
+\section{}
+
+\textit{Sometimes it's possible to use induction backwards, proving things from $n$
+  to $n - 1$ instead of vice versa! For example, consider the statement}
+$$P(n): x_1 ...  x_n \leq \left(\frac{x_1 + ... + x_n}{n}\right)^n
+\text{ if } x_1 , ...,  x_n \geq 0$$
+\textit{This is true when $n = 2$, since $(x_1 + x_2)^2 - 4x_1x_2 = (x_1 - x_2)^2 \geq 0$.}
+
+
+I'm assuming that $P(n): N \to bool$, which is a little unorthodox, but will do.
+
+\textit{(a) By setting $x_n = (x_1 + ... + x_{n - 1})/(n - 1)$, prove that $P(n)$ implies
+  $P(n - 1)$ whenever $n > 1$.}
+
+Suppose that $P(n)$ is true. Then we follow that for any $x_1, ..., x_{n - 1} \geq 0$ and
+$x_n = (x_1 + ... + x_{n - 1})/(n - 1)$
+we've got that 
+$$x_1  ... (x_1 + ... + x_{n - 1})/(n - 1) \leq \left(\frac{x_1 + ... + x_n}{n}\right)^n$$
+$$\frac{x_1  ... (x_1 + ... + x_{n - 1})}{n - 1} \leq \left(\frac{x_1 + ... + x_{n - 1} +
+    \frac{x_1 + ... + x_{n - 1}}{n - 1}}{n}\right)^n$$
+$$\frac{x_1  ... (x_1 + ... + x_{n - 1})}{n - 1} \leq \left(\frac{
+    \frac{(n - 1)(x_1 + ... + x_{n - 1}) + x_1 + ... + x_{n - 1}}{n - 1}}{n}\right)^n$$
+$$\frac{x_1  ... (x_1 + ... + x_{n - 1})}{n - 1} \leq \left(\frac{
+    \frac{(n - 1)(x_1 + ... + x_{n - 1}) + (x_1 + ... + x_{n - 1})}{n - 1}}{n}\right)^n$$
+$$\frac{x_1  ... (x_1 + ... + x_{n - 1})}{n - 1} \leq \left(\frac{
+    \frac{n(x_1 + ... + x_{n - 1})}{n - 1}}{n}\right)^n$$
+$$\frac{x_1  ... (x_1 + ... + x_{n - 1})}{n - 1} \leq \left(
+  \frac{x_1 + ... + x_{n - 1}}{n - 1}\right)^n$$
+$$x_1  ... x_{n - 1}\frac{(x_1 + ... + x_{n - 1})}{n - 1} \leq \left(
+  \frac{x_1 + ... + x_{n - 1}}{n - 1}\right)^n$$
+$$x_1  ... x_{n - 1} \leq \left( \frac{x_1 + ... + x_{n - 1}}{n - 1}\right)^{n - 1}$$
+which is precisely $P(n - 1)$. Thus we follow that $P(n) \to P(n - 1)$.
+
+\textit{(b) Show that $P(n)$ and $P(2)$ imply $P(2n)$}
+
+Suppose that $P(n)$ is true and $P(2)$ is also true (we've proven $P(2)$ beforehand).
+Let $x_1, ..., x_n \geq 0$. Then we can follow that
+
+$$x_1 ... x_n \leq \left(\frac{x_1 + ... + x_n}{n}\right)^n$$
+
+By $P(2)$ we've got that
+$$y_1 y_2 \leq \left(\frac{y_1 + y_2}{2}\right)^2$$
+Suppose that we take a set of numbers $x_1, ..., x_{2n}$. Then we can divide this set into
+two equaly sized halves and get that
+$$(x_1 ... x_n) (x_{n + 1} ... x_{2n}) \leq
+\left(\frac{(x_1 ... x_n) + (x_{n + 1} ... x_{2n})}{2}\right)^2$$
+Since we've got $P(n)$ we can follow that
+$$(x_1 ... x_n) \leq \left(\frac{x_1 + ... + x_n}{n}\right)^n$$
+and
+$$(x_{n + 1} ... x_{2n}) \leq \left(\frac{x_{n + 1} + ... + x_{2n}}{n}\right)^n$$
+
+Thus we follow that
+$$ (x_1 ... x_n)(x_{n + 1} ... x_{2n}) \leq \left(\frac{x_1 + ... + x_n}{n}\right)^n
+\left(\frac{x_{n + 1} + ... + x_{2n}}{n}\right)^n$$
+$$ x_1 ... x_{2n} \leq \frac{(x_1 + ... + x_n)^n}{n^n}
+\frac{(x_{n + 1} + ... + x_{2n})^n}{n^n}$$
+$$ x_1 ... x_{2n} \leq \frac{(x_1 + ... + x_n)^n(x_{n + 1} + ... + x_{2n})^n}{n^{2n}}$$
+$$ x_1 ... x_{2n} \leq \left(\frac{(x_1 + ... + x_n)(x_{n + 1} + ... + x_{2n})}{n^{2}}\right)^n$$
+and by applying $P(2)$ on the numerator of the inside fraction we get that 
+$$ x_1 ... x_{2n} \leq \left(\frac{\left(\frac{x_1 + ... + x_{2n}}{2}\right)^2}{n^{2}}\right)^n$$
+$$ x_1 ... x_{2n} \leq \left(\frac{\left(\frac{x_1 + ... + x_{2n}}{2}\right)}{n}\right)^{2n}$$
+$$ x_1 ... x_{2n} \leq \left(\frac{x_1 + ... + x_{2n}}{2n}\right)^{2n}$$
+as desired.
+
+\textit{(c) Explain why this implies the truth of $P(n)$ for all $n$}
+
+$P(1)$ and (b) implies that $P(n)$ is true for $n = 2^k$ for any $k \in N$ by continous application
+of (b). By (a) we get that
+if $n < k$ and $P(k)$ is true,
+then $P(n)$ is true as well. Thus we can follow that for any $n \in N$
+there exists $k \in N$ such that $n < 2^k$, and therefore $P(n)$ is true, as desired.
+
+\section{}
+
+\textit{Let $Q_n$ be the minimum number of moves needed to transfer a tower of $n$ disks
+  from $A$ to $B$ if all moves must be clockwise -- that is, from $A$ to $B$, or from $B$ to
+  the other peg, or from the other peg to $A$. Also, let $R_n$ be the minimum number of moves
+  needed to go from $B$ back to $A$ under this restriction. Prove that }
+
+$$Q_n =
+\begin{cases}
+  0 \text{ if } n = 0 \\
+  2R_{n - 1}  + 1 \text{ if } n > 0
+\end{cases}
+$$
+and
+$$R_n =
+\begin{cases}
+  0 \text{ if } n = 0 \\
+  Q_n + Q_{n - 1} + 1 \text{ if } n > 0
+\end{cases}
+$$
+
+For the remainder of the exercise let us denote the other peg as C
+
+If we've got no disks, then we don't need to momve nothing, therefore we've got the case for the
+zero.
+
+Let's try firstly to handle some of the cases with low number of disks. If we want to move
+just 1 disk, then we have got to
+$$A_1 \to B_1$$
+and that's the case. To move it back to the original peg we've got to
+$$B_1 \to C_1 \to A_1$$ 
+Thus $Q_1 = 1 = 2R_0 + 1$ and
+$R_1 = 2 = Q_0 + Q_1 + 1$. Therefore our assumption seems to be working
+for 1 disk.
+
+Now suppose that we've gotta move $n$ disks. Firstly, we have got to follow that
+if we  re-label the pegs as such
+$$A \to B, B \to C, C \to A$$
+then our rules about moving the disks clockwise  still makes sence. Thus we can follow that
+it takes $R_{k}$ moves to move $k$ disks counter-clockwise (i.e. $A \to C$, $C \to B$,
+$B \to A$.) and it takes $Q_k$ moves to move $k$ disks clockwise ($A \to B$, $B \to C$, $C \to A$).
+Thus we can follow that if formulas for $R_n$ and $Q_n$ hold for $n - 1$, then we
+can move $n - 1$ disks from $A$ to $C$ in $R_{n - 1}$ moves, then move the last disk from
+$A$ to $B$ in one move, and then move $n - 1$ disks from $B$ to $A$ in $R_{n - 1}$ moves.
+$$
+\begin{cases}
+n - 1, A \to C: R_{n - 1}\\
+1, A \to B: 1\\
+n, C \to B: R_{n - 1}\\  
+\end{cases}
+$$
+Thus we follow that it takes
+$$Q_n = 2R_{n - 1} + 1$$
+moves to move $n$ disks from $A$ to $B$. Thus we follow that if $Q_n$ and $R_n$ hold for
+$n - 1$, then $Q_n$ holds for $n$. 
+
+For $R$ let's try to expand formula a bit:
+$$R_n = Q_n + Q_{n - 1} + 1 = 2R_{n - 1} + 1 + Q_{n - 1} + 1$$
+therefore suppose that $R_n$ and $Q_n$ holds for $n - 1$, and we've got $n$ disks on $B$.
+Then we can use those moves
+$$
+\begin{cases}
+  n - 1, B \to A: R_{n - 1} \\
+  1, B \to C: 1 \\
+  n - 1, A \to B: Q_{n - 1} \\
+  1, C \to A: 1 \\
+  n - 1, B \to A: R_{n - 1}
+\end{cases}
+$$
+that sum up to our desired formula.
+
+Thus we can conclude, that if our formulas hold for $n - 1$, then $Q_n$ holds for $n$ and
+$R_n$ also holds for $n$, therefore by induction we get that for $n \in N$ our formulas hold, as
+desired.
+
+
+\section{}
+
+\textit{A Double Tower of Hanoi contains 2n disks of n different sizes, two of each size. As
+  usual, we're required to move only one disk at a line, without putting a larger one
+  over a smaller one.}
+
+\textit{(a) How many moves does it take to transfer a double tower from one peg to
+  another, if disks of equal size are indistinguishable from each other?}
+
+Naive guess tells me that it takes a double of moves, that we had in the original problem.
+The reasoning is simple: it's the same problem, but we have got to move each "disk" two times
+to effectively put it in the other place.
+
+\textit{(b) is a bonus problem, therefore I'll skip it for a while}
+
+\section{}
+
+\textit{Let's generalze exercise 11a even further, by assuming that there are n different
+  sizes of disks and exactly $m_k$ disks of size $k$. Determine
+  $A(m_1, ..., m_k)$, the minimum number of moves needed to transfer a tower when equal-size
+  disks are considered to be indistinguishable.}
+
+The number of disks doesn't affect the overall strategy, therefore the number is determined
+recursively.
+
+
+
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

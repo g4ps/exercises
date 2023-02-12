@@ -7,6 +7,7 @@
 \date{2023}
 
 \DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \prob {\text{Prob}}
 
 \begin{document}
 \maketitle
@@ -940,11 +941,69 @@ $$g_{\mu, \sigma}'(x) = \frac{(x - \mu)}{\sigma^2} e^{-(x - \mu)^2/2\sigma^2} =
 $g_{\mu, \sigma}'(x)$ has critical points at $x = \mu$ since $e^{-(x - \mu)^2/2\sigma^2} > 0$. From
 the graph we can follow that it's a maximum.
 
-$$g_{\mu, \sigma}''(x) = \frac{(x - m)^2}{s^4}g_{\mu, \sigma}(x) - \frac{1}{\sigma^2}g_{\mu, \sigma}(x)$$
+$$g_{\mu, \sigma}''(x) = \frac{(x - m)^2}{\sigma^4}g_{\mu, \sigma}(x) - \frac{1}{\sigma^2}g_{\mu, \sigma}(x)$$
 
 for which critical points are $x = m \pm s$.
 
+\textit{Gonna skip (b); TODO }
 
+\section{}
+
+\textit{This exercise is a graphing exercise, TODO: add pictures}
+
+\section{}
+
+\textit{Suppose $Z_{0, 1}$ is a normal random variable with mean 0 and stndard deviation 1.
+  Continue to assume $X_{\mu, \sigma}$ is a normal random variable with mean $\mu$ and
+  standard deviation $\sigma$. Show that }
+$$\prob(0 \leq X_{\mu, \sigma} \leq b) = \prob(0 \leq Z_{0, 1} \leq (b - \mu) / \sigma)$$
+
+What we're esentially need to show is that 
+
+$$ \prob(0 \leq X_{\mu, \sigma} \leq b) = \frac{1}{\sigma 2 \sqrt{\pi}}\int_0^b{e^{-(x - \mu)^2/2\sigma^2} dx} = $$
+$$ = 
+\prob(0 \leq Z_{0, 1} \leq (b - \mu) / \sigma) = \frac{1}{2 \sqrt{\pi}} \int_0^{(b - \mu)/\sigma}{e^{-(x)^2/2} dx}$$
+
+Let $u = (x - \mu)/\sigma$. Then we follow that $du = 1/\sigma dx \to dx = \sigma du$. Thus
+$$ \prob(0 \leq X_{\mu, \sigma} \leq b) =
+\frac{1}{\sigma 2 \sqrt{\pi}} \int_0^b{e^{-(x - \mu)^2/2\sigma^2} dx} =
+\frac{1}{\sigma 2 \sqrt{\pi}} \int_0^{(b - \mu)/\sigma}{e^{-(x - \mu)^2/2\sigma^2} \sigma du} =
+$$
+$$ = 
+\frac{1}{\sigma 2 \sqrt{\pi}} \int_0^{(b - \mu)/\sigma}{\exp{(\frac{-(x - \mu)^2}{2\sigma^2})}
+  \sigma du} = \frac{1}{\sigma 2 \sqrt{\pi}}
+\int_0^{(b - \mu)/\sigma}{\exp{(- (\frac{x - \mu}{\sqrt{2}\sigma})^2)} \sigma du} =
+$$
+$$ = 
+\frac{1}{\sigma 2 \sqrt{\pi}}
+\int_0^{(b - \mu)/\sigma}{\exp{(- \frac{1}{2} (\frac{x - \mu}{\sigma})^2)} \sigma  du} =
+$$
+$$ = 
+\frac{1}{\sigma 2 \sqrt{\pi}}
+\int_0^{(b - \mu)/\sigma}{\exp{(- \frac{1}{2} (u)^2)} \sigma  du} =
+\frac{1}{\sigma 2 \sqrt{\pi}}
+\sigma \int_0^{(b - \mu)/\sigma}{\exp{(- \frac{1}{2} (u)^2)}  du} =
+$$
+$$ = 
+\frac{1}{ 2 \sqrt{\pi}}
+\int_0^{(b - \mu)/\sigma}{\exp{(- \frac{1}{2} (u)^2)}  du} =
+\frac{1}{ 2 \sqrt{\pi}} \int_0^{(b - \mu)/\sigma}{e^{-x^2/2}  dx} =
+\prob{(0 \leq Z_{0, 1} \leq (b - \mu)/\sigma)}
+$$
+
+as desired.
+
+\section{}
+
+\textit{For simplicity, we assumed that $a > 0$ when we reduced probabilities for
+  $X_{\mu, \sigma}$ to certain z-scores. This assumption is not neccessary; describe how
+  to remove it}
+
+We need to use the fact that for $a < 0 < b$ we've got that
+$$\int_a^b{f(x) dx} = \int_0^b{f(x) dx} + \int_a^0{f(x) dx} =
+\int_0^b{f(x) dx} - \int_0^{-a}{f(x) dx} $$
+
+If we add the necessary numbers, we'll gret the desired result.
 
 \end{document}
 

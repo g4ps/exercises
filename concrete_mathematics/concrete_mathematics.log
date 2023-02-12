@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  9 JAN 2023 19:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  12 FEB 2023 18:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -354,38 +354,49 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.13 \chapter
-             {Recurrent Problems} [1
+             *{Preface} [1
+
+] [2
 
 ]
 Chapter 1.
-[2
+[3
 
-] [3] [4] (./concrete_mathematics.aux)
+] [4]
+Overfull \hbox (34.7331pt too wide) detected at line 140
+\OML/cmm/m/it/10.95 Q[] \OT1/cmr/m/n/10.95 = [] = [][] = [] = [] = [] =
+ []
+
+[5] [6] [7] [8] [9] [10] (./concrete_mathematics.aux)
 Package rerunfilecheck Info: File `concrete_mathematics.out' has not changed.
-(rerunfilecheck)             Checksum: 10D4FBC0C31A9739287CA0B350B5DB54;412.
+(rerunfilecheck)             Checksum: C902124AEC8989AB4A15C8CFF5A3AFFD;695.
  ) 
 Here is how much of TeX's memory you used:
- 9018 strings out of 478238
- 138453 string characters out of 5850455
- 435897 words of memory out of 5000000
- 27157 multiletter control sequences out of 15000+600000
+ 9037 strings out of 478238
+ 138650 string characters out of 5850455
+ 440901 words of memory out of 5000000
+ 27163 multiletter control sequences out of 15000+600000
  478575 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,237b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,9n,63p,237b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on concrete_mathematics.pdf (5 pages, 144972 bytes).
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb>
+Output written on concrete_mathematics.pdf (11 pages, 206956 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 208 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 105 words of extra memory for PDF output out of 10000 (max. 10000000)
 
