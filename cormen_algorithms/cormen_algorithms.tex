@@ -36,8 +36,6 @@ triangle. For a useful visual reference, google (or just imagine) bowling pins.
 
 The sum evaluates to
 $$S(n) = \sum_{i = 1}^{n}{i} = \frac{n(n + 1)}{2}$$
-(for a proof I'll sudgest using induction, or you can look a pretty interesting proof in the
-book "Concrete mathematics" by Knuth et. al.)
 for which it is true that
 $$\Theta(S(n)) = \Theta(n^2)$$.
 
@@ -739,6 +737,140 @@ in decreasing order of the second number of the pair.
   on n elements in $\Theta(n \lg(n))$ worst-case time.}
 
 TODO on a later date
+
+\chapter{Characterizing Running Times}
+
+\section{O-notation, $\Omega$-notation, and $\Theta$-notation}
+
+\subsection{}
+
+\textit{Modify the lower-bound argument for insertion sort to handle input sizes that are
+  not necessarily a multiple of 3}
+
+We need to remove at most 2 inputs in order to make it so that the input size is a multiple of 3,
+for which our arument holds. Now we can follow that
+at least$(n - 1)/3$ elements need to move $(n - 1)/3$ positions, therefore making
+$$((n - 1)/3)^2 = (n^2 - 2n + 1)/9 \in \Theta(n^2)$$
+iterations
+
+\subsection{}
+
+\textit{Using reasoning similar to what we used for insertion sort, analyze the running time of
+  the selection sort algorithm}
+
+In order to make everything happen in selection sort we also solving inversions one by one,
+therefore making the trip in the middle $n/3$ times, thus making the whole algorithm
+run in $\Theta(n^2)$.
+
+\subsection{}
+
+\textit{Suppose that $\alpha$ is a fraction in the range $0 < \alpha < 1$. Show how to
+  generalize the lower-bound argument for insertion sort to consider an input in which the
+  $\alpha n$ largest values start in the first $\alpha n$ positions. What additional restriction
+  do you need to put on $\alpha$? What value of $\alpha$ maximizes the number of times the
+  $\alpha n$ largest values must pass through each of the middle $(1 - 2\alpha)n$ array positions?}
+
+Suppose that we start with $\alpha n$ positions in start, then we need to pass through
+$(1 - 2\alpha)n$ positions $\alpha n$ times, effectively making that our algorithm runs in
+at least
+$$(1 - 2\alpha)n \alpha n = an^2 + 2 a^2 n^2$$
+time. Additional restriction on $\alpha$ is that $\alpha < 1/2$, because we need to have a middle
+part to begin with.
+
+\section{Asymptotic notation: formal definitions}
+
+\subsection{}
+
+\textit{Let $f(n)$ and $g(n)$ be assymptotically nonnegtive functions. Using the basic
+  definitions of $\Theta$-notation, prove that $\max\{f(n), g(n)\} = \Theta(f(n) + g(n))$}
+
+Suppose that $n \geq n_0$. Then pick $c_1 = 1/2$ and $c_2 = 1$. Then we can follow that
+if $f(n) \geq g(n)$, then
+$$c_1(f(n) + g(n)) = c_1 f(n) + c_1 g(n) = 1/2 f(n) + 1/2 g(n) \leq 1/2 f(n) + 1/2 f(n) =
+f(n) \leq f(n)$$
+and
+$$c_2(f(n) + g(n)) = c_2 f(n) + c_2g(n) \geq c_2 f(n) + c_2f(n) = 2f(n) \geq f(n)$$
+if $g(n) \geq f(n)$, then the same thing applies, but with renamed functions.
+Thus we can follow that 
+$$ c_1(f(n) + g(n)) \leq \max \{f(n), g(n)\} \leq c_2(f(n) + g(n))$$
+from which we follow that
+$$\max \{f(n), g(n)\} \in \Theta(f(n) + g(n))$$
+as desired.
+
+\subsection{}
+
+\textit{Explain why the statement "The running time of algorithm $A$ is at least $O(n^2)$" is
+  meaningless.}
+
+Because $O$ is an upper bound, therefore it can't be more then an upper bound.
+
+\subsection{}
+
+\textit{Is $2^{n + 1} = O(2^n)$? Is $2^{2n} = O(2^n)$?}
+
+$\frac{2^{n + 1}}{2^n} = 2$, thus we follow that $2^{n + 1} \in \Theta(2^n)$.
+$\frac{2^{2n}}{2^n} = 2^n$, which is unbounded, thus $2^{2n} \in \omega(2^n)$ and therefore
+$2^{2n} \notin O(2^n)$. (Although trichotomy does not hold in general, we can follow that
+if one is true, then the rest is false.)
+
+\subsection{}
+
+\textit{Prove 3.1}
+
+3.1 states that for any two functions $f(n)$ and $g(n)$ we have $f(n) = \Theta(g(n))$ if and only
+if $f(n) = O(g(n))$ and $f(n) = \Omega(g(n))$.
+
+We've got forward direction directly from definitions. We're kind of have backward also from
+defitnitions, if we firsly let
+$$n_0 = \max\{n_{0, \Omega},n_{0, O}\}$$
+
+\subsection{}
+
+\textit{Prove that the running time of an algorithm is $\Theta(g(n))$ if and only if its
+  worst-case running time is $O(g(n))$ and its best-case running time is $\Omega(g(n))$}
+
+Forward direction follows directly from 3.1 (best-case and worst-case are both running times,
+therefore 3.1 applies).
+
+For the backward direction let $q_1(n)$ be best-case running time and $q_2(n)$ be the worst-case.
+Then by the fact that $q_1 \in O(g(n))$ it follows that there exist $c_1$ and $n_1$ such that
+$$q(n) \leq c_1 g(n)$$
+for $n > n_0$
+By the fact that $q_2(n) \in \Omega(g(n))$ we follow that there exist $c_2$ and $n_2$ such that
+for $n > n_2$
+$$c_2 g(n) \leq q_2(n)$$
+Suppose that $f(n)$ is a running time of an algorithm. Then we follow that for every $n$
+$$q_2(n) \leq f(n) \leq q_1(n)$$
+thus for $n \geq \max\{n_1, n_2\}$ we've got that
+$$c_2 g(n) \leq q_2(n) \leq f(n) \leq q_1(n) \leq c_1 g(n)$$
+$$c_2 g(n) \leq f(n) \leq c_1 g(n)$$
+thus we follow that $f(n) \in \Theta(g(n))$, therefore running time of an algorithm is
+$\Theta(g(n))$. (I ommited zeroes here, but they are assumed)
+
+\textit{Prove that $o(g(n)) \cap \omega(g(n))$ is the empty set}
+
+Suppose that it isn't. Then we follow that there exists $f(n)$ such that
+$$f(n) \in o(g(n))$$
+$$f(n) \in \omega(g(n))$$
+
+Then let $c > 0$ and let $x = \max\{n_o + n_\omega\}$, where $n_o$ and $n_\omega$ are numbers,
+where $o$ and $\omega$ start kicking in respectively. Then we follow that
+$$f(x) > g(x)$$
+and
+$$f(x) < g(x)$$
+which is impossible, thus giving us a contradiction. Therefore we follow that
+$$o(g(n)) \cap \omega(g(n)) = \emptyset$$
+as desired.
+
+\subsection{}
+
+Gonna skip this one, as it's tedious, but pretty self-explanatory.
+
+
+\section{Standard notations and common functions}
+
+\textit{Left for the better times; gonna skip for now}
+
 
 \end{document}
 
