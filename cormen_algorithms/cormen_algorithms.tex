@@ -869,7 +869,39 @@ Gonna skip this one, as it's tedious, but pretty self-explanatory.
 
 \section{Standard notations and common functions}
 
-\textit{Left for the better times; gonna skip for now}
+\subsection{}
+
+\textit{Show that if $f(n)$ and $g(n)$ are monotonically increasing functions, then so are
+  the functions $f(n) + g(n)$, $f(g(n))$, and if $f(n)$ and $g(n)$ are in addition nonnegative,
+  then $f(n) g(n)$ is monotonically increasing.
+}
+
+Suppose that $x_1 \leq x_2$. Then $f(x_1) \leq f(x_2)$ and $g(x_1) \leq g(x_2)$. Therefore
+$$f(x_1) + g(x_1) \leq f(x_2) + g(x_1) \leq f(x_2) + g(x_2)$$
+Because $g(x_1) \leq g(x_2)$ we follow that
+$$f(g(x_1)) \leq f(g(x_2))$$
+and if they are nonnegative then
+$$f(x_1) g(x_1) \leq f(x_2) g(x_1) \leq f(x_1) g(x_2)$$
+as desired.
+
+\subsection{}
+\textit{Prove that $\lfloor an \rfloor + \lceil (1 - a)n \rceil = n$ for any integer $n$ and
+  any real numner $a$ in range $0 < a < 1$}
+$$\lfloor an \rfloor + \lceil (1 - a)n \rceil =
+\lfloor an \rfloor + \lceil n - an \rceil =
+\lfloor an \rfloor + n +  \lceil -   an \rceil =
+\lfloor an \rfloor + n -  \lfloor an \rfloor = n 
+$$
+as desired.
+
+\subsection{}
+
+\textit{Use equation (3.14) or other means to show that $(n + o(n))^k = \Theta(n^k)$ for
+  any real constant $k$. Conclude that $\lceil n \rceil^k = \Theta(n^k)$ and
+  $\lfloor n \rfloor^k = \Theta(n^k)$.}
+
+
+
 
 
 \end{document}

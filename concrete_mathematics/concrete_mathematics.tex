@@ -320,9 +320,104 @@ to effectively put it in the other place.
   disks are considered to be indistinguishable.}
 
 The number of disks doesn't affect the overall strategy, therefore the number is determined
-recursively.
+recursively with a similar function.
 
 
+\section{}
+
+\textit{What's the maximum number of regions definable by n zig-zag lines, each of which consists
+  of two which consists of two parallel infinite half-lines joined by straight segment?}
+
+
+Firslty, let's write the first couple of values that we've got 
+$$ZZ_0 = 1$$
+$$ZZ_1 = 2$$
+$$ZZ_2 = 12 \text{ (comes from the picture in the exercise)}$$
+
+One proposition, which was driven by the reasoning in the lines and zigs example in the chapter,
+is that number of regions can be connected to the
+number of intersections, that those zig-zag lines make.
+Given that one zig-zag consists of two parallel half-lines, we follow that parallel half-lines
+of two distinct zig-zags can cross each other in at most four different points. We also
+can state that cross-lines can cross other zig-zags half-lines in at most two places, and
+can cross the other's straight bar as well, bringing the number of intersections of cross bars
+to 5. Thus the total number of intersections on any two zig-zags is 9, which isn't really
+helpful.
+
+Other idea that popped up is that we can extend two half lines, so that the cross bar becomes
+as long as possible. This way in some regions it's gonna look like we've got three parallel
+lines instead of the zig-zags, and we can apply the rules for crossing just three parallel lines.
+
+Since this exercise is not an exercise from the topology or geometry book, but an exercise from
+counting book and from the chapter on recurrences, we can probably assume that
+the number of lines is determined by the values of previous $n$. Since standart lines
+produce $n$ new regions in the process, we can  assume that we get the same new regions, as
+with lines, and in addition in the points of intersection we get 8 new regions (counted them on
+a sketch) in
+$(n - 1)$ intersections with previous zig-zags. Thus we can produce a reccurence
+$$ZZ_0 = 1$$
+$$ZZ_n = ZZ_{n - 1} + n + 8(n - 1) = ZZ_{n - 1} + 9n - 8$$
+which gives us values
+$$1, 2, 12, 31, 59, 96, 142, 197, 261, 334, 416, 507, 607, 716, 834, ...$$
+which looks like an answer.
+
+Idk if we need to produce a closed form for this recurrence, might do it for fun later; TODO
+
+\section{}
+
+\textit{How many pieces of cheese can you obtain from a single thick piece by making five
+  straight slices? (The cheese must stay in its original position while you do all the cutting, and
+  each slice must correspond to a plane in 3D). Find a recurrence relation for $P_n$, the
+  maximum number of three-dimentional that can be defined by $n$ different planes.}
+
+That problem is probably related in the interesting way to a problem with the lines.
+
+Let's try to get the first couple of numbers:
+$$P_0 = 1$$
+$$P_1 = 2$$
+$$P_2 = 4$$
+$$P_3 = 8$$
+it seems once again that we're doubling the number of regions with every slice, but something
+tells me that we can do it for so long. It seems that for the 4th cut we can't double the number
+of slices, and it becomes something more complicated.
+
+Can't seem to reason through this one; skipping for now
+
+\section{}
+
+\textit{Josephus has a friend who was saved by getting into the next-to-last position. What
+  is $I(n)$, the number of the penultimate survivor when every second person is executed.}
+
+Let's try to reason the same way they did in the chapter.
+
+For $n = 0, 1, 2$ we don't have a reasonable answer, thus let us procced to 3.
+$$I(3) = 1; I(4) = 3; I(5) = 5; I(6) = 1$$
+and  so on. For the case of 6 we can clearly notice  the same thing that kicked in in the
+original Josephusd problem, specifically that
+$$I(2n) = 2I(n) - 1$$
+and for odd numbers we've got
+$$I(2n + 1) = 2I(n) + 1$$
+when we plug this recursion in the computer, we get an interesting thing: we get a recursion,
+that is simular to the original pattern in Josephus pronblem, but now we get chunks
+of $3 * 2^{n - 1}$ of sequential odd numbers.
+
+Thus let us get the desired recursion: we firslty need to go back to some of the more basic cases,
+then just 3. Walking backwarkds with our recursion, we get that
+$$I(2) = 2; I(1) = 1.5$$
+I like integers more then I'd like to admit, therefore I'll ditch the case with $I(1)$; it's
+also false if we walk back from 3. Thus I'll define ny recursion as
+$$I(2) = 2$$
+$$I(3) = 1$$
+$$I(2n) = 2I(n) - 1$$
+$$I(2n + 1) = 2I(n) + 1$$
+
+\section{}
+
+\textit{Use the repertoire method to solve the general four-parameter recurrence}
+$$g(1) = a$$
+$$g(2n + j) = 3g(n) + cn + b_j \text{ for } j = 0, 1 \text{ and } n \geq 1$$
+
+TODO
 
 \end{document}
 

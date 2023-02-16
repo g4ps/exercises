@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  12 FEB 2023 18:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  16 FEB 2023 18:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -367,15 +367,15 @@ Overfull \hbox (34.7331pt too wide) detected at line 140
 \OML/cmm/m/it/10.95 Q[] \OT1/cmr/m/n/10.95 = [] = [][] = [] = [] = [] =
  []
 
-[5] [6] [7] [8] [9] [10] (./concrete_mathematics.aux)
+[5] [6] [7] [8] [9] [10] [11] [12] (./concrete_mathematics.aux)
 Package rerunfilecheck Info: File `concrete_mathematics.out' has not changed.
-(rerunfilecheck)             Checksum: C902124AEC8989AB4A15C8CFF5A3AFFD;695.
+(rerunfilecheck)             Checksum: 652F7EEB46BA553916610760DAD7BEA9;887.
  ) 
 Here is how much of TeX's memory you used:
- 9037 strings out of 478238
- 138650 string characters out of 5850455
+ 9047 strings out of 478238
+ 138768 string characters out of 5850455
  440901 words of memory out of 5000000
- 27163 multiletter control sequences out of 15000+600000
+ 27167 multiletter control sequences out of 15000+600000
  478575 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,9n,63p,237b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -393,10 +393,10 @@ sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb>
-Output written on concrete_mathematics.pdf (11 pages, 206956 bytes).
+Output written on concrete_mathematics.pdf (13 pages, 215049 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
