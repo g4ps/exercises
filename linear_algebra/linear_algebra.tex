@@ -3759,6 +3759,401 @@ $$\dim (P(F)/U) = \deg p$$
 
 $$1 + U, x + U, ... x^m + U$$
 
+\chapter{Eigenvalues, Eigenvectors, and Invariant Subspaces}
+
+\section{Invariant Subspaces}
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $U$ is a subspace of $V$.}
+
+\textit{(a) Prove that if $U \subseteq \ns t$, then $U$ is invariant under $T$}
+
+Suppose that $u \in U$. Then $u \in \ns T$ and therefore $Tu = 0 \in U$, because $U$ is
+a subspace. Thus $u \in U \to Tu \in U$, therefore $U$ is invariant under $T$.
+
+\textit{(b) Prove that if $\range T \subseteq U$, then $U$ is invariant under $T$. }
+
+Suppose that $u \in U$. Then $Tu \in \range T \to Tu \in U$.
+Thus $u \in U \to Tu \in U$, therefore $U$ is invariant under $T$.
+
+\subsection{}
+
+\textit{Suppose $S, T \in \map(V)$ are such that $ST = TS$. Prove that $\ns S$ is invariant under
+  $T$.}
+
+Suppose that $v \in \ns S$. Then we follow that $Sv = 0$ and therefore $TSv = 0$. Thus
+by our equality we've got that $STv = 0$. Therefore we follow that $Tv \in \ns S$. Thus
+$v \in \ns S \to Tv \in \ns S$. Thus we follow that $\ns S$ is invariant under $T$.
+
+\subsection{}
+
+\textit{Suppose $S, T \in \map(V)$ are such that $ST = TS$. Prove that $\range S$ is invariant under
+  $T$.}
+
+Suppose that $w \in \range S$. Then we follow that there exists $v \in V$ such taht
+$Sv = w$. Thus $TSv = Tw = STv$. Because $Tw = S(Tv)$, we follow that $Tw \in \range S$. Thus
+we conclude that $w \in \range S \to Tw \in \range S$. Thus $\range S$ is invariant under $T$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $U_1, ..., U_m$ are subspaces of $V$ invariant under $T$.
+  Prove that $U_1 + ... + U_m$ is invariant under $T$.}
+
+Suppose that $u \in U_1 + ... + U_m$. Then we follow that
+$$u = \sum{u_j}$$
+for $u_j \in U_j$ for $1 \leq j \leq m$. Thus we follow that 
+$$T u = T \sum{u_j} = \sum{T u_j}$$
+Given that $U_j$ is invariant under $T$, we follow that $T u_j \in U_j$, and therefore
+$Tu \in U_1 + ... + U_m$. Thus we follow that $U_1 + ... + U_m$ is invariant under $T$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that the intersection of every collection of subspaces
+  of $V$ invariant under $T$ is invariant under $T$.}
+
+Suppose that $U_1, ..., U_m$ are invariant subspaces. Then we follow that $U_1 \cap ... \cap U_m$
+is also a subspace. Suppose that $u \in U_1 \cap ... \cap U_m$. Then it follows by
+invariance of respective subspace that $Tu \in U_1 \land ... Tu \in U_m$, thus we can
+conclude that $Tu \in U_1 \cap ... U_m$. Therefore we conclude that $U_1 \cap ... \cap U_m$ is
+an invariant subspace under $T$.
+
+
+\subsection{}
+
+\textit{Prove or give a counterexample: if $V$ is finite-dimentional and $U$ is a subspace of $V$
+  that is invariant under every operator on $V$, then $U = \{0\}$ or $U = V$.}
+
+Suppose that  $U$ is a subspace of $V$ such that $U \neq \{0\}$ and $U \neq V$. Then we
+can follow that $0 \neq \dim U$ and $\dim U \neq \dim V$. Thus we can follow that
+there exists a non-empty basis $u_1, ..., u_n$ of $U$, that we can extend with a non-empty
+list of vectors to $u_1, ..., u_m$ - basis of $V$. Now define a linear map
+$$Tu_j = u_{m - j + 1}$$
+then we follow that $T u_1 = u_m \notin U$. Therefore we conclude that $U$ is not invariant
+under $T$. Thus we can conclude that the statement is correct.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(R^2)$ is defined by $T(x, y) = (-3y, x)$. Find the eigenvalues
+  of $T$.}
+
+$$\lambda (x, y) = (-3y, x)$$
+$$ (\lambda x, \lambda y) = (-3y, x)$$
+$$
+\begin{cases}
+  \lambda x = -3y \\
+  \lambda y = x
+\end{cases}
+$$
+$$\lambda^2 y = -3y $$
+$$\lambda^2  = -3 $$
+which cannot be the case in real numbers. In complex numbers though we've got that
+$$\lambda = [\sqrt{3}i, -\sqrt{3}i]$$
+Suppose that we've got another real eigenvalue of $T$. Then we can follow that this
+eigenvalue is also an eigenvalue in complex numbers, therefore we've got more distinct eigenvalues,
+then dimentions, which is a contradiction. Thus we can conclude that $T$ does not
+have real eigenvalues.
+
+\subsection{}
+
+\textit{Define $T = \map(F^2)$ by}
+$$T(w, z) = (z, w)$$.
+\textit{Find all eivenvalues and eigenvectors of $T$}
+
+$$\lambda (w, z) = (z, w)$$
+$$ (\lambda w, \lambda z) = (z, w)$$
+$$
+\begin{cases}
+  \lambda w = z \\
+  \lambda z = w
+\end{cases}
+$$
+$$\lambda^2 w = w$$
+$$\lambda = [1, -1]$$
+
+Thus we follow that for $w, z \in F \setminus \{0\}$ we've got
+that eigenvectors $(w, w)$ have an eigenvalue of $1$, and eigenvectors $(z, -z)$ have eigenvalues
+of $-1$.
+
+\subsection{}
+
+\textit{Define $T \in \map(F^3)$ by}
+$$T(z_1, z_2, z_3) = (2z_2, 0, 5z_3)$$
+\textit{Find all eigenvalues and eigenvectors of $T$.}
+$$\lambda (z_1, z_2, z_3) = (2z_2, 0, 5z_3)$$
+$$ (\lambda z_1, \lambda z_2, \lambda z_3) = (2z_2, 0, 5z_3)$$
+$$
+\begin{cases}
+  \lambda z_1 = 2 z_2 \\
+  \lambda z_2 = 0 \\
+  \lambda z_3 = 5z_3
+\end{cases}
+$$
+the only values that work here are 0 with vectors $(z, 0, 0)$ and 5 with $(0, 0, z)$ with
+$z \in F \setminus \{0\}$.
+
+\subsection{}
+
+\textit{Define $T \in \map(F^n)$ by}
+$$T(x_1, x_2,  ..., x_n) = (x_1, 2x_2, 3x_3, ..., nx_n)$$
+
+\textit{(a) Find all eigenvalues and eigenvectors of $T$.}
+
+We obliously have 1 for $(z, ..., 0)$, 2 for $(0, z, 0, ..., 0)$ and so on. Given that
+the number of distinct eigenvectors is equal to the number of the dimentions, we follow that
+those are the only eigenvalues and eigenvectors.
+
+\textit{(b) Find all invariant subspaces of $T$.}
+
+We can state that $\lambda (1, 0, .. 0)$ and such are the invariant subspaces. By the
+things that we've concluded earlier we can follow that sums of those subspaces are
+also invariant.
+
+% Let $\lambda_1, ..., \lambda_n$ be distinct eigenvectors with $v_1, ..., v_n$ -- corresponding
+% eigenvectors. If $U \subseteq \Span(v_1, ..., v_n)$ is invariate under $T$, then
+% $U$ is a span of set of some eigenvectors.
+
+% Suppose that $U$ is not a span of some eigenvectors. Let $u_1, ..., u_m \in U$ be a set of
+% eigenvectors, that are contained in $U$, and expand this list to the basis of $U$ -
+% $u_1, ..., u_m, w_1, ..., w_l$. Let $K = \Span(w_1, ..., w_l)$. Then we can follow that
+% since $u_1, ..., u_m$ are eigenvectors, then $\Span(u_1, ..., u_m)$ is an invariate subspace.
+% Thus we follow that $K$ is invariate subspace itself. Then we follow that
+% $$w_i = \sum v_j a_j$$
+% and therefore
+% $$T(w_i) = T(\sum v_j a_j) = \sum v_j T a_j = \sum v_j \lambda_j a_j$$
+
+\subsection{}
+
+\textit{Define $T: P(R) \to P(R)$ by $Tp = p'$. Find all eigenvalues and eigenvectors of $T$.}
+
+Let $Tp = p' = \lambda p$. Since differentiation always reduces a degree of a polynomial by 1,
+we follow that the only eigenvalue that can exist is 0 with eigenvector $c \in F \setminus \{0\}$.
+
+\subsection{}
+
+\textit{Define $T \in \map(P_4(R))$ by}
+$$(Tp)(x) = xp'(x)$$
+\textit{for all $x \in R$. Find all eigenvalues and eigenvectorss of $T$.}
+
+$$\lambda p = x p'(x)$$
+
+$0$ is still a viable eigenvalue with eigenvector $c \in F \setminus \{0\}$.
+
+$$ \sum \lambda a_j x^j = \sum j a_j x^j$$
+since polynomials are uniquely determined by their coefficients, we follow that
+$$ \lambda a_j = j a_j$$
+thus we can follow that we've got eigenvalues $0, 1, 2, 3, 4, 5$ for eigenvectors
+$$1, x, x^2, x^3, x^4$$ and their non-zero scalar multiples.
+
+Since the number of distinct eigenvalues is equal to the dimention of the space, we are done.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $T \in \map(V)$, and $\lambda \in F$. Prove that there
+  exists $\alpha \in F$ such that $|\alpha - \lambda| < 1/1000$ and $T - \alpha I$ is
+  invertible.}
+
+Since $V$ is finite-dimentional, we know that there can exist only a finite amount of distinct
+eigenvalues. Since the amount of elements of $F$ is infinite in the neighborhood around
+$\lambda$ (I don't know if neighborhoods apply to the complex numbers, but I think that they do),
+we follow that there exists a number $\alpha$ such that $|\alpha - \lambda| < 1/1000$ and
+such that $\alpha$ is not an eigenvalue of $T$. Thus we follow that $T - \alpha I$ is
+invertible, as desired.
+
+\subsection{}
+
+\textit{Suppose $V = U \oplus W$, where $U$ and $W$ are nonzero subspaces of $V$. Define
+  $P \in \map(V)$ by $P(u + w) = u$ for $u \in U$ and $w \in W$. Find all eigenvalues
+  and eigenvectors of $P$.}
+
+$0$ and $1$ for eigenvectors $u$ and $w$ respectively.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Suppose $S \in \map(V)$ is invertible.}
+
+\textit{(a) Prove that $T$ and $S \inv T S$ have the same eigenvalues.}
+
+let $\lambda$ be an eigenvalue of $T$ and $v$ is a corresponding eigenvector. Then we follow that
+$$Tv = \lambda v$$
+Because $S$ is invertible, we follow that it is surjective, and
+there exists $w \in V$ such that $Sw = v$ and thus $S \inv v = w$. Thus
+$$S \inv T S w = S \inv T v = S \inv (\lambda v) = \lambda  S \inv v = \lambda w$$
+Thus if $\lambda$ is an eigenvalue of $T$, then it is an eigenvalue of $S \inv T S$.
+
+Suppose that $\lambda$ is an eigenvalue of $S \inv T S$ with corresponding eigenvector $w$.
+Then we follow that
+$$S \inv T S w = \lambda w$$
+$$S (S \inv T S w) = \lambda S w$$
+$$T (S w) = \lambda (S w)$$
+thus we follow that $\lambda$ is an eigenvalue for $T$. Therefore we follow that the set of
+eigenvalues of $T$ and $S \inv T S$ is equal by double inclusion.
+
+\textit{(b) What is the relationship between the eigenvectors of $T$ and the eigenvectors
+  of $S \inv T S$?}
+
+Every eigenvector of $T$ can be aquired by putting eigenvetor of $S \inv T S$ through
+$S \inv$.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space, $T \in \map(V)$, and the matrix of $T$ with
+  respect to some basis of $V$ contains only real entries. Show that if $\lambda$ is an eigenvalue
+  of $T$, then so is $\overline{\lambda}$.}
+
+Suppose that $\lambda$ is an eigenvalue of $T$ with corresponding eigenvector $w$. Let
+$v_1, ..., v_n$ be a basis of $V$, with respect to which the matrix of $T$ contains only
+real entries. Then we follow tha t
+$$w = \sum{a_j v_j}$$
+$$T w = T \sum{a_j v_j} = v_1 {\sum a_j A_{1, j} }  + ... + v_n {\sum a_j A_{n, j} } = \lambda w
+= \lambda a_1 v_ 1 + ... + \lambda a_n v_n$$
+thus we follow that
+$${\sum a_j A_{1, j} } = \lambda a_1$$
+from this we follow that 
+$$\overline{{\sum a_j A_{1, j} }} = \overline{\lambda a_1}$$
+$${\sum \overline{a_j} A_{1, j} } = \overline{\lambda} \overline{ a_1}$$
+thus we follow that for
+$$w' = \sum{\overline{a_j} v_j}$$
+it is true that
+$$Tw' = T \sum{\overline{a_j} v_j} = v_1 {\sum \overline{a_j} A_{1, j} }
++ ... + v_n {\sum \overline{a_j} A_{n, j}} = \overline{\lambda} \overline{a_1} v_1  + ...
+\overline{\lambda} \overline{a_n} v_n = \overline{\lambda} \sum{\overline{a_j} v_j} =
+\overline{\lambda} w' $$
+thus $w'$ is an eigenvector of $T$ with eigenvalue $\overline{\lambda}$, as desired.
+
+\subsection{}
+
+\textit{Give an example of an operator $T \in \map(R^4)$ such that $T$ has no (real) eigenvalues.}
+
+Since the operator in exercise 7 didn't have any real eigenvalues, the idea is to double it,
+and see what happens. If we create a map
+$$T(x, y, z, w) = (-3y, x, 3w, z)$$
+then after plugging this thing into some sophisticated software we get that it doesn't
+have any real eigenvalues.
+
+\subsection{}
+
+\textit{Show that the operator $T \in \map(C^\infty)$ defined by}
+$$T(z_1, z_2, ...) = (0, z_1, ... )$$
+has no eigenvalues.
+
+Suppose that it has one. Then we follow that
+$$\lambda z_1 =  0$$
+$$\lambda z_2 = z_1$$
+$$\lambda z_3 = z_2$$
+and so on. If $z_1 = 0$, then we follow that the other values in the supposed eigenvector are
+also equal to zero, thus this won't do. If $z_1 \neq 0$, then we follow that
+$$\lambda z_2 = z_1  \neq 0$$
+but
+$$\lambda z_1 = 0$$
+thus we can follow that $\lambda = 0$, and by extension $\lambda z_2 = z_1 = 0$, which is a
+contradiction. Thus there is no suitable value for $z_1$, therefore there does not exist an
+eigenvector for this map.
+
+
+\subsection{}
+
+\textit{Suppose $n$ is a positive integer and $T \in \map(F^n)$ is defined by}
+$$T(x_1, ..., x_n) = (x_1 + ... + x_n, ..., x_1 + ... x_n)$$
+\textit{In other words, $T$ is the operator whose matrix (with respect to the standart basis)
+  consists of all 1's. Find all eigenvalues and eigenvectors of $T$.}
+
+
+Since $\dim \range T = 1$, we follow that $\dim \ns T = n - 1$, and as long as $n \neq 1$, we
+follow that $T$ is not injective. Thus
+$$T - 0I$$
+is not injective, and $0$ is an eigenvalue of $T$. Eigenvectors of $T$ consist of any vector in
+$\ns T$ with the exception of $0$.
+
+The other eigenvalue is n with the eigenvector $(x, x, ..., x)$
+
+\subsection{}
+
+\textit{Find all eigenvectors fo the backward shift operator $T \in \map(F^\infty)$ defined by}
+$$T(z_1, ...) = (z_2, z_3, ...)$$
+
+Obliously $(1, 1, ...)$ and its nonzero scalar are eigenvectors of $T$ with the eigenvalue
+of $1$.
+
+$$\lambda z_1 = z_2$$
+$$\lambda z_2 = z_3$$
+Suppose that $z_j \neq z_k$. Then we follow that all the values before $z_j$ are equal to $z_j$
+and all the values after $z_k$ are equal to $z_k$. There is no such $\lambda$ that can do
+the trick, thus we follow that $1$ is the only eigenvalue of $T$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is invertible.}
+
+\textit{(a) Suppose $\lambda \in F$ with $\lambda \neq 0$. Prove that $\lambda$ is an eigenvalue
+  of $T$ if and only if $1/\lambda$ is an eigenvalue of $T \inv$}
+
+Suppose that $\lambda \in F$ with $\lambda \neq 0$ is an eigenvalue of $T$. Then we follow that
+$$Tv = \lambda v$$
+thus
+$$T \inv T v = I v = T \inv \lambda v =  \lambda T \inv v$$
+$$v = \lambda T \inv v$$
+$$1/\lambda v = T \inv v$$
+thus $1/\lambda v$ is the eigenvalue of $T \inv$.
+
+Given that $T = (T \inv)\inv$ and $1/(1/\lambda) = \lambda$ we follow the converse result from
+forward implication (how nice).
+
+\textit{(b) Prove that $T$ and $T \inv $ have the same eigenvectors}
+
+If we look at the deriviation of the previous result more closely, we see that we've shown
+it for the forward case, and by the fact that $T \inv \inv  = T$ we get the converse as well.
+
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and there exist nonzero vectors $v$ and $w$ in $V$ such that }
+$$Tv = 3w \text{ and } Tw = 3v$$
+\textit{Prove that $3$ or $-3$ is an eigenvalue of $T$}
+$$Tv + Tw = T(v + w) = 3w + 3v = 3(v + w)$$
+and
+$$Tv - Tw = T(v - w) = 3w - 3v = -3(v - w)$$
+given that $v$ and $w$ are nonzero, we follow that $v + w$ or $v - w$ bound to be nonzero.
+Thus either 3 or -3 (or both) are eigenvalues of $T$.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $S, T \in \map(V)$. Prove that $ST$ and
+  $TS$ have the same eigenvalues.}
+
+Let $\lambda$ be ean eigenvalue of $ST$ with corresponding eigenvector $v$. Then we follow that
+$$ST v = \lambda v$$
+$$TST v = T\lambda v$$
+$$TS(T v) = \lambda (T v)$$
+thus $\lambda$ is an eigenvalue of $TS$.
+
+Since we can apply this by setting $S = T$ and $T = S$ and getting the same result, we can follow
+that they have the same eigenvalues.
+
+\subsection{}
+
+\textit{Suppose $A$ is an $n-by-n$ matrix with entries in $F$. Define $T \in \map(F^n)$
+  by $Tx = Ax$, where elements of $F^n$ are thought of as $n-by-1$ column vectors.}
+
+\textit{Suppose the sum of the entries in each row of $A$ equals 1. Prove that $1$ is an
+  eigenvalue of $T$}
+
+By plugging  vector $(1, ..., 1)$  into the matrix we get the desired result.
+
+\textit{(b) Suppose the sum of the entries in each column of $A$ equals 1. Prove that $1$
+  is an eigenvalue of $T$.}
+
+Plug in the vector $(\sum{A_{1, j}}, \sum{A_{2, j}}, ... \sum{A_{n, j}})$ into the vector
+
+$$\sum{a_j A_{1, j}} = a_j$$
+
+% \subsection{}
+
+% \textit{Suppose $T \in \map(V)$ and $u, v$ are eigenvalues of $T$ such that $u + v$ is also an
+%   eigenvector of $T$. PRove that $u$ and $v$ are eigenvalues of $T$ corresponding to the same
+%   eigenvalue.}
 
 
 \end{document}
