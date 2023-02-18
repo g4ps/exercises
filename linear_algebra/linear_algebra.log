@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  17 FEB 2023 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  18 FEB 2023 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -514,15 +514,16 @@ ML/cmm/m/it/10.95 w[]; :::; w[] \OMS/cmsy/m/n/10.95 2
 Chapter 5.
 [97
 
-] [98] [99] [100] [101] [102] [103] [104] [105] [106] (./linear_algebra.aux)
+] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109]
+[110] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: C6E5A21A2839AF408C1445C4292A9671;16351.
+(rerunfilecheck)             Checksum: AD1336FA028783BEAB6FF6C27B9C91CB;16967.
  ) 
 Here is how much of TeX's memory you used:
- 9659 strings out of 478238
- 148107 string characters out of 5850455
+ 9685 strings out of 478238
+ 148535 string characters out of 5850455
  444012 words of memory out of 5000000
- 27437 multiletter control sequences out of 15000+600000
+ 27448 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,356b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -540,10 +541,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (107 pages, 476138 bytes).
+Output written on linear_algebra.pdf (111 pages, 488764 bytes).
 PDF statistics:
- 1943 PDF objects out of 2073 (max. 8388607)
- 1782 compressed objects within 18 object streams
- 371 named destinations out of 1000 (max. 500000)
- 2089 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2020 PDF objects out of 2073 (max. 8388607)
+ 1854 compressed objects within 19 object streams
+ 386 named destinations out of 1000 (max. 500000)
+ 2177 words of extra memory for PDF output out of 10000 (max. 10000000)
 

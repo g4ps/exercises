@@ -4145,15 +4145,212 @@ By plugging  vector $(1, ..., 1)$  into the matrix we get the desired result.
 \textit{(b) Suppose the sum of the entries in each column of $A$ equals 1. Prove that $1$
   is an eigenvalue of $T$.}
 
-Plug in the vector $(\sum{A_{1, j}}, \sum{A_{2, j}}, ... \sum{A_{n, j}})$ into the vector
+Let $V$ be finite-dimentional vector space and let $T \in \map(V)$. Suppose that $\lambda$ is
+an eigenvalue of $T$. Then we follow that 
+$$T - \lambda I$$
+is not invertible and therefore not surjective. Thus we can also follow that
+$$(T - \lambda I)'$$
+is not injective and therefore also not invertible. Thus we conclude that
+$$T' - \lambda I'$$
+is not invertible and thus $\lambda$ is an eigenvalue of $T'$.
 
-$$\sum{a_j A_{1, j}} = a_j$$
+Since every implication in previous paragraph is also an equivalence, we follow that
+$T$ and $T'$ have the same eigenvalues. Thus we follow that since $T'$ for which
+$\mathcal(T') = A^t$ has $1$ as an eigenvalue by previous paragraph, then we conclude that $T$
+also has an eigenvalue $1$, as desired.
 
-% \subsection{}
 
-% \textit{Suppose $T \in \map(V)$ and $u, v$ are eigenvalues of $T$ such that $u + v$ is also an
-%   eigenvector of $T$. PRove that $u$ and $v$ are eigenvalues of $T$ corresponding to the same
-%   eigenvalue.}
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $u, v$ are eigenvectors of $T$ such that $u + v$ is also an
+  eigenvector of $T$. Prove that $u$ and $v$ are eigenvectors of $T$ corresponding to the same
+  eigenvalue.}
+
+Suppose that they aren't. Then we follow that
+$$T(u + v) = \lambda_3(u + v) =  \lambda_3 u + \lambda_3 v =
+T(u) + T(v) = \lambda_1 u + \lambda_2 v$$
+$$\lambda_3 u + \lambda_3 v = \lambda_1 u + \lambda_2 v$$
+$$(\lambda_3 - \lambda_1) u =  - (\lambda_3  - \lambda_2) v$$
+Since $\lambda_1 \neq \lambda_1$ we follow that either of (or both) $\lambda_3 - \lambda_1$ or
+$\lambda_3  - \lambda_2$ is not equal to zero.
+If  $\lambda_3 - \lambda_1$ is equal to zero, then we follow that
+$$0 = (\lambda_3 - \lambda_2) v$$
+since $(\lambda_3 - \lambda_2)$ is not equal to zero we follow that $v = 0$, which is
+a contradiction. Thus we follow that both $\lambda_3  - \lambda_2$ and $\lambda_3  - \lambda_2$
+are not equal to zero. Thus we conclude that 
+$$\frac{ - (\lambda_3  - \lambda_2)}{(\lambda_3 - \lambda_1)} u =  v$$
+therefore $u$ and $v$ are not linearly independent, which is a contradiction. Thus we
+conclude that the case when $\lambda_1 \neq \lambda_2$ is impossible, and therefore
+we've got our desired conclusion.
+
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is such that every nonzero vector in $V$ is an eigenvector of $T$.
+  Prove that $T$ is a scalar multiple of the identity operator.}
+
+Let $v, w \in V \setminus \{0\}$.
+Then we follow that $v + w$ is also an eigenvector, and therefore by the
+results of the previous exercise we've got that they correspond to the same eigenvalue. Thus
+we follow that all of the vectors in $V \setminus \{0\}$ correspond to the same eigenvalue.
+Let $\lambda$ be this eigenvalue. Then we follow that for $v \in V$
+$$Tv = \lambda v$$
+if $v \neq 0$ and if $v = 0$, then
+$$Tv = T0 = 0 = \lambda * 0 = \lambda v$$
+thus we conclude that
+$$Tv = \lambda v = (\lambda I)v$$
+for every $v \in V$. Thus we follow that $T = \lambda I$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $T \in \map(V)$ is such that every subspace of $V$
+  with dimention $\dim V - 1$ is invariant under $T$. Prove that $T$ is a scalar multiple of
+  the identity operator.}
+
+If $T = 0$, then we've got that $T = 0I$, thus assume that $T \neq 0$.
+Let $v_1$ be such that $Tv_1 \neq 0$. Expand $v_1$ to the basis of $V$ - $v_1, ..., v_n$.
+Then we follow that $\Span(v_2, ..., v_n)$ is invariant under $T$.
+Let $Tv = \sum{a_j v_j}$. We can follow that since 
+$\Span(a_1, ..., a_{i - 1}, a_{i + 1} ..., a_n)$ is invariant under $T$, then $a_i = 0$
+for $i \neq 1$. Thus we conclude that
+$$Tv = \sum{a_j v_j} = a_1 v_1 + \sum_{j \neq 1}{a_j v_j} = a_1 v_1$$
+Thus we can follow that $v$ is an eigenvalue of $T$. Thus we've got that every nonzero
+vector of $V$ is an eigenvalue of $T$, therefore by previous exercise we follow that
+$T$ is a scalar multiple of identity.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional with $\dim V \geq 3$ and $T \in \map(V)$ is such
+  that every 2-dimentional subspace of $V$ is invariant under $T$. Prove that $T$ is a
+  scalar multiple of the identity operator.}
+
+Let $U$ be a subspace of $V$ such that $\dim U = 3$ and let $u_1, u_2, u_3$ be a basis of this
+subspace. Let $w \in U$. Then we follow that 
+$$w = a_1 v_1 + a_2 v_2 + a_3 v_3$$
+thus
+$$Tw = T(a_1 v_1 + a_2 v_2 + a_3 v_3) = T(a_1 v_1 + a_2 v_2) + T(a_3 v_3)$$
+since every 2-dimentional subspace is invariant in $V$, we follow that
+$T(a_1 v_1 + a_2 v_2) + T(a_3 v_3) = $ is in
+$\Span(u_1, u_2) + \Span(u_2 + u_3) = \Span(u_1, u_2, u_3)$
+Thus we follow that $U$ is invariant under $T$. Therefore we've got that every 3-dimentional
+subspace is invariant under $T$, and by induction we can follow that this is true for
+any subspace of $V$. Thus we follow that every subspace with dimention $n - 1$ is invariant
+under $T$, therefore by our previous exercise we've got the desired result.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $\dim \range T = k$. Prove that $T$ has at most $k + 1$
+  distinct eigenvalues.}
+
+Because eigenvectors for distinct eigenvalues have got to be linearly independent, we can follow
+that we can we can have at most $k$ nonzero distinct eigenvalues, since
+$Tv = \lambda v \in \range T \neq 0$.
+
+If $T$ is not injective, we can have an additional distinct eigenvalue of $0$, thus increasing
+total number of disctinct eigenvalues to $k + 1$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(R^3)$ and $-4, 5, \sqrt{7}$ are eigenvalues of $T$. Prove that
+  there exists $x \in R^3$ such that $Tx - 9x = (-4, 5, \sqrt{7})$.}
+
+Since 9 is not an eigenvalue of $T$, we can follow that $T - 9I$ is injective and therefore
+invertible and surjective. Thus by surjectivity of $T - 9I$ we follow that
+there exists a desired vector.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $v_1, ..., v_m$ is a list of vectors in $V$. Prove
+  that $v_1, ..., v_m$ is linearly independent if and only if there exists $T \in \map(V)$ such
+  that $v_1, ..., v_m$ are eigenvectors of $T$ corresponding to distinct eigenvalues.}
+
+\textbf{In forward direction: }
+
+We can make a map
+$$T(a_1 v_1 + ... + a_m v_m) = (a_1 v_1 +  2 a_2 v_2 + ... + m a_m v_m)$$
+that satisfies required parameters.
+
+\textbf{In reverse direction: }
+
+Trivial, follows directly from the fact that eigenvectors for distinct eigenvalues are linearly
+independent.
+
+\subsection{}
+
+\textit{Suppose $\lambda_1, ..., \lambda_n$ is a list of distinct real numbers. Prove that
+  the list $\exp(\lambda_1 x), ..., \exp(\lambda_n x)$ is linearly independent in the vector
+  space of real-valued functions on $R$.}
+
+Let $V = \Span(\exp(\lambda_1 x), ..., \exp(\lambda_n x)$ and define an operator $T \in \map(R^R)$
+by $Tf =  f'$ (linearity of this thing was proven somewhere in the 3rd chapter). Then we
+follow that
+$$T(\exp(\lambda_j x)) = \lambda_j \exp(\lambda_j x)$$
+which comes from calculus. Thus we follow that $\lambda_1, ..., \lambda_m$ are distinct
+eigenvalues of $T$. Therefore we can conclude that $\exp(\lambda_1 x), ..., \exp(\lambda_n x)$
+is linearly independent.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T/(\range T) = 0$}
+
+Let $v \in V$. Then we follow that
+$$Tv \in \range T$$
+and
+$$0 \in \range T$$
+Thus we can follow that
+$$T(v + (\range T)) = 0 + (\range T)$$
+Thus $T/(\range T) = 0$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T/(\ns T)$ is injective if and only if
+  $\ns T \cap \range T = \{0\}$}
+
+Suppose that $T/(\ns T)$ is injective. Then we can follow that
+$$T/(\ns T)(v + \ns T) = (Tv + \ns T) = 0 + \ns T$$
+if and only if $Tv + \ns T = 0 + \ns T$. $Tv + \ns T = 0 + \ns T$ if and only if
+$$Tv - 0\in \ns T$$
+$$Tv \in \ns T$$
+thus we follow that $\ns T \cap \range T = \{0\}$. Since we've only used equivalences here,
+we've got both cases at the same time.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $T \in \map(V)$, and $U$ is invariant under $T$. Prove
+  that each eigenvalue of $T/U$ is an eigenvalue of $T$.}
+
+Let $\lambda$ be an eigenvalue of $T/U$. Then we follow that there exists $v \in V$ such that
+$$(T/U)(v + U) = Tv + U = \lambda v + U $$
+If $v \in U$, then $v + U = 0$, which is impossible, because eigenvectors are not zero.
+Let $u_1, ..., u_m$ be a basis of $U$ and extend this basis to $u_1, ..., u_m, v_1, ..., v_n$ -
+basis of $V$. Then we follow that
+$$Tv + U = \lambda v + U $$
+$$Tv - \lambda v + U = 0$$
+$$(Tv - \lambda v) \in U$$
+$$(T - \lambda I) (v) \in U$$
+$$(T - \lambda I) (\sum {a_j v_j} + \sum {a_i u_i}) = \sum{b_j u_j}$$
+$$(T - \lambda I) (\sum {a_j v_j})  + (T - \lambda I) (\sum {a_i u_i}) = \sum{b_j u_j}$$
+Since $U$ is invariant under $U$, we can follow that $(T - \lambda I) (\sum {a_i u_i}) \in U$.
+Thus
+$$(T - \lambda I) (\sum {a_j v_j}) = \sum{b_j u_j} -  (T - \lambda I) (\sum {a_i u_i})$$
+$$(T - \lambda I) (\sum {a_j v_j}) \in U$$
+Since $v \notin U$, we follow that $\sum {a_j v_j} \neq 0$ and therefore $\sum {a_j v_j}$ and
+$u_1, ..., u_m$ are linearly independent. 
+Therefore we follow that  $(T - \lambda I)$ maps $\dim U + 1$ linearly independent vectors
+into a space with $\dim U$. Thus we follow that it is not injective, and therefore
+$\lambda$ is an eigenvalue of $T$, as desired.
+
+\subsection{}
+
+\textit{Give an example of a vector space $V$, an operator $T \in \map(V)$, and a subspace $U$
+  of $V$ that is invariant under $T$ such that $T/U$ has an eigenvalue that is not an eigenvalue
+  of $T$.}
+
+$$T(z_1, z_2, ...) = (0, z_2 + z_1, z_3 + z_1, ...)$$
+
+If we set $U = (0, z_1, z_2, ....)$, then $T/U$ has an eigenvalue of $0$ and $T$ doesn't.
 
 
 \end{document}
