@@ -4352,6 +4352,193 @@ $$T(z_1, z_2, ...) = (0, z_2 + z_1, z_3 + z_1, ...)$$
 
 If we set $U = (0, z_1, z_2, ....)$, then $T/U$ has an eigenvalue of $0$ and $T$ doesn't.
 
+\section{Eigenvectors and Upper-Triangular Matrices}
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and there exists a positivee integer $n$ such that $T^n = 0$.}
+
+\textit{(a) Prove that $I - T$ is invertible and that}
+$$(I - T)^{-1} = I + T + ... + T^{n - 1}$$
+
+Suppose that $I - T$ is not invertible. Then we follow that $1$ is an eigenvalue of $T$. Thus
+we follow that there exists an eigenvector $v \neq 0$, corresponding to this value, for which it
+is true that 
+$$v = Tv = T(Tv) = T^2v = T^3v = ... = T^nv$$
+Since $v \neq 0$, we follow that $T^nv \neq 0$, and therefore $T^n \neq 0$ which is a
+contradiction. Therefore we can follow that $T - I$ is invertible.
+
+$$(I - T)(I + T + ... + T^{n - 1}) = (I - T)I + (I - T)T + ... + (I - T)T^{n - 1} = $$
+$$ = I - T + T - T^2 + ... + T^{n - 1}  - T^n =  I - T^n = I - 0 = I$$
+$$(I - T)\inv = I + T + ... + T^{n - 1} $$
+
+\textit{(b) Explain how you would guess the formula above.}
+
+From its deriviation
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $(T - 2I)(T - 3I)(T - 4I) = 0$. Suppose $\lambda$
+  is an eigenvalue of $T$. Prove that $\lambda = 2$, $\lambda = 3$ or $\lambda = 4$.}
+
+Suppose that $\lambda \neq 2$, $\lambda \neq 3$ and $\lambda \neq 4$. Then we follow that
+$(T - 2I)$, $(T - 3I)$, and $(T - 4I)$ are all invertible. Since the product of invertible
+matrices is invertible, we follow that it is also injective and therefore for $v \neq 0$
+$$(T - 2I)(T - 3I)(T - 4I)v \neq 0$$
+thus
+$$(T - 2I)(T - 3I)(T - 4I) \neq 0$$
+which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $T^2 = I$ and $-1$ is not an eigenvalue of $T$. Prove that
+  $T = I$.}
+
+$$T^2 = I$$
+$$T^2 - I = 0$$
+$$(T + I)(T - I) = 0$$
+from the previous exercise we follow that if $\lambda$ is an eigenvalue of $T$, then it's either
+$1$ or $-1$. Because $-1$ is not an eigenvalue of $T$, we follow that $(T + I)$ is invertible
+and therefore
+$$(T + I)(T - I) = 0$$
+$$(T + 1)\inv(T + I)(T - I) = (T + 1)\inv 0$$
+$$I(T - I) = 0$$
+$$T - I = 0$$
+$$T = I$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $P \in \map(V)$ and $P^2 = P$. Prove that $V = \ns P \oplus \range P$}
+
+$V = \ns P \oplus \range P$ means that $V = \ns P + \range P$ and $\ns P \cap \range P = \{0\}$.
+
+To prove the latter part  we
+suppose that $v \in \ns P$ and $v \in \range P$. If $v \neq 0$, then we follow that
+there exists $w \in V \neq 0$ such that $Pw = v$. Because $v \in \ns P$ we follow that
+$$Pv = 0$$
+$$P(v) = 0$$
+$$P(Pw) = 0$$
+$$P^2w = 0$$
+$$Pw = 0$$
+$$v = 0$$
+which is a contradiction. Thus we follow that there does not exist $v \neq 0$ such that
+$v \in \ns P$ and $v \in \range P$ at the same time. Therefore we can conclude that
+$$\ns P \cap \range P = \{0\}$$
+
+We know that for every $v \in V$ we've got that 
+$$v = v$$
+$$v = v - Pv + Pv $$
+Since
+$$P(v - Pv) = Pv - P^2v = Pv - Pv = P(v - v) = P(0) = 0$$
+we follow that $v - Pv \in \ns P$. $Pv \in \range P$. Thus we follow that
+$$V = \ns P + \range P$$
+
+
+Thus we can conclude that $V = \ns P \oplus \range P$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $S, T \in \map(V)$ and $S$ is invertible. Suppose $p \in P(F)$ is a polynomial.
+  Prove that }
+$$p(STS\inv) = S p(T) S\inv$$
+
+$$(STS\inv)^m = (STS\inv)(STS\inv)...(STS\inv) =
+ST(S\inv S)T(S\inv ...S)TS\inv) = STITI...ITS\inv = ST^mS\inv$$
+thus we follow that
+$$p(STS\inv) = \sum {a_j (STS\inv)^j} = \sum {a_j ST^jS\inv} = S\sum {[a_j T^j]}S\inv = Sp(T)S\inv$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $U$ is a subspace of $V$ invariant under $T$. Prove that
+  $U$ is invariant under $p(T)$ for every polynomial $p \in P(F)$}
+
+Suppose that $u \in U$ is invariant under $T$. Then we follow that
+$$Tu \in U$$
+and by induction
+$$T^mu = T(T^{m - 1}u) \in U$$
+Thus we follow that $a_j T^ju  \in U$ by  closure under scalar multiplication of subspaces and 
+$$\sum{a_j T^ju} = p(T) \in U$$
+by additive closure of subspaces for any $p \in P(F)$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $9$ is an eigenvalue of $T^2$ if and only if
+  $3$ or $-3$ is an eigenvalue of $T$.}
+
+Suppose that $9$ is an eigenvalue of $T^2$. Then we follow that $(T^2 - 9I)$ is not injective.
+Thus
+$$(T^2 - 9I) = (T - 3I)(T + 3I)$$
+is not injective. Thus we follow that either one of $T - 3I$ of $T + 3I$ is not injective. Thus
+we follow that $-3$ or $3$ is an eigenvalue of $T$.
+
+Suppose that either $3$ or $-3$ is an eigenvalue of $T$. Then we follow that
+$$T^2v = 3(3v) = 9v$$
+or
+$$T^2v = -3(-3v) = 9v$$
+thus $9$ is an eigenvalue of $T$, as desired.
+
+\subsection{}
+
+\textit{Give an example of $T \in \map(R^2)$ such that $T^4 = -1$}
+
+After some though I came up with the
+$$
+\frac{\sqrt{2}}{2}
+\begin{pmatrix}
+  1 & -1 \\
+  1 & 1
+\end{pmatrix}
+$$
+
+Which seems to be working.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $T \in \map(V)$ and $v \in V$ with $v \neq 0$.
+  Let $p$ be a nonzero polynomial of smallest degree such that $p(T)v \neq 0$. Prove that every
+  zero  of $p$ is an eigenvalue of $T$.}
+
+We've got that
+$$p(T)v = 0$$
+$$\prod{(T - \lambda_j I)}v = 0$$
+Suppose that $\lambda_i$ is not an eigenvalue of $T$. Then we follow that $(T - \lambda_i)$ is
+invertible and therefore we've got that for 
+$$(T - \lambda_i)\left(\prod_{j \neq i}{(T - \lambda_j I)} v \right) = 0$$
+$$\prod_{j \neq i}{(T - \lambda_j I)} v  = 0 =
+(T - \lambda_i)\left(\prod_{j \neq i}{(T - \lambda_j I)} v \right)$$
+thus we can follow that $p$ is not in its lowest degree, which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $v$ is an eigenvector of $T$ with eigenvalue $\lambda$.
+  Suppoe $p \in P(F)$. Prove that $p(T)v = p(\lambda)v$}
+
+Suppose that $\lambda$ is an eigenvalue for an eigenvector $v$. Then we follow that
+$$T^m(v) = \lambda^m v$$
+thus for our problem we've got that
+$$p(T)v = \sum{(a_j T^j)}v = \sum{(a_j T^j v)} = \sum{(a_j \lambda^j v)} =
+\sum{(a_j \lambda^j )}v = p(\lambda)v $$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $F = C$, $T \in \map(V)$, $p \in P(C)$ is a polynomial, and $a \in C$.
+  Prove that $a$ is an eigenvalue of $p(T)$ if and only if $a = p(\lambda)$ for some
+  eigenvalue $\lambda$ of $T$.}
+
+\textbf{If forward direction: }
+
+Suppose that $a$ is an eigenvalue of $p(T)$. Then we follow that
+$$p(T)v = a v$$
+$$p(T)v - av = 0$$
+$$(p(T) - aI)v = 0$$
+Let $q = p(z) - a$. Then we've got that 
+$$q(T)v = 0$$
+$$c \prod(T - \lambda_i I)v = 0$$
+thus we follow that one of the $T - \lambda_i I$ is not injective. Therefore we follow 
 
 \end{document}
 
