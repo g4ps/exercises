@@ -3227,7 +3227,7 @@ Suppose that $\Gamma$ is a subspace of $V'$. Then we can follow that there exist
 basis of $\Gamma$ -  $\phi_1, ..., \phi_n$, and that we can extend this basis to a basis of
 $V'$ - $\phi_1, ..., \phi_m$.
 
-For every $\phi_j$ we've got that $\phi_j \neq 0$ and therefore by FTOLM we've got that
+For every $\phi_j$ we've got that $\phi_j \neq 0$ and therefore by FTLM we've got that
 $$\dim V' = \dim \ns \phi_j + \dim \range \phi_j$$
 $$\dim V' = \dim \ns \phi_j + 1$$
 $$\dim V' - 1 = \dim \ns \phi_j$$
@@ -4529,16 +4529,382 @@ as desired.
   Prove that $a$ is an eigenvalue of $p(T)$ if and only if $a = p(\lambda)$ for some
   eigenvalue $\lambda$ of $T$.}
 
-\textbf{If forward direction: }
+\textbf{In forward direction: }
 
-Suppose that $a$ is an eigenvalue of $p(T)$. Then we follow that
-$$p(T)v = a v$$
+Suppose that $a$ is an eigenvalue of $p(T)$. Then we can follow that there exists eigenvector
+$v \neq 0$ such that
+$$p(T)v = av$$
 $$p(T)v - av = 0$$
+$$p(T)v - aIv = 0$$
 $$(p(T) - aI)v = 0$$
-Let $q = p(z) - a$. Then we've got that 
-$$q(T)v = 0$$
-$$c \prod(T - \lambda_i I)v = 0$$
-thus we follow that one of the $T - \lambda_i I$ is not injective. Therefore we follow 
+Since $p \in P(C)$, we follow taht $p - a \in P(C)$. Thus there exists factorization
+$c\prod{(z - \lambda_i)} = p - a$. Thus
+$$c\prod{(T - \lambda_iI)} v = 0$$
+If $c = 0$, then we follow that $p(z) - a = 0$, and therefore $p(z) = a$ and $p(\lambda) = a$ for
+any eigenvalue of $T$. Thus suppose that $c \neq 0$. Then we've got that one of $(T - \lambda_iI)$
+is not injective and therefore $\lambda_i$ is an eigenvelue of $T$, for which
+$$c(z - \lambda_i ) = 0$$
+thus
+$$p(\lambda_i) - a = 0$$
+$$p(\lambda_i)  = a$$
+as desired.
+
+\textbf{In reverse direction: }
+
+Suppose that $a = p(\lambda)$ for some eigenvalue of $p$. Then we follow that
+for eigenvector $v$ , that correspond to this eigenvalue 
+$$Tv = \lambda v$$
+thus
+$$p(T)v = p(\lambda)v = av$$
+thus $a$ is an eigenvalue of $p(T)$, as desired.
+
+
+\subsection{}
+
+\textit{Show taht the result in the previous exericse does not hold if $C$ is replaced with $R$.}
+
+With $F = R$ we're not guaranteed that $T$ has an eigenvalue in finite dimnetions. Thus we
+can follow that for our map from previous chapteer
+$$T(x, y) = (-3y, x)$$
+and polynomial
+$$p(z) = z^2$$
+we've got that $p(T)$ has an eigenvalue 3, but no eigenvalues exist for $T$.
+
+
+\subsection{}
+
+\textit{Suppose $W$ is a complex vector space and $T \in \map(W)$ has no eigenvalues. Prove that
+  every subspace of $W$ invariant under $T$ is either $\{0\}$ or
+  infinite-dimentional.}
+
+Suppose that $U$ is an invariant finite-dimentional nonzero subspace of $W$. Then we follow that
+it has an eigenvalue $\lambda$ under $T$ with a corresponding eigenvector $v \neq 0$
+(as does any finite-dimentional nonzero complex space).
+Thus we follow that $Tv = \lambda v$, therefore
+$T$ has an eigenvalue, which is a contradition. Thus we follow that there does not exist an
+invariant finite-dimentional nonzero subspace of $W$, that is invariant under $T$. Therefore
+we follow that if a subspace is invariant under $T$, then it's either not finite-dimentional
+(i.e. infinite dimentional), or zero, as desired.
+
+\subsection{}
+
+\textit{Give an example of an operator whose matrix with respect to some basis contains only $0$'s
+on the diagonal, but the operation is invertible}
+
+$$T \in \map(C^2): T(x, y) = (-3y, x)$$
+
+\subsection{}
+
+\textit{Give an example of an operator whose matrix with respect to some basis contains only
+  nonzero numbers on the diagonal, but the operator is not invertible}
+
+$$
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 1
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{Rewrite the proof of 5.21 using the linear map that sends $p \in P_n(C)$ to $(p(T))v \in V$
+  (and use 3.23)}
+
+
+We follow that there exists a linear map $S$ from $P_n(C)$ to $V$ defined by
+$$S(p) = p(T)v$$
+thus we follow that $\dim P_n(C) = n + 1 > n = \dim V$, therefore $S$ is not injective (by 3.23),
+and thus there exists a polynomial $p \in P_n(C) \neq 0$ such that
+$$S(p) = \sum (a_j T^j) v = 0 $$
+after this we've got the same proof.
+
+
+\subsection{}
+
+\textit{Rewrite the proof of 5.21 using the linear map that sends $p \in P_{n^2}(C)$ to
+  $p(T) \in \map(V)$ (and use 3.23)}
+
+We follow that $\dim \map(V) = n^2 < n^2 + 1 = \dim P_{n^2}(C)$. Thus we follow that
+the map that sends
+$$S(p) = p(T)$$
+is not injective. Thus there exists $p \in P_{n^2}(C)$ such that
+$$S(p) = p(T) = 0$$
+the rest is the same.
+
+\subsection{}
+
+\textit{Suppose $V$ is a finite-dimentional complex vector space and $T \in \map(V)$.
+  Define a function $f: C \to R$ by}
+$$f(\lambda) = \dim \range (T - \lambda I)$$
+\textit{Prove that $f$ is not a continous function}
+
+Let $V_\delta(\lambda)$ be a neighborhood for $\lambda$ for arbitrary $\delta$. Since any
+neighborhood has infinite amount of distinct numbers, we follow that there exists
+$x \in V_\delta(\lambda)$ that is not an eigenvalue of $T$. Thus we follow that
+there is no neighborhood of $\lambda$ such that $x \in V_\delta(\lambda) \to
+\dim \range (T - x I) = \dim \range (T - \lambda I)$. Thus we follow that
+the function is not continous, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional with $\dim V > 1$ and $T \in \map(V)$. Prove
+  that }
+$$\{p(T): p \in P(F)\} \neq \map(V)$$
+
+For now, let us concentrate on $F = C$. If $T$ has only 1 eigenvalue, then we follow that
+by the virtue of the fact that there exists an upper-triangular matrix for it, that
+there exist at least two vectors such that
+$$p(T)v_1 = p(\lambda)v_1 = p(\lambda)v_2 = p(T)v_2$$
+therefore we follow that $\{p(T): p \in P(F)\}$ does not have maps  $S$ such that $Sv_1 \neq Sv_2$.
+If $T$ has more then 1 eigenvalues, then the case is reversed.
+
+Case of $F = R$ is a somewhat specific case of $F = C$, which is resolved with the same logic
+and maybe minor modifications
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional complex vector space and $T \in \map(V)$. Prove
+  that $T$ has an invariant supspace of dimention $k$ for $1 \leq k \leq \dim V$.}
+
+$T$ has an upper-triangular map for some basis $v_1, ..., v_n$. Thus it has a subspace
+$$\Span(v_1, ..., v_k)$$
+with desired properties
+
+\section{Eigenspaces and Diagonal Matrices}
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is diagonalizable. Prove that $V = \ns T \oplus \range T$.}
+
+Although it wasn't mentioned specifically, I think that we can follow that if $T$ is
+diagonalizable in some space $V$, then this space if finite-dimentional. Thus we can follow that
+$V$ has a basis $v_1, ..., v_n$ of eigenvectors of $T$ with corresponding eigenvalues
+$\lambda_1, ..., \lambda_n$, where $\lambda$'s can repeat. Thus for $v \in V$
+$$v = \sum {a_j v_j}$$
+
+If $\lambda_j \neq 0$, then we follow that there exists $\frac{a_j}{\lambda_j} v_j$ such that
+$$T \frac{a_j}{\lambda_j} v_j  = a_j v_j$$
+
+If $\lambda_j = 0$, then we follow that $v_j \in \ns T$. Thus
+$$v = \sum {a_j v_j} = \sum_{\lambda \neq 0} {a_j v_j} + \sum_{\lambda = 0} {a_j v_j}$$
+where $\sum_{\lambda \neq 0} {a_j v_j} \in \range T$ and $\sum_{\lambda = 0} {a_j v_j} \in \ns T$.
+Thus we follow that $V = \ns T + \range T$.
+
+Since $v_1, ..., v_n$ is a basis, we follow that it is linearly independent, and therefore
+$V = \ns T \oplus \range T$, as desired.
+
+
+\subsection{}
+
+\textit{Prove the converse of the statement in the exercise above or give a couneterexample
+  to the converse.}
+
+Suppose that $V = \ns T \oplus \range T$. I think that we're assumnming once again that
+$V$ is finite-dimentional.
+
+We know that there exist bases of both $\ns T$ and $\range T$ that add up to a basis of $V$.
+Every member of basis of $\ns T$ is an eigenvector for an eigenvalue of $0$.
+
+If $F = R$, then we can follow that there exists a map such that it has no eigenvalues,
+therefore making the whole thing not diagonalizable. However if $F = C$, then we follow that
+$T|_{\range T}$ has an eigenvalue (which will be nonzero, since all zeroes are in the basis
+of $\ns T$) with a corresponding eigenvector. If we take one of those eigenvectors away,
+we can follow that the span of rest of the vectors is invariant, because if it isn't, then
+for vector $u \in \Span(v_k)$ and $w \in \Span(v_{k + 1}, ..., v_n)$
+$$T(u) = T(u)$$
+$$T(u - w) = 0$$
+for which $u \neq w$, $u - w \in \range T$ and $u - w \in \ns T$, and therefore it violates
+the fact that $V = \ns T \oplus \range T$. Thus the process can be repeated and $T$ is
+diagonalizable.
+
+Therefore we conclude that if in addition to the fact that $V = \ns T \oplus \range T$ we've
+got that $V$ is a finite-dimentional vector space, we can follow that $T$ is
+diagonalizable.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $T \in \map(V)$. Prove that the following are
+  equivalent}
+
+\textit{(a) $V = \ns T \oplus \range T$}
+
+\textit{(b) $V = \ns T + \range T$}
+
+\textit{(c) $\ns T \cap \range T = \{0\}$}
+
+(a) implies (b) and (c) from the definition of $\oplus$. 
+
+If $\ns T + \range T = V$, then combined bases of $\ns T$ and $\range T$ span $V$. Since
+$$\dim V = \dim \ns T + \dim \range T$$
+we follow that list that consists of combined bases of $\ns T$ and $\range T$ is
+a list of length $\dim V$, that spans $V$, making it a basis of $V$. Thus we can follow that
+this list is linearly independent, and therefore
+$$\ns T \cap \range T = \{0\}$$
+Thus (b) implies (c).
+
+If
+$$\ns T \cap \range T = \{0\}$$
+then we follow that list, that consists of combined  bases of $\ns T$ and $\range T$ is
+linearly independent. Therefore by FTLM  we've got linearly independent list of length $\dim V$,
+thus making it a basis of $V$. Therefore we can follow that
+(c) implies (b)
+
+(b) and (c) implies (a), and since (b) and (c) are equivalent, we follow that both (b) and (c)
+are eqivalent to (a).
+
+\textit{Give an example to show that the exercise above is false without the hypothesis that
+  $V$ is finite-dimentional.}
+
+$$U = (0, 0, 0, x_1, ...)$$
+$$W = (0, 0, x_1, 0 , ...)$$
+$$U \cap W = \{0\}$$
+which doesn't imply anything.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional complex vector space and $T \in \map(V)$. Prove that
+  $T$ is diagonalizable if and only if }
+$$V = \ns (T - \lambda I) \oplus \range (T - \lambda I)$$
+\textit{for every $\lambda \in C$.}
+
+Suppose that $T$ is diagonalizable. Then we follow that $V$ has a basis of eigenvectors of
+$T$. For any of this vectors it is true that 
+$$Tv = \kappa v$$
+for some $\kappa \in F$. Thus we follow that 
+$$(T - \lambda I)v = \kappa v - \lambda v = (\kappa - \lambda)v$$
+and therefore we follow that $v$ is also an eigenvector for $(T - \lambda I)$. Thus
+we conclude that $V$ has a basis, that consists of eigenvectors of $(T - \lambda I)$. Therefore
+$(T - \lambda I)$ is also diagonalizable.
+
+By equivalence that we've proven in exercises 1 and 2, and presented proof we have the desired
+result.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $T \in \map(V)$ has $\dim V$ distinct
+  eigenvalues and $S \in \map(V)$ has the same eigenvectors as $T$ (not necessarily with the
+  same eigenvalues). Prove that $ST = TS$}
+
+Because $T$ has $\dim V$ distinct eigenvalues we follow that it is diagonalizable. Thus
+$V$ has a basis, that consists of eigenvectors of $T$. Since
+$S$ has the same eigenvectors, we follow that $V$ has a basis, consisting of eigenvectors of $S$,
+thus making $S$ diagonalizable. Let $v_1, ..., v_n$ be this basis, $\lambda_1, ..., lambda_n$
+be the corresponding eigenvalues of $T$ and $\kappa_1, ..., \kappa_n$ be corresponding
+eigenvalues of $S$. Let $v \in V$. Then we follow that
+$$v = \sum{a_j v_j}$$
+$$ST v = ST \sum{a_j v_j} = \sum{a_j ST v_j} = \sum{a_j \kappa_j \lambda_j  v_j} =
+\sum{a_j  \lambda_j \kappa_j  v_j} = \sum{a_j  TS v_j} = TS \sum{a_j v_j} = TSv$$
+thus $ST = TS$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ has a diagonal matrix $A$ with respect to some basis of $V$
+  and that $\lambda \in F$. Prove that $\lambda$ appears on the diagonal of $A$ precisely
+  $\dim E(\lambda,  T)$ times.}
+
+This diagonal basis will consist of eigenvectors of $T$. Thus we follow that since
+$$V = E(\lambda_1, T) \oplus ... \oplus E(\lambda_m, T)$$
+and for $j \neq m$, 
+$$v \in E(\lambda_j, T) \to v \notin E(\lambda_m, T)$$
+there will exist $\dim E(\lambda_j, T)$ vectors, that correspond to $\lambda_j$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(F^5)$ and $\dim E(8, T) = 4$. Prove that $T - 2I$ or $T - 6I$
+  is invertible.}
+
+In order for $T - 6I$ to be non-injertible, we've got to have
+$$\dim E(6, T) \geq 1$$
+Since
+$$\dim V = \sum{\dim E(\lambda_j T)} = 5$$
+$$\sum{\dim E(\lambda_j T)} + \dim E(8, T) = 5$$
+$$\sum{\dim E(\lambda_j T)}  = 1$$
+thus we follow that there exists at most one more non-invertible $T - \lambda I$. Thus one of the
+provided maps is invertible, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is invertible. Prove that
+  $E (\lambda T) = E(\frac{1}{\lambda} T \inv)$ for every $\lambda \in F$ with $\lambda \neq 0$.}
+
+From exercise 5.1.21 we follow that if $T$ is invertible and $\lambda$ is an eigenvalue for $T$
+with corresponding eigenvector $v$,  then $v$ is an eigenvector of $T \inv$ for
+value $1/\lambda$  ($\lambda \neq 0$ follows from invertability of $T$). Thus we can follow that
+presented sets are equal by definition of eigenspace.
+
+\subsection{}
+
+\textit{Suppose that $V$ is finite-dimentional and $T \in \map(V)$. Let $\lambda_1, ..., \lambda_n$
+  denote distinct nonzero eigenvalus of $T$. Prove that }
+$$\sum \dim E(\lambda_j, T) \leq \dim \range T$$
+
+
+$$\dim V = \dim \range T + \dim \ns T$$
+since $\ns T = E(0, T)$ (follows from definitions and a moments' thought) we follow that
+$$\dim V = \dim \range T + \dim E(0, T)$$
+thererfore since
+$$\sum \dim E(\lambda_j, T) \leq V$$
+we follow that 
+$$\sum \dim E(\lambda_j, T) \leq \dim \range T + \dim E(0, T)$$
+$$\dim E(0, T) + \sum_{\lambda_j \neq 0} \dim E(\lambda_j, T) \leq \dim \range T + \dim E(0, T)$$
+$$\sum_{\lambda_j \neq 0} \dim E(\lambda_j, T) \leq \dim \range T$$
+as desired.
+
+\subsection{}
+
+\textit{Verify the assertion in Example 5.40}
+
+$$
+\begin{pmatrix}  41 & 7 \\
+  -20 & 74
+\end{pmatrix}
+\begin{pmatrix}
+  1 \\
+  4
+\end{pmatrix}
+=
+\begin{pmatrix}
+  69 \\
+  276
+\end{pmatrix}
+=
+69
+\begin{pmatrix}
+  1 \\
+  4
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  41 & 7 \\
+  -20 & 74
+\end{pmatrix}
+\begin{pmatrix}
+  7 \\
+  5
+\end{pmatrix}
+=
+\begin{pmatrix}
+  322 \\
+  230
+\end{pmatrix}
+=
+46
+\begin{pmatrix}
+  7 \\
+  5
+\end{pmatrix}
+$$
+
+thus we get that for this basis  everything holds.
+
+\subsection{}
+
+\textit{Suppose $R, T \in \map(F^3)$ each have 2, 6, 7 as eigenvalues. Prove that there exists
+  an invertible operator $S \in \map(F^3)$ such that $R = S \inv T S$}
+
+
 
 \end{document}
 
