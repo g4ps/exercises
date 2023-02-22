@@ -303,3 +303,7 @@
 \contentsline {subsection}{\numberline {5.3.9}}{123}{subsection.5.3.9}%
 \contentsline {subsection}{\numberline {5.3.10}}{124}{subsection.5.3.10}%
 \contentsline {subsection}{\numberline {5.3.11}}{124}{subsection.5.3.11}%
+\contentsline {subsection}{\numberline {5.3.12}}{124}{subsection.5.3.12}%
+\contentsline {subsection}{\numberline {5.3.13}}{125}{subsection.5.3.13}%
+\contentsline {subsection}{\numberline {5.3.14}}{125}{subsection.5.3.14}%
+\contentsline {chapter}{\numberline {6}Inner Product Spaces}{128}{chapter.6}%

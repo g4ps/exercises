@@ -4904,7 +4904,151 @@ thus we get that for this basis  everything holds.
 \textit{Suppose $R, T \in \map(F^3)$ each have 2, 6, 7 as eigenvalues. Prove that there exists
   an invertible operator $S \in \map(F^3)$ such that $R = S \inv T S$}
 
+Since $R$ and $T$ have $\dim F^3 = 3$ distinct eigenvalues, we follow that they are diagonalizable.
+Thus we can follow that there exist a basis $v_1, v_2, v_3$ of $V$, that consists of eigenvalues
+of $R$, and basis $u_1, u_2, u_3$ of $T$ that also consists of eigenvalues of $T$, both of
+which correspond to eigenvalues 2, 3 and 7 respectively.
 
+Define map
+$$S(\sum a_j v_j) = \sum a_j u_j$$
+which is invertible, because $\dim \range T = 3$. Thus we follow that for $v \in V$
+$$v = a_1 v_1 + a_2 v_2 + a_3 v_3 $$ 
+$$Rv = 2 a_1 v_1 + 6 a_2 v_2 + 7 a_3 v_3 $$ 
+$$S \inv T S v = S \inv T S (\sum a_j v_j) =  S \inv T (\sum a_j u_j) = S \inv (2 a_1 u_1 +
+6 a_2 u_2 + 7 a_3 u_3) = $$
+$$ = (2 a_1 S \inv u_1 + 6 a_2 S \inv u_2 + 7 a_3 S \inv u_3) = 2 a_1 v_1 + 6 a_2 v_2 + 7 a_3 v_3 =
+R(v)$$
+as desired.
+
+\subsection{}
+
+\textit{Find $T \in \map(C^3)$ such that $6$ and $7$ are eigenvalues of $T$ and such that
+  $T$ does not have a diagonal matrix with respect to any basis of $C^3$}
+
+In order for it now to be diagonalizable, we need for $T$ not to have 3 distinct eigenvalues. Thus
+let us frick around the matrix of the standard diagonale matrix.
+
+After some deloberation I came up with
+$$
+\begin{pmatrix}
+  6 & 0 & 0 \\
+  0 & 7 & 7 \\
+  0 & 0 & 7
+\end{pmatrix}
+$$
+which seems to satisfy the desired properties.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^3)$ is such that 6 and 7 are eigenvalueus of $T$. Furthermore,
+  suppose $T$ does not have a diagonal matrix with respect to any basis of $C^3$. Prove that
+  there exists $(x, y, z) \in F^3$ such that
+  $$T(x, y, z) = (17 + 8x, \sqrt{5} + 8y, 2\pi + 8z)$$}
+
+Since $T$ is not diagonalizable, we follow that 6 and 7 are the only eigenvalues of $T$. Thus we
+follow that $8$ is not an eigenvalue of $T$. Therefore $T - 8I$ is invertibe and surjective.
+Threrefore we follow that by surjectivity of $T - 8I$, that there exists $(x', y', z') \in C^3$
+such that
+$$(T - 8I)(x', y', z') = (17, \sqrt{5}, 2\pi)$$
+thus
+$$(T - 8I)(x', y', z') = (17, \sqrt{5}, 2\pi)$$
+$$T(x', y', z') - 8(x', y', z') = (17, \sqrt{5}, 2\pi)$$
+$$T(x', y', z') = (17, \sqrt{5}, 2\pi) + 8(x', y', z')$$\
+$$T(x', y', z') = (17 + 8x', \sqrt{5} + 8y', 2\pi + 8z')$$
+as desired.
+
+\subsection{}
+
+\textit{The Fibonacci sequence $F_1, F_2, ...$ is defined by}
+$$F_0 = 0$$
+$$F_1 = 1$$
+$$F_2 = 1$$
+$$F_n = F_{n - 2} + F_{n - 1}$$
+\textit{Define $T \in \map(R^3)$ by $T(x, y) = (y, x + y)$}
+
+I've extended the sequence back a bit becasuse I like zeroes.
+
+\textit{(a) Show that $T^n(0, 1) = (F_n, F_{n + 1})$ for each positive integer $n$.}
+
+This kinda follows from the definition, but we're going to use induction just in case. For
+the case $n = 1$ we've got
+$$T^1(0, 1) = T(0, 1) = (1, 1) = (F_1, F_2)$$
+
+For our hypothesis we've got that
+$$T^{n - 1}(0, 1) = (F_{n - 1}, F_n) $$
+and for our step we've got
+$$T^n(0, 1) = T(T^{n - 1}(0, 1)) = T(F_{n - 1}, F_n) = (F_n, F_{n - 1} + F_n) =
+(F_n, F_{n + 1})$$
+thus we follow that our inductive hypothesis is true for $n \in N$.
+
+\textit{(b) Find the eigenvalues of $T$.}
+
+Let $\lambda$ be an eigenvalue of $T$. Then we follow that
+
+$$
+\begin{cases}
+  \lambda x = y \\
+  \lambda y = x + y
+\end{cases}
+$$
+
+$$\lambda (\lambda x) = x + \lambda x$$
+$$\lambda^2  x = (1 + \lambda )x$$
+$$\lambda^2 = (1 + \lambda )$$
+$$\lambda^2 - \lambda - 1 = 0$$
+$$\lambda = \frac{1 \pm \sqrt{5}}{2}$$
+
+\textit{(c) Find a basis of $R^2$ consisting of eigenvalues of $T$}
+
+Let $c_1 = \frac{1 + \sqrt{5}}{2}$ and $c_2 = \frac{1 - \sqrt{5}}{2}$
+
+Suppose that $v_1, v_2$ are such vectors. Then we follow that
+
+$$Tv_1 = T(x, y) = c_1(x, y) = (y, x + y)$$
+thus if we fix $x = 1$, then we'll get that 
+$$c_1(1, y) = (y, x + y)$$
+$$c_1(1, y) = (c, 1 + c)$$
+$$c_1(1, c) = (c, 1 + c)$$
+thus one of our vectors is $v_1 = (1, c_1)$ and the other is $v_2 = (1, c_2)$.
+Octave seems to concur.
+
+\textit{(d) Use the solution to part (c) to compute $T^n(0, 1)$. Conclude that}
+$$F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1 + \sqrt{5}}{2}\right)^n -
+  \left(\frac{1 - \sqrt{5}}{2}\right)^n \right]$$
+
+We follow that
+$$v_1 - v_2 = (0, c_1 - c_2)$$
+thus
+$$\frac{1}{c_1 - c_2}(v_1 - v_2) = (0, 1)$$
+therefore
+$$T^n(0, 1) = T^n(\frac{1}{c_1 - c_2}(v_1 - v_2)) =
+\frac{1}{c_1 - c_2} T^n(v_1 - v_2) = \frac{1}{c_1 - c_2} (c_1^n v_1 - c_2^n v_2)$$
+thus
+$$F_n = \frac{1}{c_1 - c_2} c_1^n  - c_2^n $$
+since
+$$c_1 - c_2 = \frac{1 + \sqrt{5}}{2} - \frac{1 - \sqrt{5}}{2} =
+\frac{1 + \sqrt{5} - 1 + \sqrt{5}}{2} = \frac{2\sqrt{5}}{2} = \sqrt{5}$$
+thus by expanding $c_1$ and $c_2$ we've got 
+$$F_n = \frac{1}{c_1 - c_2} (c_1^n  - c_2^n) =
+\frac{1}{\sqrt{5}}\left[\left(\frac{1 + \sqrt{5}}{2}\right)^n -
+  \left(\frac{1 - \sqrt{5}}{2}\right)^n \right]$$
+as desired.
+
+\textit{(e) Use part (d) to conclude that for each positive integer $n$, the Fibonacci
+  number $F_n$ is the integer that is closest to}
+$$\frac{1}{\sqrt{5}}\left(\frac{1 + \sqrt{5}}{2}\right)$$
+
+$$F_n = \frac{1}{\sqrt{5}}\left[\left(\frac{1 + \sqrt{5}}{2}\right)^n -
+  \left(\frac{1 - \sqrt{5}}{2}\right)^n \right] =
+\frac{1}{\sqrt{5}}\left(\frac{1 + \sqrt{5}}{2}\right)^n -
+\frac{1}{\sqrt{5}} \left(\frac{1 - \sqrt{5}}{2}\right)^n  = $$
+
+Since $|\frac{1}{\sqrt{5}} \left(\frac{1 - \sqrt{5}}{2}\right)| < 0.5$ and
+$|\left(\frac{1 - \sqrt{5}}{2}\right)| < 1$ we follow that
+$$|\frac{1}{\sqrt{5}} \left(\frac{1 - \sqrt{5}}{2}\right)^n| < 0.5 $$
+therefore we've got our desired conclusion.
+
+\chapter{Inner Product Spaces}
 
 \end{document}
 
