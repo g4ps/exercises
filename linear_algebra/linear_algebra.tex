@@ -5050,6 +5050,186 @@ therefore we've got our desired conclusion.
 
 \chapter{Inner Product Spaces}
 
+\section{Inner Products and Norms}
+
+\subsection{}
+
+\textit{Show that the function that takes $((x_1, x_2), (y_1, y_2)) \in R^2 \times R^2$ to
+  $|x_1 y_1| + |x_2 y_2|$ is not an inner product on $R^2$.}
+
+Suppose that $\lambda < 0$ and $|x_1 y_1| + |x_2 y_2| \neq 0$. Then we follow that
+$$|\lambda x_1 y_1| + |\lambda x_2 y_2| = |\lambda ||x_1 y_1| + |\lambda ||x_2 y_2| =
+|\lambda |(|x_1 y_1| + |x_2 y_2|) \neq \lambda (|x_1 y_1| + |x_2 y_2|)$$
+thus we can follow that this function is not homogenous in the first slot, therefore it isn't
+linear.
+
+\subsection{}
+
+\textit{Show that the function that takes $((x_1, x_2, x_3), (y_1, y_2, y_3)) \in R^3 \times R^3$
+  to $x_1 y_1 + x_3 y_3$ is not an inner product on $R^3$.}
+
+Let $v = (0, 1, 0)$. Then we follow that
+$$x_1 x_1 + x_3 x_3 = 0$$
+but $v \neq 0$. Thus this function does not have definiteness property, and therefore it is not
+an inner product.
+
+\subsection{}
+
+\textit{Suppose $F = R$ and $V \neq 0$. Replace the positivity condition (which states that
+  $\langle v, v \rangle \geq 0$ for all $v \in V$) in the definition of an inner product with the
+  condition that $\langle v, v \rangle > 0$ for some $v \in V$. Show that this change in the
+  definition does not change the set of functions from $V \times V$ to $R$ that are inner
+  product on $V$.}
+
+We need to show that two sets of functions are equal. Forward inclusion is obvious
+$$\forall v \in V: f(v) \geq 0 \land (f(v) = 0 \iff v = 0) \land V \neq 0 \rightarrow
+\exists v \neq 0 \in V: f(v) > 0$$
+
+Thus let us work on a reverse inclusion. 
+Suppose that for some function $f: V \times V \to R$ we've got that there exists
+$v \in V$ such that $\langle v, v \rangle > 0$ and all of the conditions for inner product hold,
+except for positivity, which is unknown. Suppose that $u \in V$. If $u = 0$, then by definiteness
+we've got that $\langle u, u \rangle = 0$, thus $\langle u, u \rangle \geq 0$.
+Therefore suppose that $u \neq 0$. Suppose that $\langle u, u \rangle < 0$.
+Then we
+can follow that $u \neq v$ and that $u \neq \lambda v$
+because $F = R$ implies that $\lambda \in F \to \lambda^2 \geq 0$ and therefore 
+$$\langle \lambda v, \lambda v \rangle = \lambda^2 \langle v, v \rangle \geq 0$$
+Because they are not a scalar multiple of each other, we can follow that there exists a
+decomposition
+$$u = cv + w$$
+where $w$ is an orthogonal vector to $v$ (proof of existence of such a vector and
+orthogonal decomposition does not depend on truthfullness of positivity). Thus we
+follow that 
+$$\langle u, u \rangle = \langle cv + w, cv + w \rangle =
+\langle cv, cv \rangle  +  \langle w, w \rangle$$
+thus
+$$\langle w, w \rangle = \langle u, u \rangle - \langle cv, cv \rangle =
+\langle u, u \rangle - c^2\langle v, v \rangle < 0$$
+thus we follow that there exists $w$, which is orthogonal to $v$ and $\langle w, w \rangle < 0$
+
+Now let
+$$\kappa = - \frac{\langle v, v \rangle}{ \langle w, w \rangle}$$
+we follow that
+$$\kappa > 0$$
+and thus 
+$$\langle v, v \rangle = - \kappa \langle w, w \rangle$$
+$$\langle v, v \rangle + \kappa \langle w, w \rangle = 0$$
+$$\langle v, v \rangle +  \langle \sqrt{\kappa} w,  \sqrt{\kappa}w \rangle = 0$$
+and by pythagorean theorem we've got that 
+$$\langle v + \sqrt{\kappa} w, v + \sqrt{\kappa} w \rangle = 0$$
+Since $u$ is not a scalar multiple of $v$, we follow that $w$ is not a scalar multiple of
+$v$ and therefore $v + \sqrt{\kappa} w \neq 0$. Thus we follow that there exists a
+vector $v + \sqrt{\kappa} w \neq 0$, for which it is true that
+$$\langle v + \sqrt{\kappa} w, v + \sqrt{\kappa} w \rangle = 0$$
+which is a contradition of the definiteness clause. Thus we follow that there is no
+vector $u$ such that $\langle u, u \rangle < 0$. Thus we follow that
+$$u \in U \to \langle u, u \rangle \geq 0$$
+thus our clause implies positiveness, and therefore by double inclustion we follow that
+two sets are equal, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real inner product space.}
+
+\textit{(a) Show that $\langle u + v, u - v\rangle = ||u||^2 - ||v||^2$ for every
+$u, v \in V$.}
+
+$$\langle u + v, u - v\rangle = \langle u, u - v\rangle + \langle v, u - v\rangle =
+\langle u - v, u \rangle + \langle u - v, v\rangle =
+\langle u, u \rangle + \langle - v, u \rangle + \langle u, v\rangle +
+\langle - v, v\rangle  = $$
+$$ = \langle u, u \rangle - \langle v, u \rangle + \langle v, u\rangle -
+\langle v, v\rangle =
+\langle u, u \rangle  - \langle v, v\rangle =  ||u||^2 + ||v||^2$$
+
+\textit{(b) Show that if $u, v \in V$ have the same norm, then $u + v$ is orthogonal to
+  $u - v$}
+
+$$\langle u + v, u - v \rangle = ||u||^2 - ||v||^2 = ||u||^2 - ||u||^2 = 0$$
+where second equality comes from previous point.
+
+\textit{(c) Use part (b) to show that the diagonals of a rhombus are perpendicular to each other}
+
+It would've been nice to draw a picture here, but we follow that one of the diagonals
+is equal to sum of two vectors, while the other is equal to their difference. Thus we
+follow that by (b), they are orthogonal and therefore perperdicular.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is such that $||Tv|| \leq ||v||$ for every $v \in V$. Prove that
+  $T - \sqrt{2}I$ is invertible.}
+
+Suppose that it isn't. Then we follow that $\sqrt{2}$ is an eigenvalue of $T$, and therefore
+there exists a vector $v$ such that
+$$Tv = \sqrt{2} v$$
+thus
+$$||Tv|| = ||\sqrt{2}v|| = |\sqrt{2}| ||v|| > ||v||$$
+where the last inequality comes from the fact that $v \neq 0$ because it is an eigenvector, and
+therefore $||v|| > 0$ and $\sqrt{2} = |\sqrt{2}| > 1$. Thus we've got a contradition.
+
+\subsection{}
+
+\textit{Suppose $u, v \in V$. Prove that $\langle u, v \rangle = 0$ if and only if }
+$$||u|| \leq ||u + av||$$
+\textit{for all $a \in F$.}
+
+\textbf{In forward direction: }
+
+Suppose that $\langle u, v \rangle = 0$. Then we follow that
+$$\langle u, av \rangle = \overline{a} \langle u, v \rangle = \overline{a} 0 = 0$$
+thus we can conclude that $u$ and $av$ are orthogonal for every $a \in F$. Thus
+by pythagorean theorem we've got that
+$$||u + av||^2 = ||u||^2 + ||av||^2$$
+$$||u||^2 \leq ||u + av||^2$$
+$$||u|| \leq ||u + av||$$
+and we're justified to make those implication because we're working with non-negative reals.
+
+\textbf{In reverse direction: }
+
+Suppose that
+$$||u|| \leq ||u + av||$$
+for all $a \in F$. Then we follow that
+$$||u||^2 \leq ||u + av||^2$$
+$$\langle u, u \rangle \leq \langle u + av, u + av \rangle $$
+$$\langle u, u \rangle \leq \langle u, u \rangle  + \langle av, av \rangle +
+\langle u, av \rangle + \langle av, u \rangle $$
+$$0 \leq \langle av, av \rangle + \langle u, av \rangle + \langle av, u \rangle $$
+$$\langle av, av \rangle \geq  - \langle u, av \rangle - \langle av, u \rangle $$
+$$\langle av, av \rangle \geq  \langle -u, av \rangle + \langle av, -u \rangle $$
+$$|a^2| \langle v, v \rangle \geq  \langle -u, av \rangle + \overline{\langle -u, av \rangle} $$
+$$|a^2| \langle v, v \rangle \geq
+\overline{a} \langle -u, v \rangle + a \overline{\langle -u, v \rangle} $$
+$$ \langle v, v \rangle \geq
+\frac{\overline{a}}{|a|^2} \langle -u, v \rangle +
+\frac{a}{|a|^2}\overline{\langle -u, v \rangle} $$
+$$ \langle v, v \rangle \geq
+\frac{\overline{a}}{|a|^2} \langle -u, v \rangle + \overline{
+  \frac{\overline{a}}{|a|^2}\langle -u, v \rangle} $$
+$$ \langle v, v \rangle \geq
+2 \Re {\left(\frac{\overline{a}}{|a|^2} \langle -u, v \rangle \right)} $$
+Suppose that $\langle u, v \rangle \neq 0$. Then we follow that $v \neq 0$ and therefore
+$\langle v, v \rangle \neq 0$. Thus we can follow that we can make right hand side as large as we
+want, since $\frac{\overline{a}}{|a|^2}$ is unbounded. Thus we follow that there exists
+$a$ such that above-mentioned inequality does not hold, which is a contradiction. Therefore
+we conclude that $\langle u, v \rangle = 0$, as desired.
+
+\subsection{}
+
+\textit{Suppose $u, v \in V$. Prove that $||au + bv|| = ||bu + av||$ for all $a, b \in R$
+  if and only if $||u|| = ||v||$.}
+
+Suppose that $||au + bv|| = ||bu + av||$ for $a, b \in R$. Then we follow that it is true for
+$a = 1$ and $b = 0$. Thus
+$$||au + bv|| = ||1u + 0v|| = ||u|| = ||bu + av|| = ||0u + 1v|| = ||v||$$
+
+Conversely, suppose that $||u|| = ||v||$. Then we follow that there exists decomposition
+$$u = cv + w$$
+thus
+$$||au + bv|| = ||au + av + (b - a)v|| = ||a(u + v) + (b - a)v||$$
+$$||bu + av|| = ||(b - a)u + au + av|| = ||(b - a)u + a(u + v)||$$
+TODO
+
 \end{document}
 
 %%% Local Variables:
