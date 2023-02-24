@@ -869,7 +869,7 @@ Gonna skip this one, as it's tedious, but pretty self-explanatory.
 
 \section{Standard notations and common functions}
 
-\subsection{}
+\subsection*{3.3-1}
 
 \textit{Show that if $f(n)$ and $g(n)$ are monotonically increasing functions, then so are
   the functions $f(n) + g(n)$, $f(g(n))$, and if $f(n)$ and $g(n)$ are in addition nonnegative,
@@ -884,7 +884,7 @@ and if they are nonnegative then
 $$f(x_1) g(x_1) \leq f(x_2) g(x_1) \leq f(x_1) g(x_2)$$
 as desired.
 
-\subsection{}
+\subsection*{3.3-2}
 \textit{Prove that $\lfloor an \rfloor + \lceil (1 - a)n \rceil = n$ for any integer $n$ and
   any real numner $a$ in range $0 < a < 1$}
 $$\lfloor an \rfloor + \lceil (1 - a)n \rceil =
@@ -894,14 +894,113 @@ $$\lfloor an \rfloor + \lceil (1 - a)n \rceil =
 $$
 as desired.
 
-\subsection{}
+\subsection*{3.3-3}
 
 \textit{Use equation (3.14) or other means to show that $(n + o(n))^k = \Theta(n^k)$ for
   any real constant $k$. Conclude that $\lceil n \rceil^k = \Theta(n^k)$ and
   $\lfloor n \rfloor^k = \Theta(n^k)$.}
 
+% $$1 + n + o(n) \leq e^{n + o(n)}$$
+% $$\lg(1 + n + o(n)) \leq n + o(n)$$
+% $$\lg(1 + n + o(n)) \leq n + o(n)$$
+
+% $$c_1  n^k  \leq (n + o(n))^k \leq c_2 n^k$$
+% $$\lg(c_1  n^k)  \leq \lg((n + o(n))^k) \leq \lg(c_2 n^k) $$
+% $$\lg(c_1) +  \lg(n^k)  \leq k \lg(n + o(n)) \leq \lg(c_2) + \lg( n^k) $$
+% $$\lg(c_1) +  k \lg(n)  \leq k \lg(n + o(n)) \leq \lg(c_2) + k \lg( n) $$
+% $$\lg(c_1) \leq k \lg(n + o(n)) - k \lg(n) \leq \lg(c_2) $$
+% $$\lg(c_1) \leq k (\lg(n + o(n)) -  \lg(n)) \leq \lg(c_2) $$
+% $$\lg(c_1) \leq k (\lg(\frac{n + o(n)}{n}))  \leq \lg(c_2) $$
+% $$\lg(c_1) \leq k (\lg(\frac{n}{n} + \frac{o(n)}{n}))  \leq \lg(c_2) $$
 
 
+We know that for $f \in o(n)$, it is true that 
+$$\lim_{n \to \infty}{\frac{f(x)}{n}} = 0$$
+Since this functions has a limit, we follow that it is bounded. Thus there exists $M > 0$
+such that
+$$|\frac{f(x)}{n}| < M$$
+$$-M < \frac{f(x)}{n} < M$$
+since we're talking about non-negative functions, we can follow that
+$$0 \leq \frac{f(x)}{n} \leq M$$
+thus
+$$0 \leq \frac{f(x)}{n} \leq M$$
+$$1 \leq 1 + \frac{f(x)}{n} \leq 1 +  M$$
+$$\lg(1) \leq \lg(1 + \frac{f(x)}{n}) \leq \lg(1 +  M)$$
+$$\lg(1) \leq \lg(\frac{n}{n} + \frac{f(x)}{n}) \leq \lg(1 +  M)$$
+$$\lg(1) \leq \lg(\frac{n + f(x)}{n}) \leq \lg(1 +  M)$$
+if $k > 0$ (if $k \leq 0$, then we either have a trivial case, or the logic is the same)
+$$k \lg(1) \leq k \lg(\frac{n + f(x)}{n}) \leq k \lg(1 +  M)$$
+$$k \lg(1) \leq k (\lg(n + f(x)) - \lg(n)) \leq k \lg(1 +  M)$$
+$$k \lg(1)  + k \lg(n) \leq k (\lg(n + f(x))  \leq k \lg(1 +  M) + k \lg(n)$$
+let $c_1 = 1^{1/k}$ and $c_2 = (1 +  M)^{1/k}$
+$$k \lg(c_1^{1/k})   + k \lg(n) \leq k (\lg(n + f(x))  \leq k \lg(c_2^{1/k}) + k \lg(n)$$
+$$k (\lg(c_1^{1/k})   +  \lg(n)) \leq k (\lg(n + f(x))  \leq k (\lg(c_2^{1/k}) + \lg(n))$$
+$$k (\lg(c_1^{1/k}n)) \leq k (\lg(n + f(x))  \leq k (\lg(c_2^{1/k}n))$$
+$$\lg(c_1n^k) \leq \lg((n + f(x))^k)  \leq \lg(c_2n^k)$$
+$$c_1n^k \leq (n + f(x))^k  \leq c_2n^k$$
+thus we follow that
+$$f \in o(n) \to (n + f(x))^k \in \Theta(n^k)$$
+
+We can follow that
+$$ \pm 1 \in o(n)$$
+therefore 
+$$\lfloor n \rfloor^k  = (n + o(n))^k$$
+$$\lceil n \rceil^k  = (n + o(n))^k$$
+therefore
+$$\lfloor n \rfloor^k = \Theta(n^k)$$
+$$\lceil n \rceil^k  = \Theta(n^k)$$
+as desired.
+
+\subsection*{3.3-4}
+
+\textit{Prove the following: }
+
+\textit{(a) Equation (3.21)}
+
+$$a^{\log_b{c}} = c^{\log_b{a}}$$
+$$\log_a{a^{\log_b{c}}} = \log_a{c^{\log_b{a}}}$$
+$$\log_b{c} = \log_b{a} \log_a{c}$$
+$$\log_b{c} = \log_b{a} \frac{\log_b{c}}{\log_b{a}}$$
+$$\log_b{c} = \log_b{c}$$
+$$c = c$$
+as desired.
+
+\textit{(b) Equations (3.26 - 3.28)}
+
+
+$$\frac{n!}{n^n} = \prod_{i = 1}^n{\frac{i}{n}} = \frac{1}{n} \prod_{i = 2}^n{\frac{i}{n}}$$
+Since the part under $\prod$ is a product of numbers $0 \leq x \leq 1$, we follow that
+$$\frac{1}{n} \prod_{i = 2}^n{\frac{i}{n}} \leq \frac{1}{n}$$
+and therefore 
+$$\lim_{n \to \infty}{\frac{n!}{n^n}} = 0$$
+thus
+$$n! = o(n^n)$$
+
+$$\frac{n!}{2^n} = \prod_{i = 1}^{n}{\frac{i}{2}} =
+\frac{1}{2} \frac{n}{2} \prod_{i = 2}^{n - 1}{\frac{i}{2}} =
+\frac{n}{4} \prod_{i = 2}^{n - 1}{\frac{i}{2}} = 
+$$
+part under $\prod$ is greater or equal to $1$, therefore
+$$\frac{n}{4} \prod_{i = 2}^{n - 1}{\frac{i}{2}} \geq \frac{n}{4}$$
+which converges to infinity. Thus
+$$\lim_{n \to \infty}{\frac{n!}{2^n}} = \infty$$
+therefore
+$$n! = \omega(2^n)$$
+
+TODO
+
+
+\subsection*{3.3-8}
+
+GOTO linear algebra, 5.3.14
+
+\section{Problems}
+
+\subsection{}
+
+Everything follows from this crudely-derived limit
+$$\lim_{n \to \infty}{\frac{\sum_{j = 1}^d {a_j n^j}}{n^k}} = a_d n^{d - k} $$
+where $d, k \in N \cup \{0\}$.
 
 
 \end{document}

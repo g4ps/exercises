@@ -50,6 +50,5 @@
 \contentsline {subsection}{\numberline {3.2.5}}{24}{subsection.3.2.5}%
 \contentsline {subsection}{\numberline {3.2.6}}{25}{subsection.3.2.6}%
 \contentsline {section}{\numberline {3.3}Standard notations and common functions}{25}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}}{25}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}}{25}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}}{26}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Problems}{28}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}}{28}{subsection.3.4.1}%

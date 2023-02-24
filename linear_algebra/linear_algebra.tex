@@ -11,6 +11,7 @@
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
 \begin{document}
@@ -5226,8 +5227,287 @@ $$||au + bv|| = ||1u + 0v|| = ||u|| = ||bu + av|| = ||0u + 1v|| = ||v||$$
 Conversely, suppose that $||u|| = ||v||$. Then we follow that there exists decomposition
 $$u = cv + w$$
 thus
-$$||au + bv|| = ||au + av + (b - a)v|| = ||a(u + v) + (b - a)v||$$
-$$||bu + av|| = ||(b - a)u + au + av|| = ||(b - a)u + a(u + v)||$$
+$$||au + bv||^2 = \langle au + bv, au + bv \rangle  = \langle au, au \rangle +
+\langle bv, bv \rangle + \langle au, bv \rangle + \langle bv, au \rangle = $$
+$$ =
+|a|^2 ||u||^2 + |b|^2 ||v||^2 + ab \langle u, v \rangle + ab \langle v, u \rangle $$
+
+$$||bu + av||^2 = \langle bu + av,  bu + av, \rangle  = \langle bu, bu \rangle +
+\langle av, av \rangle + \langle bu, av \rangle + \langle av, bu \rangle = $$
+$$ =
+|a|^2 ||v||^2 + |b|^2 ||u||^2 + ab \langle u, v \rangle + ab \langle v, u \rangle =
+|a|^2 ||u||^2 + |b|^2 ||v||^2 + ab \langle u, v \rangle + ab \langle v, u \rangle = 
+$$
+thus
+$$||au + bv||^2 = ||bu + av||^2$$
+$$||au + bv|| = ||bu + av||$$
+as desired.
+
+
+\subsection{}
+
+\textit{Suppose $u, v \in V$ and $||u|| = ||v|| = 1$ and $\langle u, v \rangle = 1$. Prove that
+  $u = v$.}
+
+Let us use the orthogonal decomposition on that one and costruct $u$ in terms of $v$.
+$$c = \frac{\langle u, v \rangle = 1}{||v||^2} = \frac{1}{1} = 1$$
+$$w = u - 1v = u - v$$
+then we follow that
+$$u = cv + w = v + u - v = u$$
+which is not helpful. But if we try to construct $v$ in terms of $u$, then we'll get also not
+a helpful result.
+
+We can try to use a Cauchy-Schwartz inequality to get that
+$$\langle u, v \rangle = ||u|| ||v||$$
+and thus we can follow that $u$ is a scalar multiple of $V$ (and vice versa, since they are not
+equal to zero, because they are not orthogonal.)
+
+$$\langle u - v, u - v \rangle =
+||u||^2 + ||v||^2 - \langle u, v \rangle  - \langle v, u \rangle =
+||u||^2 + ||v||^2 - \langle u, v \rangle  - \overline{\langle u, v \rangle} =  1 + 1 - 1 - 1 = 0 $$
+thus we follow that $u - v = 0$ by definiteness property of inner product.
+Therefore $u = v$, as desired.
+
+\subsection{}
+
+\textit{Suppose $u, v \in V$ and $||u|| \leq 1$ and $||v|| \leq 1$. Prove that }
+$$\sqrt{1 - ||u||^2}\sqrt{1 - ||v||^2} \leq 1 - |\langle u, v \rangle|$$
+
+$$\sqrt{1 - ||u||^2}\sqrt{1 - ||v||^2} \leq 1 - |\langle u, v \rangle|$$
+
+By Cauchy-Schwartz
+$$|\langle u, v \rangle| \leq ||u||||v||$$
+$$1 - |\langle u, v \rangle| \geq 1 - ||u||||v||$$
+$$\sqrt{1 - ||u||^2}\sqrt{1 - ||v||^2} \leq 1 - ||u||||v||$$
+$$(1 - ||u||^2)(1 - ||v||^2) \leq (1 - ||u||||v||)^2$$
+$$1 - ||u||^2 - ||v||^2 + (||u||||v||)^2 \leq 1 - 2||u||||v|| + (||u||||v||)^2$$
+$$1 - ||u||^2 - ||v||^2 \leq 1 - 2||u||||v||$$
+$$||u||^2 + ||v||^2 \geq 2||u||||v||$$
+$$||u||^2 - 2||u||||v|| + ||v||^2 \geq 0$$
+$$(||u|| - ||v||)^2 \geq 0$$
+which is given.
+
+\subsection{}
+
+\textit{Find vectors $u, v \in R^2$ such that $u$ is a scalar multiple of $(1, 3)$,
+  $v$ is orthogonal to $(1, 3)$ and $(1, 2) = u + v$}
+
+Let $u' = (1, 3)$. We follow that $v' = (-3, 1)$ will suffice as a vector that is orthogonal to
+$u$. Thus we need to represent $(1, 2)$ in terms of basis of $u'$ and $v'$, which we can do
+by reducing some linear equation
+$$
+\begin{cases}
+  1 x - 3 y = 1 \\
+  3 x + 1 y = 2 \\ 
+\end{cases}
+$$
+$$
+\begin{cases}
+  1 x - 3 y = 1 \\
+  10 y = -1 \\ 
+\end{cases}
+$$
+$$
+\begin{cases}
+  1 x - 3 y = 1 \\
+  y = -0.1 \\ 
+\end{cases}
+$$
+$$
+\begin{cases}
+  x + 0.3  = 1 \\
+  y = -0.1 \\ 
+\end{cases}
+$$
+$$
+\begin{cases}
+  x = 0.7 \\
+  y = -0.1 \\ 
+\end{cases}
+$$
+
+Thus we follow that if we set $v = (0.3, -0.1)$
+and $u = (0.7, 2.1) = 0.7(1, 3)$ then we'll
+get the desired result.
+
+\subsection{}
+
+\textit{Prove that }
+$$16 \leq (a + b + c + d)(\frac 1 a + \frac 1 b + \frac 1 c + \frac 1 d)$$
+\textit{for all positive numbers $a, b, c, d$.}
+
+
+Let
+$$v = (\sqrt{a}, \sqrt{b}, \sqrt{c}, \sqrt{d})$$
+and
+$$u = \left(\sqrt{\frac 1 a}, \sqrt{\frac 1 b}, \sqrt{\frac 1 c}, \sqrt{\frac 1 d}\right)$$
+Then we follow that
+$$v \cdot u = \sum_{i \in [a, b, c, d]}{\sqrt{i} \sqrt{\frac{1}{i}}} =
+\sum_{i \in [a, b, c, d]}{\sqrt{i \frac{1}{i}}} =
+\sum_{i \in [a, b, c, d]}{1} = 4 = |4| = |\langle v,  u \rangle|$$
+thus
+$$|\langle v,  u \rangle|^2 = 16$$
+and
+$$||v||^2 = \sum_{i \in [a, b, c, d]}{\sqrt{i}\sqrt{i}} =
+\sum_{i \in [a, b, c, d]}{|i|} = \sum_{i \in [a, b, c, d]}{i} = (a + b + c + d)$$
+$$||u||^2 = \sum_{i \in [a, b, c, d]}{\sqrt{\frac 1 i}\sqrt{\frac 1 i}} =
+\sum_{i \in [a, b, c, d]}{\frac 1 i} = \left(\frac 1 a + \frac 1 b + \frac 1 c + \frac 1 d\right)$$
+
+By Cauchy-Schwartz we've got that
+$$|\langle u, v \rangle | \leq ||u||||v||$$
+$$|\langle u, v \rangle |^2 \leq ||u||^2||v||^2$$
+$$16 \leq (a + b + c + d)\left(\frac 1 a + \frac 1 b + \frac 1 c + \frac 1 d \right)$$
+
+and in general we've got that
+$$2^n \leq \left(\sum_{i = 1}^n{a_i} \right)\left(\sum_{i = 1}^n{\frac 1 a_i} \right)$$
+for $a_i > 0$, which is neat.
+
+\subsection{}
+
+\textit{Prove that }
+$$(x_1 +  ... + x_n)^2 \leq n(x_1^2 + ... + x_n^2)$$
+\textit{for all positive integers and all real numbers $x_1, ..., x_n$.}
+
+
+
+maybe something along the lines of
+
+$$u = (.. x_j ...) $$
+$$v = (1, 1, ..., 1)$$
+$$||u||^2 = \sum{x_j^2}$$
+$$||v||^2 = \sum{1^2} = n$$
+and
+$$|\langle u, v \rangle | = |\sum{x_j}|$$
+and thus
+$$|\langle u, v \rangle |^2 = |\sum{x_j}|^2 = (\sum{x_j})^2$$
+thus by using Cauchy-Schwartz inequality and presented vectors, we'll get the desired conclusion.
+
+\subsection{}
+
+\textit{Suppose $u, v$ are nonzero vectors in $R^2$. Prove that }
+$$\langle u, v \rangle  = ||u||||v|| \cos \theta$$
+
+By using the picture, which I will not provide, and the humble law of cosines,  we follow that
+$$||u - v||^2 = ||u||^2 + ||v||^2 - 2||u||||v|| \cos \theta$$
+$$||u||^2 + ||v||^2 - \eangle{u, v} - \eangle{v, u} = ||u||^2 + ||v||^2 - 2||u||||v|| \cos \theta$$
+$$ - 2\eangle{v, u} =  - 2 ||u||||v|| \cos \theta$$
+$$\eangle{v, u} =  ||u||||v|| \cos \theta$$
+as desired.
+
+\subsection{}
+
+\textit{Not gonna copy that text}
+
+$\arccos$ is a function, which is defined on domain $[-1, 1]$, therefore in order for
+to restrict domain we gotta have the Cauchy-Schwatrz
+
+\subsection{}
+
+\textit{Prove that}
+$$\left(\sum_{j = 1}^{n}{a_j b_j}\right)^2 \leq \left(\sum_{j = 1}^{n}{j a_j^2}\right)
+\left(\sum_{j = 1}^{n}{\frac{b_j^2}{j} }\right)$$
+
+\textit{for $a_j, b_j \in R$.}
+
+Let
+$$u = (..., \sqrt{j} a_j, ...)$$
+$$v = (..., \frac{b_j}{\sqrt{j}}, ...)$$
+then we follow that
+$$||u||^2 = \sum{j a_j^2}$$
+$$||v||^2 = \sum{\frac{b_j^2}{j}}$$
+$$\eangle{u, v} = \sum{\frac{b_j}{\sqrt{j}} \sqrt{j} a_j } =
+\sum{a_j b_j }$$
+$$|\eangle{u, v}|^2 = \eangle{u, v}^2 = (\sum{a_j b_j })^2$$
+thus Cauchy-Schwartz inequality implies the desired result.
+
+\subsection{}
+
+\textit{Suppose $u, v \in V$ are such that }
+$$||u|| = 3, ||u + v|| = 4, ||u - v|| = 6$$
+\textit{What number does $||v||$ equal?}
+
+$$\eangle{u + v, u + v} = \eangle{u, u} + \eangle{v, v} + \eangle{u, v} + \eangle{v, u} = 16 $$
+$$\eangle{u - v, u - v} = \eangle{u, u} + \eangle{v, v} - \eangle{u, v} - \eangle{v, u} = 36 $$
+$$\eangle{u + v, u + v} + \eangle{u - v, u - v} = 2 \eangle{u, u} + 2 \eangle{v, v} = 52$$
+$$\eangle{u, u} + \eangle{v, v} = 26$$
+$$9 +  \eangle{v, v} = 26$$
+$$\eangle{v, v} = 17$$
+$$||v|| = \sqrt{\eangle{v, v}} = \sqrt{17}$$
+
+\subsection{}
+
+\textit{Prove or disprove: there is an inner product on $R^2$ such that the associated norm
+  is given by}
+$$||(x, y)|| = \max\{x. y\}$$
+\textit{for all $(x, y) \in R^2$}
+
+for $x = (-1, -1)$ we've got that
+$$||x|| = \sqrt{\eangle{x, x}}= -1$$
+and since we're working with real numbers, we follow that there is no such number.
+
+We also don't have such a product in complex numbers, since such norm would violate
+positivity clause of inner product definition.
+
+\subsection{}
+
+\textit{Suppose $p > 0$. Prove that there is an inner product on $R^2$ such that the associated
+  norm is given by}
+$$||(x, y)|| = (x^p + y^p)^{1/p}$$
+\textit{for all $(x, y) \in R^2$ if and only if $p = 2$.}
+
+Since
+$$||(x, y)|| = (x^p + y^p)^{1/p} = \sqrt{\eangle{(x, y), (x, y)}}$$
+thus 
+$$(x^p + y^p)^{1/p} = \sqrt{\eangle{(x, y), (x, y)}}$$
+$$(x^p + y^p)^{2/p} = \eangle{(x, y), (x, y)}$$
+
+We follow
+$$((\lambda x)^p +(\lambda y)^p)^{2/p} =
+(\lambda^p x^p +\lambda^p y^p)^{2/p} =
+(\lambda^p)^{2/p}(x^p + y^p)^{2/p} = (\lambda^p)^{2/p}(x^p + y^p)^{2/p} = (\lambda)^2(x^p + y^p)^{2/p}$$
+therefore we don't lose homogeneity.
+
+$$((x + x')^2 + (y + y')^2) = x^2 + 2xx' + x'^2 + y^2 + 2yy' + y'^2 = \eangle{(x, y), (x, y)} +
+\eangle{(x', y'), (x', y')} + 2\eangle{(x, y), (x', y')}$$
+$$\eangle{(x + x', y + y'), (x + x', y + y')} =$$
+$$\eangle{u + v, u + v} = \eangle{u, u} + \eangle{v, v} + 2\eangle{u, v}$$
+we've got this expantion only for the power of $2$, therefore we follow that in order to
+have valid additivity in the first slot we've got to have $p = 2$.
+
+Reverse case is trivial, if $p = 2$, then we've got a Eucledian inner product, that will suffice.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is a real innner product space. Prove that}
+$$\eangle{u, v} = \frac{|| u + v||^2 - ||u - v||^2 }{4}$$
+\textit{for all $u, v \in V$.}
+
+$$\frac{|| u + v||^2 - ||u - v||^2 }{4} = \frac{\eangle{u + v} - \eangle{u - v}}{4} =
+\frac{2\eangle{u, v} + 2\eangle{u, v}}{4} = \eangle{u, v}$$
+as desired. 6.1.16 has proper expansions, that will demonstrate the case more clearly.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex inner product space. Prove that }
+$$\eangle{u, v} = \frac{|| u + v||^2 - ||u - v||^2 + || u + iv||^2i - ||u - iv||^2i }{4}$$
+\textit{for all $u, v \in V$.}
+
+$$\frac{|| u + v||^2 - ||u - v||^2 + || u + iv||^2i - ||u - iv||^2i }{4} =
+\frac{\eangle{u + v} - \eangle{u - v} + \eangle{u - iv}i - \eangle{u - iv}i }{4} = $$
+$$ = \frac{2 \eangle{u, v} + 2\eangle{v, u} + 2 \eangle{u, iv} i + 2\eangle{iv, u} i  }{4} =
+\frac{2 \eangle{u, v} + 2\eangle{v, u} +
+  2 \eangle{u, v} \overline{i}  i + 2\eangle{v, u} i^2  }{4} = $$
+$$ = \frac{2 \eangle{u, v} + 2\eangle{v, u} +
+  2 \eangle{u, v}  - 2\eangle{v, u}   }{4}  = \frac{4 \eangle{u, v} +  }{4} =  \eangle{u, v} $$
+how nice
+
+\subsection{}
+
+\textit{Show that if $||||$ is a notm on $U$ satisfying the parallelogram equality, then there
+  is an inner product on $u$ such that $||u|| = \eangle{u, u}^{1/2}$ for all $u \in U$.}
+
 TODO
 
 \end{document}
