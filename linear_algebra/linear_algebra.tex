@@ -5510,6 +5510,101 @@ how nice
 
 TODO
 
+\subsection{}
+
+\textit{Show that the square of an average is less than or equal to the average of squares. More
+  precisely, show that if $a_1, ..., a_n \in R$, then the square of the average is less than or
+  equal to the average of $a_1^2, ..., a_n^2$}
+
+From exercise 6.1.12 we've got that for reals $a_1, ..., a_n$ we've got that
+$$(\sum{a_j})^2 \leq n \left(\sum{a_j^2}\right)$$
+thus we follow that
+$$\frac{1}{n^2}(\sum{a_j})^2 \leq \frac{1}{n} \left(\sum{a_j^2}\right)$$
+$$\left(\frac{\sum{a_j}}{n}\right)^2 \leq \frac{\sum{a_j^2}}{n} $$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $V_1, ..., V_n$ are inner product spaces. Show that the equation}
+$$\eangle{(u_1, ..., u_n), (v_1, ..., v_n)} = \eangle{u_1, v_1} + ... + \eangle{u_n, v_n}$$
+\textit{defined an inner product on $V_1 \times ... \times V_n$}
+
+Given function satisfies positivity and definiteness by positiveness and definiteness
+of respective inner product spaces.
+
+Let $u = (u_1, ..., u_n), v = (v_1, ..., v_n), w = (w_1, ..., w_n)
+\in V_1 \times ... \times V_n$ and $\lambda \in F$. Then we follow that
+$$\eangle{\lambda u, v} = \sum{\eangle{\lambda u_j v_j }} =
+\sum{\lambda \eangle{u_j v_j }} = \lambda  \sum{\eangle{u_j v_j }} = \lambda \eangle{u, v}$$
+$$\eangle{u + w, v} = \sum {\eangle{u_j + w_j, v_j}} =
+\sum {(\eangle{u_j, v_j} + \eangle{w_j, v_j})} =
+\sum {\eangle{u_j, v_j}} + \sum {\eangle{w_j, v_j}} = \eangle{u, v} + \eangle{w, v}$$
+thus we follow that we've got a linearity in the first slot.
+$$\eangle{u, v} = \sum{\eangle{u_j, v_j}} = \sum{\overline{\eangle{v_j, u_j}}} =
+\overline{\sum{\eangle{v_j, u_j}}} = \overline{\eangle{v, u}}$$
+therefore we've got conjugate symmetry as well. Thus we follow that given function is an
+inner product by definition, as desired.
+
+\subsection{}
+
+\textit{Suppose $S \in \map(V)$ is an injective operator on $V$. Define
+  $\langle \cdot, \cdot \rangle_1$ by}
+$\langle u, v \rangle_1 = \eangle{Su, Sv}$
+\textit{for $u, v \in V$. Show that $\langle \cdot, \cdot \rangle_1$ is an inner product on $V$.}
+
+We've got positivity and conjugate summetry for free from the previous inner product.
+$$\eangle{\lambda u + w, v}_1 = \eangle{S(\lambda u + w), S(v)} =
+\eangle{\lambda S u + Sw, S(v)} = \lambda  \eangle{S u, S(v)} + \eangle{Sw, Sv}$$
+thus we follow that we have linearity in the first slot.
+From injectivity of $S$ we follow that
+$$ v = 0 \iff Sv = 0 \iff \eangle{Sv, Sv} = 0 \iff \eangle{v, v}_1 = 0$$
+thus injectivity of $S$ is equivalent to definiteness of our function. Thus we follow that
+given function is an inner product, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $S \in \map(V)$ is nont injective. Define $\langle \cdot, \cdot \rangle_1$ as in
+  the exercise above. Explain why $\langle \cdot, \cdot \rangle_1$ is not an inner product on
+  $V$.}
+
+Because $S$ is not injective we follow that there exists $v \neq 0$ such that
+$$Sv = 0$$
+thus
+$$v \neq 0 \land \langle v, v\rangle_1 = \eangle{Sv, Sv} = 0$$
+which is a violation of definiteness clause.
+
+\subsection{}
+
+\textit{Suppose $f, g$ are differentiable functions from $R$ to $R^n$.}
+
+\textit{(a) Show that}
+$$\eangle{f(t), g(t)}' = \eangle{f'(t), g(t)} + \eangle{f(t), g'(t)}$$
+
+Let us define a function
+$$q(x) = \eangle{f(t), g(t)}$$
+then I think that we need to find $q'(x)$.
+
+This identity is clearly simular to the identity for the differentiation of the
+product of functions. Thus we
+probably want to show that $\eangle{f(t), g(t)}$ is a product of some functions.
+
+If we want to investigate the Eucledian product, then we're getting that
+$$\eangle{f(t), g(t)} = \sum{f_j(t)  g_j(t)}$$
+thus
+$$\eangle{f(t), g(t)}' = \sum{f_j(t)' g_j(t) + f_j(t)g_j'(t)} =
+\sum{f_j(t)' g_j(t)} + \sum{f_j(t)g_j'(t)} = \eangle{f'(t), g(t)} + \eangle{f(t), g'(t)}$$
+
+I can't follow any further for the general case of the innerp product, therefore I'm
+going to assume that we're only need to ccover the Eucledean product for this case.
+
+\textit{(b) Suppose $c > 0$ and $||f(t)|| = c$ for every $t \in R$. Show that
+  $\eangle{f'(t), f(t)} = 0$ for every $t \in R$. }
+
+Suppose taht $||f(t)|| = c$
+
+TODO
+
 \end{document}
 
 %%% Local Variables:

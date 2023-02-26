@@ -52,3 +52,4 @@
 \contentsline {section}{\numberline {3.3}Standard notations and common functions}{25}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Problems}{28}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}}{28}{subsection.3.4.1}%
+\contentsline {chapter}{\numberline {4}Divide-and-Conquer}{29}{chapter.4}%

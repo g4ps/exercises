@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  24 FEB 2023 20:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.12.31)  26 FEB 2023 20:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -593,18 +593,40 @@ Overfull \hbox (15.9844pt too wide) detected at line 5498
 [] \OT1/cmr/m/n/10.95 = [] =
  []
 
-[140] (./linear_algebra.aux)
+[140]
+Overfull \hbox (30.01431pt too wide) detected at line 5541
+\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/1
+0.95 w; v\OMS/cmsy/m/n/10.95 i \OT1/cmr/m/n/10.95 = [] [] = [] [] = [] [] + [] 
+[] = \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u; v\OMS/cmsy/m/n/10.95 i \OT1/cm
+r/m/n/10.95 + \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 w; v\OMS/cmsy/m/n/10.95 
+i
+ []
+
+[141]
+Overfull \hbox (39.8963pt too wide) detected at line 5596
+\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
+95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
+t/10.95 t\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i[] \OT1/cmr/m/n/10.95 = [] []
+ = [] [] + [] [] = \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.
+95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/
+n/10.95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i \OT1/cm
+r/m/n/10.95 + \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OM
+L/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g[]\OT1/cmr/m/n/10.
+95 (\OML/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i
+ []
+
+[142] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 0589ED5881B36EA404004479A804CD12;20861.
+(rerunfilecheck)             Checksum: 370D4E65DAFB5EEDED8A0476CD344A29;21141.
  ) 
 Here is how much of TeX's memory you used:
- 9834 strings out of 478238
- 150799 string characters out of 5850455
+ 9846 strings out of 478238
+ 150995 string characters out of 5850455
  444034 words of memory out of 5000000
- 27508 multiletter control sequences out of 15000+600000
+ 27513 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,356b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,356b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -619,10 +641,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (141 pages, 564485 bytes).
+Output written on linear_algebra.pdf (143 pages, 570477 bytes).
 PDF statistics:
- 2463 PDF objects out of 2487 (max. 8388607)
- 2263 compressed objects within 23 object streams
- 475 named destinations out of 1000 (max. 500000)
- 2649 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2497 PDF objects out of 2984 (max. 8388607)
+ 2295 compressed objects within 23 object streams
+ 482 named destinations out of 1000 (max. 500000)
+ 2689 words of extra memory for PDF output out of 10000 (max. 10000000)
 
