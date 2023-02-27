@@ -28,7 +28,9 @@ what's gonna happen afterwards.
 
 \chapter*{Glossary}
 
-FTLM - Fundamental Theorem of Linear Maps 
+FTLM - Fundamental Theorem of Linear Maps
+lhs - left hand side
+rhs - right hand side 
 
 \chapter{Vector Spaces}
 \section{$R^n$ and $C^n$}
@@ -5596,14 +5598,165 @@ $$\eangle{f(t), g(t)}' = \sum{f_j(t)' g_j(t) + f_j(t)g_j'(t)} =
 \sum{f_j(t)' g_j(t)} + \sum{f_j(t)g_j'(t)} = \eangle{f'(t), g(t)} + \eangle{f(t), g'(t)}$$
 
 I can't follow any further for the general case of the innerp product, therefore I'm
-going to assume that we're only need to ccover the Eucledean product for this case.
+going to assume that we're only need to cover the Eucledean product for this case.
 
 \textit{(b) Suppose $c > 0$ and $||f(t)|| = c$ for every $t \in R$. Show that
   $\eangle{f'(t), f(t)} = 0$ for every $t \in R$. }
 
-Suppose taht $||f(t)|| = c$
+The intuitive notion is simple: if the function does not change its norm, then it's on the circle
+and therefore its derivative is tangent to the function.
+
+Suppose that $||f(t)|| = c$. Then we follow that
+$$||f(t)||^2 = c^2$$
+$$\eangle{f(t), f(t)} = c^2$$
+$$\eangle{f(t), f(t)}' = 0$$
+by standard rules of differentiation. By previous point we follow that 
+$$\eangle{f(t), f(t)}' = \eangle{f(t), f'(t)} + \eangle{f(t), f'(t)}$$
+since we're working with real space we follow that $\eangle{f(t), f'(t)} =  \eangle{f(t), f'(t)}$
+and therefore 
+$$\eangle{f(t), f(t)}' = 2\eangle{f(t), f'(t)}$$
+by the point made earlier 
+$$2\eangle{f(t), f'(t)} = 0$$
+$$\eangle{f(t), f'(t)} = 0$$
+as desired.
+
+\textit{(c) Interpret the result in part (b) geometrically in terms of the tangent vector
+  to a curve lying on a sphere in $R^n$ contered at the origin}
+
+Alrerady did it in the beggining of part (b).
+
+
+\subsection{}
+
+\textit{Suppose $u, v, w \in V$. Prove that}
+$$||w - \frac 1 2 (u + v)||^2 = \frac{||w - u||^2 + ||w - v||^2}{2} - \frac{||u - v||^2}{4}$$
+
+Firstly, let's reshuffle lhs a bit
+$$||w - \frac 1 2 (u + v)||^2 = ||\frac{1}{2}(w - u) + \frac{1}{2}(w - v)||^2 =
+\frac{1}{4} ||(w - u) + (w - v)||^2 = 
+$$
+$$ = \frac{1}{4}( ||w - u||^2 + ||w - v||^2 + \eangle{w - u, w - v} + \eangle{w - v, w - u})$$
+then let's factor rhs onto one denominator
+$$\frac{||w - u||^2 + ||w - v||^2}{2} - \frac{||u - v||^2}{4} =
+\frac{2 ||w - u||^2 + 2||w - v||^2 - ||u - v||^2}{4}$$
+then combine the two
+$$\frac{1}{4}( ||w - u||^2 + ||w - v||^2 + \eangle{w - u, w - v} + \eangle{w - v, w - u}) =
+\frac{2 ||w - u||^2 + 2||w - v||^2 - ||u - v||^2}{4}$$
+reduce'em a bit
+$$||w - u||^2 + ||w - v||^2 + \eangle{w - u, w - v} + \eangle{w - v, w - u} =
+2 ||w - u||^2 + 2||w - v||^2 - ||u - v||^2$$
+and expand the rest
+$$\eangle{w - u, w - v} + \eangle{w - v, w - u} = ||w - u||^2 + ||w - v||^2 - ||u - v||^2$$
+$$(\eangle{w} + \eangle{u, v} - \eangle{u, w} - \eangle{w, v}) + (\eangle{w} + \eangle{v, u} -
+\eangle{w, u} - \eangle{v, w}) = ||w - u||^2 + ||w - v||^2 - ||u - v||^2$$
+$$(2\eangle{w} + \eangle{u, v} - \eangle{u, w} - \eangle{w, v}) + (\eangle{v, u} -
+\eangle{w, u} - \eangle{v, w}) =
+$$
+$$ = (\eangle{w} + \eangle{u} - \eangle{w, u} - \eangle{u, w}) +
+(\eangle{w} + \eangle{v} - \eangle{w, v} - \eangle{v, w}) - \eangle{u} - \eangle{v} +
+\eangle{u, v} + \eangle{v, u}$$
+and then pray to anyone who listens that this thing reduces to
+$$0 = 0$$
+thus we've got the desired identity.
+
+
+\subsection{}
+
+\textit{Suppose $C$ is a subset of $V$ with the property that $u, v \in C$ implies
+  $\frac{1}{2}(u + v) \in C$. Let $w \in V$. Show that there is at most one point in $C$
+  that is closest to $w$. In other words, show that there is at most one $u \in C$ such that}
+$$||w - u|| \leq ||w - v|| \text{ for all } v \in C$$
+
+If $C$ is empty or if it contains only one element, then the case is trivial. Thus suppose that
+$C$ has more than one element.
+
+Suppose that it isn't the case and there exist $u' \neq u$ with desired property. Then we
+follow that
+$$||w - u|| = ||w - u'||$$
+We also follow that since $u \neq u'$
+$$||u - u'|| \neq 0$$
+Since $u, u' \in C$ we follow that $w = \frac{1}{2}(u + u') \in C$. Now let us use previous
+identity
+$$||w - \frac{1}{2}(u + u')||^2 = \frac{||w - u||^2 + ||w - u'||^2}{2} - \frac{||u - u'||^2}{4}$$
+since
+$$||u - u'|| \neq 0$$
+we follow that
+$$||u - u'||^2 \neq 0$$
+$$\frac{||u - u'||^2}{4} \neq 0$$
+thus we can follow that
+$$||w - \frac{1}{2}(u + u')||^2 < \frac{||w - u||^2 + ||w - u'||^2}{2}$$
+by using our identity we follow that
+$$||w - \frac{1}{2}(u + u')||^2 < \frac{2||w - u||^2}{2}$$
+$$||w - \frac{1}{2}(u + u')||^2 < ||w - u||^2$$
+$$||w - \frac{1}{2}(u + u')|| < ||w - u||$$
+thus we follow that point $\frac{1}{2}(u + u')$  is closer than $u$, which is a contradiction.
+
+\subsection{}
+
+\textit{For $u, v \in V$ define $d(u, v) = ||u - v||$.}
+
+\textit{(a) Show that $d$ is a metric on $V$.}
+
+$$d(x, x) = ||x - x|| = ||0|| = 0$$
+$$d(x, y) = ||x - y|| = ||(-1)(y - x)|| = |-1|||y - x|| = ||y - x|| = d(y, x)$$
+and by definiteness and positivity we follow that
+$$x \neq y \to \eangle{x - y, x - y} > 0 \to ||x - y|| > 0 \to d(x - y) > 0$$
+which I think suffices.
+
+\textit{(b) Show that if $V$ is finite-dimentional, then $d$ is a complete metric
+  on $V$ (meaning that every Cauchy sequence converges to a point in $V$).}
+
+$V$ is isomorphic to $F^n$, which is equal to $R^n$ or $C^n$, both of which are complete
+(not completely sure about the latter, but it's safe to assume that it is the case).
+Let $v_1, ..., v_n$ be a basis of $V$. Then we follow that
+$$d(x, y) = d(\sum {a_j v_j}, \sum {a_j' v_j})$$
+proof that $d$ with relation to $F^n$ is a metric is trivial.
+Thus we follow that $V$ is also complete, as desired.
+
+\textit{(c) Show that every finite-dimentional subspace of $V$ is a closed subset of
+  $V$ (with respect to the metric $d$).}
+
+Let $U$ be a finite subspace of $V$.
+
+Suppose that we've got a convergent sequence in $U$. Then we follow that it is a Cauchy sequence
+and therefore it has its limit in $U$ by previous point. Thus we follow that $U$ has
+all of its limit points, and therefore it is a closed set.
+
+\subsection{}
+
+\textit{A polynomial on $R^n$ is a linear combination of functions of the form
+  $x_1^{m_1}, ..., x_n^{m_n}$, where $m_1, ..., m_n$ are nonnegative integers.}
+
+\textit{Suppose $q$ is a polynomial $R^n$.
+  Prove that there exists a harmoniic polynomial $p$ on $R^n$ such that
+  $p(x) = q(x)$ for every $x \in R^n$ with $||x|| = 1$}
+
+Taking advice from the hint we're setting
+$$p = q + (1 - ||x||^2)r$$
+for some polynomial $r$. Then we follow that
 
 TODO
+
+\subsection{}
+
+\textit{Use inner product to prove Appolonius's Identity: In a triangle with sides of length a, b
+  and c let d be the length of the line segment from the midpoint of the side of length c to the
+  opposite vertex. Then}
+$$a^2 + b^2 = \frac{1}{2} c^2 + 2d^2$$
+
+From the picture we've got that
+$$a = - \frac{1}{2}c - d$$
+$$b = \frac{1}{2}c - d$$
+thus
+$$a^2 = \eangle{- \frac{1}{2}c - d}$$
+$$b^2 = \eangle{\frac{1}{2}c - d}$$
+$$a^2 + b^2 = \eangle{-\frac{1}{2}c - d} + \eangle{\frac{1}{2}c - d} =
+\eangle{\frac{1}{2}c + d} + \eangle{\frac{1}{2}c - d} =
+\eangle{\frac 1 2 c} + \eangle{d} + 2\eangle{\frac{1}{2}c, d} + \eangle{\frac{1}{2}c} + \eangle{d}
+- 2\eangle{\frac{1}{2}c, d} = $$
+$$ = 2|(\frac{1}{2})^2|\eangle{ c} + 2\eangle{d}  = \frac{1}{2} \eangle{c} + 2\eangle{d} =
+\frac{1}{2}c^2 + 2d^2$$
+
 
 \end{document}
 
