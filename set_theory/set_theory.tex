@@ -1,0 +1,111 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My set theory exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Introduction}
+
+\section{Elementary Set Theory}
+
+Let A, B, C be sets
+
+\subsection{}
+
+\textit{If $a \notin A \setminus B$ and $a \in A$, show that $a \in B$}
+
+Because $a \notin A \setminus B$, we follow that $x \in B$ or $x \notin A$. Since $x \in A$, we
+follow that $x \in B$, as desired.
+
+\subsection{}
+
+\textit{Show that if $A \subseteq B$, then $C \setminus B \subseteq C \setminus A$}
+
+Let $c \in C \setminus B$. Then we follow that $c \in C$ or $c \notin B$. Since $A \subseteq B$,
+we follow that $c \notin B$ implies that $c \notin A$. Thus we follow that
+$c \in C \setminus B$ implies that $c \in C \setminus A$. Therefore $C \setminus B \subseteq
+C \setminus A$.
+
+\subsection{}
+
+\textit{Suppose $A \setminus B \subseteq C$. Show that $A \setminus C \subseteq B$.}
+
+Suppose that $a \in A \setminus C$. Then we follow that $a \in A$ and $a \notin C$.
+
+Given that $A \setminus B \subseteq C$ and $A \notin C$, we follow that $a \notin A \setminus B$.
+Thus $a \notin A$ or $a \in B$. Since $a \in A$, we follow that $a \in B$. Thus
+$$a \in A \setminus C \to a \in B$$
+$$A \setminus C \subseteq  B$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $A \subseteq B$ and $A \subseteq C$. Show that $A \subseteq B \cap C$}
+
+Suppose that $a \in A$. Then we follow that $a \in B$ and $a \in C$. Thus $a \in B \cap C$.
+Therefore we follow that $A \subseteq B \cap C$.
+
+\subsection{}
+
+\textit{Suppose $A \subseteq B$ and $B \cap C = \emptyset$. Show that $A \in B \setminus C$}
+
+Suppose that $a \in A$. Then we follow that $a \in B$ and since $B \cap C = \emptyset$, we
+follow that $a \notin C$. Thus $a \in B \setminus C$ by definition. Therefore
+$A \subseteq B \setminus C$.
+
+\subsection{}
+
+\textit{Show that $A \setminus (B \setminus C) \subseteq (A \setminus B) \cup C$.}
+Suppose that $a \in A \setminus (B \setminus C)$. Then we follow that
+$a \in A$ and $a \notin B \setminus C$. Thus $a \notin B$ and $a \in C$. Thus we
+follow that $a \in A \setminus B$ or $a \in C$. Thus
+$A \setminus (B \setminus C) \subseteq (A \setminus B) \cup C$
+as desired.
+
+\subsection{}
+
+\textit{Let $P(x)$ be the property $x > \frac 1 x$. Are the assertions $P(2)$, $P(-2)$,
+  $P(\frac 1 2)$ $P( \frac{-1}{2})$ true or false .}
+
+$$2 > \frac 1 2 \to P(2) = true$$
+$$-2 < \frac{-1}{2} \to P(-2) = false$$
+last two are reversed.
+
+\subsection{}
+
+\textit{Sow that each of the following sets can be expressed as an interval}
+
+$$a) (-3, 3)$$
+$$b) (-3, \infty)$$
+$$c) (-3, 3)$$
+
+all of them follow from order properties of real numbers.
+
+\subsection{}
+
+\textit{Express the following sets as truth sets}
+
+$$A = \{1, 4, 9, 16, 25, ...\} \iff A = \{x \in N: x = y^2 \textit{ for some } y \in N\}$$
+$$B = \{..., -15, -10, -5, 0, 5, ... \} \iff A = \{x \in N: x = 5y  \textit{ for some } y \in N\}$$
+
+\textit{Rest are also trivial, not gonna go deep here}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
