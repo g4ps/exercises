@@ -11,6 +11,11 @@
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
@@ -103,6 +108,68 @@ $$A = \{1, 4, 9, 16, 25, ...\} \iff A = \{x \in N: x = y^2 \textit{ for some } y
 $$B = \{..., -15, -10, -5, 0, 5, ... \} \iff A = \{x \in N: x = 5y  \textit{ for some } y \in N\}$$
 
 \textit{Rest are also trivial, not gonna go deep here}
+
+\section{Logical Notation}
+
+\subsection*{1.2.1}
+
+\textit{Using truth tables, show that $\neg(P \ra Q) \lra (P \land \neg Q)$}
+
+\begin{center}
+  \begin{tabular}{c| c| c| c| c| c|}
+    P & Q & $P \ra Q$ & $\neg(P \ra Q)$ & $\neg Q$ & $P \land \neg Q$ \\
+    false & false & true & false & true & false \\
+    false & true & true & false & false & false \\
+    true & false & false & true & true & true \\
+    true & true & true & false & false & false \\
+  \end{tabular}  
+\end{center}
+
+from this we can see that they are equqivalent.
+
+\textit{Following 4 exercises are the same as this one, so I'm skipping them}
+
+\subsection*{1.2.5}
+
+\textit{Show that $(P \imp Q) \land (P \imp R) \eqv P \imp (Q \land R)$, using logic laws}
+
+$$(P \imp Q) \land (P \imp R) \eqv (\neg P \lor Q) \land (\neg P \lor R) \eqv
+\neg P  \lor (R \land Q) \eqv  P  \imp (R \land Q) $$
+Laws used: 
+$$CL \to DIST \to CL$$
+
+\subsection*{1.2.6}
+
+\textit{Show that $(P \imp R) \lor (Q \imp R) \eqv (P \land Q) \imp R$, using logic laws}
+
+$$(P \imp R) \lor (Q \imp R)  \eqv (\neg P \lor R) \lor (\neg Q \lor R) \eqv
+\neg P \lor R \lor \neg Q \lor R \eqv (\neg Q \lor \neg P) \lor R \eqv$$
+$$ \eqv \neg (Q \land P) \lor R
+\eqv (Q \land R) \imp R$$
+Laws used:
+$$CL \to ASC \to ID, ASC \to DML \to CL$$
+
+\subsection*{1.2.7}
+
+\textit{Show that $P \imp (Q \imp R) \eqv (P \land Q) \imp R$, using logic laws}
+
+$$P \imp (Q \imp R) \eqv \neg P \lor (Q \imp R) \eqv \neg P \lor (\neg Q \lor R) \eqv
+(\neg P \lor \neg Q) \lor R \eqv \neg (P \land Q) \lor R \eqv (P \land Q) \imp R$$
+Laws used:
+$$CL \to CL \to ASC \to DML \to CL$$
+
+\subsection*{1.2.8}
+
+\textit{Show that $(P \imp Q) \imp R$ and $P \imp (Q \imp R)$ are not logically equivalent}
+
+We're gonna show that $q \land w \eqv false$
+$$((P \imp Q) \imp R) \land (P \imp (Q \imp R)) \eqv (\neg (\neg P \lor Q) \lor R) \land
+(\neg P \lor (\neg Q \lor R)) \eqv $$
+$$\eqv ((P \land \neg Q) \lor R) \land (\neg P \lor \neg Q \lor R) \eqv
+((P \land Q) \land (\neg P \lor \neg Q)) \lor R  \eqv$$
+$$ \eqv ((P \land Q) \land \neg ( P \land  Q)) \lor R  \eqv false \lor R \eqv false$$
+
+
 
 \end{document}
 %%% Local Variables:
