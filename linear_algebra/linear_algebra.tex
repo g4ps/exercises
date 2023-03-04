@@ -36,6 +36,8 @@ rhs - right hand side
 
 GSP - Gram-Schmidt Procedure
 
+RRT - Riesz Representation Theorem
+
 \chapter{Vector Spaces}
 \section{$R^n$ and $C^n$}
 
@@ -5920,7 +5922,10 @@ $$\eangle{x^2, 2 \sqrt{3} (x - \frac 1 2)} = 2 \sqrt{3} \int_0^1{x^2(x - \frac{1
 2 \sqrt{3} (\frac 1 4 - \frac 1 6)  = \frac{\sqrt{3}}{6} 
 $$
 
-$$e_3' = x^2 - \frac{\sqrt{3}}{6} e_2 - \frac{1}{3} e_1 = $$
+$$e_3' = x^2 - \frac{\sqrt{3}}{6} e_2 - \frac{1}{3} e_1$$
+$$e_3 = 6 \sqrt{5} (x^2 - x + \frac 1 6)$$
+
+checked with maxima, seems to be correct.
 
 \subsection{}
 
@@ -5937,6 +5942,155 @@ can follow that the basis from previous exercise will suffice
 \textit{Find a polynomial $q \in P_2(R)$ such that }
 $$p(\frac 1 2) = \int_0^1{p(x) q(x) dx}$$
 \textit{for every $p \in P_2(R)$.}
+
+We can use the procedure from proof of RRT to get
+$$u = -15 x^2 + 15 x - \frac 3 2$$
+which seems to be working from what I can test in Maxima
+
+
+\subsection{}
+
+\textit{Find a polynomial $q \in P_2(R)$ such that }
+$$\int_0^1{p(x)(\cos \pi x) dx} = \int_0^1{p(x) q(x) dx}$$
+\textit{for every polynomial $p \in P_2(R)$}
+
+From the same procedure in proof of RRT we've got 
+$$u = - \frac{24 (x - \frac 1 2)}{\pi^2}$$
+which seems to be working as well.
+
+\subsection{}
+
+\textit{What happens if the GSP is applied to a list of vectors that is not linearly independet}
+
+Then we'll have numerator in first linearly dependent vector in the list become $0$, thus its
+norm will be zero, and then we'll have a division by zero problem.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real inner product space and $v_1, ..., v_m$ is linearly independent list
+  of vectors in $V$. Prove that there exists exactly $2^m$ orthonormal lists $e^1, ..., e^m$
+  of vectors in $V$ such that }
+$$\Span(v_1, ..., v_j) = \Span(e_1, ..., e_j) $$
+\textit{for all $j \in \{1, ..., m\}$.}
+
+$2^m$ is cardinality of a set with $m$ elements, which will probably help us somehow.
+
+If we start with the small cases, then we follow that there are two such lists in one dimention.
+Precisely we've got normalisation of the first vector and this normalized vector multiplied by -1.
+For the case with two dimentions we've got result of GSP, where we either multiply $e_j$ with
+$1$ or with $-1$. Now we can see resemblence of generalized argument.
+
+We now have that we can apply GSP to a given list of vectors, and then we've got the desired result
+for this list of vectors, or its scalar multiples of $-1$. There are $m$ vectors which we
+can multiply by $-1$, thus we follow that there are $2^m$ distinct lists of vectors with desired
+property at least.
+
+Now we need to prove that there are no other lists with the desired property. We're going to
+proceed with induction for this one. Base case is that there are only two normalized vectors
+for $v_1$. Our hypothesis is that there are only  $2^{n - 1}$ lists for the case with $n - 1$
+vectors. Then we follow that by adding another vector to the list we increase dimention
+of the span by $1$, therefore there are only two normalized vectors, that are orthogonal to
+previous ones and such that span of orthonormal lists is the same as with the original span.
+Therefore we follow that there are $2 * 2^{n - 1} = 2^n$ lists with the desired property,
+which gives us the desired result.
+
+\subsection{}
+
+\textit{Suppose $\eangle{\cdot,  \cdot}_1$ and $\eangle{\cdot,  \cdot}_2$  are inner products on $V$
+  such that $\eangle{v, w}_1 = 0$ if and only if $\eangle{v, w}_2 = 0$.
+  Prove that there is a positive number $c$ such that $\eangle{v, w}_1 = c \eangle{v, w}_2$
+  for every $v, w \in V$.}
+
+For now, let $v \neq 0$.
+
+By orthogonal decomposition we've got that 
+$$c_1 = \frac{\eangle{v, w}_1}{\eangle{v, v}_1}$$
+$$c_2 = \frac{\eangle{v, w}_2}{\eangle{v, v}_2}$$
+$$u_1 = w - c_1v$$
+$$u_2 = w - c_2v$$
+such that
+$$\eangle{u_1, v}_1 = 0$$
+$$\eangle{u_2, v}_2 = 0$$
+$$w = c_1 v + u_1$$
+$$w = c_2 v + u_2$$
+thus we follow that
+$$\eangle{u_2, v}_2 = 0 = \eangle{u_1, v}_2$$
+$$\eangle{u_2, v}_1 = 0 = \eangle{u_1, v}_1$$
+
+
+thus
+$$\eangle{v, w}_1 = \eangle{v, c_1 v + u_1}_1 = \eangle{v, c_1 v}_1 + \eangle{v, u_1}_1 =
+\overline{c_1} \eangle{v, v}_1 + \eangle{v, u_1}_1 = \overline{c_1} \eangle{v, v}_1$$
+$$\eangle{v, w}_2 = \eangle{v, c_1 v + u_1}_2 = \eangle{v, c_1 v}_2 + \eangle{v, u_1}_2 =
+\overline{c_1} \eangle{v, v}_2 + \eangle{v, u_1}_1 = \overline{c_1} \eangle{v, v}_2$$
+
+Let $c = \frac{\eangle{v, v}_1}{ \eangle{v, v}_2}$. Then we follow that $c > 0$ and
+$$\eangle{v, w}_1 = \overline{c_1} \eangle{v, v}_1 = c \overline{c_1} \eangle{v, v}_2 =
+c \eangle{v, w}_2$$
+
+Since $c$ is dependent exclusively on $v$, we can follow that
+$$\eangle{v, u}_1 = c\eangle{v, u}_2$$
+for every $u \in V$.
+
+Now fix $q \neq 0 \in V$ and we can perform the same manipulations once again to get $c'$. Then we
+follow that
+$$\eangle{v, q}_1 = c \eangle{v, q}_2$$
+$$\overline{\eangle{q, v}_1} = c \overline{ \eangle{q, v}_2}$$
+$$\eangle{q, v}_1 = c' \eangle{q, v}_2 $$
+$$\overline{\eangle{q, v}_1} = \overline{c' \eangle{q, v}_2} $$
+$$c \overline{ \eangle{q, v}_2} = \overline{c' \eangle{q, v}_2}$$
+$$c \overline{ \eangle{q, v}_2} = c' \overline{\eangle{q, v}_2}$$
+$$c = c'$$
+thus we can follow that $c$ is the same for every nonzero vector, and for zero vector
+$$\eangle{0, w}_1 = \eangle{0, w}_2 =  0 = c0$$
+thus we follow that there exists positive $c > 0$ such that
+$$\eangle{v, w}_1 = c\eangle{v, w}_2$$
+for every $v, w \in V$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $\eangle{\cdot, \cdot}_1$ and
+  $\eangle{\cdot, \cdot}_2$ are inner products on $V$ with corresponding norms $|| \cdot ||_1$
+  and $|| \cdot ||_2$. Prove that there exists a positive number $c$ such that }
+$$||v||_1 \leq c||v||_2$$
+\textit{for every $v \in V$.}
+
+
+% \subsection{}
+
+% \subsection{}
+
+% \subsection{}
+
+% \subsection{}
+
+% \textit{Suppose $F = C$, $V$ is finite-dimentional, $T \in \map(V)$, all the eigenvalues of $T$
+%   have absolute values less than $1$, and $\epsilon > 0$. Prove that there exists a
+%   positive integer $m$ such that $||T^m v|| \leq \epsilon ||v||$}
+
+% Because $V$ is finite-dimentional and complex, we follow that
+% there exists an orthonormal basis of $V$, such that $T$ has upper-triangular matrix. Let
+% this basis be denoted by $e_1, ..., e_n$. Let $v \in V$. Then we follow that
+% $$v = \sum{a_n e_n}$$
+% for some $a_1, ..., a_n \in C$.
+
+% For $e_1$ we've got that
+% $$T e_1 = \lambda_1 e_1$$
+% thus
+% $$T^m e_1 = \lambda_1^m e_1$$
+% for any $m \in N$. Therefore we follow that
+% $$||T^m e_1|| = ||\lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |\lambda_1|^m$$
+% and
+% $$||T^m a_1 e_1|| = ||a_1 \lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |a_1| |\lambda_1|^m$$
+% Since $|\lambda_1| < 1$, we follow that
+% $$\lim_{m \to \infty}{||T^m a_1 e_1||} = \lim_{m \to \infty}{(|a_1| |\lambda_1|^m)}= 0$$
+% for every $a_1 \in C$
+
+% For $e_2$ we've got that
+% $$T e_2 = b_1 e_1 + \lambda_2 e_2$$
+% $$T^2 e_2 = b_1 T e_1 + \lambda_2 T e_2 = b_1 \lambda_1 e_1 + \lambda_2 (b_1 e_1 + \lambda_2 e_2) =
+% b_1 \lambda_1 e_1 + \lambda_2 b_1 e_1 + \lambda_2^2  e_2 = $$
 
 
 \end{document}

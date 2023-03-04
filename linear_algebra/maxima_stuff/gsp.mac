@@ -1,0 +1,22 @@
+ea(a1, a2) := integrate(a1 * a2, x, 0, 1);
+
+
+f1(p) := ea(cos(%pi * x), p) * p;
+
+e1: 1;
+e2: 2 * sqrt(3) * (x - 1/2);
+e3: 6 * sqrt(5) * (x^2 - x + 1/6);
+
+u1: -15 * x^2 + 15 * x - 3/2;
+
+u2: f1(e1) + f1(e2) + f1(e3);
+
+random_polynomial(deg) := sum((random(20) - 10) * x^i, i, 0, deg);
+
+t1: random_polynomial(2);
+t2: random_polynomial(2);
+t3: random_polynomial(2);
+t4: random_polynomial(2);
+
+
+
