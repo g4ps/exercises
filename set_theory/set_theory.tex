@@ -7,6 +7,7 @@
 \date{2023}
 
 \DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
@@ -16,12 +17,25 @@
 \DeclareMathOperator \la {\Leftarrow}
 \DeclareMathOperator \ra {\Rightarrow}
 \DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
 \begin{document}
 \maketitle
 \tableofcontents
+
+\chapter*{Useful things}
+
+I think that it is pretty straightforward to define some function based on axioms that we get.
+For example pairing axiom allows us to define $PA: S \times S \to S$ by
+$$PA(u, v) = \{u, v\}$$
+same goes for union axiom
+$$UA(u) = \{\text{elements of elements of U}\}$$
+Later some other function might be defined in the same manner.
+
+In logic notation, I denote tautology as '$\true$' and contradiction as '$\false$'
 
 \chapter{Introduction}
 
@@ -172,6 +186,275 @@ $$ \eqv ((P \land Q) \land \neg ( P \land  Q)) \lor R  \eqv false \lor R \eqv fa
 
 \section{Predicates and Quantifiers}
 
+\section{A Formal Language for Set Theory}
+
+\subsection{}
+
+\textit{What does the formula $\exists x \forall y (x \notin y)$ say in English? }
+
+There exists $x$ such that for every $y$ we've got that x is not in y. In other ways, there
+exists an empty set.
+
+\subsection{}
+
+\textit{What does the formula $\forall y \exists x (y \notin x)$ say in English?}
+
+For every y there exists set x such that y is not in x.
+
+\subsection{}
+
+\textit{What does the formula $\forall y \exists x (x \notin y)$ say in English?}
+
+For every y there exists x such that x is not in y.
+
+\subsection{}
+
+\textit{What does the formula $\forall y \neg \exists x (x \notin y)$ say in English?}
+
+For every y there does not exist an x such that x is not in y.
+
+\subsection{}
+
+\textit{What does the formula $\forall z \exists x \exists y (x \in y \land y \in z)$
+  say in English?}
+
+For every $z$ there exists x and y such that x is in y and y is in z
+
+\subsection{}
+
+\textit{Let $\phi(x)$ be a formula. What does $\forall z \forall y((\phi(x) \land \phi(y))
+  \to z = y$}
+
+For every z and y, $\phi(x)$ and $\phi(y)$ implies that z = y.
+
+\subsection{}
+
+\textit{Translate each of the following into the language of set theory.}
+
+\textit{(a) x is the union of a and b}
+
+$$\forall (y \in x) (y \in a \land y \in b)$$
+
+\textit{(b) x is not a subset of y}
+
+$$\exists (z \in x) (\neg z \in y)$$
+
+\textit{(c) x is the intersection of a and b}
+
+$$\forall (y \in x) (y \in a \lor y \in b)$$
+
+\textit{(d) a and b have no elements in common}
+
+$$\forall (x \in a) \forall (y \in b) (\neg x = y)$$
+
+\subsection{}
+
+\textit{Let a, b, C and D be sets. Show that the relationship}
+$$y =
+\begin{cases}
+  a \text{ if } x \in C \setminus D \\
+  b \text{ if } x \notin C \setminus D \\
+\end{cases}
+$$
+
+$$((x \in C \land \neg x \in D) \to (y = a)) \land ((\neg x \in C \land \neg x \in D) \to (y = a))$$
+
+
+\section{The Zermelo-Fraenkel Axioms}
+
+\subsection{}
+
+\textit{Let $u, v, w$ be sets. By pairing axiom, the sets $\{u\}$ and $\{v, w\}$
+  exist. Using the pairing and union axioms, show that the set $\{u, v, w\}$
+  exists.}
+
+By pairing axiom we've got that
+$$PA(u, u) = \{u\}$$
+$$PA(v, w) = \{v, w\}$$
+thus
+$$PA(\{u\}, \{v, w\}) = \{\{u\}, \{v, w\}\}$$
+and therefore by union axiom we follow that
+$$UA(\{\{u\}, \{v, w\}\}) = \{u, v, w\}$$
+as desired.
+
+\subsection{}
+
+\textit{Let $A$ be a set. Show that the pairing axiom implies that the set $\{A\}$ exists}
+
+$$PA(A, A) = \{A, A\}$$
+which by extension axiom is equal to $\{A\}$, as desired.
+
+\subsection{}
+
+\textit{Let $A$ be a set. The pairing axiom implies that the set $\{A\}$ exists. Using the
+  regularity axiom, show that $A \cap \{A\} = 0$. Conclude that $A \notin A$.}
+
+Since $\{A\} \neq \emptyset$, we follow that there exists $x$ such that $x \in \{A\}$ and
+$x \cap \{A\} = \emptyset$. Since $A$ is the only element of $\{A\}$, we follow that
+$A \cap \{A\} = \emptyset$, as desired.
+
+\subsection{}
+
+\textit{For sets $A, B$, the set $\{A, B\}$ exists by the pairing axiom. Let $A \in B$.
+  Using the regularity axiom, show that $A \cap \{A, B\} = \emptyset$, and thus $B \notin A$.}
+
+$\{A, B\}$ consists of sets $A$ and $B$, thus it is not empty and therefore
+there exists $x \in \{A, B\}$ such that $x \in \{A, B\} \land x \cap \{A, B\} = \emptyset$.
+For $B$ we've got that $B \in \{A, B\}$. Since $A \in B$ and $A \in \{A, B\}$, we can follow that
+$A \in (B \cap \{A, B\})$. By pairing axiom we follow that the element with desired
+property must exists, and given that the only other choice is $A$,
+we conclude that $A \cap \{A, B\} = \emptyset$. Therefore we can follow that $B \notin A$, as
+desired.
+
+\subsection{}
+
+\textit{Let $A, B, C$ be sets. Suppoes that $A \in B$ and $B \in C$. Using the regularity axiom,
+  show that $C \notin A$.}
+
+This is an expantion of previous exercise. We can follow that
+$$B \in \{A, B, C\} \land B \in C \imp B \in C \cap \{A, B, C\} \imp C \cap \{A, B, C\}
+\neq \emptyset$$
+$$A \in \{A, B, C\} \land A \in B \imp A \in B \cap \{A, B, C\} \imp B \cap \{A, B, C\}
+\neq \emptyset$$
+thus the only other choice is $A$, and therefore $A \cap  \{A, B, C\} = \emptyset$. Therefore
+$C \notin A$, as desired.
+
+
+\subsection{}
+
+\textit{Let $A, B$ be sets. Using the subset and power set axioms, show that the set
+  $\pow(A) \cap B$ exists.}
+
+Because set $A$ exists we follow that $\pow(A)$ exists. By setting $\phi(x): x \in B$ and
+subset axiom we follow that there exists a subset of $\pow(A)$ such that
+$x \in S \lra x \in \pow(A) \land x \in B$. Thus we follow by Extensionality axiom
+that $S = \pow(A) \cap B$. Thus $\pow(A) \cap B$ exists.
+
+\subsection{}
+
+\textit{Let $A, B$ be sets. Using the subset axiom, show that the set $A \setminus B$ exists.}
+
+$$\phi(x): \neg x \in B$$
+thus by subset axiom
+$$x \in S \lra x \in A \land \neg x \in B$$
+thus $A \setminus B$ exists.
+
+\subsection{}
+
+\textit{Show that no two of the sets $\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}$
+  are equal to each other.}
+
+I had a little confusion with this one at first because I thought that every set has
+empty set in it, which is false. Every set has an empty set as a subset, but it
+might be so that empty set is not in the set itself.
+$$\emptyset \notin \emptyset \land \emptyset \in \{\emptyset\} \imp \emptyset \neq \{\emptyset\}$$
+$$\emptyset \notin \emptyset \land \emptyset \in \{\emptyset, \{\emptyset\}\} \imp
+\emptyset \neq \{\emptyset, \{\emptyset\}\}$$
+$$\{\emptyset\} \notin \{\emptyset\} \land \{\emptyset\} \in \{\emptyset, \{\emptyset\}\} \imp
+\{\emptyset\} \neq \{\emptyset, \{\emptyset\}\}$$
+all of the implication follow from extensionality axiom.
+
+\subsection{}
+
+\textit{Let $A$ be a set with no elements. Show that for all $x$, we have that $x \in A$ if
+  and only if $x \in \emptyset$. Using the extensionality axiom, conclude that $A = \emptyset$.}
+
+Suppose that $\neg x \in A$. Then we follow that $x$ is an element, therefore $\neg x \in \emptyset$.
+Thus
+$$\neg x \in A \imp \neg x \in \emptyset \iff x \in \emptyset \imp x \in A$$
+Suppose that $\neg x \in \emptyset$. Then we follow that $x$ is an element. Thus $\neg x \in A$.
+Thus
+$$\neg x \in \emptyset \imp \neg x \in A \iff x \in A \imp x \in  \emptyset$$
+thus we follow that
+$$x \in \emptyset \lra x \in A$$
+thus by extensionality axiom we follow that
+$$\emptyset = A$$
+which gives us nice follow-up that
+$$\emptyset = \{\}$$
+
+\subsection{}
+
+\textit{Let $\phi(x, y)$ be the formula $\forall z(z \in y \lra z = x)$ which asserts that
+  $y = \{x\}$. For all x the set $\{x\}$ exists. So $\forall x  \exists! y \phi(x, y)$.
+  Let $A$ be a set. Show that the collection $\{\{x\}: x \in A\}$ is a set.}
+
+We know that $A$ is a set and therefore $\pow(A)$ is also a set. Thus by subset axiom
+there exists a set 
+$$\exists S (x \in S \lra x \in \pow(A) \land \exists(y \in A)(\phi(x, y)))$$
+which is precisely our collection.
+
+\chapter{Basic Set-Building Axioms and Operations}
+
+\section{The First Six Axioms}
+
+Prove the following theorems, where $A, B, C, D$ are sets.
+
+\subsection*{2.1.1}
+
+$$A \subseteq B \to (A \subseteq A \cup B \land A \cap B \subseteq A )$$
+
+$$ \forall x (x \in A \to x \in B) \to ((\forall x (x \in A \imp x \in A \lor x \in B)) \land
+(\forall (x \in A \land x \in B \imp x \in A))) \lra $$
+$$ \lra
+\forall x (x \in A \to x \in B) \to ((\forall x (\neg x \in A \lor x \in A \lor x \in B)) \land
+(\forall (\neg (x \in A \land x \in B) \lor x \in A))) \lra $$
+$$ \lra \forall x (x \in A \to x \in B) \to ((\forall x ( \true  \lor x \in B)) \land
+(\forall ( \neg x \in A \lor \neg x \in B \lor x \in A))) \lra $$
+$$ \lra \forall x (x \in A \to x \in B) \to (\true \land
+(\forall ( true \lor \neg x \in B))) \lra $$
+$$ \lra \neg \forall x (x \in A \to x \in B) \lor (\true \land \true) \lra $$
+$$ \lra \neg \forall x (x \in A \to x \in B) \lor \true \lra $$
+$$\true$$
+
+\subsection*{2.1.2}
+
+$$A \subseteq B \land B \subseteq C \to A \subseteq C$$
+
+$$(\forall x (x \in A \imp x \in B)) \land (\forall x (x \in B \imp x \in C)) \to
+\forall x (x \in A \imp x \in C) \lra$$
+$$\lra (\forall x (\neg x \in A \lor x \in B)) \land (\forall x (\neg x \in B \lor x \in C)) \to
+\forall x (\neg x \in A \lor x \in C) \lra $$
+$$\lra (\forall x ((\neg x \in A \lor x \in B) \land  (\neg x \in B \lor x \in C))) \to
+\forall x (\neg x \in A \lor x \in C) \lra $$
+$$\lra (\forall x ((\neg x \in A \land  (\neg x \in B \lor x \in C))
+\lor( x \in B  \land  (\neg x \in B \lor x \in C)))) \to
+\forall x (\neg x \in A \lor x \in C) \lra $$
+$$\lra (\forall x (\neg x \in A \land  (\neg x \in B \lor x \in C))
+\lor( (x \in B  \land  \neg x \in B)  \lor (x \in B  \land x \in C)))) \to
+\forall x (\neg x \in A \lor x \in C) \lra $$
+$$\lra (\forall x ((\neg x \in A \land  \neg x \in B) \lor (\neg x \in A \land x \in C) 
+\lor(  x \in B  \land x \in C)) \to \forall x (\neg x \in A \lor x \in C) \lra  ... $$
+
+So this thing is tedious as hell and should be left to computers.
+
+Suppose that $x \in A$. Then we follow by $A \subseteq B$ that $x \in B$. Thus by $B \subseteq C$
+we follow that$x \in C$. Therefore $x \in A \to x \in C$. Therefore $A \subseteq C$, as desired.
+
+\subsection*{2.1.3}
+
+$$B \subseteq C \imp A \setminus C \subseteq A \setminus B$$
+
+Suppose that $x \in A \setminus C$. Then we follow that $x \in A$ and $x \notin C$. Therefore
+$x \in A$ and $x \notin B$ since $B \subseteq C$. Thus $x \in A \setminus B$. Therefore
+we follow that $B \subseteq C$ implies that  $A \setminus C \subseteq A \setminus B$,
+as desired.
+
+\subsection*{2.1.4}
+
+$$C \subseteq A \land C \subseteq B \iff C \subseteq A \cap B$$
+
+Suppose that $x \in C$. Then we follow that $x \in A$ and $x \in B$. Thus $x \in A \cap B$.
+Therefore $C \subseteq A \cap B$. Thus we follow that
+$C \subseteq A \land C \subseteq B \imp C \subseteq A \cap B$
+
+Suppose that $x \in C$. Then we follow that $x \in A \cap B$. Thus $x \in A$ and $x \in B$.
+Therefore $C \subseteq A \land C \subseteq B$. Therefore
+$C \subseteq A \cap B \imp C \subseteq A \land C \subseteq B $
+thus we follow that
+$$C \subseteq A \land C \subseteq B \iff C \subseteq A \cap B$$
+as desired.
+
+\textit{the rest of the exercises for this section are more of the same.}
 
 
 \end{document}

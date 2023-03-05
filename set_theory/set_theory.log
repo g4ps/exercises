@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  4 MAR 2023 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  5 MAR 2023 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -256,24 +256,24 @@ File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
 (./set_theory.aux)
 \openout1 = `set_theory.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -309,7 +309,7 @@ LaTeX Font Info:    ... okay on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 25.
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -321,21 +321,21 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count286
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
 
 (./set_theory.out) (./set_theory.out)
 \@outlinefile=\write3
 \openout3 = `set_theory.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -343,24 +343,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./set_theory.toc)
-\tf@toc=\write4
-\openout4 = `set_theory.toc'.
-
-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./set_theory.toc
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 \chapter
-             {Introduction} [1
+l.32 ...\numberline {1.5.9}}{11}{subsection.1.5.9}
+                                                  % [1
+
+])
+\tf@toc=\write4
+\openout4 = `set_theory.toc'.
+
+ [2] [3
 
 ]
 Chapter 1.
-[2
+[4
 
-] [3] [4]
-Overfull \hbox (2.85811pt too wide) detected at line 157
+] [5] [6]
+Overfull \hbox (2.85811pt too wide) detected at line 171
 \OML/cmm/m/it/10.95 P []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/
 m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 P \OMS/cmsy/m/n/10.95 _
  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/m/n/10.95 ) [] \OMS/cms
@@ -375,32 +377,56 @@ cmsy/m/n/10.95 _ \OML/cmm/m/it/10.95 R []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
 /m/it/10.95 R
  []
 
-[5] (./set_theory.aux)
+[7] [8] [9] [10] [11]
+Chapter 2.
+[12
+
+]
+Overfull \hbox (34.05876pt too wide) detected at line 424
+[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10
+.95 (\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/
+m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ \OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 :\OM
+L/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10
+.95 _ \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr
+/m/n/10.95 )) \OMS/cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 x 
+\OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10.95 ^ :\OML/cmm/m/i
+t/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/
+cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 
+2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \OMS/cmsy/m
+/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 )))) \OMS/cmsy/m/n/10.95 ! 8
+\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.
+95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 _ \OML/cmm
+/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) [
+]
+ []
+
+[13] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 81940639FFA9108703E9DA212DFF6457;885.
+(rerunfilecheck)             Checksum: 2C8708BC8E352F847A93BE0A37396935;2895.
  ) 
 Here is how much of TeX's memory you used:
- 9060 strings out of 478238
- 138638 string characters out of 5850457
- 439984 words of memory out of 5000000
- 27186 multiletter control sequences out of 15000+600000
+ 9125 strings out of 478238
+ 139499 string characters out of 5850457
+ 440043 words of memory out of 5000000
+ 27215 multiletter control sequences out of 15000+600000
  479583 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,227b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,301b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (6 pages, 153626 bytes).
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on set_theory.pdf (14 pages, 188319 bytes).
 PDF statistics:
- 164 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 333 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 
