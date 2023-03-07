@@ -454,7 +454,75 @@ thus we follow that
 $$C \subseteq A \land C \subseteq B \iff C \subseteq A \cap B$$
 as desired.
 
+\subsection*{2.1.5}
+
+\textit{There exists an $x$ such that $x \notin A$}
+
+Suppose that there does not exist $x$ such that $x \notin A$. Then we follow that every set is a
+member of $A$, which is impossible.
+
+\subsection*{2.1.6}
+
+$$A \cap B = B \cap A$$
+
+$$x \in A \cap B \iff x \in A \land x \in B \iff x \in B \land x \in A \iff x \in B \cap A$$
+
+\subsection*{2.1.7}
+
+$$A \cup B = B \cup A$$
+
+$$x \in A \cup B \iff x \in A \lor x \in B \iff x \in B \lor x \in A \iff x \in B \cup A$$
+
+\subsection*{2.1.8}
+
+$$A \cap (B \cup C) = (A \cup C) \cap (A \cup B)$$
+
+$$x \in A \cap (B \cup C) \lra  x \in A \land x \in (B \cup C) \lra
+x \in A \land (x \in B \lor x \in C) \lra
+$$
+$$ \lra (x \in A \lor x \in C) \land (x \in A \lor x \in C)
+\lra (x \in A \cup B) \lor (x \in A \cup C) \lra x \in ((A \cup B) \cap (A \cup C))$$
+
+\subsection*{2.1.31}
+
+$$A \subseteq \pow(\cup(A))$$
+
+Let $x \in A$. Then we follow that $x \subseteq \cup(A)$. Thus $x \in \pow(A)$. Thus
+$A \subseteq \pow(\cup(A))$.
+
+\subsection*{2.1.32}
+
+\textit{Let $C \in F$. Then $\pow(C) \in \pow(\pow(\cup F))$}
+
+Suppose that $C \in F$. Then we follow that $C \subseteq \cup F$. Therefore $C \in \pow (\cup F)$.
+Thus $\pow(C) \in \pow(\pow (\cup F))$.
+
+
 \textit{the rest of the exercises for this section are more of the same.}
+
+\section{Operations on Sets}
+
+Prove the following theorems
+
+\subsection{}
+
+\textit{Let $A$ be a set and $F \neq \emptyset$. Then}
+$$A \setminus \cap F = \cup\{A \setminus C: C \in F\}$$
+
+$$x \in A \setminus \cap F \lra
+x \in A \land x \notin \cap F \lra
+x \in A \land \neg x \in \cap F \lra
+x \in A \land \neg (\forall(C \in F)(x \in C)) \lra
+$$
+$$ \lra
+x \in A \land \exists(C \in F)(x \notin C) \lra
+\exists(C \in F)(x \notin C \land x \in A) \lra
+\exists(C \in F)(x \in A \setminus C) \lra
+x \in \cup\{A \setminus C: C \in F\}
+$$
+which seems to hold.
+
+
 
 
 \end{document}

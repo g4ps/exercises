@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  5 MAR 2023 20:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  7 MAR 2023 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -400,15 +400,32 @@ cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95
 ]
  []
 
-[13] (./set_theory.aux)
+[13] [14]
+Overfull \hbox (56.20164pt too wide) detected at line 522
+[] \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/
+m/n/10.95 ^ 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \O
+ML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x [] C\OT1/cmr/m/n/
+10.95 ) [] \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/
+cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 
+x [] C \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/c
+mm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 
+(\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/
+10.95 )(\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/
+cmsy/m/n/10.95 n \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.
+95 x \OMS/cmsy/m/n/10.95 2 [f\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 n \OML/c
+mm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 
+2 \OML/cmm/m/it/10.95 F\OMS/cmsy/m/n/10.95 g
+ []
+
+[15] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 2C8708BC8E352F847A93BE0A37396935;2895.
+(rerunfilecheck)             Checksum: 3672576B41CB1165749F58C49487B21C;3100.
  ) 
 Here is how much of TeX's memory you used:
- 9125 strings out of 478238
- 139499 string characters out of 5850457
- 440043 words of memory out of 5000000
- 27215 multiletter control sequences out of 15000+600000
+ 9137 strings out of 478238
+ 139637 string characters out of 5850457
+ 440051 words of memory out of 5000000
+ 27217 multiletter control sequences out of 15000+600000
  479583 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,63p,301b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -423,10 +440,10 @@ public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (14 pages, 188319 bytes).
+Output written on set_theory.pdf (16 pages, 191764 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

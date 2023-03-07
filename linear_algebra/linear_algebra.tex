@@ -6056,14 +6056,79 @@ for every $v, w \in V$, as desired.
 $$||v||_1 \leq c||v||_2$$
 \textit{for every $v \in V$.}
 
+Because $V$ is finite-dimentional, we follow that there exists an orthonormal basis $e_1, ..., e_n$
+with respect to $\eangle{\cdot, \cdot}_1$. There also exists orthonormal basis $e_1', ..., e_n'$
+with respect to $\eangle{\cdot, \cdot}_2$.
+Then we can follow that 
+$$e_i = \sum{b_{i, j} e_j'}$$
+Let $c' = \max \{|b_{1, 1}|, ... |b_{n, n}|\}$.
 
+Suppose $v \in V$. Then we follow that
+$$v = \sum{a_j e_j}$$
 
+For the first norm we follow that 
+$$||v||_1 = ||\sum{a_j e_j}||_1 = \sqrt{\sum{|a_j|^2}}$$
+and for the second we've got that
+$$||v||_2^2 = ||\sum{a_j e_j}||_2^2 = ||\sum{a_j \sum{[b_i e_i']}}||_2^2 =
+||a_1 (b_{1, 1} e_1' + ... + b_{1, n} e_n') + ... + a_n (b_{n, 1} e_1' + ... + b_{n, n} e_n')||_2^2 = 
+$$
+$$ =
+||(a_1 b_{1, 1} + ... + a_nb_{n, 1})e_1' + ... + (a_1 b_{1, 1} + ... + a_nb_{n, n})e_n'||_2^2 = $$
+$$ = |(a_1 b_{1, 1} + ... + a_nb_{n, 1})|^2 + ... + |(a_1 b_{1, 1} + ... + a_nb_{n, n})|^2 \leq $$
+$$ \leq  (|a_1 b_{1, 1}| + ... + |a_nb_{n, 1}|)^2 + ... + (|a_1 b_{1, 1}| + ... + |a_nb_{n, n}|)^2 =  $$
+$$ = (|a_1|| b_{1, 1}| + ... + |a_n||b_{n, 1}|)^2 + ... + (|a_1||b_{1, 1}| + ... + |a_n||b_{n, n}|)^2 \leq$$
+$$ \leq (c' |a_1| + ... + c'|a_n|)^2 + ... + (c' |a_1| + ... + c'|a_n|)^2 = c'^2 n (\sum{|a_n|})^2 =
+$$
+$$ = 
+c'^2n(\sum{|a_n|})^2 \leq c'^2n(\sum{|a_n|^2}) = c'^2n ||v||_1^2$$
+where inequalities come from either triangular inequality or the fact that
+$$(\sum{a_j})^2 \leq(\sum{a_j^2})$$
+for $a_j > 0$.
 
-% \subsection{}
+Since $c' > 0$ and $n \in N$, we follow that $c = \sqrt{c'^2n} > 0$. Thus we can follow that
+$$||v||_2 \leq c ||v||_1$$
+for some $c \in R^+$, as desired. (This one might be false, but I'll continue anyways)
 
-% \subsection{}
+\subsection{}
 
-% \subsection{}
+\textit{Suppose $v_1, ..., v_m$ is linearly independent list in $V$. Show that there exists
+  exists $w \in V$ such that $\eangle{w, v_j} > 0$ for all $j \in \{1, ..., m\}$}
+
+I don't know what to do with this one, therefore I'll try to look at small cases to get the gist.
+If $\dim V = 1$, then we can set $w = v_1$ and everything's good. For the case when $\dim V = 2$
+we can't just use the vector in basis itself.
+
+Since it is a section on orthonormal bases, it's reasonable to assume that they have to do something
+with the problem. For a space with $\dim V = 1$ we can use use GSP on the basis and get the vector
+$e_1$. If $\eangle{v_1, e_1} < 0$, we can follow that $-e_1$ is still a normal vector, therefore
+$\eangle{v_1, -e_1} > 0$ and we get the desired vector. For the case with $\dim V = 2$ we can
+get the first vector as before, and then get vector $e_2'$. We can follow that
+$\eangle{v_1, e_2} = 0$ and if $\eangle{v_2, e_2'} < 0$, then set $e_2 = -e_2'$, otherwise set
+$e_2 = e_2'$. Then for the vector $e_1 + e_2$ we've got that
+$$\eangle{v_1, e_1 + e_2} = \eangle{v_1, e_1} + \eangle{v_1, e_2} = \eangle{v_1, e_1}$$
+and
+$$\eangle{v_2, e_1 + e_2} = \eangle{v_2, e_1} + \eangle{v_2, e_2}$$
+which is not guaranted to be more then 0 (or even real in complex vector spaces).
+
+Thus the sum of the vectors is probably not a good answer.
+
+Suppose that we've got vectors $v_1, ..., v_{n - 1}$ and $w_{n - 1}$ such that
+$$\eangle{v_j, w_{n - 1}} > 0$$
+Then let us add another vector $v_n$ to the list. Suppose that
+$$\eangle{v_n, w_{n - 1}} \notin R$$
+then we can follow that
+$$\eangle{v_n, w_{n - 1}} + \overline{\eangle{v_n, w_{n - 1}}} \in R$$
+
+TODO
+
+\subsection{}
+
+\textit{Suppose $e_1, ..., e_n$ is an orthogonal basis of $V$ and $v_1, ..., v_n$ are vectors
+  in $V$ such that}
+$$||e_j - v_j|| < \frac {1}{ \sqrt{n}}$$
+\textit{for each $j$. Prove that $v_1, ..., v_n$ is a basis of $V$.}
+
+\subsection{}
 
 % \subsection{}
 
