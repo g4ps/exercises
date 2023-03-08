@@ -6094,32 +6094,36 @@ for some $c \in R^+$, as desired. (This one might be false, but I'll continue an
 \textit{Suppose $v_1, ..., v_m$ is linearly independent list in $V$. Show that there exists
   exists $w \in V$ such that $\eangle{w, v_j} > 0$ for all $j \in \{1, ..., m\}$}
 
-I don't know what to do with this one, therefore I'll try to look at small cases to get the gist.
-If $\dim V = 1$, then we can set $w = v_1$ and everything's good. For the case when $\dim V = 2$
-we can't just use the vector in basis itself.
+We're going to proceed with induction on this one.
 
-Since it is a section on orthonormal bases, it's reasonable to assume that they have to do something
-with the problem. For a space with $\dim V = 1$ we can use use GSP on the basis and get the vector
-$e_1$. If $\eangle{v_1, e_1} < 0$, we can follow that $-e_1$ is still a normal vector, therefore
-$\eangle{v_1, -e_1} > 0$ and we get the desired vector. For the case with $\dim V = 2$ we can
-get the first vector as before, and then get vector $e_2'$. We can follow that
-$\eangle{v_1, e_2} = 0$ and if $\eangle{v_2, e_2'} < 0$, then set $e_2 = -e_2'$, otherwise set
-$e_2 = e_2'$. Then for the vector $e_1 + e_2$ we've got that
-$$\eangle{v_1, e_1 + e_2} = \eangle{v_1, e_1} + \eangle{v_1, e_2} = \eangle{v_1, e_1}$$
-and
-$$\eangle{v_2, e_1 + e_2} = \eangle{v_2, e_1} + \eangle{v_2, e_2}$$
-which is not guaranted to be more then 0 (or even real in complex vector spaces).
+Base case is trivial: for the space with dimention 1 pick $w_1 = v_1$, and we're golden.
 
-Thus the sum of the vectors is probably not a good answer.
-
-Suppose that we've got vectors $v_1, ..., v_{n - 1}$ and $w_{n - 1}$ such that
+Suppose that we've got vector space, defined by $\Span(v_1, ..., v_{n - 1})$, and
+this vector space has a vector
+$w_{n - 1}$ such that
 $$\eangle{v_j, w_{n - 1}} > 0$$
-Then let us add another vector $v_n$ to the list. Suppose that
-$$\eangle{v_n, w_{n - 1}} \notin R$$
-then we can follow that
-$$\eangle{v_n, w_{n - 1}} + \overline{\eangle{v_n, w_{n - 1}}} \in R$$
-
-TODO
+for every $1 \leq j \leq n - 1$. Then add a vector $v_n$ to the list and
+define a space $\Span(v_1, ..., v_n)$. We follow that
+we haven't lost the fact that
+$$\eangle{v_j, w_{n - 1}} > 0$$
+for $1 \leq j \leq n - 1$, but now we need to get a vector $w_n$ that
+has the desired properties for all of the previous
+vectors, and the vector $v_n$ as well. 
+Using GSP we can define a vector $u_n$ to be a vector, that is orthogonal to every
+$v_1, ..., v_{n - 1}$ and for it we'll have that for $1 \leq j \leq n - 1$
+$$\eangle{v_j, \kappa u_n + w_{n - 1}}  = \kappa \eangle{v_j, u_n} + \eangle{v_j, w_{n - 1}} =
+\eangle{v_j, \lambda w_{n - 1}} > 0$$
+for every $\kappa \in F$. Since $u_n$ was aquired through the GSP, we can follow that
+$$\eangle{v_n, u_n} \neq 0$$
+and thereefore we're justified to define 
+$$\kappa = \frac{- \eangle{v_n, w_{n - 1}} + 1}{\eangle{v_n, u_n}}$$
+for which we have that
+$$\kappa \eangle{v_n, u_n} = - \eangle{v_n, w_{n - 1}} + 1$$
+$$\kappa \eangle{v_n, u_n} + \eangle{v_n, w_{n - 1}} = 1$$
+$$ \eangle{v_n, \overline{\kappa} u_n + w_{n - 1}} = 1 > 0$$
+thus we've got a vector $w_n  =\overline{\kappa} u_n + w_{n - 1}$ such that
+$$\eangle{v_j, w_n} > 0$$
+for every $1 \leq j \leq n$, as desired.
 
 \subsection{}
 
@@ -6127,6 +6131,16 @@ TODO
   in $V$ such that}
 $$||e_j - v_j|| < \frac {1}{ \sqrt{n}}$$
 \textit{for each $j$. Prove that $v_1, ..., v_n$ is a basis of $V$.}
+
+Suppose that $v_1, ..., v_n$ is linearly dependent. Then we can follow that there exist
+$a_1, ..., a_n \in F$ such that
+$$\sum{a_j v_j} \neq 0$$
+therefore there exists $v_j$ such that
+$$v_j = \sum{a_i v_i}$$
+thus
+$$||e_j - v_j||  < \frac{1}{\sqrt{n}}$$
+$$||e_j - \sum{a_i v_i}||  < \frac{1}{\sqrt{n}}$$
+TODO
 
 \subsection{}
 
