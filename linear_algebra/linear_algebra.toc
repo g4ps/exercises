@@ -355,3 +355,5 @@
 \contentsline {subsection}{\numberline {6.2.13}}{155}{subsection.6.2.13}%
 \contentsline {subsection}{\numberline {6.2.14}}{156}{subsection.6.2.14}%
 \contentsline {subsection}{\numberline {6.2.15}}{157}{subsection.6.2.15}%
+\contentsline {subsection}{\numberline {6.2.16}}{157}{subsection.6.2.16}%
+\contentsline {section}{\numberline {6.3}Orthogonal Complements and Minimization Problems}{157}{section.6.3}%

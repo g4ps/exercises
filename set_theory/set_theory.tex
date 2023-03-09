@@ -19,6 +19,8 @@
 \DeclareMathOperator \imp {\Rightarrow}
 \DeclareMathOperator \true {true}
 \DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
@@ -37,13 +39,16 @@ Later some other function might be defined in the same manner.
 
 In logic notation, I denote tautology as '$\true$' and contradiction as '$\false$'
 
+There is a rule that I've used
+$$a \land (b \lor \neg a) \lra (a \land b) \lor (a \land \neg a))
+\lra (a \land b) \lor (\false) \lra a \land b$$
+which I don't remember seeing in the book, but it's pretty useful.
+
 \chapter{Introduction}
 
 \section{Elementary Set Theory}
 
-Let A, B, C be sets
-
-\subsection{}
+Let A, B, C be \subsection{}
 
 \textit{If $a \notin A \setminus B$ and $a \in A$, show that $a \in B$}
 
@@ -522,6 +527,162 @@ x \in \cup\{A \setminus C: C \in F\}
 $$
 which seems to hold.
 
+\subsection{}
+
+\textit{Let $A, F$ be sets. Then $A \cup (\cup F) = \cup\{A \cup C: C \in F\}$}
+
+$$x \in A \cup (\cup F) \lra x \in A \lor x \in \cup F \lra
+x \in A \lor  (\exists C \in F)(x \in C) \lra$$
+$$
+\lra (\exists C \in F)(x \in A) \lor \exists(C \in F)( x \in C) \lra
+$$
+$$ \lra 
+\exists(C \in F)(x \in A \lor x \in C) \lra
+\exists(C \in F)(x \in A \cup C) \lra x \in \cup\{A \cup C: C \in F\}
+$$
+
+Where we've used the fact that
+$$x \in A \lra x \in A \land \true \lra x \in A \land (\exists C \in F)(\true) \lra
+(\exists C \in F)(x \in A  \land \true) \lra  (\exists C \in F)(x \in A)$$
+don't know if we can use it, but I used it anyways.
+
+
+
+
+\subsection{}
+
+\textit{Let $A, F$ be sets. Then $A \cap (\cup F) = \cup\{A \cap C: C \in F\}$}
+
+$$x \in A \cap (\cup F) \lra x \in A \land x \in \cup F \lra
+x \in A \land  (\exists C \in F)(x \in C) \lra$$
+$$ \lra 
+\exists(C \in F)(x \in A \land x \in C) \lra
+\exists(C \in F)(x \in A \cap C) \lra x \in \cup\{A \cap C: C \in F\}$$
+
+
+\subsection*{2.2.5}
+
+\textit{Let $A$ and $F$ be sets. Then there exists a unique set $\epsilon$ such that for all
+  $Y$ we have that $Y \in \epsilon$ if and only if $Y = A \cap C$ for some $C \in F$.}
+
+$\cup F$ exists by union axiom, $A \cap (\cup F)$ exists by subset axiom. Thus $\pow(A \cap (\cup F))$
+exists by power axiom. Since $Y = A \cap C \imp Y \subseteq A \cap (\cup F)$, we follow that
+$Y$ is a subset of $\pow(A \cap (\cup F))$, which exists by subset axiom. By extensionality axiom we follow that
+the set is unique.
+
+\subsection*{2.2.12}
+
+\textit{If $F$ and $G$ are nonempty sets, then }
+$$\cap(F \cup G) = \cap(F) \cap  \cap(G)$$
+
+$$x \in \cap(F \cup G) \lra (\forall C \in F \cup G)(x \in C) \lra (\forall C \in F)(x \in C) \land
+(\forall C \in G)(x \in C) \lra $$
+$$ \lra x \in \cap(F) \land x \in \cap(G) \lra x \in (\cap(F)) \cap (\cap(G))$$
+
+
+\subsection*{2.2.14}
+
+\textit{Let $F$ be a nonempty set. Then}
+$$\pow(\cap (F)) = \cap\{\pow(C): C \in F\}$$
+
+$$x \in \pow(\cap (F)) \lra x \subseteq \cap (F) \lra (\forall y \in x)(y \in \cap (F)) \lra
+(\forall y \in x)(\forall (C \in F) (y \in F)) \lra $$
+$$
+\forall (C \in F) ( (\forall y \in x) y \in F) \lra
+\lra \forall(C \in F)(x \subseteq C) \lra \forall(C \in F)(x \in \pow(C)) \lra x \in  \cap\{\pow(C): C \in F\}$$
+
+\chapter{Relations and Functions}
+
+\section{Ordered Pairs in Set Theory}
+
+\subsection{}
+
+\textit{Define $\eangle{a, b, c} = \eangle{\eangle{a, b}, c}$ for any sets $a, b, c$. Prove that this yields an
+  ordered tuple; that is, prove tahat if $\eangle{x, y, z} = \eangle{a, b, c}$, then $x = a$, $y = b$, $z = c$.}
+
+Suppose that
+$$\eangle{x_1, x_2, x_3} = \eangle{y_1, y_2, y_3}$$
+then we follow that
+$$\eangle{\eangle{x_1, x_2}, x_3} = \eangle{\eangle{y_1, y_2}, y_3}$$
+from which we get that $\eangle{x_1, x_2} = \eangle{y_1, y_2}$ and $x_3 = y_3$. From
+$\eangle{x_1, x_2} = \eangle{y_1, y_2}$ we get that $x_1  = y_1$ and $x_2 = y_2$. In
+total we get that
+$$\eangle{\eangle{x_1, x_2}, x_3} = \eangle{\eangle{y_1, y_2}, y_3}
+\imp x_1 = y_1 \land x_2 = y_2 \land x_3 = y_3$$
+Thus we follow that given construction defines an ordered tuple, as desired.
+
+\subsection{}
+
+\textit{Prove that $(A \cup B) \times C = (A \times C) \cup (B \times C)$}
+
+$$x \in (A \cup B) \times C \lra x = \eangle{y, z} \land y \in A \cup B \land z \in C
+\lra  x = \eangle{y, z} \land (y \in A \lor y \in  B) \land z \in C $$
+$$ \lra  (x = \eangle{y, z} \land z \in C ) \land (y \in A \lor y \in  B) \lra $$
+$$\lra 
+(x = \eangle{y, z} \land z \in C \land y \in A ) \lor
+(x = \eangle{y, z} \land z \in C \land y \in B ) \lra$$
+$$\lra 
+(x \in A \times C ) \lor (x \in B \times C) \lra x \in (A \times C) \cup (B \times C)$$
+as desired.
+
+\subsection{}
+
+\textit{Prove that $(A \setminus B) \times C = (A \times C) \setminus (B \times C)$}
+
+$$x \in (A \setminus B) \times C \lra x = \eangle{y, z} \land y \in A \setminus B \land z \in C
+\lra  x = \eangle{y, z} \land (y \in A \land y \notin  B) \land z \in C $$
+$$ \lra  (x = \eangle{y, z} \land z \in C ) \land (y \in A \land y \notin  B) \lra $$
+$$ \lra  x = \eangle{y, z} \land z \in C \land y \in A \land y \notin  B \lra $$
+$$ \lra  (x = \eangle{y, z} \land y \in A \land z \in C) \land
+ (x \neq \eangle{y, z} \lor y \notin B \lor z \notin C)  \lra $$
+$$ \lra  (x = \eangle{y, z} \land y \in A \land z \in C) \land
+ (x \neq \eangle{y, z} \lor y \notin B \lor z \notin C)  \lra $$
+$$ \lra  (x = \eangle{y, z} \land y \in A \land z \in C) \land
+\neg (x = \eangle{y, z} \land y \in B \land z \in C))  \lra $$
+$$\lra 
+(x \in A \times C) \land \neg (x \in B \times C) \lra x \in (A \times C) \setminus (B \times C)$$
+
+Used a biconditional defined in "useful things"
+
+
+\subsection{}
+
+\textit{Prove that $$(\cup F) \times C = \cup\{A \times C: A \in F\}$$}
+
+$$x \in (\cup F) \times C \lra x = \eangle{y, z} \land y \in (\cup F) \land z \in C \lra
+x = \eangle{y, z} \land (\exists A \in F)(y \in A) \land z \in C \lra
+$$
+$$ \lra   (\exists A \in F)(y \in A \land x = \eangle{y, z} \land z \in C) \lra
+(\exists A \in F)(x \in A \times C) \lra$$
+$$\lra x \in  \cup\{A \times C: A \in F\}$$
+
+\section{Relations}
+
+\subsection{}
+
+\textit{Explain why the empty set is a relation}
+
+Relation is defined to be a set of ordered pairs. That is, for every $x \in R$, $x$ is an ordered pair.
+Since we haven't got any elements in the emptyset, we follow that the logical statement is true and  therefore
+emptyset is a relation.
+
+Other way to see it is to assume that it is not a relation. Then we follow that emptyset has an element that
+is not an ordered pair. Since emptyset does not have any elements, we follow that we have
+a contradiction.
+
+\subsection{}
+
+\textit{Prove items 1-3 of Theorem 3.2.7}
+
+$$x \in \dom(R \inv) \lra \exists y (\eangle{x, y} \in R \inv)
+\lra \exists y (\eangle{y, x} \in R) \lra x \in \ran(R)$$
+
+$$x \in \ran(R \inv) \lra \exists y (\eangle{y, x} \in R \inv)
+\lra \exists y (\eangle{x, y} \in R) \lra x \in \dom(R)$$
+
+$$x \in (R \inv) \inv \lra \exists y \exists z (\eangle{y, z} \in (R \inv) \inv ) \land x = \eangle{y, z}
+\lra \exists y \exists z (\eangle{z, y} \in (R \inv) ) \land x = \eangle{y, z} \lra $$
+$$ \lra  \exists y \exists z (\eangle{y, z} \in R ) \land x = \eangle{y, z} \lra x \in R$$
 
 
 

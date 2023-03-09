@@ -35,3 +35,14 @@
 \contentsline {section}{\numberline {2.1}The First Six Axioms}{12}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Operations on Sets}{14}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}}{15}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}}{15}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}}{15}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Relations and Functions}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ordered Pairs in Set Theory}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}}{17}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}}{18}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}}{18}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Relations}{18}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}}{18}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}}{19}{subsection.3.2.2}%

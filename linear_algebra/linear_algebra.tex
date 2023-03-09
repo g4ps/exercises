@@ -6144,35 +6144,40 @@ TODO
 
 \subsection{}
 
-% \subsection{}
+\subsection{}
 
-% \textit{Suppose $F = C$, $V$ is finite-dimentional, $T \in \map(V)$, all the eigenvalues of $T$
-%   have absolute values less than $1$, and $\epsilon > 0$. Prove that there exists a
-%   positive integer $m$ such that $||T^m v|| \leq \epsilon ||v||$}
+\textit{Suppose $F = C$, $V$ is finite-dimentional, $T \in \map(V)$, all the eigenvalues of $T$
+  have absolute values less than $1$, and $\epsilon > 0$. Prove that there exists a
+  positive integer $m$ such that $||T^m v|| \leq \epsilon ||v||$}
 
-% Because $V$ is finite-dimentional and complex, we follow that
-% there exists an orthonormal basis of $V$, such that $T$ has upper-triangular matrix. Let
-% this basis be denoted by $e_1, ..., e_n$. Let $v \in V$. Then we follow that
-% $$v = \sum{a_n e_n}$$
-% for some $a_1, ..., a_n \in C$.
+Because $V$ is finite-dimentional and complex, we follow that
+there exists an orthonormal basis of $V$, such that $T$ has upper-triangular matrix. Let
+this basis be denoted by $e_1, ..., e_n$. Let $v \in V$. Then we follow that
+$$v = \sum{a_n e_n}$$
+for some $a_1, ..., a_n \in C$.
 
-% For $e_1$ we've got that
-% $$T e_1 = \lambda_1 e_1$$
-% thus
-% $$T^m e_1 = \lambda_1^m e_1$$
-% for any $m \in N$. Therefore we follow that
-% $$||T^m e_1|| = ||\lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |\lambda_1|^m$$
-% and
-% $$||T^m a_1 e_1|| = ||a_1 \lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |a_1| |\lambda_1|^m$$
-% Since $|\lambda_1| < 1$, we follow that
-% $$\lim_{m \to \infty}{||T^m a_1 e_1||} = \lim_{m \to \infty}{(|a_1| |\lambda_1|^m)}= 0$$
-% for every $a_1 \in C$
+For $e_1$ we've got that
+$$T e_1 = \lambda_1 e_1$$
+thus
+$$T^m e_1 = \lambda_1^m e_1$$
+for any $m \in N$. Therefore we follow that
+$$||T^m e_1|| = ||\lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |\lambda_1|^m$$
+and
+$$||T^m a_1 e_1|| = ||a_1 \lambda_1^m e_1|| = |\lambda_1^m| ||e_1|| = |a_1| |\lambda_1|^m$$
+Since $|\lambda_1| < 1$, we follow that
+$$\lim_{m \to \infty}{||T^m a_1 e_1||} = \lim_{m \to \infty}{(|a_1| |\lambda_1|^m)}= 0$$
+for every $a_1 \in C$
 
-% For $e_2$ we've got that
-% $$T e_2 = b_1 e_1 + \lambda_2 e_2$$
-% $$T^2 e_2 = b_1 T e_1 + \lambda_2 T e_2 = b_1 \lambda_1 e_1 + \lambda_2 (b_1 e_1 + \lambda_2 e_2) =
-% b_1 \lambda_1 e_1 + \lambda_2 b_1 e_1 + \lambda_2^2  e_2 = $$
+For $e_2$ we've got that
+$$T e_2 = b_1 e_1 + \lambda_2 e_2$$
+$$T^2 e_2 = b_1 T e_1 + \lambda_2 T e_2 = b_1 \lambda_1 e_1 + \lambda_2 (b_1 e_1 + \lambda_2 e_2) =
+b_1 \lambda_1 e_1 + \lambda_2 b_1 e_1 + \lambda_2^2  e_2 = $$
 
+TODO
+
+\textbf{\textit{The rest of the chapter is marked as TODO for the better days}}
+
+\section{Orthogonal Complements and Minimization Problems}
 
 \end{document}
 

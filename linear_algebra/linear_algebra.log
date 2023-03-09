@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  8 MAR 2023 18:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  9 MAR 2023 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -694,16 +694,16 @@ OMS/cmsy/m/n/10.95 jj[] \OT1/cmr/m/n/10.95 =
 
 [154] [155] [156] [157] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 84C711B5DBA2D8F15C6CCB53D79EC130;22396.
+(rerunfilecheck)             Checksum: E22369076C3CCA2A9EC7C7097D845580;22760.
  ) 
 Here is how much of TeX's memory you used:
- 9903 strings out of 478238
- 151841 string characters out of 5850457
- 444038 words of memory out of 5000000
- 27534 multiletter control sequences out of 15000+600000
+ 9907 strings out of 478238
+ 151901 string characters out of 5850457
+ 444032 words of memory out of 5000000
+ 27536 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,356b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,359b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -718,10 +718,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (158 pages, 609028 bytes).
+Output written on linear_algebra.pdf (158 pages, 615368 bytes).
 PDF statistics:
- 2675 PDF objects out of 2984 (max. 8388607)
- 2456 compressed objects within 25 object streams
- 518 named destinations out of 1000 (max. 500000)
- 2857 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2685 PDF objects out of 2984 (max. 8388607)
+ 2466 compressed objects within 25 object streams
+ 520 named destinations out of 1000 (max. 500000)
+ 2873 words of extra memory for PDF output out of 10000 (max. 10000000)
 
