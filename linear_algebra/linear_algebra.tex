@@ -11,6 +11,7 @@
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
@@ -6178,6 +6179,126 @@ TODO
 \textbf{\textit{The rest of the chapter is marked as TODO for the better days}}
 
 \section{Orthogonal Complements and Minimization Problems}
+
+\subsection{}
+
+\textit{Suppose $v_1, ..., v_m \in V$. Prove that
+  $$\{v_1, ..., v_m\}^\perp = (\Span(v_1, ..., v_m))^\perp$$}
+
+Let 
+$$v \in \{v_1, ..., v_m\}^\perp$$
+which means that for every $v_j \in \{v_1, ..., v_m\}$
+$$\eangle{v_j, v} = 0$$
+which is eqivalent to (assuming that $\lambda_j \in F$ is arbitrary)
+$$\eangle{\lambda_j v_j, v} = \lambda_j 0$$
+$$\eangle{\lambda_j v_j, v} = 0$$
+$$\sum_{1 \leq j \leq m}{\eangle{\lambda_j v_j, v}} = 0$$
+$$\eangle{\sum_{1 \leq j \leq m}{ [\lambda_j v_j]}, v} = 0$$
+which is equivalent to
+$$v \in (\Span(v_1, ..., v_m))^\perp$$
+thus we follow that
+$$\{v_1, ..., v_m\}^\perp = (\Span(v_1, ..., v_m))^\perp$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $U$ is a finite-dimentional subspace of $V$. Prove that $U^\perp = \{0\}$ if and
+  only if $U = V$.}
+
+Suppose that it is not the case. Then we follow that there exists $v \in V \neq 0$ such that
+$v \notin U$. Let $u_1, ..., u_n$ be a basis of $U$. Then we follow that
+$$v \notin \Span(u_1, ..., u_n)$$
+therefore we follow that there exists a subspace $U' = \Span(u_1, ..., u_n, v)$. If we apply
+GSP to a list $u_1, ..., u_n, v$, we get an orthonormal basis $e_1, ..., e_k$ of $U'$ and
+therefore
+$$\eangle{e_k, e_j} = 0$$
+for any $1 \leq j \leq n$. Since $\Span(e_1, ..., e_n) = \Span(u_1, ..., u_n) = U$, we follow that
+for every $u \in U$
+$$\eangle{e_k, u} = 0$$
+therefore $e_k \in U^\perp$. Thus $U^\perp \neq \{0\}$, which is a contradiction. 
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $V$ with basis $u_1, ..., u_m$ and
+$$u_1, ..., u_m, w_1, ..., w_n$$
+is a basis of $V$. Prove that if the GSP is applies to the basis of $V$ above, producing list
+$e_1, ..., e_m, f_1, ..., f_n$, then $e_1, ..., e_m$ is an orthonormal basis of $U$ and
+$f_1, ..., f_n$ is an orthonormal basis of $U^\perp$.}
+
+We can follow that $$U = \Span(u_1, ..., u_m) = \Span(e_1, ..., e_m)$$. Thus if
+$w \in \Span(f_1, ..., f_n)$ then $w \in U^\perp$.
+Now suppose that $w \in U^\perp$. Then we follow that
+$$w = \sum{[a_j e_j]} + \sum{[b_j f_j]}$$
+Let $u \in U$ be defined as 
+$$u = \sum{[ e_j]}$$
+thus 
+$$\eangle{u, w} = \eangle{\sum{[ e_j]}, \left(\sum{[a_j e_j]} + \sum{[b_j f_j]}\right)} =
+\eangle{\sum{[ e_j]}, \sum{[a_j e_j]}} +
+\eangle{\sum{[ e_j]}, \sum{[b_j f_j]}} = $$
+$$ = \eangle{\sum{[ e_j]}, \sum{[a_j e_j]}} = \sum{|a_j|^2} = 0$$
+thus we follow that $a_1 =  ... = a_m = 0$. Therefore
+$$w \in \Span(f_1, ..., f_n)$$
+thus be double inclusion we follow that $U^\perp = \Span(f_1, ..., f_n)$, as desired.
+
+\subsection{}
+
+\textit{Suppose $U$ is a subspace of $R^4$ defined by
+  $$U = \Span((1, 2, 3, -4), (-5, 4, 3, 2))$$
+  Find an orthonormal basis of $U$ and an orthonormal basis of $U^\perp$.}
+
+The idea is to append this list to a basis of $R^4$ (random vectors will do, the chance of
+them being linearly dependent is pretty small) and apply GSP to it. By using maxima I got
+the answer, which is pretty awful and included in maxima files.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $U$ is a subspace of $V$. Show that
+  $P_{U^\perp} = I - P_U$, where $I$ is the identity on $V$.}
+
+Let $e_1, ..., e_n$ be an orhonormal basis of $U$ and expand it to orhonormal basis of $V$
+$e_1, ..., e_n, f_1, ..., f_m$. Let $v \in V$. Because $e_1, ..., e_n, f_1, ..., f_m$ is
+a basis of $V$ we follow that there exist $a_1, ..., a_n, b_1, ..., b_m$ such that
+$$v = \sum{a_j e_j} + \sum{b_j f_j}$$
+Then we follow that
+$$P_U(v) = P_U(\sum{a_j e_j} + \sum{b_j f_j}) = \sum{a_j e_j}$$
+thus
+$$(I - P_U) v  = \sum{a_j e_j} + \sum{b_j f_j} - \sum{a_j e_j} = \sum{b_j f_j} =
+P_{U^\perp}v$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $U$ and $W$ are finite-dimentional subspaces of $V$. Prove that
+  $$P_U P_W = 0$$
+  if and only if $\eangle{u, w} = 0$ for all $u \in U$ and $w \in W$}
+
+\textbf{In forward direction: }
+Suppose that $P_U P_W = 0$.
+Let $u_1, ..., u_n$ be an orthonormal basis of $U$ and $w_1, ..., w_m$ be an orthonormal basis of
+$W$. Then we follow that 
+$$P_U P_W w_j = P_U w_j = \sum{\eangle{u_i, w_j}u_i} = 0$$
+Since $u_1, ..., u_n$ is a basis of $U$, we follow that $\eangle{u_i, w_j} = 0$ for every
+$1 \leq i \leq n$. Thus for $1 \leq i \leq n$ and $1 \leq j \leq m$ we've got that
+$\eangle{u_i, w_j} = 0$. Therefore we follow that for every $u \in U$ and $w \in W$
+$$\eangle{u, w} = \eangle{\sum{a_j u_j}, \sum{b_i w_i}} = 0$$
+
+
+\textbf{In reverse direction: }
+If $\eangle{u, w} = 0$ for every $u \in U$ and $w \in W$, then we can follow that for $v \in V$
+$$P_U P_W (v) = \sum{\eangle{u_j, P_W(v)} u_j}$$
+and since $P_W(v) \in W$ for every $v \in V$ we follow that
+$$P_U P_W (v) = \sum{\eangle{u_j, P_W(v)} u_j} = \sum{0 u_j} = 0$$
+
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $P \in \map(V)$ is such that $P^2 = P$ and
+  every vector in $\ns P$ is orthogonal to every vector in $\range P$. Prove that there
+  exsits a subspace $U$ of $V$ such that $P = P_U$.}
+
+Suppose that $u_1, ..., u_n$ is an orthogonal basis of $\ns P$. If $v \in \range$ TODO
+
 
 \end{document}
 

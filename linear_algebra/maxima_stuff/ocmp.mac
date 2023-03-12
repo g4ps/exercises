@@ -1,0 +1,7 @@
+load(eigen)$
+v1: [1, 2, 3, -4]$
+v2: [-5, 4, 3, 2]$
+v3: [2, 10, 40, -4]$
+v4: [9 ,-8, 32, 51]$
+normalize (x) := 1/(sqrt(x.x)) * x;
+res: factor(map(normalize, gramschmidt([v1, v2, v3, v4])));
