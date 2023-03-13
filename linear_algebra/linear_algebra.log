@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  12 MAR 2023 16:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  13 MAR 2023 09:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -692,18 +692,30 @@ T1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 b[]e[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it
 OMS/cmsy/m/n/10.95 jj[] \OT1/cmr/m/n/10.95 =
  []
 
-[154] [155] [156] [157] [158] [159] [160] [161] (./linear_algebra.aux)
+[154] [155] [156] [157] [158] [159] [160] [161]
+Overfull \hbox (36.9529pt too wide) in paragraph at lines 6346--6350
+[]\OT1/cmr/bx/n/10.95 In for-ward di-rec-tion:  \OT1/cmr/m/n/10.95 Sup-pose tha
+t $\OML/cmm/m/it/10.95 U$ \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 U[]$ \OT1
+/cmr/m/n/10.95 are in-vari-ant un-der $\OML/cmm/m/it/10.95 T$\OT1/cmr/m/n/10.95
+ . Let $\OML/cmm/m/it/10.95 e[]; ::::; e[]; f[]; :::; f[]$
+ []
+
+[162] [163]
+Chapter 7.
+[164
+
+] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 24C84EC2B49E5AEB3361E48F5D30402C;23145.
+(rerunfilecheck)             Checksum: 2489BCDEACDD29871913416D0A899A4B;23763.
  ) 
 Here is how much of TeX's memory you used:
- 9927 strings out of 478238
- 152178 string characters out of 5850457
- 444052 words of memory out of 5000000
- 27545 multiletter control sequences out of 15000+600000
+ 9940 strings out of 478238
+ 152350 string characters out of 5850457
+ 444051 words of memory out of 5000000
+ 27550 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,359b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,359b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -719,10 +731,10 @@ type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (162 pages, 633043 bytes).
+Output written on linear_algebra.pdf (165 pages, 639327 bytes).
 PDF statistics:
- 2744 PDF objects out of 2984 (max. 8388607)
- 2518 compressed objects within 26 object streams
- 531 named destinations out of 1000 (max. 500000)
- 2929 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2783 PDF objects out of 2984 (max. 8388607)
+ 2554 compressed objects within 26 object streams
+ 539 named destinations out of 1000 (max. 500000)
+ 2969 words of extra memory for PDF output out of 10000 (max. 10000000)
 

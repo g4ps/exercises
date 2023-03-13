@@ -5,3 +5,32 @@ v3: [2, 10, 40, -4]$
 v4: [9 ,-8, 32, 51]$
 normalize (x) := 1/(sqrt(x.x)) * x;
 res: factor(map(normalize, gramschmidt([v1, v2, v3, v4])));
+
+
+p1: 1$
+p2: x$
+p3: x^2$
+p4: x^3$
+p5: x^4$
+p6: x^5$
+p7: x^6$
+p8: x^7$
+p9: x^8$
+p10: x^9$
+
+l1: [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, x^10, x^11, x^12, x^13, x^14];
+
+l2: [1, x, x^2, x^3, x^4, sin(x), cos(x), sin(2*x), cos(2*x)];
+
+ip (f, g) := integrate(f * g, x, -%pi, %pi);
+ip2 (f) := integrate(f * sin(x), x, -%pi, %pi) * f;
+ip1 (f) := integrate(f * cos(x), x, -%pi, %pi) * f;
+ipn (v) := 1 / sqrt(ip(v, v)) * v ;
+y: map(ipn, gramschmidt([p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, x^10, x^11, x^12, x^13, x^14], ip)); /* normalized GSP output */
+y3: map(ipn, gramschmidt(l2, ip)); /* normalized GSP output */
+y1: map(ipn, gramschmidt([p1, p2, p3, p4, p5, p6], ip)); /* normalized GSP output */
+aprvec: map(ip1, y3);
+apr: expand(sum(aprvec[i], i, 1, length(aprvec)));
+
+
+go (x):=  0.987862 * x - 0.15527 * x^3 + 0.00564312 * x^5;

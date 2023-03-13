@@ -6297,7 +6297,97 @@ $$P_U P_W (v) = \sum{\eangle{u_j, P_W(v)} u_j} = \sum{0 u_j} = 0$$
   every vector in $\ns P$ is orthogonal to every vector in $\range P$. Prove that there
   exsits a subspace $U$ of $V$ such that $P = P_U$.}
 
-Suppose that $u_1, ..., u_n$ is an orthogonal basis of $\ns P$. If $v \in \range$ TODO
+From exercise 4 in section 5.2 we know that $P^2 = P$ implies that
+$$V = \ns P \oplus \range P$$
+thus we can follow that we can have an orthonormal basis $e_1, ..., e_n, f_1, ..., f_m$ of $V$
+with $e_1, ..., e_n$ being basis of $\ns P$ and $f_1, ..., f_m$ being basis of $\range P$.
+Suppose that $v \in V$. Then we follow that
+$$v = \sum{a_j e_j} + \sum{b_j f_j}$$
+thus
+$$P v = P (\sum{a_j e_j}) + P(\sum{b_j f_j})$$
+since $e_1, ... e_n$ is a basis of $\ns P$, we follow that
+$$P v = P (\sum{a_j e_j}) + P(\sum{b_j f_j}) = P(\sum{b_j f_j})$$
+thus we follow that $P$ is an orthogonal projection for $\range P$. (Don't know why do we need
+clause about $\ns P$ being orthogonal to $\range P$).
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional and $P \in \map(V)$ is such that $P^2 = P$ and
+  $$||Pv|| \leq ||v||$$
+  for every $v \in V$. Prove that there exists a subspace $U$ of $V$ such that $P = P_U$.}
+
+Same as previous.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $U$ is a finite-dimentional subspace of $V$. Prove that
+  $U$ is invariant under $T$ if and only if $P_U T P_U = T P_U$}
+
+If $U$ is invariant under $T$, then we follow that for every $v \in V$ we've got that
+$$P_U v \in U$$
+$$T P_U v \in U$$
+thus
+$$T P_U v = P_U(T P_U v)$$
+
+
+Suppose that $P_U T P_U = T P_U$ and suppose that $T$ is not invariant under $U$. Then we follow
+that there exists $u \in U$ such that $Tu \notin U$. Thus
+$$T P_U u = T u \notin U$$
+$$P_U T P_U u = P_U T u \in U$$
+thus
+$$P_U T P_U \neq P_U T$$
+which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $V$ is finite-dimentional, $T \in \map(V)$ and $U$ is a subspace of $V$. Prove
+  that $U$ and $U^\perp$ are both invariant under $T$ if and only if $P_U T = T P_U$}
+
+\textbf{In forward direction: }
+Suppose that $U$ and $U^\perp$ are invariant under $T$. Let $e_1, ...., e_n, f_1, ..., f_m$
+denote the basis of $V$ with $e_1, ..., e_n$ being the basis of $U$ and $f_1, ..., f_m$
+being the basis of $U^\perp$. Let $v \in V$. Then we follow that
+$$v = u + w  = \sum{a_j e_j} + \sum{b_j f_j}$$
+where $u \in U$ and $w \in U^\perp$.
+Then we follow that
+$$Tu = \sum{a_j' e_j}$$
+$$Tw = \sum{b_j' f_j}$$
+$$T v = T (\sum{a_j e_j} + \sum{b_j f_j}) = \sum{a_j' e_j} + \sum{b_j' f_j}$$
+for some $a_1, ..., b_n \in F$.
+Thus
+$$P_U T v = P_U T( \sum{a_j e_j} + \sum{b_j f_j}) =
+P_U (\sum{a_j' e_j} + \sum{b_j' f_j}) = \sum{a_j' e_j}$$
+and
+$$ T P_U v =  T P_U ( \sum{a_j e_j} + \sum{b_j f_j}) =
+T \sum{a_j e_j}  = \sum{a_j' e_j} = P_U T v$$
+
+\textbf{In reverse direction: }
+Suppose that $P_U T = T P_U$. Suppose that $T$ is not invariant under $U$. Then we follow that
+there exists $u \in U$ such that $Tu \notin U$. Thus
+$$T u = T P u \notin U$$
+and
+$$P T u = P(Tu) \in U$$
+therefore
+$$TPu \neq PTu$$
+which is a contradiction.
+
+If $T$ is not invariant under $U^\perp$, then we follow that there exists $w \in U^\perp$ such
+that $Tw \notin U^\perp$. Therefore
+$$Tw = \sum{a_j e_j} + \sum{b_j f_j}$$
+where some of $a_j$ are not equal to $0$. Thus we've got that 
+$$T P_U w = T 0 = 0$$
+and
+$$P_U T w  = \sum{a_j e_j} \neq 0 = T P_U w$$
+which is a contradiction.
+
+\textit{Last several exercises (with the exception of the 14)
+  are great practice at maxima programming, that I'll do at better times (approximation of
+  the sine is done though)}
+
+\chapter{Operators on Inner Product Spaces}
+
+\section{Self-Adjoint and Normal Operators}
+
 
 
 \end{document}
