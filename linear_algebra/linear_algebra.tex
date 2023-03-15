@@ -11,6 +11,7 @@
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
+\DeclareMathOperator \imp {\Rightarrow}
 \DeclareMathOperator \lra {\Leftrightarrow}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
@@ -6388,7 +6389,49 @@ which is a contradiction.
 
 \section{Self-Adjoint and Normal Operators}
 
+\subsection{}
 
+\textit{Suppose $n$ is a positive inveger. Define $T \in \map(F^n)$ by 
+$$T(z_1, ..., z_n) = (0, z_1, ..., z_{n - 1})$$
+Find a formula for $T^\star(z_1, ..., z_n)$}
+
+Let
+$$v = (z_1, ..., z_n)$$
+$$w = (z_1', ..., z_n')$$
+
+Assuming that we've got Eucledean inner product we follow that
+$$\eangle{v, T^\star w} = \eangle{T v,  w} =
+\eangle{(0, z_1, ..., z_{n - 1}),  (z_1', z_2', ..., z_n')} =
+\sum_{2 \leq j \leq n}{z_{j - 1} z_{j}'} =
+\sum_{1 \leq j \leq n - 1}{z_{j} z_{j + 1}'} =
+$$
+$$ = \eangle{(z_1, ..., z_{n}),  (z_2', z_3', ..., z_{n}, 0)} $$
+thus we follow that
+$$T^\star (z_1, ..., z_n) = (z_2, ..., z_n, 0)$$
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $\lambda \in F$. Prove that $\lambda$ is a n eigenvalue of
+  $T$ if and only if $\overline{\lambda}$ is an eigenvalue of $T^\star$ }
+
+Suppose that $\lambda$ is an eigenvalue for $T$ with corresponding eigenvector $v$, and
+$\overline{\lambda}$ is not an eigenvalue for $T^\star$. Fix $w \in W$.
+Thus we follow that 
+
+$$T v = \lambda v $$
+$$\eangle{Tv, w} = \eangle{\lambda v, w} $$
+$$ \eangle{v, T^\star w} = \eangle{v, \overline{\lambda} w} $$
+thus we have a contradiction.
+
+Given that $(T^\star)^\star = T$ and $\overline{\overline{\lambda}} = \lambda$ we follow that
+this implication presents valid converse.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $U$ is a subspace of $V$. Prove that $U$ is invariant under
+  $T$ if and only if $U^\perp$ is invariant under $T$.}
+
+Suppose that $U$ is invariant under $T$. Then we follow that 
 
 \end{document}
 
