@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  15 MAR 2023 07:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  16 MAR 2023 18:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -702,20 +702,36 @@ t $\OML/cmm/m/it/10.95 U$ \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 U[]$ \OT1
 
 [162] [163]
 Chapter 7.
+
+Overfull \hbox (1.92708pt too wide) in paragraph at lines 6394--6395
+\OT1/cmr/m/it/10.95 From this chap-ter on we've got that ev-ery space that we'r
+e talk-ing about is finite-dimentional,
+ []
+
 [164
 
-] [165] (./linear_algebra.aux)
+] [165]
+Overfull \hbox (54.63416pt too wide) detected at line 6487
+[] [] \OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = []([] \OML/cmm/m/it/10.95 T[]\
+OT1/cmr/m/n/10.95 )[] = [] \OML/cmm/m/it/10.95 W \OMS/cmsy/m/n/10.95 ^^@ [] [] 
+\OML/cmm/m/it/10.95 T[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 W \OMS/cmsy
+/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 ([] \OML/cmm/m/it/10.95 W \OMS/cmsy/m/n/10.95
+ ^^@ [] [] \OML/cmm/m/it/10.95 T[]\OT1/cmr/m/n/10.95 ) = [] [] \OML/cmm/m/it/10
+.95 T[]
+ []
+
+[166] [167] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 96FCB54DA875C8C3201242B037284094;23928.
+(rerunfilecheck)             Checksum: 7921C1C2A5593BCC4060DE78256D449E;24203.
  ) 
 Here is how much of TeX's memory you used:
- 9949 strings out of 478238
- 152467 string characters out of 5850457
+ 9961 strings out of 478238
+ 152653 string characters out of 5850457
  444071 words of memory out of 5000000
- 27555 multiletter control sequences out of 15000+600000
+ 27560 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,359b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,359b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -731,10 +747,10 @@ type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (166 pages, 642373 bytes).
+Output written on linear_algebra.pdf (168 pages, 647205 bytes).
 PDF statistics:
- 2804 PDF objects out of 2984 (max. 8388607)
- 2574 compressed objects within 26 object streams
- 543 named destinations out of 1000 (max. 500000)
- 2993 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2839 PDF objects out of 2984 (max. 8388607)
+ 2606 compressed objects within 27 object streams
+ 550 named destinations out of 1000 (max. 500000)
+ 3033 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -6389,6 +6389,10 @@ which is a contradiction.
 
 \section{Self-Adjoint and Normal Operators}
 
+\textit{From this chapter on we've got that every space that we're talking
+  about is finite-dimentional, as denoted in the notation notes in
+  the beginning of the chapter}
+
 \subsection{}
 
 \textit{Suppose $n$ is a positive inveger. Define $T \in \map(F^n)$ by 
@@ -6411,27 +6415,123 @@ $$T^\star (z_1, ..., z_n) = (z_2, ..., z_n, 0)$$
 
 \subsection{}
 
-\textit{Suppose $T \in \map(V)$ and $\lambda \in F$. Prove that $\lambda$ is a n eigenvalue of
+\textit{Suppose $T \in \map(V)$ and $\lambda \in F$. Prove that $\lambda$ is an eigenvalue of
   $T$ if and only if $\overline{\lambda}$ is an eigenvalue of $T^\star$ }
 
-Suppose that $\lambda$ is an eigenvalue for $T$ with corresponding eigenvector $v$, and
-$\overline{\lambda}$ is not an eigenvalue for $T^\star$. Fix $w \in W$.
-Thus we follow that 
+Suppose that $\lambda$ is an eigenvalue for $T$ with corresponding eigenvector $v$ and
+$\overline{\lambda}$ is not an eigenvalue for $T^\star$. 
 
-$$T v = \lambda v $$
-$$\eangle{Tv, w} = \eangle{\lambda v, w} $$
-$$ \eangle{v, T^\star w} = \eangle{v, \overline{\lambda} w} $$
-thus we have a contradiction.
+We follow that $T^\star - \lambda I$ is surjective. Therefore there exists $w \in W$ such that
+$$v = (T^\star - \lambda I)w $$
+since $v \neq 0$ we follow that
+$$\eangle{v, v} = \eangle{v, (T^\star - \lambda I)w} \neq 0$$
+but
+$$\eangle{v, v} = \eangle{v, (T^\star - \lambda I)w} = \eangle{(T - \lambda I)v, w} =
+\eangle{0, w} = 0$$
+which is a contradiction.
 
-Given that $(T^\star)^\star = T$ and $\overline{\overline{\lambda}} = \lambda$ we follow that
-this implication presents valid converse.
+We follow converse from the initial implication since $(T^\star)^\star = T$ and
+$\overline{\overline{\lambda}} = \lambda$.
+
 
 \subsection{}
 
 \textit{Suppose $T \in \map(V)$ and $U$ is a subspace of $V$. Prove that $U$ is invariant under
-  $T$ if and only if $U^\perp$ is invariant under $T$.}
+  $T$ if and only if $U^\perp$ is invariant under $T^\star$.}
 
-Suppose that $U$ is invariant under $T$. Then we follow that 
+We've got that $u \in U \to Tu \in U$. Suppose that $u \in U$ and  $u' \in U^\perp$.
+Then we follow that
+$$\eangle{Tu, u'} = 0$$
+$$\eangle{u, T^\star u'} = 0$$
+thus we follow that $u' \in U' \to T^\star u'$, as desired. Proof of is followed from this
+one, because we've got that $(T^\star)^\star = T$ and $(U^\perp)^\perp = U$
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V, W)$. Prove that }
+
+\textit{(a) $T$ is injective if and only if  $T^\star$ is surjective}
+
+Suppose that $T$ is injective. Then we follow that
+$$\ns T = \{0\}$$
+$$(\ns T)^\perp = \range T^\star = (\{0\})^\perp = V$$
+thus we follow that $T$ is surjective. Since every implication in this proof is equivalence,
+we've got a proof of converse for free.
+
+\textit{(b) $T$ is surjective if and only if $T^\star$ is injective}
+
+Follows from part a  and the fact that $(T^\star)^\star = T$.
+
+\subsection{}
+
+\textit{Prove that 
+$$\dim \ns T^\star = \dim \ns T + \dim W - \dim V$$
+and
+$$\dim \range T^\star = \dim \range T$$
+for every $T \in \map(V, W)$}
+
+Since
+$$\ns T^\star = (\range T)^\perp$$
+we follow that
+$$\dim \ns T^\star = \dim (\range T)^\perp = \dim V - (\dim \range T) = \dim V - \dim  W
++ \dim \ns T$$
+where the second equality comes from the fact that $\dim U^\perp = \dim V - \dim U$ and
+the third  equality comes from FTLM.
+
+From the fact that
+$$ \range T = (\ns T^\star)^\perp$$
+and
+$$ \ns T^\star = (\range T)^\perp$$
+we follow that
+$$\dim \range T = \dim (\ns T^\star)^\perp = \dim W - \dim \ns T^\star =
+\dim W - (\dim W - \dim \range T^\star) = \dim \range T^\star$$
+as desired.
+
+\subsection{}
+
+\textit{Make $P_2(R)$ into an inner product space by defining
+$$\eangle{p, q} = \int_0^1{p(x) q(x) dx}$$
+Define $T \in \map(P_2(R))$ by $T(a_0 + a_1 x + a_2 x^2) = a_1 x$}
+
+\textit{(a) Show that $T$ is not self-ajoint.}
+
+Let
+$$p(x) = x$$
+$$q(x) = 1$$
+then we follow that
+
+$$\eangle{Tp, q} = \int_0^1{Tp(x) q(x) dx} = \int_0^1{x dx} = 1$$
+$$\eangle{p, Tq} = \int_0^1{p(x) Tq(x) dx} = \int_0^1{0 dx} = 0$$
+thus
+$$\eangle{Tp, q} \neq \eangle{p, Tq}$$
+
+\textit{(b) The matrix of $T$ with respect to the basis $(1, x, x^2)$ is 
+$$
+\begin{pmatrix}
+  0 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 0
+\end{pmatrix}
+$$
+This matrix is equal to its conjugate transpose, even though $T$ is not self-ajoint. Explain
+why this is not a contradiction}
+
+Because basis $(1, x, x^2)$ is not orthonormal.
+
+\subsection{}
+
+\textit{Suppose $S, T \in \map(V)$ are self-ajoint Prove that $ST$ is self-adjoint if
+  and only if $ST = TS$.}
+
+$$ST = (ST)^\star = T^\star S^\star = (T^\star) (S^\star) = TS$$
+
+\subsection{}
+
+\textit{Suppose $V$ is a real inner product space. Show that the set of self-adjoint operators
+  in $V$ is a subspace of $\map(V)$.}
+
+Suppose that $T, S$ are self-adjoint. Then we follow that TODO
+
 
 \end{document}
 
