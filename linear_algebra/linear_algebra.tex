@@ -6530,8 +6530,32 @@ $$ST = (ST)^\star = T^\star S^\star = (T^\star) (S^\star) = TS$$
 \textit{Suppose $V$ is a real inner product space. Show that the set of self-adjoint operators
   in $V$ is a subspace of $\map(V)$.}
 
-Suppose that $T, S$ are self-adjoint. Then we follow that TODO
+Suppose that $T, S$ are self-adjoint. Then we follow that for every $v, w \in V$ and
+$\lambda \in R$
+$$\eangle{(S + T)v, w} = \eangle{v, (S + T)^\star w} =  \eangle{v, (S^\star + T^\star) w} =
+\eangle{v, (S + T) w}$$
+$$\eangle{(\lambda T)v, w} = \eangle{v, (\lambda T)^\star w} =  \eangle{v, \overline{\lambda} T^\star w} =   \eangle{v, \lambda T w}$$
+thus we follow that $S, T$ being self-adjoint implies that $S + T$ and $\lambda S$ are
+self-adjoint, thus the set of self-adjoint operators on $V$ is a subspace of $\map(V)$.
 
+\subsection{}
+
+\textit{Suppose $V$ is a complex inner product space with $V \neq \{0\}$. Show that
+  the set of self-adjoint operators on $V$ is not a subspace of $\map(V)$.}
+
+Stemming from the previous exercise we've got the additivity for this set, but in the case
+with complex numbers we've got that there exists $\lambda \in C$ such that
+$$\lambda T \neq \overline{\lambda} T$$
+
+As the example we can look at vector space $C$, map $T(x) = x$ and $\lambda = i$.
+
+% \subsection{}
+
+% \textit{Suppose $\dim V \geq 2$. Show that the set of normal operators on $V$ is not a subspace
+% of $\map(V)$.}
+
+% Suppose that $S, T$ are normal. Then we follow that
+% $$||(S + T)v||^2 = \eangle{(S + T)v, (S + T)v} = \eangle{(S + T)^\star v, (S + T)^\star v} = $$
 
 \end{document}
 
