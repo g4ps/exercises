@@ -6549,13 +6549,267 @@ $$\lambda T \neq \overline{\lambda} T$$
 
 As the example we can look at vector space $C$, map $T(x) = x$ and $\lambda = i$.
 
-% \subsection{}
+\subsection{}
 
-% \textit{Suppose $\dim V \geq 2$. Show that the set of normal operators on $V$ is not a subspace
-% of $\map(V)$.}
+\textit{Suppose $\dim V \geq 2$. Show that the set of normal operators on $V$ is not a subspace
+  of $\map(V)$.}
 
-% Suppose that $S, T$ are normal. Then we follow that
-% $$||(S + T)v||^2 = \eangle{(S + T)v, (S + T)v} = \eangle{(S + T)^\star v, (S + T)^\star v} = $$
+For the set of normal operators we've got that
+$$(\lambda T)^\star = \overline{\lambda} T^\star$$
+and therefore 
+$$||\lambda T v|| = |\lambda| ||T v|| = |\overline{\lambda}| ||T^\star v||
+= ||(\lambda T)^\star v||$$
+therefore we've got closure under multiplication for all normal operators.
+
+Thus we need to look at problems with the closure under addition. Firstly we going to
+look at the small cases, and after some time well spent in octave I found out that for
+$$S =
+\begin{pmatrix}
+  1 & 2 \\
+  -2 & 1
+\end{pmatrix}
+$$
+$$
+T =
+\begin{pmatrix}
+  1 & -3 \\
+  -3 & 1 
+\end{pmatrix}
+$$
+where $S$ is just normal and $T$ is self-adjoint we've got that
+$$
+S + T =
+\begin{pmatrix}
+  2 & -1 \\
+  -5 & 2
+\end{pmatrix}
+$$
+which is not normal. Thus we've got a case for the real vector space with the dimention 2.
+
+Then we can generalize this case for the finite-dimentional real spaces where we define
+$S$ and $T$ to be represented by the given matrix in upper-left corner and zeroes in the rest
+of the matrix. Then we can follow that $S + T$ is still not normal.
+
+Given that this reasoning is still valid if we assume that $F = C$, we follow that
+the space of normal linear maps is not a subspace of $\map(V)$ for any finite-dimentional
+space $V$, with $\dim V \geq 2$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $P \in \map(V)$ is such that $P^2 = P$. Prove that there is a subspace $U$ of
+$V$ such that $P = P_U$ if and only if $P$ is self-adjoint.}
+
+From previous exercises we know that if $P^2 = P$, then we can follow that
+$$V = \ns P \oplus \range P$$
+thus we can follow that $P = P_U$, where $U = \range P$.
+
+Suppose that $e_1, ..., e_n$ is an orthonormal basis of $U$ and $e_1, ..., e_n, f_1, ..., f_m$ is an
+orthonormal basis of $V$.
+Then we follow that
+$$P_U (\sum {a_j e_j} + \sum{b_i f_i}) = \sum a_j e_j$$
+Thus we follow that with resprect to this orthonormal basis the matrix is equal to its conjugate
+transpose and therefore it is self-ajoint.
+
+If $P$ is self-adjoint, we follow that $P = P_U$ because of the other implication.
+(as far as I get this, in this case we've got that $P^2 = P$ implies that $P = P_U$ for some
+$U$ and that $P$ is self adjoint, so it is technically a biconditional, but it is not
+a biconditional in the standart sense).
+
+\subsection{}
+
+\textit{Suppose that $T$ is a normal operator in $V$ and that $3$ and $4$ are eigenvalues of
+  $T$. Prove that there exists a vector $v \in V$ such that $||v|| = \sqrt{2}$ and $||Tv|| = 5$}
+
+Given that $T$ is a normal operator, we follow that the eigenvectors with respect to different
+eigenvalues are orthogonal. Suppose taht $u'$ is an eigenvector for the eigenvalue $3$ and
+$w'$ is the eigenvector for the eigenvalue $4$. Then set
+$$u = u' * \frac{1}{||u'||}$$
+$$w = w' * \frac{1}{||w'||}$$
+because of this we get that
+$$||u|| = ||w|| = 1$$
+set
+$$v = u + w$$
+then we follow  that since $u$ and $w$ are orthogonal, we can use Pythagorean theorem
+to follow that
+$$||v|| = \sqrt{||u||^2 + ||w||^2 } = \sqrt{1 + 1} = \sqrt{2}$$
+and we get that
+$$||Tv|| = ||T(u + w)|| = ||3u + 4w|| = \sqrt{|3|^2 ||u||^2 + |4|^2 ||w||^2} = \sqrt{3^2 + 4^2} =
+\sqrt{25} = 5$$
+as desired.
+
+
+\subsection{}
+
+\textit{Give an example of an operator $T \in \map(C^4)$ such that $T$ is normal
+  but not self-ajoint}
+
+$$T =
+\begin{pmatrix}
+  1 & -1 & 0 & 0 \\
+  1 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 \\
+\end{pmatrix}
+$$
+will do (with respect to standart basis).
+
+\subsection{}
+
+\textit{Suppose $T$ is a normal operator on $V$. Suppose also that $v, w \in V$ satisfy the
+  equations
+  $$||v|| = ||w|| = 2, Tv = 3v, Tw = 4w$$
+  Show that $||T(v + w)|| = 10$
+}
+
+From the equations we follow that $v$ is an eigenvector for $3$ and $w$ is an eigenvector for $4$.
+Thus we can follow that since $T$ is normal that $v$ and $w$ are orthogonal. Thus
+$Tv$ and $Tw$ are orthonormal. Therefore 
+$$||T(v + w)|| = \sqrt{||Tv||^2 + ||Tw||^2} = \sqrt{4 * 9 + 4 * 16} = 10$$
+as desired.
+
+\subsection{}
+
+\textit{Fix $u, x \in V$. Define $T = \map(V)$ by
+  $$Tv = \eangle{v, u} x$$
+  for every $v \in V$.}
+
+\textit{(a) Suppose $F = R$. Prove that $T$ is self-adjoint if and only if $u, x$ is linearly
+  dependent.}
+
+If $x = 0$ or $u = 0$  we follow that $T = 0$, therefore $x, u$ are linearly dependent for any
+other $u$ and $x$ and $T$ is self-adjoint.
+
+Now suppose that $x \neq 0$ and $u \neq 0$.
+As we've seen in the example in the chapter, for given $T$
+$$\eangle{v, T^\star w} = \eangle{Tv, w} = \eangle {\eangle{v, u} x, w} =
+\eangle{v, u} \eangle {x, w} = \eangle{v, \eangle{w, x}u}$$
+therefore
+$$T^\star w = \eangle{w, x} u$$
+Since $T$ is self-adjoint, we follow that for fixed $w, v \in V$
+$$\eangle{w, x} u = \eangle{v, u} x$$
+therefore $u$ is a scalar multiple of $x$ and therefore they are linearly dependent.
+
+Conversely, if $x$ and $u$ are linearly dependent, then we follow that
+$$Tv = \eangle{v, u} x = \eangle{v, \lambda x} x = \lambda  \eangle{v, x} x$$
+therefore
+$$\eangle{Tv, w} = \eangle{\eangle{v, u} x, w } = \eangle{\eangle{v, \lambda x} x, w } =
+\eangle{v, \lambda x} \eangle{x, w } = \eangle{v, \lambda x} \eangle{w, x } =$$
+$$ = 
+\eangle{v, \eangle{w, x } \lambda x} = \eangle{v, \eangle{w, \lambda x }  x}  =
+\eangle{v, \eangle{w, u }  x} = \eangle{v, Tu}$$
+thus $T = T^\star$ and therefore it's self-adjoint.
+
+\textit{(b) Prove that $T$ is normal if and only if $u, x$ is linearly dependent}
+
+From the previous argument we can derive that $u$ is a scalar multiple of $x$.
+
+Now suppose that $u, x$ are linearly dependent and suppose that $w, v \in V$. Then we follow that
+$$||Tv||^2 = \eangle{Tv, Tv} = \eangle{\eangle{v, u} x , \eangle{v, u} x} =
+|\eangle{v, u}|^2\eangle{x, x} = |\eangle{v, \lambda x}|^2 \eangle{x, x} = $$
+$$ = 
+|\overline{\lambda}|^2| \eangle{v,  x}|^2 \eangle{x, x} =|\lambda|^2| \eangle{v,  x}|^2 \eangle{x, x} =
+$$
+$$||T^\star v||^2 = \eangle{T^\star v, T^\star v} = \eangle{\eangle{v, x} u , \eangle{v, x} u} =
+\eangle{\eangle{v, x} \lambda x , \eangle{v, x} \lambda x} = |\eangle{v, x}|^2|\lambda|^2 \eangle{x, x}
+$$
+thus we follow that $||Tv|| = ||T^\star v||$, therefore $T$ is normal, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is normal. Prove that 
+  $$\range T = \range T^*$$
+}
+
+
+Suppose that $T$ is normal. Then we follow that
+$$||Tv|| = ||T^* v||$$
+thus we can follow that $\ns T = \ns T^*$. Therefore
+$$\ns T = \ns T^*$$
+$$(\range T^*)^\perp = (\range T)^\perp$$
+$$\range T^* = \range T$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is normal. Prove that 
+  $$\ns T^k = \ns T \text{ and } \range T^k = \range T$$
+  for every positive integer $k$}
+
+We want to prove that if $T$ is normal, then
+$$V = \ns T \oplus \range T$$
+
+Suppose that $v \in \ns T \cap \range T$. Then by the fact that
+$$\ns T = (\range T^*)^\perp = (\range T)^\perp$$
+we follow that $v$ is orthogonal to $v$. Thus
+$$\eangle {v, v} = 0$$
+therefore $v = 0$. Therefore we follow that
+$$V = \ns T \oplus \range T$$
+
+If $v \in \ns T$, then we follow that $T^2v = T(Tv) = T0 = 0$, thus $v \in \ns T^2$ or in other
+words
+$$\ns T \subseteq \ns T^2$$
+Suppose that $v \in \range T$. Then we follow that there exists $w \in V$ such that $Tw = v$.
+Since $w \in V$ we follow that there exsit $u \in \ns T$ and $r \in \range T$ such that
+$$w = u + r$$
+Since
+$$Tw = v$$
+we follow that
+$$T(u + r) = T(u) + T(r) = 0 + T(r) = T(r) = w$$
+thus we follow that there exists $r \in \range T$ such that $Tr = w$ and therefore
+$$T^2 r = Tw = v$$
+therefore $v \in \range T^2$. Thus we can follow that
+$$\range T \subseteq \range T^2$$
+Because $V = \ns T \oplus \range T$ and $\dim V = \dim \ns T + \dim \range T$ we can follow that
+$$\ns T = \ns T^2$$
+$$\range T = \range T^2$$
+thus by induction we can follow that
+$$\ns T = \ns T^k$$
+$$\range T = \range T^k$$
+as desired
+(we skip here the whole basis-building stuff, because it is kind of obvious and/or redundant,
+and maybe was proven in earlier chapters).
+
+\subsection{}
+
+\textit{Prove or give a counterexample: If $T \in \map(V)$ and there exists an orthonormal
+  basis $e_1, ..., e_n$ of $V$ such that $||T e_j|| = ||T^* e_j||$ for each $j$, then $T$
+  is normal.}
+
+I want to say that this is not the case: define $T \in \map(C^2)$ by
+$$T =
+\begin{pmatrix}
+  1 & 1 \\
+  i & i
+\end{pmatrix}
+$$
+which is not normal, but the constraints hold for standart basis. Also the same thing happens
+with reals too
+$$
+S =
+\begin{pmatrix}
+  1 & 1 \\
+  -1 & -1 
+\end{pmatrix}
+$$
+by putting those matrices in upper corners of matrices with respect to standard basis
+for the maps in higher dimentions we get
+that given proposition doesn't hold for any finite-dimentional $F^n$.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^3)$ is normal and $T(1, 1, 1) = (2, 2, 2)$. Suppose
+  $(z_1, z_2, z_3) \in \ns T$. Prove that $z_1 + z_2 + z_3 = 0$}
+
+Suppose that $(z_1, z_2, z_3) \in \ns T$. Because $T$ is normal,
+we follow that if $u \in \range T$, then
+$$\eangle{(z_1, z_2, z_3), u} = 0$$
+Since $(1, 1, 1) = T(1/2, 1/2, 1/2) \in  \range T$, we follow that
+$$\eangle{(z_1, z_2, z_3), (1, 1, 1)} = z_1 \overline{1} + z_2  \overline{1} + z_3 \overline{1} =
+z_1 + z_2 + z_3 = 0$$
+as desired.
+
+\textit{Last two exercises are left for the end of this chapter}
 
 \end{document}
 
