@@ -6811,6 +6811,263 @@ as desired.
 
 \textit{Last two exercises are left for the end of this chapter}
 
+\section{The Spectral Theorem}
+
+\subsection{}
+
+\textit{True of false: There exsits $T \in \map(R^3)$ such that $T$ is not self-adjoint and
+  such that there is a basis of $R^3$ consisting of eigenvectors of $T$.}
+
+I think that this one is true, the only thing that we need is to get such a map.
+
+From the examples in the 5th chapter we can follow that there exists a map in $R^3$
+$$ T = 
+\begin{pmatrix}
+  2 & 1 & 0 \\
+  0 & 5 & 3 \\
+  0 & 0 & 8
+\end{pmatrix}
+$$
+with respect to the standart basis. Since it is not equal to its conjugate transpose (which in
+this case is just a normal transpose) in an orthonormal basis (such as the standart one) we
+follow that this map is not self-adjoint. But for it we've got that
+$$(1, 0, 0), (1, 3, 0), (1, 6, 6)$$
+are the eigenvalues of $T$. It's easy to see that the given list is linearly independent (by the
+position of zeroes). Given that the length of the list is 3, we follow that it is a basis of $R^3$.
+Thus we've got a non-self-adjoint map whose eigenvectors are the basis of $R^3$, as desired.
+
+\subsection{}
+
+\textit{Suppose that $T$ is a self-adjoint operator on a finite-dimentional
+  inner product space and that 2 and 3 are the only eigenvalues of $T$. Prove that
+  $T^2 - 5T + 6I = 0$}
+
+Since $T$ is self-adjoint, we follow that it has an orthonormal basis of the eigenvectors of $T$,
+with respect to which there is a diagonal matrix of $T$. Suppose that $a_i$ is an entry on
+the diagonal of such a matrix. Then we follow that the same entry on the matrix of the map
+$$T^2 - 5T + 6I$$
+is
+$$a_i^2 - 5a_i + 6$$
+given that $2$ and $3$ are the only eigenvalues of $T$, we follow that $a_i$ is equal to
+either $2$ or $3$, for both of which
+$$a_i^2 - 5a_i + 6 = 0$$
+thus we follow that every entry in the matrix of 
+$T^2 - 5T + 6I$ is zero, thus $T^2 - 5T + 6I = 0$, as desired.
+
+\subsection{}
+
+\textit{Give an example of an operator $T \in \map(C^3)$ such thaht $2$ and $3$ are tehe
+  only eigenvalues of $T$ and $T^2 - 5T + 6I \neq 0$}
+
+The idea is to fill the entries of the matrix with respect to the standart basis
+above the main diagonal with some junk, and put $2, 3$ on the
+diagonal.
+$$T =
+\begin{pmatrix}
+  2 & 4 & 9 \\
+  0 & 3 & 7 \\
+  0 & 0 & 2
+\end{pmatrix}
+$$
+will do.
+
+Octave shows that
+$$
+T^2 - 5T + 6I =
+\begin{pmatrix}
+  0 & 0 & 19 \\
+  0 & 0 & 0 \\
+  0 & 0 & 0
+\end{pmatrix}
+$$
+as desired.
+
+
+\subsection{}
+
+\textit{Suppose $F = C$ and $T \in \map(V)$. Prove that $T$ is normal if and only if
+  all pairs of eigenvectors corresponding to distinct eigenvalues of $T$ are orthogonal
+  and 
+$$V = E(\lambda_1, T) \oplus ... \oplus E(\lambda_m, T)$$
+where $\lambda_1, ..., \lambda_m$ denote the distinct eigenvalues of $T$.}
+
+\textbf{In forward direction: }
+It's pretty straightforward.
+If $T$ is normal, we follow that it has a diagonalizable matrix with respect to the
+basis of orthonormal eigenvectors. Thus we follow that for different values the eigenvectors
+are orthogonal and
+$$V = E(\lambda_1, T) \oplus ... \oplus E(\lambda_m, T)$$
+by the fact that the matrix is diagonal, as desired.
+
+\textbf{In reverse direction: }
+Suppose that
+$$V = E(\lambda_1, T) \oplus ... \oplus E(\lambda_m, T)$$
+Because of this we can follow that the $T$ is diagonalizable. We can also follow that each
+$E(\lambda_j, T)$ is invariant under $T$. By getting the orthonormal basis of each of the
+$E(\lambda_j, T)$ we get a list of vector of length $\dim V$. By the fact that
+each pair of eigenvectors corresponding to different eigenvalues are orthogonal, we follow that
+produced list is an orthonormal list of length $\dim V$ in $V$, thus making it an
+orthonormal basis of $V$. Thus we can follow that $T$ is normal, as desired.
+
+\subsection{}
+
+\textit{Suppose $F = R$ and $T \in \map(V)$. Prove that $T$ is self-adjoint if and only if all
+  pairs of eigenvectors corresponding to dictinct eigenvalues of $T$ are orthogonal and 
+  $$V = E(\lambda_1, T) \oplus ... \oplus E(\lambda_m, T)$$
+  where $\lambda_1, ..., \lambda_m$ denote the distinct eigenvalues of $T$.}
+
+The argument is identical to the one, that is presented in the previous exercise (with a minor
+adjustment of notation in the forward direction), since
+none of the implications depend on $F$.
+
+\subsection{}
+
+\textit{Prove that a normal operator on a complex inner product space is self-adjoint if and
+  only if all its eigenvalues are real}
+
+Forward implication was taken care of in the previous chapter. With the information,
+that was presented in this chapter we can follow that if $T$ is normal, and all of its
+eigenvaleus are real we can follow that the diagonal matrix of this operator
+with respect to the orthonormal basis of $V$ contains only real numbers, therefore it is
+equal to its complex conjugate and thus we can follow that $T$ is self-adjoint.
+
+
+\subsection{}
+
+\textit{Suppose $V$ s a complex inner product space and $T \in \map(V)$ is a normal operator
+  such that $T^9 = T^8$. Prove that $T$ is self-adjoint and $T^2 = T$.}
+
+I want to prove that 
+Given that $T$ is a normal operator, we can follow that it has a diagonal matrix with respect to
+the orthonormal basis of eigenvectors of $T$. Thus we can follow that if $\lambda$ is an
+eigenvalue of $T$ with corresponding eigenvector $v$, then
+$$T^9 v = T^8 v$$
+$$\lambda^9 v = \lambda^8 v$$
+thus
+$$\lambda^9 = \lambda^8$$
+thus we can follow that $\lambda = 0$ or $\lambda = 1$ (I'm pretty sure that is the case
+for the complex numbers as well), in which case the eigenvalues of $T$
+are both real numbers, and therefore $T$ is self-adjoint.
+
+Given that the only eigenvalues of $T$ are $0$ and $1$ we can follow that
+$$T^n = T^m$$ for any  $n, m \in N$. Thus $T^2 = T$, as desired.
+
+\subsection{}
+
+\textit{Give an example of an operator $T$ on complex vector space such that
+  $T^9 = T^8$, but $T^2 \neq T$}
+
+$$T =
+\begin{pmatrix}
+0 & 1 \\
+0 & 0  
+\end{pmatrix}
+$$
+will do.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex inner product space. Prove that every normal operator on $V$
+  has a square root (An operator $S \in  \map(V)$ is called a square root of $T \in \map(V)$
+  if $S^2 = T$)}
+
+Given that $T$ is complex, we follow that it is diagonalizable with respect to some
+basis $e_1, ..., e_n$. In other words,
+$$T(\sum{ a_j e_j}) = \sum{ d_j a_j e_j}$$
+where $d_i$ is the i'th entry on the diagonal. Define $S$ as
+$$S(\sum {a_j e_j}) = \sum {\sqrt{d_j} a_j e_j}$$
+where $\sqrt{d_j}$ is well-defined since $F = C$.
+Then we follow that
+$$S^2 (\sum {a_j e_j}) = S(\sum {\sqrt{d_j} a_j e_j}) = \sum {d_j a_j e_j} = T{\sum {a_j e_j}}$$
+thus $S^2 = T$, and therefore $S$ is a square root of $T$
+
+\subsection{}
+
+\textit{Give an example of a real inner product space $V$ and $T \in \map(V)$ and real
+  numbers $b, c$ with $b^2 < 4c$ such that $T^2 + bT + cI$ is not invertible}
+
+We can set $V = R^2$,
+$$T =
+\begin{pmatrix}
+  0 & -1 \\
+  1 & 0
+\end{pmatrix}
+$$
+in which case
+$$T^2 = 
+\begin{pmatrix}
+  -1 & 0 \\
+  0 & -1
+\end{pmatrix}
+$$
+thus we can set $b = 0$ and $c = 1$, and
+$$T^2 + bT + cI = 0$$
+which will do as an example.
+
+\subsection{}
+
+\textit{Prove or give a counterexample: every self-adjoint operator on $V$ has a cube root.}
+
+I want to say that this is true. Suppose that $T$ is self adjoint. Then we can follow that
+with respect to some basis $e_1, ..., e_n$, $T$ is represented as
+$$T (\sum{a_j e_j}) = \sum d_j a_j e_j$$
+where $d_1, ..., d_n$ are reals.
+Thus we can define a map that satisfies condition for being the cube root
+$$S (\sum{a_j e_j}) = \sum \sqrt[3]{d_j} a_j e_j$$
+which is well-defined, since every real number has a cube root
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is self-adjoint, $\lambda \in F$, and $\epsilon > 0$. Suppose
+  there exists $v \in V$ such that $||v|| = 1$ and
+  $$||Tv - \lambda v|| < \epsilon$$
+  Prove that $T$ has an eigenvalue $\lambda'$ such that $|\lambda - \lambda'| < \epsilon$
+}
+
+Because $T$ is self-adjoint, we follow that there exists an orthonormal basis of $V$, which
+consists of eigenvectors of $T$. Let us denote this basis by $e_1, ..., e_n$.
+
+Then we follow that
+$$v = \sum a_j e_j$$
+therefore
+$$Tv = \sum a_j d_i e_j$$
+where each $d_i$ is an eigenvalue of $T$ ($d_i$'s don't have to be distinct)
+and
+$$\sum a_j^2 = 1$$
+thus
+$$||Tv - \lambda v||^2 = ||\sum {a_j d_j e_j} - \lambda \sum{a_j e_j}||^2 =
+||\sum {a_j (d_j - \lambda) e_j}||^2 = \sum{(a_j (d_j - \lambda))^2} < \epsilon^2$$
+If every eigenvalue of $T$ is under condition that
+$$|\lambda - \lambda'| \geq \epsilon$$
+then we follow that there exists $\kappa \in R^+$ such that
+$$\kappa = \min\{|\lambda_1 - \lambda|, ... |\lambda_n - \lambda|\}$$
+thus we follow that 
+$$\sum{(a_j (d_j - \lambda))^2} = \sum{a_j^2 |d_j - \lambda|^2} \leq
+\sum{a_j^2 \kappa^2} = \kappa^2 \sum{a_j^2} = \kappa^2 ||v|| = \kappa^2 < \epsilon^2$$
+which contradicts the assumption that
+$$|\lambda - \lambda'| \geq \kappa  \geq \epsilon$$
+thus we follow that there exists an eigenvalue $\lambda'$  of $T$ such that
+$$|\lambda - \lambda'| < \epsilon$$
+as desired.
+
+\subsection{}
+
+\textit{Give an alternative proof of the Complex Spectral Theorem that avoids Schur's Theorem
+  and instead follows the pattern of the proof of the Real Spectral Theorem}
+
+The proof of equvalence of (b) and (c) does not depend on the Schur's theorem and is instead 
+based on the common sense, therefore we won't prove it. TODO
+
+\subsection{}
+
+
+\subsection{}
+
+\textit{Find the matrix entry below that is covered up}
+
+It's 1.
+
+
 \end{document}
 
 %%% Local Variables:

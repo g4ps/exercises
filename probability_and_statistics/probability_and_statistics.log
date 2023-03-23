@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  22 MAR 2023 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  23 MAR 2023 12:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -360,30 +360,28 @@ l.23 \chapter
 Chapter 1.
 [2
 
-] [3] (./probability_and_statistics.aux)
+] (./probability_and_statistics.aux)
 Package rerunfilecheck Info: File `probability_and_statistics.out' has not chan
 ged.
-(rerunfilecheck)             Checksum: D4DADB65E20DFDC65D604F6481AA428C;1293.
+(rerunfilecheck)             Checksum: 65DFB4B1AE64F350C2922A9DB52129C6;1080.
  ) 
 Here is how much of TeX's memory you used:
- 9039 strings out of 478238
- 138759 string characters out of 5850457
- 432050 words of memory out of 5000000
- 27176 multiletter control sequences out of 15000+600000
- 478882 words of font info for 63 fonts, out of 8000000 for 9000
+ 9027 strings out of 478238
+ 138578 string characters out of 5850457
+ 434042 words of memory out of 5000000
+ 27170 multiletter control sequences out of 15000+600000
+ 478222 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,273b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on probability_and_statistics.pdf (4 pages, 102245 bytes).
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on probability_and_statistics.pdf (3 pages, 82379 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
