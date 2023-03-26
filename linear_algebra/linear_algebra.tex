@@ -7060,6 +7060,8 @@ based on the common sense, therefore we won't prove it. TODO
 
 \subsection{}
 
+TODO
+
 
 \subsection{}
 
@@ -7067,6 +7069,263 @@ based on the common sense, therefore we won't prove it. TODO
 
 It's 1.
 
+\section{Positive Operators and Isometries}
+
+\subsection{}
+
+\textit{Prove or give a counterexample: If $T \in \map(V)$ is self-adjoint and there
+  exists an orthonormal basis $e_1, ..., e_n$ of $V$ such that $\eangle{Te_j, e_j} \geq 0$ for
+  each $j$, then $T$ is a positive operator.}
+
+This one looks like it's true, but it isn't.
+
+Suppose that $T \in \map(R^2)$ is defined by
+$$T =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & -1
+\end{pmatrix}
+$$
+with respect to the standard basis. Let
+$$e_1 = \frac{\sqrt{2}}{2}(1, 1)$$
+$$e_2 = \frac{\sqrt{2}}{2}(1, -1)$$
+then we follow that for Eucledian inner product
+$$||e_1|| = \sqrt{\frac 1 2 + \frac 1 2} = 1 = ||e_2||$$
+and
+$$\eangle{e_1, e_2} = 0$$
+thus $e_1, e_2$ are orthonormal vectors. After some computing we can follow that
+$$T e_1 = T e_2 = 0$$
+thus $\eangle{T e_1, e_1} = \eangle{T e_2, e_2} \geq 0$
+and we can follow that for vector $v = (0, 1)$
+$$\eangle{Tv, v} = (0, -1) \cdot (0, 1) = -1$$
+thus we have the desired counterexample.
+
+\subsection{}
+
+\textit{Suppose $T$ is a positive operator on $V$. Suppose $v, w \in V$ are such that
+$$Tv = w$$
+and
+$$Tw = v$$
+Prove that $v = w$}
+
+We can follow from the Characterization of positive operators, that if $v$ is an
+eigenvector of positive operator $T$, then $v$ is also an eigenvector for its
+square root. 
+
+$$T^2v = T(Tv) = Tw = v$$
+thus we follow that $1$ is an eigenvalue for $T^2$ with an eigenvector $v$.
+Since every positive operator has a unique square root, we follow that $1$ is an eigenvalue of $T$.
+with corresponding eigenvector $v$. Thus
+$$Tv = v = w$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T$ is a positive operator on $V$ and $U$ is a subspace of $V$ invariant under
+  $T$. Prove that $T|_U \in \map(U)$ is a positive operator on $U$.}
+
+For every $u, v \in U$ we've got that 
+$$\eangle{T|_U(u), v} = \eangle{Tu, v} = \eangle{u, Tv} = \eangle{u, T|_Uv}$$
+thus $T$ is self-adjoint.
+
+Suppose that $u \in U$. Then we follow that
+$$\eangle{T|_U(u), u} = \eangle{T(u), u} \geq 0$$
+thus $T|_U$ is positive, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V, W)$. Prove that $T^* T$ is a positive operator on $V$ and
+  $T T^*$ is a positive operator on $W$.}
+
+Suppose that $v, u \in V$. Then we follow that
+$$\eangle{T^* Tv, u} = \eangle{Tv, Tu} = \eangle{v, T^* T u}$$
+thus $T^* T$ is self-adjoint and 
+$$\eangle{T^* Tv, v} = \eangle{Tv, Tv} \geq 0$$
+thus $T^* T$ is positive. Similar argument holds for $TT^*$ and $W$.
+
+\subsection{}
+
+\textit{Prove that the sum of two positive operators on $V$ is positive.}
+
+Suppose that $S$ and $T$ are positive. Then we follow that
+$$(S + T)^* = S^* + T^* = S + T$$
+thus $S + T$ is self-adjoint. Suppose that $v \in V$. Then
+$$\eangle{(S + T)v, v} = \eangle{Sv + Tv, v} = \eangle{Sv, v} + \eangle{Tv, v} \geq 0$$
+thus we follow that $S + T$ is positive, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is positive. Prove that $T^k$ is positive for every
+  positive integer $k$.}
+
+Because $T$ is positive, we follow that there exists a basis $e_1, ..., e_n$ of $V$,
+that consists of eigenvectors of $T$. Thus we can follow by induction that for every $k \in N$
+$$(T^k)* = (T T^{k - 1})^* = (T^{k - 1})^* T^* = T^{k - 1} T = T^k$$
+thus $T^k$ is self-adjoint. And
+$$T^k e_j = \lambda_j^k e_j$$
+thus $e_j$ is an eigenvector of $T^k$ with corresponding eigenvalue $\lambda_j^k$. Since
+every eigenvalue of $T^k$ is a power of a nonnegative real number, we follow that
+every eigenvalue of $T^k$ is nonnegative as well.  Thus we can follow that $T^k$ is a
+positive operator, as desired.
+
+\subsection{}
+
+\textit{Suppose $T$ is a positive operator on $V$. Prove that $T$ is invertible if and only if 
+$$\eangle{Tv, v} > 0$$
+for every $v \in V$ with $v \neq 0$}
+
+
+\textbf{In forward direction: }
+Suppose that $T$ is invertible. We follow by exercise 3.4.9 that $T$ is invertible if and
+only if its square root is invertible. Thus we follow that square root of $T$ is invertible.
+Thus for $v \neq 0$ we've got that
+$$Rv \neq 0$$
+and therefore
+$$\eangle{Tv, v} = \eangle{RRv, v} = \eangle{Rv, Rv} > 0$$
+as desired.
+
+\textbf{In reverse direction: }
+Suppose that for every $v \neq 0$ we've got that
+$$\eangle{Tv, v} > 0$$
+and suppose that $T$ is not invertible. Then we follow that $T$ is not injective and thus
+there exists $v \neq 0$ such that
+$$Tv = 0$$
+Thus
+$$\eangle{Tv, v} = \eangle{0, v} = 0$$
+which is a contradiction.
+
+
+\subsection{}
+
+\textit{Suppose $T \in map(V)$. For $u, v \in V$ define $\eangle{u, v}_T$ by
+$$\eangle{u, v}_T = \eangle{Tu, v}$$
+Prove that $\eangle{\cdot, \cdot}_T$ is an inner product of $V$ if and only if $T$ is an
+invertible positive operator (with respect to the original inner product $\eangle{\cdot, \cdot}$)}
+
+If $\eangle{\cdot, \cdot}_T$ is an inner product, then we follow that for every $v \in V \neq 0$
+$$\eangle{v, v}_T = \eangle{Tv, v} > 0$$
+by definiteness property, thus by previous exercise we follow the forward direction.
+
+We can follow that $T$ is invertible if and only if its square root is invertible. Thus by
+exercise 6.1.24 and the fact that
+$$\eangle{Tv, u} = \eangle{RRv, u} = \eangle{Rv, Ru}$$
+we follow the reverse direction.
+
+
+\subsection{}
+
+\textit{Prove or disprove: the identity operator on $F^2$ has infinitely many
+  self-adjoint square roots.}
+
+From the top of my head I can come up with only 4 roots for reals.
+
+We can think of it as the rotation matrix, or something of sorts. After some
+time well-spent in Octave I came up with
+$$
+\begin{pmatrix}
+  \sin k & \cos k \\
+  \cos k & - \sin k
+\end{pmatrix}
+$$
+which seems to work for arbitrary $k \in R$. Thus we can follow that there are indeed
+infinite amount of self-adjoint square roots for $F^2$ (this case works with both $C$ and $R$.)
+
+
+\subsection{}
+
+\textit{Suppose $S \in \map(V)$. PRove that the following are equivalent: }
+
+$S$ is an isometry if and only if $S^*$ is an isometry. The rest follows from the standart
+isometry equivalence.
+
+\subsection{}
+
+\textit{Suppose $T_1, T_2$ are normal operators on $\map(F^3)$ and both operators have 2, 5, 7
+  as eigenvalues. Prove that there exists an isometry $S \in \map(F^3)$ such that $T_1 = S* T_2 S$}
+
+Since both $T_1$ and $T_2$ have $\dim V$ distinct eigenvalues, we follow that both maps are
+diagonalizable. Thus we can follow that there exists a basis of $V$, that consists of
+eigenvectors of $T_1$ -- $v_1, v_2, v_3$, and the same thing exsits for $T_2$ with
+vectors $u_1, u_2, u_3$. Since the eigenvectors, corresponding to distinct eigenvalues
+in normal maps are orthogonal, we follow that both lists are orthogonal as well. Thus we
+can follow that we can normalize the vectors in the list and get orthonormal bases, that
+consist of eigenvectors of their respective maps. Let us denote those bases by $e_1, e_2, e_3$
+and $e_1', e_2', e_3'$. Define $S \in \map(V)$ by
+$$S(e_j) = e_j'$$
+thus we can follow that for $v \in V$, which is defined by
+$$v = \sum a_j e_j$$
+we've got that
+$$||Sv||^2 = ||S(\sum a_j e_j)||^2 = \sum ||a_j||^2 = ||v||^2$$
+thus we follow that $S$ is an isometry. Since $S$ is an isometry we follow that $S\inv = S^*$.
+Now suppose that
+$$v = \sum a_j e_j$$
+for which we've got that
+$$T_1 v = \sum a_j \lambda_j e_j$$
+and
+$$S^* T_2 S v = S^* T_2 S (\sum a_j e_j) = S^* T_2 (\sum a_j e_j') = S^* (a_j \lambda_j e_j')  =
+\sum a_j \lambda_j e_j = T_1 v$$
+as desired.
+
+\subsection{}
+
+\textit{Give an example of two self-adjoint operators $T_1, T_2 \in \map(F^4)$ such that
+  the eigenvalues of both operators are 2, 5, 7, but there does not exist an isometry
+  $S \in F^4$ such that $T_1 = S^* T_2 S$. Be sure to explain why there is no
+  isometry with the required property
+}
+
+We can have
+$$ T_1 = 
+\begin{pmatrix}
+  2 & 0 & 0 & 0 \\
+  0 & 5 & 0 & 0 \\
+  0 & 0 & 7 & 0 \\
+  0 & 0 & 0 & 7
+\end{pmatrix}
+$$
+and
+$$ T_2 = 
+\begin{pmatrix}
+  2 & 0 & 0 & 0 \\
+  0 & 5 & 0 & 0 \\
+  0 & 0 & 7 & 0 \\
+  0 & 0 & 0 & 2
+\end{pmatrix}
+$$
+
+Then we can follow that the $\dim E(2, T_2) = 2$, and $\dim E(2, T_1) = 1$. We can prove that
+multiplying a map by an isometry doesn't change the dimentions of eigenspaces, which needs to
+happen in this case. TODO: expand this idea a bit
+
+\subsection{}
+
+\textit{Prove of give a counterexample: if $S \in \map(V)$ and there exists an orthonormal
+  basis $e_1, ..., e_n$ of $V$ such that $||S e_j|| = 1$ for each $e_j$, then $S$ is an
+  isometry.}
+
+Let $V = R^2$ and define
+$$S =
+\begin{pmatrix}
+  1 & 1 \\
+  0 & 0
+\end{pmatrix}
+$$
+Then we follow that
+$$S e_1 = e_1$$
+$$S e_2 = e_1$$
+therefore our condition holds, but
+$$S (e_1 - e_2) = 0$$
+$$||e_1 - e_2||= \sqrt{2}/2$$
+which is a contradiction.
+
+\subsection{}
+
+\textit{Let $T$ be the second derivative operator in Exercise 21 in Section 7A. Show that $-T$
+  is a positive operator.}
+
+TODO; left till the end of the chapter
+
+\section{Polar Decomposition and Singular Value Decomposition}
 
 \end{document}
 

@@ -132,6 +132,58 @@ $$Pr(AB) = 1 - 0.34 - 0.12 - 0.5 = 0.04$$
 $$Pr(a-A) = 0.34 + 0.04 = 0.38$$
 $$Pr(a-B) = 0.12 + 0.04 = 0.16$$
 
+\section{Finite Sample Spaces}
+
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & 1/2 \\
+  2 & 1/2 \\
+  3 & 2/3 \\
+  4 & 1/7 \\
+  5 & 4/7 \\
+  6 & 1/4 \\
+  8b & 1/4 \\
+  \hline 
+\end{tabular}
+
+\subsection*{1.6.7}
+
+The possinble genotypes are $Aa$ and $aa$ with probabilities $1/2$ and $1/2$ respectively
+
+\subsection*{1.6.8a}
+
+The sample space of the experiment is $\{heads, tails\} \times \{1, 2, 3, 4, 5, 6\}$,
+
+\section{Counting Methods}
+
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & 14 \\
+  2 & 9000 \\
+  3 & 120 \\
+  4 & 24 \\
+  5 & 5/18 \\
+  6 & 5/324 \\
+  7 & ~0.014731 \\
+  8 & 360 / 2401 \\
+  9 & 1 / 20\\
+  10a & r/100 \\
+  10b & r/100 \\
+  10c & r/100 \\
+  \hline 
+\end{tabular}
+
+\subsection*{1.7.11}
+
+$$s(n) = \frac{1}{2} \log(2 \pi) + (n + \frac{1}{2})\log{n} - n \approx \log{n!}$$
+$$\log{n!} - \log{(n - m)!} = \log{\frac{n!}{(n - m)!}}$$
+$$s(n) - s(n - m) = \frac{1}{2} \log(2 \pi) + (n + \frac{1}{2})\log{n} - n
+- (\frac{1}{2} \log(2 \pi) + ((n - m) + \frac{1}{2})\log{n - m} - (n - m)) = $$
+$$ = (n + \frac{1}{2})\log{n} - n
+-   ((n - m) + \frac{1}{2})\log{(n - m)} + (n - m) = $$
+$$ = (n + \frac{1}{2})\log{n}
+-   ((n - m) + \frac{1}{2})\log{(n - m)}  - m \approx \log{\frac{n!}{(n - m)!}}$$
+$P(n, m) = \frac{n!}{(n - m)!} = \exp(s(n) - s(n - m))$$
 
 
 \end{document}

@@ -404,3 +404,17 @@
 \contentsline {subsection}{\numberline {7.2.13}}{180}{subsection.7.2.13}%
 \contentsline {subsection}{\numberline {7.2.14}}{180}{subsection.7.2.14}%
 \contentsline {subsection}{\numberline {7.2.15}}{180}{subsection.7.2.15}%
+\contentsline {section}{\numberline {7.3}Positive Operators and Isometries}{180}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}}{180}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}}{181}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}}{181}{subsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}}{182}{subsection.7.3.4}%
+\contentsline {subsection}{\numberline {7.3.5}}{182}{subsection.7.3.5}%
+\contentsline {subsection}{\numberline {7.3.6}}{182}{subsection.7.3.6}%
+\contentsline {subsection}{\numberline {7.3.7}}{183}{subsection.7.3.7}%
+\contentsline {subsection}{\numberline {7.3.8}}{183}{subsection.7.3.8}%
+\contentsline {subsection}{\numberline {7.3.9}}{184}{subsection.7.3.9}%
+\contentsline {subsection}{\numberline {7.3.10}}{184}{subsection.7.3.10}%
+\contentsline {subsection}{\numberline {7.3.11}}{184}{subsection.7.3.11}%
+\contentsline {subsection}{\numberline {7.3.12}}{185}{subsection.7.3.12}%
+\contentsline {subsection}{\numberline {7.3.13}}{185}{subsection.7.3.13}%

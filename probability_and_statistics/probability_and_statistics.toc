@@ -4,3 +4,5 @@
 \contentsline {section}{\numberline {1.3}Experiments and Events}{2}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Set Theory }{2}{section.1.4}%
 \contentsline {section}{\numberline {1.5}The Definition of Probability}{2}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Finite Sample Spaces}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Counting Methods}{6}{section.1.7}%
