@@ -46,3 +46,4 @@
 \contentsline {section}{\numberline {3.2}Relations}{18}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}}{18}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}}{19}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Functions}{21}{section.3.3}%

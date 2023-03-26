@@ -685,6 +685,198 @@ $$x \in (R \inv) \inv \lra \exists y \exists z (\eangle{y, z} \in (R \inv) \inv 
 $$ \lra  \exists y \exists z (\eangle{y, z} \in R ) \land x = \eangle{y, z} \lra x \in R$$
 
 
+\subsection*{3.2.4}
+
+$$\dom(R) = \{0, 1, 2, 3, 4\}$$
+$$\ran(R) = \{0, 1, 2, 3, 4\}$$
+$$R \circ R = \{\eangle{0, 2}, \eangle{0, 3}, \eangle{0, 0}, \eangle{0, 3}, \eangle{0, 4},
+\eangle{1, 0}, \eangle{1, 3}, \eangle{1, 4}, \eangle{1, 3}, \eangle{1, 2}, \eangle{2, 1},$$
+$$ 
+\eangle{2, 2}, \eangle{2, 3}, \eangle{2, 2}, \eangle{2, 4}, \eangle{3, 3}, \eangle{3, 2},
+\eangle{4, 4}\}$$
+$$R|\{1\} = \{\eangle{1, 2}, \eangle{1, 3}\}$$
+$$R\inv|\{1\} = \{\eangle{1, 0}\}$$
+$$R[\{1\}] = \{2, 3\}$$
+$$R\inv[\{1\}] = \{0\}$$
+
+\subsection*{3.2.5}
+
+\textit{Suppose that $R$ is a relation. Prove that $R|(A \cup B) = (R | A) \cup (R | B)$
+  for any sets $A, B$}
+
+$$x \in R|(A \cup B) \lra (\exists y \in A \cup B) (\exists z \in  \ran(R)) (\eangle{y, z}
+\in R \land x = \eangle{y, z}) \lra $$
+$$ 
+\lra (\exists y \in A) (\exists z \in  \ran(R)) (\eangle{y, z}
+\in R \land x = \eangle{y, z}) \lor
+ (\exists y \in B) (\exists z \in  \ran(R)) (\eangle{y, z}
+\in R \land x = \eangle{y, z}) \lra $$
+$$ \lra x \in R|A \lor x \in R|B \lra x \in (R|A \cup R|B)$$
+thus
+$$R|(A \cup B) = (R | A) \cup (R | B)$$
+as desired.
+
+\subsection*{3.2.7}
+
+\textit{Let $R$ and $S$ be two relations and let $A, B, C$ be sets. Prove that $R|A$,
+  $R\inv [B]$, $R[C]$ and $R \circ S$ are sets.}
+
+Given that $R$ and $S$ are relation, we follow that both of them are sets,
+$\bigcup \bigcup R$ and  $\bigcup \bigcup S$ are sets and $\dom (R), \ran(R), \dom(S), \ran(S)$
+are sets. Thus we follow that $R|A$ is a subset of
+$R$, which is a set; $R\inv [B]$  and $R[C]$ are subsets of $\bigcup \bigcup R$,
+and $R \circ S$ are subsets of a set $\dom (R) \times \ran(S)$, which is a set.
+
+
+\subsection*{3.2.8}
+
+\textit{Let $R$ be a relation and $G$ be a set. Prove that $\{R[C]: C \in G\}$ is a set. Prove
+  that if $G$ is nonempty, then $\{R[C]: C \in G\}$ is also nonempty}
+
+If $R$ is a relation, then $\ran(R)$ is a set. Therefore $\pow(\ran(R))$ is a set. Thus
+for any set $C$, $R[C] \subseteq \ran(R)$, therefore $R[C] \in \pow(\ran(R))$. Thus
+$\{R[C]: C \in G\}$ is a subset of $\pow(\pow(\ran(R)))$, which is a set.
+
+Suppose that $G$ is nonempty. Then we follow that there exists $C \in G$. Thus
+$R[C]$ is a set. Thus $R[C] \in \{R[C]: C \in G\}$. Therefore $\{R[C]: C \in G\}$ is
+nonempty.
+
+\subsection*{3.2.19}
+
+\textit{Prove item (2) of Theorem 3.2.8}
+
+$$R[\bigcup G] = \bigcup{R[C]: C \in G}$$
+
+$$x \in R[\bigcup G] \lra (\exists y \in \bigcup G)(\eangle{y, x} \in R) \lra
+(\exists C \in G)(y \in C \land \eangle{y, x} \in R) \lra$$
+$$\lra (\exists C \in G)(x \in R[C]) \lra x \in \bigcup{R[C]: C \in G}$$
+
+\subsection*{3.2.20}
+
+\textit{Prove item (4) fo Theorem 3.2.8}
+
+$$x \in R[\bigcap G] \lra (\exists y \in \bigcap G)(\eangle{y, x} \in R) \lra
+\exists y (\forall C \in  G)( y \in C \land \eangle{y, x} \in R) \ra$$
+$$ \ra
+(\forall C \in G) (\exists y \in C) ( \eangle{y, x} \in R) \lra
+(\forall C \in G) (x \in R[C]) \lra x \in \bigcap{\{R[C]: C \in G\}}$$
+
+\section{Functions}
+
+\subsection*{3.3.1}
+
+\textit{Prove Lemma 3.3.5 and Lemma 3.3.13}
+
+Suppose that $F$ and $G$ are functions such that $\dom(F) = \dom(G)$. 
+Lemma 3.3.5 states that $F = G$ iff $F(x) = G(x)$ for every $x \in \dom(F)$
+If $F = G$, then
+$$F(x) = y \lra \eangle{x, y} \in F \lra \eangle{x, y} \in G \lra G(x) = y$$
+thus $F(x) = G(x)$ for every $x \in \dom(F)$.
+
+Now suppose that $F(x) = G(x)$ for every $x \in \dom(F)$. Then we follow that
+$$z \in F \lra z = \eangle{x, y} \land F(x) = y \lra
+z = \eangle{x, y} \land G(x) = y \lra z \in G$$
+as desired.
+
+Lemma 3.3.13 states that a function $F$ is one-to-one if and only if $F$ is single-rooted.
+
+Suppose that $F$ is one-to-one and $F$ is not single rooted. Then we follow that
+there exists $x, y \in F$ such that $x = \eangle{u, w} \in F, y = \eangle{j, w} \in F$.
+Then we follow that $F(u) = w = F(j)$, which is a contradiction.
+
+Proof of converse is extremely simular.
+
+\subsection*{3.3.2}
+
+\textit{Let $F$ be a function and let $A \subseteq B \subseteq \dom(F)$. Prove that
+  $F[A] \subseteq F[B]$.}
+
+$$x \in F[A] \lra x = \eangle{u, v} \land u \in A \land \eangle{u, v} \in F \ra
+x = \eangle{u, v} \land u \in B \land \eangle{u, v} \in F \lra x \in F[B]$$
+
+\subsection*{3.3.5}
+
+\textit{Let $g: C \to D$ be a one-to-one function, $A \subseteq C$ and $B \subseteq C$. Prove
+  that if $A \cup B = \emptyset$, then $g[A] \cap g[B] = \emptyset$.}
+
+Suppose that $A \cap B = \emptyset$ and $g[A] \cap g[B] \neq \emptyset$. Then we follow that
+there exists $x \in g[A] \cap g[B]$. Thus
+$$x \in g[A] \land x \in g[B] \lra (\exists y \in A)(\eangle{y, x} \in g) \land
+(\exists z \in B)(\eangle{z, x} \in g)$$
+since $g$ is one-to-one, we follow that $z = y$. Thus there exists $z \in A \cap B$, therefore
+$A \cap B \neq \emptyset$, which is a contradiction.
+
+\subsection*{3.3.9}
+
+\textit{Suppose that $F: X \to Y$ is a function. Prove that if $C \subseteq Y$ and
+  $D \subseteq Y$, then $F\inv[C \cap D] = F\inv[C] \cap F\inv[D]$.}
+
+Since $F$ is a function, we follow that $F\inv$ is a single-rooted relation. Thus we follow that
+$$F\inv[C \cap D] = F\inv[C] \cap F\inv[D]$$
+as desired.
+
+\subsection*{3.3.10}
+
+\textit{Let $F, G$ be functions from $A$ to $B$. Suppose $F \subseteq G$. Prove that $F = G$.}
+
+Suppose that $x \in A$. Then we follow that
+$$(\exists y \in B)(\eangle{x, y} \in F) \ra (\exists y \in B)(\eangle{x, y} \in G)$$
+Thus we follow that for every $x \in A$ (where $\dom (F) = A = \dom(G)$)
+$$F(x) = G(x)$$
+thus by the lemma 3.3.5 we follow that
+$$F = G$$
+as desired.
+
+
+\subsection*{3.3.11}
+
+\textit{Let $C$ be a set of functions. Suppose that for all $f$ and $g$ in $C$, we have either
+  $f \subseteq g$ or $g \subseteq f$. }
+
+\textit{(a) Prove that $\cup C$ is a function}
+
+Firstly, since $C$ is a set of sets of ordered pairs, we follow that $\cup C$ is a set of
+ordered pairs, and therefore it is a relation. Suppose that $x \in \cup C$. Then we follow that
+there exist  $f \in C$ such that $x \in f$ and 
+$x = \eangle{u, v}$. Suppose that there exists $y \in \cup C$, such that $y = \eangle{u, v'}$,
+where $u' \neq u$. Since $y \in \cup C$, we follow that there exists $g \in C$ such that
+$y \in C$. Because $u' \neq u$, we follow that $g \neq f$. Therefore either $g \subset f$,
+or $f \subset g$. In both cases we follow that we can't have the case that $u' \neq u$. Thus
+we follow that for $x, y \in \cup C$, whenever the first part of the $x$ is equal to the first
+part of $y$, we follow that the last parts are also equal. Thus we follow that $\cup C$ is
+a single-valued relation, and therefore it is a function.
+
+\subsection*{3.3.13}
+
+\textit{Assume $f: A \to B$ is onto $B$. Let $C \subseteq B$. Prove that $f[f\inv[C]] = C$}
+
+$$x \in f[f\inv[C]] \lra (\exists y \in f\inv[C])(f(y) = x) \lra
+(\exists z \in C)(\eangle{y, z} \in f \land f(y) = x) \lra$$
+$$ \lra (\exists z \in C)(f(y) = z \land f(y) = x) \lra (\exists z \in C)(x = z) \lra x \in C$$
+this notation may be a bit sloppy, but the result is derived faithfully.
+
+\subsection*{3.3.15}
+
+\textit{Let $f: A \to B$ be a one-to-one function. Define $G: \pow(A) \to \pow(B)$ by
+  $G(X) = f[X]$, for each $X \in \pow(A)$. Prove that $G$ is one-to-one.}
+
+Let $X_1, X_2 \in \pow(A)$ be such that $G(X_1) = G(X_2)$. Then we follow that
+$$f[X_1] = f[X_2]$$
+thus
+$$x \in X_1 \lra (\exists y \in f[X_1])(\eangle{x, y} \in f) \lra
+(\exists y \in f[X_2])(\eangle{x, y} \in f) \lra x \in X_2$$
+thus we follow that $X_1 = X_2$. Therefore $G(X_1) = G(X_2) \to X_1 = X_2$, thus $G$ is
+one-to-one, as desired.
+
+\subsection*{3.3.21}
+
+\textit{Let $\eangle{A_i: i \in I}$ be an indexed function with nonempty terms. Prove that there
+  is an indexed function ${x_i: i \in I}$ si that $x_i \in A_i$ for all $i \in I$, using
+  theorem 3.3.24}
+
+TODO
+
+
 
 \end{document}
 %%% Local Variables:

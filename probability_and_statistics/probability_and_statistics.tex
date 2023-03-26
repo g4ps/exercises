@@ -44,9 +44,94 @@
   3c & 3/8 \\
   4 & 0.6 \\
   5 & 0.4 \\
-  6 & - \\
+  6 & 0.5 \\
+  8 & 30 \\
+  11a & 1 - $\pi/4$ \\
+  11b & 0.75 \\
+  11c & 2/3\\
+  11d & 0 \\
+  14a & 0.38, 0.16 \\
+  14b & 0.04 \\
   \hline 
 \end{tabular}
+
+
+A little notation, related to 6: 
+$$Pr(A) = 0.5$$
+$$Pr(B) = 0.2$$
+$$Pr(A \cap B) = 0.1$$
+$$Pr(A \cup B) = 0.6$$
+$$Pr((A \cup B) \cap (A \cap B)^c) = P(A \cup B) - P((A \cup B) \cap (A \cap B)) =
+P(A \cup B) - P(A \cap B) = 0.5$$
+
+\subsection*{1.5.7}
+
+If $Pr(A) = 0.4$ and $Pr(B) = 0.7$, then we follow that the maxium $Pr(A \cap B)$ is attained
+if $A \subset B$, in which case $Pr(A \cap B) = Pr(A) = 0.4$. The minimum is obtained
+if $A \cup B = S$, in which case $Pr(A \cap B) = 0.1$
+
+\subsection*{1.5.9}
+
+The event that exaclty one of the events occurs can be expressed as
+$$(A \cap B^c) \cup (A^c \cap B)$$
+which comes from either the definition of xor, common sense or something else, depending on
+your preferences. Thus we follow that
+$$Pr((A \cap B^c) \cup (A^c \cap B)) = Pr(A \cap B^c) + Pr(A^c \cap B) -
+Pr((A \cap B^c) \cap (A^c \cap B)) = $$
+$$ = 
+Pr(A \cap B^c) + Pr(A^c \cap B) - Pr((A \cap A^c) \cap (B^c \cap B)) = $$
+$$ =   Pr(A \cap B^c) + Pr(A^c \cap B) = Pr(A) - Pr(A \cap B) + Pr(B) - Pr(B \cap A) = $$
+$$= Pr(A) - Pr(A \cap B) + Pr(B) - Pr(A \cap B) =  Pr(A) + Pr(B) - 2Pr(A \cap B)$$
+as desired (rules used in this derivitation: association of unions, $A \cap A^c = \emptyset$
+and other trivial stuff)
+
+\subsection*{1.5.10}
+
+$$Pr(A \cap B^c) = Pr(A) - Pr(A \cap B)$$
+$$Pr(A \cap B^c) + Pr(A \cap B) = Pr(A) $$
+as desired.
+
+\subsection*{1.5.12}
+
+Suppose that $n > m \in N$. Then we follow that by definition
+$$B_m \subseteq A_m$$
+and
+$$B_n \subseteq A_m^c$$
+thus we follow that
+$$B_m \cap B_n \subseteq A_m \cap A_m^c = \emptyset$$
+thus
+$$B_m \cap B_n = \emptyset$$
+therefore we conclude that $B_1, B_2 ...$ are disjoint sets. Thus we follow that
+$$Pr(\bigcup_{i = 1}^n B_i) = \sum_{i = 1}^n {Pr(B_i)}$$
+For $n = 2$ we've got that
+$$B_1 \cup B_2 = A_1 \cup (A_1^c \cap A_2) = (A_1 \cup A_1^c) \cap (A_1 \cup A_2) = A_1 \cup A_2$$
+and by induction we can follow that
+$$\bigcup_{i = 1}^n {B_i} = \bigcup_{i = 1}^n {A_i}$$
+thus
+$$Pr(\bigcup_{i = 1}^n B_i) = \sum_{i = 1}^n {Pr(B_i)}$$
+implies that
+$$Pr(\bigcup_{i = 1}^n A_i) = \sum_{i = 1}^n {Pr(B_i)}$$
+for $n \in N$. Given that $n$ is arbirtary, we can follow that
+$$Pr(\bigcup_{i = 1}^\infty A_i) = \sum_{i = 1}^\infty {Pr(B_i)}$$
+as desired.
+
+\subsection*{1.5.13}
+
+First equation follow from induction on the result that
+$$Pr(A \cup B) \leq Pr(A) + Pr(B)$$
+the second equation follows from the first equation, DeMorgan laws and induction on the
+form 
+$$Pr(A \cap B) = Pr((A^c \cup B^c)^c) = 1 - Pr(A^c \cup B^c) \geq 1 - (Pr(A^c) + Pr(B^c))$$
+
+\subsection*{1.5.14}
+
+$$Pr(A) = 0.34$$
+$$Pr(B) = 0.12$$
+$$Pr(O) = 0.5$$
+$$Pr(AB) = 1 - 0.34 - 0.12 - 0.5 = 0.04$$
+$$Pr(a-A) = 0.34 + 0.04 = 0.38$$
+$$Pr(a-B) = 0.12 + 0.04 = 0.16$$
+
 
 
 \end{document}
