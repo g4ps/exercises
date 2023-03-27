@@ -418,3 +418,11 @@
 \contentsline {subsection}{\numberline {7.3.11}}{184}{subsection.7.3.11}%
 \contentsline {subsection}{\numberline {7.3.12}}{185}{subsection.7.3.12}%
 \contentsline {subsection}{\numberline {7.3.13}}{185}{subsection.7.3.13}%
+\contentsline {subsection}{\numberline {7.3.14}}{186}{subsection.7.3.14}%
+\contentsline {section}{\numberline {7.4}Polar Decomposition and Singular Value Decomposition}{186}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}}{186}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}}{187}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}}{188}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}}{188}{subsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.4.5}}{189}{subsection.7.4.5}%
+\contentsline {subsection}{\numberline {7.4.6}}{189}{subsection.7.4.6}%

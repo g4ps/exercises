@@ -7327,6 +7327,199 @@ TODO; left till the end of the chapter
 
 \section{Polar Decomposition and Singular Value Decomposition}
 
+\subsection{}
+
+\textit{Fix $u, x \in V$ with $u \neq 0$. Define $T \in \map(V)$ by
+  $$Tv = \eangle{v, u} x$$
+  for every $v \in V$. Prove that
+  $$\sqrt{T^* T} v = \frac{||x||}{||u||} \eangle{v, u} u$$
+  for every $v \in V$.
+}
+
+For
+$$Tv = \eangle{v, u} x$$
+we've got that
+$$T^* v = \eangle{v, x} u$$
+thus
+$$T^* T v = \eangle{\eangle{v, u} x, x} u $$
+$$T^* T v = \eangle{v, u} \eangle{ x, x} u $$
+$$T^* T v = ||x||^2 \eangle{v, u} u $$
+
+For our supposed answer we've got that 
+$$\sqrt{T^* T} v = \frac{||x||}{||u||} \eangle{v, u} u$$
+thus
+$$\sqrt{T^* T}\sqrt{T^* T} v =
+\frac{||x||}{||u||} \eangle{\frac{||x||}{||u||} \eangle{v, u} u, u} u$$
+$$\sqrt{T^* T}\sqrt{T^* T} v =
+\frac{||x||}{||u||} \frac{||x||}{||u||} \eangle{v, u}  \eangle{u, u} u$$
+$$\sqrt{T^* T}\sqrt{T^* T} v =
+\frac{||x||^2}{||u||^2} \eangle{v, u}  ||u||^2 u$$
+$$\sqrt{T^* T}\sqrt{T^* T} v = ||x||^2 \eangle{v, u} u$$
+$$T^* T  v = ||x||^2 \eangle{v, u} u$$
+thus given result is indeed a square root of $T^* T$. 
+
+Now suppose that $v \in V$. Then we follow that
+$$\eangle{\sqrt{T^* T} v, v} = \eangle{\frac{||x||}{||u||} \eangle{v, u} u, v} =
+\frac{||x||}{||u||} \eangle{\eangle{v, u} u, v} =
+\frac{||x||}{||u||} \eangle{v, u} \eangle{ u, v} =
+$$
+$$ = 
+\frac{||x||}{||u||} \overline{\eangle{u, v}} \eangle{ u, v} =
+\frac{||x||}{||u||} |\eangle{ u, v}|^2 \geq 0$$
+
+Suppose that $v, w \in V$. Then we follow that 
+$$\eangle{\sqrt{T^* T} v, w} = \eangle{\frac{||x||}{||u||} \eangle{v, u} u, w} =
+\frac{||x||}{||u||} \eangle{v, u} \eangle{u, w} =
+\overline{\frac{||x||}{||u||}} \eangle{v, u} \overline{\eangle{w, u}} =
+\eangle{v, \frac{||x||}{||u||} \eangle{w, u} u} =
+$$
+$$  = 
+\eangle{v, \sqrt{T^* T} w}$$
+thus we follow that given answer for $\sqrt{T^* T}$ is positive, as desired.
+
+\subsection{}
+
+\textit{Give an example of $T \in \map(C^2)$ such that $0$ is the only eigenvalue of $T$ and
+  the singular values of $T$ are $5$ and $0$}
+
+Suppose that
+$$T =
+\begin{pmatrix}
+  0 & 5 \\
+  0 & 0
+\end{pmatrix}
+$$
+with respect to the standard basis.
+Then we follow that it's upper diagonal and therefore 0 is the only eigenvalue of $T$.
+We also have that 
+$$T^* T =
+\begin{pmatrix}
+  0 & 0 \\
+  0 & 25
+\end{pmatrix}
+$$
+which is derived from the multiplication of conjugate transpose of the original matrix
+by the matrix itself. We can follow from it that
+$$\sqrt{T^* T} =
+\begin{pmatrix}
+  0 & 0 \\
+  0 & 5
+\end{pmatrix}
+$$
+is the square root of the resulting product (verification that given resuls is positive is
+trivial). Thus $0$ and $5$ are the singular values of this matrix.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that there exists an isometry $S \in \map(V)$ such that 
+  $$T = \sqrt{T T^*} S$$
+}
+
+By applying SVD to  $T^*$ we get that there exists $S$ such that
+$$T^* = S \sqrt{(T^*)^* T^*} = S \sqrt{T T^*}$$
+thus
+$$(T^*)^*= (S \sqrt{T T^*})^* $$
+$$T= (\sqrt{T T^*})^* S^* $$
+and since the square root is positive and therefore self-adjoint, we follow that 
+$$T= \sqrt{T T^*} S^* $$
+Since the adjoint of the isometry is an isometry, we get the desired result.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $s$ is a singular value of $T$. Prove that there exists
+  a vector $v \in V$ such that $||v|| = 1$ and $||Tv|| = s$}
+
+Because $s$ is a singular value of $V$, we follow that it is an eigenvalue of $\sqrt{T^* T}$
+and $s \geq 0$.
+Thus there exists an eigenvector $v'$, that corresponds to this eigenvalue. We can normalize
+this vector and get
+$$v = \frac{1}{||v'||}v' $$
+such that
+$$||v|| = 1$$
+By SVD, $T$ can be represented as
+$$T = S \sqrt{T^* T}$$
+and thus
+$$||Tv|| = ||S \sqrt{T^* T} v|| = ||S sv|| = ||s v|| = |s| = s$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^2)$ is defined by $T(x, y) = (-4y, x)$. Find the singular values
+  of $T$.}
+
+We follow that with respect to the standard basis
+$$T =
+\begin{pmatrix}
+  0 & 1 \\
+  -4 & 0
+\end{pmatrix}
+$$
+thus
+$$T^* =
+\begin{pmatrix}
+  0 & -4 \\
+  1 & 0
+\end{pmatrix}
+$$
+$$T^* T =
+\begin{pmatrix}
+  16 & 0 \\
+  0 & 1
+\end{pmatrix}
+$$
+thus $4, 1$ are the singular values of $T$.
+
+\subsection{}
+
+\textit{Find the singular values of the differentiation operator $D \in P(R^2)$ defined
+  by $Dp = p'$, where the inner product on $P(R^2)$ is as in Example 6.33}
+
+From this example we've got that
+$$e_1 = \sqrt{\frac 1 2 }$$
+$$e_2 = \sqrt{\frac 3 2} x$$
+$$e_3 = \sqrt{\frac{45}{8}}(x^2 -  \frac 1 3)$$
+for which we've got 
+$$e_1' = 0$$
+$$e_2' = \sqrt{\frac 3 2} = \sqrt{3} e_1$$
+$$e_3' = \frac{3 \sqrt{5}}{\sqrt{2}}x = \sqrt{15} e2$$
+thus we follow that with respect to this orthonormal basis, matrix of $D$ is 
+$$
+D =
+\begin{pmatrix}
+  0 & \sqrt{3} & 0\\
+  0 & 0 & \sqrt{15}\\
+  0 & 0 & 0\\
+\end{pmatrix}
+$$
+therefore
+$$
+D^* =
+\begin{pmatrix}
+  0 & 0 & 0\\
+  \sqrt{3} & 0 & 0\\
+  0 & \sqrt{15} & 0\\
+\end{pmatrix}
+$$
+thus
+$$
+D^*D =
+\begin{pmatrix}
+  0 & 0 & 0\\
+  0 & 3 & 0\\
+  0 & 0 & 15\\
+\end{pmatrix}
+$$
+which means that $\sqrt{3}, \sqrt{15}, 0$ are singular values of $D$, as desired.
+
+\subsection{}
+
+\textit{Define $T \in \map(F^3)$ by
+$$T(z_1, z_2, z_3) = (z_3, 2z_1, 3z_2)$$
+Find (explicitly) an isometry $S \in \map(F^3)$ such that $T = S \sqrt{T^* T}$.}
+
+TODO
+
+
 \end{document}
 
 %%% Local Variables:

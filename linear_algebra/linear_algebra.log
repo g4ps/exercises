@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  26 MAR 2023 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2023.3.2)  27 MAR 2023 19:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,18 +721,19 @@ OT1/cmr/m/n/10.95 )[] = [] \OML/cmm/m/it/10.95 W \OMS/cmsy/m/n/10.95 ^^@ [] []
  []
 
 [167] [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178]
-[179] [180] [181] [182] [183] [184] [185] (./linear_algebra.aux)
+[179] [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190]
+(./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 5D59A1A5F9554EFAC18136358F9BA48B;26760.
+(rerunfilecheck)             Checksum: 369BC928C16D6B1455FAF346CEC78828;27477.
  ) 
 Here is how much of TeX's memory you used:
- 10061 strings out of 478238
- 154211 string characters out of 5850457
- 444081 words of memory out of 5000000
- 27601 multiletter control sequences out of 15000+600000
+ 10082 strings out of 478238
+ 154515 string characters out of 5850457
+ 444083 words of memory out of 5000000
+ 27609 multiletter control sequences out of 15000+600000
  482961 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,63p,359b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,13n,63p,382b,495s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -748,10 +749,10 @@ type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (186 pages, 691508 bytes).
+Output written on linear_algebra.pdf (191 pages, 701447 bytes).
 PDF statistics:
- 3133 PDF objects out of 3580 (max. 8388607)
- 2880 compressed objects within 29 object streams
- 609 named destinations out of 1000 (max. 500000)
- 3361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3198 PDF objects out of 3580 (max. 8388607)
+ 2939 compressed objects within 30 object streams
+ 622 named destinations out of 1000 (max. 500000)
+ 3425 words of extra memory for PDF output out of 10000 (max. 10000000)
 
