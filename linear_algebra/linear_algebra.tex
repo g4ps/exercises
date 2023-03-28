@@ -7517,7 +7517,61 @@ which means that $\sqrt{3}, \sqrt{15}, 0$ are singular values of $D$, as desired
 $$T(z_1, z_2, z_3) = (z_3, 2z_1, 3z_2)$$
 Find (explicitly) an isometry $S \in \map(F^3)$ such that $T = S \sqrt{T^* T}$.}
 
-TODO
+We follow that with respect to standard basis
+$$
+T =
+\begin{pmatrix}
+  0 & 0 & 1 \\
+  2 & 0 & 0 \\
+  0 & 3 & 0 \\
+\end{pmatrix}
+$$
+and since the standard basis is orthonormal, we follow that 
+$$
+T^* =
+\begin{pmatrix}
+  0 & 2 & 0 \\
+  0 & 0 & 3 \\
+  1 & 0 & 0 \\
+\end{pmatrix}
+$$
+thus
+$$T^* T =
+\begin{pmatrix}
+  4 & 0 & 0 \\
+  0 & 9 & 0 \\
+  0 & 0 & 1 \\
+\end{pmatrix}
+$$
+thus
+$$\sqrt{T^* T} =
+\begin{pmatrix}
+  2 & 0 & 0 \\
+  0 & 3 & 0 \\
+  0 & 0 & 1 \\
+\end{pmatrix}
+$$
+and therefore
+$$ S = 
+\begin{pmatrix}
+  0 & 0 & 1 \\
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+\end{pmatrix}
+$$
+which seems to be working.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$, $S \in \map(V)$ is an isometry, and $R \in \map(V)$ is a
+  positive operator such that $T = SR$. Prove that $R = \sqrt{T^* T}$.}
+
+Since $T$ is a linear map, we follow that
+$$T = S' \sqrt{T^* T}$$
+for some isometry $S'$. Thus
+$$S' \sqrt{T^* T} = SR$$
+thus
+$$\sqrt{T^* T} = S'^* S R$$
 
 
 \end{document}
