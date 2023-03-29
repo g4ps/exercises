@@ -7566,12 +7566,109 @@ which seems to be working.
 \textit{Suppose $T \in \map(V)$, $S \in \map(V)$ is an isometry, and $R \in \map(V)$ is a
   positive operator such that $T = SR$. Prove that $R = \sqrt{T^* T}$.}
 
-Since $T$ is a linear map, we follow that
-$$T = S' \sqrt{T^* T}$$
-for some isometry $S'$. Thus
-$$S' \sqrt{T^* T} = SR$$
+Suppose that we've got a positive operator such that 
+$$T = S R$$
+by taking adjoint of both sides we get that
+$$T^* = (S R)^* = R^* S^*$$
+and since $R$ is a positive operator, we follow that it is self-adjoint and thus
+$$T^* = R^* S^* = R S^*$$
+therefore
+$$T^* T = R S^* S R$$
+since $S$ is an isometry, we follow that $S^* S = I$. Thus
+$$T^* T = R S^* S R = R I R = RR = R^2$$
+Since $T^* T$ is a positive operator for any $T$ (which was proven somewhere in the previous
+section), we follow that it has a unique positive square root,
+and since $R$ is positive, we follow that $R = \sqrt{T^* T}$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T$ is invertible if and only if there exists a
+  unique isometry $S \in \map(V)$ such that $T = S \sqrt{T^* T}$.}
+
+\textbf{In forward direction: }
+
+Suppose that $T$ is invertible. Then we follow that $\range T = V$. By SVD we've got
+that $T = S \sqrt{T^* T}$, and therefore $\range \sqrt{T^* T} = V$ as well. Thus we've
+got that for a basis $e_1, ..., e_n$, the list $ \sqrt{T^* T}e_1, ...,  \sqrt{T^* T}e_n$ is also
+a basis of $V$.
+Thus there exists a unique map $S$ such that 
+$$ S (\sqrt{T^* T} e_j) = T e_j$$
+Thus we can follow the uniqueness of the isometry derived from SVD by the
+fact that this map is unique in general.
+
+\textbf{In reverse direction: }
+
+Suppose that there exists a unique map $S$ such that $T = S \sqrt{T^* T}$ and $T$ is not
+invertible. Then we follow that $T$ is not injective, and $\dim \ns T \neq 0$. Since $S$
+is an isometry (and therefore injective) we follow that
+$$S \inv T = \sqrt{T^* T}$$
+thus $\sqrt{T^* T}$ is not injective as well and moreover we can follow that
+$\ns T = \ns \sqrt{T^* T}$. 
+Let $e_1, ..., e_j$
+be an orthonormal basis of $\ns T$ and expand it to an orthonormal basis of $V$ -- $e_1, ..., e_n$.
+Since $S$ is an isometry, we follow that $S e_1, ..., S e_n$ is also an orthonormal basis.
+Now define a map  $S' \in \map(V)$  by 
+$$S' e_i = - Se_i$$
+for $1 \leq i \leq j$ (i.e. all the vectors that form nullspace of $T$) and
+$$S' e_i = Se_i$$
+for the rest. From this definition we follow the simple fact that $S \neq S'$. We also
+follow that for any $v \in V$ such that
+$$v = \sum a_j e_j$$
+we've got that
+$$||S'v||^2 = || \sum \pm a_j e_j|| = \sum |a_j|^2 = ||v||^2$$
+thus $S'$ is an isometry. Now we can follow that for every $v \in V$ such that
+$$v = \sum a_j e_j$$
+we've got that
+$$S\sqrt{T^* T} v = S\sqrt{T^* T} (\sum a_i e_i) = S (\sum a_i \sqrt{T^* T} e_i) =
+S (\sum_{i \geq j} {a_i \sqrt{T^* T} e_i}) =  $$
+$$ = S' (\sum_{i \geq j} {a_i \sqrt{T^* T} e_i}) =
+S' (\sum {a_i \sqrt{T^* T} e_i}) = S'\sqrt{T^* T} (\sum a_i e_i) = S'\sqrt{T^* T} v $$
+thus $S'\sqrt{T^* T} = S\sqrt{T^* T}$, which is a contradiction of our assumption that
+$S$ is a unique isometry.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is self-adjoint. Prove that the singular values of $T$
+  equal the absolute values of eigenvalues of $T$, repeated appropriately.}
+
+Because $T$ is self-adjoint (and therefore normal), we follow by (both) spectral theorems that
+there exists an orthonormal basis of $V$ with respect to which $T$ has a diagonal map.
+Then we can follow that if $T$ is in the form
+$T e_j = \lambda_j e_j$
+thus $T^*T$ is in the form
+$$T^*T e_j = |\lambda_j|^2e_j$$
+and therefore
+$$\sqrt{T^*T} e_j = \sqrt{|\lambda_j|^2}e_j = |\lambda_j| e_j$$
+thus we follow the desired result.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T$ and $T^*$ have the same singular values.}
+
+Suppose that $e_1$ is an eigenvector of  $\sqrt{T^* T}$, then we follow that
+$$ \sqrt{T^* T} e_1 = s_1 e_1$$
+Also from SVD and one of the previous exercises we've got that
+$$T = S \sqrt{T^* T}$$
 thus
-$$\sqrt{T^* T} = S'^* S R$$
+$$T T^* = S \sqrt{T^* T} \sqrt{T^* T} S^* = S T^* T S^*$$
+thus suppose that $e_j$ is an eigenvector of $T T^*$ with an eigenvalue $s_j$. Then we follow that
+$$T T^* e_j = s_j e_j$$
+and thus
+$$S T^* T S^* = s_j e_j$$
+$$T^* T S^* = S^*s_j e_j$$
+$$T^* T S^* = s_j S^* e_j$$
+thus $S^* e_j$ is an eigenvector of $T^* T$ with an eigenvalue of $s_j$. Thus we follow that
+$T^* T$ has the same eigenvalues (with the same multiplicities ) as $TT^*$. Thus we follow that
+same goes for their square roots. Thus we follow $T^*$ and $T$ have the same singular values, as
+desired.
+
+\subsection{}
+
+\textit{Prove of give a counterexample: if $T \in \map(V)$, then the singular values of $T^2$
+  equal the squares of the singular values of $T$.}
+
+TODO
+
 
 
 \end{document}
