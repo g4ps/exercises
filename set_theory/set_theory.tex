@@ -741,6 +741,23 @@ Suppose that $G$ is nonempty. Then we follow that there exists $C \in G$. Thus
 $R[C]$ is a set. Thus $R[C] \in \{R[C]: C \in G\}$. Therefore $\{R[C]: C \in G\}$ is
 nonempty.
 
+\subsection*{3.2.10}
+
+\textit{Let $R$ be a relation on $A$. Prove that $R$ is symmetric if and only if
+  $$R\inv \subseteq R$$}
+
+\textbf{In forward direction: }
+Suppose that $R$ is symmetric. 
+Let $y \in R \inv$. We follow that there exists $u, v$ such that $y = \eangle{u, v}$.
+Thus $\eangle{v, u} \in R$ by the definition. Since $R$ is symmetric, we follow that
+$\eangle{u, v} \in R$. Therefore $y \in R\inv \ra y \in R$, as desired.
+
+\textbf{In reverse direction: }
+Suppose that $R\inv \subseteq R$. Let $y \in R$. Then we follow that there exists
+$u, v$ such that $y = \eangle{u, v}$. Thus $\eangle{v, u} \in R\inv$. Since $R\inv \subseteq R$,
+we follow that $\eangle{v, u} \in R$. Thus we follow that $\eangle{u, v} \in R \ra
+\eangle{u, v} \in R$. Thus $R$ is symmetric by definition, as desired.
+
 \subsection*{3.2.19}
 
 \textit{Prove item (2) of Theorem 3.2.8}
@@ -871,11 +888,151 @@ one-to-one, as desired.
 \subsection*{3.3.21}
 
 \textit{Let $\eangle{A_i: i \in I}$ be an indexed function with nonempty terms. Prove that there
-  is an indexed function ${x_i: i \in I}$ si that $x_i \in A_i$ for all $i \in I$, using
+  is an indexed function ${x_i: i \in I}$ is that $x_i \in A_i$ for all $i \in I$, using
   theorem 3.3.24}
 
-TODO
+Let $C$ be defined as
+$$C = ran(A)$$
+then by theorem 3.3.24 we follow that there exists a function $H: C \to \cup C$ such that
+$$H(A_i) \in A_i$$
+define $x = H \circ A $. Then we follow that
+$$x(i) = H(A(i)) = H(A_i) \in A_i$$
+thus we have the desired function.
 
+\section{Order Relations}
+
+\subsection*{3.4.1}
+
+\textit{Define a relation $\preceq$ on the set of intezers Z by $x \preceq y$ if and only if
+  $x \leq y$ and $x + y$ is even for all $x, y \in Z$. Prove that $\preceq$ is a partial order
+  on $Z$}
+
+Suppose that $x, y \in Z$. Poset requirements of $\leq$ are going to be ommited.
+
+Then we follow that $$x + x = 2x$$, therefore we've got symmetry.
+If $x \leq y$, $y \leq z$, $x + y$ is even and $y + z$ is even, then we follow that
+$x + y + y + z$ is even, therefore $x + z - 2y$ is also even.
+Antisymmetry follows from $\leq$.
+
+\textit{Then answer the following questions about the poset $(Z, \preceq)$}
+
+\textit{(a) Is $S = \{1, 2, 3, 4, 5, 6, ..., \}$ a chain in $Z$}
+
+No, since $1 + 2 = 3$ is not even, we follow that $1 \not \preceq 2 \land 2 \not \preceq 1$.
+
+\textit{(b) Is $S = \{1, 3, 5, 7 ...,\}$ a chain in $Z$?}
+
+Suppose that $x, y \in Z$. Then we follow that there exist $m, n \in Z$ such that
+$$x = 2m + 1$$
+$$y = 2n + 1$$
+thus
+$$x + y = 2m + 2n + 2$$
+thus $x + y$ is even for all cases. Since $\leq$ is a total order, we follow that $S$ is
+indeed a chain in $Z$.
+
+\textit{(c) Does the  set $S = \{1, 2, 3, 4, 5\}$ have a lower bound or an upper bound?}
+
+No, since we've got both odd and even numbers in $S$, we follow that there is no $x \in Z$ such that
+$x + s$ is even for all $s \in S$, thus there does not exist an element such taht
+$x \preceq s$ or $s \preceq x$ for all $s \in S$
+
+\textit{(d) Does $S = \{1, 2, 3, 4, 5\}$ have any maximal or minimal elements?}
+
+Yes, $1, 2$ are minimal elements and $4, 5$ are maximal elements.
+
+
+\subsection*{3.4.2}
+
+\textit{Prove Lemma 3.4.5}
+
+Suppose that $(A, \preceq)$ is a poset and let $\prec$ be the strict order corresponding to
+$\preceq$. Let $x, y, z \in A$. Then we follow that:
+
+\textit{(1)}
+
+Since $x = x$, we follow that $x \not \prec x$ by definition of a strict order
+
+\textit{(2)}
+
+Suppose that $x \prec y$. Then we follow that $x \preceq y$ and $y \neq x$. Thus by antisymmetry
+of $\preceq$ we follow that $y \not \preceq x$, and therefore $y \not \prec x$ by definition.
+
+\textit{(3)}
+
+Suppose that $x \prec y$ and $y \prec z$. Therefore we follow that $x \preceq y$ and $y \preceq z$,
+which gives us that $x \preceq z$. Suppose that $x = z$. Then we follow that $z \preceq y$
+and thus $z = y$, which is a contradiction. Thus we follow that $x \preceq z$ and $x \neq z$,
+therefore $x \prec z$, as desired.
+
+\textit{(4)}
+
+If $x = y$ then $x \not \prec y$ and $y \not \prec x$ by definition of strict order
+
+Both $x \prec y$ and $y \prec x$ imply that $x \neq y$, and by case (2) we follow that
+for given $x, y \in A$ only one of $x = y$, $x \prec y$ or $y \prec x$ hold.
+
+\subsection*{3.4.3}
+
+\textit{Find the greatest lower bound of the set $S = \{15, 20, 30\}$ in the poset
+  $(A, |)$, where $A = \{n \in N: n > 0\}$. Now find the least upper bound of $S$.}
+
+$5$ and $60$ (gcd and lcm) respectively.
+
+\subsection*{3.4.4}
+
+\textit{Let $(A, \preceq)$ be a poset and let $S \subseteq A$. Suppose that $b$ is the
+  largest element of $S$. Prove that $b$ is also the least upper bound of $S$.}
+
+Suppose that $s$ is an upper bound of $S$. Then from the definition of the lower bound we
+follow that $x \prec s$ for every $x \in A$. Since $b \in s$ we follow that $b \prec s$.
+Thus $b$ is the least upper bound (can't we just call it supremum?) of $A$ by definition.
+
+\subsection*{3.4.11}
+
+\textit{Let $(B, \preceq')$ be a poset. Suppose $h: A \to B$ is an injective function.
+  Define the retalion $\preceq$ on $A$ by $x \preceq y$ if an only if $h(x) \preceq' h(y)$,
+  for all $x, y \in A$. Prove that $\preceq$ is a parial order.}
+
+Let $x, y, z \in A$. Since $h$ is a function, we follow that $x = x$ implies that $h(x) = h(x)$,
+therefore $h(x) \preceq' h(x)$, thus $x \preceq x$. Thus we've got reflexivity.
+
+If $x \preceq y$ and $y \preceq z$ we follow that $h(x) \preceq' h(y)$ and $h(y) \preceq h(z)$,
+from which we follow that $h(x) \preceq' h(z)$ and therefore $x \preceq z$.
+
+Suppose that $x \preceq y$ and $y \preceq x$. Then we follow that $h(x) \preceq' h(y)$
+and $h(y) \preceq' h(x)$. Thus $h(y) = h(x)$. Because $h$ is one-to-one, we follow that
+this implies that $x = y$. Thus we've got antisymmetry. Therefore $\preceq$ is indeed a poset.
+
+\subsection*{3.4.12}
+
+\textit{Let $(B, \preceq')$ be a totally ordered. Suppose $h: A \to B$ is an injective function.
+  Define the retalion $\preceq$ on $A$ by $x \preceq y$ if an only if $h(x) \preceq' h(y)$,
+  for all $x, y \in A$. Prove that $\preceq$ is a parial order.}
+
+We follow that $\preceq$ is a poset from previous exercise. Suppose that $x, y \in A$.
+then we follow that $h(x) \preceq' h(y) \lor h(y) \preceq' h(x)$. Thus
+$x \preceq y \lor y \preceq x$. Therefore $\preceq$ is a total order.
+
+\subsection*{3.4.14}
+
+\textit{Analogous to 4}
+
+\subsection*{3.4.14}
+
+\textit{Let $\preceq$ be a partial order of $A$. Let $C \subseteq A$. Show that
+  $\preceq_C$ is a partial order on $C$. Show that if $\preceq$ is a total order on $A$,
+  then $\preceq_C$ is a total order on $C$.}
+
+Everything follows directly from definitions.
+
+\subsection*{3.4.17}
+
+\textit{Let $\preceq$ be a partial order on $A$. Show that $fld(\preceq) = A$.}
+
+For every $x \in A$ we've got that 
+$x \preceq x$, thus we follow that $\eangle{x, x} \in \preceq$, thus $x \in fld(\preceq)$.
+Thus $A \subseteq fld(\preceq)$. Since $fld(\preceq) \subseteq A$
+we follow that $A = fld(\preceq)$, as desired.
 
 
 \end{document}
@@ -883,3 +1040,4 @@ TODO
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+y

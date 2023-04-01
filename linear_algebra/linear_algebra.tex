@@ -40,6 +40,10 @@ GSP - Gram-Schmidt Procedure
 
 RRT - Riesz Representation Theorem
 
+PD - polar decomposition
+
+SVD - singular value decomposition
+
 \chapter{Vector Spaces}
 \section{$R^n$ and $C^n$}
 
@@ -7415,7 +7419,7 @@ trivial). Thus $0$ and $5$ are the singular values of this matrix.
   $$T = \sqrt{T T^*} S$$
 }
 
-By applying SVD to  $T^*$ we get that there exists $S$ such that
+By applying PD to  $T^*$ we get that there exists $S$ such that
 $$T^* = S \sqrt{(T^*)^* T^*} = S \sqrt{T T^*}$$
 thus
 $$(T^*)^*= (S \sqrt{T T^*})^* $$
@@ -7436,7 +7440,7 @@ this vector and get
 $$v = \frac{1}{||v'||}v' $$
 such that
 $$||v|| = 1$$
-By SVD, $T$ can be represented as
+By PD, $T$ can be represented as
 $$T = S \sqrt{T^* T}$$
 and thus
 $$||Tv|| = ||S \sqrt{T^* T} v|| = ||S sv|| = ||s v|| = |s| = s$$
@@ -7587,13 +7591,13 @@ and since $R$ is positive, we follow that $R = \sqrt{T^* T}$, as desired.
 
 \textbf{In forward direction: }
 
-Suppose that $T$ is invertible. Then we follow that $\range T = V$. By SVD we've got
+Suppose that $T$ is invertible. Then we follow that $\range T = V$. By PD we've got
 that $T = S \sqrt{T^* T}$, and therefore $\range \sqrt{T^* T} = V$ as well. Thus we've
 got that for a basis $e_1, ..., e_n$, the list $ \sqrt{T^* T}e_1, ...,  \sqrt{T^* T}e_n$ is also
 a basis of $V$.
 Thus there exists a unique map $S$ such that 
 $$ S (\sqrt{T^* T} e_j) = T e_j$$
-Thus we can follow the uniqueness of the isometry derived from SVD by the
+Thus we can follow the uniqueness of the isometry derived from PD by the
 fact that this map is unique in general.
 
 \textbf{In reverse direction: }
@@ -7647,7 +7651,7 @@ thus we follow the desired result.
 
 Suppose that $e_1$ is an eigenvector of  $\sqrt{T^* T}$, then we follow that
 $$ \sqrt{T^* T} e_1 = s_1 e_1$$
-Also from SVD and one of the previous exercises we've got that
+Also from PD and one of the previous exercises we've got that
 $$T = S \sqrt{T^* T}$$
 thus
 $$T T^* = S \sqrt{T^* T} \sqrt{T^* T} S^* = S T^* T S^*$$
@@ -7667,8 +7671,230 @@ desired.
 \textit{Prove of give a counterexample: if $T \in \map(V)$, then the singular values of $T^2$
   equal the squares of the singular values of $T$.}
 
-TODO
+After some time in the octave I found out that this is not the case with random matrices,
+therefore we've got to find a good example to show off. Suppose that $T \in \map(V)$ is
+represented by
+$$T =
+\begin{pmatrix}
+  0 & 1\\
+  0 & 0
+\end{pmatrix}
+$$
+then it can be easily shown that
+$$\sqrt{T^* T} =
+\begin{pmatrix}
+  0 & 0 \\
+  0 & 1
+\end{pmatrix}
+$$
+and thus $S = I$. Thus we follow that the singular values of $T$ are 0 and 1. Square of this
+operator is zero, therefore its singular values are also zeroes. Thus we've got the
+desired counterexample.
 
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T$ is invertible if and only if $0$ is
+  not a singular value of $T$}
+
+We know that every matrix can be represented by
+$$T = S \sqrt{T^* T}$$
+thus $T$ is invertible if and only if both $S$ and $\sqrt{T^* T}$ are invertible. Since
+$S$ is an isometry (which is always invertible) we follow that $T$ is invertible if and
+only if $\sqrt{T^* T}$ is invertible. Then we follow that $\sqrt{T^* T}$ is invertible
+if and only if 0 is not one of its eigenvalues. Since every eigenvalue of $\sqrt{T^* T}$
+is a singular value of $T$ we follow that $T$ is invertible if and only if $0$ is
+not a singular value of $T$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $\dim \range T$ equals the number of nonzero
+  singular values of $T$.}
+
+Because $T$ is a linear map, we follow that there exists a decomposition
+$$T = S \sqrt{T^* T}$$
+Because $\sqrt{T^* T}$ is a positive square root, we follow that it is self-adjoint, and
+therefore there exists an orthonormal basis of $V$ such that $\sqrt{T^* T}$ is
+diagonalizable. Let us denote this basis by $e_1, ..., e_n$. Then we follow that for every $e_j$,
+if corresponding singular value $s_j$ is not zero, then $T e_j = S s_j e_j$ is in
+the range of $T$. Since $S$ is an isometry, we follow that list $S s_j e_j, S s_k e_k$  is
+an orthogonal list, therefore we can follow that $\dim \range T$ is equal to the number of
+nonzero singular values of $T$.
+
+\subsection{}
+
+\textit{Suppose $S \in \map(V)$. Prove that $S$ is an isometry if and only if all the singular
+  values of $S$ equal 1}
+
+$S$ is an isometry if and only if $S S^* = I$. Since the positive square root of the
+operator is unique and $\sqrt{S S^*} = I$, we follow that $S$ is an isometry if and only if
+$\sqrt{S S^*} = I$. If $T$ is self-adjoint then we can follow that $T = I$ if and only if all
+of its eigenvalues are $1$, therefore we follow that $S$ is an isometry if and only if
+all of its singular values are equal to $1$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T_1, T_2 \in \map(V)$. Prove that $T_1$ and $T_2$ have the same singular values
+  if and only if there exist isometries $S_1, S_2 \in \map(V)$ such that $T_1 = S_1 T_2 S_2$}
+
+If $T_1$ and $T_2$ have the same singular values, then we follow that with respect to
+(perhaps different) ortonormal bases, there exist diagonal matrices of $\sqrt{T_1^* T_1}$
+and $\sqrt{T_2^* T_2}$ such that they have the same numbers on the diagonal. Thus we can
+follow that there exists two isometries $S_1'$ and $S_2'$ (change of basis operators) such that
+$$\sqrt{T_1^* T_1} = S_1 ' \sqrt{T_2^* T_2} S_2'$$
+By PD we've got that there exsits $S$ such that
+$$T_1 = S \sqrt{T_1^* T_1}$$
+thus
+$$T_1 = S S_1 ' \sqrt{T_2^* T_2} S_2'$$
+$$(S S_1 ') \inv T_1 =  \sqrt{T_2^* T_2} S_2'$$
+and since for some isometry $U$ we've got 
+$$T_2 = U \sqrt{T_2^* T_2}$$
+we follow that
+$$U (S S_1 ') \inv T_1 =  U \sqrt{T_2^* T_2} S_2'$$
+$$U (S S_1 ') \inv T_1 =  T_2 S_2'$$
+$$T_1 =  S S_1 ' U\inv T_2 S_2'$$
+
+thus by setting
+$$S_1 = S S_1 ' U\inv$$
+$$S_2 = S_2'$$
+we get the desired result.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ has SVD given by
+  $$Tv = s_1 \eangle{v, e_1} f_1 + ... + s_n \eangle{v, e_n} f_n$$
+  for every $v \in V$, where $s_1, ..., s_n$ are the singular values of $T$ and
+  $e_1, ..., e_n$ and $f_1, ..., f_n$ are orthonormal bases of $V$.
+}
+
+\textit{(a) Prove that if $v \in V$, then 
+  $$T^*v = \sum{s_j \eangle{v, f_j} e_j}$$
+}
+
+From the proof of SVD we follow that $S \in \map(V)$ is an isometry such that
+$$S e_j = f_j$$
+
+For any $w \in V$ we follow that 
+$$Tw = \sum{ s_j \eangle{w, e_j} f_j}$$
+by decomposing $T$ and looking in the proof of SVD we follow that 
+$$S \sqrt{T^* T}w = \sum{s_j \eangle{w, e_j} S e_j}$$
+$$\sqrt{T^* T}w = \sum{s_j \eangle{w, e_j} e_j}$$
+thus for a given $v \in V$
+$$\sqrt{T^* T} (S^*v) = \sum{s_j \eangle{S^* v, e_j} e_j} = \sum{s_j \eangle{v, S e_j} e_j} =
+\sum{s_j \eangle{v, f_j} e_j} $$
+By PD we follow that
+$$T = S \sqrt{T^* T}$$
+and thus
+$$T^* = \sqrt{T^* T}S^* $$
+thus
+$$T^* = \sum{s_j \eangle{v, f_j} e_j} $$
+as desired.
+
+\textit{(b) Prove that if $v \in V$, then
+  $$T^* T v = \sum{ s_j^2 \eangle{v, e_j} e_j}$$
+}
+
+We need to remember that since
+$$Se_j = f_j$$
+then
+$$e_j = S^*f_j$$
+and that $e_j$ is an eigenvector of $\sqrt{T^* T}$ such that
+$$\sqrt{T^* T} e_j = s_j e_j$$
+also keep in mind that
+$$T^* = \sqrt{T^* T} S^*$$
+
+Now we can follow that for
+$$Tv = \sum{ s_j \eangle{v, e_j} f_j}$$
+we can apply $T^*$ to both sides to derive that 
+$$T^* Tv = \sum{ s_j \eangle{v, e_j} T^* f_j} = \sum{ s_j \eangle{v, e_j} \sqrt{T^* T} S^* f_j} =
+\sum{ s_j \eangle{v, e_j} \sqrt{T^* T} e_j} = \sum{ s_j \eangle{v, e_j} s_j e_j} =$$
+$$ = 
+\sum{ s_j^2 \eangle{v, e_j}  e_j}$$
+as desired.
+
+\textit{(c) Prove that if $v \in V$, then
+  $$ \sqrt{T^* T} v = \sum{s_j \eangle{v, e_j} e_j}$$  
+}
+
+If there's a trick, then I don't see it. For the proof of this equality go to part (a) or
+straight to the proof of SVD itself.
+
+\textit{(d) Suppose $T$ is invertible. Prove that if $v \in V$, then
+  $$T\inv = \sum{\frac{\eangle{v, f_1} e_1}{s_1}}$$
+}
+
+This one's a bit tricky.
+
+Suppose that $T$ is invertible. By PD we've got that
+$$T = S \sqrt{T^* T}$$
+thus
+$$T\inv = (S \sqrt{T^* T})\inv = \sqrt{T^* T}\inv S \inv = \sqrt{T^* T}\inv S^*$$
+
+Let's look at the $\sqrt{T^* T}\inv$. If we define $U$ by
+$$U(e_j) = \frac{1}{s_j} e_j$$
+then we follow that for $v \in V$ represented by
+$$v = \sum{a_j e_j}$$
+we've got that
+$$\sqrt{T^* T} U v = \sum{a_j \sqrt{T^* T} U e_j} = \sum{a_j \sqrt{T^* T} (\frac{1}{s_j}e_j)} =
+\sum{a_j  s_j(\frac{1}{s_j}e_j)} = \sum{a_j e_j} = v$$
+thus $\sqrt{T^* T} U = I$ and therefore $U = \sqrt{T^* T}\inv$.
+
+For arbitrary $w$ and given orthonormal basis $e_1, ..., e_n$ we follow that
+$$w = \sum{\eangle{v, e_j}e_j}$$
+thus $S^* v$ with respect to the same basis is represented by
+$$S^*v = \sum{\eangle{S^*v, e_j}e_j} = \sum{\eangle{v, S e_j}e_j} = \sum{\eangle{v, f_j}e_j}$$
+thus
+$$T\inv v =  \sqrt{T^* T}\inv S^* v = \sum{\eangle{v, f_j} \sqrt{T^* T}\inv e_j} =
+\sum{\eangle{v, f_j} \frac{1}{s_j} e_j} = $$
+$$ =
+\sum{ \frac{\eangle{v, f_j} e_j}{s_j} }
+$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Let $\hat{s}$ denothe the smallest value of $T$, and let $s$
+  denote the largest singular value of $T$.}
+
+\textit{(a) Prove that
+  $$\hat{s}||v|| \leq ||Tv|| \leq s||v||$$
+  for every $v \in V$.}
+
+Suppose that $v \in V$. Then we follow that with respect to orthonormal basis of eigenvectors
+of $\sqrt{T^* T}$
+$$v = \sum{\eangle{v, e_j} e_j}$$
+thus
+$$||v||^2 = \sum{|\eangle{v, e_j}|^2}$$
+Since
+$$Tv = \sum{s_j \eangle{v, e_j} f_j}$$
+we follow that
+$$||Tv||^2 = \sum{|s_j \eangle{v, e_j}|^2} = \sum{|s_j^2 \eangle{v, e_j}^2|}$$
+since $s_j \geq 0$ we follow that
+$$||Tv||^2 = \sum{s_j^2|\eangle{v, e_j}^2|}$$
+from which we can follow that
+$$\hat{s}^2\sum{|\eangle{v, e_j}^2|} \leq \sum{s_j^2|\eangle{v, e_j}^2|}
+\leq s^2 \sum{|\eangle{v, e_j}^2|}$$
+$$\hat{s}^2||v||^2 \leq \sum{s_j^2|\eangle{v, e_j}^2|}
+\leq s^2 ||v||^2$$
+thus
+$$\hat{s}^2||v||^2 \leq ||Tv||^2 \leq s^2 ||v||^2$$
+$$\hat{s}||v|| \leq ||Tv|| \leq s ||v||$$
+as desired.
+
+\textit{Suppose $\lambda$ is an eigenvalue of $T$. Prove that $\hat{s} \leq |\lambda| \leq s$}
+
+For given $\lambda$ there exists an eigenvector $v$. Define
+$$e = \frac{\lambda}{||v||}$$
+thus
+$$||e|| = 1$$
+then we follow from the previous part that 
+$$\hat{s}||e|| \leq ||Tv|| \leq s ||e||$$
+$$\hat{s} \leq ||\lambda e|| \leq s$$
+$$\hat{s} \leq |\lambda| \leq s$$
+as desired.
+
+\textit{Exercise 19 is a bit too complicated for now (although I got a feeling that it follows
+  from 18); gonna leave it untill I complete the
+required prerequisites in a topology course. Exercise 20 is left for desert.}
 
 
 \end{document}
