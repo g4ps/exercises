@@ -48,3 +48,7 @@
 \contentsline {subsection}{\numberline {3.2.2}}{19}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Functions}{21}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Order Relations}{24}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Congruence and Preorder}{28}{section.3.5}%
+\contentsline {chapter}{\numberline {4}The Natural Numbers}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Inductive Sets}{31}{section.4.1}%
+\contentsline {section}{\numberline {4.2}The Recursion Theorem on $\omega $}{33}{section.4.2}%

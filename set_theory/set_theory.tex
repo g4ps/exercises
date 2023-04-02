@@ -10,6 +10,7 @@
 \DeclareMathOperator \pow {\mathcal {P}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
 \DeclareMathOperator \lra {\Leftrightarrow}
@@ -716,6 +717,17 @@ thus
 $$R|(A \cup B) = (R | A) \cup (R | B)$$
 as desired.
 
+\subsection*{3.2.6}
+
+\textit{Let $R$ be a relation. Prove that $\fld(R) = \bigcup \bigcup R$.}
+
+$$x \in \fld(R) \lra x \in \dom(R) \lor x \in \ran(R) \lra
+(\exists z \in R)(\exists y)(z = \eangle{x, y} \lor z = \eangle{y, x}) \lra$$
+$$ \lra
+(\exists z \in R)(\exists y)(z = \{\{x\}, \{x, y\}\} \lor z = \{\{y\}, \{y, x\}\})
+\lra
+(\exists z \in R)(x \in \bigcup z) \lra x \in \bigcup \bigcup R$$
+
 \subsection*{3.2.7}
 
 \textit{Let $R$ and $S$ be two relations and let $A, B, C$ be sets. Prove that $R|A$,
@@ -1034,10 +1046,352 @@ $x \preceq x$, thus we follow that $\eangle{x, x} \in \preceq$, thus $x \in fld(
 Thus $A \subseteq fld(\preceq)$. Since $fld(\preceq) \subseteq A$
 we follow that $A = fld(\preceq)$, as desired.
 
+\subsection*{3.4.18}
+
+\textit{Let $C$ be a set where each $\preceq \in C$ is a partial order on its field.
+  Suppose that for any $\preceq, \preceq'$ in $C$ either $\preceq \subseteq \preceq'$
+  or $\preceq' \subseteq \preceq$}
+
+\textit{(a) Show that for every $\preceq, \preceq'$ in $C$ if $\preceq \subseteq \preceq'$,
+  then $\fld(\preceq) \subseteq \fld(\preceq')$}
+
+Suppose that $\preceq \subseteq \preceq'$. Then we follow that
+$\fld(\preceq) = \bigcup \bigcup \preceq$ and
+$\fld(\preceq') = \bigcup \bigcup \preceq'$. Suppose that
+$$x \in \fld(\preceq)$$
+then we follow that there exists $y$ such that  $\eangle{x, y} \in \preceq$ or
+$\eangle{y, x} \in \preceq$. Since $\preceq \subseteq \preceq'$, we follow
+that $\eangle{x, y} \in \preceq'$ or $\eangle{y, x} \in \preceq'$. Thus
+$x \in \fld(\preceq')$. Thus $x \in \fld(\preceq) \ra x \in \fld(\preceq')$,
+as desired.
+
+\textit{(b) Let $\preceq^C$ be the relation $\bigcup C$ with field
+  $\bigcup\{\fld(\preceq): \preceq \in C\}$. Prove taht $\preceq^C$ is a partial order
+  on its field}
+
+Since $\preceq^C = \bigcup C$ we follow that if $x \in \bigcup\{\fld(\preceq): \preceq \in C\}$,
+then there exists $\preceq' \in C$ such that $x \in \fld(\preceq')$. Thus, by
+the fact that $\preceq'$ is a partial order, we follow that $\eangle{x, x} \in \preceq'$. Thus
+$\eangle{x, x} \in \bigcup C$, and therefore $\eangle{x, x} \in \preceq^C$. Thus
+$\preceq^C$ is reflexive.
+
+Suppose that $x, y, z \in \bigcup\{\fld(\preceq): \preceq \in C\}$. Then we follow that
+there exist $\preceq_x, \preceq_y, \preceq_z$ such that
+$$x \in \fld(\preceq_x)$$
+and so on. From the description of $C$ we follow that $\preceq_x \subseteq \preceq_y$
+or $\preceq_y \subseteq \preceq_x$, which in any case means that there exists
+$\preceq_{xy}$ (equal to either of them) such that
+$$\{x, y\} \subseteq \fld(\preceq_{xy})$$
+same goes for $\preceq_z$ and $\preceq_{xy}$, which means that there exists $\preceq'$ such that
+$$\{x, y, z\} \subseteq \fld(\preceq')$$
+
+Since $\preceq'$ is a partial order, we follow that if $x \preceq' y$ and $y \preceq' z$
+implies that $x \preceq' z$, therefore $\eangle{x, z} \in \preceq'$, and therefore
+$\eangle{x, z} \in \preceq^C$, thus the relation is transitive.
+
+Now let's go back a bit and focus on $\preceq_{xy}$. We follow that if $x \preceq_{xy} y$
+and $y \preceq_{xy} x$, then by antisymmetry of $\preceq_{xy}$ we follow that $x = y$. Thus
+we've got the antisymmetry of $\preceq^C$.
+
+Thus $\preceq^C$ satisfies all requirements of a poset, as desired.
+
+\subsection*{3.4.19}
+
+\textit{Let $(A, \preceq)$ and $(B, \preceq')$ be posets. Define the relation $\preceq_l$ on
+  $A \times B$ by
+  $$ \eangle{a, b} \preceq_l \eangle{x, y} \iff a \prec x \lor (a = x \land b \preceq' y) $$
+  for all $\eangle{a, b}$ and $\eangle{x, y}$ in $A \times B$. }
+
+\textit{(a) Prove that $\preceq_l$ is a partial order on $A \times B$}
+
+Let $a \in A$ and $b \in B$. Then we follow that $b \preceq' b$ and $a = a$, thus
+$$\eangle{a, b} \preceq_l \eangle{a, b}$$
+
+If for some $a_1, a_2, a_3 \in A$ and $b_1, b_2, b_3 \in B$ it is true that
+$$\eangle{a_1, b_1} \preceq_l \eangle{a_2, b_2}$$
+and
+$$ \eangle{a_2, b_2} \preceq_l \eangle{a_3, b_3} $$
+then we follow that
+$$a_1 \prec a_2 \lor (a_1 = a_2 \land b_1 \preceq' b_2)$$
+and
+$$a_2 \prec a_3 \lor (a_2 = a_3 \land b_2 \preceq' b_3)$$
+
+If $a_1 = a_2 = a_3$, then we follow that $b_1 \preceq' b_2$ and $b_2 \preceq' b_3$, from which
+we follow that $b_1 \preceq b_3$ and therefore $\eangle{a_1 b_1} \preceq \eangle{a_3, b_3}$.
+
+If $a_1 \neq a_2$ and $a_2 = a_3$ then we follow that $a_1 \prec a_2$, thus $a_1 \prec a_3$,
+therefore $\eangle{a_1, b_1} \preceq_l \eangle{a_3, b_3}$. Similar case holds if
+$a_1 = a_2$ and $a_2 \neq a_3$
+
+If $a_1 \neq a_2$ and $a_2 \neq a_3$, then we follow that $a_1 \prec a_2$ and $a_2 \prec a_3$,
+from which we follow that $a_1 \preceq a_3$. If $a_1 = a_3$, then we follow that
+$a_1 \not \prec a_2$, which is a contradiction. Thus $a_1 \neq a_3$. Thus $a_1 \prec a_3$.
+Therefore $\eangle{a_1, b_1} \preceq_l \eangle{a_3, b_3}$
+
+Thus we follow that $\eangle{a_1, b_1} \preceq_l \eangle{a_3, b_3}$ for all $a_1, a_3$, thus
+we've got the transitive condition.
+
+Now suppose that $\eangle{a_1, b_1} \preceq_l \eangle{a_2, b_2}$ and
+$\eangle{a_2, b_2} \preceq_l \eangle{a_1, b_1}$. If $a_1 \neq a_2$, then we follow that
+$a_1 \prec a_2$ and $a_2 \prec a_1$, which is not possible, thus we conclude that $a_1 = a_2$.
+Thus we follow that $b_1 \preceq' b_2$ and $b_2 \preceq' b_1$, from which we follow that
+$b_1 = b_2$. Thus $\eangle{a_1, b_1} \preceq_l \eangle{a_2, b_2}$ and
+$\eangle{a_2, b_2} \preceq_l \eangle{a_1, b_1}$, then we follow that
+$\eangle{a_1, b_1} = \eangle{a_2, b_2}$. Thus we've got antisymmetry.
+
+Now we can follow that $\preceq_l$ satisfies all of the conditions of poset, as desired.
+
+\textit{(b) Suppose that both $\preceq$ and $\preceq'$ are total orders on their respective sets.
+  Prove that $\preceq_l$ is a total order on $A \times B$.}
+
+Suppose that $\eangle{a_1, b_1}, \eangle{a_2, b_2}  \in A \times B$ are arbitrary. It follow that
+$a_1 \preceq a_2$ or $a_2 \preceq a_1$. Thus $a_1 \prec a_2 \lor a_2 \prec a_1 \prec a_1 = a_2$.
+We also follow that $b_1 \preceq' b_2$ or $b_2 \preceq' b_1$. This it can be shown that
+$$\eangle{a_1, b_1} \preceq_l \eangle{a_2, b_2}$$
+or
+$$\eangle{a_2, b_2} \preceq_l \eangle{a_1, b_1}$$
+as desired.
+
+\section{Congruence and Preorder}
+
+\subsection*{3.5.1}
+
+\textit{Let $\sim$ be an equivalence relation on $A$. Let $f: A \to A/_\sim$ be defined by
+  $$f(x) = [x]$$
+  for all $x \in A$. Show that the function $f$ is one-to-one if and only if each equivalence
+  classs in $A/_\sim$ is a singleton.}
+
+\textbf{In forward direction: }
+Suppose that
+$$f(x) = [x]$$
+is one-to-one. Suppose that $x, y \in [x]$. Then we follow that $f(x) = f(y)$. Thus by the fact
+that $f$ is one-to-one we follow that $x = y$. Thus $[x]$ is a singleton.
+
+\textbf{In reverse direction: }
+Suppose that each $[x]$ is a singleton. Then we follow that if $x \neq y$, then $f(x) \neq f(y)$.
+Therefore $f$ is one-to-one, as desired.
+
+\subsection*{3.5.2}
+
+\textit{Prove theorem 3.5.6}
+
+Let $\sim$ be an equivalence relation on $A$ and let $f: A \times A \to A$.
+
+Suppose that there exisxst a function $\hat{f}: A/_\sim \times A/_\sim \to A/_\sim$ such that
+$\hat{f}([x], [y]) = [f(x, y)]$
+then we follow that if $x \sim w$ and $y \sim z$, then $[x] = [w]$ and $[y] = [z]$, thus
+$$\hat{f}([x], [y]) = [f(x, y)] = \hat{f}([w], [z]) = [f(w, z)]$$
+thus we follow that $[f(x, y)] = [f(w, z)]$, therefore $f(x, y) \sim f(w, z)$.
+Thus we follow that $x \sim w$ and $y \sim z$ implies than $f(x, y) \sim f(w, z)$, therefore
+$f$ is congruent with $\sim$.
+
+If $x \sim w$ and $y \sim z$ implies that $f(x, y) \sim f(w, z)$, then we follow that
+we can construct a relation
+$\hat{f}$  by
+$$\hat{f} = \{ \eangle{\eangle{[x], [y]}, [f(x, y)]}, x, y \in A\}$$
+if $[x] = [w]$ and $[y] = [z]$, then we follow that $x \sim w$ and $y \sim z$, therefore
+$f(x, y) \sim f(w, z)$, therefore  $[f(x, y)] = [f(w, z)]$. Thus this relation is a function, as
+desired.
+
+\subsection*{3.5.3}
+
+\textit{Prove theorem 3.5.7}
+
+Suppose that $\sim$ is an equivalence relation on $A$ and $R$ is a relation on $A$.
+
+If there exists a relation $\hat{R}$ on $A/_\sim$ such that
+$\hat{R}([x], [y]) \iff R(x, y)$
+then we follow that if  $xRy$ for some $x, y \in A$ then $\hat{R}([x], [y])$
+If there exist $w, z \in A$ such that
+$x \sim w$ and $y \sim z$, then $[x] = [w]$ and $[y] = [z]$, therefore $\hat{R}([w], [z])$
+and thus $wRz$. Thus we follow that $xRy$ iff $wRz$. Thus $R$ is congruent with $\sim$.
+
+If $R$ is congruent with $\sim$, then we can create a relation $\hat{R}$ by
+$$\hat{R} = \{\eangle{[x], [y]} : \eangle{x, y} \in R\}$$
+that will satisfy the desired conditions.
+
+\subsection*{3.5.4}
+
+\textit{Prove lemma 3.5.9}
+
+Let $(A, \preceq)$ be a preordered set and let $\sim$ be the relation on $A$ defined by
+$$a \sim b \iff a \preceq b \land b \preceq a$$
+Then we follow that for $a \in A$ $a \preceq a$ by reflexivity of $\preceq$, therefore
+$a \sim a$ and thus $\sim$ is reflexive.
+
+If $a, b, c \in A$ such that $a \sim b$ and $b \sim c$, then we follow that
+$$a \preceq b \land b \preceq c \ra a \preceq c$$
+$$c \preceq b \land b \preceq a \ra c \preceq a$$
+thus $a \sim c$. Therefore $\sim$ is transitive.
+
+Suppose that $x \sim y$. Then we follow that $x \preceq y $ and $y \preceq x$. Thus we follow that
+$y \sim x$, therefore $\sim$ is symmetric. Thus $\sim$ is an equivalence relation, as desired.
+
+\subsection*{3.5.5}
+
+\textit{Prove lemma 3.5.10}
+
+Suppose taht $(A, \preceq)$ is a preordered set. Let $\sim$ be the derived equivalence
+relation on $A$. Suppose that $a, b, c, d \in A$ are such that $a \sim c$ and $b \sim d$.
+
+If $a \preceq b$ then we follow that $b \preceq d$ by $b \sim d$, therefore $a \preceq d$
+by transitive property. From $a \sim c$ we derive that $c \preceq a$, therefore we
+follow that $c \preceq d$. Similar implication hold for reverse case. Thus we follow that
+$\preceq$ is congruent with $\sim$.
+
+
+\chapter{The Natural Numbers}
+
+\section{Inductive Sets}
+
+\subsection*{4.1.1}
+
+\textit{Let $I$ and $J$ be inductive sets. Prove that $I \cap J$ is also inductive.}
+
+Since $I$ and $J$ are both inductive, we follow that $\emptyset \in I$ and $\emptyset \in J$,
+thus $\emptyset \in I \cap J$.
+
+Suppose that $x \in I \cap J$. Then we follow that $x \in I$ and $x \in J$. Since both of them
+are inductive, we follow that $x^+ \in I$ and $x^+ \in J$, therefore $x^+ \in I \cap J$. Thus
+we've got that
+$$\emptyset \in I \cap J \land (\forall x \in I \cap J)(x^+ \in I \cap J)$$
+thus we follow tha $I \cap J$ is inductive, as desired.
+
+\subsection*{4.1.2}
+
+\textit{Prove that if $A$ is a transitive set, then $A^+$ is also a transitive set.}
+
+Suppose that $A$ is transitive. That means that $(\forall x \in A)(x \subseteq A)$.
+By definition, $A^+ = A \cup \{A\}$
+Now let $y \in A^+$. We follow that $y = A \lor y \in A$. If $y = A$, then we follow that
+$y \subseteq A^+$. If $y \in A$, then we follow that $y \subseteq A$ by the fact that
+$A$ is transitive, therefore $y \subseteq A^+$. Thus we've got that
+$$(\forall y \in A^+)(y \subseteq A^+)$$
+thus we follow that $A^+$ is a transitive set, as desired.
+
+\subsection*{4.1.3}
+
+\textit{Prove that if $A$ is a transitive set if and only if $A \subseteq \pow(A)$.}
+
+Suppose that $A$ is transitive. Then we follow that $(\forall x \in A)(x \subseteq A)$. Thus
+if $x \in A$, then $x \subseteq A$ and therefore $x \in \pow(A)$. Thus we follow that
+$A \subseteq \pow(A)$.
+
+If $A \subseteq \pow(A)$, then we follow that if $x \in A$, then $x \in \pow(A)$ and therefore
+$x \subseteq A$. Thus $A$ is transitive.
+
+\subsection*{4.1.6}
+
+\textit{Prove Proposition 4.1.9}
+
+4.1.9 states that
+$$\bigcup(A \cup B) = (\bigcup A) \cup (\bigcup B)$$
+
+$$x \in \bigcup(A \cup B) \lra (\exists C \in A \cup B)(x \in C) \lra
+(\exists C \in A)(x \in C) \lor (\exists C \in B)(x \in C) \lra$$
+$$ \lra \in \bigcup A \lor x \in \bigcup B \lra x \in (\bigcup A) \cup (\bigcup B)$$
+
+
+\subsection*{4.1.8}
+
+\textit{Prove that $n \neq n^+$ for all $n \in \omega$}
+
+Suppose that $n = n^+$. Then we follow that $n \in n^+$, and therefore $n \in n$, which is
+impossible.
+
+\subsection*{4.1.9}
+
+\textit{Prove that for all $m \in \omega$ and all $n \in \omega$, if $m \in n$, then
+  $n \not \subseteq m$.}
+
+Suppose that $m \in n$ and $n \subseteq m$. Then we follow that $m \in m$, which is impossible by
+regularity axiom.
+
+\subsection*{4.1.10}
+
+\textit{Conclude from exercise 9 that $n \notin n$ for all $n \in \omega$.}
+
+This is true for any set, not just elements of $\omega$.
+
+\subsection*{4.1.11}
+
+\textit{Let $A$ be a set and suppose that $\bigcup A = A$. Prove that $A$ is transitive
+  and for all $x \in A$ there is a $y \in A$ such that $x \in y$}
+
+Let $x \in A$ be arbitrary.
+Then we follow that $x \subseteq \bigcup A$ and thus $x \subseteq A$. Thus we follow that
+$A$ is transitive, as desired.
+
+Suppoes that $x \in A$ and suppose that for all $y \in A$ we've got that $x \notin y$.
+Then we follow that $(\forall y \in A)(x \notin y)$. Thus
+$$(\forall y \in A)(x \notin y) \lra \neg (\exists y \in A)(x \in y) \lra x \notin \bigcup A \lra
+x \notin A$$
+which is a contradiction.
+
+\section{The Recursion Theorem on $\omega$}
+
+\textit{How would one modify the proof of Theorem 4.2.1 in order to establish the
+  following: }
+
+\textit{Theorem. Let $A$ be a set and let $a \in A$. Suppose that $f: \omega \times A \to A$
+  is a function. Then there exists a unique function $h: \omega \to A$ such that
+  $$h(0) = a$$
+  $$h(n^+) = f(n, h(n))$$}
+
+We can define $S$ and $h$ in normal fashion, then prove that $\eangle{0, a} \in h$ and
+$\eangle{n, u} \in h$ will imply that $\eangle{n^+, f(n^+, h(n)} \in h$, thus concluding the
+proof of claim 1.
+
+Proof of claim 2 for the base case will not be altered. (IH) Will be modified in notation.
+
+
+Proof of uniqueness does not depend on the domain of the functions and is true in general.
+
+\subsection*{4.2.2}
+
+\textit{Let $a \in A$ and $f: A \to A$ be a function such that $a \notin \ran(f)$. Suppose that
+  $h: \omega \to A$ satisfies
+  $$(1) h(0) = a$$
+  $$(2) h(n^+) = f(h(n))$$
+  Assume taht $h$ is one-to-one and onto A. Prove that $f$ is one-to-one.
+}
+
+Suppose that $f$ is not one-to-one. Then we follow that there exist $x \neq y \in A$
+such that $f(x) = f(y)$. Since $h$ is onto, we follow that there exist $x', y' \in \omega$
+such thar $h(x') = x$ and $h(y') = y$. Since $x \neq y$ we follow that $h(x') \neq h(y')$
+and therefore $x' \neq y'$ because $h$ is a function.
+
+Thus we follow that $x'^+ \neq y'^+$. Because $h$ is one-to-one we follow that
+$$h(x'^+) \neq  h(y'^+)$$
+thus
+$$f(h(x')) \neq  f(h(y'))$$
+$$f(x) \neq  f(y)$$
+which is a contradiction. Thus we follow that $f$ is one-to-one.
+
+\subsection*{4.2.3}
+
+\textit{Let $A$ be a set and let $a \in A$. Suppose that $f: A \to A$ satisfies 
+$$a \in f(a)$$
+$$(\forall x, y \in A)(x \in y \to f(x) \in f(y))$$
+Let $h: \omega \to A$ be states as in theorem 4.2.1. Prove that $h(n) \in h(n^+)$ for
+all $n \in \omega$.}
+
+We follow that $h(0) = a$ and $h(n^+) = f(h(n))$. For base case we've got that
+$h(0) = a \in f(a) = h(0^+) = h(1)$.
+Let $I$ be defined as a subset of $\omega$  such that $m \in I$ implies
+that $h(m) \in h(m^+)$. Base case gives us that $0 \in I$. Suppose that
+$n \in I$. Then we follow that
+$$h(n) \in h(n^+)$$
+Since $h(n), h(n^+) \in A$, we follow that
+$$f(h(n)) \in f(h(n^+))$$
+by definition of $h$ we follow that
+$$h(n^+) \in h((n^+)^+)$$
+thus $n^+ \in I$. Thus we follow that $I$ is an inductive set. Since $I \subseteq \omega$,
+we follow that $I = \omega$, as desired.
+
 
 \end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
-%%% End:
-y
+%%% End
