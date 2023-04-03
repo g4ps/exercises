@@ -52,3 +52,4 @@
 \contentsline {chapter}{\numberline {4}The Natural Numbers}{31}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Inductive Sets}{31}{section.4.1}%
 \contentsline {section}{\numberline {4.2}The Recursion Theorem on $\omega $}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Arithmetic on $\omega $}{35}{section.4.3}%

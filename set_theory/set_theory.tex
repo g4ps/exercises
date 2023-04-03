@@ -1389,9 +1389,114 @@ $$h(n^+) \in h((n^+)^+)$$
 thus $n^+ \in I$. Thus we follow that $I$ is an inductive set. Since $I \subseteq \omega$,
 we follow that $I = \omega$, as desired.
 
+\subsection*{4.2.4}
+
+\textit{Let $F: A \to A$ be a function and let $y \in A$.}
+
+\textit{(a) Prove that the class $S = \{B: B \subseteq A, y \in B, F[B] \subseteq B\}$}
+
+From this definition we follow that $B \in S \ra B \subseteq A$. Thus $B \in S \ra
+B \in \pow(A)$. Thus $S \subseteq \pow(A)$.Since $A$ is a set we follow that its power set is a set,
+therefore the subset of a power set is also a set.
+
+\textit{(b) Show that $S$ is nonempty}
+
+We follow that $A \subseteq A$ by basic properties, $y \in B$ by the given restraints,
+and $F[B] \subseteq A$ since $F: A \to A$, and therefore $\ran(F) \subseteq A$. Thus
+we follow that $A \in S$, therefore $S$ is nonempty.
+
+\textit{(c) Let $C = \bigcap S$. Prove that $y \in C$ and $F[C] \subseteq C$.}
+
+We follow that
+$$(\forall B \in S)(y \in B)$$
+from definition of $S$. Suppose that $y \in F[C]$. Then we follow that
+because $R[\bigcap G] \subseteq \bigcap\{R[C]: C \in G\}$ for any relation, we follow that
+$$y \in \bigcap\{F[B]: B \in S\}$$
+$$(\forall B \in S)(y \in F[B])$$
+Since for every $B$ we've got that $F[B] \subseteq B$, therefore we can follow that
+$$(\forall B \in S)(y \in B)$$
+thus $y \in \bigcap S$. Thus $y \in F[C] \ra y \in C$. Thus $F[C] \subseteq C$, as desired.
+
+\textit{(d) Prove that for all $B \subseteq A$, if $y \in B$ and $F[B] \subseteq B$, then
+  $C \subseteq B$}
+
+If $y \in B$ and $F[B] \subseteq B$, then we follow that $B \in S$. Since $C = \bigcap S$,
+we follow that $(\forall x \in C) (x \in C \to x \in B)$. Thus $C \subseteq B$, as desired.
+
+\textit{(e) Prove that $y \in F[C]$ if and only if $F[C] = C$}
+
+If $F[C] = C$, then we follow that since $y \in C$, then $y \in F[C]$.
+
+For $C$ we've got that $F[C] \subseteq C$. Thus $F[F[C]] \subseteq C$. Thus if $y \in F[C]$, then
+$F[C]$ satisfies requirements presented in the previous point, and thus $C \subseteq F[C]$.
+By double inclusion we follow that $F[C] = C$, as desired.
+
+\section{Arithmetic on $\omega$}
+
+\subsection*{4.3.1}
+
+\textit{Let $m \in \omega$. Suppose that $m + n = 0$. Prove that $m = n = 0$.}
+
+Suppose that $n \neq 0$. Then we follow that there exists $j$ such that $j^+ = n$. Thus
+$$m + n = m + j^+ = (m + j)^+ \neq 0$$
+thus we get the contradiction.
+
+\subsection*{4.3.2}
+
+\textit{Let $m \in \omega$ and $n \in \omega$. Show that if $m \cdot n = 0$, then $m = 0$ or
+  $n = 0$.}
+
+Suppose that $m \neq 0$ and $n \neq 0$. Then we follow that there exist $n_p \in \omega$
+such that $n = n_p^+$. Thus
+$$m \cdot n = m \cdot n_p^+ = m \cdot n_p +  m$$
+Since $m \neq 0 \in \omega$ and $m \cdot n_p^+ \in \omega$, we follow from previous exercise
+that $m \cdot n_p = 0$ and $m = 0$, which contradicts the assumtions that $m \neq 0$.
+
+\subsection*{4.3.3}
+
+\textit{Let $m \in \omega$ and $n \in \omega$. Prove that for all $p \in \omega$, if
+  $m + p = n + p$, then $m = n$.}
+
+Let
+$$I = \{a \in \omega: (\forall m, n \in \omega)(m + a = n + a \ra m = n)\}$$
+If $p = 0$, then $m + 0 = m$, $n + 0 = n$, thus $m + 0 = n + 0$ implies that $m = n$.
+Thus $0 \in I$.
+
+(IH) Suppose that $p$ is such that $m + p = n + p$. Suppose that $m + p^+ = n + p^+$. Then
+$$m + p^+ = (m + p)^+ = (n + p)^+ = n + p^+$$
+thus we follow that $p \in I$ implies that  $p^+ \in I$. Thus $I$ is inductive, and therefore
+$I = \omega$.
+
+\subsection*{4.3.4}
+
+\textit{Prove that for all $n \in \omega$, the inequality $0 \cdot n = 0$ holds.}
+
+Suppose that $I$ is the set such taht
+$I = \{n \in \omega: 0 \cdot n = 0\}$.
+Since $0 \cdot 0 = 0$, we follow that $0 \in I$. Suppose that $0 \cdot n = 0$. Then we follow that
+$$0 \cdot n^+ = 0 \cdot n + 0 = 0 + 0 = 0$$
+Thus $n \in I \to n^+ \in I$. Thus $I = \omega$, as desired.
+
+
+\subsection*{4.3.5}
+
+\textit{Prove that for all $m \in \omega$ and $n \in \omega$, we have that
+  $m^+ \cdot n  = m \cdot n + n$}
+
+Define
+$$I = \{n \in \omega: m^+ \cdot n = m \cdot n + n\}$$.
+Then we follow that $m^+ \cdot n = 0 = 0 + 0 = m \cdot 0 + 0$. Thus $0 \in I$.
+
+Suppose that $n \in I$. Then we follow that
+$$m^+ \cdot n^+ = m^+ \cdot (n + 1) = m^+ \cdot n + m^+ = m \cdot n + m + n + 1 $$
+
+
+\subsection*{4.3.6}
+
+\textit{Let $n \in \omega$. Prove theorem 4.3.13}
 
 \end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
-%%% End
+%%% End:
