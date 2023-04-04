@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.3.31)  3 APR 2023 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.3.31)  4 APR 2023 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,44 +477,57 @@ T1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 z \OMS/cmsy/m/n/10.
 Chapter 4.
 [31
 
-]
+] [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1331.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1331.
+(hyperref)                removing `math shift' on input line 1379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1331.
-
-[32] [33] [34]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1434.
+(hyperref)                removing `\omega' on input line 1379.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1434.
+(hyperref)                removing `math shift' on input line 1379.
+
+[33] [34]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1434.
+(hyperref)                removing `\omega' on input line 1482.
 
-[35] [36] (./set_theory.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1482.
+
+[35] [36] [37]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\omega' on input line 1624.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1624.
+
+[38] [39] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: BD7031CE37691CB707DE3B7ADEDCB857;5004.
+(rerunfilecheck)             Checksum: 3E0C605B6D2F46992DCD9B955BD39BDE;5110.
  ) 
 Here is how much of TeX's memory you used:
- 9311 strings out of 476025
- 142242 string characters out of 5796532
- 1861388 words of memory out of 5000000
- 29512 multiletter control sequences out of 15000+600000
+ 9326 strings out of 476025
+ 142397 string characters out of 5796532
+ 1862388 words of memory out of 5000000
+ 29513 multiletter control sequences out of 15000+600000
  524912 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,301b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,13n,76p,301b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -527,10 +540,10 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (37 pages, 271011 bytes).
+Output written on set_theory.pdf (40 pages, 280170 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
- 162 named destinations out of 1000 (max. 500000)
- 441 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 648 PDF objects out of 1000 (max. 8388607)
+ 572 compressed objects within 6 object streams
+ 176 named destinations out of 1000 (max. 500000)
+ 449 words of extra memory for PDF output out of 10000 (max. 10000000)
 

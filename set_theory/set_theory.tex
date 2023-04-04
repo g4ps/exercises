@@ -790,6 +790,23 @@ $$ \ra
 (\forall C \in G) (\exists y \in C) ( \eangle{y, x} \in R) \lra
 (\forall C \in G) (x \in R[C]) \lra x \in \bigcap{\{R[C]: C \in G\}}$$
 
+\subsection*{3.2.22}
+
+\textit{Let $R$ and $S$ be single-rooted relations. Prove that $R \circ S$ is
+  single-rooted}
+
+Suppose that $\eangle{x, y} \in R \circ S$. Then we follow that there exists $z \in
+fld(R)$ such that
+$\eangle{x, z} \in S$ and $\eangle{z, y} \in R$. Suppose that there exists  $\eangle{x', y} \in
+R \circ S$ such that $x \neq x'$. Then we follow that there exists $j \in \fld(R)$ such that
+$\eangle{x', j} \in S$ and $\eangle{j, y} \in R$. If $j = z$, then we follow that
+$\eangle{x', z} \in S \land \eangle{x, z} \in S \land x \neq x'$. Thus we conclude that $S$ is not
+single rooted, which is a contradiction. If $j \neq z$, then we follow that
+$$\eangle{j, y} \in R \land \eangle{z, y} \in R \land j \neq z$$
+thus $R$ is not single-rooted, which is also a contradiction. Therefore we conclude that
+if $\eangle{x', y} \in R \circ S$, then $x' = x$. Therefore we follow that $R \circ S$ is
+single rooted, as desired.
+
 \section{Functions}
 
 \subsection*{3.3.1}
@@ -1280,6 +1297,7 @@ $A \subseteq \pow(A)$.
 If $A \subseteq \pow(A)$, then we follow that if $x \in A$, then $x \in \pow(A)$ and therefore
 $x \subseteq A$. Thus $A$ is transitive.
 
+
 \subsection*{4.1.6}
 
 \textit{Prove Proposition 4.1.9}
@@ -1292,26 +1310,56 @@ $$x \in \bigcup(A \cup B) \lra (\exists C \in A \cup B)(x \in C) \lra
 $$ \lra \in \bigcup A \lor x \in \bigcup B \lra x \in (\bigcup A) \cup (\bigcup B)$$
 
 
-\subsection*{4.1.8}
+\subsection*{4.1.7}
 
 \textit{Prove that $n \neq n^+$ for all $n \in \omega$}
 
-Suppose that $n = n^+$. Then we follow that $n \in n^+$, and therefore $n \in n$, which is
-impossible.
+This is true in general by regularity axiom, but let's apply some induction.
+Let
+$$I =  \{n \in \omega: n \neq n^+\}$$
+
+$0 \neq \{0\}$, since $0 \in  \{0\}$ and $0 \notin 0$ (because it is an empty set). Thus $0 \in I$.
+
+Suppose that $n \in I$. Then we follow that $n \neq n^+$.
+Suppose that $n^+ = (n^+)^+$. Then we follow by 4.1.12 that $n = n^+$, which is a contradiction,
+because $n \in I$. Thus we follow that $n \in I \ra n^+ \in I$, therefore $I$ is inductive,
+therefore $I = \omega$, as desired.
+
+
+\subsection*{4.1.8}
+
+\textit{Prove that $n^+ \not \subseteq n$ for all $n \in \omega$}
+
+Suppose that $n^+ \subseteq n$. Since $n^+ = n \cup \{n\}$, we follow that $n \subseteq n^+$.
+Thus by double inclusion we've got that $n^+ = n$, which contradicts previous exercise.
+
 
 \subsection*{4.1.9}
 
 \textit{Prove that for all $m \in \omega$ and all $n \in \omega$, if $m \in n$, then
   $n \not \subseteq m$.}
 
-Suppose that $m \in n$ and $n \subseteq m$. Then we follow that $m \in m$, which is impossible by
-regularity axiom.
+Let
+$$I = \{n \in \omega: m \in n \ra n \not \subseteq m\}$$
+
+Since $m \in 0 \lra m \in \emptyset$ is always false, we follow that $0$ is vacuously in $I$.
+
+Let $n \in I$. Let $m \in \omega$ be such that $m \in n^+$.
+Thus $m \in n \cup \{n\}$. Thus $m \in n \lor m = n$.
+
+If $m \in n$, then we follow that $n \not \subseteq m$, thus $(\exists y \in n)(y \notin m)$.
+Thus $(\exists y \in n \cup \{n\})(y \notin m)$. Therefore $n^+ \not \subseteq m$.
+
+If $m = n$, then we follow that $n^+ \not \subseteq n$ by exercise 4.1.8.
+Thus we conclude that $n \in I \ra n^+ \in I$. Therefore $I$ is inductive and thus $I = \omega$,
+as desired.
 
 \subsection*{4.1.10}
 
 \textit{Conclude from exercise 9 that $n \notin n$ for all $n \in \omega$.}
 
-This is true for any set, not just elements of $\omega$.
+Suppose that $n \in n$. Then we follow by previous exercise
+that $n \not \subseteq n$, which is bonkers.
 
 \subsection*{4.1.11}
 
@@ -1433,6 +1481,24 @@ By double inclusion we follow that $F[C] = C$, as desired.
 
 \section{Arithmetic on $\omega$}
 
+\subsection*{Note}
+
+Although not explicitly, but we've started to use the associative and commutative
+properties of addition pretty liberaly at this point. To be more precise,
+we explicitly define the notation of several pluses in a row to be left-associative (e.g.
+$$a_1 + a_2 + a_3 = (a_1 + a_2) + a_3 = A(A(a_1, a_2), a_3) $$
+is one such example). Associative and distributive properties guarantee us that the order in
+which the functions are applied does not matter, and thus the notation is justified.
+
+The order of operations of addition and multiplication is followed from the properties,
+that are proven in the chapter, and we follow that
+$$a \cdot b + c = (a \cdot b) + c = A(M(a, b), c)$$
+thus the usual rules of order of operations applies.
+
+In general, all of the operations are defined in terms of functions, and the usual notation
+of addition and multiplication is nothing but a syntatic sugar. If in doubt, one can
+prove that the usual notation makes sense pretty easily.
+
 \subsection*{4.3.1}
 
 \textit{Let $m \in \omega$. Suppose that $m + n = 0$. Prove that $m = n = 0$.}
@@ -1483,17 +1549,127 @@ Thus $n \in I \to n^+ \in I$. Thus $I = \omega$, as desired.
 \textit{Prove that for all $m \in \omega$ and $n \in \omega$, we have that
   $m^+ \cdot n  = m \cdot n + n$}
 
-Define
-$$I = \{n \in \omega: m^+ \cdot n = m \cdot n + n\}$$.
-Then we follow that $m^+ \cdot n = 0 = 0 + 0 = m \cdot 0 + 0$. Thus $0 \in I$.
+Suppose that
+$$I = \{n \in \omega: (\forall m \in \omega)(m^+ \cdot n  = (m \cdot n) + n)\}$$
+
+We follow from $M1$ that $m^+ \cdot 0 = 0$  and $(m \cdot 0) + 0 = m \cdot 0 = 0$
+from $A1$ and $M1$. Thus $0 \in I$
 
 Suppose that $n \in I$. Then we follow that
-$$m^+ \cdot n^+ = m^+ \cdot (n + 1) = m^+ \cdot n + m^+ = m \cdot n + m + n + 1 $$
-
+$$m^+ \cdot n^+ = m^+ \cdot n + m^+ = m \cdot n + n + m^+ = m \cdot n + n + m + 1 = $$
+$$= m \cdot n + m + n + 1  = m \cdot n + m + n^+ = m \cdot n^+ + n^+$$
+where theorems used are
+$$M2 \ra IH \ra 4.3.4 \ra 4.3.4 \ra  4.3.10 \ra 4.3.4 \ra M2$$
 
 \subsection*{4.3.6}
 
 \textit{Let $n \in \omega$. Prove theorem 4.3.13}
+
+Let
+$$I = \{n \in \omega: n \cdot m = m \cdot n\}$$
+We follow that $0 \cdot n = n \cdot 0 = 0$ from the previous exercises/theorems in the
+chapter. Thus $0 \in I$.
+
+Suppose that $n \cdot m = m \cdot n$. Then for $n^+$ we've got that
+$$n^+ \cdot m = n \cdot m + m = m \cdot n + m = m \cdot n^+$$
+where we've used previous exercise, IH, and $M2$ respectively. Thus we follow that
+$n \in I \ra n^+ \in I$, thus $I = \omega$, as desired.
+
+\subsection*{4.3.7}
+
+\textit{Prove that if $n \in \omega$, then $n$ is either even or odd (details of definition
+  of evenness in the exercise)}
+
+Let
+$$I: \{n \in \omega: (\exists k \in \omega: n = 2 \cdot k + 1 \lor n = 2 \cdot k\}$$
+
+Since $0 = 2 \cdot 0$, we follow that $0 \in I$.
+
+Suppose that $n \in I$. Then we follow that $n$ is even or odd (or both, we don't know yet).
+
+If $n$ is even, then we follow that $n = 2 \cdot k$. Thus $n^+ = n + 1 = 2 \cdot k + 1$. Thus
+$n^+$ is odd, therefore $n^+ \in I$.
+
+If $n$ is odd, then we follow that $n = 2 \cdot k + 1$. Thus $n^+ = n + 1 = 2 \cdot k + 1 + 1 =
+2 \cdot k + 2 = 2 \cdot k^+$. Thus we follow that $n^+ \in I$.
+
+Thus we follow that $n \in I \ra n^+ \in I$, thus $I = \omega$, as desired.
+
+\subsection*{4.3.8}
+
+\textit{Let $I = \{n \in \omega: \neg((\exists k, j \in \omega)(n = 2 \cdot k \land
+  n = 2 \cdot j + 1)\}$
+  Prove that $I$ is inductive. Conclude that no natural number is both odd and even.}
+
+Let
+$I = \{n \in \omega: \neg((\exists k, j \in \omega)(n = 2 \cdot k \land n = 2 \cdot j + 1)\}$
+
+We've shown earlier that $0$ is even. Suppose that $0$ is odd. Then we follow that
+$$0 = 2 \cdot k + 1 = (2 \cdot k)^+$$
+which is a contradiction.
+
+Suppose that $n \in I$. Then we follow that
+$$\neg((\exists k, j \in \omega)(n = 2 \cdot k \land n = 2 \cdot j + 1)$$
+thus
+$$\neg((\exists k, j \in \omega)(n^+ = (2 \cdot k)^+ \land n^+ = (2 \cdot j + 1)^+) \lra$$
+$$\lra \neg((\exists k, j \in \omega)(n^+ = 2 \cdot k + 1 \land n^+ = 2 \cdot j + 2))\lra $$
+$$\lra \neg((\exists k, j \in \omega)(n^+ = 2 \cdot k + 1 \land n^+ = 2 \cdot j^+))\lra$$
+$$\lra \neg((\exists k, l \in \omega)(n^+ = 2 \cdot k + 1 \land n^+ = 2 \cdot l))$$
+(i've changed a variable undere the quantifier for avoid confusion, which does not change the
+meaning)
+thus $n \in I \ra n^+ \in I$. Thus $I$ is inductive, and $I = \omega$. Therefore
+every natural number is either odd or even, but not both.
+
+
+\section{Order on $\omega$}
+
+\subsection*{Note}
+
+I'm using the symbol $\leq$ instead of "in or equal" because it's more convinient.
+Theorems in the chapter provide us with the equivalence of two, and therefore the justification
+for this notation.
+
+\subsection*{4.4.1}
+
+\textit{Let $n \in \omega$. Show that $1 \leq n^+$}
+
+We know that for every $n \in \omega$, $0 \leq n$.
+Thus $0 \leq n \ra 0^+ \leq n^+ \lra 1 \leq n^+$, as desired.
+
+\subsection*{4.4.2}
+
+\textit{Let $m, n \in \omega$. Show that if $m \in n^+$, then $m \leq n$.}
+
+Suppose that $m \in n^+$. We follow that
+$$m \in n^+ \lra m \in n \cup \{n\} \lra m \in n \lor m = n \lra m \leq n$$
+
+
+\subsection*{4.4.3}
+
+\textit{Let $n, a \in \omega$. Show that if $n \in a$, then $n^+ \leq a$}
+
+Suppose that $n \in a$. We know that one of  $n^+ = a$, $n^+ \in a$ or $a \in n^+$ holds.
+Suppose that $a \in n^+$. We follow that
+$$a \in n \cup \{n\} \lra a \in n \lor a = n$$
+If $a \in n$, then we've got that $n \in a$ and $a \in n$, which is impossible. If $a = n$,
+then $n \in n$, which is also not good. Thus we follow that $a \in n^+$ is impossible.
+Thus we follow that $n^+ \in a$ or $n^+ = a$. In other words, $n \leq a$, as desired.
+
+
+\subsection*{4.4.4}
+
+\textit{Let $I$ be inductive and let $a \in \omega$. Prove that
+  $\{n \in I: n \in a \lor a \subseteq n\}$ is inductive }
+
+Let
+$$ Q = \{n \in I: n \in a \lor a \subseteq n\}$$
+We follow that $0 \in Q$ since $0$ is in every inductive set (by virtue of being a natural number),
+and by trichotomy property $0 \in a$ or $a \leq 0 \lra a \subseteq 0$.
+
+Suppose that $q \in Q$. Then we follow that $q \in a \lor q \subseteq n$.
+
+If $a \subseteq q$, then TODO
+
 
 \end{document}
 %%% Local Variables:
