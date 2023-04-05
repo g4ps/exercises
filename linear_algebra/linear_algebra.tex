@@ -7897,6 +7897,47 @@ as desired.
 required prerequisites in a topology course. Exercise 20 is left for desert.}
 
 
+\chapter{Operators on Complex Vector Spaces}
+
+\section{Generalized Eigenvectors and Nilpotent Operators}
+
+\subsection{}
+
+\textit{Define $T \in \map(C^2)$ by
+  $$T(w, z) = (z, 0)$$
+  Find all generalized eigenvectors of $T$}
+
+Since $T^2 = 0$, we follow that $(T - 0I)^2 v = 0$ for any $v \in V$. Thus we follow that
+$V \setminus 0$ are generalized eigenvectors of $T$.
+
+\subsection{}
+
+\textit{Define $T \in \map(C^2)$ by
+  $$T(w, z) = (-z, w)$$}
+
+Because $T$ commutes with its adjoint (proven by matrix multiplication), we follow that $V$
+has an orthonornal basis of eigenvectors. Suppose that $v = (v_1, v_2)$ is
+such a vector. Then we follow that
+$$T (v_1, v_2) = \lambda (-v_2, v_1)$$
+thus
+$$v_1 = \lambda -v_2$$
+$$v_2 = \lambda v_1$$
+$$v_2 = \lambda^2 (- v_2)$$
+$$1 + \lambda^2 = 0$$
+$$\lambda = \pm i$$
+Thus we follow that $(1, i)$ and $(1, -i)$ and their scalar multiples represent all of the
+eigenvectors of $T$, which are also generalized eigenvectors.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is invertible. Prove that $G(\lambda, T) =
+  G(\frac{1}{\lambda}, T\inv)$ for every $\lambda \in F$ with $\lambda \neq 0$.}
+
+Suppose that $v \in G(\lambda, T)$. Then we follow that there exists $j \in N$ such that
+$$(T - \lambda I)^{j} v = 0$$
+TODO
+
+
 \end{document}
 
 %%% Local Variables:

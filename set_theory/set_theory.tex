@@ -1666,9 +1666,112 @@ $$ Q = \{n \in I: n \in a \lor a \subseteq n\}$$
 We follow that $0 \in Q$ since $0$ is in every inductive set (by virtue of being a natural number),
 and by trichotomy property $0 \in a$ or $a \leq 0 \lra a \subseteq 0$.
 
-Suppose that $q \in Q$. Then we follow that $q \in a \lor q \subseteq n$.
+Suppose that $q \in Q$. Since $Q \subseteq I$, we follow that $q \in I$, and
+because $I$ is inductive, we follow that $q^+ \in I$ as well.
+We also follow that $q \in a \lor a \subseteq q$.
 
-If $a \subseteq q$, then TODO
+If $a \subseteq q$, then we follow that $a \subseteq q \cup \{q\}$, therefore $a \subseteq q^+$,
+and thus $q \in Q$.
+
+Suppose that $q \in a$. Then we follow that since $a \in \omega \to a \subseteq \omega$,
+we follow that $q \in \omega$. Therefore $q^+ \in \omega$, and
+we've got by trichotomy that either $q^+ \in a$, $q^+ = a$ or $a \in q^+ \lra a \subset q^+$.
+Thus we follow that $q^+ \in a \lor a \subseteq q^+$, therefore $q^+ \in Q$.
+
+Thus we can conclude that $0 = \emptyset \in Q$ and $q \in Q \ra q^+ \in Q$. Thus $Q$ is
+inductive, as desired.
+
+
+\subsection*{4.4.5}
+
+\textit{Let $m, n \in \omega$. Suppose that $m \leq n$. Prove that $\max(m, n) = n$.}
+
+From the chapter we follow that $\max(m, n) = m \cup n$. Since $m \leq n$, we follow that
+$m \subseteq n$. Thus $\max(m, n) = m \cup n = n$, as desired.
+
+\subsection*{4.4.6}
+
+\textit{Let $m, n \in \omega$. Prove that for all $p \in \omega$ if $m \in n$, then
+  $m + p \in n + p$}
+
+Let
+$$I = \{p \in \omega: (\forall m, n \in \omega)(m \in n \ra m + p \in n + p\}$$
+Since $m + 0 = m$ and $n = n + 0$, we follow that $m \in n \lra m + 0 \in n + 0$.
+
+Suppose that $p \in I$. Then we follow that
+$$m \in n \lra m + p \in n + p \lra (m + p)^+ \in (n + p)^+ \lra m + p^+ \in n + p^+$$
+thus $p^+ \in I$. Thus $I = \omega$, as desired.
+
+\subsection*{4.4.7}
+
+\textit{Let $m, n \in \omega$. Prove that for all $p \in \omega$, if $m + p \in n + p$, then
+  $m \in n$}
+
+In previous exercise we've got only biconditionals, thus we get the reverse case as well
+
+\subsection*{4.4.8, 4.4.9}
+
+\textit{let $m, n \in \omega$. Prove that for all $p \in \omega$ $m \in n \lra
+  m \cdot p^+ \in n \cdot p^+$}
+
+Let
+$$I = \{p \in \omega: (\forall m, n \in \omega)( m \in n \lra  m \cdot p^+ \in n \cdot p^+)\}$$
+
+We first follow that if $p = 0$, then
+$$m \cdot 0^+ \in n \cdot 0^+ \lra (m \cdot 0 + m) \in (n \cdot 0 + n) \lra (0 + m) \in (0 + n)
+\lra m \in n$$
+thus $0 \in I$.
+
+Suppose that $p \in I$. Then we follow that
+$$m \in n \lra m \cdot p^+ \in n \cdot p^+$$
+
+$m \in n$ if and only if $m + a \in n + a$ by previous exercise. Thus
+$$m \in n \lra m + m \cdot p^+ \in n + m \cdot p^+$$
+and also
+$$ m \cdot p^+ \in n \cdot p^+ \lra  m \cdot p^+ + n \in n \cdot p^+  + n$$
+by commutativity we follow that
+$$ m \cdot p^+ \in n \cdot p^+ \lra  n + m \cdot p^+ \in n \cdot p^+  + n$$
+thus
+$$m \in n \lra (m + m \cdot p^+ \in n + m \cdot p^+) \land (n + m \cdot p^+ \in n \cdot p^+  + n)
+\lra$$
+$$\lra (m + m \cdot p^+ \in n + m \cdot p^+) \land
+(n + m \cdot p^+ \subset n \cdot p^+  + n) \ra$$
+$$ m + m \cdot p^+ \in n \cdot p^+  + n \lra m \cdot (p^+)^+ \in n \cdot (p^+)^+$$
+thus $m \in n \ra m \cdot (p^+)^+ \in n \cdot (p^+)^+$.
+
+Let $m, n \in \omega$ be such that
+$m \cdot (p^+)^+ \in n \cdot (p^+)^+$. By trichotomy we
+follow that $m \in n$, $n \in m$ or $m = n$.
+
+If $m = n$, then we follow that
+$$n \cdot (p^+)^+ = m \cdot (p^+)^+ \in n \cdot (p^+)^+$$
+which is a contradiction.
+
+If $n \in m$, then we follow by implication that 
+$$n \cdot (p^+)^+ \in m \cdot (p^+)^+$$
+and since $m \cdot (p^+)^+ \in n \cdot (p^+)^+$, we follow that
+$n \cdot (p^+)^+ \in n \cdot (p^+)^+$, which is also bad. Thus we follow that
+$m \cdot (p^+)^+ \in n \cdot (p^+)^+ \ra m \in n$. By including the implication we follow that
+$$m \cdot (p^+)^+ \in n \cdot (p^+)^+ \lra m \in n$$
+and therefore $p^+ \in I$. Thus $I = \omega$, as desired.
+
+\subsection*{4.4.10}
+
+\textit{Use Theorem 4.4.11 and Theorem 4.4.9 to prove Corollary 4.4.12}
+
+Suppose that $m + p = n + p$. If $m \in n$, then we follow that $m + p \in n + p$, which
+is not the case.
+If $n \in m$, then we follow that $n + p \in m + p$, which is also not the casee.
+Thus we follow that $m = p$. Thus $m + p = n + p \lra m = n$ (reverse case is trivial)
+
+Suppose that $p \neq 0$ and we've got that $m \cdot p = n \cdot p$. Since $p \neq 0$, we
+follow that $p = j^+$ for some $j \in \omega$.
+
+We follow that $m \in n$ and $n \in m$ are both impossible, because they would imply
+that $m \cdot p \in n \cdot p$ and $n \cdot p \in m \cdot p$, which are not the case. Thus
+we follow that
+$$(\forall p \in (\omega \setminus 0))(m \cdot p = n \cdot p \lra m = n)$$
+where reverse case is once again trivial.
 
 
 \end{document}
