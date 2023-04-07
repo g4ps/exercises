@@ -44,6 +44,8 @@ PD - polar decomposition
 
 SVD - singular value decomposition
 
+IH - inductive hypothesis
+
 $N$ is defined to be $Z \cap [1, \infty)$.
 
 \chapter{Vector Spaces}
@@ -8127,21 +8129,208 @@ thus $TS$ is nilpotent.
 \textit{Suppose that $T \in \map(V)$ is not nilpotent. Let $n = \dim V$. Show that
   $$V = \ns T^{n - 1} \oplus \range T^{n - 1}$$}
 
-In general for any map $T \in \map(V)$, we follow that if
-$$\ns T \neq ... \neq \ns T^{n - 1} \neq \ns T^n$$.
-Thus
-$$\ns T \subset ... \subset \ns T^{n - 1} \subset \ns T^n$$
-($\subset$ in this case denotes a proper subset)
+If $n = 1$, then we follow that $T^{n - 1} = T^0 = I$, therefore $\ns T = \{0\}$, and thus
+we've got the desired conclusion. Thus assume that $n > 1$.
+
+Since $T$ is not nilpotent, we follow that
+$$\dim \ns T^n \neq \dim V$$
+and since $\ns T^n$ is a subspace of $\dim V$, we follow that
+$$\dim \ns T^n < \dim V$$
+or in other words
+$$\dim \ns T^n \leq \dim V - 1$$
+which in this case means that
+$$\dim \ns T^n \leq n - 1$$
+Thus we can conclude that 
+$$0 \leq \dim \ns T \leq ... \leq \dim \ns T^n \leq n - 1$$
+we follow that at some point in this chain $\dim \ns T^{j - 1} = \dim \ns T^j$.
+
+Suppose that $v \in \ns T^{n - 1} \cap \range T^{n - 1}$. We follow that there exists
+$w \in V$ such that $T^{n - 1} w = v$. Thus we follow that
+$T^{n - 1}T^{n - 1} w = T^{n - 1}v$. Since $ v \in \ns T^{n - 1}$, we follow that
+$$T^{n - 1}T^{n - 1} w = 0$$
+$$T^{2n - 2} w = 0$$
+thus $w \in \ns T^{2n - 1}$. Since $n > 1$, we follow that $2n - 2 \geq n$, thus we follow that
+$w \in \ns T^{n}$, and therefore $w \in \ns T^{n - 1}$. Thus we conclude that
+$$T^{n - 1}w = 0$$
+and since $v = T^{n - 1}w$, we follow that $v = 0$. Thus
+$\ns T^{n - 1} \cap \range T^{n - 1} = \{0\}$. Because
+$\dim \ns T^{n - 1} + \dim \range  T^{n - 1} = \dim V$, we follow that
+$$\dim (\ns T^{n - 1} +  \range  T^{n - 1}) = \dim V$$
+and therefore $\ns T^{n - 1} +  \range  T^{n - 1} = V$. Thus
+$$V = \ns T^{n - 1} \oplus  \range  T^{n - 1}$$
+
+\subsection{}
+
+\textit{Prove or give a counterexample: If $V$ is a complex vector space and
+  $\dim V = n$ and $T \in \map(V)$, then $T^n$ is diagonalizable.}
+
+Solution of exercise 5.3.2 (and exercise 5.3.5 with particular $\lambda = 0$)
+gives us that in finite-dimentional complex vector space we can state that
+$$V = \ns T \oplus \range T$$
+if and only if $T$ is diagonalizable. Since
+$$V = \ns T^n \oplus \range T^n$$
+for any $T \in \map(V)$, we follow that $T^n$ is indeed diagonalizable.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and there exists a basis of $V$ with respect to
+  which $T$ has an upper-triangular matrix with only $0$'s on the diagonal. Prove that
+  $T$ is nilpotent.}
+
+Let us denote the  basis with respect to which $N$ has an upper
+trianguar mamtrix with zeroes on the diagonal with $v_1, ..., v_n$ and let
+$$M = \{j \in N \cap [0, \dim V] : (\forall i \leq j \in N)(T^{\dim V} v_i  = 0)\}$$
+We follow that if $j = 1$, then matrix gives us that $T v_j = T v_1 = T^1 v_1 =  0$.
+Thus $T^{\dim V} v_1 = T^{\dim V - 1} T v_1 = 0$.  Therefore $1 \in M$.
+
+Suppose that $j - 1 \in M$. By the fact that matrix is upper triangular we follow that
+$$T v_j \in \Span(v_1, ..., v_j)$$
+thus
+$$T v_j = \sum_{1 \leq i \leq j} {a_i v_i}$$
+$$T v_j = \sum_{1 \leq i < j} {a_i v_i} + a_j v_j$$
+Since we've got zeroes on the diagonal, we follow that $a_j = 0$ and therefore $a_j v_j = 0$. Thus 
+$$T v_j = \sum_{1 \leq i < j} {a_i v_i}$$
+Applying $T^{ \dim V}$ to both sides we get that
+$$T^{\dim V + 1} v_j = \sum_{1 \leq i < j} {a_i T^{\dim V}v_i}$$
+$$T^{\dim V + 1} v_j = \sum_{1 \leq i \leq j - 1} {a_i T^{\dim V}v_i}$$
+by IH we follow that $T^{\dim V}v_i = 0$  for all $1 \leq i \leq j - 1$. Thus
+$$T^{\dim V + 1} v_j = \sum_{1 \leq i \leq j - 1} {a_i T^{\dim V}v_i} =
+\sum_{1 \leq i \leq j - 1} {a_i 0} = 0$$
+Thus $v_j \in T^{\dim V + 1}$. Thus $v_j \in T^{\dim V}$ and therefore we follow that $j \in M$.
+
+Therefore we follow that if $j \in M$ and $j + 1 \leq \dim V$, then $j + 1 \in M$. Since
+$1 \in M$ we follow that $M = N \cap [0; \dim V]$. Therefore for every $j < \dim V$ we've
+got that $T^{\dim V} v_j$.
+
+Suppose that $v \in V$. Then we follow that
+$$v = \sum a_j v_j$$
+thus
+$$T^{\dim V}v = \sum a_j T^{\dim V}v_j = 0 $$
+Thus $T^{\dim V} = 0$, and therefore  $T$ is nilpotent, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $N \in \map(V)$ is normal and
+  nilpotent. Prove that $N = 0$}
+
+By exercisee 7.1.17 we've got that for every normal operator
+$$\ns T^k = \ns T$$
+for every positive $k$. Thus we follow that
+$$\ns N^{\dim V} = \ns N $$
+$$\ns  N = V$$
+thus $N = 0$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $N \in \map(V)$ is nilpotent.
+  Prove that there exists an orthonormal basis of $V$ with respect to which $N$
+  has an upper-triangular matrix}
+
+Because $N$ is a nilpotent operator, we follow that there exist a basis such that
+it has an upper-diagonal matrix with zeroes on the diagonal. By applying GSP
+to this basis we get the orthonormal basis, and since after applying GSP we get =
+$$Tv_j \in \Span(e_1, ..., e_j)$$
+we follow that the matrix is upper-diagonal with zeroes on the diagonal, as desired.
+
+\subsection{}
+
+\textit{Suppose $N \in \map(V)$ is such that $\ns N^{\dim V - 1} \neq \ns N^{\dim V}$. Prove that
+  $N$ is nilpotent and that
+  $$\dim \ns N^j = j$$
+  for every integer $j$ with $0 \leq j \leq \dim V$}
+
+Suppoose that $\ns N^{\dim V - 1} \neq \ns N^{\dim V}$. Then we follow that
+$$\ns N^{\dim V - 1} \subset \ns N^{\dim V}$$
+therefore
+$$\ns N \subset \ns N^2 \subset \ns N^3 ... \subset \ns N^{\dim V}$$
+thus
+$$\dim \ns N < \dim \ns N^2 ... < \dim \ns N^{\dim V}$$
+Since $\ns N^{\dim V}$ is a subspace of $V$ we follow that $\dim \ns N^{\dim V} \leq \dim V$.
+Also, if $\dim T = 0$ then we can follow that $\dim T^2 = 0$ and therefore
+$$\dim \ns T = \dim \ns T^2 ...  = \dim \ns T^{\dim V} = 0$$
+which is not our case. Thus we follow that $\dim N \geq 1$. Thus we've got that
+$$1 \leq \dim \ns N < \dim \ns N^2 ... < \dim \ns N^{\dim V} \leq \dim V$$
+the only sequence of integers, that would satisfy the presented restrictions is
+$$1, 2, 3, ...$$
+(can be proven through the fact that the number of distinct integers in required range is $\dim V$,
+and by transitivity of $<$ in $N$ we've got that presented sequence is the only one
+that satisfies the requirements. More rigorous proof is ommited, since I've got enough set
+theory on my hands)
 thus we follow that
-$$\dim \ns T < \dim \ns T^2 ... < \dim \ns T^{n - 1} < \dim \ns T^n$$
-If $\dim \ns T = 0$, then we follow that $\dim \ns T = \dim \ns T^2 ...  = 0$, and in
-in this particular case we've got that 
-$$\dim \ns T \geq 1$$
-and since
-$$\dim \ns T^n \neq n$$
-because $\dim \ns T^n \neq V$, because $T$ is not nilpotent
+$$\dim \ns N^j = j$$
+Therefore $\dim \ns N^{\dim V} = \dim V$, therefore $N^{\dim V} = 0$ and therefore $N$
+is nilpotent.
 
+\subsection{}
 
+\textit{Suppose $T \in \map(V)$. Show that
+  $$V = \range T^0 \supseteq T^1 ... \supseteq \range T^k \supseteq \range T^{k + 1} ...$$}
+
+Let
+$$M = \{j \in I: \range T^j \supseteq \range T^{j + 1}\}$$
+
+We follow that if $j = 0$, then $T^j = I$, and thus $\range T^0 = V$. Therefore
+it is true for any map (inluding $T$) that
+$$V \supseteq \range T$$
+thus we follow that
+$0 \in M$.
+
+Let $k - 1 \in M$ and  suppose that $v \in \range T^{k + 1}$. Then we follow that there exists $w$
+such that
+$$T^{k + 1} w = v$$
+or in other words
+$$T^{k} T w = v$$
+thus there exists $Tw \in V$ such that $T^k Tw = v$. Thus $v \in \range T^k$. Thus we
+follow that $k - 1 \in M \to k \in M$. Thus $M = N \cup \{0\}$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $m$ is a nonnegative integer such that 
+$$\range T^m = \range T^{m + 1}$$
+Prove that $\range T^m = \range T^k$ for all $m < k$}
+
+Suppose that $\range T^m = \range T^{m + 1}$. We follow that
+$\dim \range T^m = \dim \range T^{m + 1}$. This means that $\dim \ns T^m = \dim \ns T^{m + 1}$.
+Which in turn implies that $\ns T^m = \ns T^{m + 1}$. Thus we follow that
+$\ns T^m = \ns T^k$, therefore $\dim \ns T^k = \dim \ns T^m$. Once again this means that
+$\dim \range T^k = \dim \range T^m$. Since $\range T^k \subseteq \range T^m$, we follow that
+they have the same basis, and thus they are equal, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Let $n = \dim V$. Prove that
+  $$\range T^n = \range T^{n + 1} = ...  $$
+}
+Since $\ns T^n = \ns T^{n + 1} = ...  $, we follow that
+$\dim \range T^n = \dim \range T^{n + 1} = ...$, thus by the fact that
+$ \range T^n \supseteq \range T^{n + 1} \supseteq ...$ we follow that
+$\range T^n = \range T^{n + 1} = ...$, as desired.
+
+\subsection{}
+
+\textit{Suppose $\map(V)$ and $m$ is a nonnegative integer. Prove that
+  $$\ns T^m = \ns T^{m + 1} \iff \range T^m = \range T^{m + 1}$$
+}
+
+Follows from the previous two exercises.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^5)$ is such that $\range T^4 \neq \range T^5$. Prove that $T$ is
+  nilpotent.}
+
+We follow that since $\range T^4 \neq \range T^5$, then
+$\dim \range T^4 \neq \dim \range T^5$, thus $\dim \ns T^4 \neq \dim \ns T^5$,
+and now we've got the particular case of 8.1.15.
+
+\subsection{}
+
+\textit{Find a vector space $W$ and $T \in \map(W)$ such that $\ns T^k \subset \ns T^{k + 1}$
+  and $\range T^k \supset \range T^{k + 1}$ for every positive integer $k$.}
+
+Let $W = F^\infty$ and
+$$T(a_1, a_2, a_3, ...,) = (0, a_4, a_1, a_6, a_3)$$
+in other words, we shift oddss by 1 to the right and shifting evens by 1 to the left.
 
 
 
