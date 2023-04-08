@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  7 APR 2023 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  8 APR 2023 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -520,7 +520,7 @@ Chapter 5.
 
 ] [103] [104] [105] [106] [107] [108] [109] [110] [111] [112] [113]
 [114] [115] [116] [117]
-Overfull \hbox (51.84776pt too wide) detected at line 4467
+Overfull \hbox (51.84776pt too wide) detected at line 4466
 \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 STS []\OT1/cmr/m/n/10.95 )[] = (\OML/cm
 m/m/it/10.95 STS []\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 STS []\OT1/cmr/m/n/
 10.95 )\OML/cmm/m/it/10.95 :::\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 STS []\OT
@@ -532,7 +532,7 @@ m/it/10.95 S [] :::S\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 TS []\OT1/cmr/m/n/1
  []
 
 [118] [119] [120] [121] [122] [123] [124] [125]
-Overfull \hbox (47.03307pt too wide) detected at line 4816
+Overfull \hbox (47.03307pt too wide) detected at line 4815
 \OML/cmm/m/it/10.95 STv \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ST [] [] \OT1/
 cmr/m/n/10.95 = [] [] = [] [] = [] [] = [] [] = \OML/cmm/m/it/10.95 TS [] [] \O
 T1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 TSv
@@ -543,7 +543,7 @@ Chapter 6.
 [132
 
 ] [133]
-Overfull \hbox (0.14835pt too wide) detected at line 5160
+Overfull \hbox (0.14835pt too wide) detected at line 5159
 \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/1
 0.95 v; u \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 v\OMS/cmsy/m/n/10.95 i \O
 T1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u; u \OMS/cmsy/m/n/
@@ -561,7 +561,7 @@ v\OMS/cmsy/m/n/10.95 i \OT1/cmr/m/n/10.95 =
  []
 
 [134] [135] [136] [137] [138] [139] [140] [141]
-Overfull \hbox (25.5613pt too wide) detected at line 5485
+Overfull \hbox (25.5613pt too wide) detected at line 5484
 \OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 ^^Ux\OT1/cmr/m/n/10.95 )[] + (\OML/cmm
 /m/it/10.95 ^^Uy\OT1/cmr/m/n/10.95 )[])[] = (\OML/cmm/m/it/10.95 ^^U[]x[] \OT1/
 cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^U[]y[]\OT1/cmr/m/n/10.95 )[] = (\OML/cmm/
@@ -574,7 +574,7 @@ mr/m/n/10.95 )[]
  []
 
 
-Overfull \hbox (52.19029pt too wide) detected at line 5489
+Overfull \hbox (52.19029pt too wide) detected at line 5488
 \OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/1
 0.95 x[]\OT1/cmr/m/n/10.95 )[] + (\OML/cmm/m/it/10.95 y \OT1/cmr/m/n/10.95 + \O
 ML/cmm/m/it/10.95 y[]\OT1/cmr/m/n/10.95 )[]) = \OML/cmm/m/it/10.95 x[] \OT1/cmr
@@ -593,12 +593,12 @@ n/10.95 (\OML/cmm/m/it/10.95 x; y\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \OT1
  []
 
 [142]
-Overfull \hbox (15.9844pt too wide) detected at line 5516
+Overfull \hbox (15.9844pt too wide) detected at line 5515
 [] \OT1/cmr/m/n/10.95 = [] =
  []
 
 [143]
-Overfull \hbox (30.01431pt too wide) detected at line 5559
+Overfull \hbox (30.01431pt too wide) detected at line 5558
 \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/1
 0.95 w; v\OMS/cmsy/m/n/10.95 i \OT1/cmr/m/n/10.95 = [] [] = [] [] = [] [] + [] 
 [] = \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 u; v\OMS/cmsy/m/n/10.95 i \OT1/cm
@@ -607,7 +607,7 @@ i
  []
 
 [144]
-Overfull \hbox (39.8963pt too wide) detected at line 5614
+Overfull \hbox (39.8963pt too wide) detected at line 5613
 \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.
 95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
 t/10.95 t\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i[] \OT1/cmr/m/n/10.95 = [] []
@@ -620,7 +620,7 @@ L/cmm/m/it/10.95 t\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; g[]\OT1/cmr/m/n/10.
  []
 
 [145] [146] [147] [148]
-Overfull \hbox (8.41223pt too wide) detected at line 5772
+Overfull \hbox (8.41223pt too wide) detected at line 5771
 \OML/cmm/m/it/10.95 a[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 b[] \OT1/cmr/m
 /n/10.95 = \OMS/cmsy/m/n/10.95 h^^@[]\OML/cmm/m/it/10.95 c \OMS/cmsy/m/n/10.95 
 ^^@ \OML/cmm/m/it/10.95 d\OMS/cmsy/m/n/10.95 i \OT1/cmr/m/n/10.95 + \OMS/cmsy/m
@@ -639,7 +639,7 @@ d\OMS/cmsy/m/n/10.95 i \OT1/cmr/m/n/10.95 =
  []
 
 [149] [150]
-Overfull \hbox (39.75311pt too wide) in paragraph at lines 5848--5849
+Overfull \hbox (39.75311pt too wide) in paragraph at lines 5847--5848
 \OT1/cmr/m/it/10.95 Suppose $\OML/cmm/m/it/10.95 T \OMS/cmsy/m/n/10.95 2 []\OT1
 /cmr/m/n/10.95 (\OML/cmm/m/it/10.95 R[]\OT1/cmr/m/n/10.95 )$ \OT1/cmr/m/it/10.9
 5 has an upper-triangular ma-trix with re-spect to the ba-sis $\OT1/cmr/m/n/10.
@@ -651,7 +651,7 @@ Overfull \hbox (39.75311pt too wide) in paragraph at lines 5848--5849
  []
 
 
-Overfull \hbox (5.66179pt too wide) detected at line 5863
+Overfull \hbox (5.66179pt too wide) detected at line 5862
 \OML/cmm/m/it/10.95 e[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 v[] \OMS/cmsy/
 m/n/10.95 ^^@ h\OML/cmm/m/it/10.95 v[]; e[]\OMS/cmsy/m/n/10.95 i\OML/cmm/m/it/1
 0.95 e[] \OMS/cmsy/m/n/10.95 ^^@ h\OML/cmm/m/it/10.95 v[]; e[]\OMS/cmsy/m/n/10.
@@ -665,17 +665,17 @@ mm/m/it/10.95 ; []\OT1/cmr/m/n/10.95 )
  []
 
 [151]
-Overfull \hbox (48.82498pt too wide) detected at line 5885
+Overfull \hbox (48.82498pt too wide) detected at line 5884
 [][] [] \OT1/cmr/m/n/10.95 = [][] [] = [] [][] [] = [] [] =
  []
 
 
-Overfull \hbox (47.60832pt too wide) detected at line 5893
+Overfull \hbox (47.60832pt too wide) detected at line 5892
 [][] [] \OT1/cmr/m/n/10.95 = [][] [] = [] [][] [] = [] [] =
  []
 
 [152]
-Overfull \hbox (47.8098pt too wide) detected at line 5933
+Overfull \hbox (47.8098pt too wide) detected at line 5932
 \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 x[]; \OT1/cmr/m/n/10.95 2[](\OML/cmm/m
 /it/10.95 x \OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 i
  \OT1/cmr/m/n/10.95 = 2[] [][] [] = 2[] [][] [] = 2[][[] \OMS/cmsy/m/n/10.95 ^^
@@ -684,7 +684,7 @@ Overfull \hbox (47.8098pt too wide) detected at line 5933
  []
 
 [153] [154] [155]
-Overfull \hbox (36.2345pt too wide) detected at line 6084
+Overfull \hbox (36.2345pt too wide) detected at line 6083
 \OMS/cmsy/m/n/10.95 jj\OML/cmm/m/it/10.95 v\OMS/cmsy/m/n/10.95 jj[] \OT1/cmr/m/
 n/10.95 = \OMS/cmsy/m/n/10.95 jj [] []jj[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/1
 0.95 jj [] []jj[] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 jj\OML/cmm/m/it/10.9
@@ -697,7 +697,7 @@ OMS/cmsy/m/n/10.95 jj[] \OT1/cmr/m/n/10.95 =
  []
 
 [156] [157] [158] [159] [160] [161] [162] [163]
-Overfull \hbox (36.9529pt too wide) in paragraph at lines 6355--6359
+Overfull \hbox (36.9529pt too wide) in paragraph at lines 6354--6358
 []\OT1/cmr/bx/n/10.95 In for-ward di-rec-tion:  \OT1/cmr/m/n/10.95 Sup-pose tha
 t $\OML/cmm/m/it/10.95 U$ \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 U[]$ \OT1
 /cmr/m/n/10.95 are in-vari-ant un-der $\OML/cmm/m/it/10.95 T$\OT1/cmr/m/n/10.95
@@ -707,7 +707,7 @@ t $\OML/cmm/m/it/10.95 U$ \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/10.95 U[]$ \OT1
 [164] [165]
 Chapter 7.
 
-Overfull \hbox (1.92708pt too wide) in paragraph at lines 6402--6403
+Overfull \hbox (1.92708pt too wide) in paragraph at lines 6401--6402
 \OT1/cmr/m/it/10.95 From this chap-ter on we've got that ev-ery space that we'r
 e talk-ing about is finite-dimentional,
  []
@@ -715,7 +715,7 @@ e talk-ing about is finite-dimentional,
 [166
 
 ] [167]
-Overfull \hbox (54.63416pt too wide) detected at line 6495
+Overfull \hbox (54.63416pt too wide) detected at line 6494
 [] [] \OML/cmm/m/it/10.95 T \OT1/cmr/m/n/10.95 = []([] \OML/cmm/m/it/10.95 T[]\
 OT1/cmr/m/n/10.95 )[] = [] \OML/cmm/m/it/10.95 W \OMS/cmsy/m/n/10.95 ^^@ [] [] 
 \OML/cmm/m/it/10.95 T[] \OT1/cmr/m/n/10.95 = [] \OML/cmm/m/it/10.95 W \OMS/cmsy
@@ -727,7 +727,7 @@ OT1/cmr/m/n/10.95 )[] = [] \OML/cmm/m/it/10.95 W \OMS/cmsy/m/n/10.95 ^^@ [] []
 [168] [169] [170] [171] [172] [173] [174] [175] [176] [177] [178] [179]
 [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191]
 [192] [193] [194] [195] [196]
-Overfull \hbox (21.4997pt too wide) detected at line 7813
+Overfull \hbox (21.4997pt too wide) detected at line 7812
 \OML/cmm/m/it/10.95 T[]Tv \OT1/cmr/m/n/10.95 = [] [] = [] [] = [] [] = [] [] =
  []
 
@@ -736,18 +736,18 @@ Chapter 8.
 [201
 
 ] [202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212]
-(./linear_algebra.aux)
+[213] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: E3B9B89222458ACCF0343C2E7B84A04F;29848.
+(rerunfilecheck)             Checksum: AE9FC2495501C3C2B3DD312D912BBA70;30218.
  ) 
 Here is how much of TeX's memory you used:
- 10226 strings out of 476025
- 157148 string characters out of 5796533
+ 10235 strings out of 476025
+ 157282 string characters out of 5796533
  1865388 words of memory out of 5000000
- 29907 multiletter control sequences out of 15000+600000
+ 29911 multiletter control sequences out of 15000+600000
  526610 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,382b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,13n,76p,382b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -763,10 +763,10 @@ type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (213 pages, 756823 bytes).
+Output written on linear_algebra.pdf (214 pages, 760977 bytes).
 PDF statistics:
- 3479 PDF objects out of 3580 (max. 8388607)
- 3196 compressed objects within 32 object streams
- 679 named destinations out of 1000 (max. 500000)
- 3705 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3504 PDF objects out of 3580 (max. 8388607)
+ 3219 compressed objects within 33 object streams
+ 684 named destinations out of 1000 (max. 500000)
+ 3737 words of extra memory for PDF output out of 10000 (max. 10000000)
 

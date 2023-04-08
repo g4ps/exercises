@@ -4012,8 +4012,7 @@ eigenvalues of $T$ and $S \inv T S$ is equal by double inclusion.
 \textit{(b) What is the relationship between the eigenvectors of $T$ and the eigenvectors
   of $S \inv T S$?}
 
-Every eigenvector of $T$ can be aquired by putting eigenvetor of $S \inv T S$ through
-$S \inv$.
+If $v$ is an eigenvector of $T$, then $S\inv v$ is an eigenvalue of $S \inv T S$.
 
 \subsection{}
 
@@ -8333,8 +8332,72 @@ $$T(a_1, a_2, a_3, ...,) = (0, a_4, a_1, a_6, a_3)$$
 in other words, we shift oddss by 1 to the right and shifting evens by 1 to the left.
 
 
+\section{Decomposition of an Operator}
 
+\subsection{}
 
+\textit{Suppose $V$ is a complex vector space, $N \in \map(V)$, and $0$ is the only eigenvalue
+  of $N$. Prove that $N$ is nilpotent.}
+
+Since $N$ is in a complete vector space, we follow that it has an upper-triangular matrix.
+Since $0$ is the only eigenvalue of $N$ we follow that the only numbers on the diagonal
+are the zeroes. Thus by exercise 8.1.12 we follow that $N$ is nilpotent, as desired.
+
+\subsection{}
+
+\textit{Give an example of an operator $T$ on a finite-dimentional real vector space
+  such that $0$ is the only eigenvalue of $T$ but $T$ is not nilpotent}
+
+In this case we need to have an operator, that in complex vector space has eigenvalues
+$0, \lambda_1, \lambda_2$, where $\lambda_1, \lambda_2 \notin R$. We can do this
+by firstly setting operator
+$$T =
+\begin{pmatrix}
+  0& -1 \\
+  1 & 0
+\end{pmatrix}
+$$
+whose eigenvalues are $i$ and $-i$, and then appending another vector to the basis, that goes
+straight to zero, thus resulting in
+$$T =
+\begin{pmatrix}
+  0 & 0 & 0 \\
+  0 & 0 & -1 \\
+  0 & 1 & 0 \\
+\end{pmatrix}
+$$
+
+We can follow through calculation that $T^2 \neq 0$ and $T^3 = T$, thus proving (rigorous
+proof follows easily from induction) that $T$ is not nilpotent, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Suppose that $S \in \map(V)$ is invertible. Prove that $T$
+  and $S\inv T S$ have the same eigenvalues with the same mutltiplicities.}
+
+From exercise 5.2.5 we follow that
+$$p(S T S \inv) = S p(T)  S \inv$$
+which in this case gives us  that
+$$p(S\inv T S) = S \inv p(T) S$$
+and therefore
+$$(S\inv T S - \lambda I)^{\dim V} = S\inv (T  - \lambda I)^{\dim V} S$$
+thus we follow that if $v_1, ..., v_n$ is the basis of $G(T, \lambda)$, then
+$$ (S\inv T S  - \lambda I)^j S \inv v=  S\inv ( T  - \lambda I)^j S S \inv v=
+S\inv ( T  - \lambda I)^j  v=  S\inv 0 = 0$$
+thus $S\inv v_1, ..., S\inv v_n$ are generalized eigenvectors of $S\inv T S$. Since invertible
+functions preserve the linear independence of the lists, we follow that
+$S\inv v_1, ..., S\inv v_n$ is linearly independent, and thus
+$$\dim G(T, \lambda) \leq \dim G(S \inv T S, \lambda) $$
+
+We can state that 
+$$T = I T I = S (S \inv T S) S \inv$$
+thus by previous point we get that 
+$$\dim G(S (S \inv T S) S \inv, \lambda) \geq \dim G(S \inv T S, \lambda) $$
+and thus
+$$\dim G(T, \lambda) \geq \dim G(S \inv T S, \lambda) $$
+from which by antisymmetry we get that
+$$\dim G(T, \lambda) = \dim G(S \inv T S, \lambda) $$
+thus $S \inv T S$ and $T$ have the same eigenvalues with the same multiplicities, as desired..
 
 \end{document}
 
@@ -8342,3 +8405,4 @@ in other words, we shift oddss by 1 to the right and shifting evens by 1 to the 
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+
