@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  8 APR 2023 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  9 APR 2023 18:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,18 +736,18 @@ Chapter 8.
 [201
 
 ] [202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212]
-[213] (./linear_algebra.aux)
+[213] [214] [215] [216] (./linear_algebra.aux)
 Package rerunfilecheck Info: File `linear_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: AE9FC2495501C3C2B3DD312D912BBA70;30218.
+(rerunfilecheck)             Checksum: 9A469CB3696BDA9C809B882908DF427A;30604.
  ) 
 Here is how much of TeX's memory you used:
- 10235 strings out of 476025
- 157282 string characters out of 5796533
+ 10252 strings out of 476025
+ 157546 string characters out of 5796533
  1865388 words of memory out of 5000000
- 29911 multiletter control sequences out of 15000+600000
+ 29918 multiletter control sequences out of 15000+600000
  526610 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,382b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,13n,76p,382b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -763,10 +763,10 @@ type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on linear_algebra.pdf (214 pages, 760977 bytes).
+Output written on linear_algebra.pdf (217 pages, 767230 bytes).
 PDF statistics:
- 3504 PDF objects out of 3580 (max. 8388607)
- 3219 compressed objects within 33 object streams
- 684 named destinations out of 1000 (max. 500000)
- 3737 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3558 PDF objects out of 3580 (max. 8388607)
+ 3270 compressed objects within 33 object streams
+ 694 named destinations out of 1000 (max. 500000)
+ 3793 words of extra memory for PDF output out of 10000 (max. 10000000)
 

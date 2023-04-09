@@ -8397,7 +8397,105 @@ and thus
 $$\dim G(T, \lambda) \geq \dim G(S \inv T S, \lambda) $$
 from which by antisymmetry we get that
 $$\dim G(T, \lambda) = \dim G(S \inv T S, \lambda) $$
-thus $S \inv T S$ and $T$ have the same eigenvalues with the same multiplicities, as desired..
+thus $S \inv T S$ and $T$ have the same eigenvalues with the same multiplicities, as desired.
+
+
+\subsection{}
+
+\textit{Suppose $V$ is an n-dimentional complex vector space and $T$ is an operator on $V$
+  such that $\ns T^{n - 2} \neq \ns T^{n - 1}$/ Prove thaht $T$ has at most two distinct
+  eivenvalues.}
+
+We've got two cases here: first one is when $\ns T^{n - 1} \neq \ns T^n$, in which case $N$
+is nilpotent, and therefore it has the one eigenvalue - 0.
+
+If $\ns T^{n - 1} = \ns T^n$, then we follow that $T$ is not nilpotent, but $0$ is still an
+eigenvalue of $T$ since $\ns T^{n - 1} \neq \ns T^n$. Thus we can also follow that
+$\dim G(0, T) = n - 1$, and thus there must exist another subspace $G(\lambda, T)$ such that
+$\dim G(\lambda, T) = 1$ and $\lambda \neq 0$. Thus we conclude that $T$ has two
+eigenvalues.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space and $T \in \map(V)$. Prove that $V$
+  has a basis consisting of eigenvectors of $T$ if and only if every generalized
+  eigenvector of $T$ is an eigenvector of $T$.}
+
+
+$V$ has a basis consisting of eigenvectors of $T$ if and only if it is diagonalizable.
+$T$ is diagonalizable if and only if
+$$V = E(\lambda_1, T) \oplus ... \oplus ... E(\lambda_m, T)$$
+by creating bases and the fact that $E(\lambda_j, T) \subseteq G(\lambda_j, T)$  we
+can prove that
+$$V = E(\lambda_1, T) \oplus ... \oplus ... E(\lambda_m, T)$$
+if and only if $E(\lambda_j, T) = G(\lambda_j, T)$, or in other words, if every generalized
+eigenvector is an eigenvector of $T$.
+
+
+\subsection{}
+
+\textit{Define $N \in \map(F^5)$ by
+  $$N(x_1, x_2, x_3, x_4, x_5) = (2x_2, 3x_3, -x_4, 4x_5, 0)$$
+  Find a square root of $I + N$.}
+
+We can follow pretty easily that $N$ is nilpotent, thus we can use the formula that was hinted
+at in the proof.
+
+If we take the numbers from the proof and set $a_4 = -25.6$, then we'll get the desired rusult
+$$\sqrt{I + N} = I + 1/2 N - 1/8 N^2 + 1/16 N^3 - 5/128 N^4$$
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space. Prove that every invertible operator
+  on $V$ has a cube root}
+
+We can look once again at the proof of the theorem that identity plus a nilpotent operators,
+the only thing that would change are the coefficients. After this the application if the
+same ideas as in 8.33 with the sole difference of taking the cube root instead of the
+square root will produce the desired result.
+
+\subsection{}
+
+\textit{Suppose  $T \in \map(V)$ and $3$ and $8$ are eigenvalues of $T$. Let $n = \dim V$. Prove
+  that
+  $$V = (\ns T^{n - 2}) \oplus (\range T^{n - 2})$$
+}
+
+We can follow that in this case $T$ has at least eigenvalues $3$ and $8$, which means
+that if $T$ is not invertible and has an eigenvalue of $0$, then
+since
+$$V = G(0, T) \oplus G(3, T) \oplus G(8, T) \oplus ... $$
+and dimentions  of $G(3, T)$ and $G(8, T)$ is at least 1 each, we follow that
+$\dim G(0, T) \leq n - 2$. Thus we follow that
+$$\ns T^{n - 2} = \ns T^{n - 1} = \ns T^{n}$$
+thus we follow from exercises in the previous section that
+$$\range T^{n - 2} = \range T^{n - 1} = \range T^{n}$$
+and thus
+$$V = \ns T^n \oplus \range T^n$$
+will imply that
+$$V = (\ns T^{n - 2}) \oplus (\range T^{n - 2})$$
+as desired.
+
+\subsection{}
+
+Follows from the application of matrix multiplication rules.
+
+\subsection{}
+
+\textit{Suppose $F = C$ and $T \in \map(V)$. Prove that there exist $D, N \in \map(V)$
+  such that $T = D + N$, the operator $D$ is diagonalizable, $N$ is nilpotent,
+  and $DN = ND$.}
+
+Because $F = C$, we can follow that any $T$ has an upper-triangular matrix with respect to
+some basis. Thus we can divide $T$ into the sum of upper-triangular matrix with zeroes on the
+diagonal, and the diagonal itself. If we do this with any given upper-tirangular matrix, then
+we won't get that $DN = ND$. But if we do this with a block-diagonal matrix, (which exists when
+$F = C$ by results of 8.29),
+then  we can dissect $D$ into a block-diagonal matrix, where each block
+will be a scalar multiple of the identity, which in turn will commute with $N$ by the result
+of the previous exercise.
+
+\textit{exercise 11 is left for later}
 
 \end{document}
 
