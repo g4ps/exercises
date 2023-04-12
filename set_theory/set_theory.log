@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  11 APR 2023 20:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  12 APR 2023 21:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -520,13 +520,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Chapter 5.
 [42
 
-] (./set_theory.aux)
+] [43] [44] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
 (rerunfilecheck)             Checksum: B4AE68A7AE0BC6BFA2619785282FFBA1;5374.
  ) 
 Here is how much of TeX's memory you used:
- 9341 strings out of 476025
- 142550 string characters out of 5796533
+ 9345 strings out of 476025
+ 142586 string characters out of 5796533
  1862388 words of memory out of 5000000
  29515 multiletter control sequences out of 15000+600000
  524912 words of font info for 79 fonts, out of 8000000 for 9000
@@ -544,10 +544,10 @@ s/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (43 pages, 287655 bytes).
+Output written on set_theory.pdf (45 pages, 292692 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 189 named destinations out of 1000 (max. 500000)
+ 694 PDF objects out of 1000 (max. 8388607)
+ 612 compressed objects within 7 object streams
+ 193 named destinations out of 1000 (max. 500000)
  465 words of extra memory for PDF output out of 10000 (max. 10000000)
 

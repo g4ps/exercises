@@ -1792,7 +1792,17 @@ $$g(a) =
 $$
 is one-to-one.
 
-We follow that if $a \neq $
+Suppose that $a_1, a_2 \in A$ are such that $a_1 \neq a_2$.
+Suppose that $f(a_1) \neq m$. Then we follow that if $f(a_2) \neq m$, then
+we've got that $f(a_1) \neq f(a_2)$ by the fact that $f$ is injective, thus
+$g(a_1) = f(a_1) \neq f(a_2) = g(a_2)$ as well.
+If $f(a_2) = m$, then we follow that $g(a_2) = k$. Thus we follow that
+$f(a_1) = g(a_1) \in \ran(f)$ and $g(a_2) = k \notin \ran(f)$. Thus we follow that
+$g(a_1) \neq g(a_2)$.
+
+Since $f$ is injective, we can follow that $a_1 \neq  a_2 \ra f(a_1) \neq f(a_2)$, thus
+we follow that the case when $f(a_1) = f(a_2) = m$ can't happen. Thus we follow that
+$a_1 \neq a_2 \ra g(a_1) \neq g(a_2)$, therefore $g$ is injective, as desired.
 
 \subsection*{5.1.2}
 
@@ -1805,7 +1815,57 @@ we follow that $f|A$ is also one-to-one. Thus we follow that $A$ is finite, as d
 \subsection*{5.1.3}
 
 \textit{Let $A$ and $B$ be two finite sets, and let $f: A \to B$ be one-to-one. Prove
-that $|A| \leq |B|$. }
+  that $|A| \leq |B|$. }
+
+Given that $A$ and $B$ are finite, we follow that there exist natural numbers $n = |A|$ and
+$m = |B|$. We can also follow that there exist bijections $h: A \to n$ and $g: B \to m$.
+Because $h$ is a bijection, we follow that $h \inv: n \to A$ is also a bijection.
+Thus we follow that $g \circ f \circ h \inv: n \to m $ is a composition of injective functions,
+and therefore it's injective as well. Thus we follow that $|n| \leq m$, therefore
+$$||A|| \leq |B|$$
+$$|A| \leq |B|$$
+as desired.
+
+\subsection*{5.1.4}
+
+\textit{Prove theorem 5.1.7 }
+
+Let $A$ and $B$ be finite. Let $n = |A|$ and $m = |B|$. We follow that there exist bijections
+$f: A \to n$ and $g: B \to m$.
+
+Thus we follow that if there exists a bijection $h: A \to B$,
+then we follow that $g \circ h \circ f \inv: n \to m$ is a bijection. Thus
+$g \circ h \circ f \inv: n \to m$ is injective and
+$(g \circ h \circ f \inv: n \to m)\inv$ is injective, thus we follow that $n \geq m$ and
+$m \geq n$, thus by antisymmetry we've got that $n = m$ and $|A| = |B|$.
+
+If $|A| = |B|$, then we follow that $f: A \to |A|$ and $g: B \to |B|$ are bijections,
+and thus $g \inv \circ f: A \to B$ is also a bijection.
+
+\subsection*{5.1.5}
+
+\textit{Let $n \in \omega$ and let $f: n \to A$. Prove that $f[n]$ is finite.}
+
+Let us firstly prove a theorem (which I'm sure that it was proven in the book before,
+but I can't find it) assuming for a moment that $n$ is a general set.
+
+\textbf{If $f: n \to A$ is a function, then there exists an injective function $g$
+such that $g \subseteq f\inv$.}
+
+Suppose that $y \in f[n]$. Then we follow that there exists a nonempty set
+$$A_y = \{x \in n : \eangle{x, y} \in f\}$$
+Thus we can define an indexed function $\eangle{A_y: y \in f[n]}$, from which by axiom of
+choice we follow that there exists a function $g$ such that 
+$$g(y) \in A_y$$
+Thus we follow that $g: f[n] \to n$. From a definition of $A_y$ we can follow that
+$g \subseteq f\inv$. Suppose that $n_1 \neq n_2 \in f[n]$. We follow that because $f$ is a
+function, there does not exist $x \in n$ such that $f(x) = n_1$ and $f(x) = n_2$. Thus
+$g(n_1) \neq g(n_2)$.
+Thus we follow that $n_1 \neq n_2 \ra g(n_1) \neq g(n_2)$. Therefore $g$ is injective, as desired.
+
+By provided theorem we can follow that there exists an injective function $g$ from $f[n]$ to $n$.
+Thus we follow that $f[n]$ is finite by definition.
+
 
 \end{document}
 %%% Local Variables:
