@@ -8497,6 +8497,153 @@ of the previous exercise.
 
 \textit{exercise 11 is left for later}
 
+\section{Characteristic and Minimal Polynomials}
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^4)$ is such that the eigenvalues of $T$ are 3, 5, 8. Prove
+  that
+  $$(T - 3I)^2 (T - 5I)^2(T - 8I)^2 = 0$$
+}
+
+Because we've got 3 distinct eigenvalues and the sum of the multiplicities of those eigenvalues
+are 4 (dimention of the vector space), we follow that one of the eigenvalues of $T$
+has a multiplicity of 2, while others have multiplicity of $1$.
+Thus we can follow that given polynomial is in a form
+$$q(T)p(T)$$
+where $q(T)$ is a characteristic polynomial, and $p$ is just a polynomial. Since $q(T) = 0$,
+we follow that $q(T)p(T) = 0 p(T) = 0$. Thus we conclude that 
+$$(T - 3I)^2 (T - 5I)^2(T - 8I)^2 = 0$$
+as desired.
+
+\subsection{}
+
+Generalization of the previous exercise.
+
+\subsection{}
+
+\textit{Give an example of an operator on $C^4$ whose characteristic polynomial
+  equals
+  $$(z - 7)^2(z - 8)^2$$}
+
+$$
+T =
+\begin{pmatrix}
+  7 & 0 & 0 &  0 \\
+  0 & 7 & 0 & 0  \\
+  0 & 0 & 8 & 0  \\
+  0 & 0 & 0 & 8  \\
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{Give and example of an operator on $C^4$ whose characteristic polynomial
+  equals $(z - 1)(z - 5)^3$ and whose minimal polynomial equals $(z - 1)(z - 5)^2$}
+
+$$
+T =
+\begin{pmatrix}
+  1 & 0 & 0 &  0 \\
+  0 & 1 & 0 & 0  \\
+  0 & 0 & 5 & 8  \\
+  0 & 0 & 0 & 5  \\
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{Give an example of an operator on $C^4$ whose characteristic and minimal polynomials
+  both equal $z(z - 1)^2(z - 3)$}
+
+$$
+T =
+\begin{pmatrix}
+  0 & 0 & 0 & 0 \\
+  0 & 1 & 2 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 3
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{Give an example of an operator on $C^4$ whose characteristic polynomial
+  equals $z(z -  1)^2(z - 3)$ and whose minimal polynomial equals
+  $z(z -  1)(z - 3)$}
+
+$$
+T =
+\begin{pmatrix}
+  0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 3
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space. Suppose $T \in \map(V)$ is such that
+  $P^2 = P$. Prove that the characteristic polynomial of $P$ is $z^m(z - 1)^n$,
+  where $m = \dim \ns P$ and $n = \dim \range P$.}
+
+We know from exercises of section 5.3 and some other exercises that $P$ is diagonalizable and
+the only eigenvalues of $T$ are 0 and 1. Also,
+$$V = \ns P \oplus \range P$$
+thus we've got the desired characteristic polynomial.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$. Prove that $T$ is invertible if and only if the
+  constant term in the minimal polynomial is not zero.}
+
+$T$ is not invertible if and only if $0$ is not the eigenvalue of $T$. This happens
+if and only if 0 is not a root of its minimal polynomial. 0 is not a root of
+a polynomial if and only if its constant term is not zero.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ has minimal polynomial $4 + 5z - 6z^2 - 7z^3 + 2z^4 + z^5$.
+  Find the minimal polynomial of $T\inv$.}
+
+From what I can see on the graph, this polynomial does not have  handy zeroes lying around,
+closest that I've gotten was some value around $0.9315$, that doesn't seem to be very helpful.
+Other roots are probably complex and ugly, which also doesn't help.
+
+Suppose that $q$ is a minimal polynomial for $T$. Then we follow that
+it can be represented as
+$$q(z) = \prod{(z - \lambda_j)^{d_j}}$$
+then we can conjecture that
+$$q'(z) = \prod{(z - \frac{1}{\lambda_j})^{d_j}}$$
+is a minimal polynomial for $T\inv$, which in this case does not give us much to work with.
+
+Denote presented polynomial as $q$ and we follow that 
+$$q(T) = 4I + 5T - 6T^2 - 7T^3 + 2T^4 + T^5 = 0 $$
+thus if we multiply this thing by $T^{-5}$ (which is $(T\inv)^5$) we get
+$$4T^{-5} + 5T^{-4} - 6T^{-3} - 7T^{-2} + 2T^{-1} + I = 0 $$
+we want a monic polynomial, thus  we need to divide this thing by 4, which gets us
+$$T^{-5} + \frac{5}{4}T^{-4} - \frac{3}{2}T^{-3} -
+\frac{7}{4}T^{-2} + \frac{1}{2}T^{-1} + \frac{1}{4}I = 0 $$
+which seems to be a reasonable candidate for being the minimal polynomial of $T\inv$.
+Now the only thing left to prove is that this is indeed a minimal polynomial.
+
+The only reasonable approach to it is to show the contradiction: suppose that
+it isn't a minimal polynomial for $T\inv$. Then we follow that there exists a polynomial with
+degree less than 5, thas is a minimal polynomial of $T\inv$, and this polynomial right there is
+just a polynomial multiple of it. Then we follow that we can multiply
+our new found minimal polynomial $q'$  by $T^{\deg q'}$, which will give
+us a polynomial with lesser
+degree then our initial minimal polynomial, and such that it is equal to zero, when we plug $T$
+into it. Thus we follow that our initial minimal polynomial is not minimal,
+which is a contradiciton.
+
+Thus we follow that 
+$$w(z) = z^{5} + \frac{5}{4}z^{4} - \frac{3}{2}z^{3}  -
+\frac{7}{4}z^{2} + \frac{1}{2}z^{1} + \frac{1}{4}$$
+is a minimal polynomial of $T\inv$, as desired.
+
+
 \end{document}
 
 %%% Local Variables:

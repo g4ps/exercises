@@ -1621,6 +1621,23 @@ thus $n \in I \ra n^+ \in I$. Thus $I$ is inductive, and $I = \omega$. Therefore
 every natural number is either odd or even, but not both.
 
 
+\subsection*{4.3.9}
+
+\textit{Prove for all $m, n, k \in \omega$ that $m^{n + k} = m^n \cdot m^k$}'
+
+Let
+$$I = \{k \in \omega: (\forall m, n \in \omega)(m^{n + k} = m^n \cdot m^k)\}$$
+
+We follow that if $k = 0$ then
+$$E(m, n + k) = E(m, n + 0) = E(m, n) = E(m, n) \cdot 1 = E(m, n) \cdot E(m, k)$$
+thus we follow that $0 \in I$.
+
+Suppose that $k \in I$. We follow that for $k^+$ we've got
+$$E(m, n + k^+) = E(m, n + k) \cdot m = E(m, n) \cdot E(m, k) \cdot m =
+E(m, n) \cdot E(m, k^+)$$
+thus we follow that $k \in I \ra k^+ \in I$. Thus we follow that $I = \omega$, as desired.
+
+
 \section{Order on $\omega$}
 
 \subsection*{Note}
@@ -1773,6 +1790,64 @@ we follow that
 $$(\forall p \in (\omega \setminus 0))(m \cdot p = n \cdot p \lra m = n)$$
 where reverse case is once again trivial.
 
+\subsection*{4.4.11}
+
+\textit{Let $m \in \omega$. Prove that $m \in m + p^+$ for all $p \in \omega$.}
+
+We know that $m \in m^+$ for all $m \in \omega$. Thus we follow that for any $p \in \omega$
+we've got that $m + p \in m^+ + p \lra m + p \in m + p^+$. We also can follow that
+for every $p \in \omega$ we've got that $m \leq m + p$ (can't find the exact reference,
+but it is easily followed by induction). Thus by transitive property we can follow
+that  $m \in m + p^+$, as desired.
+
+\subsection*{4.4.12}
+
+\textit{Let $m \in \omega$. Prove that for all $n \in \omega$, if $m \in n$ then
+  $m + p^+ = n$ for some $p \in \omega$.}
+
+Let
+$$I = \{j \in \omega: j \in m \lor (\exists p \in \omega)(j = m + p^+) \}$$
+We follow that $0 \in m$, therefore $0 \in I$.
+
+Suppose that $n \in I$. Then we follow that $n \in m \lor (\exists p \in \omega) (j = m + p^+)$.
+If $n \in m$, then we follow that $n^+ \in m \lor n^+ = m \lra
+n^+ \in m \lor n^+ = m + 0 $. Thus we follow that if $n \in m$, then $n^+ \in I$.
+
+If $(\exists p \in \omega)(n = m + p^+)$, then we follow that $n^+ = (m + p^+)^+ = m + (p^+)^+$.
+Since $p^+ \in \omega$, we follow $n^+ \in I$ as well.
+
+Thus we can conclude that $n \in I \ra n^+ \in I$. Thus $I$ is inductive, and since it is
+a subset of $\omega$, we follow that $I = \omega$. Thus we follow that our initial $n \in I$.
+Thus $n \in m \lor (\exists p \in \omega)(n = m + p^+)$. Because $m \in n$, we follow
+by trichotomy that $n \notin m$, thus $ (\exists p \in \omega)(n = m + p^+)$, as desired.
+
+\subsection*{4.4.13}
+
+Combination of previous two exercises into one biconditional.
+
+\subsection*{4.4.18}
+
+\textit{Prove for all $n \in \omega$, if $f: n \to \omega$, then $\ran(f) \subseteq k$ for
+  some $k \in \omega$.}
+
+
+Let
+$$I = \{n \in \omega: (\forall f)
+(\exists k \in \omega)(f: n \to \omega \ra \ran(f) \subseteq k)\}$$
+
+We follow that if $f: 0 \to \omega$, then $\dom(f) = \emptyset$, thus $f = \emptyset$, therefore
+$\ran(f) = \emptyset = 0 \subseteq 0$. Thus $0 \in I$.
+
+Suppose that $n \in I$. Let $f: n^+ \to \omega$. Then we follow that
+there exists $f|n: n \to \omega$, and thus $(\exists k \in \omega)(\ran(f|n) \subseteq k)$.
+Since $n^+ = n \cup \{n\}$, we follow that
+$$\ran(f) = f[n^+] = f[n] \cup f[\{n\}] = f[n] \cup f(n) \subseteq k \cup f(n)$$
+Since $f: n^+ \to \omega$, we follow that $f(n) \in \omega$. Thus $k \cup f(n) \in \omega$,
+thus there exists $j = k \cup f(n) \in \omega$ such that
+$f: n^+ \to \omega \ra \ran(f) \subseteq j$. Thus we follow that $n^+ \in I$.
+Thus $n \in I \ra n^+ \in I$, therefore $I = \omega$, as desired.
+
+
 \chapter{On the Size of Sets}
 
 \section{Finite Sets}
@@ -1866,6 +1941,30 @@ Thus we follow that $n_1 \neq n_2 \ra g(n_1) \neq g(n_2)$. Therefore $g$ is inje
 By provided theorem we can follow that there exists an injective function $g$ from $f[n]$ to $n$.
 Thus we follow that $f[n]$ is finite by definition.
 
+\subsection*{5.1.6}
+
+\textit{Let $A$ be finite and let $f: A \to \omega$. Prove that $\ran(f) \subseteq k$, for
+  some $k \in \omega$.}
+
+
+Since $A$ is finite, we follow that there exists a bijection $g: A \to n$
+for some $n \in \omega$. Thus we follow that $g \inv: n \to A$ is also a bijection.
+We now follow that $f \circ g\inv: n \to \omega $ is a function with a finite domain, and
+because $g\inv$ is a bijection, we follow that $\ran(f \circ g\inv) = ran(f)$.
+By exercise 4.4.18 we follow that there exists $k \in \omega$ such that
+$\ran(f \circ g\inv) \subseteq k$. Thus we follow that $\ran(f) \subseteq k$ for some
+$k \in \omega$, as desired.
+
+\subsection*{5.1.7}
+
+\textit{Suppose that $f: A \to n$ is a bijection, where $n \in \omega$. Ptove that $|A| = n$.}
+
+Since $f$ is a bijection, we follow that it is injective. Thus we follow that $A$ is finite.
+Let $|A| = m$. We follow that there exists a bijection $g: A \to m$ and thus $g \inv: m \to A$
+is also a bijection. Thus
+$$f \circ g \inv: m \to n$$
+is also a bijection. Thus we follow that $|n| = |m|$. Therefore $n = m$, and thus $|A| = n$,
+as desired.
 
 \end{document}
 %%% Local Variables:
