@@ -8643,6 +8643,150 @@ $$w(z) = z^{5} + \frac{5}{4}z^{4} - \frac{3}{2}z^{3}  -
 \frac{7}{4}z^{2} + \frac{1}{2}z^{1} + \frac{1}{4}$$
 is a minimal polynomial of $T\inv$, as desired.
 
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space and $T \in \map(V)$ is invertible. Let
+  $p$ denote the characteristic polynomial of $T$ and let $q$ denote the
+  characteristic polynomial of $T\inv$. Prove that
+  $$q(z) = \frac{1}{p(0)} z^{\dim V} p(\frac{1}{z})$$
+  for all nonzero $z \in C$.
+}
+
+Don't know how does the phrase "for all nonzero $z \in C$" fits in this context, but nontheless
+
+Suppose that $p$ is a characteristic polynomial of $T$. We follow that
+$$p(z) = \prod_{\lambda \in eig(T)}{(z - \lambda)}$$
+where $eig(T)$ is a tuple of eigenvalues of $T$, where each of the eigenvalues of $T$
+is repeated according to its multiplicity. We've proven in the previous section
+(or in the  one before it) that $G(\lambda, T) = G(\frac{1}{\lambda}, T)$. Thus we can follow that
+$$q(z) = \prod_{\lambda \in eig(T)}{(z - \frac{1}{\lambda})}$$
+is a characteristic polynomial of $T\inv$, provided that $T$ is invertible.
+
+To prove the desired identity we need to use a little algebra. Henseforth let us omit the
+subscript of the product sign
+$$p(z) = \prod{(z - \lambda)}$$
+$$p(\frac{1}{z}) = \prod{(\frac{1}{z} - \lambda)}$$
+$$z^{\dim V} p(\frac{1}{z}) = z^{\dim V} \prod{(\frac{1}{z} - \lambda)}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{[z (\frac{1}{z} - \lambda)]}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{[1 - \lambda z]}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{- [\lambda z - 1]}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{- \lambda [ z - \frac{1}{\lambda}]}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{[-\lambda]} \prod{[ z - \frac{1}{\lambda}]}$$
+$$z^{\dim V} p(\frac{1}{z}) = \prod{[0 -\lambda]} \prod{[ z - \frac{1}{\lambda}]}$$
+$$z^{\dim V} p(\frac{1}{z}) = p(0) \prod{[ z - \frac{1}{\lambda}]}$$
+$$\frac{1}{p(0)}z^{\dim V} p(\frac{1}{z}) = \prod{[ z - \frac{1}{\lambda}]}$$
+$$\frac{1}{p(0)}z^{\dim V} p(\frac{1}{z}) = q(z)$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is invertible. Prove that there exists a polynomial
+  $p \in P(F)$ such that $T \inv = p(T)$.}
+
+Suppose that $p'$ is a minimal polynomial of $T$. Since $T$ is not invertible, we follow that
+its contant term is not equal to zero. Let us denote this term with $a_0$.
+We follow that polynomial
+$$p'(z) - a_0$$
+has 0 as its constant term. Therefore there exists $q \in P(F)$ such that
+$$z q(z) = p'(z) - a_0$$
+Let us plug $T$ into previous polynomial and get
+$$p'(T) - a_0I = 0 - a_0I = -a_0I$$
+$$p'(T) - a_0I = -a_0I$$
+$$\frac{1}{-a_0} (p'(T) - a_0I) = I$$
+$$T\inv(\frac{1}{-a_0} p'(T) - a_0I) = T \inv$$
+$$\frac{1}{-a_0} T\inv(p'(T) - a_0I) = T \inv$$
+$$\frac{1}{-a_0} T\inv T q(T) = T \inv$$
+$$\frac{1}{-a_0}  q(T) = T \inv$$
+Since $a_0 \neq 0$ we follow that $-\frac{1}{a_0} \in F$ is legal, therefore
+$$\frac{1}{-a_0} q(z) \in P(F)$$
+is the desired polynomial.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space and $T \in \map(V)$. Prove that $V$ has
+  a basis consisting of eigenvectors of $T$ if and only if the minimal polynomial of $T$
+  has no repeated zeroes.}
+
+Repeated zeroes in this sense means that if $q$ is a minimal polynomial of $T$, then
+$$q(z) = \prod_{\lambda \in eig(T)}{(z - \lambda)}$$
+where each $\lambda \in eig(T)$ is distinct.
+
+We follow that if $V$ has a basis consisting of eigenvectors of $T$, then
+$$V = E(\lambda_0, T) \oplus E(\lambda_1, T) \oplus ... \oplus E(\lambda_n, T)$$
+where each $\lambda_n$ is an eigenvalue of $T$.  Then we follow that
+$$(T - \lambda_jI )|_{E(\lambda_j, T)} = 0$$
+therefore for any $v \in V$ such that
+$$v = \sum a_j e_j$$
+where $e_j$ is an eigenvector, corresponding to eigenvalue $\lambda_j$ we've got
+that
+$$\prod{(T - \lambda_jI )} a_j e_j  = 0$$
+because $(T - \lambda_j I)$ in the product commute and because $T - \kappa I$ is invariant
+on every $E(\lambda_j, T)$ for every $\kappa \in F$. Thus we follow that
+$\prod{(T - \lambda_jI )} = 0$, therefore we conclude that it's a polynomial multiple of the
+minimal polynomial. Since it doesn't have repeated zeroes, we follow that the minimal polynomial
+does not have them either.
+
+Conversely, suppose that minimal polynomial of $T$ does not have repeated zeroes.
+Then we follow that every generalized eigenvector of $T$ is an eigenvector of $T$,
+which by exercise 8.2.5 gives us that $T$ is has a basis consisting of eigenvectors
+of $T$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $T \in \map(V)$ is normal. Prove that
+  the minimal polynomial of $T$ has no repeated zeroes.}
+
+If $F = C$, then we follow that $T$ is diagonalizable, thus we've got the desired result
+by previous exercise.
+
+Suppose that $F = R$. Suppose that minimal polynomial of $T$ has repeated zeroes and therefore
+there exists $v \in V$ such that for some $\lambda \in R$ we've got that 
+$$(T - \lambda I) v \neq 0$$
+but there exists $j \in N$ such that
+$$(T - \lambda I)^j v \neq 0$$
+thus $v$ is a generalized eigenvector for the value $\lambda$, therefore $v \in G(\lambda, T)$
+
+Because $T$ is normal, we follow that $T$ and $T^*$ commute, therefore we can follow that
+$p(T)q(T^*) = q(T^*)p(T)$ for $p, q \in P(F)$, therefore $(T - \lambda I)$ and $(T - \lambda I)^*$
+commute, therefore they are normal as well.
+
+From the proof of 8.21 we can follow that parts (b) and (c) do not depend on the
+$F$, thus we've got that $(T - \lambda I)|_{G(\lambda, T)}$ is nilpotent. As proven before,
+$(T - \lambda I)$ is normal, therefore $(T - \lambda I)|_{G(\lambda, T)}$ is also normal,
+and because it's nilpotent we follow by exercise 8.1.13 that
+$$(T - \lambda I)|_{G(\lambda, T)} = 0|_{G(\lambda, T)}$$
+thus
+$$T|_{G(\lambda, T)} = \lambda I|_{G(\lambda, T)}$$
+Thus we follow that for our initial $v$
+$$(T - \lambda I)v = Tv - \lambda v = T|_{G(\lambda, T)}v - \lambda v =
+\lambda v - \lambda v = 0$$
+therefore we've got a contradiction.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex inner product space and $S \in \map(V)$ is an isometry.
+  Prove that the constant term in the characteristic polynomial
+  of $S$ has absolute value 1.}
+
+Since $S$ is an isometry, we follow that each eigenvalue of $S$ has absolute value of $1$.
+Suppose that $p$ is a characteristic polynomial of $S$.
+Thus
+$$p(z) = \prod{(z - \lambda )}$$
+where $\lambda$ is an eigenvalue of $S$. We then follow that the constant term (i.e. p(0)) is
+equal to
+$$\prod{( - \lambda )}$$
+thus
+$$|p(0)| = |\prod{( - \lambda )}| = \prod{|( - \lambda )|} = \prod{|\lambda|} = \prod{1} = 1$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $v \in V$.}
+
+\textit{(a) Prove that there exists a unique monic polynomial $p$ of smallest
+  degree such that $p(T)v = 0$}
+
+TODO
 
 \end{document}
 
