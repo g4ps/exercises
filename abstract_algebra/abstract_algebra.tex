@@ -13,6 +13,13 @@
 \DeclareMathOperator \Span {span}
 \DeclareMathOperator \imp {\Rightarrow}
 \DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 
 
@@ -20,433 +27,390 @@
 \maketitle
 \tableofcontents
 
-\chapter{Integers}
+\chapter*{Prelinimaries}
 
-\section{Divisors}
+\section{Basics}
 
 \subsection{}
 
-\textit{Let $m, n, r, s \in Z$. If $m^2 + n^2 = r^2 + s^2 = mr + ns$ , prove that $m = r$ and
-  $n = s$.}
+\textit{Determine which of the following elements of $A$ lie in $B$}
 
-We can state that there are 3 possible cases: $m = r$ and $n = s$, one of the equation holds and
-none of the equations hold. 
+$M$ is defined to be
+$$
+\begin{pmatrix}
+  1 & 1\\
+  0 & 1
+\end{pmatrix}
+$$
 
-If one of the equations does not hold, suppose that $m \neq r$, then we follow that
-$$ns = s^2 = n^2$$, therefore
-$$m^2 + n^2 = mr + ns$$
-$$m^2 + n^2 = mr + n^2$$
-$$m^2 = mr$$
-$$m = r$$
-which is a contradiction. Thus we follow that the case when only one of the equations
-does not hold is impossible.
-
-Suppose now that $m \neq r$ and $n \neq s$. We follow that $(m - r) \neq 0$ and
-$(n - s) \neq 0$. Thus $(m - r)^2 \neq 0$ and $(n - s)^2 \neq 0$. moreover, since
-we've got squares we follow that
-$$(m - r)^2 > 0$$
 and
-$$(n - s)^2 > 0$$
-thus
-$$(m - r)^2 + (n - s)^2 > 0$$
-thus
-$$(m - r)^2 + (n - s)^2 \neq 0$$
-therefore 
-$$(m - r)^2 + (n - s)^2 = m^2 - 2mr + r^2 + n^2 - 2ns + s^2 =
-(m^2 + r^2) + (r^2 + s^2) - 2(mr + ns) \neq 0$$
-Now if we use our identity  $m^2 + n^2 = r^2 + s^2 = mr + ns$, we gonna get that
-$$(m^2 + r^2) + (r^2 + s^2) - 2(mr + ns) = (m^2 + r^2) + (m^2 + r^2) - 2(m^2 + r^2) = 0 \neq 0$$
-which gives us a contradiction. Thus we follow that this case is impossible as well.
-Thus we conclude that $m = r$ and $n = s$, as desired.
+$$B = \{x \in A : MX = XM\}$$
 
-We can prove that simular conclusion holds for reals as well, since we haven't used properties
-that are exclusive for $Z$.
-
-\subsection{}
-
-\textit{For each number between 6 and the next perfect number, make a list containing the number,
-its proper divisors, and their sum}
-
-\begin{verbatim}
-7: 1, sum:  1
-8: 1, 2, 4, sum:  7
-9: 1, 3, sum:  4
-10: 1, 2, 5, sum:  8
-11: 1, sum:  1
-12: 1, 2, 3, 4, 6, sum:  16
-13: 1, sum:  1
-14: 1, 2, 7, sum:  10
-15: 1, 3, 5, sum:  9
-16: 1, 2, 4, 8, sum:  15
-17: 1, sum:  1
-18: 1, 2, 3, 6, 9, sum:  21
-19: 1, sum:  1
-20: 1, 2, 4, 5, 10, sum:  22
-21: 1, 3, 7, sum:  11
-22: 1, 2, 11, sum:  14
-23: 1, sum:  1
-24: 1, 2, 3, 4, 6, 8, 12, sum:  36
-25: 1, 5, sum:  6
-26: 1, 2, 13, sum:  16
-27: 1, 3, 9, sum:  13
-28: 1, 2, 4, 7, 14, sum:  28 PERFECT
-\end{verbatim}
+thus all of the following are in $B$.
+$$
+\begin{pmatrix}
+  1 & 1\\
+  0 & 1
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  0 & 0\\
+  0 & 0
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  0 & 0\\
+  0 & 0
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 0\\
+  0 & 1
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 0\\
+  0 & 1
+\end{pmatrix}
+$$
 
 \subsection{}
 
-\textit{Find the quotent and remainder when $a$ is divided by $b$}
+\textit{Prove that $P, Q \in B \ra P + Q \in B$}
 
-$$99 = 17 * 5 + 14$$
-$$-99 = 17 * (-6) + 3$$
-$$17 = 99 * 0 + 17$$
-$$-1017 = -11 * 99 + 72$$
-
-\subsection{}
-
-\textit{Use the Eucledian algorithm to find the following greatest common divisors.}
-
-$$(35, 14) = (14, 7) = 7$$
-$$(15, 11) = (11, 4) = (4, 3) = (3, 1) = 1$$
-$$(252, 180) = (180, 72) = (72, 36) = 36$$
-$$(513, 187) = (187, 139) = (139, 48) = (48, 43) = (43, 5) = (5, 3) = (3, 2) = (2, 1) = 1$$
-$$(7655, 1001) = (1001, 648) = (648, 353) = (353, 295) = $$
-$$ = (295, 58) = (58, 5) = (5, 3) = (3, 2) = (2, 1) = 1$$
+Suppose that $P, Q \in B$. Then we follow that
+$$(P + Q)M = PM + QM = QM + PM = (Q + P)M$$
+where we've used distributive and commutativity under addition for matrices
 
 \subsection{}
 
-\textit{Use the Eucledian algorith to find the following greatest common divisors}
+\textit{Prove that $P, Q \in B \ra PQ \in B$}
 
-$$(6643, 2873) = (2873, 897) = (897, 182) = (182, 169) = (169, 13) = 13$$
-$$(7684, 4148) = (4148, 3536) = (3536, 612) = (612, 476) = (476, 136) = (136, 68) = 68$$
-$$(26460, 12600) = (12600, 1260) = 1260$$
-$$(6540, 1206) = (1206, 510) = (510, 186) = (186, 138) = (138, 48) = (48, 42) = (42, 6) = 6$$
-$$(12081, 8439) = (8439, 3642) = (3642, 1155) = $$
-$$ = (1155, 177) = (177, 93) = (93, 84) = (84, 9) = (9, 3) = 3$$
-
-\subsection{}
-\subsection{}
-\textit{Skipped}
-
-\subsection{}
-
-\textit{Let $a, b, c \in Z$. Give a proof for these facts about divisors:}
-
-\textit{(a) If $b|a$, then $b|ac$}
-
-Suppose that $b|a$. We follow that $a = qb$ for some $q \in Z$. Thus we follow that
-$ca = cqb$. Thus $b|ac$, as desired.
-
-\textit{(b) If $b|a$ and $c|b$, then $c|a$}
-
-We follow that $a = qb$ and $b = wc$ for some $w, q \in Z$. Thus $a = wqc$, thus $c|a$.
-
-\textit{(c) If $c|a$ and $c|b$, then $c|(ma + nb)$}
-
-We follow that since $c|a$ and $c|b$ that $c|(a, b)$. We follow that $(a, b)|(ma + nb)$, since
-$ma + nb$ is a linear combination of $a, b$. Thus by previous point we follow
-$c | (ma + nb)$.
-
-\subsection{}
-
-\textit{Let $a, b, c \in Z$ are such that $a + b + c = 0$. Show that if $n \in Z$
-  and $n$ is a divbvisor of two of the three integers, then it is also a divisot of the third.}
-
-Suppose that $n|a$ and $n|b$. Then we follow that $n|(a, b)$. Since $-a - b = c$ we follow that
-$(a, b) | c$, thus $n|c$, as desired.
-
-\subsection{}
-
-\textit{Let $a, b, c \in Z$.}
-
-\textit{(a) Show that if $b|a$ and $b|(a + c)$, then $b|c$.}
-
-We follow that $\exists q, w \in Z$ such that 
-$$a = qb $$
-$$a + c = wb$$
-thus 
-$$qb + c = wb$$
-$$c = wb - qb$$
-$$c = b(w - q)$$
-$$b | c$$
-
-\textit{(b) Show that if $b|a$ and $b\not|c$ the $b \not | (a + c)$.}
-
-If $b \not | c$, then we follow that there exists $q, w, r \in Z$ such that $0 < r < b$ and 
-$$a = qb \land c = wb + r$$
-thus
-$$a + c = (q + w)b + r$$
-thus $b \not | (a + c)$ as desired.
-
-\subsection{}
-
-\textit{Let $a, b, c \in Z$ and $c \neq 0$. Show that $bc | ac$ iff $b | a$.}
-
-Suppose that $bc | ac$. This means 
-$$ac = qbc$$
-and since $c \neq 0$ we follow that it is equivalent to 
-$$a = qb$$
-i.e. $b|a$. Since every implication here is an equivalence, we follow that we've got a
-converse as well.
-
-\subsection{}
-
-\textit{Show that if $a > 0$, then $(ab, ac) = a(b, c)$}
-
-We follow that there exist $m, n \in Z$ such that 
-$$(b, c) = mb + nc$$
-thus
-$$a(b, c) = a(mb + nc)$$
-$$a(b, c) = m(ab) + n(ac)$$
-therefore we follow that $a(b, c)$ is a multiple of $(ac, bc)$, thus $(ac, bc)|a(b, c)$
-
-$(b, c)| b$ and $(b, c)| c$, thus $a(b, c) | ab$ and $a(b, c) | ac$, thus $a(b, c) | (ab, ac)$.
-Thus we follow that $(ac, bc) = a(b, c)$, as desired.
-
-\subsection{}
-
-\textit{Show that if $n$ is any integer, then $(10n + 3, 5n + 2)  = 1$}
-
-We know that gcd is a smallest positive linear combination of $10 n + 3$ and $5n + 2$. Thus
-
-$$-(10 n + 3) + 2(5n + 2) = -10n - 3 + 10n + 4 = 1$$
-Since gcd is a smallest positive linear combination of $10n + 3$ and $5n + 2$, and there
-is no smaller positive number then 1, we follow that $(10n + 3, 5n + 2) = 1$, as desired.
-
-\subsection{}
-
-\textit{Show that if $n$ is any integer then $(a + nb, b) = (a, b)$}
-
-We follow that $(a, b)$ is the least positive linear combination of $a, b$. Also,
-$(a + nb, b)$ is the least linear combination of $a + nb$ and $b$. Since
-$$q(a + nb) + wb = qa + qnb + wb = qa + (qn - w) b$$
-we follow that $(a + nb, b)$ is also the linear combination of $a$ and $b$ (because $qn + w$
-with fixed $qn$ can be still any number). Since
-there is only one positive linear combination of $a$ and $b$, we follow that
-$(a + bn, b) = (a, b)$, as desired.
-
-\subsection{}
-
-\textit{For what positive integers $n$ is it true that $(n, n + 2) = 2$? Prove your claim.}
-
-It appears that it is true for all even numbers. It is certainly true, that if $n$
-is even, then $n + 2$ is also even, therefore both of them are divisible by 2.
-
-We know that $(a, b) = (b, a)$, thus we follow that $(n, n + 2) = (n + 2, n)$.
-
-Suppose that $n$ is even
-By euclidean algoritm we've got that
-$$(n + 2) = 1(n) + 2$$
-thus
-$$(n + 2, n) = (n, 2) = 2$$
-Thus if $n$ is even, then $(n, n + 2) = 2$.
-
-If $n = 1$, then $(n + 2, n) = (3, 1) = 1$.
-
-If $n > 1$ and $n$ is odd, then there exists $k \in N$ such that $k \geq  1$ and  $n = 2k + 1$.
-THus we follow that $n + 2 = 2k + 1 + 2 = 2k + 3$. Thus 
-$$(2k + 3) = 1*(2k + 1) + 2$$
-since $k \geq 1$, we follow that $0 \leq 2 \leq 2k + 1$.
-Thus we can conclude that
-$$(n + 2, n) = (2k + 3, 2k + 1) = (2k + 1, 2) = 1$$
-
-Therefore we follow that the only positive numbers such that $(n, n + 2) = 2$ are
-the even numbers.
-
-\subsection{}
-
-\textit{Show that the positive integer $n$ is the difference of two squares if and
-  only if $n$ is odd or divisible by 4.}
-
-Let $n \in Z^+$ and  $a, b \in Z$ be such that $a^2 - b^2 = n$.
-
-We follow that since $n \geq 0$, than $a^2 - b^2 \geq 0$, therefore $a^2 \geq b^2$.
-Since $a^2 = (-a)^2$, let us assume that $a, b \geq 0$, because other cases will be trivial.
-
-Since $a^2 \geq b^2$, we follow that $a \geq b$, therefore there exists $r$ such that
-$b + r = a$. Thus
-$$n = a^2 - b^2 = (b + r)^2 - b^2 = b^2 + 2br + r^2 - b^2 = 2br + r^2$$
-We've got that $r$ is either odd or even. If $r$ is odd, then $r^2$ is odd as well. Thus
-the sum of the even number $2br$ and odd $r^2$ is odd. Therefore $n$ is odd as well.
-If $r$ is even, then there exists $k \in N$ such that $r = 2k$. Thus
-$$n = 2br + r^2 = 2b2k + (2k)^2 = 4bk + 4k^2 = 4(bk + k^2)$$
-thus we follow that $n$ is divisible by 4. Therefore we follow that $n$ is either
-odd or divisible by 4, as desired.
-
-Conversely, suppose that $n \in Z^+$ is either odd or divisible by 4.
-
-If $4|n$, then we follow that there exists $k \in N$ such that $n = 4k$. Thus
-we follow that
-$$(k + 1)^2 - (k - 1)^2 = k^2 + 2k + 1 - k^2 + 2k - 1 = 4k = n$$
-thus we follow that $n$ is the difference of two squares.
-
-If $n$ is odd, then we follow that there exists $k \in N$  such that $n = 2k - 1$. Thus
-we follow that
-$$k^2 - (k - 1)^2 = k^2 - k^2 + 2k - 1 = 2k - 1 = n$$
-
-Thus we follow that if $n$ is divisible by 4 or is odd, then it is the difference of two squares,
+Suppose that $P, Q \in B$. Thus we follow that $PM = MP$ and $QM = MQ$. Thus
+$$(PQ)M = PQM = P(QM) = P(MQ) = PMQ = (PM)Q = (MP)Q = M(PQ)$$
 as desired.
 
 \subsection{}
 
-\textit{Show that the positive integer $k$ is the difference of two odd squares if and
-  only if $k$ is divisible by 8}
+\textit{Find conditions on $p, q, r, s$, which determine precisely when
+$$
+\begin{pmatrix}
+  p & q \\
+  r & s
+\end{pmatrix} \in B
+$$ }
 
-Suppose that $n$ is the difference between two odd squares. Thus we follow that
-$$n = (2k + 1)^2 - (2n + 1)^2$$
-if we expand and contract this expression, then we'll get
-$$n = 4(k - n)(n + k + 1)$$
-We follow that if both $n$ and $k$ are odd or both of them are even, then $(n - k)$ is even.
-If one of them is odd while the other one is even, then $(n + k + 1)$ is even. Thus we
-follow that $(k - n)(n + k + 1)$ is even, therefore there exists $q$ such that
-$$2q = (k - n)(n + k + 1)$$
-thus
-$$n = 4 * 2q = 8q$$
-thus we follow that $n$ is divisible by 8.
-
-Suppose that $n$ is divisible by 8. Then we follow that there exists $k$ such that
-$n = 8k$. Thus
-$$(2k + 1)^2 - (2 k - 1)^2 = 8k = n$$
-thus $n$ is the difference between two odd squares.
-
-\subsection{}
-
-\textit{Give a detailed proof of the statement in the text that if $a$ and $b$ are integers,
-  then $b|a$ if and only if $aZ \subseteq bZ$.}
-
-Suppose that $b|a$. Then we follow that $a = qb$ for some $q \in Z$.
-Suppose that $n \in aZ$. Then we follow that $n = wa$ for some $w \in Z$. Thus
-$n = wqb$, therefore $n \in bZ$. Thus we follow that $aZ \subseteq bZ$.
-
-Conversely, suppsoe that $aZ \subseteq bZ$. We follow that because $a = 1a$ we can state that
-$a \in aZ$. Thus $a \in bZ$, threfore by definition of $bZ$ we follow that there exists
-$q \in Z$ such that $a = qb$. Thus $b | a$, as desired.
-
-\subsection{}
-
-\textit{Let $a, b, c \in Z \land b > 0 \land c > 0 \land a = qb + r$.}
-
-$$a = qb + r \lra ca = c(qb + r) = cqb + cr = (cq)b + cr$$
-Since $r < b$, we follow that $cr < cb$, thus everything holds.
-(Skipping (b) because I'm lazy )
-
-
-\subsection{}
-
-\textit{Let $a, b, n \in Z \land n > 1$. Suppose that $a = nq_1 + r_1$ with $0 \leq r1 < n$
-  and $b = nq_2 + r_2$ with $0 \leq r_2 < n$. Prove that $n | (a - b)$ if and only if $r_1 = r_2$.
-}
-
-Suppose that $n | (a - b)$.
-$$(a - b) = n q_1 + r_1 - (nq_2 + r_2) = n(q_1 - q_2) + (r_1 - r_2)$$
-Since $0 \leq r_1, r_2 < n$, we follow that $-n < (r_1 - r_2) < n$, thus we follow that
-if $r_1 \neq r_2$, then we've got a contradiction. Converse case is trivial.
+$$
+\begin{pmatrix}
+  p & q \\
+  r & s
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 1 \\
+  0 & 1
+\end{pmatrix} =
+\begin{pmatrix}
+  p & p + q \\
+  r & r + s
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 1 \\
+  0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+  p & q \\
+  r & s
+\end{pmatrix} = 
+\begin{pmatrix}
+  p + r & q + s\\
+  r & s
+\end{pmatrix}
+$$
+thus we follow that we need to have
+$$
+\begin{pmatrix}
+  p + r & q + s\\
+  r & s
+\end{pmatrix} =
+\begin{pmatrix}
+  p & p + q \\
+  r & r + s
+\end{pmatrix}
+$$
+thus we follow that the matrix is in $B$ if and only if $r = 0$ and $p = s$. (ocave seems
+to support this point).
 
 \subsection{}
 
-\textit{Show that any nonempty set of integers that is closed under substraction must also
-  be closed under addition.}
+\textit{Determine whether the following functions $f$ are well-defined: }
 
-I personally like closure under additive inverse and closure under addition, but whatever.
+\textit{(a)}
+$$f: Q \to Z: f(a/b) = a$$
+If we assume that $a/b$ is in form, where $b > 0$ and $a/b$ in their lower terms, then the
+function is well-defined. Otherwise, we've got that
+$$2/4 = 1/2$$
+but
+$$f(2/4) = 2 \neq 1 = f(1/2)$$
 
-Suppose that $S$ is closed under substraction and let $a_1, a_2 \in S$. We follow that
-$$a_2 \in S$$
-$$a_2 - a_2 = 0 \in S$$
-$$0 - a_2 = -a_2 \in S$$
-$$a_1 -(- a_2) = a_1 + a_2 \in S$$
-thus the set is closed under addition, as desired.
+\textit{(b)}
+$$f: Q \to Q: f(a/b) = a^2/b^2$$
+is indeed well-defined, since for every $a \in Q$ there is only one square.
+
+\subsection{}
+\textit{Determine whether the function $f: R^+ \to Z$ defined by mapping a real number $r$
+  to the first digit to the right of the decimal point in a decimal expansion of $r$ is
+  well-defined.}
+
+This is a somewhat trick question, since we've got that
+$$1 = 0.99999999...$$
+which in this case gives us that $f$ is not well-defined.
 
 \subsection{}
 
+\textit{Let $f: A \to B$ be a surjective map of sets. Prove that the relation
+  $$a \sim b \lra f(a) = f(b)$$
+  is an equivalence relation whose equivalence classes are the fibers of $f$.}
+
+$$f(a) = f(a) \ra a \sim a$$
+$$(f(a) = f(b) \land f(b) = f(c) \ra f(a) = f(c)) \ra (a \sim b \land b \sim c \ra a \sim c )$$
+$$a \sim b \ra f(a) = f(b) \ra f(b) = f(a) \ra b \sim a$$
+which gives us reflexive, transitive and symmetric properties, thus $\sim$ is an
+equivalence relation.
+
+We follow that if $x \in B$ and $a, b \in f\inv(\{x\})$, then $a \sim b$ by definition.
+Suppose that $a \sim b$. Then we follow that $f(a) = f(b)$, therefore
+$a \in f\inv(\{f(a)\}) \land b \in f\inv(\{f(a)\})$. Thus we follow that
+if $a \sim b$, then they are fibers for the same value.
+Thus we follow that $a \sim b$ if and only if $(\exists x \in B)( a, b \in f\inv(\{x\})$.
+Thus we follow that fibers of $f$ are indeed the equivalence classes for $\sim$.
+
+\section{Properties of the Integers}
+
 \subsection{}
 
-skip
-
-\subsection{}
-
-\textit{Show that 3 divides the sum of the cubes of any three consecutive positive integers}
-
-Suppose that $n \in Z^+$. Then we follow that the sum of cubes of 3 consecutive
-numbers is equal to
-$$n^3 + (n + 1)^3 + (n + 2)^3 = n^3 + n^3 + 3n^2 + 3n + 1 + n^3 + 6n^2 + 12n + 8 =$$
-$$ = 3n^3 + 9n^2 + 15n + 9 = 3(n^3 + 3n^2 + 5n + 3)$$
-thus it is divisible by 3, as desired.
-
-It's also divisible by $n + 1$, since
-$$3(n^3 + 3n^2 + 5n + 3) = 3(n + 1)(n^2 + 2n + 3)$$
-
-\subsection{}
-
-\textit{Find all integers $x$ such that $3x + 7$ is divisible by 11}
-
-Suppose that
-$$Y = \{y \in Z: (\exists x \in Z)(y = 11x + 5)\}$$.
-Then we follow that
-$$3(11 x + 5) + 7 = 33x + 22 = 11(3x + 2)$$
-thus $x \in Y \to 11|3x + 7$.
-
-Can't find the other inclusion.
-
-\textit{Rest of the exercises is left for better days.}
-
-\subsection{Primes}
-
-\subsection*{1.2.4}
-
-\textit{Find all positive integers less than 60 and relatively prime to 60}
+\textit{Find GCD and LCM for following numbers and find integers $x$ and $y$ such that
+  $ax + by = gcd(a, b)$}
 
 \begin{verbatim}
-( 1 , 60) =  1
-( 7 , 60) =  1
-( 11 , 60) =  1
-( 13 , 60) =  1
-( 17 , 60) =  1
-( 19 , 60) =  1
-( 23 , 60) =  1
-( 29 , 60) =  1
-( 31 , 60) =  1
-( 37 , 60) =  1
-( 41 , 60) =  1
-( 43 , 60) =  1
-( 47 , 60) =  1
-( 49 , 60) =  1
-( 53 , 60) =  1
-( 59 , 60) =  1
+gcd:   1; lcm:        260, 2 * 20 + -3 * 13 = 1
+gcd:   3; lcm:       8556, 27 * 69 + -5 * 372 = 3
+gcd:  11; lcm:      19800, 8 * 792 + -23 * 275 = 11
+gcd:   3; lcm:   21540381, -126 * 11391 + 253 * 5673 = 3
+gcd:   1; lcm:    2759487, -105 * 1761 + 118 * 1567 = 1
+gcd: 691; lcm:   44693880, -17 * 507885 + 142 * 60808 = 691
 \end{verbatim}
 
-\subsection*{1.2.5}
+\subsection{}
 
-\textit{Let $p_1, ..., $ be the sequence of primes and set $a_1 = p_1 + 1$,
-  $a_2 = p_1 p_2 + 1$ and so on. What is the least $n$ such that $a_n$ is composite}
+\textit{Prove that if the integer $k$ divides the integers $a$ and $b$, then $k$ divides
+  $as + bt$ for every pair of integers $s$ and $t$}
 
+We follow that because $k$ divides both $a$ and $b$ it also divides $(a, b)$.
+Since $(a, b)$ divides both $a$ and $b$ we follow that there exist $q, w \in Z$ such that
+$a = q(a, b), b = w(a, b)$.
+Thus
+$$as + bt = q(a, b) + w(a, b) = (q + w) (a, b)$$
+thus we follow that $(a, b)$ divides $as + bt$. Since $|$ is transitive, we follow that
+$k | (a, b)$ and $(a, b)| as + bt$ implies that $k | as + bt$, as desired.
 
-$$2 * 3 * 5 * 7 * 11 * 13 + 1 = 30031 = 59 * 509$$
+(We could've actually skip this part, don't know why I've used it)
 
-\subsection*{1.2.9}
+\subsection{}
 
-$$2, 1, 2, 2$$
+\textit{Let $a, b, N$ be fixed integers with $a, b \neq 0$ and let $d = (a, b)$. Suppose that
+  $x_0, y_0 \in Z$ are such that $ax_0 + by_0 = N$. Prove that
+  $$a(x_0 + \frac{b}{d}t) + b(y_0 - \frac{a}{d}t) = N$$
+}
 
-\subsection*{1.2.10}
+$$a(x_0 + \frac{b}{d}t) + b(y_0 - \frac{a}{d}t) =
+a x_0 + a \frac{b}{d}t + by_0 - b\frac{a}{d}t =
+a x_0 + by_0 + t( \frac{ab}{d} - \frac{ab}{d}) =$$
+$$ = 
+a x_0 + by_0 + t( 0) =
+N + 0 = N
+$$
 
-\textit{Prove that $n^4 + 4$ is composite if $n > 1$}
+\subsection{}
 
-If $n$ is even, then the sum is even, therefore it's composite. If $n$ is odd, then there exists
-$k \in N$ such that $n = 2k + 1$. Thus
-$$n^4 + 4 = (2k + 1)^4 + 4 = 16k^4 + 32 k^3 + 24k^2 + 8k + 5 = (4k^2 + 1)(4k^2 + 8k + 5)$$
-thus we follow that it's composite.
+\textit{Determine the value $\phi(n)$ for each integer $n \leq 30$ where $\phi$
+  denotes the Euler $\phi$-function}
 
-\section{Congruences}
+\begin{verbatim}
+phi(1) = 1
+phi(2) = 1
+phi(3) = 2
+phi(4) = 2
+phi(5) = 4
+phi(6) = 2
+phi(7) = 6
+phi(8) = 4
+phi(9) = 6
+phi(10) = 4
+phi(11) = 10
+phi(12) = 4
+phi(13) = 12
+phi(14) = 6
+phi(15) = 8
+phi(16) = 8
+phi(17) = 16
+phi(18) = 6
+phi(19) = 18
+phi(20) = 8
+phi(21) = 12
+phi(22) = 10
+phi(23) = 22
+phi(24) = 8
+phi(25) = 20
+phi(26) = 12
+phi(27) = 18
+phi(28) = 12
+phi(29) = 28
+phi(30) = 8
+\end{verbatim}
 
-\subsection*{1.3.1}
+\subsection{}
 
-\textit{Solve the following congruences}
+\textit{Prove the WOP of $Z$ by induction and prove the minimal element is and prove
+  the minimal element is unique.}
 
-$$4 * 2  \equiv 1 \pmod 7 $$
-$$2 * 5  \equiv 1 \pmod 9 $$
-$$5 * 13  \equiv 1 \pmod {32} $$
-$$19 * 19  \equiv 1 \pmod {36} $$
+GOTO set theory book
 
+\subsection{}
 
+\textit{If $f$ is a prime prove that there do noe exist nonzero integers $a$ and $b$
+  such that $a^2 = pb^2$}
 
+We follow that $a$ and $b$ can be represented as multiples of primes. Therefore
+the powers of primes, that represent $a^2$ and $b^2$ are even.
+Since the power of $p$ in $pb^2$ is not even, we follow that such numebers do not exist,
+as desired
+
+\subsection{}
+
+\textit{Let $p$ be a prime, $n \in Z^+$. Find a formula for the largest power of $p$
+  which divides $n!$}
+
+We follow that every $p$'th number is a multiple of $p$. Thus the amount of
+of multiples of $p$ in the list $1, 2, ..., n$ is $\lfloor n / p \rfloor$.
+To those we need to add the number of multiples of $p^2$, of which there will be
+$\lfloor n / p^2 \rfloor$, and thus we follow that the number of multiples of $p$ in $n$ is
+$$\sum_{i = 1}^n{\lfloor n / p^i\rfloor}$$
+Since for every prime  number we've got that $p^n > n$, we can follow that this formula will do.
+
+\subsection{}
+
+\textit{Write a computer program to determine ....}
+
+Way ahead of you, check congr.py in progs.
+
+\textit{Rest is left for later}
+
+\section{$Z/n Z$: The Integers Modulo $n$}
+
+\subsection{}
+\textit{Write down explicitly all the elements in the residue classes $Z/18Z$.}
+
+$$\overline{1}, \overline{2}, ... , \overline{17}$$
+
+\subsection{}
+
+\textit{Prove that the distinct equivalence classes in $Z/nZ$ are precisely
+  $\overline{0}, ..., \overline{n - 1}$.}
+
+Suppose that $q \in N$. We follow that $q = an + r$, where $0 \leq r < n$, thus we follow that
+$q \in \overline{r}$. Therefore every integer is in one of those sets. Since $r$ is
+unique, we follow that $q$ is only in one of those sets.
+
+\subsection{}
+
+\textit{Prove that of $a = a_n 10^n + a_{n - 1}10 ^{n - 1} + .... + a_1 10 + a_0$ is any positive
+  integer then $a \equiv \sum{a_n} \mod 9$.}
+
+We follow that $10 \equiv 1 \mod 9$, and therefore $10^n \equiv 1 \mod 9$ for any $n \in Z$.
+Thus we can follow that
+$$10 a_n \equiv a_n \mod 9$$
+and in general
+$$10^n a_n \equiv a_n \mod 9$$
+therefore
+$$\overline{a_n 10^n} = \overline{a_n}$$
+and since
+$$\sum {\overline{a_n}} = \overline{\sum a_n}$$
+we follow the desired result.
+
+\subsection{}
+
+\textit{Compute the remainder when $37^{100}$ is divided by $29$}
+
+We follow that 
+$$37^{100} \equiv 8^{100} \mod {29}$$
+thus
+$$8^ 1 \equiv 8 \mod{29}$$
+$$8^ 2 \equiv 6 \mod{29}$$
+$$8^ 4 \equiv 36 \equiv 7 \mod{29}$$
+$$8^{8} \equiv 49 \equiv 20 \mod{29}$$
+$$8^{10} \equiv 120 \equiv 4 \mod{29}$$
+$$8^{20} \equiv 16 \mod{29}$$
+$$8^{40} \equiv 256 \equiv 24 \mod{29}$$
+$$8^{50} \equiv 96 \equiv 9 \mod{29}$$
+$$8^{100} \equiv 81 \equiv 23 \mod{29}$$
+thus we follow that $37^{100}$ divided by 29 gives us the answer 23.
+
+\subsection{}
+
+$$9^{1500} = ...01$$
+
+\subsection{}
+
+\textit{Prove that the squares of the elements in $Z/4Z$ are jsut $0$ and $1$}
+
+We follow that
+$$0^2 = 0$$
+$$1^2 = 1$$
+$$2^2 = 4 \equiv 0 \mod 4 $$
+$$3^2 = 9 \equiv 1\mod 4 $$
+so yeah
+
+\subsection{}
+
+\textit{Prove for any integers $a$ and $b$ that $a^2 = b^2$ never leaves a remainder of $3$
+  when divided by 4}
+
+From previous exercise we follow that
+$$a^2 \equiv [0, 1] \mod 4$$
+$$b^2 \equiv [0, 1] \mod 4$$
+thus
+$$a^2 + b^2  \equiv [0, 1, 2] \mod 4$$
+
+\subsection{}
+
+\textit{Prove that the equation $a^2 + b^2 = 3c^2$ has no nonzero integer solutions}
+
+We follow from previous exercise that $a^2 + b^2 \equiv [0, 1, 2] \mod 4$, and
+$c^2 \equiv [0, 1] \mod 4$, therefore $3c^2 \equiv [0, 3] \mod 4$. Thus we follow that
+the only possible case is when $a^2 + b^2 \equiv 3c^2 \equiv 0 \mod 4$. Thus we follow
+all of the $a^2$, $b^2$ and $c^4$ have the factor of $4$. Thus there exist
+$a_0, b_0, c_0$ such that $a^2 = 4^n a_0^2$, $b^2 = 4^n b_0^2$ $c^2 = 4^n c_0^@$
+and $a_0^2, b_0^2, c_0^2$ are not divisible by $4$ (otherwise we get a contradiction).
+Thus we follow that
+$$a_0^2 +  b_0^2 = 3c_0^2$$
+all of which are not divisible by 4, which gets us a contradiction, as desired.
+
+\subsection{}
+
+\textit{Prove that the square of any odd integer always leaves a remainder of $1$ when
+  divided by $8$}
+
+We follow that remainders  of squares of congruent classes of $8$ are
+$$0 1 4 1 0 1 4 1$$
+thus we follow the desired conclusion.
+
+\textit{Rest of the exercises is are left for the better times}
 
 \end{document}
 %%% Local Variables:
