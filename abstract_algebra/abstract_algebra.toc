@@ -25,4 +25,6 @@
 \contentsline {subsection}{\numberline {0.3.7}}{9}{subsection.0.3.7}%
 \contentsline {subsection}{\numberline {0.3.8}}{9}{subsection.0.3.8}%
 \contentsline {subsection}{\numberline {0.3.9}}{9}{subsection.0.3.9}%
-\contentsline {subsection}{\numberline {0.3.10}}{9}{subsection.0.3.10}%
+\contentsline {chapter}{\numberline {1}Introduction to Groups}{10}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Basic Axioms and Examples}{10}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Dihedral Groups}{18}{section.1.2}%

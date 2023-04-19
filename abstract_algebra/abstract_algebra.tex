@@ -309,7 +309,13 @@ Since for every prime  number we've got that $p^n > n$, we can follow that this 
 
 Way ahead of you, check congr.py in progs.
 
-\textit{Rest is left for later}
+% \subsection{}
+
+% \textit{Prove for any $N \in Z^+$ there exists only finitely many integers $n$ such that
+%   $\phi(n) = N$.}
+
+
+
 
 \section{$Z/n Z$: The Integers Modulo $n$}
 
@@ -410,7 +416,541 @@ We follow that remainders  of squares of congruent classes of $8$ are
 $$0 1 4 1 0 1 4 1$$
 thus we follow the desired conclusion.
 
-\textit{Rest of the exercises is are left for the better times}
+% \subsection{}
+
+% \textit{Prove that the number of elements of $(Z/nZ)^\times$ is $\phi(n)$ where $\phi(n)$
+%   denotes the Euler function.}
+
+
+\chapter{Introduction to Groups}
+
+\section{Basic Axioms and Examples}
+
+\textit{Let $G$ be a group}
+
+\subsection*{1.1.1}
+
+\textit{Determine which of the follow ing binary operations are associative}
+
+\textit{(a) }
+$$Z$$
+$$a \star b = a - b$$
+$$(a - b) - c = a - b - c = a - (b + c)$$
+therefore it is not associative
+
+\textit{(b) }
+$$R$$ 
+$$a \star b = a + b + ab$$
+$$(a \star b ) \star c = (a + b + ab) \star c = (a + b + ab) + (c) + (ca + cb + abc)$$
+$$a \star (b \star c) = a \star (b + c + bc) = (a) + (b + c + bc) + (ab + ac + abc)$$
+$$(a + b + ab) + (c) + (ca + cb + abc) - ( (a) + (b + c + bc) + (ab + ac + abc)) = $$
+$$ = 0$$
+therefore it is associative.
+
+\textit{(c) }
+$$Q$$ 
+$$a \star b = \frac{a + b}{5}$$
+$$(a \star b ) \star c = \frac{a + b}{5} \star c = \frac{\frac{a + b}{5} + c}{5} =
+\frac{a + b + 5c}{25}$$
+$$a \star (b \star c) = a \star \frac{b + c}{5} = \frac{a + \frac{b + c}{5}}{5} =
+\frac{5a + b + c}{25}$$
+therefore it is not associative.
+
+\textit{(d) }
+$$Z \times Z$$ 
+$$(a, b) \star (c, d) = (ad + bc, bd)$$
+$$((a, b) \star (c, d)) \star (e, f) = (ad + bc, bd) \star (e, f) =
+((ad + bc) f + bde, bdf) = (adf + bcf + bde, bdf) $$
+$$(a, b) \star ((c, d) \star (e, f) = (a, b) \star (cf + de, df) =
+(adf + b(cf + de), bdf) = (adf + bcf + bde, bdf)$$
+therefore it is associative.
+
+\textit{(e) }
+$$Q \setminus \{0\}$$ 
+$$a \star b = \frac{a}{b}$$
+$$a \star (b \star c) = a \star \frac b c = \frac{a}{\frac{b}{c}} = \frac{ac}{b}$$
+$$(a \star b) \star c = \frac{a}{b} \star c = \frac{\frac{a}{b}}{c} = \frac{ac}{b}$$
+therefore it is associative.
+
+\subsection*{1.1.2}
+
+\textit{Decide which of the binary operations in the preceeding exercise are commutative}
+
+b and c
+
+\subsection*{1.1.3}
+
+\textit{Prove that addition of residue clases in $Z/nZ$ is associative}
+
+$$\overline{a} + (\overline{b} + \overline{c}) = \overline a + \overline{b + c} =
+\overline{a + b + c} = \overline{a + b} + \overline{c} = (\overline{a} + \overline{b} ) +
+\overline{c}$$
+
+\subsection*{1.1.4}
+
+\textit{Prove that multiplication of residue clases in $Z/nZ$ is associative}
+
+analogous to previous
+
+\subsection*{1.1.5}
+
+\textit{Prove that for all $n > 1$ that $Z/nZ$ is not a group under multiplication}
+
+We follow that there is no invevrse of $\overline{0}$, $Z/nZ$ is not a group
+
+\subsection*{1.1.6}
+
+\textit{Determine which of the following sets are groups under addition}
+
+Sums are associative for every following group, therefore I'll skip discussion about them.
+
+\textit{(a) Rationals, whose denominators are odd}
+
+Is a group, denominator of the sum is a divisor
+of product of two odd numbers, and therefore it is odd itself, and inverses of given
+elements have same denominators as the elements themselves.
+
+\textit{(b) Rationals. whose denominators are even}
+
+$$1/2 + 1/2 = 1/1$$
+therefore it is not closed under addition, and therefore it is not a group.
+
+\textit{(c) The set of rational numbers of absolute value $< 1$}
+
+$$0.7 + 0.7 = 1.4$$
+therefore it is not closed under addition, and therefore it is not a group.
+
+\textit{(d) the set of rationals of absolute value $ \geq 1$, together with $0$}
+
+$$-1.5 + 1 = 0.5$$
+therefore it is not closed under addition, and therefore it is not a group.
+
+\textit{(e) the set of rationals, with denominators equal to $1$ or $2$ (or $3$)}
+
+Is a group under addition.
+
+\subsection*{1.1.7}
+
+\textit{Let $G = \{x \in R: 0 \leq x < 1\}$ and for $x, y \in G$ let $x \star y$
+  be the fractional part of $x + y$. Prove that $\star$ is a well-defined binary
+  operation on $G$ and that $G$ is an abelian group under $\star$.}
+
+Since $\lfloor \cdot \rfloor$ is a well-defined function, we follow that
+there exists unique $\lfloor x + y \rfloor$ for given $x, y \in R$,
+and therefore $x + y - \lfloor x + y \rfloor$ is a well-defined on $R \times R \to R$.
+
+Let $x, y \in G$. Then we follow that $0 \leq x + y < 2$, therefore
+we've got two cases: if $x + y < 1$ or $1 \leq x + y  \leq 2$. In former
+case we follow that $\lfloor x + y \rfloor = 0$, therefore
+$$0 \leq x \star y = x + y < 1$$. In the latter case we've got that
+$$\lfloor x + y \rfloor = 1$$, therefore $x \star y = x + y - 1$ and thus
+$0 \leq x \star y = x + y - 1 < 1$. 
+Therefore $x, y \in G \ra x \star y \in G$, therefore we can state
+that $\star: G \times G \to G$ is a well-defined function on $G$.
+
+Thus
+$$x \star (y \star z) = x \star (y + z - \lfloor y + z \rfloor )
+= x + y + z - \lfloor y + z \rfloor - \lfloor x + y + z - \lfloor y + z \rfloor  \rfloor $$
+$$(x \star y) \star z = (x  + y - \lfloor x + y \rfloor) \star z =
+x + y + z - \lfloor x + y \rfloor - \lfloor x + y + z - \lfloor x + y \rfloor \rfloor $$
+
+We follow that for every $n \in Z$ we've got that $\lfloor n \rfloor = n$. It is also
+pretty straightforward (although I can't seem to produce a concrete proof for now)
+to check that $\lfloor x + n \rfloor = \lfloor x \rfloor + n$
+for every $n \in Z$. Since $\lfloor x \rfloor \in Z$ for every $x \in R$ we follow that
+$$(x \star y) \star z = $$
+$$ = x + y + z - \lfloor y + z \rfloor - \lfloor x + y + z - \lfloor y + z \rfloor  \rfloor  =
+x + y + z - \lfloor y + z \rfloor - \lfloor x + y + z   \rfloor + \lfloor y + z \rfloor =
+$$
+$$ =  x + y + z - \lfloor x + y + z   \rfloor = 
+x + y + z - \lfloor x + y \rfloor - \lfloor x + y + z \rfloor + \lfloor x + y \rfloor = $$
+$$ =  x + y + z - \lfloor y + z \rfloor - \lfloor x + y + z - \lfloor y + z \rfloor  \rfloor =
+x \star (y \star z)$$
+therefore $\star$ is an associative function.
+
+By definition, $0 \in G$, therefore
+$$0 \star x = 0 + x + \lfloor 0 + x \rfloor = x + \lfloor x \rfloor = x = x \star 0$$
+thus we've got the indentity in $G$.
+
+For $0$ we've got that it is an inverse of itself. 
+For every $x \in G \setminus \{0\}$  we can follow that $1 - x \in G$ therefore
+$1 - x \star x = x + 1 - x + \lfloor 1 \rfloor = 0$
+therefore for every $x \in G$ we've got the identity.
+
+Thus we can follow that $\eangle{G, \star}$ is indeed a group.
+
+We also follow that $x \star y = x + y - \lfloor x + y \rfloor
+= y + x - \lfloor y + x \rfloor  = y \star x$
+therefore given group is also abelian, as desired.
+
+\subsection*{1.1.9}
+
+\textit{Let $G = \{a + b \sqrt{2} \in R: a, b \in Q\}$.}
+
+\textit{Prove that $G$ is a group under addition.}
+
+Let $x, y, z \in G$. Thus 
+$$x + y = a_x + b_x \sqrt{2}  + a_y + b_y\sqrt{2}  = (a_x + a_y) + \sqrt{2}(b_x + b_y)$$
+therefore $G$ is closed under addition, thus we follow that $+: G \times G \to G$.
+Sums are associative in general, therefore gonna skip that.
+$0$ is the usual identity, which can be represented as $0  + 0 \sqrt{2}$, thus $0 \in G$.
+For $x \in G$ we can define $x \inv = -a_x - b_x \sqrt{2}$, which is also in $G$. Thus
+we follow that $\eangle{G, +}$ is indeed a group, as desired.
+
+\subsection*{1.1.11}
+
+\textit{Find the orders of each element of the additive group $Z/12Z$.}
+
+we've got that
+\begin{verbatim}
+ord (0) = 1
+ord (1) = 12
+ord (2) = 6
+ord (3) = 4
+ord (4) = 3
+ord (5) = 12
+ord (6) = 2
+ord (7) = 12
+ord (8) = 3
+ord (9) = 4
+ord (10) = 6
+ord (11) = 12
+\end{verbatim}
+
+\subsection*{1.1.13}
+
+\textit{Find the orders of the following elements of the additive group $Z/36Z$:
+  ...}
+
+we've got that 
+\begin{verbatim}
+ord (0) = 1
+ord (1) = 36
+ord (2) = 18
+ord (3) = 12
+ord (4) = 9
+ord (5) = 36
+ord (6) = 6
+ord (7) = 36
+ord (8) = 9
+ord (9) = 4
+ord (10) = 18
+ord (11) = 36
+ord (12) = 3
+ord (13) = 36
+ord (14) = 18
+ord (15) = 12
+ord (16) = 9
+ord (17) = 36
+ord (18) = 2
+ord (26) = 18
+ord (35) = 36
+\end{verbatim}
+
+And since $\overline{-1} = \overline{35}$ and so on, we've got the desired result.
+
+\subsection*{1.1.15}
+
+\textit{Prove that $(a_1 a_2 ... a_n)\inv = a_n \inv a_{n - 1}\inv ... a_1 \inv$}
+
+We already know that $(a_1 a_2)\inv = a_2 \inv a_1 \inv$. Suppose that chain of length $n - 1$
+has this property. Then we follow that
+$$ (a_1 ... a_{n - 1} a_n )\inv = ((a_1 ... a_{n - 1} )(a_n) )\inv =
+a_n \inv (a_1 ... a_{n - 1})\inv = a_n\inv a_{n - 1} \inv .... a_1 \inv$$
+thus we follow that if $k$ has this property, then $k + 1$ has this property, thus we follow
+that this property holds for all $n \geq 2$, as desired.
+
+\subsection*{1.1.17}
+
+\textit{Let $x$ be an element of $G$.  Prove that if $|x| = n$, for some positive integer $n$,
+  then $x \inv = x^{n - 1}$.}
+
+We follow that $|x| = n$ means that $x^n = e$, where $e$ denoted identity. Thus
+$$e = x^n$$
+$$e x \inv  = x^n x \inv$$
+$$x \inv  = x^{n - 1} (x x \inv)$$
+$$x \inv  = x^{n - 1} (e)$$
+$$x \inv  = x^{n - 1}$$
+as desired.
+
+\subsection*{1.1.18}
+
+\textit{Let $x, y \in G$. Prove that $xy = yx$ iff $y \inv xy  = x$ iff $x \inv y \inv xy = 1$}
+
+$$xy = yx \lra y \inv x y = y \inv yx \lra y \inv x y = e x \lra y \inv x y = x \lra
+x \inv y \inv x y = x \inv x \lra x \inv y \inv x y = e$$
+where $e = 1$, and we've got the reverse implication in $\lra$ by cancelation laws.
+
+\subsection*{1.1.21}
+
+\textit{Let $G$ be a finite group and let $x$ be an element of $G$ of order $n$. Prove that
+  if $n$ is odd, then $x = (x^2)^k$.}
+
+We follow that $n = 2k - 1$ for some $k \in Z$, thus
+$$e = x^n$$
+$$e = x^{2k - 1}$$
+$$ex = x^{2k - 1}x$$
+$$x = x^{2k}$$
+$$x = (x^{2})^k $$
+as desired.
+
+\subsection*{1.1.23}
+
+\textit{Suppose $x \in G$ and $|x| = n < \infty$. If $n = st$ for some positive integers $s, t$,
+  prove that $|x^s| = t$}
+
+We follow that $n$ is the lowest integer such that
+$$x^n = e$$
+thus
+$$x^{st} = e$$
+$$(x^{s})^t = e$$
+thus $t$ is the smallest integer such that $x^s = e$, therefore $|x^s| = t$, as desired.
+
+\subsection*{1.1.25}
+
+\textit{Prove that if $x^2 = 1$ for all $x \in G$, then $G$ is abelian.}
+
+Suppose that $x, y \in G$. We follow that
+$$x^2 = e$$
+$$x\inv x^2 = x\inv$$
+$$x = x\inv$$
+by the same logic
+$$y = y\inv$$
+and since $xy \in G$ we've got that 
+$$xy = (xy)\inv$$
+thus
+$$xy = (xy)\inv = y\inv x\inv = yx$$
+as desired.
+
+\subsection*{1.1.27}
+
+\textit{Prove that if $x$ is an element of the group $G$ then $\{x^n: n \in Z\}$ is
+  a subgroup of $G$.}
+
+Let us denote this set by $H$ and let $y, z, w \in H$.
+Then we follow that there exist $i, j, k \in Z$ such that
+$$y = x^i$$
+$$z = x^j$$
+$$w = x^k$$
+thus
+$$yz = x^i x^j = x^{i + j}$$
+thus we follow that $H$ is closed under $\star$. We also have that
+$$y(wz) = x^{i + j + k} = (yw)z$$
+Since $x^0 = 1$, we follow that $1 \in H$. Also, if $x^n \in H$, then $x^{-n} \in H$, and
+since $x^n x^{-n} = x^0 = 1$ we follow that every element has an inverse. THus we
+conclude that $H$ is indeed a group.
+
+\subsection*{1.1.29}
+
+\textit{Prove that $A \times B$ is an abelian group iff both $A$ and $B$ are
+  abelian groups.}
+
+Let $x, y \in A \times B$. Then we follow that
+$$xy = yx \lra (a_x, b_x) (a_y, b_y ) = (a_y, b_y) (a_x, b_x ) \lra $$
+$$ \lra (a_x a_y, b_x b_y) = (a_y a_x, b_y b_x) \lra a_x a_y = a_y a_x \land b_x b_y = b_y b_x$$
+as desired.
+
+\subsection*{1.1.33}
+
+\textit{Let $x$ be an element of finite order in $G$.}
+
+\textit{(a) Prove that if $n$ is odd then $x^i \neq x^{-i}$ for all $i = 1, 2, ..., n - 1$.}
+
+We follow firstly that
+$$x \neq x^2 \neq x^3 ... \neq x^{n - 1}$$
+becase if we have that $x^i = x^j$ for $1 \leq i < j \leq n - 1$, then
+$$x^i = x^j$$
+$$x^{-i} x^i  = x^{j- i}$$
+$$1  = x^{j- i}$$
+which contradicts that $n$ is the order of $x$.
+
+Thus we've got that 
+$$x^i \neq x^{-i}$$
+is equivalent to 
+$$x^{2i} \neq 1$$
+If $2i < n$, then we folow that this is given by the fact that order of $x$ is $n$. If $2i \geq n$,
+then we follow that $2i < 2n$, therefore $2i - n < n$, and thus 
+$$x^n x^{2i - n} \neq 1$$
+$$x^{2i - n} \neq 1$$
+which is given to us by the fact that $n$ is the order of $x$.
+
+
+
+\section{Dihedral Groups}
+
+We firstly state that
+$$D_{2n} = \eangle{r, s| r^n = s^2 = 1, rs = sr\inv}$$
+
+\subsection*{1.2.1}
+
+\textit{Compute the order of each of the elements in the following groups:}
+
+In general, we're going to have that
+$$|1| = 1$$
+$$|r| = n$$
+$$|r^j| = lcm(j, n) / j$$
+$$|s| = |sr^j| = 2$$
+
+\textit{(a) $D_6$}
+
+$$|1| = 1$$
+$$|r| = 3$$
+$$(r^2)^2 = r^4 = r r^3 = r$$
+$$(r^2)^3 = r^6 = (r^3)^2 = 1^2 = 1$$
+$$|r^2| = 3$$
+$$|s| = 2$$
+$$(sr)^2 = srsr = ssr\inv r = 1$$
+$$|sr| = 2$$
+$$(sr^2)^2 = sr^2sr^2 = srrsrr = srsr\inv rr = ssr\inv r\inv r r = 1$$
+$$|sr^2| = 2$$
+
+\textit{(b) $D_8$}
+
+$$|1| = 1$$
+$$|r| = 4$$
+$$(r^2)^2 = r^4 = 1$$
+$$|r^2| = 2$$
+$$(r^3)^2 = r^6 = r^2$$
+$$(r^3)^3 = r^9 = r$$
+$$(r^3)^4 = r^{12} = 1$$ 
+$$|r^3| = 4$$
+$$|s| = 2$$
+$$|sr| = 2$$
+$$srrsrr = srs r\inv rr = ssr\inv r\inv rr = 1$$
+$$|sr^2| = 2$$
+$$srrrsrrr = srr sr\inv rrr = sr s r\inv r\inv rrr = ss r^{-3}r^3 = 2$$
+$$|sr^3| = 2$$
+
+\textit{Not gonna repeat for $D_{10}$, ourlined general case in the beggining of the exercise}
+
+\subsection*{1.2.3}
+
+\textit{Use the generators and relations above to show that every element of $D_{2n}$,
+  which is not a power of $r$ has order $2$. Deduce that $D_{2n}$ is generated by the
+  two elements $s$ and $sr$, both of which have order $2$.}
+
+We follow that
+$$rs = s r\inv$$
+and since $(r\inv)\inv = r$, we follow that
+$$r\inv s = sr$$
+Now suppose that $j \in N$ such that $sr^j = r^{-j}s$. Then we follow that
+$$sr^{j + 1} = sr^{j} r = r^{-j} s r = r^{-j} r \inv s = r^{-(j + 1)}s$$
+thus we conclude that for every $n \in N$ we've got that $sr^j = r^{-j}s$. Therefore
+we can follow that
+$$(sr^j)^2 = sr^j s r^j = s r^j r{-j} s = ss = 1$$
+therefore $|sr^j| = 2$ for every $j \in Z$.
+
+Suppose that $x \in D_{2n}$. Then we follow that
+$x = s^j r^i$
+therefore $x = s^{j - i}(sr)^{i}$, as desired.
+
+\subsection*{1.2.5}
+
+\textit{IF $n$ is odd and $n \geq 3$,show that the identity is the only element off $D_{2n}$
+  which commutes with all elements of $D_{2n}$.}
+
+Suppose that $x, y \in D_{2_n}$. Then we follow that if $x$ is not the identity, then
+$x = r^j$ or $x = sr^j$. Then we follow that if $x = sr^j$, then
+$$xr = sr^{j + 1}$$
+and
+$$rx = r s r^j = s r^{j - 1}$$
+thus we follow that $x$ does not commute with $r^i$.
+
+If we let $x = r^j$ then we follow that
+$$sx = sr^j$$
+and
+$$xs = r^j s = s r^{-j} = s r^{n - j}$$
+We follow that if $n$ is odd, then there does not exist $j$ such that $j = n - j$, therefore
+we follow that $x$ does not commute with $s$.
+
+Thus we can conclude that the only element that commutes with all elements in $D_{2n}$ is
+the identity, as desired.
+
+\subsection*{1.2.7}
+
+\textit{Show that $(a, b| a^2 = b^2 = (ab)^n = 1)$ gives a presentation for $D_{2_n}$ }
+
+Let $a = s$ and $b = sr$. Then we follow that 
+$$a^2 = s^2 = 1$$
+from which we follow that
+$$s = s\inv$$
+$$(ab)^n = s^n s^n r^n = (s^2)^n r^n = 1 r^n = r^n = 1$$
+$$b^2 = 1 \lra (sr)^2 = 1 \lra sr = (sr)\inv \lra sr = r\inv s\inv = sr = r\inv s$$
+thus we conclude that given representation is equivalent to our original representation.
+
+\subsection*{1.2.9}
+
+\textit{Let $G$ be the group of rigid motions in $R^3$ of tetrahedron. Show that
+  $|G| = 12$.}
+
+We follow that we can send every vertex into another 3 vertices, which gives us 4
+motions (don't forget the identity). Then we've got 3 other vertices, with which
+we can label the second vertex, thus giving us 24 total cases (in general we've
+got that $|G|$ is equal to number of vertices of the solid multiplied by the number of
+neighbors of any given vertex.)
+
+\subsection*{1.2.11, 1.2.13}
+
+Same logic as in 1.2.9
+
+\subsection*{1.2.15}
+
+\textit{Find a set of generators and relations for $Z/nZ$.}
+
+$1$ is the obvious canditate, since $j = \sum 1$ for every $j \in Z/nZ$.
+We can state that $1^{n + 1} = 1$, which will give us a relation. Not sure how to
+show that this is the extensive list of relations, but here's mine.
+
+\subsection*{1.2.17}
+
+\textit{Let $X_{2n}$ be a group whose presentation is displayed in (1.2)}
+
+$$X_{2n} = \eangle{x, y | x^n = y^2  = 1, xy = yx^2}$$
+
+\textit{(a) Show that if $n = 3k$, then $X_{2n}$ has order $6$, and it has the same generators
+  and relations as $D_6$ when $x$ is replaces by $r$ and $y$ by $s$.}
+
+We follow that $1, x, y \in X_{2n}$.
+
+If $z \neq  \in X_{2n}$, then it is represented by $z = x^j y^i$ or $z = y^i x^j$. In former
+case we can use the relation $y^2 = 1$ to follow that
+$$x^j y^i = x^j y$$
+from which by induction we can follow that
+$$x^j y = y x^{2j}$$
+In latter case we follow that $z = yx^j$ or $z = x^j$ by the relation $y^2 = 1$.
+In any case we follow that
+$$z \in X_{2n} \ra (\exists j \in Z)(z = y x^j \lor z = x^j)$$
+
+Now it would be nice to get that $x^3 = 1$.
+From the identity in the chapter we follow that
+$$x = x^4$$
+and therefore $x^3 = 1$, which is neat.
+
+Since $n = 3k$, we follow that
+$$x^n = x^{3k} = (x^3)^k = 1$$
+thus we follow that $x^n = 1$ does not restrict our set in any way.
+
+Therefore we follow that all the elements of $X_{2n}$ are $1, x, x^2, y, yx, yx^2$, therefore
+it has order $6$, as desired.
+
+
+Now suppose that we let $x = r$ and $y = s$. Then we follow that we've got relations
+$$x^3 = 1$$
+$$s^2 = 1$$
+$$rs = sr^2 \lra rsr = sr^3 \lra rsr = s \lra sr = r \inv s$$
+which gives us the desired correspondense
+
+\textit{(b) Show that if $(3, n) = 1$, then $x$ satisfies additional relation $x = 1$}
+
+We follow that if $(3, n) = 1$, then $3a + qn = 1$, and thus $qn = 1 - 3a$. Thus
+$$1 = x^n = x^{qn} = x^n = x^{3a - 1}= (x^3)^a x$$
+and since $x^3 = 1$ we follow that
+$$1 = x^{3a} x = 1x = x$$
+from which we follow that the only elements of $X_{2n}$ are $1, y$. Thus $|X_{2n}| = 2$, as
+desired.
+
+\section{Symmetric Groups}
+
 
 \end{document}
 %%% Local Variables:
