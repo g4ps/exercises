@@ -951,9 +951,385 @@ desired.
 
 \section{Symmetric Groups}
 
+\subsection*{1.3.1}
+
+\textit{Let $\sigma$ and $\tau$ be the given permutations. Find the cycle decomposition
+  of their compositions}
+
+$$\sigma = (1, 3, 5)(2, 4)$$
+$$\tau = (1, 5)(2, 3)$$
+$$\tau \sigma = (1, 2, 4, 3)$$
+$$\sigma \tau = (1)(2, 5, 3, 4)$$
+$$\tau^2 = (1)(2)(3)(4)(5)$$
+$$\tau^2 \sigma = (1, 3, 5)(2, 4)$$
+
+\subsection*{1.3.3}
+
+\textit{For each of the permutations whose cycle decompositions were computed in the preceeding
+  (I've got only one) exercises compute its order}
+
+We follow that the general case is the $lcm(l_1, l_2, ...)$, where $l_j$ is the length of
+$j$'th cycle
+
+
+\subsection*{1.3.5}
+
+\textit{Find the order of $(1, 12, 8, 10, 4)(2, 13)(5, 11, 7)(6, 9)$.}
+
+It's 12.
+
+\subsection*{1.3.7}
+
+\textit{Write out the cycle decomposition of each element of order $2$ in $S_4$.}
+
+Skip
+
+\subsection*{1.3.9}
+
+\textit{(a) Let $\sigma$ be the 12-cycle $(1, 2, 3, ..., 12)$. For which positive integers $i$
+  is $\sigma^i$ also a 12-cycle}
+
+Ones that have $(i, 12) = 1$
+
+Rest is similar.
+
+\subsection*{1.3.11}
+
+\textit{Let $\sigma$ be the $m$-cycle $(1, 2, ..., m)$. Show taht $\sigma^i$ is also a ...}
+
+Trivial
+
+\subsection*{1.3.13}
+
+\textit{Show that an element has order $2$ in $S_n$ iff its cycle decomposition is a
+  product of commuting 2-cycles.}
+
+We follow that $|S_n| = lcm(l_1, ...., l_n)$, thus if we omit 1-cycles, then
+$S_n$ has indeed order $2$ iff it's a product of commuting 2-cycles.
+
+\subsection*{1.3.15}
+
+\textit{Prove that the  .... }
+
+Trivial
+
+\subsection*{1.3.17}
+
+\textit{Show that if $n \geq 4$, then the number of permutations in $S_n$ which are the
+  product of two disjoint 2-cycles is $n(n - 1)(n - 2)(n - 3)/8$}
+
+Let $C$ denote binomial coefficient. 
+We follow that there are $C(n, 2)$ ways to choose the elements in the first cycle,
+and $C(n - 2, 2)$ for the second. Thus there are
+$$C(n, 2)C(n - 2, 2) = \frac{n(n - 1)}{2} \frac{(n - 2)(n - 3)}{2} =
+\frac{n(n - 1)(n - 2)(n - 3)}{4}$$
+total elements, if we care about order. Since we don't care about the order of the product,
+we follow that we can divide this number by $2! = 2$ to get the number of unordered
+products of disjoint cycles, which will be
+$$\frac{n(n - 1)(n - 2)(n - 3)}{8}$$
+as desired.
+
+\subsection*{1.3.19}
+
+\textit{Find all numbers $n$ such that $S_7$ contains an element of order $n$}
+
+We follow that if element is of order $n$, then $lcm(l_1, l_2, ..., l_n) = n$.
+Since $lcm(n, 1, 1, ...) = n$, we follow that all the numbers 1 through $n$ are there.
+We can also brute-forse this thing and get that $10, 12$ are also present. $9$ is out,
+and so is 8. And that's about it.
+
+\section{Matrix Groups}
+
+\subsection*{1.4.1}
+
+\textit{Prove that $|GL_2(F_2)| = 6$}
+
+We follow that there are only $2$ elements in $F$, therefore there are only 16 matrices
+in genenral.
+
+We follow that matrices
+$$
+\begin{pmatrix}
+  1 & 0 \\
+  1 & 0
+\end{pmatrix}
+$$
+its four rotation,
+$$
+\begin{pmatrix}
+  1 & 0 \\
+  0 & 0
+\end{pmatrix}
+$$
+its four rotation and
+$$
+\begin{pmatrix}
+  0 & 0 \\
+  0 & 0
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 1
+\end{pmatrix}
+$$
+are all non-invertible. Every other one is invertible, so we follow that $|GL_2(F_2)| = 6$,
+as desired.
+
+\subsection*{1.4.3}
+
+\textit{Show that $GL_2(F_2)$ is non-abelian}
+$$
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 0
+\end{pmatrix} =
+\begin{pmatrix}
+  1 & 0 \\
+  1 & 1
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix} = 
+\begin{pmatrix}
+  1 & 1 \\
+  0 & 1
+\end{pmatrix}
+$$
+thus we follow that elements in this group do not commute.
+
+\subsection{1.4.5}
+
+\textit{Show that $GL_n(F)$ is a finite group if and only if $F$ has a finite number of
+  elements}
+
+We can follow that of $F$ is finite, then there are only $|F|^{n^2}$ matrices in total,
+and invertible matrices are a subset of this set, thus we follow that $GL_n(F)$ is a
+finite set.
+
+Conversely, suppose that $GL_n(F)$ is a finite group and $F$ is infinite. Then we follow that
+for every $x \in F$ we've got $xI \in GL_n(F)$, thus we follow that finite set has
+an infiinte subset, which is a contradiction.
+
+\subsection*{1.4.7}
+
+\textit{Let $p$ be a prime. Prove that the order of $GL_2(F_p)$ is $p^4 - p^3 - p^2 + p$}
+There are a total of $p^{4}$ distinct matrices. We follow that there
+are $p^2$ distinct rows, one of which is zero. If the row is not zero, then it has $p$
+distinct scalar multiples. For zero there is $p^2$ rows, such that one of them is
+the scalar multiple of the other. Thus we follow that there are
+$$(p^2 - 1)p + p^2 = p^3 - p + p^2$$
+non-invertible matrices. From this we follow that the total number of invertible matrices
+is
+$$p^4 - p^3 - p^2 + p$$
+as desired.
+
+
+\subsection*{1.4.9}
+
+\textit{Prove that the binary operation of matrix multiplication of $2 \times 2$ matrices
+  with real number entries in associative.}
+
+Follows from definition of matrix multiplication, true in general for $n \times n$
+matrices.
+
+\section{Quaternion Group}
+
+\subsection*{1.5.1}
+
+\textit{Compute the order of each of the elements in $Q_8$}
+
+$$|1| = 1$$
+$$|-1| = 2$$
+$$|i| = 4$$
+$$(-i)^2 = (kj)^2 = kjkj = kik = jk = i$$
+$$(-i)^3 = (kj)^3 = ikj = (-j)j = 1$$
+$$|-i| = 3$$
+$$|j| = 4$$
+$$(-j)^2 = ikik = ijk = kk = -1$$
+$$(-j)^3 = -1(-j) = j$$
+$$(-j)^4 = j(-j) = 1$$
+$$|-j| = 4$$
+$$|k| = 4$$
+$$(-k)^2 = jiji = jki = i^2 = -1$$
+$$|-k| = 4$$
+
+\section{Homomorphisms and Isomorphisms}
+
+\subsection*{1.6.1}
+
+\textit{Let $\phi: G \to H$ be a homomorphism}
+
+\textit{(a) Prove that $\phi(x^n) = \phi(x)^n$}
+
+We follow that $\phi(x^2) = \phi(x)^2$ by definition.
+
+Suppose that $\phi(x^n) = \phi(x)^n$. Then we follow that
+$$\phi(x^{n + 1}) = \phi(x^{n} x) = \phi(x^{n}) \phi(x) =
+\phi(x)^n \phi(x) = \phi(x)^{n + 1}
+$$
+thus we follow the desired conclusion from induction.
+
+\textit{(b) Do part (a) byt with $n = 1$ and conclude that the same is true for $n \in Z$}
+
+We follow that $$\phi(1x) = \phi(1) \phi(x)$$
+and $$\phi(x1) = \phi(x) \phi(1)$$
+thus we can conclude that $\phi$ maps identity to the identity. Therefore we follow that
+$$\phi(x^0) = \phi(1) = 1 = \phi(x)^0$$
+
+$$\phi(x\inv) = 1 \phi(x\inv) = \phi(x)\inv \phi(x) \phi(x\inv) = \phi(x)\inv \phi(x x \inv) =
+\phi(x)\inv \phi(1) = \phi(x)\inv$$
+thus we follow that if $\phi(x\inv) = \phi(x)\inv$. Suppose now that
+$$\phi(x^{-j}) = \phi(x)^{-j}$$
+then we follow that
+$$\phi(x^{-(j + 1)}) = \phi(x^{-j} x\inv) = \phi(x^{-j}) \phi(x\inv) = \phi(x)^{-j} \phi(x)\inv =
+\phi(x)^{-(j + 1)}$$
+
+Thus we've got the desired conclusion.
+
+\subsection*{1.6.3}
+
+\textit{If $\phi: G \to H$ is an isomorphism, prove that $G$ is abelian iff $H$ is abelian.
+  If $\phi: G \to H$ is a homomorphism, what additional conditions on $\phi$ are sufficient to
+  ensure that if $G$ is abelean, then so $H$?}
+
+Suppose that $G$ is abelian. Now let $x, y \in H$. Because $\phi$ is a bijection,
+we follow that it is surjective. Thus we follow that there exist $x', y' \in G$
+such that $\phi(x') = x \land \phi(y') = y$. Thus we follow that
+$$xy = \phi(x') \phi(y') = \phi(x'y') = \phi(y' x') = \phi(y') \phi(x') = yx$$
+thus we follow that $H$ is abelian.
+
+If a funtion is a bijection, then the  inverse of this function is also surjective. Thus
+we've got converse case from the forward implication.
+
+If $\phi$ is a homomorphism, then we follow that if $\phi$ is surejctive and
+$G$ is abelian, then $H$ is abelian as well.
+
+\subsection*{1.6.5}
+
+\textit{Prove that the additive groups $R$ and $Q$ are not isomorphic.}
+
+Since there are no bijections from $R$ to $Q$, we follow that no such functions exist (for
+the proof GOTO either first chapter of real analysis book, or just google it).
+
+\subsection*{1.6.7}
+
+\textit{Prove that $D_8$ and $Q_8$ are not isomorphic.}
+
+$Q_8$ has an element of order $3$, but $D_8$ does not.
+
+\subsection*{1.6.9}
+
+\textit{Prove that $D_{24}$ and $S_4$ are not isomorphic.}
+
+We've got that $r^{11} \in D_{24}$ has order $132$, and the maximum order of an element in $S_4$
+is below 16 (not gonna compute the exact thing, for more info GOTO 1.3.19)
+
+\subsection*{1.6.11}
+
+\textit{Let $A, B$ be groups. Prove that $A \times B \cong B \times A$.}
+
+Define $\phi((a, b)) = (b, a)$. Then we follow that $\phi$ is a bijection, and
+the fact that is a homomorphism is easily followed from definitions.
+
+\subsection*{1.6.13}
+
+\textit{Let $G$ and $H$ be groups and let $\phi: G \to H$ be a homomorphism. Prove that
+  the image of $\phi, \phi(G)$ is a subgroup of $H$. Prove that if $\phi$ is injective,
+  then $G \cong \phi(G)$.}
+
+We follow that if $1 \in \phi(G)$, as proven earlier. Associativity comes naturally and
+inverses are handled in exercise 1.6.1. Thus we follow that $\phi(G)$ is indeded a subgroup.
+
+If $\phi$ is injective, then we follow that $\phi: G \to \phi(G)$ is a bijection,
+thus we've got isomorphism, as desired.
+
+\subsection*{1.6.15}
+
+\textit{Define a map $\pi: R^2 \to R$ by $\pi((x, y)) = x$. Prove that $\pi$ is a homomorphism
+  and find the kernel of $\pi$.}
+
+Suppose that $x = (a, b), y = (c, d) \in R$. Then we follow that
+$$\phi(xy) = \phi(ac, bd) = ac = \phi((a, b)) \phi((b, d))$$
+therefore $\phi$ is a homomorphism.
+
+We follow that $(0, y)\in R^2$ is a kernel of $\pi$.
+
+\subsection*{1.6.17}
+
+\textit{Let $G$ be any group. Prove that the map from $G$ to itself, defined by $g \to g \inv$
+  is a homomorphism iff $G$ is abelian.}
+
+Suppose that $g \to g \inv$ is a homomorphism and let $x, y \in G$. Then we follow that
+$$xy = ((xy)\inv) \inv = \phi(xy) \inv = (\phi(x) \phi(y))\inv = (x\inv y\inv )\inv = yx$$
+thus we follow that $G$ is abelian.
+
+Suppose that $G$ is abelian. Then we follow that 
+$$\phi(xy) = \phi(yx) = (yx)\inv = x\inv y\inv = \phi(x) \phi(y)$$
+thus we follow that $\phi$ is a homomorphism.
+
+\subsection*{1.6.19}
+
+\textit{Let $G = \{z \in C: (\exists n \in Z^+)(z^n = 1)\}$. Prove that for any
+  fixed integer $k > 1$ the map from $G$ to itself defined by $z \to z^k$ is
+  surjective homomorphism but not an isomorphism.}
+
+Suppose that $x, y \in G$. Then we follow that
+$$\phi(xy) = (xy)^k = x^ky^k = \phi(x) \phi(k)$$
+which proves that $\phi$ is a homomorphism.
+
+Suppose that $x \in G$. Then we follow that $x = \in C$ and there exists $n \in Z^+$ such that
+$x^n = 1$. Thus we follow that $x \neq 0$ and we're going to have some $x^{-k + 1}$ such that
+$\phi(x^{-k + 1}) = x^1 = x$.
+We can also follow that $(x^{-k + 1})^n = x^n = 1$, thus $x^{-k + 1} \in G$. Thus we follow that
+$x \in \phi(G)$, and therefore $\phi$ is surjective.
+
+We follow that for every number $x$ in $C$ there exist $k$ elements of $C$ such that $$x^k = 1$$.
+Since $1 \in G$, and $k > 1$ we follow that there exist $x_1 \neq x_2 \in C$ such that 
+$$\phi(x_1) = 1 = \phi(x_2)$$
+thus we follow that $\phi$ is not injective, and thus it is not an isomorphism.
+
+\subsection*{1.6.21}
+
+\textit{Prove that for each fixed nonzero $k \in Q$ the map from $Q$ to itself defined by
+  $q \to kq$ is an automorphism of $Q$.}
+
+Assuming that by $kq$ we mean multiplication and letting $\phi(q) = kq$, then we follow that
+$$\phi(x + y) = k(x + y) = kx + ky = \phi(x) + \phi(y)$$
+thus it is an isomorphism.
+
+We follow that if $x \neq y$, then
+$$\phi(x) - \phi(y) = k(x - y) \neq 0$$
+thus we follow that $x \neq y$ implies that $\phi$ is injective.
+
+For $x \in Q$ we follow that $\phi(k\inv x) = k k\inv x = x$, thus $\phi$ is
+also surjective. Thus $\phi$ is an automorphism.
+
+\subsection*{1.6.23}
+
+\textit{let $G$ be a finite group which posseses an automorphism $\sigma$.
+  such that $\sigma(g) = g$ iff $g = 1$. If $\sigma^2$ is the identity map, prove that
+  $G$ is abelian.}
+
+Suppose that $x, y \in G$. We follow that
+$$xy = \sigma^2(xy) = \sigma(xy)\sigma(xy)$$
+TODO
 
 \end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+
