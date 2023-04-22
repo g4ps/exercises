@@ -7,6 +7,7 @@
 \date{2023}
 
 \DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
@@ -1323,9 +1324,438 @@ also surjective. Thus $\phi$ is an automorphism.
   such that $\sigma(g) = g$ iff $g = 1$. If $\sigma^2$ is the identity map, prove that
   $G$ is abelian.}
 
-Suppose that $x, y \in G$. We follow that
-$$xy = \sigma^2(xy) = \sigma(xy)\sigma(xy)$$
-TODO
+Suppose that $\sigma^2$ is the identity. We need to show that for all $x, y \in G$
+we've got that
+$$xy = yx$$
+
+Suppose that $x \in G$. We follow that if $x \neq 1$, then
+$$\sigma(x) \neq x$$
+but
+$$\sigma(x^2) = \sigma(x)^2 = x^2$$
+thus we follow that for every $x \in G$, $x^2 = 1$. Thus we follow that $x\inv = x$ for
+every $x \in G$. Therefore we follow that for every $x, y \in G$ we've got that
+$xy \in G$ as well, thus
+$$xy = (xy)\inv = y\inv x\inv = yx$$
+thus the group is abelian, as desired.
+
+\subsection*{1.6.25}
+
+Followes some exercise in my linear algebra book
+
+\section{Group Actions}
+
+\subsection*{1.7.1}
+
+\textit{Let $F$ be a field. Show that the multiplicative group of nonzero elements of $F$
+  (denoted by $F^\times$)
+  acts on the set $F$ by $g \cdot a = ga$, where $g \in F^\times$, $a \in F$ and $ga$ is
+  the usual product in $F$ of the two field elemets.}
+
+We follow that for all $g_1, g_2, g, a \in F^\times$
+$$g_1 \cdot (g_2 \cdot a) = (g_1 \cdot g_2) \cdot a$$
+by associative property of multiplication in the field.
+We also follow that
+$$1 \in F$$
+by the fact that multiplicative identity is in $F^\times$, and
+$$1 \cdot a = a$$
+by the fact that $1$ is the multiplicative identity.
+
+\subsection*{1.7.3}
+
+\textit{Shwo that the additive group $R$ acts on the $x, y$ plane $R \times R$ by
+  $$r \cdot (x, y) = (x + ry, y)$$
+}
+
+We follow that for $r_1, r_2 \in R$ we've got 
+$$(r_1 + r_2) \cdot (x, y) = (x + r_1y + r_2 y, y)$$
+$$r_1 \cdot (r_2 \cdot (x, y) = r_1 \cdot (x + r_2 y, y) = (x + r_1 y + r_2 y, y)$$
+thus we follow the first part of the definition of group action.
+
+
+We follow that in this case the group identity in $R$ is 0, therefore for all
+$(x, y) \in R \cdot R$ is 
+$$0\cdot (x, y) = (x + 0y, y) = (x, y)$$
+
+Thus given function satisfies all the properties of group action, and therefore
+it is a group action itself, as desired.
+
+\subsection*{1.7.5}
+
+\textit{Prove that the kernel of an action of the group $G$ on the set $A$ is the same
+  as the kernel of corresponding permutation representation $G \to S_A$.}
+
+Skip, cannot figure out wording. Kernel of the action is a subset of $G \times A$ and
+kernel of permutation representation is a subset of $G$, which means that their
+sole common subset is $\emptyset$. Kernel of permutation representation may be non-empty,
+thus we follow that the conclusion of the exercise is false.
+
+\subsection*{1.7.7}
+
+\textit{Prove that in Example $2$ in this section the addition is faithful.}
+
+Let $x, y \in F^\times$ be such that $x \neq y$. Let $\phi_1, \phi_2$ be permutations, produced
+by
+$$\phi_1(a) = x \cdot a$$
+$$\phi_2(a) = y \cdot a$$
+
+Let $v \in V$ be defined by
+$$v = (1, 1, ...)$$
+We follow that
+$$\phi_1(v) = (x, x, ...)$$
+$$\phi_2(v) = (y, y, ...)$$
+and since $x \neq y$, we follow that $\phi_1(v) \neq \phi_2(v)$. Thus we follow that
+$x \neq y$ implies that $\phi_x \neq \phi_y$, as desired.
+
+\subsection{1.7.8}
+
+\textit{Let $A$ be a nonempty set and let $k$ be a positive integer with $k \leq |A|$. The
+  symmetric group $S_A$ acts of the set $B$ consisting of all subsets of $A$ of
+  cardinality $k$ by $\sigma \cdot \{a_1, ..., a_k\} =   \{\sigma(a_1), ..., \sigma(a_k)\}$}.
+
+Don't have a clue on why do we need a finite cardinality here, but here we go.
+
+Presumably we define $\cdot: S_A \times B \to B$ to be
+$$\cdot(\eangle{\sigma, b}) = \sigma[b]$$
+where $[]$ is defined to be image of $B$.
+Since every $\sigma \in S_A$ is a bijection, we follow that for every $b \in B$
+there quite literally exists a bijection between $b$ and $\sigma[b]$. Thus we follow that
+$$(\forall \sigma \in S_A, b \in B)(|\sigma \cdot b| = |b| = k)$$
+
+
+\textit{(a) Prove that this is a group action.}
+
+Suppose that $\sigma_1, \sigma_2 \in S_A$ and  $b \in B$ are arbitrary. We follow that
+$$\sigma_1 \cdot (\sigma_2 \cdot b) = \sigma_1 \cdot \sigma[b] = \sigma_1 [\sigma_2[b]] =
+(\sigma_1 \cdot \sigma_2)[b]$$
+where the last equation quite easily comes from definition of range.
+
+We also follow that if $\sigma$ is an identity, then
+$$\sigma[b] = b$$
+by the definition (or minor deriviation and application of definition of range) of identity.
+
+Thus we follow that $\cdot$ is indeed a group action.
+
+\textit{Describe explicitly how the elements $(1, 2)$ and $(1, 2, 3)$ act on the six 2-element
+  subsets of $\{1, 2, 3, 4\}$}
+
+We follow that
+$$B = \{\{1, 2\}, \{2, 3\}, \{3, 4\}, \{1, 3\}, \{1, 4\}, \{2, 4\}\}$$
+where we're gonna refer to each element of $B$ by $b_j$, where $j$ is the order of
+the element in the above-mentioned representation. Then we follow that
+$$(1, 2) \cdot b_1 = \{1, 2\}$$
+$$(1, 2) \cdot b_2 = \{1, 3\}$$
+$$(1, 2) \cdot b_3 = \{3, 4\}$$
+$$(1, 2) \cdot b_4 = \{2, 3\}$$
+$$(1, 2) \cdot b_5 = \{2, 4\}$$
+$$(1, 2) \cdot b_6 = \{1, 4\}$$
+$$(1, 2, 3) \cdot b_1 = \{2, 3\}$$
+$$(1, 2, 3) \cdot b_2 = \{1, 3\}$$
+$$(1, 2, 3) \cdot b_3 = \{1, 4\}$$
+$$(1, 2, 3) \cdot b_4 = \{1, 2\}$$
+$$(1, 2, 3) \cdot b_5 = \{2, 4\}$$
+$$(1, 2, 3) \cdot b_6 = \{3, 4\}$$
+
+\subsection{1.7.11}
+
+\textit{Write out the cycle decompositionof the eight permutations in $S_4$, corresponding
+  to the elements of $D_8$ given by the action of $D_8$ on the vertices of a square.}
+
+$$()$$
+$$(1, 2, 3, 4)$$
+$$(1, 3)(2, 4)$$
+$$(1, 4, 3, 2)$$
+$$(2, 4)$$
+$$(1, 2)(3, 4)$$
+$$(1, 3)$$
+$$(1, 4)(2, 3)$$
+
+\subsection{1.7.13}
+
+\textit{Find the kernel of the left regular action}
+
+We follow that the kernel of left regular action is the set
+$$A: \{\eangle{x, y} \in G \times G: x = y\inv\}$$
+
+\subsection*{1.7.15}
+
+\textit{Let $G$ be any group and let $A = G$. Show that the maps defined by
+  $g \cdot a = a g \inv$ for all $g, a \in G$ do satisfy the axioms of group action
+  of $G$ on itself}
+
+Suppose that $x, y, z \in G$. Then we follow that
+$$x \cdot (y \cdot z) = x \cdot (z y \inv) = z y\inv x \inv$$
+$$(x y) \cdot z = z (x y) \inv = z y \inv x \inv$$
+
+And we follow that
+$$1 \cdot z = z  1 \inv = z$$
+
+
+\subsection*{1.7.17}
+
+\textit{Let $G$ be a group and let $G$ act on itself by left conjugation (i.e.
+  $$cdot: G \times G \to G$$
+  $$g \cdot x = g x g \inv$$
+  )
+}
+
+For $g_1, g_2, a \in G$
+$$g_1 \cdot (g_2 \cdot a) = g_1 g_2 a g_2 \inv g_1 \inv$$
+$$(g_1g_2) \cdot a = g_1 g_2 a (g_1 g_2)\inv = g_1 g_2 a g_2 \inv g_1 \inv $$
+as desired.
+
+The fact that if we fix $g$ and make a function
+$$\sigma_g: G \to G$$
+$$\sigma_g(a) = g \cdot a$$
+is an automorphism comes from the fact that permutation representation produces permutations
+(i.e. bijections from $G$ to $G$), which is precisely the definition of automorrphism.
+
+\subsection{1.7.18}
+
+\textit{Let $H$ be a group acting on a set $A$. Prove that the relation $\equiv$ on $A$
+  defined by
+  $$a \equiv b \iff a = hb$$
+  is an equivalence relation. }
+
+We follow that
+$$a = 1a \ra a \equiv a$$
+$$a \equiv b \land b \equiv c \ra a = hb \land b = h'c \ra a = hh' c \ra a \equiv c$$
+$$a \equiv b \ra a = hb \ra b = h\inv a \ra b \equiv a$$
+
+\chapter{Subgroups}
+
+\section{Definition and Examples}
+
+Let $G$ be a group
+
+\subsection{2.1.1}
+
+\textit{Prove that the specified subset is a subgroup of the given group}
+
+Let us denote the desctibed group by $H$
+
+\textit{(a) the set of complex number of the form $a + ai$, $a \in R$ (addition)}
+
+$0 = 0 + 0i \in H$, therefore $H \neq \emptyset$.
+Suppose that $x, y \in H$ $x = a + ai$, $y = b + bi$,
+then we follow that $y\inv = -b -bi \in H$ and
+$$xy\inv = a + ai - b - bi = (a - b) + (a - b)i \in H$$
+therefore we follow that $H$ is a subgroup.
+
+\textit{(b) The set of complex numbers of absolute value 1, i.e. the unit circlel in
+  the complex plane (under multiplication)}
+
+We follow that $1 \in H$, therefore $H \neq \emptyset$. Suppose that $x, y \in H$.
+Then we follow that $|y\inv| = 1$, therefore $y\inv \in H$.
+
+$$|xy\inv | = |1| \in H$$
+(concrete proof follows from porerties of complex numbers in linear algebra course)
+therefore $H$ is a subgroup.
+
+\textit{(c) For fixed $n \in Z^+$ the set of rational number whose denominators divide $n$
+  (under addition)}
+
+We follow that $1/n \in H$. Suppose that $y \in H$. We follow that $y = m/k$, and thus
+$y\inv = -m/k$, thus $y\inv \in H$. Suppose that $x \in H$. We follow that $x = j/l$,
+and
+$$xy\inv = s/ lcm(l, k)$$
+where $s$ is some number and denominator also is a multiple of $n$, thus $H$ is a subgroup.
+
+\textit{(d) rationals whose denominators are relatively prime to $n$ (addition)}
+
+If $p$ is prime, then $1/p \in H$. For $y = m/k \in H$, we follow that $y \inv = -m/k \in H$,
+and for some $x = k/l \in H$ we follwo that
+$$xy\inv = s/lcm(l, k) \in H$$
+Thus $H$ is a subgroup
+
+\textit{(e) The set of nonzero real number whose square is a
+  rational number (under multiplication)}
+
+Here we've got $G = H$.
+
+
+\subsection*{2.1.2}
+
+\textit{Prove that subset is not a subgroup}
+
+\textit{(a) the set of $2$-cycles in $S_n$ for $n \geq 3$.}
+
+Suppose that $s$ is defined by  $(1, 2)$. We follow that $s s \inv$ 
+$(1, 2) (2, 1) = (1)(2)$
+which is not a 2-cycle.
+
+\textit{(b) The set of reflections in $D_{2n}$ for $n \geq 3$.}
+
+We follow that $1 \notin H$.
+
+\textit{(c) For $n$ composite integer $> 1$ and $G$ is a group containing element of order $n$,
+  the set $\{x \in G: |x| = n\} \cup \{1\}$.}
+
+We follow that if $x \in H$, then $x^{n} \notin H$
+
+\textit{(d) odd integers and 0}
+
+$$3 + 3 = 6$$
+
+\textit{(e) reals whose square is a rational number (under addition)}
+
+$$(\sqrt{2} + \sqrt{3})^2 = 5 + 2\sqrt{6}$$
+
+\subsection*{2.1.4}
+
+\textit{Give an explicit example of a group $G$ and an infinite subset $H$ of $G$ is closed
+  under the group operation but is not a subgroup of $G$.}
+
+$Z^+$ closed under addition, but does not have inverses.
+
+\subsection*{2.1.5}
+
+\textit{Prove that $G$ cannot have a subgroup $H$ with $|H| = n - 1$, where $n = |G| > 2$}
+
+Suppose that $x$ is the removed element. Then we follow that it cannot be identity by definition
+of the group. If $x$ is not an identity, then we follow that $xy $ must be removes as well,
+thus we follow that $|H|$ cannot be $n - 1$.
+
+\subsection*{2.1.6}
+
+\textit{Let $G$ be an abelian group. Prove that $H = \{g \in G: |g| < \infty\}$ is a subgroup
+  of $G$ (called the torsion subgroup of $G$). Give an explicit example where
+  this set is not a subgroup when $G$ is non-abelian.}
+
+We follow that $1 \in H$. Suppose that $y \in H$. We follow that $|y| < \infty$. Thus
+$$y^n = 1$$ for some $n \in Z^+$. Thus $$y^{-n} = 1$$, therefore $|-y| < \infty$ as well.
+Suppose that $x \in H$. We follow that there exists $j \in Z^+$ such that
+$$x^j = 1$$
+thus 
+$$(xy{\inv})^{lcm(j, n)}) = 1$$
+where we can use this fact only because $G$ is abelian, and therefore we can use the fact that
+$$(xy)^n = x^n y^n$$
+
+We can have an operator
+$$
+\begin{pmatrix}
+  1 & 2 \\
+  0 & 4
+\end{pmatrix}
+$$
+for which the inverse is
+$$
+\begin{pmatrix}
+  1 & -0.5 \\
+  0 & 0.25
+\end{pmatrix}
+$$
+and whose square root is
+$$
+\begin{pmatrix}
+  1 & 1/3 \\
+  0 & 2
+\end{pmatrix}
+$$
+where we have that inverse times square root has an infinite order.
+
+\subsection*{2.1.7}
+
+\textit{Fix some $n \in Z$ with $n > 1$. Find the torsion subgroup of $Z \times (Z/nZ)$. Show
+  taht the set of elements of infinite order together with the identity is not a subgroup
+  of this direct product.}
+
+We follow that the only element of $Z$ that has a finite order is $0$ and
+$Z/nZ$ can have $\phi(n)$ (not sure about this, but at least finite ) number of elements
+that have finite order. Thus we follow that the cartesian product of those two sets
+are the torsion subgroup of $Z \times (Z/nZ)$.
+
+Identity in this case is $\eangle{0, 0}$, and we follow that
+$$\eangle{1, 0} \eangle{-1, 1} = \eangle{0, 1}$$
+
+\subsection*{2.1.8}
+
+\textit{Let $H$ and $K$ be subgroups of $G$. Prove that $H \cup K$ is a subgroup if and
+  only if either $H \subseteq K$ or $K \subseteq H$.}
+
+Suppose that $H \cup K$ is a subgroup of $G$. Let $x \in K \setminus H$ and
+$y \in H \setminus K$. If $x \inv \in H$, then we follow that $(x\inv)\inv \notin H$, therefore
+$H$ is not closed under inverses. Thus we follow that $x\inv \in K \setminus H$. Same
+applies to $y$, thus $x, x\inv \in K \setminus H$ and $y, y\inv \in H \setminus K$.
+
+Now suppose that $xy \in K$. We follow that since $x\inv \in K$, then $x\inv xy \in K$, therefore
+$y \in K$, which is a contradiction. Simular case holds for $xy \in H$. Thus we follow that
+our assumption that $H \setminus K$ and $K \setminus H$ are both nonempty is false. Thus we
+follow that $H \subseteq K$ or $K \subseteq H$, as desired.
+
+Conversely, if $H \subseteq K$ or $K \subseteq H$, then
+we follow that $H \cup K = H$ or  $H \cup K = K$, thus it's a subgroup.
+
+\subsection*{2.1.9}
+
+\textit{Let $G = GL_n(F)$ where $G$ is any field. Define
+  $$SL_n(F) = \{A \in GL_n(F): det(A) = 1\}$$
+  Prove that $SL_n(F) \leq GL_n(F)$.}
+
+We follow that $I \in SL_n(F)$, thus it is nonempty. Suppose that
+$x, y \in SL_n(F)$. Then we follow that $x, y$ are both invertible (followed by
+nonzero determinant), and also $y\inv \in SL_n(F)$ (because $\det(A\inv) = \det(A)\inv$).
+From this we follow that
+$$\det(x y \inv ) = 1$$
+since $\det (A) \det (B) = \det(AB)$.
+Thus $SL_n(F) \leq GL_n(F)$, as desired.
+
+\subsection*{2.1.10}
+
+Simular case was handled in linear algebra book, gonna skip this one.
+
+\subsection*{2.1.11}
+
+Trivial; skip
+
+\subsection*{2.1.12}
+
+\textit{Let $A$ be an abelian group and fix some $n \in Z$. Prove that the following sets are
+  subgroups of $A$:}
+
+\textit{(a) $\{a^n: a \in A\}$}
+
+repeat of 1.1.27
+
+\textit{(b) $$H = \{a \in A: a^n = 1\}$$}
+
+We follow that $1 \in H$, therefore $H \neq \emptyset$. Suppose that $x, y \in H$. Then we
+follow that $y^n = 1$. Therefore $y^{-n} = 1$, therefore $y\inv \in H$.
+Thus we follow that
+$$(xy\inv)^n = x^n (y\inv)^n = 11 = 1$$
+
+
+\subsection*{2.1.13}
+
+\textit{Let $H$ be a subgroup of the additive group of rational numbers with the property
+  that $1/x \in H$ for every nonzero $x \in H$. Prove that $H = 0$ or $H = Q$.}
+
+We follow that $H = 0$ and $H = Q$ are cases, where everything holds. Now suppose that
+there exist two nonzero elements $x, y$ of $Q$ such that $x \in H$ and $y' \notin H$.
+Then we follow that if $y' < 0$, then $y'\inv > 0$ and $y'\inv \notin H \iff y \notin H$,
+thus we can let $y = \max\{y, y'\}$. (Not gonna remember about it afterwards, this was
+done so that we've got $x, y > 0$ for simplicity's sake).
+
+Now we get that $x > 0$ and $y > 0$, $x \in H$, $y \notin H$. Since $x, y$ are
+positive rationals we follow that $x = m/n, y = r/q$ for some $m, n, r, q \in Z^+$.
+
+Since $x \in H$, we follow that every integer multiple of $x$ is in $H$. Thus we follow that
+$$q(m/n) = (qm)/n \in H$$
+we can also state by definition of $H$ that
+$$n/(qm) \in H$$
+therefore every integer multiple of it is also in $H$. Thus
+$$jn/lm \in H$$
+for every $j, l \in Z^+$. Thus we follow that
+$$(j/l)(n/m)  \in H$$
+and thus if we set $j/l =  (m/n) / (r/q)$
+then we can follow that
+$$r/q \in H$$
+therefore $y\in H$, which is a contradiction. Thus we follow that the only possible cases for
+$H$ are $0$ and $Q$, as desired.
+
+\subsection*{2.1.14}
+
+\textit{Show that $\{x \in D_{2n}: x^2 = 1\}$ is not a subgroup of $D_{2n}$ (for $n \geq 3$).}
+
 
 \end{document}
 %%% Local Variables:
