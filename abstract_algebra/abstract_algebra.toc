@@ -34,10 +34,10 @@
 \contentsline {section}{\numberline {1.5}Quaternion Group}{27}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Homomorphisms and Isomorphisms}{28}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Group Actions}{32}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}1.7.8}{33}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}1.7.11}{35}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}1.7.13}{35}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}1.7.18}{36}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.1}1.7.11}{35}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}1.7.13}{35}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}1.7.18}{36}{subsection.1.7.3}%
 \contentsline {chapter}{\numberline {2}Subgroups}{37}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Definition and Examples}{37}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}2.1.1}{37}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Centralizers and Normalizers, Stabilizers and Kernels}{43}{section.2.2}%

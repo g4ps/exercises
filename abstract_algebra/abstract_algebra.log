@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  22 APR 2023 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  22 APR 2023 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,18 +406,18 @@ mm/m/it/10.95 n; \OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 1
 Chapter 2.
 [37
 
-] [38] [39] [40] [41] (./abstract_algebra.aux)
+] [38] [39] [40] [41] [42] [43] (./abstract_algebra.aux)
 Package rerunfilecheck Info: File `abstract_algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 608BCD76180EF6010329DAA6D4E0245E;3766.
+(rerunfilecheck)             Checksum: 27F6DBCB3F6EDB4E36E8659811594C8F;4014.
  ) 
 Here is how much of TeX's memory you used:
- 9294 strings out of 476025
- 142104 string characters out of 5796533
+ 9299 strings out of 476025
+ 142141 string characters out of 5796533
  1861388 words of memory out of 5000000
  29498 multiletter control sequences out of 15000+600000
  524379 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,76p,264b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,8n,76p,388b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -432,10 +432,10 @@ s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
 .pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on abstract_algebra.pdf (42 pages, 305218 bytes).
+Output written on abstract_algebra.pdf (44 pages, 309140 bytes).
 PDF statistics:
- 598 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 525 compressed objects within 6 object streams
+ 165 named destinations out of 1000 (max. 500000)
  345 words of extra memory for PDF output out of 10000 (max. 10000000)
 

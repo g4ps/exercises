@@ -1406,7 +1406,7 @@ $$\phi_2(v) = (y, y, ...)$$
 and since $x \neq y$, we follow that $\phi_1(v) \neq \phi_2(v)$. Thus we follow that
 $x \neq y$ implies that $\phi_x \neq \phi_y$, as desired.
 
-\subsection{1.7.8}
+\subsection*{1.7.8}
 
 \textit{Let $A$ be a nonempty set and let $k$ be a positive integer with $k \leq |A|$. The
   symmetric group $S_A$ acts of the set $B$ consisting of all subsets of $A$ of
@@ -1754,7 +1754,49 @@ $H$ are $0$ and $Q$, as desired.
 
 \subsection*{2.1.14}
 
-\textit{Show that $\{x \in D_{2n}: x^2 = 1\}$ is not a subgroup of $D_{2n}$ (for $n \geq 3$).}
+\textit{Show that $H = \{x \in D_{2n}: x^2 = 1\}$ is not a subgroup of $D_{2n}$ (for $n \geq 3$).}
+
+We follow that $1, s  \in H$. If $n$ is even, then we follow that $r^{n/2},  sr^{n/2} \in H$.
+We also follow that $sr^j \in H$ for every $j \in Z^+$ since
+$$(sr^j)^2 =  1$$
+For which we follow that $s sr^j = r^j \in H$, which is a contradiction.
+
+\subsection*{2.1.15}
+
+\textit{Let $H_1 \leq H_2 .... $ be an ascending chain of subgroups of $G$. Prove that
+  $$\bigcup_{i = 1}^{\infty} H_i$$
+  is a subgroup of $G$.}
+
+Let us denote
+$$S = \bigcup_{i = 1}^{\infty} H_i$$
+
+Since $1 \in H_1$ and $H_1 \subseteq S$, we follow that $1 \in S$, therefore $S$ is non-empty.
+
+Suppose that $x, y \in S$. Then we follow that $(\exists j, k \in Z^+)(y \in H_j \land y \in H_k)$.
+From this we follow by group property of $H_k$ that
+$$(\exists j, k \in Z^+)(y \in H_j \land y\inv \in H_k)$$
+Let $l = \max\{j, k\}$. Then we follow by definition of $S$ that $H_j \subseteq H_l$
+and $H_k \subseteq H_l$. Thus
+$$(\exists l \in Z^+)(y \in H_l \land y\inv \in H_l)$$
+from which by group property of $H_l$ we follow that
+$$(\exists l \in Z^+)(xy\inv \in H_l)$$
+thus by definition of $S$ we follow that
+$$xy\inv \in S$$
+Thus we conclude that $x, y \in S \ra xy\inv \in S$. Therefore $S$ satisfies all the
+properties of a subgroup of $G$. Thus $S$ is a subgroup of $G$, as desired.
+
+\subsection*{2.1.16}
+
+
+\textit{Let $n \in Z^+$ and let $F$ be a field. Prove that the set
+  $$\{a_{i, j}) \in GL_n(F): (\forall i > j )(a_{ij} = 0)\}$$
+  os a subgroup of $GL_n(F)$}
+
+Identity is in there and we follow closure under multiplication and inverces by properties
+in linear algebra book. Same goes for the next exercise as well.
+
+\section{Centralizers and Normalizers, Stabilizers and Kernels}
+
 
 
 \end{document}
