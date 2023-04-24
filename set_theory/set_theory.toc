@@ -56,3 +56,4 @@
 \contentsline {section}{\numberline {4.4}Order on $\omega $}{39}{section.4.4}%
 \contentsline {chapter}{\numberline {5}On the Size of Sets}{44}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Finite Sets}{44}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Countable Sets}{51}{section.5.2}%

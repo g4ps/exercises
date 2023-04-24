@@ -8786,7 +8786,52 @@ as desired.
 \textit{(a) Prove that there exists a unique monic polynomial $p$ of smallest
   degree such that $p(T)v = 0$}
 
-TODO
+We can follow the proof of the existence and uniqueness of minimal polynomial of $T$,
+but substituting $T^j$ for $T^jv$ to get the desired result
+
+\textit{(b) Prove that $p$ divides the minimal polynomial of $T$.}
+
+We follow it the same way as in 8.46
+
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product spacce and $T \in \map(V)$. Suppose
+$$a^0 + a_1z + a_2 z^2 + ... + a_{m - 1}z^{m - 1} + z^m$$
+is the minimal polynomial of $T$. Prove that
+$$\overline{a^0} + \overline{a_1}z + \overline{a_2} z^2 + ... + \overline{a_{m - 1}}z^{m - 1} + z^m$$}
+
+We can follow that if
+$$a^0 + a_1z + a_2 z^2 + ... + a_{m - 1}z^{m - 1} + z^m$$
+is a minimal polynomial of $T$, the
+$$a_0I + a_1T + a_2 T^2 + ... + a_{m - 1}T^{m - 1} + T^m = 0$$
+and by taking the adjoint of both sides we get
+$$\overline{a_0}I^* + \overline{a_1}T^* + \overline{a_2} (T^*)^2 + ... +
+\overline{a_{m - 1}}(T^*)^{m - 1} + (T^*)^m = 0$$
+thus
+$$\overline{a^0} + \overline{a_1}z + \overline{a_2} z^2 + ... + \overline{a_{m - 1}}z^{m - 1} + z^m$$
+is a polynomial multiple of minimal polynomial of $T^*$. Suppose that there exists a polynomial
+$$\overline{b_0} + \overline{b_1}z + \overline{b_2} z^2 + ... + \overline{b_{m - 1}}z^{n - 1} + z^n$$
+such that $n < m$ and that has lesser degree then our derived polynomial. Then we follow that
+its adjoint is a minimal polynomial for $T$ with lesser degreee then on our given polynomial,
+which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $F = C$ and $T \in \map(V)$. Suppose the minimal polynomial of
+  $T$ ahs degree $\dim V$. Prove that the characteristic polynomial of $T$ equals the minimal
+  polynomial.}
+
+We follow that the characteristic polynomial is a polynomial multiple of minimal polynomial,
+and if both of them have degree $\dim V$, then characteristic polynomial is indeed a
+minimal polynomial by the uniqeness of minimal polynomial and the fact that
+characteristic polynomial is monic.
+
+\textit{last 3 exercises are left for the better days.}
+
+
+
+
 
 \end{document}
 

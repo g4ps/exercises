@@ -2212,6 +2212,131 @@ $W = \omega$, as desired.
 Not gonna provide it, but we can follow that by making definition of $I$ a bit more strict and
 following the same logic for the argument.
 
+\section{Countable Sets}
+
+\subsection*{5.2.1}
+
+\textit{Let $A = \{4, 8, 12, 16, ...\}$ and let $B = \{n \in Z: n < -25\}$. Define a bijection
+  $f: A \to \omega$ and define a bijection $g: B \to \omega$.}
+
+$$f(x) = x/4 - 1$$
+$$g(x) = -n + 26$$
+
+\subsection*{5.2.2}
+
+\textit{Let $A$ and $B$ be as in Exercise 1. Define an injection $h: A \cup B \to \omega$.}
+
+Becase $A$ and $B$ are disjoint we can set
+$$h(x) =
+\begin{cases}
+  x = 2x \ra f\inv(x / 2) \\
+  x = 2x + 1 \ra g\inv((x - 1) / 2) 
+\end{cases}
+$$
+
+\subsection*{5.2.3}
+
+\textit{Show that the set of negative integers $Z^-$ is countable}
+
+We can define $f: Z^- \to \omega$ by $f(x) = -x - 1$, which will be a bijection between
+$Z^-$ and $\omega$. Thus we conclude that $Z^-$ is countable.
+
+\subsection*{5.2.4}
+
+\textit{Conclude from Exercise 3 that set of integers $Z$ is countable.}
+
+We can follow that sets $Z^-, N$ are both countable, thus $Z^- \cup N = Z$ is countable as well.
+
+\subsection*{5.2.5}
+
+\textit{Let $p: \omega \times \omega \to \omega$ be one-to-one. Using $p$, show that
+  the set of positive rationals is countable. Conclude that the set of negative rationals
+  is countable and the set of rationals is countable.}
+
+We can define an injection from $Q^+$ to $\omega \to \omega$ by
+$$h(m/n) = \eangle{m, n}$$
+where $m/n$ is in the lowest possible terms.
+From exerise 5.1.9 we follow that there exists an injection $p$ from $\omega \times \omega$
+to $\omega$. Thus we conclude that $p \circ h$ is an injection from $Q^+$ to $\omega$, thus
+$Q^+$ is countable.
+
+Because we can define a bijection from $Q^+$ to $Q^-$ by $f(x) = -x$ we follow that $Q^+$
+is countable as well. Thus we follow that $Q^+ \cup Q^+ \cup \{0\} = Q$ is a countable union
+of countable sets, and therefore is is countable as well, as desired.
+
+\subsection*{5.2.6}
+
+\textit{Let $A$ and $B$ be two countably infinite sets. Prove that there exists a bijection
+  $f: A \to B$.}
+
+Since $A$ and $B$ are both countably infitite we follow that there exist bijections
+$h: A \to \omega$ and $g: B \to \omega$. Thus if we set
+$f = g\inv \circ h $ we get the desired bijection.
+
+\subsection*{5.2.7}
+
+\textit{Let $A$ and $B$ be countable sets. Prove that $A \times B$ is countable.}
+
+We follow that there exist injections $f: A \to \omega$ and $g: B \to \omega$. Thus
+we can define an injection $p': A \times B \to \omega \to \omega$ by
+$$p'(x, y) = \eangle{f(x), g(y)}$$
+which we can plus into bijective $p: \omega \times \omega \to \omega$ to get injective
+$p \circ p': A \times B \to \omega$, which proves that $A \times B$ is countable.
+
+\subsection*{5.2.8}
+
+\textit{Let $A$ be a set. Suppose that $f: \omega \to A$ is onto $A$. Prove that $A$ is
+  countable}
+
+We follow that there exists an injective function  $g \subseteq f\inv: A \to \omega$,
+which proves that $A$ is countable, as desired.
+
+\subsection*{5.2.9}
+
+\textit{Let $A$ be a nonempty countable set. Prove that there exists an $f: \omega \to A$
+  that is onto $A$.}
+
+Because $A$ is nonempty, we follow that there exists $a \in A$. 
+We follow that there exists an injection $f: A \to \omega$, therefore we can define a
+surjective function $h: \omega \to A$
+$$h(x) =
+\begin{cases}
+  x \in \ran(f) \ra f\inv[\{x\}] \\
+  x \notin \ran(f) \ra a 
+\end{cases}
+$$
+as desired.
+
+\subsection*{5.2.10}
+
+\textit{Suppose that $f: A \to B$ is onto $B$ where $A$ is countable. Prove that $B$ is
+  also countable.}
+
+If $A = \emptyset$, then we follow that $B$ is also an emptyset, therefore $B$ is countable.
+
+If $A$ is not empty, then we follow by previous exercise that there exists a surjective
+$g: \omega \to A$. Thus we follow that
+$$f \circ g: \omega \to B$$
+is surjective, therefore by exercise 5.2.8 we follow that $B$ is countable, as desired.
+
+
+\subsection*{5.2.11}
+
+\textit{Let $A$ be an infinite set and let $C = \pow(A) \setminus \{\emptyset\}$.
+  By AoC there exists a function $g: C \to A$ such that $g(B) \in B$ for all $B \in C$.
+  One can show that there is a function $h: \omega \to A$ such that
+  $$(\forall n \in \omega )(h(n) = g(A \setminus h[n]))$$
+  Prove that $h: \omega \to A$ is one-to-one}
+
+Suppose that $x, y \in \omega$ and $h(x) = h(y)$. Then we follow that
+$h[x] = h[y]$, thus $A \setminus h[x] = A \setminus h[y]$.
+Since $h(x) \in A \setminus h[y]$. 
+$$g(A \setminus h[x]) = g(A \setminus h[y])$$
+Then we follow that $g(A \setminus h[x]) \in A \setminus h[x]$ and
+$g(A \setminus h[y]) \in A \setminus h[y]$.
+Thus $h(x) \in A \setminus h[x]$. 
+TODO
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
