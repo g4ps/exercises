@@ -8829,9 +8829,269 @@ characteristic polynomial is monic.
 
 \textit{last 3 exercises are left for the better days.}
 
+\section{Jordan Form}
+
+\subsection{}
+
+\textit{Find the charateristic polynomial and the minimal polynomial of the operator $N$
+  defined by
+  $$
+  \begin{pmatrix}
+    0 & 1 & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 \\
+  \end{pmatrix}
+  $$
+}
+
+$$z^4$$ will do
+
+\subsection{}
+
+Simular to previous, generalized in next exercise, the answer is $z^3$.
+
+\subsection{}
+
+\textit{Suppose $N \in \map(V)$ is nilpotent. Prove that the minimal polynomial of $N$ is
+  $z^(m + 1)$, where $m$ is the length of the longest consecutive string of $1$'s that appears
+  on the line directly above the diagonal in the matrix of $N$ with respect to any Jordan basis
+  for $N$.}
+
+We can follow that the characteristic polynomial of $N$ is $z^{\dim V}$, since every eigenvalue of
+$N$ is 0. Since characteristic polynomial is the polynomial multiple of the minimal polynomial,
+we follow that the minimal polynomial is in the form $z^j$ for some $j \in Z^+$.
+
+Since the product of the block diagonal matrix is equal to the block-diagonal matrix
+of the respective products of the blocks, we can follow that the minimal $j$ that
+so that $N^j = 0$ is the length if the longest consecutive string of $1$'s that appear of the line
+directly above the diagonal, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ adn $v_1, ..., v_n$ is a basis of $V$ that is a Jordan basis
+  for $T$. Describe the matrix of $T$ with respect to the basis $v_n, ..., v_1$ obtained
+  by reversing the order of the $v$'s}
+
+We can follow that produced matrix is the product of given matrix, mirrored along its center
+in both vertical and horisontal orientations, thus we follow that this matrix is in the
+form where $1$'s appear only below the diagonal.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $v_1, ..., v_n$ is a basis of $V$ that is Jordan basis
+  for $T$. Describe the matrix of $T^2$ with respect to this basis.}
+
+It is a matrix with squares of original numbers along the diagonal, above the diagonal
+there are 0's where the're used to be zeroes, but instead of 1's there are sums of numbers
+in preceeding rows and columns (i.e. if $a_{j, j - 1} = 1$,
+then $a_{j, j - 1} = a_{j, j} + a{j - 1, j - 1}$ in the square). Above those numbers there may be 1's
+as well, and every other number is zero.
+
+\subsection{}
+
+\textit{Suppose $N \in \map(V)$ is nilpotent and $v_1, ..., v_n$  and $m_1, ..., m_n$ are
+  as in 8.55. Prove taht $N^{m_1}v_1, ..., N^{m_n}v_n$ is a basis of $\ns N$.}
+
+We follow that
+$$N^{m_1 + 1}v_1 =  ... = N^{m_n + 1}v_n = 0$$
+thus we can follow that 
+$$N^{m_1}v_1, ..., N^{m_n}v_n \in \ns N$$
+Suppose that $v \in \ns T$. Then we follow that
+$$v = \sum{a_j N^{m_j} v_j}$$
+and
+$$Nv = \sum{a_j N^{m_j + 1} v_j} = 0$$
+thus we follow that every $a_j$ that correspond to non-zero $N^{m_j + 1} v_j$ is equal to zero
+because $N^{m_1}v_1 ,..., N v_1, v_1, ..., N^{m_n}v_n ,..., N v_n, v_n$  is a basis and
+therefore linearly independent. Thus we follow that the only $a$'s that may not be equal to zero
+correspond to $N^{m_1}v_1, ..., N^{m_n}v_n$, for which $N^{m_j + 1}v_j = 0$. Thus we follow that
+$$v \in \Span(N^{m_1}v_1, ..., N^{m_n}v_n)$$
+thus we follow that $N^{m_1}v_1, ..., N^{m_n}v_n$ spans $\ns T$ and is linearly independent, therefore
+it is a basis of $\ns T$, as desired.
+
+\subsection{}
+
+\textit{Suppose $p, q \in P(C)$ are monic polynomials with the same zeroes and $q$ is a
+  polynomial multiple of $p$. Prove that there exists $T \in \map(C^{\deg q})$ such that
+  the characteristic polynomial of $T$ is $q$ and the minimal polynomial of $T$ is $p$.
+}
+
+Suppose that $\lambda_1,lambda_2, ..., $ are zeroes of $p$, according to their multiplicities.
+Then we follow that we can create an operator $T \in \map(C^{\deg q})$, whose matrix with
+respect to some basis consists of those values on the main diagonal, where
+equal numbers are clumped together. Then we can follow that $q$ is a characteeisric
+polynomial of $T'$. By adjusing the number of 1's above the diagonal
+we can adjust the power of each of the $(z - \lambda)$ divisors of minimal polynomial to achieve the
+desired result.
+
+\subsection{}
+
+\textit{Suppose $V$ is a complex vector space and $T \in \map(V)$. Prove that there
+  does not exist a direct sum decomposition of $V$ into two proper subspaces invariant
+  under $T$ if and only if the minimal polynomial of $T$ is of the form $(z - \lambda)^{\dim V}$ for
+  some $\lambda \in C$.}
+
+Latter is the case if and only if we've got full row of 1's above the diagonal, which happens if
+and only if $V$ cannot be split into two subspaces invariant under $T$.
+
+\chapter{Operators on Real Vector Spaces}
+
+\section{Complexification}
+
+\subsection{}
+
+\textit{Prove 9.3}
+
+Suppose that $V$ is a real vector space. Then we follow that
+$$0 + i0 + u + iv = 0$$
+$$1(u + iv) = u + iv$$
+thus we follow that $0$ is the additive identity and $1$ is the multiplicative identity
+$$((u + iv) + (u' +  iv')) + (u'' + iv'') = (u + u' + u'') + i(v + v' + v'') =
+(u + iv) + ((u' +  iv') + (u'' + iv''))$$
+$$a((u + iv) + (u' + iv')) = a(u + iv) + a(u' + iv)$$
+$$(u + iv) + (-u + -iv) = 0$$
+$$(u + iv) + (u' + iv') = u + iv + u' + iv' = (u' + iv') + (u + iv)$$
+thus we've got associativity, distributivity, commutativity and additive inverse.
+
+Thus we follow that $V_C$ is a vector field.
+
+\subsection{}
+
+\textit{Verify that if $V$ is a real vector space and $T \in \map(V)$, then $T_C \in \map(V_C)$.}
+
+Suppose that $V$ is finite-dimentional field over $R$. Then we follow that
+$$T_C((u + iv) + \lambda(u' + iv')) = T_C((u + \lambda u) + (iv + \lambda iv')) = $$
+$$ = 
+T(u + \lambda u') + i(T(v + \lambda v')) = Tu + \lambda Tu' + iTv + \lambda iTv' = $$
+$$ = 
+T_C(u + iv) + \lambda T_C(u' + iv')$$
+thus we can follow that $T_C \in \map(V_C)$.
+
+\subsection{}
+
+\textit{Suppose that $V$ is a real vector space and $v_1, ..., v_m \in V$. Prove that
+  $v_1, ..., v_m$ is linearly independent in $V_c$ if and only if $v_1, ..., v_m$
+  is linearly independent in $V$ spans $V$}
+
+\textbf{In forward direction}:
+suppose that $v_1, ..., v_m$ is linearly independent in $V_C$. Then we follow that
+$v_1, ..., v_m$ is not linearly independent in $V$. Then we follow that there exist
+$a_1, ..., a_m \in R$ such that
+$$\sum {a_j v_j} = 0$$
+but not all of the $a_1, ..., a_m$ are zeroes. Then we follow that
+$$\sum {(a_j + ia_j) v_j} = 0$$
+which contradicts the fact that $v_1, ..., v_m$ is linearly independent in $V_C$.
+
+\textbf{In reverse direction: }
+
+Suppose that $v_1, ..., v_m$ is linearly independent in $V$. Then we follow that
+$$\sum{a_j v_j} = 0$$
+if and only if all of the $a_j = 0$. Thus we follow that
+$$\sum{(a_j + ia_j') v_j}  = 0$$
+if and only if $(a_j + ia_j) = 0$, from which we follow that
+$v_1, ..., v_m$ is linearly independent in $V_C$.
 
 
+\subsection{}
 
+\textit{Suppose that $V$ is a real vector space and $v_1, ..., v_m \in V$. Prove that
+  $v_1, ..., v_m$ spans $V_C$ if and only if $v_1, ..., v_m$ spans $V$}
+
+Suppose that $v_1, ..., v_m$ spans $V_C$. Suppose that $u \in V$. We follow
+that for every $u + i0 \in V_C$
+we have $a_1, ..., a_m \in C$ such that
+$$u + iv = \sum {a_j v_j}$$
+let $a_j = b_j + i b_j'$, where $b_j, b_j' \in R$. Thus we follow that
+$$u + i0 = \sum {(b_j + ib_j') v_j}$$
+$$u + i0 = \sum {b_jv_j} + i \sum{b_j' v_j}$$
+thus 
+$$u = \sum {b_j v_j}$$
+thus we follow that $v_1, ..., v_m$ spans $V$.
+
+Conversely, assume that $v_1, ..., v_m$ spans $V$. Let $u + iv \in V_C$. Then we follow that
+there exist $b_1, ..., b_m$ and $b_1', ..., b_m'$ such that
+$$u = \sum {b_j v_j}$$
+$$v = \sum {b_j' v_j}$$
+thus
+$$u + iv = \sum {b_j v_j} + i\sum {b_j' v_j}$$
+$$u + iv = \sum {(b_j + ib_j') v_j}$$
+thus if we set $a_j = b_j + ib_j' \in C$ we have that
+$$u + iv = \sum{a_j v_j}$$
+thus $v_1, ..., v_m$ spans $V_C$.
+
+Thus we follow that $v_1, ..., v_m$ spans $V_C$ if and only if $v_1, ..., v_m$ spans $V$, as desired.
+
+
+\subsection{}
+
+\textit{Suppose that $V$ is a real vector space and $S, T \in \map(V)$. Show that
+  $$(S + T)_C = S_C + T_C$$
+  and that
+  $$(\lambda T_C) = \lambda T_C$$
+}
+
+For all $u + iv \in V_C$ we've got 
+$$(S + T)_C(u + iv) = (S + T)u + i(S + T)v = Su + iSv + Tu + iTv = S_C(u + iv) + T_C(u + iv)$$
+$$(\lambda S)_C(u + iv) = (\lambda S) u + i (\lambda S) v = $$
+$$
+= \lambda (S u + iSv) = \lambda S_C(u + iv)$$
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$. Prove that $T_C$ is
+  invertible if and only if $T$ is invertible}
+
+\textbf{In forward direction: }
+Suppose that $T_C$ is invertible and suppose that $T$ is not invertible. Then we follow that
+there exists $v \neq 0 \in \ns T$ such that
+$$Tv = 0$$
+thus
+$$Tv + iTv = 0$$
+$$T_Cv = 0$$
+which is a contradiction.
+
+\textbf{In reverse direction: }
+Suppose that $T$ is invertible and $T_C$  is not invertible. Then we follow that there exists
+$u + iv \neq 0$ such that
+$$T_C(u + iv) = 0$$
+$$Tu + iTv = 0$$
+Since $u + iv \neq 0$ we follow that $u \neq 0$ or $v \neq 0$, both of which
+give us a contradiction.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $N \in \map(V)$. Prove that $N_C$ is
+  nilpotent if and only if $N$ is nilpotent.}
+
+Suppose that $N_C$ is nilpontent and $N$ is not nilpotent. Then we follow that
+there exists $v$ suc
+$$N^{\dim V}v \neq 0$$
+thus 
+$$N^{\dim V}v +  iN^{\dim V}v + \neq 0$$
+$$N_C^{\dim V}v \neq 0$$
+which is a contradiction.
+
+Suppose that $N$ is nilpotent. Then we follow that
+$$N^{\dim V} +  iN^{\dim V} + = 0$$
+$$N_C = 0$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(R^3)$ and $5, 7$ are eigenvalues of $T$. Prove that $T_C$ has
+  no nonreal eigenvalues.}
+
+Suppose that it does have a non-real eigenvalue $\lambda$. Then we follow that
+$\lambda \neq \overline{\lambda}$ and thus $\overline{\lambda}$ is an
+eigenvalue of $T$ as well. Thus $T$ has 4 distinct eigenvalues, but it's located
+in space with dimetion 3, which is a contradiction.
+
+% \subsection{}
+
+% \textit{Prove there does not exist an operator $T \in \map(R^7)$ such that
+%   $T^2 + T + I$ is nilpotent.}
+
+% Suppose that it does. THen we 
 
 \end{document}
 
