@@ -9086,14 +9086,332 @@ $\lambda \neq \overline{\lambda}$ and thus $\overline{\lambda}$ is an
 eigenvalue of $T$ as well. Thus $T$ has 4 distinct eigenvalues, but it's located
 in space with dimetion 3, which is a contradiction.
 
-% \subsection{}
+\subsection{}
 
-% \textit{Prove there does not exist an operator $T \in \map(R^7)$ such that
-%   $T^2 + T + I$ is nilpotent.}
+\textit{Prove there does not exist an operator $T \in \map(R^7)$ such that
+  $T^2 + T + I$ is nilpotent.}
 
-% Suppose that it does. THen we 
+Since $T \in \map(R^7)$ and $7$ is odd we can follow that $T$ has a real eigenvalue.
+Thus there exists $v \in V \setminus \{0\}$ such that $Tv = \lambda v$ for some $\lambda \in R$.
+Thus we follow that
+$$(T^2 + T + I)v = T^2 v + Tv + v = \lambda^2 v + \lambda v + v = (\lambda^2 + \lambda + 1) v$$
+We can follow that for all $\lambda \in R$ we've got that $(\lambda^2 + \lambda + 1) \neq 0$.
+Since $v \neq 0$, we follow that $v$ is an eigenvector for $(T^2 + T + I)$ for a non-zero
+eigenvalue $\lambda^2 + \lambda + 1$. Thus we follow that for any $j \in N$
+$$(T^2 + T + I)^j v \neq 0$$
+therefore we follow that $T^2 + T + I$ is not nillpotent, as desired.
 
-\end{document}
+\subsection{}
+
+\textit{Give an example of an operator $T \in \map(C^7)$ such that $T^2 + T + I$
+  is nilpotent.}
+
+We can follow that
+$$\frac{\sqrt{3} i - 1}{2} I$$
+will do the job (constant obtained through solving the quadratic polynomial $z^2 + z + 1$)
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$. Suppose there exist
+  $b, c \in R$ such that $T^2 + bT + cI = 0$. Prove that $T$ has an eigenvalue
+  if and only if $b^2 \geq 4c$}
+
+Let me remind myself on how to rigorously prove the solvability of quadratic equation.
+
+$$x^2 + bx + c = (x^2 + 2 \frac{b}{2} x + (\frac{b}{2})^2 ) + 
+(c - (\frac{b}{2})^2) = (x + \frac{b}{2})^2 + \frac{4c - b^2}{4} = 0$$
+$$(x + \frac{b}{2})^2 = \frac{b^2 - 4c}{4}$$
+
+thus we follow that if $b^2 - 4c < 0$, then there is no $x$ that satisfies the equation.
+
+\textbf{In forward direction: }
+Suppose that $T$ has an eigenvalue $\lambda \in R$. Suppose taht $b^2 < 4c$. Then we follow that
+$p \in P(R)$
+$$p(z) = z^2 + bz + c$$
+does not have real roots. Since $p(T) = 0$ we follow that $p$ is a polynomial multiple of
+minimal polynomial of $T$. Thus we follow that set of eigenvalues of $T$ is a subset of
+roots of given polynomial. Since this polynomial does not have real roots, we follow that
+the only subset of this set is $\emptyset$, thus $T$ does not have eigenvalues, which is a
+contradiction.
+
+\textbf{In reverse direction: }
+
+Suppoes that $b \geq 4c$. Then we follow that given polynomial has 2 (maybe equal)
+real roots (let us denote them by $\lambda_1, \lambda_2$) such that
+$$T^2 + bT + cI = (T - \lambda_1I)(T - \lambda_2I) = 0$$
+thus we follow that $(T - \lambda_2I)$ or $(T - \lambda_1I)$ are not injective, thus $T$
+has eigenvalues, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$. Suppose there exist $b, c \in R$
+  such that $b^2 < 4c$ and $T^2 + bT + cI$ is nilpotent. Prove that $T$ has no eigenvalues.}
+
+Suppose that $T$ has eigenvalue $\lambda$ with corresponding eigenvector $v$. Then we follow that
+$$(T^2 + bT + cI)v = (\lambda^2 + b\lambda + c)v$$
+Since $b^2 < 4c$ we follow that for all $\lambda \in R$ we've got that
+$(\lambda^2 + b\lambda + c) \neq 0$. Let us denote $p = (\lambda^2 + b\lambda + c)$. Then we follow
+that
+$$(T^2 + bt + cI)v = pv$$
+thus $v$ is an eigenvector for $(T^2 + bt + cI)$. Thus we follow that
+$$(T^2 + bt + cI)^{\dim V}v = p^{\dim V}v$$
+Because $p \neq 0$ and $p \in R$ (not sure if it matters) we follow that
+$p^{\dim V} \neq 0$. Since neither $p^{\dim V}$ nor $v$ are equal to zero we follow that
+$p^{\dim V} v  \neq 0$, thus
+$$(T^2 + bt + cI)^{\dim V}v \neq 0$$
+therefore $(T^2 + bt + cI)$ is not nilpotent, which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space, $T \in \map(V)$ adn $b, c \in R$ are such that
+  $b^2 < 4c$. Prove that $\ns(T^2 + bT + cI)^j$ has even dimention for every positive
+  integer $j$}
+
+Suppose that $\ns(T^2 + bT + cI)^j$ is odd-dimentional. We know that $\ns p(T)$ is invariant
+under $T$, thus we're justified to define $\map(\ns(T^2 + bT + cI)^j)$
+$$T|_{\ns(T^2 + bT + cI)^j}$$
+Because $\dim \ns(T^2 + bT + cI)^j$ is odd we follow that $T|_{\ns(T^2 + bT + cI)^j}$ has an eigenvalue.
+Thus there exists $v \in \ns(T^2 + bT + cI)^j\setminus \{0\}$ such that $T|_{\ns(T^2 + bT + cI)^j}v = 0$
+Since $\ns(T^2 + bT + cI)^j\setminus \{0\} \subseteq V \setminus \{0\}$
+we follow that there exists $v \in V \setminus \{0\}$
+such that
+$$Tv = \lambda v$$
+thus we follow that our original $T$ has an eigenvalue, which is a contradiction by exercise 9.1.11.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space with $\dim V = 8$. Suppose $T \in \map(V)$ is
+  such that $T^2 + T + I$ is nilpotent. Prove that $(T^2 + T + I)^4 = 0$.}
+
+Since in every iteration of $j$ we get at least increase of 2 in $\dim \ns (T^2 + T + I)^{j}$
+we follow that $\dim \ns (T^2 + T + I)^4 \geq 8$. Thus $(T^2 + T + I)^4 = 0$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$ has no eigenvalues. Prove that
+  every subspace of $V$ invariant under $T$ has even dimention.}
+
+Suppose that $U$ is invariant under $T$ and has odd dimention. Then we follow that
+$T|_U$ has an eigenvalue. Thus $T$ has an eigenvalue, which is a contradiction.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space. Prove that there exists $T \in \map(V)$
+  such that $T^2 = -I$ if and only if $V$ has even dimention.}
+
+We follow that
+$$T^2 + I = 0$$
+$$T^2 + 0T + 1I = 0$$
+from which we follow that $b^2 < 4c$. Thus $T$ has no eigenvalues in $V$ by 9.1.11.
+Since $V$ is invariant under $T$, we follow that $V$ has even dimention by 9.1.15.
+
+If $V$ has even dimention, then we can define a block-diagonal matrix with respect to some
+basis, where each block is defined by
+$$A =
+\begin{pmatrix}
+  0 & -1 \\
+  1 & 0
+\end{pmatrix}
+$$
+which will give us desired result.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$ satisfies $T^2 = -I$.
+  Define complex scalar multiplication on $V$ as follows: if $a, b \in R$, then
+  $$(a + bi)v = av + bTv$$}
+
+\textit{(a) Show that the complex scalar multiplication on $V$ defined above and the addition
+  on $V$ makes $V$ into a complex vector space.}
+
+We follow the commutatitity, associativity and additive inverse and additive identity from
+the usual definition. Thus for all $v, u \in V$ and $a + bi \in C$ we've got
+$$(a + bi)(v + u) = a v + au + bTv  + bTu = (a + bi)v + (a + bi)u$$
+$$(1 + 0i)(v) = 1v = v$$
+which proves that $V$ is a complex vector space under provided multiplication.
+
+\textit{(b) Show that the dimension of $V$ as a complex vector space is
+  half the dimension of $V$ as a real vector space}
+
+Suppose that $v_1, ..., v_n$ spans $V$ as a complex space. Then we follow that
+$v_1, ..., v_n, Tv_1, ..., Tv_n$ spans $V$ as a real space.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space and $T \in \map(V)$. Prove that the following
+  are equivalent: }
+
+\textit{(a) All the eigenvalues of $T_C$ are real.}
+
+\textit{(b) There exists a basis of $V$ with respect to which $T$ has an upper-triangular
+  matrix}
+
+\textit{(c) There exists a basis of $V$ consisting of generalized eigenvectors of $T$.}
+
+Proof of the fact that (a) implies (b) and (b) implies (c) is essentially the same as with the
+complex versions, but now we can state that $T$ has eigenvalues.
+The fact that (c) implies (a) follows from the fact that if $T$ has a basis of generalized
+eigenvectors, then all of the eigenvalues of $T$ are real and since the same basis spans $V_C$
+as well, we can follow that there are no other eigenvectors, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space with $\dim V = n$ and $T \in \map(V)$
+  is such that $\ns T^{n - 2} \neq \ns T^{n - 1}$. Prove that $T$ has at most
+  two distinct eigenvalues and that $T_C$ has no nonreal eigenvalues.}
+
+
+Looking at the proof of 8.2.4 we can state that $T_C$ has at most two distinct eigenvalues,
+one of which is zero. Thus we can follow that if the second eigenvalue  exists, then it must
+be real so that $\lambda = \overline{\lambda}$. Since both of those eigenvalues are real, we
+follow that the same can be said about $T$.
+
+\section{Operators on Real Inner Product Spaces}
+
+\subsection{}
+
+\textit{Suppose $S \in \map(R^3)$ is an isometry. Prove that there exists a nonzero vector
+  $x \in R^3$ such that $S^2x = x$}
+
+We follow that since $R^3$ is odd-dimentional, there exists an eigenvalue $\lambda \in R$
+of $S$ with corresponding eigenvector $x \neq 0$. Since $\lambda$ is
+an eigenvalue of an isometry,
+we follow that $|\lambda| = 1$, which means that for $\lambda \in R$ we've got that
+$\lambda = 1$ or $\lambda = -1$, which means that $\lambda^2 = 1$ for both cases
+Now we can follow that
+$$Sx = \lambda x$$
+and thus
+$$S^2x = \lambda^2 x$$
+$$S^2x = 1 x$$
+$$S^2x = x$$
+as desired.
+
+\subsection{}
+
+\textit{Prove that every isometry on an odd-dimentional real inner product space
+  has $1$ or $-1$ as an eigenvalue }
+
+This was derived in the course of the previous exercise.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real inner product space. Show that
+  $$\eangle{u + iv, x + iy} = \eangle{u, x} + \eangle{v, y} +
+  (\eangle{v, x} - \eangle{u, y})i$$
+  for $x, y, u, y \in V$ defines a complex inner product on $V_C$}
+
+We follow that
+$$\eangle{0 + i0, 0 + i0} = 0 + 0i$$
+And if $\eangle{u + iv, u + iv} = 0$ then we follow that
+$$\eangle{u, u} + \eangle{v, v} + (\eangle{v, u} - \eangle{u, v})i = 0$$
+because $V$ is a real inner product space we follow that conjugate symmetry implies
+normal symmetry, thus
+$$\eangle{u, u} + \eangle{v, v} + (\eangle{v, u} - \eangle{v, u})i = 0$$
+$$\eangle{u, u} + \eangle{v, v} + 0i = 0$$
+by positiveness of our original inner product we follow that $\eangle{u, u}$ and
+$\eangle{v, v}$ are greater or equal to zero. Thus if their sum is zero we can follow that
+both of them are zero, thus by definiteness of our original inner product we follow
+that $u = v  = 0$.
+Thus we conclude that $\eangle{u + iv, u + iv} = 0$ if and only if $u + iv = 0$, thus
+we can follow definiteness property.
+
+Suppose that $u + iv \neq 0$. Then we follow that
+$$\eangle{u + iv, u + iv} = \eangle{u, u} + \eangle{v, v} + (\eangle{v, u} - \eangle{v, u})i$$
+$$\eangle{u + iv, u + iv} = \eangle{u, u} + \eangle{v, v} + 0i$$
+Since $u + iv \neq 0$ we follow that not both of $u, v$ are equal to zero, thus we follow that
+$$u + iv \neq  0 \Rightarrow \eangle{u + iv, u + iv} > 0$$
+thus we've got positiveneess property
+
+
+Let us define additional $u', v' \in V$. Then we follow that
+$$\eangle{u + iv + \lambda(u' + iv'), x + yi} =
+\eangle{(u + \lambda u') + i(v + \lambda v'), x + yi} = $$
+$$ = 
+\eangle{(u + \lambda u'), x} + \eangle{(v + \lambda v'), y} + 
+(\eangle{(v + \lambda v'), x} + \eangle{(u + \lambda u'), y})i =
+$$
+$$ = 
+\eangle{u, x} + \lambda \eangle{u', x} + \eangle{v, y} + \lambda\eangle{v', y} + 
+(\eangle{v, x} + \lambda \eangle{v', x} + \eangle{u, y} + \lambda\eangle{u', y})i =
+$$
+$$ = 
+\eangle{u, x} + \eangle{v, y} + (\eangle{v, x} +  \eangle{u, y}) i +
+\lambda ( \eangle{u', x} + \eangle{v', y} + 
+(\eangle{v', x}  + \eangle{u', y})i) =$$
+$$ =
+\eangle{u + iv, x + iy} + \lambda \eangle{u' + iv', x + iv}
+$$
+thus we follow that we've got linearity in the first slot.
+
+$$\eangle{u + iv, x + iy} = \eangle{u, x} + \eangle{v, y} +
+(\eangle{v, x} - \eangle{u, y})i = $$
+$$ =
+\overline{  \eangle{u, x} + \eangle{v, y} - (\eangle{v, x} - \eangle{u, y})i} = $$
+$$ =
+\overline{\eangle{v, y} + \eangle{u, x} + (\eangle{u, y} - \eangle{v, x})i} = $$
+$$ = \overline{\eangle{u + iv, x + iy}}$$
+thus we follow the conjugate symmetry. Therefore we conclude that given function
+satisfies all of the properties of the inner product and therefore it is a
+inner product on a complex inner space $V_C$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real inner product space and $T \in \map(V)$ is self-adjoint.
+  Show that $T_C$ is a self-adjoint operator on the inner product space $V_C$ defined
+  by the previous exercise.}
+
+We firsly follow that for $u, v \in V$, then
+$$\eangle{u + i0, v + i0} = \eangle{u, v} + \eangle{0, 0} + (\eangle{0, v} + \eangle{u, 0})i
+= \eangle{u, v}$$
+thus we follow that $u, v \in V$ implies that  $\eangle{u, v} = \eangle{u + i0, v + i0}$.
+Thus we can follow that orthonormal basis of $V$ is still an orthonormal basis in $V_C$.
+
+Suppose that $T$ is self-adjoint. Then we follow that with respect to
+some orthonormal basis $M(T) = M(T)^T$. Thus we follow that with respect to the same basis
+$$M(T_C) = M(T)$$. Thus $M(T_C) = M(T_C)^T$.
+Since we conserve orthonormality when we convert to the complex space we follow that
+with respect to some orthonormal basis $M(T_C) = M(T_C)^T$. Thus we follow that
+$T_C$ is self-adjoint, as desired.
+
+\subsection{}
+
+\textit{Use the previous exercise to give a proof of the Real Spectral Theorem (7.29) via
+  complexification and the Complex Spectral Theorem.}
+
+We firstly follow that if $V$ has an orthonormal basis consisting of
+eigenvectors of $T$, then $T$ has a diagonal matrix with respect to this basis. Thus
+(b) implies (c).
+
+We can also state that if (c) holds, then $T$ is self-adjoint. Thus we need
+to prove that if $T$ is self-adjoint, then $V$ has an orthonormal basis consisting of
+eigenvectors of $T$
+
+Suppose that $T$ is self-adjoint. Then we follow that $T_C$ is self-adjoint as well.
+Thus we can follow that $T_C$ is normal and therefore there exists an orthonormal
+basis of $V_C$ which consitst of  eigenvectors of $T_C$, with respect to which
+we've got a diagonal matrix for $T_C$. Because $T_C$ is self-adjoint, we follow that
+$M(T_C)$ with respect to this basis is equal to its conjugate transpose, and thus
+we follow that every eigenvalue of $T_C$ is real. Thus we follow that $T$ has the
+same eigenvalues. Suppose that $u_1, ..., u_n$ is this orthonormal basis.
+Then we follow that 
+$$u_j = x + yi$$
+$$u_j = xi - y$$
+
+We're going to state the modified original proof and proceed with induction.
+If $\dim V = 1$, then we can follow that any normalized vector of $V$ is an
+eigenvector of $T$, thus we've got the desired conclusion.
+
+Now assume that $\dim V > 1$ and for all real inner product spaces  with lesser dimention
+we've got an orthonormal basis of eigenvectors. By our previous discussion we follow that
+$T$ has an eigenvalue, therefore is has an eigenvector, and because of this it also has
+a normal eigenvector $u$. Let us define $U = \Span(u)$. Since $\dim U = 1$ we follow that
+$U$ is invariant under $T$ and $T$ is self-adjoint when restricted by $U^{\perp}$.
+By our induction hypothesis we've got that $U^{\perp}$ has an orthonormal basis
+of eigenvectors of $T$. Thus if we append $u$ to this basis we will get an orthonormal basis
+for $V$, as desired. Thus we follow that (a) implies (b).
+
+
+\end {document}
 
 %%% Local Variables:
 %%% mode: latex
