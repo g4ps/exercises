@@ -9410,6 +9410,49 @@ By our induction hypothesis we've got that $U^{\perp}$ has an orthonormal basis
 of eigenvectors of $T$. Thus if we append $u$ to this basis we will get an orthonormal basis
 for $V$, as desired. Thus we follow that (a) implies (b).
 
+TODO: rewrite this thing as it is probably wrong.
+
+\subsection{}
+
+\textit{Give an example of an operator $T$ on an inner product space such that $T$
+  has an invariant subspace whose orthogonal compliment is not invariant under $T$.}
+
+Define $T$ by
+$$T =
+\begin{pmatrix}
+  1 & 2 \\
+  3 & 4
+\end{pmatrix}
+$$
+
+Suppose that $Tv = \lambda v$. We follow that
+$$\lambda x = 1 x + 2 y$$
+$$ 2 y = \lambda x - x$$
+$$ y = (\lambda x - x) / 2$$
+$$\lambda (\lambda x - x) / 2 = 3 x + 4 y$$
+$$\lambda^2 x - \lambda x = 6 x + 4 (\lambda x - x)$$
+$$\lambda^2 x - \lambda x = 6 x + 4 (\lambda x - x)$$
+$$\lambda^2 x - \lambda x = 6 x + 4 \lambda x - 4x$$
+$$\lambda^2 x - -5\lambda x - 2x = 0$$
+Suppose that $x = 1$. We follow that
+$$\lambda^2  -5\lambda  - 2 = 0$$
+$$\lambda = \frac{\sqrt{33} \pm 5}{2}$$
+thus
+$$y = (\frac{\sqrt{33} \pm 5}{2} - 1)/2$$
+We can follow now that $\Span((x, y))$ is an eigenspace, and therefore it is
+invariant under $T$. We also can state that its orthogonal complement $\Span((y, x))$
+is not invariant under $T$, as desired.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $T$ has a block diagonal matrix
+  ....}
+
+We follow that exercise from the other exercise that shows that product
+of two block-diagonal matrices is the product of their respective blocks (assuming
+that those blocks have the same size).
+
+
 
 \end {document}
 

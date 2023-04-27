@@ -47,6 +47,8 @@ which I don't remember seeing in the book, but it's pretty useful.
 
 Sometimes I use $\oplus$ to denote xor.
 
+I also denote $^BA$ as $A^B$, because it's more convinient.
+
 \chapter{Introduction}
 
 \section{Elementary Set Theory}
@@ -2328,14 +2330,100 @@ is surjective, therefore by exercise 5.2.8 we follow that $B$ is countable, as d
   $$(\forall n \in \omega )(h(n) = g(A \setminus h[n]))$$
   Prove that $h: \omega \to A$ is one-to-one}
 
-Suppose that $x, y \in \omega$ and $h(x) = h(y)$. Then we follow that
-$h[x] = h[y]$, thus $A \setminus h[x] = A \setminus h[y]$.
-Since $h(x) \in A \setminus h[y]$. 
-$$g(A \setminus h[x]) = g(A \setminus h[y])$$
-Then we follow that $g(A \setminus h[x]) \in A \setminus h[x]$ and
-$g(A \setminus h[y]) \in A \setminus h[y]$.
-Thus $h(x) \in A \setminus h[x]$. 
-TODO
+Suppose that $x < y \in \omega$ and $h(x) = h(y)$. We follow that $x \in y$,
+therefore
+$$h(x) = h(y) = g(A \setminus h[y]) \in A \setminus h[y]$$
+Since $x \in y$ we follow that $h(x) \in h[y]$, therefore we have a contradiction.
+
+
+\section{Uncountable Sets}
+
+\subsection*{5.3.1}
+
+\textit{Let $A$ be uncountable. Prove that $A \times B$ is uncountable for any nonempty
+  set $B$.}
+
+Let $b \in B$. Define a function $f: A \to A \times B$ by
+$$f(a) = \eangle{a, b}$$
+We follow that for $x, y \in A$
+$$f(x) = f(y) \ra \eangle{x, b}  = \eangle{y, b} \ra x = y$$
+thus we follow that $f$ is injective. Therefore we conclude that $A \times B$ is
+uncountable, as desired.
+
+\subsection*{5.3.2}
+
+\textit{Let $A$ be uncountable and $B$ be countable. Prove that $A \setminus B$ is
+  uncountable.}
+
+Suppose that $A \setminus B$ is countable. Then we follow that $A = A \setminus B \cup B$
+is a countable union of countable sets, therefore it is countable as well, which
+is a contradiction.
+
+\subsection*{5.3.3}
+
+\textit{Prove that the set of irrationals $R \setminus Q$ is uncountable.}
+
+$R$ is uncountable, $Q$ is countable, thus by previous exercise we follow this
+conclusion.
+
+\subsection*{5.3.4}
+
+\textit{Suppose that $A$ is uncountable and $A \subseteq B$. Prove that $B$ is
+  uncountable.}
+
+We follow that since $A \subseteq B$ we've got an injection $f: A \to B$
+which is a restricted identity on $A$. Thus we follow that $B$ is uncountable, as desired.
+
+\subsection*{5.3.5}
+
+\textit{Prove that $\omega^\omega$ is uncountable}
+
+We follow that $\{0, 1\}^\omega$ is a subset of $\omega^{\omega}$ and because the former
+is uncountable, we follow by previous exercise that $\omega^{\omega}$ is uncountable.
+
+\subsection*{5.3.6}
+
+\textit{Suppose that $A$ is uncountable. Prove that $\pow(A)$ is uncountable.}
+
+Let us define a function $f: A \to \pow(A)$
+$$f(x) = \{x\}$$
+this function is clearly injective, thus $\pow(A)$ is uncountable, as desired.
+
+\subsection*{5.3.7}
+
+\textit{Let $A \neq \emptyset$. Prove that if $B$ is uncountable, then $B^A$ is uncountable.}
+
+Let $a \in A$ and define $f: B \to B^A$ to be so that $f(b)$ is a function such that
+$$(\forall a'\in A)((f(a))(a') = b$$
+(i.e. it sends every $a$ to value $b$). We follow that $f$ is injective, therefore
+we can follow that $B^A$ is uncountable, as desired.
+
+\subsection*{5.3.8}
+
+\textit{Let $F$ be as in Theorem 5.3.2, and let $(*)$ $f_1, f_2, ..., f_n$ be a finite
+  list of functions in $F$. Using the argument in the proof of Theorem 5.3.2
+  define a new function $g \in F$ that is not in the list $(*)$. Conclude that $F$ is infinite}
+
+$$
+g(i) =
+\begin{cases}
+  i \leq n \ra \text{ if $f_i(i) = 0$ then 1, otherwise 0 } \\
+  i > n \ra f_0(i)
+\end{cases}
+$$
+will do
+
+
+\textit{The rest of the exercises were handled in my real analysis course, specifically in
+  Chapter 1}
+
+\section{Cardinality}
+
+
+
+
+
+
 
 \end{document}
 %%% Local Variables:

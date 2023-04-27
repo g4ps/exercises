@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  24 APR 2023 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  27 APR 2023 13:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -366,7 +366,7 @@ Chapter 1.
 [4
 
 ] [5] [6]
-Overfull \hbox (2.85811pt too wide) detected at line 179
+Overfull \hbox (2.85811pt too wide) detected at line 181
 \OML/cmm/m/it/10.95 P []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/
 m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 P \OMS/cmsy/m/n/10.95 _
  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/m/n/10.95 ) [] \OMS/cms
@@ -386,7 +386,7 @@ Chapter 2.
 [12
 
 ]
-Overfull \hbox (34.05876pt too wide) detected at line 432
+Overfull \hbox (34.05876pt too wide) detected at line 434
 []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10
 .95 (\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/
 m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ \OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 :\OM
@@ -405,7 +405,7 @@ cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95
  []
 
 [13] [14]
-Overfull \hbox (56.20164pt too wide) detected at line 530
+Overfull \hbox (56.20164pt too wide) detected at line 532
 [] \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/
 m/n/10.95 ^ 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \O
 ML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x [] C\OT1/cmr/m/n/
@@ -422,7 +422,7 @@ mm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95
  []
 
 
-Overfull \hbox (5.42159pt too wide) detected at line 549
+Overfull \hbox (5.42159pt too wide) detected at line 551
 \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A [] x \OMS/cms
 y/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ [] [] \OML/cmm/m/it/1
 0.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ \OT1/c
@@ -436,7 +436,7 @@ S/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.9
  []
 
 [15]
-Overfull \hbox (33.26114pt too wide) detected at line 595
+Overfull \hbox (33.26114pt too wide) detected at line 597
 \OMS/cmsy/m/n/10.95 8\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10
 .95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )((\OMS/cmsy/m/n/10.95 8\OML/cmm/
 m/it/10.95 y \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OM
@@ -457,7 +457,7 @@ Chapter 3.
 [17
 
 ] [18]
-Overfull \hbox (34.00526pt too wide) detected at line 716
+Overfull \hbox (34.00526pt too wide) detected at line 718
 []\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 y \OMS/cmsy/m/n/
 10.95 2 \OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 9\OML/cmm
 /m/it/10.95 z \OMS/cmsy/m/n/10.95 2 []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 R
@@ -480,55 +480,55 @@ Chapter 4.
 ] [32]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1381.
+(hyperref)                removing `math shift' on input line 1383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1381.
+(hyperref)                removing `\omega' on input line 1383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1381.
+(hyperref)                removing `math shift' on input line 1383.
 
 [33] [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1484.
+(hyperref)                removing `math shift' on input line 1486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1484.
+(hyperref)                removing `\omega' on input line 1486.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1484.
+(hyperref)                removing `math shift' on input line 1486.
 
 [35] [36] [37] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1643.
+(hyperref)                removing `math shift' on input line 1645.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1643.
+(hyperref)                removing `\omega' on input line 1645.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1643.
+(hyperref)                removing `math shift' on input line 1645.
 
 [39] [40] [41] [42] [43]
 Chapter 5.
 [44
 
-] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] (./set_theory.aux)
+] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 7FC0E3758638DD0CD6C40DA6F36C689F;5502.
+(rerunfilecheck)             Checksum: C73AC6F763EB284F7D755123B7F7B288;5640.
  ) 
 Here is how much of TeX's memory you used:
- 9391 strings out of 476025
- 143079 string characters out of 5796533
+ 9401 strings out of 476025
+ 143194 string characters out of 5796533
  1862388 words of memory out of 5000000
- 29516 multiletter control sequences out of 15000+600000
+ 29517 multiletter control sequences out of 15000+600000
  524912 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,301b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -546,10 +546,10 @@ s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (55 pages, 347857 bytes).
+Output written on set_theory.pdf (56 pages, 351284 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
- 702 compressed objects within 8 object streams
- 238 named destinations out of 1000 (max. 500000)
- 473 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 719 compressed objects within 8 object streams
+ 247 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -57,3 +57,4 @@
 \contentsline {chapter}{\numberline {5}On the Size of Sets}{44}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Finite Sets}{44}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Countable Sets}{51}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Uncountable Sets}{54}{section.5.3}%
