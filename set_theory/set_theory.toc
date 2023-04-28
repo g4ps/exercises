@@ -58,3 +58,6 @@
 \contentsline {section}{\numberline {5.1}Finite Sets}{44}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Countable Sets}{51}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Uncountable Sets}{54}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Cardinality}{55}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}5.4.2}{56}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}5.4.22}{60}{subsection.5.4.2}%

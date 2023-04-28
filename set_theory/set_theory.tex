@@ -2419,11 +2419,263 @@ will do
 
 \section{Cardinality}
 
+\subsection*{5.4.1}
 
+\textit{Let $A = \{x \in R: 0 < x < 1\}$ and let $B = \{x \in R: 2 < x < 5\}$. Prove that
+  $|A| =_c |B|$}
 
+Let $a < b \in R$. Define $h = (b - a)/2$. We follow that we can define function $f: (a, b) \to R$
+% $$f_0(x) = x - h$$
+% $$f_1(x) = \frac{h}{h - |f_0(x)|}$$
+$$f(x) = \frac{x - h}{|x - h|} \frac{h}{h - |x - h|}$$
+where $|\cdot|$ denotes absolute value. We can prove that given function
+is a bijection (concrete proof given in real analysis book, but the
+idea is to put center the interval at the origin and then strech it to the set of reals).
+Thus we follow that for any nonempty open interval we've got a bijection from it to $R$. Therefore
+$$a \neq b \in R \ra |(a, b)| =_c |R|$$
+thus we follow from it that two sets, that are given in the
+text of the exercise (which are open intervals) have the same
+cardinality (there are easier ways to show that there exists a bijection from one
+open interval to another, but I wanted to show off a bit).
 
+\subsection{5.4.2}
 
+\textit{Prove that $|A^{\{0, 1\}}| =_c |A \times A|$.}
 
+Define $f: A^{\{0, 1\}} \to A \times A$ by
+$$f(g) = \eangle{g(0), g(1)}$$
+obviously $f$ is bijective, therefore we've got the necessary result.
+
+\subsection*{5..4.3}
+
+\textit{Let $A$ and $B$ be countably infinite sets. Prove that $|A| =_c |B|$. Conclude
+  that $|\omega \times \omega| =_c |omega|$}
+
+We know that there exists a bijection $f: \omega \times \omega \to \omega$ from some previous
+exercises. Thus we follow the desired result.
+
+\subsection*{5.4.4}
+
+\textit{Let $A$ and $B$ be sets. Prove that $|A| =_c |A|$ and prove that if $|A| =_c |B|$,
+  then $|B| =_c |A|$}
+
+We follow that the identity function is bijective, thus $|A| =_c |A|$. Inverse of a bijection
+is a bijection, therefore if there exists  a bijection $f: A \to B$, then there
+exists a bijection $f\inv: B \to A$, thus we follow the symmetric property.
+
+\subsection*{5.4.5}
+
+Composition of bijections,
+
+\subsection*{5.4.6}
+
+\textit{Prove that if $|A| <_c |B|$ and $|B|  = |C|$<, then $|A| <_c |C|$.}
+
+We follow that there exists an injection $f: A \to B$ and bijection $g: B \to C$, thus
+there exists an injection $g \circ f: A \to C$, thus $|A| \leq_C |C|$.
+
+Suppose that there exists a bijection $h: A \to C$. Then we follow that $g\inv \circ h : A \to B$ is
+a bijection, which contradicts $|A| <_c |B|$
+
+\subsection*{5.4.7}
+
+\textit{Let $B$ be countable. Prove that if $|A| \leq_c |B|$, then $A$ is countable.}
+
+We follow that there exist injections $f: A \to B$ and $g: B \to \omega$, thus there
+exists an injection $g \circ f: A \to \omega$, as desired.
+
+\subsection*{5.4.8}
+
+\textit{Let $A$ be uncountable. Prove that if $|A| \leq |B|$, then $B$ is uncountable.}
+
+Suppose that it isn't. Then by previous exercise we follow that $A$ is countable, which
+is a contadiction.
+
+\subsection*{5.4.9}
+
+\textit{Prove that if $|A| <_c |B|$ and $|B| <_c |C|$, then $|A| <_c |C|$.}
+
+We can follow that $|A| \leq_c |C|$ by composition of injections. Suppose that
+$|A| =_c |C|$. Then we follow that there exists a bijection $f: C \to A$, thus
+we follow that $|C| <_c |B|$, which is a contradiction.
+
+\subsection*{5.4.10}
+
+\textit{Prove that the function $G$ in the proof of Theorem 5.4.3 is a bijection.}
+
+Firstly I want to state that the check for the fact that $G$ is indeed a function is pretty
+trivial.
+
+Let $G$ be defined as in the theorem. Suppose that $f \neq g \in \{0, 1\}^A$. We follow that
+there exists $a \in A$ such that $f(a) \neq g(a)$. Since $a = 0 \lor a = 1$ we
+follow that $f(a) \neq g(a) \ra f(a) = 1 \lor g(a) = 1$. Assume that $f(a) = 1$ and thus
+$g(a) = 0$. Now we can follow that $a \in G(f)$ and $a \notin G(g)$. Thus we conclude that
+$G(f) \neq G(g)$. Thus $f \neq g \ra G(f) \neq G(g)$, thus implying that $G$ is injejctive.
+
+The fact that $G$ is surjective follows from the definition of $X_f$ and $G$.
+
+\subsection*{5.4.11}
+
+\textit{Prove that the set $\pow(\omega)$ is uncountable.}
+
+Follows from Cantor's theorem.
+
+\subsection*{5.4.12}
+
+\textit{Using Theorem 5.4.18 prove that $|A| =_c |R|$, where $A = [-\pi, \pi)$.}
+
+We follow that $|A| \leq_c |R|$ because of the identity. By the proof in the first exercise
+of this chapter we follow that there exists an injection from  $R$ to $(-\pi, \pi)$. Thus
+by Shroder-Bernstein Theorem (5.4.18) we follow that $|A| =_c |R|$, as desired.
+
+\subsection*{5.4.13}
+
+$a, y$
+
+\subsection*{5.4.14}
+
+\textit{Let $f: A \to B$ be onto $B$, and let $C = \{x \in A: x \notin f(x)\}$. Show that
+  $C \notin B$.}
+
+Suppose that $C \in B$. Since $f$ is surjective we follow that there exists $a \in A$
+such that $f(a) = C$. If $a \in C$, then $a \notin f(a) \ra a \notin C$, which is not possible.
+Suppose that $a \notin C$. Then we follow that $a \notin f(a)$, therefore $a \in C$ by definition,
+which is also a contradiction. THus we follow that it is impossible to have $C \in B$. Thus
+$C \notin B$, as desired.
+
+\subsection*{5.4.15}
+
+\textit{Suppose $A \subseteq B$ and $|B| \leq_c |A|$. Prove that $|A| =_c |B|$.}
+
+We follow that since $A \subseteq B$, then there exists an injection (namely identity)
+from $A$ to $B$, thus we follow that $|A| \leq_c |B|$. THus we follow from
+Shroder-Bernstein Theorem that $|A| =_c |B|$, as desired.
+
+\subsection*{5.4.16}
+
+\textit{Suppose $A \subseteq B \subseteq C$ and $|A| =_c |C|$. Prove that $|B| =_c |C|$.}
+
+We follow that there exists a injections $f: B \to C$ and $g: A \to B$, which are
+just the identities with modified codomain. We also follow that
+there exists a bijection $h: A \to C$. From this we can follow that 
+$g \circ h\inv: C \to B$ is an injection. Thus we follow that there exists an injection
+from $B$ to $C$ and vice-versa, thus implying that $|B| =_c |C|$, as desired.
+
+\subsection*{5.4.17}
+
+\textit{Prove that $|A \times B| =_c |B \times A|$}
+
+We can define a bijection $f(\eangle{a, b}) = \eangle{b, a}$, which will give us desired result.
+
+\subsection*{5.4.18}
+
+\textit{Suppose that $|A| \leq_c |B|$, $|B| \leq_c |C|$ and $|C| \leq_c |A|$. Prove
+  that $|A| =_c |B| =_c |C|$}
+
+We can use the same argument as in 5.4.19.
+
+\subsection*{5.4.19}
+
+\textit{Let $f: A \to K$ and $g: B \to L$ be bijections. Let $h: A \times B \to K \times L$
+  be defined by $h(\eangle{a, b}) = \eangle{f(a), g(b)}$ for all $\eangle{a, b} \in A \times B$.
+  Prove that $h$ is a bijection.}
+
+Suppose that $\eangle{k, l} \in K \times L$. We follow that $k \in K$ and $l \in L$, thus
+there exist $a \in A, b \in B$ such that $f(a) = k \land g(b) = l$ by the fact
+that $f, g$ are both bijective and therefore surjective. Thus there exists
+$\eangle{a, b} \in A \times B$ such that $h(\eangle{a, b}) \in \eangle{k, l}$. Thus $h$
+is surjective.
+
+Suppose that $\eangle{a, b} \neq \eangle{a', b'}$. We follow that $a \neq a'$ or $b \neq b'$.
+Thus by injectiveness of $f, g$ we follow that $f(a) \neq f(a')$ or $g(b) \neq g(b')$, which imply
+that $\eangle{f(a), g(b)} \neq \eangle{f(a'), g(b')}$. Thus we follow that $h$ is injective,
+as desired.
+
+\subsection*{5.4.20}
+
+\textit{ Prove that $G(g\inv \circ h \circ f) = h$ where the functions $G, g\inv, h, f$ are
+  as in the proof of Theorem 5.4.6(3) }
+
+We follow that
+$$G(g\inv \circ h \circ f) = g \circ g\inv \circ h \circ f \circ f\inv $$
+We can follow that both $g \circ g\inv$ and $f \circ f\inv$ are identity functions on
+$L$ and $K$ respectively. Thus we follow that since $h: K \to L$
+$$G(g\inv \circ h \circ f) = g \circ g\inv \circ h \circ f \circ f\inv = h$$
+as desired.
+
+\subsection*{5.4.21}
+
+\textit{Suppose $A$ is nonempty. Let $c \in B$ and $d \in B$ be distinct. Using a diagonal argument,
+  show that there is no function $F: A \to B^A$ that is onto $B^A$. Now find a one-to-one
+  function $G: A \to B^A$. Conclude that $|A| <_c |B^A|$.}
+
+Define a function $f: \pow(A) \to B^A$ by the rule
+$$(f(X))(a) =
+\begin{cases}
+  a \in X \ra (f(X))(a) = c \\
+  a \notin X \ra (f(X))(a) = d
+\end{cases}
+$$
+Suppose that $X_1 \neq X_2 \in \pow(A)$. Then we follow that there exists $a \in X_1$ such that
+$a \notin X_2$ (or vice versa, both cases are equivalent).
+Thus $(f(X_1))(a) \neq (f(X_2))(a)$. Now we can follow that $X_1 \neq X_2 \ra f(X_1) \neq f(X_2)$.
+Thus $f$ is injective. Therefore we can follow that
+$$|\pow(A)| \leq_c |B^A|$$
+Since $|A| <_c |\pow(A)|$, we conclude that there could be no surjections between $A$ and $B^A$,
+as desired. From this argument alone we can follow that there exists an injection
+$h: A \to B^A$, but I haven't used the diagonal argument, because I can't figure out where
+I'm supposed to put it here, so I'll prodive a direct injection anyways.
+
+Since $A$ is nonempty, we follow that there exists $a \in A$. Thus we follow that
+for each $a \in A$ we can define a function $f: A \to B$ by
+$$f(x) =
+\begin{cases}
+  x = a \ra c\\
+  x \neq a \ra d
+\end{cases}
+$$
+we can follow that the map which sends $A$ to produced function is injective, thus we
+can conclude that $|A| \leq_C |B^A|$. Keeping in mind out previous result we can follow that
+$$|A| <_c |B^A|$$, as desired.
+
+\subsection{5.4.22}
+
+\textit{Prove that $|\omega^\omega| =_c |\pow(\omega)|$. Conclude that $|\omega^\omega| =_c |R|$.}
+
+We know that there exists bijective function $p: \omega \times \omega \to \omega$. Thus we
+follow that there exists $p \inv: \omega \to \omega \times \omega$. For $f \in
+\omega^\omega$ define
+$$A_f = \{p(i, j): \eangle{i, j} \in f\}$$
+Then we follow that $f_1 \neq f_2 \ra A_{f_1} \neq A_{f_2}$. Thus given function is injective.
+Surjectivity of this function is pretty evident as well. Thus we follow that
+there exists a bijection $A$ between two sets and thus
+$$|\omega^\omega| =_c |\pow(\omega)|$$
+as desired.
+
+\subsection*{5.4.23}
+
+\textit{Prove Theorem 5.4.7(1)}
+
+Suppose that $A \cap B = \emptyset$. Then we follow that for $\eangle{f, g} \in K^A \times K^B$
+we can define a function $h_{f, g}: A \cup B \to K$ by
+$$
+h(x) =
+\begin{cases}
+  x \in A \ra f(x) \\
+  x \in B  \ra g(x) \\
+\end{cases}
+$$
+Since $A \cap B = \emptyset$ we follow that the function is well defined.
+Thus we can define $H: K^A \times K^B \to K^{A \cup B}$ by this rule.
+We can follow that the function is injective and surjective pretty easily, thus we follow that
+$$|K^A \times K^B| =_c |K^{A \cup B}|$$
+as desired.
+
+\subsection*{5.4.24}
+
+\textit{Prove Theorem 5.4.7(2)}
+
+TODO
 
 \end{document}
 %%% Local Variables:

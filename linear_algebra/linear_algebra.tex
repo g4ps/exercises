@@ -9,6 +9,7 @@
 \DeclareMathOperator \map {\mathcal {L}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
+\DeclareMathOperator \trace {trace}
 \DeclareMathOperator \inv {^{-1}}
 \DeclareMathOperator \Span {span}
 \DeclareMathOperator \imp {\Rightarrow}
@@ -9452,6 +9453,106 @@ We follow that exercise from the other exercise that shows that product
 of two block-diagonal matrices is the product of their respective blocks (assuming
 that those blocks have the same size).
 
+Last exercise is TODO
+
+\chapter{Trace and Determinant}
+
+\section{Trace}
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $v_1, ..., v_n$ is a basis of $V$. Prove that the matrix
+  $M(T, (v_1, ..., v_n))$ is invertible if and only if $T$ is invertible.}
+
+Follows from definition of matrix
+
+\subsection{}
+
+\textit{Suppose $A$ and $B$ are square matrices of the same size and $AB = I$. Prove that
+  $BA = I$}
+
+Follows from definitions and applications of linear maps.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ has the same matrix with respect to every basis of $V$.
+  Prove that $T$ is a scalar multiple of the identity operator.}
+
+If $T$ is a scalar multiple of the identity of the operator, then we follow that
+every nonzero vector of $T$ is an eivenvector, thus we follow that it has the same
+matrix with respect to any basis (provided there is one basis).
+
+The only operator of $\{0\}$ is a scalar multiple of identity.
+
+$0$ operator is a scalar multiple of identity, thus we can follow that $\range(T) \neq \{0\}$.
+
+Because not every nonzero vector is a eigenvector of $T$ we follow that there exists
+$v, w$ such that $Tv = w$ and $v, w$ are linearly independent. Expand this list  to a basis,
+$v, w, u_1, ..., u_n$. Now we can follow that matrix $T$ with respect to bases
+$v, w, u_1, ..., u_n$ and $w, v, u_1, ..., u_n$ are distinct. Thus we follow that
+if $T$ is not a scalar multiple of the identity, then $T$ has distinct matrices
+for some bases.
+
+\subsection{}
+
+\textit{Suppose $u_1, ..., u_n$ and $v_1, ..., v_n$ are bases of $V$. Let $T \in \map(V)$ be
+  the operator such that $Tv_k = u_k$ for $k = 1, ..., n$. Prove that 
+  $$M(T(v_1, ..., v_n)) = M(I(u_1, ..., u_n), (v_1, ..., v_n))$$
+}
+
+Follows from definitions.
+
+\subsection{}
+
+\textit{Suppose $B$ is a square matrix with complex entries. Prove that there exists an
+  invertible square matrix $A$ with complex entries such that
+  $A \inv B A$ is an upper-triangular matrix.}
+
+We're going to assume that $B$ is represented with respect to the basis $(s_1, ..., s_n)$.
+Because $B$ is a sqaure matrix with complex entries we follow that there exists a basis with
+respect to which the operator, that is represented by $B$ has upper-triangular matrix.
+Let us denote this basis by $(u_1, ..., u_n)$ 
+Thus we follow that we can make matrices
+$$A = M(I(u_1, ..., u_n), (s_1, ..., s_n))$$
+(or its inverse) which satisfies the desired conditions.
+
+\subsection{}
+
+\textit{Give an example of a real vector space $V$ and $T \in \map(V)$ such that
+  $\trace(T^2) < 0$}
+
+For $R^2$
+$$T =
+\begin{pmatrix}
+  0 & -1 \\
+  1 & 0
+\end{pmatrix}
+$$
+$$T^2 =
+\begin{pmatrix}
+  -1 & 0 \\
+  0 & -1
+\end{pmatrix}
+$$
+thus
+$$\trace(T^2) = -2$$
+
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space, $T \in \map(V)$ and $V$ has a basis consisting
+  of eigenvectors of $T$. Prove that $\trace(T^2) \geq 0$}
+
+We follow that $T$ is diagonalizable, thus its square with respect to some basis is
+a diagonal matrix with squres of reals on the diagonals. Thus we follow that
+$\trace(T^2) \geq 0$.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $v, w \in V$. Define $T \in \map(V)$
+  by $Tu = \eangle{u v}w$. Find a formula for $\trace T$.}
+
+TODO
 
 
 \end {document}

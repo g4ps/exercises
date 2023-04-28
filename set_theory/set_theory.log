@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  27 APR 2023 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  28 APR 2023 21:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -520,16 +520,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Chapter 5.
 [44
 
-] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] (./set_theory.aux)
+] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
+[59] [60] (./set_theory.aux)
 Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: C73AC6F763EB284F7D755123B7F7B288;5640.
+(rerunfilecheck)             Checksum: DBF98E6FAE6E1E6B300E19DDC54B884A;5929.
  ) 
 Here is how much of TeX's memory you used:
- 9401 strings out of 476025
- 143194 string characters out of 5796533
+ 9439 strings out of 476025
+ 143631 string characters out of 5796533
  1862388 words of memory out of 5000000
- 29517 multiletter control sequences out of 15000+600000
- 524912 words of font info for 79 fonts, out of 8000000 for 9000
+ 29523 multiletter control sequences out of 15000+600000
+ 525557 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,301b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
@@ -546,10 +547,10 @@ s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (56 pages, 351284 bytes).
+Output written on set_theory.pdf (61 pages, 369260 bytes).
 PDF statistics:
- 819 PDF objects out of 1000 (max. 8388607)
- 719 compressed objects within 8 object streams
- 247 named destinations out of 1000 (max. 500000)
- 481 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 883 PDF objects out of 1000 (max. 8388607)
+ 778 compressed objects within 8 object streams
+ 277 named destinations out of 1000 (max. 500000)
+ 505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
