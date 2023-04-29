@@ -9550,10 +9550,313 @@ $\trace(T^2) \geq 0$.
 \subsection{}
 
 \textit{Suppose $V$ is an inner product space and $v, w \in V$. Define $T \in \map(V)$
-  by $Tu = \eangle{u v}w$. Find a formula for $\trace T$.}
+  by $Tu = \eangle{u, v}w$. Find a formula for $\trace T$.}
 
-TODO
 
+I'm going to conjecture based on common sence and a bit of thinking that $\trace T = \eangle{w, v}$.
+
+We follow that if $\dim V < 2$, then this is precisely the case (0 for $\dim V > 0$ and
+the sole eigenvalue of the space for $\dim V = 1$, since $T w = \lambda w = \eangle{w, v}, w$)
+
+Suppose now that $\dim V \geq 2$. By the fact that  $\range T = \Span(w) \Rightarrow
+\dim \range(T) \leq 1$
+and by exercise 5.1.29 we follow that $T$ has at most 2 eigenvalues. Because
+$\dim \range(T) \leq 1$ we follow that $\dim \ns T \neq 0$, thus $T$ has the eigenvalue of $0$.
+We now follow that since
+$$T u = \lambda w$$
+for some $\lambda \in F$ and for all $u \in V$ we can conclude that the only eigenvector of $T$
+with a possible nonzero eigenvalue is a scalar multiple of $w$. Thus
+$$T w = \eangle{w, v} w$$
+thus we follow that the only possible nonzero eigenvalue of $T$ is given by $\eangle{w, v}$.
+Therefore we can follow now that
+$$\trace(T) = \sum {\lambda_j} = \sum{0} + \eangle{w, v} = \eangle{w, v}$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $P \in \map(V)$ satisfies $P^2 = P$. Prove that
+  $$\trace(P) = \dim \range(P)$$
+}
+
+Follows directly from exercise 8.3.7.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $T \in \map(V)$. Prove that
+  $$\trace T^* = \overline{\trace T}$$
+}
+
+Suppose that
+$$p(z) = \sum{a_i z^i}$$
+is a characteristic polynomial of $\trace T^*$. We follow from
+one of the previous exercises (namely 8.3.16) that characteristic polynomial of $T^*$ is
+$$p'(z) = \sum{\overline{a_i} z^i}$$
+Since the trace of the operator is also equal to the coeffitient, that corresponds to
+$z^{m - 1}$, we follow that
+$$\trace T^* = \overline{\trace T}$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space. Suppose $T \in \map(V)$ is a positive
+  operator and $\trace T = 0$. Prove that $T =  0$.}
+
+Every positive operator is self-adjoint, and every self adjoint operator is normal,
+thus no mattter the $F$ for which $V$ is defined we can follow that there exists
+a diagonal matrix of $T$. Because $T$ is positive we can also state that
+every eigenvalue of it is positive. Thus if $\trace(T) = 0$, we follow that
+with respect to the diagonal matrix it has zeroes on the diagonal, thus making
+it a zero operator, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $P, Q \in \map(V)$ are orthogonal
+  projections. Prove that $\trace(PQ) \geq 0$.}
+
+Suppose that $w$ is an eigenvector of $PQ$. Let $U$ and $W$ be subspaces
+for which $P$ and $Q$ are orthogonal projections. We follow that
+$$PQv = \lambda v$$
+thus
+$$\lambda v \in \range P$$
+therefore
+$$v \in U$$
+thus we can restrict our attention to $U$ on which $P|_U$ is the identity. Thus
+$$Qv = v$$
+Same argument can be repeated for $Q$, thus we follow that $v \in U \cap W$. Thus we
+follow that the only eigenvalue of $PQ$ is either $0$ or $1$, which means that for both
+cases $\trace(PQ) \geq 0$, as desired. (This one is somewhat incomplete)
+
+\subsection{}
+
+\textit{Suppose $T \in \map(C^3)$ is the operator whose matrix is
+  $$
+  \begin{pmatrix}
+    51 & -12 & -21 \\
+    60 & -40 & -28 \\
+    57 & -68 & 1
+  \end{pmatrix}
+  $$
+  Someone tells you (accurately) that -48 and 24 are eigenvalues of T.
+  Without using a computer or writing anything down, find the third eigen-
+  value of T}
+
+36
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $c \in F$. Prove that $\trace(cT) = c\trace(T)$}
+
+We follow that $\trace T$ is the sum of the elements on the diagonal with respect to
+some basis, thus $c \trace T$ is this sum times $c$, which is precisely the same
+as the sum of the elements on the diagonal of $cT$, or in other words $\trace(cT)$,
+as desired.
+
+\subsection{}
+
+\textit{Suppose $S, T \in \map(V)$. Prove that $\trace(ST) = \trace(TS)$}
+
+Follows from the matrix definition of trace.
+
+\subsection{}
+
+\textit{Prove or give a counterexample: if $S, T \in \map(V)$, then
+  $\trace(ST) = (\trace S)(\trace T)$}
+
+Some random matrices will do
+$$S =
+\begin{pmatrix}
+  2 & 1 \\
+  2 & 1
+\end{pmatrix}
+$$
+$$T =
+\begin{pmatrix}
+  0 & 2 \\
+  2 & 2
+\end{pmatrix}
+$$
+$$S * T =
+\begin{pmatrix}
+  2 & 6 \\
+  2 & 6 \\
+\end{pmatrix}
+$$
+$$\trace(S) = 3$$
+$$\trace(T) = 2$$
+$$\trace(S)\trace(T) = 6$$
+$$\trace(ST) = 8$$
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ is such that $\trace(ST) = 0$ for all $S \in \map(V)$. Prove that
+  $T = 0$.}
+
+If $T = 0$, then $ST = 0$, thus $\trace(ST) = 0$ for all $S \in \map(V)$.
+
+Suppose that $T \neq 0$. Thus $T_C$ can be deconstructed by polar decomposition into the
+polar form
+$$T_C = S' \sqrt{T_C^* T_C}$$
+for which $\sqrt{T_C^* T_C} \neq 0$. Thus we can follow that for an operator $S = S'\inv$ we have that
+$$S'\inv T_C = \sqrt{T_C^* T_C}$$
+because $\sqrt{T_C^* T_C}$ is positive we can follow that there exists a diagonal matrix of
+it with respect to some basis, and because $\sqrt{T_C^* T_C} \neq 0$ we follow that
+diagonal of this matrix has some positive numbers on it. Thus we follow that
+$$\trace(S'\inv T_C ) \neq 0$$
+Therefore we can conclude that if $\trace(ST) = 0$ for all $S \in \map(V)$, then $T = 0$, as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space with orthonormal basis $e_1, ..., e_n$
+  and $T \in \map(V)$. Prove that
+  $$\trace(T^* T) = \sum{||T e_j||^2}$$
+  Conclude that the right side of the equation above is independent of which orthonormal basis
+  $e_1, ..., e_n$ is chosen for $V$.}
+
+We can follow that with respect to this orthonormal basis, matrix of $T^*$ is equal
+to conjugate transpose of this matrix. Thus we follow that entry on the diagonal is
+equal to
+$$a_{i, i} = \sum{a_{i, j} \overline{a_{i, j}}} =
+\sum{|a_{i, j}|^2} = ||T e_i||^2$$
+thus we follow that the sum of those, which will be equal to $\trace(T^* T)$ is equal to
+$$\sum{||T e_j||^2}$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space. Prove that
+  $$\eangle{S, T} = \trace{S T^*}$$
+  defines an inner product on $\map(V)$.
+}
+
+We follow that if $\eangle{S, S} = 0$, then we follow that with respect to some orthonormal
+basis
+$$\sum{||Se_j||^2} = 0$$
+thus we follow that $S = 0$. If $S = 0$, then $\eangle{S, S} = 0$, thus we can conclude that
+we've got definiteness clause
+
+We've followed earlier that $\eangle{S, S} > 0$ for all $S \neq 0$, thus we've got the
+positivehess.
+
+For $S, T, R \in  \map(V)$ and $\lambda \in R$ we've got
+$$\eangle{S + \lambda T, R} = \trace((S + \lambda T) R^*) =
+\trace(SR^* + \trace(\lambda TR^*) = \trace(SR^*) + \trace(\lambda TR^*) = $$
+$$ =
+\trace(SR^*) + \lambda \trace( TR^*) = \eangle{S, R} + \lambda \eangle{T, R}$$
+thus we've got linearity in the first slot.
+
+$$\eangle{S, T} = \trace(S T^*) = \trace((T S^*)^*) = \overline{\trace((T S^*))} =
+\overline{\eangle{T, S}}$$
+which gives un conjugate symmetry. Thus we follow that given function is indeed an
+inner product on $\map(V)$.
+
+\textit{Rest of the exercises is marked as TODO}
+
+\section{Determinant}
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space. Suppose $T \in \map(V)$ has no eigenvalues.
+  Prove that $\det(T) = 0$.}
+
+We follow that since there are no real eigenvalues, then every eigenvalue of $T_C$ come
+in pairs with its conujugate. Thus we follow that
+$$\det(T) = \prod{\lambda \overline{\lambda}} = \prod{|\lambda|^2} > 0$$
+where we follow last strict inequality by the fact that $\lambda \neq 0$ and thus
+$|lambda| > 0$.
+
+\subsection{}
+
+\textit{Suppose $V$ is a real vector space with even dimension and $T \in \map(V)$.
+  Suppose $\det T < 0$. Prove that $T$ has at least two distict eigenvalues.}
+
+Suppose that it has less then two distinct eigenvalues. Then we follow that there are
+either no eigenvalues, or there exists an eigenvalue.
+
+We follow that the former case implies that $\dim T > 0$ by previous exercise.
+
+We also can follow that there can be no single real eigenvalue by the fact that if it is
+the case, then the dimention of the space is odd. T
+
+THus we conclude the desired result.
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $n = \dim V > 2$. Let $\lambda_1, ..., \lambda_n$ denote the
+  eigevalues of $T$ (or $T_C$ if $V$ is a real vector space), repeated according to
+  multiplicity }
+
+\textit{(a) Find a formula for the coefficient of $z^{n - 2}$ in the characteristic polynomial
+  of $T$ in terms of $\lambda_1, ..., \lambda_n$.}
+
+Suppose that
+$$q(z) = \prod{(z - \lambda_j)}$$
+then we follow that
+$$q(z) = z^n - \sum{\lambda_j}z^{n - 1} + \sum{\lambda_j \lambda_k}z^{n - 2} - ... $$
+thus $\sum{\lambda_j \lambda_k}$ is the coefficient for $z^{n - 2}$.
+
+\textit{(b) Find a formula for the coefficient of $z$ in the characteristic polynomial
+  of $T$ in terms $\lambda_1, ..., \lambda_n$}
+
+After some thought we can come up with
+
+$$(-1)^{n - 1} \sum_{1 \leq j \leq n}{\left(\prod_{k \neq j}(\lambda_k)\right)}$$
+
+\subsection{}
+
+\textit{Suppose $T \in \map(V)$ and $c \in F$. Prove that $\det(cT) = c^{\dim V} \det T$}
+
+We can follow that for $T \in \map(V)$ (or its complexification) there exists an
+upper-triangular matrix wit respect to some basis. From it we can follow  that the
+product of numbers on the diaginal for $cT$ will be precicely $c^{\dim V}$ times
+the original product $\det T$, as desired.\
+
+\subsection{}
+
+\textit{Prove or give a counterexample: if $S, T \in \map(V)$, then $\det (S + T) =
+  \det S + \det T$.}
+
+Let $V = R^2$. Then we follow that $\det(I) + \det(I) = 2$, and by previous exercise
+$$\det (I + I) = \det (2I) = c^2 \det(I) = 4$$
+
+\subsection{}
+
+\textit{Suppose $A$ is a block upper-triangular matrix, where each matrix on the diagonal is square.
+  Prove that $\det A = \prod{\det A_j}$. }
+
+We follow that there exists a basis such that $A_j$ is an upper-triangular matrix for each $j$.
+Thus if combine the bases for each of the matrices, we'll get an upper-triangular matrix of
+$A$, for which the determinant will be determined (get it?) by the process described in the text of the
+exrcise.
+
+\subsection{}
+
+\textit{Suppose $A$ is an $n-by-n$ matrix with real entries. Let $S \in \map(c^n)$ denote
+  the operator of $C_n$ whose matrix equals $A$, and let $T \in \map(R^n)$ denote
+  the operator on $R^n$ whose matrix equals $A$. Prove that $\trace S = \trace T$
+  and $\det S = \det T$.}
+
+We follow that from the deriviations of traces and determinants bases on the matrix.
+
+\subsection{}
+
+\textit{Suppose $V$ is an inner product space and $T \in \map(V)$. Prove that
+  $$\det T^* = \overline{\det T}$$
+  Use this to prove that $|det T| = \det\sqrt{T^* T}$.}
+
+We follow that if
+$$q(z) = \sum{a_j z_j}$$
+is a characteristic polynomial of $T$ then
+$$q'(z) = \sum{\overline{a_j} z_j}$$
+is a characteristic polynomial of $T^*$. Thus from the fact that $\det T$ is equal to the
+constant term of $T$ we follow the desired conclusion.
+
+Now we can follow that 
+$$\det T^* T = |\det T|^2$$
+thus from the fact that $T^* T$ is a positive operator and so on we follow that
+$$\det \sqrt{T^* T} = |\det T|$$
+as desired.
+
+\textit{Last 4 exercises left for desert later}
 
 \end {document}
 
