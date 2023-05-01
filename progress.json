@@ -1,36 +1,37 @@
 [
     {
-	name: "Understanding Analysis",
-	author: "Stephen Abbott",
-	edition: "1st",
-	link: "https://github.com/g4ps/exercises/raw/master/real_analysis/real_analysis.pdf",
-	status: "finished"
+	"name": "Understanding Analysis",
+	"author": "Stephen Abbott",
+	"edition": "1st",
+	"link": "https://github.com/g4ps/exercises/raw/master/real_analysis/real_analysis.pdf",
+	"status": "finished"
     },
     {
-	name: "Linear Algebra Done Right",
-	author: "Sheldon Axler",
-	edition: "3rd",
-	link: "https://github.com/g4ps/exercises/raw/master/linear_algebra/linear_algebra.pdf",	
-	status: "finished"
+	"name": "Linear Algebra Done Right",
+	"author": "Sheldon Axler",
+	"edition": "3rd",
+	"link": "https://github.com/g4ps/exercises/raw/master/linear_algebra/linear_algebra.pdf",
+	"status": "finished"
     },
     {
-	name: "Set Theory, A First Course",
-	author: "Daniel W. Cunnigham",
-	edition: "1st",
-	link: "https://github.com/g4ps/exercises/raw/master/set_theory/set_theory.pdf"
-	status: "in_progress",	
+	"name": "Set Theory, A First Course",
+	"author": "Daniel W. Cunnigham",
+	"edition": "1st",
+	"link": "https://github.com/g4ps/exercises/raw/master/set_theory/set_theory.pdf"
+	"status": "in_progress",	
     },
     {
-	name: "Abstract Algebra",
-	author: "Dummit and Foote",
-	edition: "3rd",
-	link: "https://github.com/g4ps/exercises/raw/master/abstract_algebra/abstract_algebra.pdf",
-	status: "in_progress"
+	"name": "Abstract Algebra",
+	"author": "Dummit and Foote",
+	"edition": "3rd",
+	"link": "https://github.com/g4ps/exercises/raw/master/abstract_algebra/abstract_algebra.pdf",
+	"status": "in_progress"
     },
     {
-	name: "Probability and Statistics",
-	author: "DeGroot and Schervish",
-	edition: "4th",
-	status: "in_progress"
-    },
+	"name": "Probability and Statistics",
+	"author": "DeGroot and Schervish",
+	"link": "https://github.com/g4ps/exercises/raw/master/probability_and_statistics/probability_and_statistics.pdf"
+	"edition": "4th",
+	"status": "in_progress"
+    }
 ]
