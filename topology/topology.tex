@@ -1,0 +1,170 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My topology exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter*{Preface}
+
+Those are my solutions for the James Munkres' "Topology", 2nd edition.
+
+\part{General Topology}
+
+\chapter{Set Theory and Logic}
+
+
+\section{Fundamental Concepts}
+
+\subsection{}
+
+\textit{Check distributive and DML laws}
+
+\textit{GOTO set theory book}
+
+\subsection{}
+
+\textit{Determine which of the following are true.}
+
+(a) - impl
+
+(b) - impl
+
+(c) - true
+
+(d) - rimpl
+
+(e) - $\subseteq$, true if $B \subseteq A$.
+
+(f) - $\supseteq$;   $A - (B - A) = A$.
+
+(g) - true
+
+(h) - $\supseteq$
+
+(i) - true
+
+(j) - true
+
+(k) - false
+
+(l) - true
+
+(m) - $\subseteq$
+
+(n) - true
+
+(o) - true
+
+(p) - true
+
+(q) - $\supseteq$
+
+\subsection{}
+
+\textit{(a) Write a contrapositive and converse of the following statement:
+  "If $x < 0$, then $x^2 - x > 0$" and determine which ones are true}
+
+Contrapositive:
+$$x^2 - x \leq 0 \ra x \geq 0$$
+Converse
+$$x^2 - x > 0 \ra x < 0$$
+
+Contrapositive is correct, converse is incorrect ($2^2 - 2 > 0$)
+
+\textit{(b) Do the same for the statement $x > 0 \ra x^2 - x > 0$}
+
+Contrapositive:
+$$x^2 - x \leq 0 \ra x \leq 0$$
+Converse
+$$ x^2 - x > 0 \ra x > 0 $$
+
+Contrapositive is false ($1^2 - 1 = 0$); Converse is also false ($(-2)^2 - (-2) = 6$).
+
+\subsection{}
+
+\textit{Let $A$ and $B$ be the sets of real numbers. Write the negation of each of the
+  following statements: }
+
+\textit{(a)}
+$$ (\exists a \in A)(a^2 \notin B)$$
+\textit{(b)}
+$$ (\forall a \in A)(a^2 \notin B)$$
+\textit{(c)}
+$$ (\exists a \in A)(a^2 \in B)$$
+\textit{(d) }
+$$ (\forall a)(a \notin A \ra a^2 \notin B)$$
+
+\subsection{}
+
+\textit{Let $A$ be a nonempty collection of sets. Determine the truths of each of the
+  following and their converses}
+
+\textit{(a)
+$$x \in \bigcup{A} \lra (\exists B \in A)(x \in B)$$}
+\textit{(b)
+$$x \in \bigcup{A} \la (\forall B \in A)(x \in B)$$}
+\textit{(c)
+$$x \in \bigcap{A} \ra (\exists B \in A)(x \in B)$$}
+\textit{(d)
+$$x \in \bigcap{A} \lra (\forall B \in A)(x \in B)$$}
+
+\subsection{}
+
+Skip
+
+\subsection{}
+
+skip
+
+\subsection{}
+
+GOTO set theory book
+
+\subsection{}
+
+\textit{Formulate DML for arbitrary unions and intersections}
+
+$$A \setminus \bigcap{(B)} = \bigcup{(A \setminus B)} $$
+$$A \setminus \bigcup{(B)} = \bigcap{(A \setminus B)} $$
+
+For the proof goto set theory or real analisys book
+
+\subsection{}
+
+(a, b, d) are true
+
+\section{Functions}
+
+
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

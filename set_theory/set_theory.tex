@@ -53,14 +53,16 @@ I also denote $^BA$ as $A^B$, because it's more convinient.
 
 \section{Elementary Set Theory}
 
-Let A, B, C be \subsection{}
+Let A, B, C be sets
+
+\subsection*{1.1.1}
 
 \textit{If $a \notin A \setminus B$ and $a \in A$, show that $a \in B$}
 
 Because $a \notin A \setminus B$, we follow that $x \in B$ or $x \notin A$. Since $x \in A$, we
 follow that $x \in B$, as desired.
 
-\subsection{}
+\subsection*{1.1.2}
 
 \textit{Show that if $A \subseteq B$, then $C \setminus B \subseteq C \setminus A$}
 
@@ -69,7 +71,7 @@ we follow that $c \notin B$ implies that $c \notin A$. Thus we follow that
 $c \in C \setminus B$ implies that $c \in C \setminus A$. Therefore $C \setminus B \subseteq
 C \setminus A$.
 
-\subsection{}
+\subsection*{1.1.3}
 
 \textit{Suppose $A \setminus B \subseteq C$. Show that $A \setminus C \subseteq B$.}
 
@@ -81,14 +83,14 @@ $$a \in A \setminus C \to a \in B$$
 $$A \setminus C \subseteq  B$$
 as desired.
 
-\subsection{}
+\subsection*{1.1.4}
 
 \textit{Suppose $A \subseteq B$ and $A \subseteq C$. Show that $A \subseteq B \cap C$}
 
 Suppose that $a \in A$. Then we follow that $a \in B$ and $a \in C$. Thus $a \in B \cap C$.
 Therefore we follow that $A \subseteq B \cap C$.
 
-\subsection{}
+\subsection*{1.1.5}
 
 \textit{Suppose $A \subseteq B$ and $B \cap C = \emptyset$. Show that $A \in B \setminus C$}
 
@@ -96,16 +98,25 @@ Suppose that $a \in A$. Then we follow that $a \in B$ and since $B \cap C = \emp
 follow that $a \notin C$. Thus $a \in B \setminus C$ by definition. Therefore
 $A \subseteq B \setminus C$.
 
-\subsection{}
+\subsection*{1.1.6}
 
 \textit{Show that $A \setminus (B \setminus C) \subseteq (A \setminus B) \cup C$.}
+
 Suppose that $a \in A \setminus (B \setminus C)$. Then we follow that
 $a \in A$ and $a \notin B \setminus C$. Thus $a \notin B$ and $a \in C$. Thus we
 follow that $a \in A \setminus B$ or $a \in C$. Thus
 $A \setminus (B \setminus C) \subseteq (A \setminus B) \cup C$
 as desired.
 
-\subsection{}
+\subsection*{1.1.7}
+
+\textit{Show that $A \setminus B \subseteq C$ and $A \not \subseteq C$ then
+  $A \cap B = \emptyset$}
+
+Suppose that $A \cap B = \emptyset$. We follow that $A \setminus B = A$, thus
+$A \setminus B = A \subseteq C$, which is a contradiction.
+
+\subsection*{1.1.8}
 
 \textit{Let $P(x)$ be the property $x > \frac 1 x$. Are the assertions $P(2)$, $P(-2)$,
   $P(\frac 1 2)$ $P( \frac{-1}{2})$ true or false .}
@@ -114,9 +125,9 @@ $$2 > \frac 1 2 \to P(2) = true$$
 $$-2 < \frac{-1}{2} \to P(-2) = false$$
 last two are reversed.
 
-\subsection{}
+\subsection*{1.1.9}
 
-\textit{Sow that each of the following sets can be expressed as an interval}
+\textit{Show that each of the following sets can be expressed as an interval}
 
 $$a) (-3, 3)$$
 $$b) (-3, \infty)$$
@@ -124,14 +135,12 @@ $$c) (-3, 3)$$
 
 all of them follow from order properties of real numbers.
 
-\subsection{}
+\subsection*{1.1.10}
 
 \textit{Express the following sets as truth sets}
 
 $$A = \{1, 4, 9, 16, 25, ...\} \iff A = \{x \in N: x = y^2 \textit{ for some } y \in N\}$$
 $$B = \{..., -15, -10, -5, 0, 5, ... \} \iff A = \{x \in N: x = 5y  \textit{ for some } y \in N\}$$
-
-\textit{Rest are also trivial, not gonna go deep here}
 
 \section{Logical Notation}
 
@@ -2638,19 +2647,23 @@ we can follow that the map which sends $A$ to produced function is injective, th
 can conclude that $|A| \leq_C |B^A|$. Keeping in mind out previous result we can follow that
 $$|A| <_c |B^A|$$, as desired.
 
-\subsection{5.4.22}
+\subsection*{5.4.22}
 
 \textit{Prove that $|\omega^\omega| =_c |\pow(\omega)|$. Conclude that $|\omega^\omega| =_c |R|$.}
 
 We know that there exists bijective function $p: \omega \times \omega \to \omega$. Thus we
 follow that there exists $p \inv: \omega \to \omega \times \omega$. For $f \in
-\omega^\omega$ define
+\omega^\omega$ define $A: \omega^\omega \to \pow(\omega)$
 $$A_f = \{p(i, j): \eangle{i, j} \in f\}$$
-Then we follow that $f_1 \neq f_2 \ra A_{f_1} \neq A_{f_2}$. Thus given function is injective.
-Surjectivity of this function is pretty evident as well. Thus we follow that
-there exists a bijection $A$ between two sets and thus
-$$|\omega^\omega| =_c |\pow(\omega)|$$
-as desired.
+Then we follow that
+$$f_1 \neq f_2 \ra \eangle{i, j} \in f_1 \land \eangle{i, j} \notin f_2 \ra
+p(i, j) \in A_{f_1} \land p(i, j) \notin  A_{f_2} \ra A_{f_1} \neq A_{f_2}$$
+Thus given function is injective. Thus $ |\omega^\omega|  \leq_c |\pow(\omega)|$.
+
+We know that $|\pow(\omega)| =_c |\{0, 1\}^{\omega}|$, and since
+$\{0, 1\}^{\omega} \subseteq \omega^\omega$, we follow that $|\pow(\omega)| \leq_c |\omega^\omega|$.
+
+Thus we follow by Schroder-Bernstein that $|\pow(\omega)| =_c |\omega^\omega|$, as desired.
 
 \subsection*{5.4.23}
 
@@ -2675,7 +2688,280 @@ as desired.
 
 \textit{Prove Theorem 5.4.7(2)}
 
-TODO
+Let $f \in K^A \times L^A$. We follow that $f = \eangle{g, h}$. Thus we can define
+$k: A \times (K \times L)$ by
+$$k(x) = \eangle{g(x), h(x)}$$
+We can follow that this function is bijective pretty easily.
+
+\subsection*{5.4.25}
+
+skip.
+
+\subsection*{5.4.26}
+
+\textit{Prove that $|(\omega^\omega)^\omega| =_c |\omega^\omega|$}
+
+We follow that $|\omega \times \omega| =_c |\omega|$. Thus
+$|\omega^{\omega \times \omega}| =_c |\omega^\omega|$. Since
+$|(\omega^\omega)^\omega|  = |\omega^{\omega \times \omega}|$, we follow that
+$|(\omega^\omega)^\omega| = |\omega^\omega|$, as desired
+
+\subsection*{5.4.27}
+
+\textit{Prove that
+$$|(\omega^\omega)^{(\omega^\omega)}| =_c|\omega^{(\omega^\omega)}|$$
+and
+$$|(\{0, 1\}^\omega)^{\omega^\omega}| =_c|\{0, 1\}^{(\omega^\omega)}|$$
+}
+
+We can follow that $$|\omega^{\omega} \times \omega| =_c |\omega^\omega|$$
+thus we follow that since $|A| =_c |A|$ for any set $A$
+$$|A^{(\omega^{\omega} \times \omega)}| =_c |A^{(\omega^\omega)}|$$
+and since
+$$|A^{(\omega^{\omega} \times \omega)}| =_c  |(A^\omega)^{(\omega^{\omega})}|$$
+we follow that
+$$|A^{(\omega^\omega)}| =_c |(A^\omega)^{(\omega^{\omega})}|$$
+
+Substituting $\omega$ or $\{0, 1\}$ for $A$ we get the desired result.
+
+\subsection*{5.4.31}
+
+\textit{Let $A$ and $B$ be nonempty sets. Using the AC, prove that there
+  exists a one-to-one $f: A \to B$ iff there exists $g: B \to A$ that is
+  onto $A$}
+
+Suppose that $f: A \to B$ is injective. Because $A$ is nonempty, we follow that
+there exists $a \in A$. We follow that
+a function $f': A \to \ran(A)$ defined by $f'(x) = f(x)$ is bijective, therefore
+we can define $g: B \to A$ by
+$$g(x) =
+\begin{cases}
+  x \in \ran(A) \ra f\inv(x) \\
+  x \notin \ran(A) \ra a
+\end{cases}
+$$
+Suppose that $x \in A$. We follow that $$g(f\inv(x)) = x$$. Thus we follow that
+$g$ is surjective.
+
+Conversely,
+suppose that there exists surjective  $g: B \to A$. 
+Let $\eangle{G_i: i \in A}$ be indexed function, where
+$$G(i) = g\inv[\{i\}] $$
+Because $g$ is surjective, we follow that for every $a \in A$ there exists
+$y \in B$ such that $g(y) = a$. 
+Thus we follow that $g\inv[\{a\}] \neq 0$,
+and therefore $\eangle{B_i: i \in A}$ has nonempty terms.
+We can also follow that since $g$ is a function,
+$$(\forall i_1, i_2 \in A)(i_1 \neq i_2 \ra g\inv[\{i_1\}] \cap g\inv[\{i_2\}] = \emptyset$$
+We follow from AC
+that there exists a function $\eangle{h_i: i \in A}$ such that $h_i \in G(i)$.
+Since $G(i) \subseteq A$ we can state that $\ran(h) \subseteq A$, thus we're
+justified to define a function $f: A \to B$ by $f(x) = h(x)$.
+Let  $x_1, x_2 \in A$ be such that $x_1 \neq x_2$. Suppose that $f(x_1) = f(x_2)$.
+Then we follow that $g\inv[\{x_1\}] \cap g\inv[\{x_2\}] \neq \emptyset$, which is a
+contradiction. Therefore we can follow that $f$ is injective, as desired.
+
+\subsection*{5.4.39}
+
+\textit{Let $A$ be a set and let $H: \pow(A) \to \pow(A)$. Suppose for all $C$ and $D$
+  in $\pow(A)$ we have that $H(C) \subseteq H(D)$ whenever $C \subseteq D$.
+  Let
+  $$S = \{D: D \subseteq A \land H(D) \subseteq D\}$$
+  and let $X = \bigcap{S}$. Prove that $H(X) = X$. Moreover, suppose $Y \subseteq X$
+  satisfies $H(Y) \subseteq Y$. Prove that $X = Y$.}
+
+We follow that
+$$(\forall D \in S)(\bigcap{S} \subseteq D)$$
+Thus we follow that
+$$(\forall D \in S)(X \subseteq D)$$
+therefore by definition of $H$ we follow that 
+$$(\forall D \in S)(H(X) \subseteq H(D))$$
+And since $D \in S$, we follow that $H(D) \subseteq D$, tehrefore
+$$(\forall D \in S)(H(X) \subseteq D)$$
+thus
+$$H(X) \subseteq \bigcap{S}$$
+thus $H(X) \subseteq X$. Thus we follow that $X \in S$. By the definition of $H$
+we follow that $H(X) \subseteq X$ implies that $H(H(X)) \subseteq H(X)$. Thus
+we follow that $H(X) \in S$ by definition of $S$. Thus we follow that
+$\bigcap{S} \subseteq H(X)$. Therefore $X \subseteq H(X)$. Therefore by double inclusion
+we follow that $H(X) = X$.
+
+Suppose that $Y \subseteq X$ is such that $H(Y) \subseteq Y$. We follow that since
+$X \subseteq A$ and by given conditions $Y \in S$. Thus $\bigcap{S} \subseteq Y$.
+Therefore $X \subseteq Y$. Therefore by double inclusion $X = Y$, as desired.
+
+\chapter{Transfinite Recursion}
+
+\section{Well-Ordering}
+
+\subsection*{6.1.1}
+
+\textit{Let $R$ be the set of real number and let $\leq$ be the standart order on $R$.
+  Suppose $f: \omega \to R$ is such that for all $n, m \in \omega$, if $n \in m$,
+  then $f(n) < f(m)$. Let $A = \{f(i): i \in \omega\}$.}
+
+\textit{(a) Let $i$ and $j$ be in $\omega$. Prove that if $f(i) < f(j)$, then
+  $i \in j$.}
+
+We follow that if $j \in i$, then $f(j) < f(i)$, which is not the case.
+We also follow that if $i = j$, then $f(j) = f(i)$, therefore we follow by trichotomy that
+$i \in j$, as desired.
+
+
+\textit{(b) Prove that $\leq$ is a well-ordering on $A$.}
+
+Suppose that $Q \subseteq A$ and $Q \neq \emptyset$. Let $Q_i = f\inv[Q]$. We
+follow that $Q_i \subseteq \omega$ and $Q_i \neq \emptyset$, therefore by
+well-ordering of $\omega$ we follow that there exists least element $q \in Q$.
+Let $a_m = f(q)$ and let there be arbitrary $a' \in A$.
+For $a'$ there exists $j \in Q_i$  such that $f(j) = a'$.
+Because $q$ is the least element of $Q_i$ we follow that $q \leq a'$, therefore
+by definition of $f$, $f(q) \leq f(a')$. Thus we follow that
+$f(q)$ is the least element of $Q$. Therefore we follow that
+every nonempty subset of $A$ has a least element, therefore $\leq$ is
+a well-ordering on $A$, as desired.
+
+\subsection*{6.1.2}
+
+\textit{Let $A = \omega \cup \{\omega\}$, and for all $x,y \in A$ define
+  the relation $\leq$ on $A$ by $x \leq y$ if and only if $x \in y$ or $x = y$.
+  Show that $\leq$ is a well-ordering on $A$.}
+
+Suppose that $x, y, z \in A$. 
+
+We can follow that $x = x$, therefore $x \leq x$.
+
+Suppose that $x \leq y$ and $y \leq z$.
+If none of $x, y, z$ are equal to $\omega$, then we follow transitive properties
+from ordering on $\omega$, therefore $x \leq z$.
+If $z = \omega \land x, y \neq \omega$, then we follow that $x \in z \ra x \leq z$.
+If $z = y = \omega$ and $x \neq \omega$, then we follow that $z \in z \ra x \leq z$.
+If $x = y = z = \omega$, then we follow that $x \leq \omega$.
+All of the other cases are impossible, therefore we follow transitive property.
+
+
+Suppose that $x \leq y$ and $y \leq x$. Suppose that $y \in x$. Then we follow that
+if $x = y$, then $y \in y$, which is impossible. If $x \in y$, then we also have impossible
+case. Thus we conclude that $x = y$, which gives us antisymmetry.
+
+Suppose that $x, y \in A$. If $x, y \neq \omega$, then we follow that $x \leq y$
+or $y \leq x$ by standart order on $\omega$. If $y = \omega$ and $x \neq \omega$, then
+we follow that $x \in y$, therefore $x \leq y$. If $y = x = \omega$, then we follow that
+$y \leq x$. This gives us total ordering.
+
+Suppose that $B \subseteq A$ and $B \neq \emptyset$. If $B = \{omega\}$, then
+we follow that $\omega$ is the least (and only) element of $B$. If
+$B \neq \{omega\}$ then we follow that $B' = B \setminus \{omega\}$ is nonempty. We follow that
+$B' \subseteq \omega$, therefore there exists a least element $b$ of $B'$. Therefore
+we follow that
+$$(\forall x \in B')(b \leq x)$$
+Since $B' \subseteq \omega$, we follow that $b \in \omega$. Thus
+$$(\forall x \in B)(b \leq x)$$
+therefore $b$ is the least element of $B$. Therefore we follow that
+for all subsets of $A$ we've got that it has a least element. Therefore
+$\leq$ is a well-ordering on $A$, as desired.
+
+\subsection*{6.1.3}
+
+\textit{Suppoes that $\preceq$ is a well-ordering on $A$ abd that $f: A \to A$ is
+  such that if $x \prec y$ then $f(x) \prec f(y)$ whenever $x, y \in A$. }
+
+\textit{(a) Show that $f$ is injective.}
+
+Suppose that $x \neq y \in A$. We follow that $x \prec y$ or $y \prec x$ (by trichotomy).
+THus we follow that $f(x) \prec f(y)$ or $f(y) \prec f(x)$. Therefore $f(x) \neq f(y)$.
+Therefore $f$ is injective, as desired.
+
+\textit{(b) Prove that $x \preceq f(x)$ for all $x \in A$.}
+
+Suppose that
+$$f(x) \prec x$$
+then we follow that
+$$f(f(x)) \prec f(x)$$
+by definition of $f$. This gives us the idea to define a function $p: \omega \to A$ by
+$$p(0) = x$$
+$$p(n^+) = f(p(n))$$
+Now define
+$$I = \{n \in \omega: p(n) \prec p(n^+)$$
+we follow that $0 \in I$ by our assumption that $f(x) \prec x$. Suppose that
+$n \in I$. Then we follow that $p(n) \prec(n^+)$. Therefore by definition of
+$f$
+$$f(p(n)) \prec f(p(n^+))$$
+$$p(n^+) \prec p((n^+)^+)$$
+thus we follow that $n \in I \ra n^+ \in I$. Therefore $I = \omega$, and therfore
+we've got a function $p: \omega \to A$ such that $p(n) \prec p(n^+)$, which
+gives us a contradiction by 6.1.2.
+
+\subsection*{6.1.4}
+
+\textit{Let $A$ be an infinite set with the well-ordering $\preceq$. Now let
+  $h: \omega \to A$ be the function defined in the proof of Theorem 6.1.3. Let $y \in A$.
+  Prove that for all $n \in \omega$, if $y \prec h(n)$, then $y = h(i)$ for
+  some $i \in n$.}
+
+Let
+$$I = \{n \in \omega: \underline{L}_{h(n)} \subseteq \ran(h)\}$$
+we follow that for $h(0) = p$ and
+$$\underline{L}_{h(0)} = \underline{L}_{p} = \{p\}$$
+thus $0 \in I$. Suppose that $j \in I$. We follow that $\underline{L}_{h(j)} \subseteq \ran(h)$.
+From the inductive proof in the theorem we follow that
+$$\underline{L}_{h(j^+)}  = \underline{L}_{h(j)} \cup \{h(j^+)\}$$
+Since $\{h(j^+)\}, \underline{L}_{h(j)} \subseteq \ran(h)$,
+we follow that $\underline{L}_{h(j^+)} \subseteq \ran(h)$, therefore $I = \omega$.
+
+From this we follow that if $y \prec h(n)$, then $y \in \underline{L}_{h(j^+)}$, therefore
+$(\exists i \in \omega)(y = h(i))$, as desired.
+
+\subsection*{6.1.5}
+
+\textit{Suppose that $\preceq$ is a well-ordering on $W$ and let $C \subseteq W$.
+  Show that $\preceq_C$ is a well-ordering on $C$.}
+
+We can follow that $\preceq_C$ is a total order from one of the exercises in the
+section 3.4. Suppose that $X \subseteq C$. Then we follow that $X \subseteq W$.
+Therefore it has a $\preceq$-least element $x$. Since $x \in X$, we follow that
+$x \in C$. Suppose that $y \in X$. Then we follow that $x \preceq y$. Because $y \in X$
+we follow that $y \in C$. Therefore we follow that $x \preceq_C y$. Therefore
+$x$ is a $\preceq_C$-least element of $X$. Thus we conclude that every
+nonempty subset of $C$ has a $\preceq_C$-least element. Therefore $\preceq_C$ is a
+well-order on $C$, as desired.
+
+\subsection*{6.1.6}
+
+\textit{Prove Theorem 6.1.4}
+
+Let $\preceq'$ be a well-ordering on the set $B$. Suppose that $h: A \to B$ is
+injective. Define the relation $\preceq$ on $A$ by $x \preceq y$ iff $h(x) \preceq' h(y)$
+for all $x, y \in A$. Then we follow that $\preceq$ is a total order by
+some exercise (or theorem) in chapter 3 (if not, then it's pretty evident).
+
+Suppose that $X$ is nonempty and $X \subseteq A$. We follow that
+$h[X] \subseteq B$ and it is nonempty as well. By well-ordering of $\preceq'$ we follow that
+there exists $x \in h[X]$ that is $\preceq'$-least element of $h[X]$. Because
+$h$ is injective, we follow that there exists only one $y \in X$ such that
+$h(x) = y$. Let $z \in X$ be arbitrary. Then we follow that
+$$h(x) \preceq' h(z)$$
+therefore
+$$x \preceq z$$
+thus we follow that $x$ is the $\preceq$-least element of $X$. Thus we follow that
+every nonempty subset of $A$ has a $\preceq$-least element, thus we can conclude that
+$\preceq$ is a well-order on $A$, as desired.
+
+\subsection*{6.1.7}
+
+\textit{Prove that every finite set has a well-ordering}
+
+We follow that by 6.1.4 and the fact that $\leq$ is a well-order
+for any $n \in \omega$.
+
+\subsection*{6.1.8}
+
+\textit{Prove that every countably infinite set has a well-ordering}
+
+We follow that by 6.1.4 and the fact that $\leq$ is a well-order
+for $\omega$.
+
+\section{Transfinite Recursion Theorem}
 
 \end{document}
 %%% Local Variables:

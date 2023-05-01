@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  1 MAY 2023 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.7)  1 MAY 2023 14:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**set_theory.tex
-(./set_theory.tex
+**topology.tex
+(./topology.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/share/texmf-dist/tex/latex/base/book.cls
@@ -272,27 +272,27 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count286
 \l__pdf_internal_box=\box53
 )
-(./set_theory.aux)
-\openout1 = `set_theory.aux'.
+(./topology.aux)
+\openout1 = `topology.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -328,18 +328,18 @@ LaTeX Font Info:    ... okay on input line 28.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 28.
-(./set_theory.out) (./set_theory.out)
+Package hyperref Info: Link coloring OFF on input line 29.
+(./topology.out) (./topology.out)
 \@outlinefile=\write3
-\openout3 = `set_theory.out'.
+\openout3 = `topology.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -347,214 +347,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./set_theory.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./topology.toc)
+\tf@toc=\write4
+\openout4 = `topology.toc'.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...{3}Relations and Functions}{17}{chapter.3}
-                                                  % [1
+l.33 \chapter
+             *{Preface} [1
 
-])
-\tf@toc=\write4
-\openout4 = `set_theory.toc'.
+] [2
 
- [2] [3
+] [3
 
 ]
 Chapter 1.
 [4
 
-] [5] [6]
-Overfull \hbox (2.85811pt too wide) detected at line 190
-\OML/cmm/m/it/10.95 P []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/
-m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 P \OMS/cmsy/m/n/10.95 _
- \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 Q [] R\OT1/cmr/m/n/10.95 ) [] \OMS/cms
-y/m/n/10.95 :\OML/cmm/m/it/10.95 P \OMS/cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\O
-MS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 Q \OMS/cmsy/m/n/10.95 _ \OML/cmm/m/it/10
-.95 R\OT1/cmr/m/n/10.95 ) [](\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 P \OMS/cm
-sy/m/n/10.95 _ :\OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 _
- \OML/cmm/m/it/10.95 R [] \OMS/cmsy/m/n/10.95 :\OT1/cmr/m/n/10.95 (\OML/cmm/m/i
-t/10.95 P \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 ) \OMS/
-cmsy/m/n/10.95 _ \OML/cmm/m/it/10.95 R []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
-5 P \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 Q\OT1/cmr/m/n/10.95 ) [] \OML/cmm
-/m/it/10.95 R
- []
-
-[7] [8] [9] [10] [11]
-Chapter 2.
-[12
-
-]
-Overfull \hbox (34.05876pt too wide) detected at line 443
-[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 8\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10
-.95 (\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/
-m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ \OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 :\OM
-L/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10
-.95 _ \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr
-/m/n/10.95 )) \OMS/cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 x 
-\OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10.95 ^ :\OML/cmm/m/i
-t/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B\OT1/cmr/m/n/10.95 ) \OMS/
-cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 
-2 \OML/cmm/m/it/10.95 B \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \OMS/cmsy/m
-/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 )))) \OMS/cmsy/m/n/10.95 ! 8
-\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 :\OML/cmm/m/it/10.
-95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 _ \OML/cmm
-/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) [
-]
- []
-
-[13] [14]
-Overfull \hbox (56.20164pt too wide) detected at line 541
-[] \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/
-m/n/10.95 ^ 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \O
-ML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x [] C\OT1/cmr/m/n/
-10.95 ) [] \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/
-cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 
-x [] C \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/c
-mm/m/it/10.95 A\OT1/cmr/m/n/10.95 ) [] \OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 
-(\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/
-10.95 )(\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/
-cmsy/m/n/10.95 n \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.
-95 x \OMS/cmsy/m/n/10.95 2 [f\OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 n \OML/c
-mm/m/it/10.95 C \OT1/cmr/m/n/10.95 : \OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 
-2 \OML/cmm/m/it/10.95 F\OMS/cmsy/m/n/10.95 g
- []
-
-
-Overfull \hbox (5.42159pt too wide) detected at line 560
-\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A [] x \OMS/cms
-y/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ [] [] \OML/cmm/m/it/1
-0.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/10.95 ^ \OT1/c
-mr/m/n/10.95 (\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 
-\OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )([]) [](\OMS/cmsy/m/n/10.95 9\OML/cmm/
-m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\O
-ML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A \OMS/cmsy/m/n/1
-0.95 ^ []\OT1/cmr/m/n/10.95 ) [](\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 C \OM
-S/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.9
-5 x \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )
- []
-
-[15]
-Overfull \hbox (33.26114pt too wide) detected at line 606
-\OMS/cmsy/m/n/10.95 8\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10
-.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )((\OMS/cmsy/m/n/10.95 8\OML/cmm/
-m/it/10.95 y \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 )\OM
-L/cmm/m/it/10.95 y \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.9
-5 ) [] [] \OMS/cmsy/m/n/10.95 8\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/c
-msy/m/n/10.95 2 \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x
- \OMS/cmsy/m/n/10.95 ^^R \OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 ) [] \OMS/cmsy
-/m/n/10.95 8\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \OM
-L/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 x \OMS/cmsy/m/n/10.9
-5 2 []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 C\OT1/cmr/m/n/10.95 )) [] \OML/cm
-m/m/it/10.95 x \OMS/cmsy/m/n/10.95 2 \f[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.9
-5 C\OT1/cmr/m/n/10.95 ) : \OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 2 \OML/cmm/
-m/it/10.95 F\OMS/cmsy/m/n/10.95 g
- []
-
-[16]
-Chapter 3.
-[17
-
-] [18]
-Overfull \hbox (34.00526pt too wide) detected at line 727
-[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 y \OMS/cmsy/m/n/
-10.95 2 \OML/cmm/m/it/10.95 A\OT1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 9\OML/cmm
-/m/it/10.95 z \OMS/cmsy/m/n/10.95 2 []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 R
-\OT1/cmr/m/n/10.95 ))(\OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 y; z\OMS/cmsy/m/
-n/10.95 i 2 \OML/cmm/m/it/10.95 R \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \
-OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 h\OML/cmm/m/it/10.95 y; z\OMS/cmsy/m/n/
-10.95 i\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 _ \OT1/cmr/m/n/10.95 (\OMS/cmsy
-/m/n/10.95 9\OML/cmm/m/it/10.95 y \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 B\O
-T1/cmr/m/n/10.95 )(\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10.95 z \OMS/cmsy/m/n/10.
-95 2 []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 ))(\OMS/cmsy
-/m/n/10.95 h\OML/cmm/m/it/10.95 y; z\OMS/cmsy/m/n/10.95 i 2 \OML/cmm/m/it/10.95
- R \OMS/cmsy/m/n/10.95 ^ \OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = \OMS/cmsy/m
-/n/10.95 h\OML/cmm/m/it/10.95 y; z\OMS/cmsy/m/n/10.95 i\OT1/cmr/m/n/10.95 ) []
- []
-
-[19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]
-Chapter 4.
-[31
-
-] [32]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1392.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1392.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1392.
-
-[33] [34]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1495.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1495.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1495.
-
-[35] [36] [37] [38]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1654.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 1654.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1654.
-
-[39] [40] [41] [42] [43]
-Chapter 5.
-[44
-
-] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
-[59] [60] [61] [62] [63]
-Chapter 6.
-[64
-
-] [65] [66] [67] (./set_theory.aux)
-Package rerunfilecheck Info: File `set_theory.out' has not changed.
-(rerunfilecheck)             Checksum: 72548E7C7CB5B4851C6908545B4C5674;5829.
+] [5] [6] (./topology.aux)
+Package rerunfilecheck Info: File `topology.out' has not changed.
+(rerunfilecheck)             Checksum: 25F414AED421B81346AF71957AEEFF26;1087.
  ) 
 Here is how much of TeX's memory you used:
- 9457 strings out of 476025
- 143708 string characters out of 5796533
- 1862388 words of memory out of 5000000
- 29516 multiletter control sequences out of 15000+600000
- 525557 words of font info for 82 fonts, out of 8000000 for 9000
+ 9117 strings out of 476025
+ 139833 string characters out of 5796533
+ 1857388 words of memory out of 5000000
+ 29459 multiletter control sequences out of 15000+600000
+ 521910 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,301b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,7n,76p,256b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on set_theory.pdf (68 pages, 388371 bytes).
+cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsl10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+>
+Output written on topology.pdf (7 pages, 138915 bytes).
 PDF statistics:
- 907 PDF objects out of 1000 (max. 8388607)
- 795 compressed objects within 8 object streams
- 302 named destinations out of 1000 (max. 500000)
- 449 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
