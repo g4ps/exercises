@@ -183,7 +183,62 @@ $$ = (n + \frac{1}{2})\log{n} - n
 -   ((n - m) + \frac{1}{2})\log{(n - m)} + (n - m) = $$
 $$ = (n + \frac{1}{2})\log{n}
 -   ((n - m) + \frac{1}{2})\log{(n - m)}  - m \approx \log{\frac{n!}{(n - m)!}}$$
-$P(n, m) = \frac{n!}{(n - m)!} = \exp(s(n) - s(n - m))$$
+$P(n, m) = \frac{n!}{(n - m)!} = \exp(s(n) - s(n - m))$
+
+
+\section{Combinatorial Methods}
+
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & 184756 \\
+  2 & latter \\
+  3 & equal \\
+  4 & 1 / 10626 \\
+  5 & - \\
+  6 & 2/n \\
+  7 & (n - k - 1)/C(n, k) \\
+  8 & (n - k)/C(n, k) \\
+  9 & (n + 1)/C(2n, n)\\
+  \hline 
+\end{tabular}
+
+\subsection*{1.8.5}
+
+\textit{Prove that
+  $$ \frac{\prod_{4155 \leq i \leq 4251}{i}}{\prod_{2 \leq i \leq 97}{i}}$$
+  is an integer}
+
+$$\frac{\prod_{4155 \leq i \leq 4251}{i}}{\prod_{2 \leq i \leq 97}{i}} =
+\frac{\prod_{4155 \leq i \leq 4251}{i}}{\prod_{1 \leq i \leq 97}{i}} = $$
+$$ =  \frac{\prod_{4155 \leq i \leq 4251}{i}}{97!} =
+\frac{4251!}{4154!97!} = \frac{4251!}{4154!(4251 - 4174)!} = C(4251, 4154)$$
+and binomial coefficients are integers (pretty sure that we can follow that by induction
+in some more advanced course).
+
+\subsection*{1.8.14}
+
+\textit{Prove that for all positive integers $n, k$ such that $n \geq k$
+  $$C(n, k) + C(n, k - 1) = C(n + 1, k)$$
+}
+
+$$ C(n, k) + C(n, k - 1) = \frac{n!}{(n - k)!k!} + \frac{n!}{(n - k + 1)!(k - 1)!} =$$
+$$ =
+\frac{n!}{k (n - k)!(k - 1)!} + \frac{n!}{(n - k + 1)(n - k)!(k - 1)!} =$$
+$$ =
+\frac{(n - k + 1)n!}{k(n - k + 1) (n - k)!(k - 1)!} + \frac{kn!}{k(n - k + 1)(n - k)!(k - 1)!} =
+$$
+$$ =
+\frac{(n - k + 1)n! + kn!}{k(n - k + 1) (n - k)!(k - 1)!} =
+\frac{n!((n - k + 1) + k)}{k(n - k + 1) (n - k)!(k - 1)!} = 
+$$
+$$ =
+\frac{n!(n + 1)}{k(n - k + 1) (n - k)!(k - 1)!} =
+\frac{(n + 1)!}{((n + 1) - k)!k!} = C(n + 1, k)
+$$
+as desired.
+
+
+
 
 
 \end{document}

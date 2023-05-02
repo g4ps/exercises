@@ -6,3 +6,4 @@
 \contentsline {section}{\numberline {1.5}The Definition of Probability}{2}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Finite Sample Spaces}{5}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Counting Methods}{6}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Combinatorial Methods}{6}{section.1.8}%
