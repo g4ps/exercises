@@ -2961,9 +2961,273 @@ for any $n \in \omega$.
 We follow that by 6.1.4 and the fact that $\leq$ is a well-order
 for $\omega$.
 
-\
-
 \section{Transfinite Recursion Theorem}
+
+\subsection*{6.2.1}
+
+\textit{Complete the proof of Theorem 6.2.1 by showing that the function $H$ satisfies
+  $H(u) = F(H|s(u))$ for all $u \in W$. Also, show that $H$ is the only such function.}
+
+Assume that 
+$$H(u) \neq F(H|s(u))$$
+for some $u \in W$.
+
+Let $w$ is the $\preceq$-lowest element of $W$ such that
+$$H(w) \neq F(H|s(w))$$
+We know that $g_w = G(w)$ is such that
+$$g_w(w) = F(g_w|s(w))$$
+From claim 3 we follow that
+$$(\forall x \in s(w))(g_w(x) = g_x(x))$$
+By using definition of $H$  we get
+$$(\forall x \in s(w))(g_w(x) = H(x))$$
+therefore
+$$g_w|s(w) = H|s(w)$$
+thus
+$$g_w(w) = F(g_w|s(w))$$
+$$g_w(w) = F(H|s(w))$$
+$$H(w) = F(H|s(w))$$
+which is a contradiction.
+
+Now suppose that there exist two functions $H_1 \neq H_2$  such that
+$$H_1(w) = F(H_1|s(w))$$
+$$H_2(w) = F(H_2|s(w))$$
+we follow that there exists lowest $w \in W$ such that $H_1(w) \neq H_2(w)$. Thus
+$$H_1|s(w) = H_2|s(w)$$
+And since $F$ is a function we follow that 
+$$F(H_1|s(w)) = F(H_2|s(w))$$
+thus
+$$H_1(w) = H_2(w)$$
+which is a contradiction.
+
+\subsection*{6.2.2}
+
+\textit{Show that Theorem 6.2.5 implies Theorem 6.2.1}
+
+Let $F: A^{\prec W} \to A$. If $A = \emptyset$, then we follow that $A^{\prec W} = \emptyset$,
+therefore $H = \emptyset$, which presents a trivial case. Because of it, suppose that
+$A$ is nonempty. Because $A$ is nonempty, we follow that there exists certain $a \in A$.
+Define
+$$\phi(x, y) = (x \in A^{\prec W} \land F(x) = y) \lor(x \notin A^{\prec W} \land y = a)$$
+For every set $x$ we follow that $x \in A^{\prec W}$ or $x \notin A^{\prec W}$. Thus
+we follow that two clauses of $\phi$ are mutually exclusive. 
+If $x \in A^{\prec W}$, then we follow that there exists a unique $y \in A$ such that
+$F(x) = y$ by the virtue of the fact that $F$ is a function.
+If $x \notin A^{\prec W}$, we follow that $y = A$ is the only possibility.
+
+Applying 6.2.5 to set $W$ with corresponding well-order $\prec$, we follow that there
+exits a unique function $H$ with domain $W$ such that
+$$\phi(H|s(u), H(u))$$
+From the definition of $\phi$ we follow that
+$$\forall x(\phi(x, y) \ra y \in A)$$
+therefore for all $u \in W$ we've got that $H(u) \in A$. Therefore we're justified
+to state that $H: W \to A$.
+
+Therefore we conclude that there exists $H: W \to A$ such that
+$$H(u) = F(H|s(u))$$
+which gives us the result of theorem 6.2.1, as desired.
+
+\subsection*{6.2.3}
+
+\textit{Let $\preceq$ be a well-ordering on a set $W$ and $A$ be a set.
+  Define $l: A^{prec W} \to W$ by $l(g)$ equals the $\preceq$-least $u \in W$
+  such that $u \notin \dom(g)$. Let $G: A^{\prec W} \times W \to A$ be a function.
+  Show that Theorem 6.2.1 implies there exists a function $H: W \to A$ such that
+  $$H(u) = G(H|s(u), u)$$
+  for all $u \in W$.}
+
+Define a relations $F$ by
+$$\eangle{u, y} \in F \lra G(\eangle{u, l(u)}) = y$$
+We can follow that for arbitrary $u \in A^{\prec W}$ there exists a unique tuple $\eangle{u, l(u)}$,
+and for this tuple theree exists a unique $y \in A$ such that $G(\eangle{u, l(u)}) = y$.
+Thus we follow that $F$ is a function from $A^{\prec W}$ to $A$.
+Thus we follow that there exists a unique $H: W \to A$ such that for all $u \in W$
+$$H(u) = F(H|s(u))$$
+by definition of $F$ we folllow that
+$$H(u) = G(H|s(u), l(H|s(u)))$$
+We follow that $H|s(u): s(u) \to A$. Therefore definition of $l$ gives us that
+$$l(H|s(u)) = u$$
+thus
+$$H(u) = G(H|s(u), u)$$
+as desired.
+
+\subsection*{6.2.4}
+
+\textit{Suppose that $\preceq$ is a well-ordering on a set $W$ and $F: A^{\prec W} \to A$ is
+  a function. Let $H: W \to A$ be as in Theorem 6.2.1}
+
+\textit{(a) Let $u, v \in W$. Prove that if $s(u) = s(v)$, then $u = v$.}
+
+Suppose that $u \neq v$. Then we follow that $u \prec v$ or $v \prec u$. Assume the former
+(both cases are simular). Then we follow that $u \in s(v)$. Thus
+$u \in s(u)$, thus $u \prec u$, therefore $u \neq u$, which is a contradiction.
+
+\textit{(b) Suppose that $F$ is one-to-one. Prove that $H$ is also one-to-one.}
+
+Suppose that $u \neq v \in W$. We follow that $s(u) \neq s(v)$. Thus $H|s(v) \neq H|s(u)$
+(we're talking about restrictions and not ranges, thus this implication is valid). Now we
+can follow that injectivity of $F$ implies that  $F(H|s(v)) \neq F(H|s(u))$. Therefore
+we conclude by applying definition of $H$ that $H(v) \neq H(u)$. Therefore we can follow that
+$H$ is injective, as desired.
+
+\subsection*{6.2.5}
+
+\textit{Let $\preceq$ be a well-ordering on $W$ and $\preceq^*$ be a well-ordering on $A$.
+  Assume for each $g \in A^{\prec W}$, there is a $y \in A$ such that $g(x) \prec^* y$ for
+  all $x \in \dom(g)$. Show that there is an $H: W \to A$ so that for all $v \in W$ and
+  $u \in W$, if $v \prec u$, then $H(v) \prec^* H(u)$.}
+
+Define $F: A^{\prec W} \to A$ by
+$$F(g) = \prec^*\text{- lowest element of
+  $\{y \in A: (\forall x \in \dom(g))(g(x) \prec^* y)\}$}$$
+We can follow pretty easily that this thing is a function. 6.2.1 gives us that there exists
+$H: W \to A$ such that
+$$H(u) = F(H|s(u))$$
+Now let $v, u$ be such that $v \prec u$. We follow that $v \in s(u)$. Therefore
+we can follow that $H(u) = F(H|s(u))$. By definition of $F$ we follow that
+$(\forall x \in s(u))(H(x) \prec H(u))$. Since $v \in s(u)$ we follow that
+$H(y) \prec H(u)$, as desired.
+
+\subsection*{6.2.6}
+
+\textit{Let $A$ be a set. Suppose that $A \subseteq C$ where $C$ is a transitive set.
+  Prove that $\overline{A} \subseteq C$. Thus, $\overline{A}$ is the "smallest"
+  transitive set for which $A$ is a subset.}
+
+Suppose that $A \subseteq C$ and $C$ is a transitive set.
+Let
+$$I = \{n \in \omega: F(n) \subseteq C\}$$
+we follow that $F(0) = A \subseteq C$ by premise of the exercise. Let $n \in I$.
+We follow that $F(n) \subseteq C$. We follow that
+$$(\forall x \in F(n))(x \in C)$$
+because $C$ is transitive, we follow
+$$(\forall x \in F(n))(x \subseteq C)$$
+let $y \in F(n^+)$. We follow that $y \in \bigcup{F(n)}$. Thus
+$$(\exists X \in F(n))(y \in X)$$
+thus $y \in C$. Therefore $\bigcup{F(n)} \subseteq C$. Therefore $F(n^+) \subseteq C$.
+Therefore $n \in I \ra n^+ \in I$. Therefore $I = \omega$. Thus we follow that
+$$(\forall n \in \omega)(F(n) \subseteq C)$$
+
+Suppose that $x \in \overline{A}$. We follow that there exists $n \in \omega$ such that
+$x \in F(n)$. Because $F(n) \subseteq C$, we follow that $x \in C$. Thus we follow that
+$\overline{A} \subseteq C$, as desired.
+
+Given that $\overline{A}$ is transitive, we follow that $\overline{A}$ is the smallest
+transitive set for which $A$ is a subset.
+
+\subsection*{6.2.7}
+
+\textit{Let $B$ be a set. Conclude from Exercise 6 that $\overline{\{B\}}$ is the
+  smallest transitive set that contains $B$ as an element.}
+
+Suppose that $C$ is a transitive set that contains $B$ as an element. We follow that
+$C$ contains $\{B\}$ as a subset. Therefore we follow that $\overline{\{B\}} \subseteq C$
+by previous exercise. Therefore for all
+transitive set $C$
+$$B \in C \ra \overline{\{B\}} \subseteq C$$
+
+We follow that  $B \in \overline{\{B\}}$ and $\overline{\{B\}}$ imply that
+$\overline{\{B\}}$ is the smallest transitive subset such that $B$ is an element this set.
+
+\subsection*{6.2.8}
+
+\textit{Let $A$ be a set. Using the replacement axiom, one can show that
+  $\{\overline{x}: x \in A\}$ is a set. Establish the following:}
+
+\textit{(a) Prove that if $x \in A$, then $\overline{x} \subseteq \overline{A}$.}
+
+We follow that $x \in A$ and $A \subseteq \overline{A}$ implies that
+$x \in \overline{A}$. Since $\overline{A}$ is transitive, we follow that
+$x \subseteq \overline{A}$. Since $\overline{A}$ is transitive, exercise 6 implies that
+$\overline{x} \subseteq \overline{A}$.
+
+\textit{(b) Prove that $A \cup \bigcup{\{\overline{x}: x \in A\}} \subseteq \overline{A}$}
+
+We can follow that $A \subseteq \overline{A}$. For every $x \in A$ we follow that
+$\overline{x} \subseteq \overline{A}$. Suppose that $y \in \bigcup{\{\overline{x}: x \in A\}}$.
+We follow that there exsits $x \in A$ such that $y \in \overline{x}$. Thus
+$y \in \overline{A}$. Therefore $\bigcup{\{\overline{x}: x \in A\}} \subseteq \overline{A}$
+Therefore we follow that $A \cup \bigcup{\{\overline{x}: x \in A\}} \subseteq \overline{A}$.
+
+\textit{(c) Prove that $A \cup \bigcup{\{\overline{x}: x \in A\}}$ is a transitie set.}
+
+Suppose that $y \in A \cup \bigcup{\{\overline{x}: x \in A\}}$.
+If $y \in A$, then $\overline{y} \in \{\overline{x}: x \in A\}$. Therefore
+$\overline{y} \subseteq \bigcup{\overline{y} \in \{\overline{x}: x \in A\}}$.
+Since $\overline{y}$ is transitive and $y \in \overline{y}$, we follow that
+$y \subseteq \bigcup{\{\overline{x}: x \in A\}}$.
+
+If $y \in \bigcup{\{\overline{x}: x \in A\}}$. We follow that
+there exists $\overline{x'} \in A$ such that $y \in \overline{x'}$. Thus
+$y \subseteq \overline{x'}$. Therefore $\bigcup{\overline{y} \in \{\overline{x}: x \in A\}}$.
+Thus we follow that $y \subseteq  A \cup \bigcup{\{\overline{x}: x \in A\}}$.
+
+From those conclusion we follow that presented set is transitive.
+
+\textit{(d) Prove that $A \cup \bigcup{\{\overline{x}: x \in A\}} = \overline{A}$}
+
+We follow that $A \subseteq A \cup \bigcup{\{\overline{x}: x \in A\}}$ and
+$A \cup \bigcup{\{\overline{x}: x \in A\}}$ is transitive, therefore we follow that
+$\overline{A} \subseteq A \cup \bigcup{\{\overline{x}: x \in A\}}$. From part
+(a) we get double inclusion, which gives us equality.
+
+\subsection*{6.2.9}
+
+\textit{Let $A$ be a set. Using the proof of Theorem 6.2.8 as a model, prove that
+  there is a function $F$ with domain $\omega$ such that}
+
+\textit{1. $F(0) = A$}
+
+\textit{2. $F(n^+) = \{F(n)\}$ for all $n \in \omega$.}
+
+\textit{Let $C = F[\omega]$. Prove thta $A \in C$ and for all $X$, if $X \in C$,
+  then $\{X\} \in C$.}
+
+We can define
+$$y =
+\begin{cases}
+  A \text{ if } f = \emptyset \\
+  \{F(n)\} \text{ if $f$ is a function with domain $k^+$ for some $k \in \omega$} \\
+  \emptyset \text{ otherwise}
+\end{cases}
+$$
+and define $\phi(f, y)$ based on this definition. Then we follow that there exsits
+a function $F$ with domain $\omega$ such that the required conditions hold.
+
+Let $C = F[\omega]$. We follow that $F(0) \in C$, therefore $A \in C$.
+
+If $X \in C$, then we follow that there exists $n \in \omega$ such that
+$F(n) = X$. Thus $F(n^+) = \{X\}$. Since $n^+ \in \omega$, we follow that
+$F(n^+) \in F[\omega]$, therefore $\{X\} \in F[\omega]$, as desired.
+
+\subsection*{6.2.10}
+
+\textit{Let $A$ be a set. Using the proof of Theorem 6.2.8 as a model, prove that
+  there is a function $F$ with domain $\omega$ such that}
+
+\textit{1. $F(0) = A$}
+
+\textit{2. $F(n^+) = \pow(F(n))$ for all $n \in \omega$.}
+
+\textit{Let $C = F[\omega]$. Prove thta $A \in C$ and for all $X$, if $X \in C$,
+  then $\pow(X) \in C$.}
+
+We can define
+$$y =
+\begin{cases}
+  A \text{ if } f = \emptyset \\
+  \pow(F(n)) \text{ if $f$ is a function with domain $k^+$ for some $k \in \omega$} \\
+  \emptyset \text{ otherwise}
+\end{cases}
+$$
+and define $\phi(f, y)$ based on this definition. Then we follow that there exsits
+a function $F$ with domain $\omega$ such that the required conditions hold.
+
+Let $C = F[\omega]$. We follow that $F(0) \in C$, therefore $A \in C$.
+
+If $X \in C$, then we follow that there exists $n \in \omega$ such that
+$F(n) = X$. Thus $F(n^+) = \pow(X)$. Since $n^+ \in \omega$, we follow that
+$F(n^+) \in F[\omega]$, therefore $\pow(X) \in F[\omega]$, as desired.
+
 
 \end{document}
 %%% Local Variables:
