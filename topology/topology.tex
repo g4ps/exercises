@@ -24,6 +24,7 @@
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
 
 
 
@@ -34,6 +35,18 @@
 \chapter*{Preface}
 
 Those are my solutions for the James Munkres' "Topology", 2nd edition.
+
+Majority of the notation that is used here migrated from my course on the set theory. In
+my very personal opinion, notation that is used there is far superior that whatever is
+happening in Munkres' book.
+
+If you decide to persue the study of topology yourself, then I highly recommend firstly
+to go through a course on axiomatic set theory and logic, because first chapter of this
+book is highly insufficient in this regard. My personal recommendations are the
+Cunningham's "Set theory: A first course" book on set theory and
+"A first course in Mathematical Logic and Set Theory" by Michael L. O’Leary on both subjects.
+Although I've persued the completion of the first book, I don't think that it was
+a wise decision. 
 
 \part{General Topology}
 
@@ -189,7 +202,22 @@ pretty simular to $(a)$
 
 \section{Topological Spaces}
 
+I want to state here that if $\topol \subseteq \pow(X)$ satisfies
+properties
+$$\set{X, \emptyset} \subseteq \topol$$
+$$(\forall Y \in \pow(\topol))( \bigcup{U} \in \topol)$$
+$$(\forall Y \in \pow(\topol))(Y \neq \emptyset \land |Y| <_c
+|\omega|  \to \bigcap{U} \in \topol)$$
+then $\topol$ is a topology on $X$.
+
 \section{Basis for a Topology}
+
+Let $Y \subseteq \pow(X)$. If
+$$(\forall x \in X)(\exists y \in Y)(x \in y)$$
+and
+$$(\forall x \in X)(\exists y_1, y_2, y_3 \in Y)(x \in y_1 \cap y_3 \to
+x \in y_3 \land y_3 \subseteq y_1 \cap y_2)$$
+then $Y$ is a basis for a topology on $X$.
 
 \subsection{}
 
@@ -197,7 +225,200 @@ pretty simular to $(a)$
   $x \in A$ there is an open set $U$ containing $x$ such that $U \subseteq A$. Show that $A$ is
   open in $X$.}
 
-Let $U_x$ be a indexed set such that $U_x = \{U \in \topol: (\exists x \in A)(x \in U)$
+Let $U: A \to \pow(A)$ be an indexed function such that 
+$$x \in U(x) \land U(x) \subseteq A \land U(x) \in \topol(X)$$
+We want to show that $A = \bigcup{\ran(U)}$. Suppose that $x \in A$. We follow that
+$x \in U(x)$. Thus $x \in \bigcup{\ran(U)}$. Therefore $A \subseteq \bigcup{\ran(U)}$.
+
+Suppose that $z \in \bigcup{\ran(U)}$. We follow that
+$$(\exists Y \in \ran(U))(z \in Y) \ra
+(\exists x \in A)(z \in U(x))$$
+Since $(\forall x \in A)(U(x) \subseteq A)$, we follow that $z \in A$. Thus
+$\bigcup{\ran(U)} = A$.
+
+Because $(\forall x \in A)(U(x) \in \topol(X))$, we follow that
+$$\ran(U) \subseteq \topol(A)$$, therefore by definition of topology we follow that
+$$\bigcup{\ran(U)} \in \topol(X)$$
+as desired.
+
+\subsection{}
+
+Too tedious, skip
+
+\subsection{}
+
+\textit{Show that the collection $\topol_c$ given in Example 4 of p. 12 is a topology on the
+  set $X$. Is the collection
+  $$\topol_\infty = \{U \in \pow(X):
+  |X \setminus U| \geq_c |\omega| \lor X \setminus U = \emptyset \lor
+  X \setminus U = X\}$$
+  a topology on $X$?
+}
+
+We firstly state that
+$$\topol_c = \{U \in \pow(X): |X \setminus U| \leq_c |\omega| \lor X \setminus U = X\}$$
+
+We can follow that $X \setminus X = \emptyset$, which is countable, thus $X \in \topol_c$.
+$X \setminus \emptyset = X$, therefore $\emptyset \in \topol_c$.
+
+Suppose that $U' \subseteq \topol_c$. If $U' = \{\emptyset\}$, then $
+X \setminus \bigcap{U'} = X$ and $X \setminus \bigcup{U'} = X$.
+Thus assume that $U' \neq \{\emptyset\}$.
+
+We follow that
+$$(\forall u \in U')(|X \setminus u| \leq_c |\omega| \lor X \setminus u = X)$$
+We follow that if $\emptyset \in U'$, then $\bigcup{U'} = \bigcup{(U' \setminus \{\emptyset\})}$.
+Then we follow by DML that
+$$X \setminus \bigcup\{U'\} = X \setminus \bigcup\{U' \setminus \{\emptyset\}\} =
+\bigcap_{U' \setminus \{\emptyset\}}{X \setminus u}$$
+we know that $(\forall u \in U')(|X \setminus u| \leq_c |\omega|)$. For any $u \in U'$ we
+follow that
+$$\bigcap_{u \in U' \setminus \{\emptyset\}}{X \setminus u} \subseteq X \setminus u'$$
+and given that $X \setminus u'$ is countable, we follow that $\bigcap_{u \in U'}{X \setminus u}$
+is countable as well, thus $\bigcup{U'} \in \topol_c$.
+
+Now let $U' \subseteq \topol_c$ and $|U'| < |\omega|$ and $U' \neq \{\emptyset\}$.
+We follow that if $\emptyset \in U'$, then $\bigcap{U'} = \emptyset$, and therefore
+$X \setminus \bigcap{U'} = X$. Therefore assume that $\emptyset \notin U'$.
+
+Then we can follow that
+$$X \setminus \bigcap{U'} = \bigcup_{u \in U'}{X \setminus u}$$
+Given that $U'$ is countable and $X \setminus u$ is countable we follow that
+$\bigcup_{u \in U'}{X \setminus u}$ is countable, thus $X \setminus \bigcap{U'}$ is countable.
+
+Therefore we conclude that $\topol_c$ is a topology on $X$.
+
+Now let us consider $T_\infty$. We can state that $X \in T_\infty$ because
+$X \setminus X = \emptyset$. Because $X \setminus \emptyset = X$, we follow that
+$\emptyset \in T_\infty$.
+
+Suppose that $X$ is not infinite and $T_\infty \neq \{\emptyset, X\}$. Then there exists
+$u \in T_\infty$ such that $u \neq \emptyset$ and $u \neq X$. Therefore $X - u$ is
+nonempty finite set, therefore $u \notin T_\infty$, which is a contradiction.
+Therefore we conclude that if $X$ is finite, then $T_\infty$ is a trivial topology.
+
+If $X$ is infinite, then we follow that we can have an injection $f: \omega \to X$.
+Let $O$ be the set of odd naturals and $E$ be the set of evens. Then we follow that
+$$|X \setminus f[O]| = |f[E]| \geq_c |\omega|$$
+and
+$$|X \setminus f[E]| =_c |f[O]| \geq_c |\omega|$$
+which tells us that $f[O]$ and $f[E]$ are both in $X$. We can also follow that
+$$|X \setminus f[O \cup \{0\}]| \geq |\omega|$$
+thus $ f[O \cup \{0\}] \in \topol_\infty$. This gives us that
+$$f[E] \cap f[O \cup \{0\}] = \{f(0)\} \in \topol_\infty$$
+but $\{f(0)\}$ is a finite nonempty set for which none of the conditions of $\topol_\infty$
+hold. Therefore we conclude that if $X$ is infinite, then $\topol_\infty$ is not a topology.
+
+Therefore we conclude that if $X$ is a finite set, then $T_\infty$ is equal to a
+trivial topology; if $X$ is infinite, then $T_\infty$ is not a topology at all, since
+it is not closed under finite intersections.
+
+\subsection{}
+
+\textit{(a) if $\{\topol_\alpha\}$ is a family of topologies on $X$, show that
+  $\bigcap{\topol_\alpha}$ is a topology on $X$. Is $\bigcup{\topol_\alpha}$ a topology on $X$?}
+
+Since every topology on $X$ has $X$ and $\emptyset$ as elements, we follow that
+$$\{X, \emptyset\} \subseteq \bigcap{\topol_\alpha}$$
+If $Y \subseteq \bigcap{\topol_\alpha}$, then we follow that
+$$(\forall Z \in \{\topol_\alpha\})(\bigcap{\topol_\alpha} \subseteq Z)$$
+$$(\forall Z \in \{\topol_\alpha\})(Y \subseteq Z)$$
+since every $Z$ is a topology, we follow that
+$$(\forall Z \in \{\topol_\alpha\})(\bigcup{Y} \in Z)$$
+$$\bigcup{Y} \in \bigcap{\topol_\alpha}$$
+If $Y$ is finite and nonempty, we can also follow that
+$$(\forall Z \in \{\topol_\alpha\})(Y \in Z) \ra
+(\forall Z \in \{\topol_\alpha\})(\bigcap{Y} \in Z) \ra \bigcap{Y} \in \bigcap{\topol_\alpha}$$
+thus we conclude that $\bigcap{\topol_\alpha}$ is a topology.
+
+$\bigcup{\topol_\alpha}$ is not necessarily a topology. Although
+$\set{X, \emptyset} \in \bigcup{\topol_\alpha}$, we cannot follow that the topology is
+closed under unions. Case in point: Let $X = \set{a, b, c}$ and
+$$\topol_1 = \set{\emptyset, X, \set{a}}, \topol_1 = \set{\emptyset, X, \set{b}}$$
+then $Y = \topol_1 \cup \topol_2$ does not contain $\set{a, b}$, which would be necessary
+for this case. Thus we conclude that in general we can't have implications for
+$\bigcup{\topol_\alpha}$.
+
+\textit{(b) Let $\set{\topol_\alpha}$ be a family of topologies on $X$. Show that there is a
+  unique smallest topology on $X$ containing all the collections $\topol_\alpha$ and
+  a unique largest topology contained in all $\topol_\alpha$.}
+
+Let us take $\bigcup{\set{\topol_\alpha}}$. We cannot follow that presented
+set is a topology on $X$, nor can we state that it is a basis of a topology. Former
+is followed from the discussion in the previous section of this exercise, and the latter
+cannot be followed because we don't necessarily satisfy the
+second point of the definition of the basis. Namely, we don't have that
+$$(\forall x \in X)(\exists y_1, y_2, y_3 \in \bigcup{\set{\topol_\alpha}})(x \in y_1 \cap y_3 \to
+x \in y_3 \land y_3 \subseteq y_1 \cap y_2)$$
+Let $Q$ be a set of all of the intersections of finite nonempty subsets of
+$\bigcup{\set{\topol_\alpha}}$. We follow that $(\forall x \in \bigcup{\set{\topol_\alpha}})
+(x = \bigcap{\{x\}})$, therefore $\bigcup{\set{\topol_\alpha}} \subseteq Q$. 
+Thus we follow that $Q$ satisfies
+the first requirement for the basis of $X$. Now let $x \in X$ be such that there
+exist $y_1, y_2 \in Q$ such that $x \in y_1 \cap y_2$. We follow that there exist
+finite subsets $Y_1, Y_2 \subseteq \bigcup{\set{\topol_\alpha}}$ such that 
+$$y_1 = \bigcap{Y_1} \land y_2 = \bigcap{Y_2}$$
+therefore
+$$y_1 \cap y_2  = \bigcap{Y_1} \cap \bigcap{Y_2}$$
+which is an intersection of a finite subset of $\bigcup{\topol_\alpha}$. Thus we follow that there
+exists $y_3 \in Q$ such that $x \in y_3 \land y_3 \subseteq y_1 \cap y_2$. 
+Therefore we can follow that the set $Q$ is indeed a basis for a topology on $X$.
+Let us name the topology generated by this set as $\topol_q$.
+
+Suppose that there is a topology, which contains
+all of the topologies $\set{\topol_\alpha}$. Then we follow that it contains
+$\bigcup{\set{\topol_\alpha}}$, therefore we follow that it contains all of the unions
+of $\bigcup{\set{\topol_\alpha}}$, and finite intersections of subsets of
+$\bigcup{\set{\topol_\alpha}}$, and thus it contains $\topol_q$. Therefore
+we follow that $\topol_q$ is the smallest topology, which contains all
+the topologies of $\set{\topol_\alpha}$.
+
+Suppose that $\topol_p$ is a topology, which is contained in all of the $\set{\topol_\alpha}$.
+Then we follow that $\topol_p \subseteq \bigcap{\topol_\alpha}$. Because $\bigcap{\topol_\alpha}$
+is a topology itself, we follow that it is the largest topology, which is contained
+in all of the $\set{\topol_\alpha}$.
+
+\textit{(c) If $X = \set{a, b, c}$, let
+  $$\topol_1 = \set{\emptyset, X, \set{a}, \set{a, b}}$$
+  $$\topol_2 = \set{\emptyset, X, \set{a}, \set{b, c}}$$
+  Find the smallest topology containing $\topol_1$ and $\topol_2$, and the largest topology
+  contained in $\topol_1, \topol_2$.
+}
+
+We can follow from previous discussions that largest contained topology is
+$$\set{\emptyset, X, \set{a}}$$
+and the smallest containing topology is
+$$\set{\emptyset, X, \set{a}, \set{b}, \set{a, b}, \set{b, c}}$$
+
+\subsection{}
+
+\textit{Show that if $A$ is a basis for a topology on $X$, then the topology generated by $A$
+  equals the intersection of all topologies on $X$ that contains $A$. Prove the same
+  if $A$ is a subbasis.}
+
+Let $A$ be a subbasis.
+Let $\set{\topol_\alpha}$ be a set of topologies, that contain $A$ and  $\topol_A$ is
+a topology generated by $A$. We can follow that $\topol_A \in \set{\topol_\alpha}$,
+therefore $\bigcap{\set{\topol_\alpha}} \subseteq {\topol_A}$. If $x \in \topol_A$, then we
+follow that there exists a subset $B \subseteq A$ such that $x$ is equal to some
+union of some finite intersections of $B$. Since
+$B \subseteq A$, we follow that $(\forall y \in \topol_\alpha)(B \subseteq y)$. Therefore
+all of the finite intersections of $B$ are in any topology of $\topol_\alpha$.  Therefore
+all of the unions of those intersections are in any $\topol_\alpha$. Therefore
+we conclude that $(\forall y \in \topol_\alpha)(x \in y)$.
+and thus $x \in \bigcap{\topol_\alpha}$.
+Therefore we conclude that $\topol_A \subseteq  \bigcap{\topol_\alpha}$, and by double
+inclusion we get that $\topol_A =  \bigcap{\topol_\alpha}$, as desired.
+
+Since every basis of a topology is a subbasis by first clause of the definition, we follow
+that the desired result holds for bases as well.
+
+\subsection{}
+
+\textit{Show that the topologies of $R_l$ and $R_k$ are not comparable.}
+
+TODO
+
 
 
 \end{document}
