@@ -38,7 +38,8 @@ Those are my solutions for the James Munkres' "Topology", 2nd edition.
 
 Majority of the notation that is used here migrated from my course on the set theory. In
 my very personal opinion, notation that is used there is far superior that whatever is
-happening in Munkres' book.
+happening in Munkres' book. Sometimes I use some abusive notation when it is painfully
+clear what's going on.
 
 If you decide to persue the study of topology yourself, then I highly recommend firstly
 to go through a course on axiomatic set theory and logic, because first chapter of this
@@ -417,8 +418,114 @@ that the desired result holds for bases as well.
 
 \textit{Show that the topologies of $R_l$ and $R_k$ are not comparable.}
 
-TODO
+Let $[0, 1)$ be an element of a basis of topology $R_l$. Then we follow that
+there are no elements of basis of standart topology on $R$ that contains $0$ and lies inside
+$[0, 1)$. We can follow this by contradiction
 
+Suppose that $0 \in (x, y)$ and $(x, y) \subseteq [0, 1)$. Since $0 \in (x, y) $,
+we follow that $x < 0$. Thus we conclude that there exists $n \in Z_+$ such that
+$1/n < |x|$. Therefore $-1/n \in (x, y)$ and $-1/n \notin [0, 1)$ which gives us
+that $(x, y) \not \subseteq [0, 1)$, which is a contradiction.
+The same logic applies to any element of basis of $R_k$.
+
+Now let us look at the basis element $(-1, 1) \setminus K$ and the point $0$. We can
+follow that $0 \in (-1, 1) \setminus K$ and suppose that there exists basis element of
+$R_l$  $[a, b)$ that has point $0$ and is contained within $(-1, 1) \setminus K$.
+Since $0 \in [a, b)$, we follow that $a \leq 0 < b$. Thus we conclude that there exists
+$n \in Z_+$ such that $0 < 1/n < b$. Thus we conclude that $1/n \in [a, b)$ and
+$1/n \notin (-1, 1) \setminus K$, since $1/n \in K$ for all $n \in Z_+$. Thus we
+conclude that $R_k$ and $R_l$ are not comparable, as desired.
+
+\subsection{}
+
+\textit{Consider the following topologies on $R$:
+  $$\topol_1 = \text{the standart topology on $R$}$$
+  $$\topol_2 = \text{the topology of $R_k$}$$
+  $$\topol_3 = \text{the finite complement topology}$$
+  $$\topol_4 = \text{the upper limit topology, having all sets $(a, b]$ as basis}$$
+  $$\topol_5 = \text{the topology having all sets
+    $(-\infty, a) = \set{x: x < a}$ as a basis}$$
+    Determine, for each of these topologies, which of the others it contains
+}
+
+We can follow that $T_2$ contains $T_1$, since it's finer, as proven in the chapter. The
+reverse is not true, as proven in the chapter.
+
+We can follow that $T_3$ does not contain $T_1$, because if it is, then we follow that
+$(-\infty, a] \cup [b, \infty)$ has finite number of points. The revese is true, since
+we can divide each element of a finite complement into a union of
+open intervals. For example, if $x \in T_3$ is such that $x = R \setminus \set{x_1, x_2, x_3}$
+and $x_1 < x_2 < x_3$,
+then we can state that $x = (-\infty, x_1) \cup (x_1, x_2) \cup (x_2, x_3) \cup (x_3, \infty)$.
+We can follow that middle 2 intervals are in the basis of standart topology, and two infinite
+intervals are unions of infinite set of intervals of basis.
+Thus $\topol_1$ is strictly finer than $\topol_3$.
+
+We can follow that the same logic, that worked with lower limit, works with upper limit as well.
+thus we conclude that $T_4$ is strictly finer than $T_1$.
+
+We can follow that for $(-\infty, a) \in T_5$ we can get a sequence $(x_n) = a - n$, then
+get a set of intervals $\set{(a, a - 1), (x_{n + 1}, x_n)}$, all of which are in the basis of
+standart topology, get another set$\set{V_{0.1}(x_n)}$ to path the holes in this set,
+and take union of unions of both sets to get that $(-\infty, a) \in T_1$.
+
+For $(a, b)$ - a set in the basis of standard topology we follow that every set in the
+basis of $T_5$ contains $a - 1$, thus we conclude that $(a, b) \notin T_5$. Thus we
+conclude that $T_1$ is strictly finer than $T_5$.
+
+Topology $\topol_2$ is strictly finer than $\topol_1$, therefore we follow that
+topologies that are finer than $\topol_1$ are a subset of $\topol_2$. This includes
+$\topol_3$ and $\topol_5$. (Almost) the same reasoning that worked with $R_k$ and $R_l$
+can be applied to show that $\topol_2$ is not finer than $\topol_4$. On the other hand,
+suppose that $x \in X$ and $y \in \topol_2$ is such that $x \in y$. We follow that
+if $y \in \topol_1$, then there exists an element of $\topol_4$ that is finer than
+$y$. Thus assume taht $y \notin \topol_1$ and therefore is in the form
+$y = (a, b) \setminus K$ for some $a, b \in R$. If $x \leq 0$, then we can have
+set $(a, x] \subseteq y$ that will satisfy. Thus assume that $x > 0$. We follow that there
+exists $n \in Z_+$ such that $1/n < x$. By well-ordering properties of $Z_+$ we
+follow that there exists lowest $n \in Z_+$ such that $1/n  x$. Therefore we follow that
+there are no elements $z \in K$ such that $1/n < z < x$. Since $x \in (a, b) \setminus K$,
+we follow that $x \notin K$, therefore
+$(\forall y \in (1/n, x])(y \in x \in (a, b) \setminus K)$. Therefore we conclude that
+$\topol_4$ is strictly finer than $\topol_2$, which is neat.
+
+$\topol_3$ is strictly coarser than $\topol_1$, $\topol_2$. Since $\topol_4$
+is strictly finer than $\topol_2$, we follow that $\topol_3$ is coarser than $\topol_4$.
+Suppose that $a < x < b$ and let $y = R \setminus \set{a, b}$ be an element of $\topol_3$.
+Then we follow that no element of basis of $\topol_5$ has $x$ and does not have $a$.
+If $(-\infty, a)$ is an element of $\topol_5$, then we follow that every element of topology
+$\topol_3$ has numbers greater than $a$ in it (since there are infinitly  many of them).
+Thus we conclude that no element of $\topol_3$ is a subset of $(-\infty, a)$. Thus we
+conclude that $\topol_3$ and $\topol_5$ are not comparable.
+
+And after all of the discussion, we can conclude that
+$$[\topol_3 | \topol_5] \subset \topol_1 \subset \topol_2 \subset \topol_4$$
+is the desired conclusion.
+
+\subsection{}
+
+\textit{(a) Apply Lemma 13.2 to show tha the countable collection
+  $$B = \set{(a, b): a < b \land a, b \in Q}$$
+  is a basis that generates the standard topology on $R$.}
+
+Denote $\topol$ as a standard topology on $R$. Let $x \in \topol$. We follow that
+there exists an interval $(a, b)$ in basis of standard topology such that
+$x \in (a, b)$. We can follow that there exist $a', b' \in Q$ such that
+$a < a' < x < b' < b$ (otherwise we run into some problem with density of rationals
+in reals). Therefore we follow that $x \in (a', b')$. Lemma 13.2 tells us that
+the presented result implies that $B$ is a basis for standard topology, as desired.
+
+\textit{(b) Show that the collection
+  $$C = \set{[a, b): a < b \land a, b \in Q}$$
+  is a basis that genenrates a topology different from the lower limit topology on $R$.}
+
+Proof that $C$ is a basis is trivial.
+Let us look at $[\sqrt{2}, 2)$ - an element of $R_l$. Suppose that $c = [a, b) \in C$ is
+such that $\sqrt{2} \in c$. Because $\sqrt{2} \notin Q$, we follow that
+$a \neq \sqrt{2}$, therefore $a < \sqrt{2} < b$. Therefore we can conclude that $C$ is
+not finer than $R_l$. Proving that $C$ is a subset of $R_l$ is trivial, thus
+we conclude that $R_l$ is strictly finer than $C$, and thus $C$ generates a topology
+different than $R_l$, as desired.
 
 
 \end{document}

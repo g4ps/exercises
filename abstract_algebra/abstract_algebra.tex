@@ -22,6 +22,7 @@
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
 
 
 \begin{document}
@@ -1797,7 +1798,38 @@ in linear algebra book. Same goes for the next exercise as well.
 
 \section{Centralizers and Normalizers, Stabilizers and Kernels}
 
+\subsection*{2.2.1}
 
+\textit{Prove that $C_G(A) = \set{g \in G: (\forall a \in A)(g \inv a g = a)}$.}
+
+Suppose that $g' \in C_G(A)$. Since $C_G(A)$ is a group, we follow that there
+exists $g \in C_G(A)$ such that $g' = g \inv$. Thus $g \inv \in C_G(A)$. Therefore
+$$(\forall a \in A)(g \inv a (g\inv) \inv = a) \lra (\forall a \in A)(g \inv a g = a)$$
+thus $g\inv \in \set{g \in G: (\forall a \in A)(g \inv a g = a)}$. Therefore
+$g' \in \set{g \in G: (\forall a \in A)(g \inv a g = a)}$.
+
+Suppose that $g' \in \set{g \in G: (\forall a \in A)(g \inv a g = a)}$.
+We follow that
+$$(\forall a \in A)(g' \inv a g' = a) \lra (\forall a \in A)( a g' = g' a) \lra
+(\forall a \in A)( a  = g' a g'\inv)$$
+thus we follow that $g' \in C_G(A)$. Thus we can follow that
+$C_G(A) = \set{g \in G: (\forall a \in A)(g \inv a g = a)}$
+as desired.
+
+
+\subsection*{2.2.2}
+
+\textit{Prove that $C_G(Z(G)) = G$ and deduce that $N_G(Z(G)) = G$.}
+
+Suppose that $g \in C_G(Z(G))$. We follow that
+$$(\forall A \in \pow(G) \setminus \set{\emptyset})(g \in C_G(A) \ra g \in G)$$
+and since $Z_G \subseteq G \land Z(G) \neq \emptyset$ we follow that $C_G(Z(G)) \subseteq G$.
+
+Suppose that $g \in G$. We follow that
+$$(\forall z \in Z(G))(zg = gz)$$
+thus
+$$(\forall z \in Z(G))(g z g\inv = z)$$
+thus $g \in C_G(Z(G))$. By double inclusion we get that $C_G(Z(G)) = G$. 
 
 \end{document}
 %%% Local Variables:
