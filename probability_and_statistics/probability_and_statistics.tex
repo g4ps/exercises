@@ -14,7 +14,7 @@
 \DeclareMathOperator \imp {\Rightarrow}
 \DeclareMathOperator \lra {\Leftrightarrow}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
-
+\newcommand{\set}[1]{\{ #1 \}}
 
 \begin{document}
 \maketitle
@@ -206,7 +206,13 @@ $P(n, m) = \frac{n!}{(n - m)!} = \exp(s(n) - s(n - m))$
   14 & - \\
   15 &  - \\
   16a & $48 / 175 \approx 0.27429$ \\
-  16b & $1/2^{50} \approx 0$ \\
+  16b & $2^{50}/C(100, 50) \approx 0$ \\
+  17 & $4 C(13, 4)/ C(52, 4) = 44/ 4165 \approx 0.0105$\\
+  18 & $C(20, 2)^5 / C(100, 10) \approx 0.0143$ \\
+  19 & - \\
+  20 & - \\
+  21 & C(365 + 7 - 1, 7) \\
+  22 & - \\
   \hline 
 \end{tabular}
 
@@ -287,6 +293,136 @@ $$(1 - 1)^n = \sum_{i = 0}^n{C(n, i) 1^i (-1)^{n - i}}$$
 $$\sum_{i = 0}^n{C(n, i) 1^i (-1)^{n - i}} = 0$$
 we can follow through the even-odd argument that $1^i (-1)^{n - i} = (-1)^i$, but I'll
 skip it.
+
+\subsection*{1.8.19}
+
+\textit{(rewording) Prove the formula for unordered sampling with replacement.}
+
+This thing is ought to be covered rigorously in a course for discrete maths, combinatorics or
+something of sorts.  Currentry there is a better
+proof at Belcastro's "Discrete mathematics with ducks".
+
+\subsection*{1.8.20}
+
+\textit{Prove the binomial theorem 1.8.2}
+
+1.8.2 states that
+$$(x + y)^n = \sum_{i = 0}^{n}{C(n, i) x^i y^{n - i}}$$
+
+Let
+$$I = \set{n \in \omega: (x + y)^n = \sum_{i = 0}^{n}{C(n, i) x^i y^{n - i}}}$$
+We follow that
+$$(x + y)^0 = C(0, 0)x^0 y^0 = 1$$
+Thus $0 \in I$. (we can start with a base case of $1$ as well for a more clear example,
+but I like this one more, and it suffices as well).
+
+Now suppose that $n \in I$. We follow that
+$$(x + y)^n = \sum_{i = 0}^{n}{C(n, i) x^i y^{n - i}}$$
+thus we follow that
+$$(x + y)(x + y)^n = (x + y)\left[\sum_{i = 0}^{n}{C(n, i) x^i y^{n - i}}\right]$$
+
+Left-hand side is reduced to
+$$(x + y)(x + y)^n = (x + y)^{n + 1}$$
+Right-hand side is obviously a bit trickier, but we can follow
+$$
+(x + y) \sum_{i = 0}^{n}{C(n, i)x^i y^{n - i}} =
+$$
+$$ =
+x \sum_{i = 0}^{n}{C(n, i)x^{i} y^{n - i}} + y \sum_{i = 0}^{n}{C(n, i)x^i y^{n - i}} =
+$$
+$$ =
+\sum_{i = 0}^{n}{C(n, i)x^{i + 1} y^{n - i}} + \sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}} =
+$$
+$$ =
+\sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}} +  \sum_{i = 0}^{n}{C(n, i)x^{i + 1} y^{n - i}} =
+$$
+$$ =
+C(n, n)x^{n + 1}y^0 + \sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}}
++  \sum_{i = 0}^{n - 1}{C(n, i)x^{i + 1} y^{n - i}} =
+$$
+$$ =
+x^{n + 1} + \sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}}
++  \sum_{i = 0}^{n - 1}{C(n, i)x^{i + 1} y^{n - i}} =
+$$
+$$ =
+x^{n + 1} + \sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}}
++ x \sum_{i = 0}^{n - 1}{C(n, i)x^{i} y^{n - i}} =
+$$
+$$ =
+x^{n + 1} + \sum_{i = 0}^{n}{C(n, i)x^i y^{n + 1 - i}}
++ x \sum_{i = 1}^{n}{C(n, i - 1)x^{i - 1} y^{n - (i - 1)}} =
+$$
+$$ =
+x^{n + 1} + C(n, 0)x^0 y^{n + 1}  + \sum_{i = 1}^{n}{C(n, i)x^i y^{n + 1 - i}}
++ \sum_{i = 1}^{n}{C(n, i - 1)x^i y^{n + 1 - i}} =
+$$
+$$ =
+x^{n + 1} + y^{n + 1} + \sum_{i = 1}^{n}{C(n, i)x^i y^{n + 1 - i}}
++ \sum_{i = 1}^{n}{C(n, i - 1)x^i y^{n + 1 - i}} =
+$$
+$$ = 
+ x^{n + 1} + y^{n + 1} + \sum_{i = 1}^{n}{(C(n, i) + C(n, i - 1))x^i y^{n + 1 - i}}  = 
+$$
+$$
+= x^{n + 1} + y^{n + 1} + \sum_{i = 1}^{n}{C(n + 1, i)x^i y^{n + 1 - i}}  
+= x^{n + 1} + C(n + 1, 0)x^0 y^{n + 1 - 0} + \sum_{i = 1}^{n}{C(n + 1, i)x^i y^{n + 1 - i}}  =
+$$
+$$
+= x^{n + 1} + \sum_{i = 0}^{n}{C(n + 1, i)x^i y^{n + 1 - i}} 
+= x^{n + 1}y^{0} + \sum_{i = 0}^{n}{C(n + 1, i)x^i y^{n + 1 - i}} =  $$
+$$ = C(n + 1, n + 1)x^{n + 1}y^{n + 1 - (n + 1)} + \sum_{i = 0}^{n}{C(n + 1, i)x^i y^{n + 1 - i}} 
+= \sum_{i = 0}^{n + 1}{C(n + 1, i)x^i y^{n + 1 - i}}$$
+Thus we follow
+$$(x + y)^{n + 1} = \sum_{i = 0}^{n + 1}{C(n + 1, i)x^i y^{n + 1 - i}}$$
+or
+$$(x + y)^{n^+} = \sum_{i = 0}^{n^+}{C(n^+, i)x^i y^{n^+ - i}}$$
+which means that $n \in I \Rightarrow n^+ \in I$, from which we conclude that $I = \omega$, and
+thus 
+$$(x + y)^n = \sum_{i = 0}^{n}{C(n, i) x^i y^{n - i}}$$
+for all $n \in \omega$, as desired.
+
+\subsection*{1.8.22}
+
+Skip
+
+\section{Multinomial Coefficients}
+
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & $(21!)/(7! * 7! * 7!)$\\
+  2 & $50!/(18! * 12! * 12! * 8!)$ \\
+  3 & $300!/(5! * 8 ! * 287!)$ \\
+  4 & $(3! 3! 2!)/10! = 1/50400$\\
+  5 & $M(n, (n_1,..., n_6)) / 6^n$ \\
+  6 & $(7!) / (2 * 6^7)$ \\  
+  7 & $M(12, (6, 2, 4)) * M(13, (4, 6, 3)) / M(25, (10, 8, 7))$ \\
+  8 & $M(12, (3, 3, 3, 3) * M(40, (10, 10, 10, 10))/ M(52, (13, 13, 13, 13)$\\
+  9 & $4! / M(52, (13, 13, 13, 13)$ \\
+  10 & $(2! * 3! * 4!) / 9!$ \\
+  \hline 
+\end{tabular}
+
+\section{The Probability of a Union of Events}
+
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & $\approx 0.11913$ \\
+  \hline 
+\end{tabular}
+
+\subsection*{1.10.1}
+
+$$Pr(A_1) = Pr(A_2) = Pr(A_3) = C(4, 2) * C(48, 3) /C(52, 5)$$
+$$Pr(A_1 \cup A_2) = Pr(A_1 \cup A_3) = Pr(A_2 \cup A_3) =
+C(4, 2) * C(48, 3) * C(45, 3) / C(52, 5)^2$$
+$$Pr(A_1 \cup A_2 \cup A_3) = 0$$
+
+$$Pr(A_1 \cup A_2 \cup A_3) = 3 * C(4, 2) * C(49, 3) /C(52, 5) -
+3 C(4, 2) * C(49, 3) * C(46, 3) / C(52, 5)^2$$
+
+
+TODO later (probably never).
+
 
 \end{document}
 %%% Local Variables:
