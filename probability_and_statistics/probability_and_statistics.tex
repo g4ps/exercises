@@ -199,8 +199,17 @@ $P(n, m) = \frac{n!}{(n - m)!} = \exp(s(n) - s(n - m))$
   7 & (n - k - 1)/C(n, k) \\
   8 & (n - k)/C(n, k) \\
   9 & (n + 1)/C(2n, n)\\
+  10 & $15/92 \approx 0.16304$ \\
+  11 & $1 / 75 \approx 0.01333$ \\
+  12 & $69 / 119 \approx 0.57983$ \\
+  13 & $173 / 1518 \approx 0.114$ \\
+  14 & - \\
+  15 &  - \\
+  16a & $48 / 175 \approx 0.27429$ \\
+  16b & $1/2^{50} \approx 0$ \\
   \hline 
 \end{tabular}
+
 
 \subsection*{1.8.5}
 
@@ -214,6 +223,21 @@ $$ =  \frac{\prod_{4155 \leq i \leq 4251}{i}}{97!} =
 \frac{4251!}{4154!97!} = \frac{4251!}{4154!(4251 - 4174)!} = C(4251, 4154)$$
 and binomial coefficients are integers (pretty sure that we can follow that by induction
 in some more advanced course).
+
+\subsection*{1.8.10}
+
+There are total of $C(24, 10)$ possible subsets of length 10 in the space of 24.
+We follow that there are $C(22, 8)$ ways to pick 8 normal bulbs, which is what required to pick
+2 defective bulbs. Therefore the probability is 
+$$\frac{C(22, 8)}{C(24, 10)} = 15/92 \approx 0.16304...$$
+
+\subsection*{1.8.12}
+
+Using the same logic as in 1.8.10, there is a possibility $\frac{C(33, 8)}{C(35, 10)}$
+that same two guys will be in the first team, and probability of  $\frac{C(33, 23)}{C(35, 10)}$
+that they'll be in the other team. Thus the total probability is the sum of two.
+
+
 
 \subsection*{1.8.14}
 
@@ -237,9 +261,32 @@ $$ =
 $$
 as desired.
 
+\subsection*{1.8.15}
 
+\textit{(a) Prove that 
+  $$\sum_{i = 0}^n{C(n, i)} = 2^n$$
+}
 
+We can follow that from the fact that there are $2^n$ subsets of any given finite set,
+which means that the number of subsets of different lengths sums up to $2^n$.
 
+Another way to do this is to use binomial theorem:
+
+$$(x + y)^n = \sum_{i = 0}^n{C(n, i) x^k y^{n - k}}$$
+thus if we subisitute $x$ and $y$ for $1$, we get
+$$(1 + 1)^n = \sum_{i = 0}^n{C(n, i) 1^k 1^{n - k}}$$
+$$2^n = \sum_{i = 0}^n{C(n, i)}$$
+
+\textit{(b) Prove that
+  $$\sum_{i = 0}^n{(-1)^iC(n, i)} = 0$$
+}
+
+I'm sure that there is a neat explanation for this one as well, but using the binomial
+theorem once again, but now substituting $1$ for x and $-1$ for $y$ we get
+$$(1 - 1)^n = \sum_{i = 0}^n{C(n, i) 1^i (-1)^{n - i}}$$
+$$\sum_{i = 0}^n{C(n, i) 1^i (-1)^{n - i}} = 0$$
+we can follow through the even-odd argument that $1^i (-1)^{n - i} = (-1)^i$, but I'll
+skip it.
 
 \end{document}
 %%% Local Variables:

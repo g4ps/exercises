@@ -1829,7 +1829,207 @@ Suppose that $g \in G$. We follow that
 $$(\forall z \in Z(G))(zg = gz)$$
 thus
 $$(\forall z \in Z(G))(g z g\inv = z)$$
-thus $g \in C_G(Z(G))$. By double inclusion we get that $C_G(Z(G)) = G$. 
+thus $g \in C_G(Z(G))$. By double inclusion we get that $C_G(Z(G)) = G$.
+
+Since $C_G(A) \leq N_G(A)$, we follow that $C_G(Z(G)) \leq N_G(Z(G))$. And since both
+$C_G$ and $N_G$ are subgroups of $G$, we follow that
+$$G \leq C_G(Z(G)) \leq N_G(Z(G)) \leq G$$
+thus
+$$G = C_G(Z(G)) = N_G(Z(G)) = G$$
+as desired.
+
+\subsection*{2.2.3}
+
+\textit{Prove that if $A$ and $B$ are subsets of $G$ with $A \subseteq B$, then
+  $C_G(B) \leq C_G(A)$}
+
+Suppose that $x \in C_G(B)$. We follow that
+$$(\forall b \in B)(x b x \inv = b)$$
+Since $A \subseteq B$, we follow that
+$$(\forall a \in A)(x b x \inv = a)$$
+thus $x \in C_G(A)$. Therefore we conclude that $C_G(B) \subseteq C_G(A)$. And since
+both are groups, we follow that $C_G(B) \leq C_G(A)$, as desired.
+
+\subsection*{2.2.4}
+
+\textit{For each of $S_3, D_8, Q_8$, compute the centralizers of each element and find the
+  center of each group. Does Lagrange's Theorem simplify your work?}
+
+Let us firstly state the elements of all of the groups.
+
+$S_3$ consists of $3! = 6$ permutations in total. Particularly we've got permutations
+$$1 2 3, 1 3 2, 2 1 3, 2 3 1, 3 1 2, 3 2 1 $$
+which produces cycles
+$$(), (2, 3), (1, 2), (1, 2, 3), (1, 3, 2), (1, 3)$$
+
+We can follow that $C_G(1) = G$, by the virtue of the fact that $g 1 g\inv = 1$. Thus
+we conclude $C_{S_4}[()] = S_4$.
+
+There's a neat program in progs folder (cycles.py) that computes the following result:
+\begin{verbatim}
+C_{S_3}[ [(1,), (2,), (3,)] ] = [(1,), (2,), (3,)],
+[(1,), (2, 3)], [(1, 2), (3,)], [(1, 2, 3)], [(1, 3, 2)], [(1, 3), (2,)]
+C_{S_3}[ [(1,), (2, 3)] ] = [(1,), (2,), (3,)], [(1,), (2, 3)]
+C_{S_3}[ [(1, 2), (3,)] ] = [(1,), (2,), (3,)], [(1, 2), (3,)]
+C_{S_3}[ [(1, 2, 3)] ] = [(1,), (2,), (3,)], [(1, 2, 3)], [(1, 3, 2)]
+C_{S_3}[ [(1, 3, 2)] ] = [(1,), (2,), (3,)], [(1, 2, 3)], [(1, 3, 2)]
+C_{S_3}[ [(1, 3), (2,)] ] = [(1,), (2,), (3,)], [(1, 3), (2,)]
+\end{verbatim}
+which seems to deal with the $C_{S_3}$. Given that the intersection of all of those
+sets is identity, we follow that $Z(S_3) = \set{1}$
+
+There's a certain result that we can get from here: a centralizer of a subset of a group
+is an intersection of the centralizers of its elements. We can also follow that
+$x \in Z(G) \lra C_G(x) = G$ (which is kind of obvious when you think about it for more
+than a second, but it's still a neat tool).
+
+
+For $D_8$ we've got elements $1, r, r^2, r^3, s, sr, sr^2, sr^3$. As in the general case,
+$C_{D_8}(1) = D_8$. The Lagrange's Theorem in this case implies that the number of
+elements in the subgroup is either 1, 2, 4 or 8, which simplifies checking a bit.
+For example, if we know that there are 4 elememnt in the subgroup already, and one element is
+not in the group, we can conlclude that there are only 4 elements in the subgroup.
+$$C_{D_8}(r) = \set{1, r, r^2, r^3}$$
+$$C_{D_8}(r^2) = D_8$$
+$$C_{D_8}(r^3) = \set{1, r, r^2, r^3}$$
+$$C_{D_8}(s) = \set{1, s, r^2, sr^2}$$
+$$C_{D_8}(sr) = \set{1, sr, r^2, sr^3}$$
+$$C_{D_8}(sr^2) = \set{1, r^2, s, sr^2}$$
+$$C_{D_8}(sr^3) = \set{1, r^2, sr, sr^3}$$
+
+From this one we can follow that $Z(D_8) = 1, D_8$
+
+And for $Q_8$ we've got that cardinalities  of possible subgroups are $1, 2, 4$, as in the
+previous case.
+$$C_{Q_8}(1) = Q_8$$
+$$C_{Q_8}(-1) = Q_8$$
+$$C_{Q_8}(i) = \set{1, -1, i, -i}$$
+$$C_{Q_8}(-i) = \set{1, -1, i, -i}$$
+$$C_{Q_8}(j) = \set{1, -1, j, -j}$$
+$$C_{Q_8}(-j) = \set{1, -1, j, -j}$$
+$$C_{Q_8}(k) = \set{1, -1, k, -k}$$
+$$C_{Q_8}(-k) = \set{1, -1, k, -k}$$
+thus $Z(Q_8) = \set{1, -1}$.
+
+\subsection*{2.2.5}
+
+\textit{In each of parts (a) to (c) show that for the specified group $G$ and subgroup $A$ of $G$,
+$C_G(A) = A$ and $N_G(A) = G$.}
+
+\textit{(a) $G = S_3$ and $A = \set{1, (1, 2, 3), (1, 3, 2)}$.}
+
+We can follow that
+$$C_{S_3}(1) = S_3$$
+$$C_{S_3}[(1, 2, 3)] = \set{1, (1, 2, 3), (1, 3, 2)}$$
+$$C_{S_3}[(1, 3, 2)] = \set{1, (1, 2, 3), (1, 3, 2)}$$
+thus
+$$C_{S_3}(A) = \set{1, (1, 2, 3), (1, 3, 2)} = A$$
+
+We know that $C_{S_3}(A) \leq N_{S_3}(A) \leq G$. Thus by Lagrange's Theorem we follow that
+if there exists another element in $N_{S_3}(A)$, then $N_{S_3}(A) = G$.
+We follow that  $(2, 3) \circ (1, 2, 3) \circ (2, 3)\inv = (1, 3, 2)$,
+$(2, 3) \circ (1, 2, 3) \circ (2, 3)\inv = (1, 2, 3)$, and $(2, 3) \circ 1 \circ (2, 3)\inv = 1$.
+Therefore we conclude that $(2, 3) \in N_{S_3}(A)$, and thus $N_{S_3}(A) = G$, as desired
+
+\textit{(b) $G = D_8$ and $A = \set{1, s, r^2, sr^2}$.}
+
+We follow that $C_{D_8}(A) = \set{1, r^2, s, sr^2}$, which we can see by taking
+appropriate intersections. We can follow that 
+$$r 1 r\inv = 1$$
+$$r r^2 r\inv = r^2$$
+$$r s r\inv = sr^2$$
+$$r sr^2 r\inv = s$$
+thus we conclude that $N_{D_8}(A) = G$, as desired.
+
+\textit{(c) $G = D_{10}$ and $A = \set{1, r, r^2, r^3, r^4, r^5}$}
+
+Since each element of $A$ is in form $r^i$ for $i \in Z$, we can follow that all of them commute.
+Thus we follow that $A \subseteq C_{D_{10}}(A)$. From the fact that  $sr \neq rs$ and
+from Lagrange's Theorem we conclude that $C_{D_{10}}(A) = A$.
+We can also follow that $s r^i s = r^{-i}$, thus we conclude that $s \in N_{D_{10}}(A)$.
+Therefore once again by Lagrange's theorem we follow that $N_{D_{10}}(A) = D_{10}$, as desired.
+
+\subsection*{2.2.6}
+
+\textit{Let $H$ be a subgroup of the group $G$.}
+
+\textit{(a) Show that $H \leq N_G(H)$. Give an exapme to show that this is not necessarily
+  true if $H$ is not a subgroup.}
+
+Suppose that $H$ is a subgroup of $G$. Let $h, h' \in H$. We follow that
+$h \inv \in H$, and thus $h \inv h' \in H$, therefore $h\inv h' h \in H$. Thus we follow that
+$h (h\inv h' h) h\inv = h'$. Therefore we follow that for every $h' \in H$ there exists
+$h\inv h' h \in H$ such that $h (h\inv h' h) h\inv = h'$. Therefore we conlcude that
+$h H h\inv = H$. Thus we follow that $H \subseteq N_G(H)$. Since $H$ is a group and
+is a subset of $N_G(H)$ with the same binary operations and whatnot, we follow that
+$H \leq N_G(H)$, as desired.
+
+Second point is followed from the fact that if $H$ is not a group, then it can't be a subgroup.
+
+\textit{(b) Show that $H \leq C_G(H)$ iff H is abelian.}
+
+Suppose that $H \leq C_G(H)$. Then we follow that every element of $H$ commutes with every
+element of $H$. Thus we follow that $H$ is abelian. Reverse is tirvial as well.
+
+
+\subsection*{2.2.7}
+
+\textit{Let $n \in Z$ with $n \geq 3$. Prove the following: }
+
+\textit{(a) $Z(D_{2n}) = 1$ if n is odd.}
+
+Suppose that $n$ is odd and $n \geq 3$. Let $x \in D_{2n}$ be such that $x \neq 1$.
+There are two cases: $x = r^i$ and $x = sr^j$ for $0 < i < n$ and $0 \leq j < n$.
+
+If former is true, then we follow that
+$sx = sr^j$ and $xs = r^j s = s r^{-j} = s r^{n - j}$. Because $n$ is odd, we follow that if $j$
+is even, then $n - j$ is odd, thus $xs \neq sx$. If $j$ is odd, then $n - j$ is even, and
+the same holds. Thus we follow that $r^j \notin Z(D_{2n})$. 
+
+If latter is true, then we follow that
+$$x r = sr^{j + 1}$$
+$$r x = rsr^{j} = sr^{j - 1}$$
+Suppose that $sr^{j + 1} = sr^{j - 1}$. We follow that $r^{j + 1} = r^{j - 1}$. If $j = 0$, then
+$n - 1 \neq 1$ by the fact that $n \geq 3$. If $j = n - 1$, then the same is true.
+Every other case is also impossible. Thus we have a contradiction and conclude that
+$sr^j \notin Z(D_{2n})$.
+
+Therefore we follow that $x \neq 1 \ra x \notin Z(D_{2n})$. Since $1 \in Z(D_{2n})$,
+we follow that $Z(D_{2n}) = 1$, as desired.
+
+\textit{(b) $Z(D_{2n}) = \set{1, r^k}$ if $n = 2k$.}
+
+Dihedral groups (in this book at least) are defined on $n \in Z^+ \land n \geq 3$. Thus
+I think that we're justified to state that $k \in Z^+ \land k \geq 2$. Although I'm sure that
+the definition can be generalized a bit, we're going to assume those conditions for this
+exercise.
+
+Suppose that $x \notin \set{1, r^k}$. If $x = r^i$ for $1 \leq i < n \land i \neq k$, then
+$r^i s = s r{n - i} $ and $s r^i \neq s r{n - i}$ because $i \neq k$.
+If $x = sr^i$, then the same logic as in the previous section holds. Therefore we follow that
+$x \notin \set{1, r^k} \ra x \notin Z(D_{2n})$.
+
+We can follow pretty easily that $\set{1, r^k} \subseteq Z(D_{2n})$. Thus we follow the desired
+result.
+
+\subsection*{2.2.8}
+
+\textit{Let $G = S_n$, fix $i \in \set{1, 2, ..., n}$ and let
+  $G_i = \set{\sigma \in G: \sigma(i) = i}$. Use group actions to prove that $G_i$ is a subgroup
+  of $G$. Find $|G_i|$.}
+
+Can't fully figure out what exactly are we supposed to do here. We've already proven through
+properties of group action, that a stabilizer of an element is a subgroup.
+
+anyways, $|G_i| = (n - 1)!$ by simple logic.
+
+\subsection*{2.2.9}
+
+\textit{For any subgroup $H$ of $G$ and any nonempty subset $A$ of $G$, define $N_H(A)$ to
+  be  the set $\set{h \in H: h A h\inv = A}$. Show that $N_H(A) = N_G(A) \cap H$ and deduce that
+  $N_H(A)$ is a subgroup of $H$.}
+
+Let $x \in N_G(A) \cap H$. We follow that 
 
 \end{document}
 %%% Local Variables:
