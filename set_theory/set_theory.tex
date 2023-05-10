@@ -23,7 +23,7 @@
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
-
+\newcommand{\set}[1]{\{ #1 \}}
 
 \begin{document}
 \maketitle
@@ -3230,7 +3230,29 @@ $F(n^+) \in F[\omega]$, therefore $\pow(X) \in F[\omega]$, as desired.
 
 \chapter{The Axiom of Choice (Revisited)}
 
+\section{Zorn's Lemma}
 
+\subsection*{7.1.1}
+
+\textit{Let $\eangle{A_i: i \in I}$ be an indexed function so that $A_i \neq \emptyset$ for
+  all $i \in I$. Without appealing to the axiom of choice, prove that if $\bigcup_{i \in I}{A_i}$
+  is countably infinite, then there is a function $f: I \to \bigcup_{i \in I}{A_i}$,
+  such that $f(i) \in A_i$, for all $i \in I$.}
+
+Because $\bigcup_{i \in I}{A_i}$ is countably infinite and all of $A_i$ are nonempty,
+we can follow that $|I| \leq_c |\omega|$, $|A_i| \leq_c |\omega|$
+and $|\bigcup_{i \in I}{A_i}| =_c |\omega|$ (we can follow that if one of those is not true,
+then we've got a contradiction of the fact that $|\bigcup_{i \in I}{A_i}| =_c |\omega|$).
+
+Thus we follow that there exists a bijection $g: \omega \to \bigcup_{i \in I}{A_i}$.
+We can follow that for every $i$ there exists $g\inv[A_i] \subseteq \omega$.
+Because each $A_i$ is nonempty and $g$ is a bijection, we follow that $g\inv[A_i]$ is
+nonempty for all $i \in I$. Define $f': I \to \omega$ by
+$$f'(i) = \text{$\leq$-least element of $g\inv[A_i]$}$$
+since the least element of a subset is unique, we follow that the function is well-defined.
+thus we follow that for $f = g \circ f': I \to \bigcup_{i \in I}{A_i}$ we've got
+$$f(i) \in A_i$$
+for all $i \in I$, as desired.
 
 \end{document}
 %%% Local Variables:
