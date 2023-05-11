@@ -3254,6 +3254,208 @@ thus we follow that for $f = g \circ f': I \to \bigcup_{i \in I}{A_i}$ we've got
 $$f(i) \in A_i$$
 for all $i \in I$, as desired.
 
+\subsection*{7.1.2}
+
+\textit{Let $R \subseteq A \times B$ and let $R(x, y)$ denote $\eangle{x, y} \in R$. Now
+  suppose that for all $x \in A$, there is a $y \in B$ such that $R(x, y)$. Using the
+  axiom of choice, show that there is a function $f: A \to B$ such that $R(x, f(x))$
+  for all $x \in A$}
+
+Because for every $x \in A$ there exists $y \in B$ such that $R(x, y)$, we follow that
+for $x \in A$ we can define a function $Q: A \to \pow(B)$ by
+$$Q(x) = \set{y \in B: R(x, y)}$$
+Becase for every $x$ there exists $y$ such that $R(x, y)$ we follow that
+$$(\forall x \in A)(Q(x) \neq \emptyset)$$
+thus we can follow that $Q_x$ is an indexed function with nonempty terms. Thus AC implies that
+there exists $q: A \to \bigcup{\pow(B)}$ such that $q(x) \in Q(x)$. Since
+$\bigcup{\pow(B)} = B$, we follow that $q: A \to B$ and bu the fact that $q(x) \in Q(x)$, we
+follow that $R(x, q(x))$, as desired.
+
+\subsection*{7.1.3}
+
+\textit{RW: Let $R \subseteq A \times A$ and let $R(x, y)$ denote $\eangle{x, y} \in R$.
+  Suppose that  $A \neq \emptyset$ and for all $x \in A$, there is a $y \in A$ such that $R(x, y)$.
+  Show that there is a function $h: \omega \to A$ such that $R(h(n), h(n^+))$ for all $n \in
+  \omega$ }
+
+By previous exercise we follow that there exists $f: A \to A$ such that
+$R(x, f(x))$ for all $x \in A$. Let $a \in A$ be arbitrary (it exists because $A \neq \emptyset$).
+We follow by 4.2.1 that we can define
+$h: \omega \to A$ by
+$$h(0) = a$$
+$$h(n^+) = f(h(n))$$
+Suppose that $k \in \omega$. Let $b = h(k)$. By proven properties of $f$ and the fact that
+$b \in A$ we  follow that
+$$R(b, f(b))$$
+by substituting $b$ for its definition we follow that
+$$R(h(k), f(h(k)))$$
+and by definition of $k$ we follow that
+$$R(h(k), h(k^+))$$
+Since $k \in \omega$  is arbitrary, we follow the desired conclustion.
+
+\subsection*{7.1.4}
+
+\textit{Prove 7.1.4}
+
+Let $\preceq$ be a partial order on $A$, and let $C$ be a chain in $A$. Suppose that
+$C' \subseteq C$ is a cofinal chain.
+
+Suppose that $x \in C_p$. We follow that
+$$(\forall c \in C)(c \prec x)$$
+Since $C' \subseteq C$, we follow that
+$$(\forall c \in C')(c \prec x)$$
+thus $x \in C'_p$ by definition. Therefore we conclude that  $C'_p \subseteq C_p$.
+
+Suppose that $x \in C'_p$. We follow that
+$$(\forall c \in C')(c \prec x)$$
+Let $y \in C$. By the fact that $C'$ is cofinal we follow that there exists $q \in C'$ such that
+$y \prec q$. Because $q \in C'$, we follow that $q \prec x$. Thus we follow by transitivity
+that $y \prec x$. Because $y \in C$ is arbitrary, we conclude that
+$$(\forall c \in C)(c \prec x)$$
+therefore $x \in C_p$. Therefore we follow that $C'_p \subseteq C_p$. Thus by double
+inclusion we have $C_p = C'_p$, as desired.
+
+\subsection*{7.1.5}
+
+\textit{Let $(F, \subseteq)$ be a partially ordered set where $F$ is a set (of sets).
+  Suppose that for every chain $C \subseteq F$ we have that $\bigcup{C} \in F$. 
+}
+
+\textit{(a) Let $C \subseteq F$ be a chain.
+  Prove that $\bigcup{C}$ is an upper bound for $C$.}
+
+Suppose $X \in C$. Suppose that $x \in X$. We follow that $x \in \bigcup{C}$ and
+thus $X \subseteq \bigcup{C}$. Therefore
+$$(\forall X \in C)(X \subseteq \bigcup{C})$$
+and by the properties of $F$ we follow that $\bigcup{C}$. Thus we conclude that $\bigcup{C}$
+is an upper bound for $C$ by definition.
+
+\textit{(b) Using Zorn's Lemma, show that there exists an $M \in F$ that is
+  maximal, that is, $M$ is not the proper subset of any $A \in F$.}
+
+By previous point we can follow that every chain $C$ of $F$ has an upper bound. Thus
+Zorn's Lemma implies that $F$ has a maximal element $M$. Definition of a maximal
+element implies the desired result.
+
+\subsection*{7.1.6}
+
+\textit{Let $f: A \to B$ and $F = \set{X \subseteq A: (f|X): X \to B \text{ is one-to-one}}$.
+  Consider the  partially ordered set $(F, \subseteq)$.}
+
+The fact that $F$ is nonempty is followed from the fact that $(f|\emptyset)$ is injective.
+Also, if $f$ is restricted to a singleton, then it is also injective.
+
+\textit{(a) Using Zorn's Lemma, show that there is an $M \in F$ that is maximal}
+
+Suppose that $C$ is a chain in $F$. We want to show that $C$ has an upper bound.
+If $f: A \to B$ is injective, then we follow that $A$ is an upper bound for any subset of $F$.
+
+Suppose that $C$ is a chain in $F$. Suppose that $x \neq y \in \bigcup{C}$. We follow that
+there exist two sets $X, Y \in C$ such that $x \in X$ and $y \in Y$. Because $C$ is a
+chain we follow that $X \subseteq Y$ or $Y \subseteq X$. Assume the former. Then we follow that
+$x, y \in Y$, and by the fact that $Y \in F$, we follow that $f(x) \neq f(y)$. Therefore
+$f|\bigcup{C}$ is injective. Therefore $\bigcup{C} \in F$.
+Thus we follow that if $C$ is a chain in $F$, then $\bigcup{C} \in F$. Using previous exercise
+(which uses Zorn's Lemma) we can conclude that $F$ has a maximal element.
+
+\textit{(probably a typo in the text of the exrecise)
+  (b) Prove that if $f$ is onto $B$, then $(f|M): M \to B$ is a bijection.}
+
+Suppose that $(f|M): X \to B$ is not a bijection. Since $M \in F$, we follow that
+$(f|M): M \to B$ is injective. Thus we follow that $(f|M): M \to B$ is not surjective.
+Therefore there exists $b \in B$ such that $b \notin f[M]$. Because $f: A \to B$ is
+surjjective, we can conclude that there exists $x \in A$ such that $f(x) = b$. Therefore
+$(f|M \cup \{x\}): M \cup \{x\} \to B$ is injective and thus $M \cup \{x\} \in F$.
+Because $M \subseteq M \cup \{x\}$, we follow that $M$ is not a maximal element, which is
+a contradiction.
+
+\subsection*{7.1.7}
+
+\textit{Let $(A, \preceq)$ be a poset. Let $F = \set{D \in \pow(A): D \text{ is a chain in A}}$.
+  Consider the partially ordered set $(F, \subseteq)$.}
+
+\textit{(a) Let $C$ be a chain in $F$. Show that $\bigcup{C}$ is a chain in $A$.}
+
+Suppose that $x, y \in \bigcup{C}$. We follow that there exist sets $X, Y \in C$ such that
+$x \in X$ and $y \in Y$. Since $C$ is a chain we follow that $X \subseteq Y$ or $Y \subseteq X$.
+Assume the former. Then we follow that $x, y \in Y$. Thus $x \preceq y$ or $y \preceq x$
+by the fact that $Y$ is a chain. Therefore we conclude that $\bigcup{C}$ is a chain in $A$.
+
+The remaining part (and this part as well) is practicly identical to 7.1.5, therefore
+I'll skip the details.
+
+\subsection*{7.1.8}
+
+\textit{Let $P$ be the set of nonzero natural numbers. Then $(P, |)$ is a poset
+  where $|$ is a divisibility relation on $P$. Define a partial order $\preceq$ on $P$
+  such that $| \subseteq \preceq$ and $2 \preceq 3$.}
+
+I think that standart $\leq$ will do. It is a partial order
+(every total order is a partial order), if $x | y$, then $x \leq y$, therefore $| \subseteq \leq$,
+and we've got that $2 \leq 3$. Don't know if I'm missing something obvious, but I think
+that's it.
+
+\subsection*{7.1.9}
+
+\textit{Using Theorem 7.1.10, show there is a total order $\preceq$ on $\pow(\omega)$
+  such that for all $x, y \in \pow(\omega)$, if $x \subseteq y$, then $x \preceq y$.
+  Show that $\preceq \neq \subseteq$ on $\pow(\omega)$.}
+
+By straightforward application of 7.1.10 on a partial order $\subseteq$ we get
+$\preceq \subseteq \pow(\omega) \times \pow(\omega)$ such that $(\subseteq) \subseteq (\preceq)$
+(paretheses are used for clarity). This gives us the desired result.
+
+We can follow that $\set{2} \not \subseteq \set{3}$ and  $\set{3} \not \subseteq \set{2}$,
+but given that $\preceq$ is a total order we follow that
+$\set{2} \preceq \set{3}$ or  $\set{3} \preceq \set{2}$. Assume the former. Then we follow that
+$\eangle{\set{2}, \set{3}} \in \preceq$ and $\eangle{\set{2}, \set{3}} \notin (\subseteq)$,
+which tells us that $\subseteq \neq \preceq$, as desired.
+
+\subsection*{7.1.10}
+
+\textit{Let $\eangle{A_i: i \in I}$ be an indexed function with nonempty terms, and let
+  $$F = \set{g: g \text{ is a function} \land \dom(g) \subseteq I
+    \land (\forall i \in \dom(g))(g(i) \in A_i)}$$
+  Thus, $(F, \subseteq)$ is a partially ordered set. Assuming Zorn's Lemma,
+  prove the AC as follows: }
+
+\textit{Let $C \subseteq F$ be a chain. Prove that $\bigcup{C}$ is in $F$ and is an upper
+  bound for $C$.}
+
+We can follow that since $C \subseteq F$, we can state that $\bigcup{C}
+\subseteq I \times \ran(A)$. 
+Suppose that $x, y \in \bigcup{C}$ are such that $x = \eangle{u, v}$, $y = \eangle{o, w}$.
+We follow that there exist $X, Y \in C$ such that
+$x \in X$ and $y \in Y$. By the fact that $C$ is a chain we follow that $X \subseteq Y$
+or $Y \subseteq X$. Assume the former. Then we follow that $x, y \in Y$. Since
+$Y \in C \subseteq F$,
+we follow that it is a function, and thus if $u = o$, then $v = w$. Thus we follow
+that $\bigcap{C}$ is a function. We can also follow that because $Y \in F$ we've got that
+$\dom(Y) \subseteq I$, and thus $u, o \in I$, therefore $\dom{\bigcup{C}} \subseteq I$.
+By the same token we've got the last condition of inclusion in $F$, therefore
+we can conclude that $\bigcup{C} \in F$.
+
+Now exercise 7.1.5 can be applied to state that provided result implies that $\bigcup{C}$ is
+an upper bound of $C$ whenever $C$ is a chain.
+
+\textit{(b) Conclude, via Zorn's Lemma, that $F$ has a maximal element $h$.}
+
+Conditions that are proven in previous point are sufficient to apply Zorn's Lemma and get the
+desired result.
+
+\textit{(c) Show that $\dom(h) = I$ and $(\forall i \in I)(h(i) \in A_i)$. Thus
+  $\eangle{h_i: i \in I}$ is a choice function.}
+
+Because $h \in F$, we follow that $\dom(h) \subseteq I$. Suppose that $I \not \subseteq \dom(h)$.
+Let  $i \in I \setminus \dom(h)$.
+Now let $a \in A_i$. We can follow that $f: \set{\eangle{i, a}}$ is a function, that satisfies
+all of the conditions of $F$, and therefore $f \in F$. We can follow  that because
+$i \in I \setminus \dom(h)$, we can state that $h \cup f \in F$. Thus we follow that
+$h \subseteq (h \cup f)$ and thus $h$ is not a maximal element, which is a contradiction.
+
+Therefore we conclude that $\dom(h) = I$. The latter requirement is satisfied by the fact that
+$\dom(h) = I$ and the last requirement for inclusion for $F$. 
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
