@@ -29,14 +29,14 @@
 	    }
 	},
 	{
-	    "name": "Abstract Algebra",
-	    "author": "Dummit and Foote",
-	    "edition": "3rd",
+	    "name": "Abstract Algebra An Introductory Course",
+	    "author": "Gregory T. Lee",
+	    "edition": "1st",
 	    "link": "https://github.com/g4ps/exercises/raw/master/abstract_algebra/abstract_algebra.pdf",
 	    "status": "in_progress",
 	    "progress": {
-		"total_chapters": 19,
-		"finished_chapters": 1.5
+		"total_chapters": 14,
+		"finished_chapters": 2
 	    }
 	},
 	{
