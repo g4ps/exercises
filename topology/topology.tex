@@ -528,8 +528,125 @@ different than $R_l$, as desired.
 
 \section{The Order Topology}
 
+\section{The Product Topology on $X \times Y$}
+
+\section{The Subspace Topology}
+
+\subsection{}
+
+\textit{Show that if $Y$ is a subspace of $X$, and $A$ is a subspace of $Y$, then the topology
+  $A$ inherits as a subspace of $Y$ is the same as the topology it
+  inherits as a subspace of $X$.}
 
 
+
+Suppose that $Q$ is an open set in $A$ with respect to topology, inherited from $X$.
+We follow that there exists an open set in $X$  $Q_x \subseteq X$ such that $Q = Q_x \cap A$
+by definition of a subspace topology. We follow that there exists open in $Y$ set $Q_y \subseteq Y$
+such that $Q_y = Q_x \cap Y$. With respect to $Q_y$ there exists an open in $A$ set
+$Q' = Q_y \cap A$. Thus
+$$Q' = Q_y \cap A$$
+$$Q' = Q_x \cap Y \cap A$$
+Since $A \subseteq Y$, we follow that $Y \cap A = A$. THus
+$$Q' = Q_x \cap (Y \cap A)$$
+$$Q' = Q_x \cap A$$
+$$Q' = Q$$
+Therefore we conclude that if $Q$ is in topology of $A$ inherited from $X$, then $Q$ is also
+in a topology of $A$ inherited from $Y$. Proof of the converse is pretty much the same
+proof
+
+Here's another, more logical and rigorous proof.
+Denote topology of $A$ inherited from $Y$ by $\topol_A$ and topology of $A$ inherited from $X$
+by $\topol_A'$. Also denote topology of $X$ by $\topol_X$ and topology of $Y$ inherited from $X$
+by $\topol_Y$. Then we can state that 
+$$Q \in \topol_A \lra (\exists Q_y \in \topol_Y)(Q = Q_y \cap A) \lra
+(\exists Q_X \in \topol_X)(Q_y = Q_x \cap Y \land Q = Q_y \cap A) \lra$$
+$$ \lra 
+(\exists Q_X \in \topol_X)(Q = Q_x \cap Y  \cap A) \lra
+(\exists Q_X \in \topol_X)(Q = Q_x \cap (Y  \cap A)) \lra
+$$
+$$ \lra 
+(\exists Q_X \in \topol_X)(Q = Q_x \cap A) \lra
+Q \in \topol_A'$$
+thus $\topol_A' = \topol_A$ by extensionality axiom.
+
+\subsection{}
+
+\textit{if $\topol$ and $\topol'$ are topologies on $X$ and $\topol'$ is strictly finer
+  than $\topol$, what can you cay about the corresponding topologies on the subset $Y$ of $X$.}
+
+Denote corresponding topologies by $\topol_Y'$ and $\topol_Y$.
+There're three plausible cases:
+
+1 - we can't say nothing
+
+2 - $\topol_Y' \supset \topol_Y$
+
+3 - $\topol_Y' \supseteq \topol_Y$
+
+I'm betting on the second case, so let us try to prove that. In order to do that, let us firstly
+prove the third case, which is a "subcase" of the second.
+
+Suppose that $Q \in \topol_Y$. We follow that there exists $Q_X \in \topol$ such that
+$Q = Q_X \cap Y$. Since $Q_X \in \topol$, we follow by $\topol \subset \topol'$ that
+$Q_x \in \topol'$. Thus $Q = Q_X \cap Y$ implies that $Q \in \topol_Y'$. Therefore we follow that
+$\topol_Y' \supseteq \topol_Y$.
+
+Although I'm betting on the second case, it seems that I'm not getting my money back.
+We can follow that second case is not always true, if we substitute $\emptyset$ for $Y$.
+Then $\topol_Y = \topol_Y' = \emptyset$. If we look into topologies of some
+almost-trivial set, such as $X = \set{a, b, c}$, then I think that we can come up with a more
+persuasive case as well. Therefore we conclude that
+presented conditions imply that $\topol_Y \subseteq \topol_Y'$.
+
+\subsection{}
+
+\textit{Considet the set $Y = [1, 1]$ as a subspace of $R$. Which of the following sets are
+  open in $Y$? Which are open in $R$?
+  $$A = \set{x : \frac{1}{2} < |x| < 1 }$$
+  $$B = \set{x : \frac{1}{2} < |x| \leq 1 }$$
+  $$C = \set{x : \frac{1}{2} \leq |x| < 1 }$$
+  $$D = \set{x : \frac{1}{2} \leq |x| \leq 1 }$$
+  $$E = \set{x : 0 < |x| < 1 \land 1/x \notin Z_+ }$$
+}
+
+We can follow that
+$A = (-1, -1/2) \cup (1/2, 1)$
+is open in both $Y$ and $R$.
+
+$B = [-1, -1/2) \cup (1/2, 1]$
+is a union of two rays in $Y$, therefore we follow that it is open in $Y$. For $R$ we've got that
+there is no open interval, that contains a point $1$ and does not contain anything larger
+then $1$. Therefore we conclude that given set is not a union of open intervals, and therefore
+it is not open in $R$.
+
+We can follow pretty easily that $C$ and $D$ are not open in both $Y$ and $R$ since there is
+no open interval/ray that contains $1/2$ and does not contain anything in the interval
+$(-1/2, 1/2)$.
+
+$E$ is a somewhat curious case, but after some thought we can follow that there is
+no interval/ray in both $Y$ and $R$ that contains $0$ and does not contain a point in $1/x$
+for some $x \in Z_+$, as was proven in the previous batch of exercises, when we've proven
+that $R_k$ is strictly finer than the standart topology of $R$.
+
+\subsection{}
+
+\textit{A map $f: X \to Y$ is said to be an open map if for every open set $U$ of $X$, the
+  set $f(U)$ is open in $Y$. Show that $\pi_1: X \times Y \to X$ and
+  $\pi_2 : X \times Y \to Y$ are open maps.}
+
+Suppose that $q \in X \times Y$ is open. Then we follow that $q = X' \times Y'$, where
+$X'$ is an open set in $X$ and $Y'$ is an open set in $Y$. Therefore we follow that
+$$\pi_1(q) = X_1$$
+$$\pi_2(q) = Y_1$$
+both of which are open.
+Thus we follow that if $q$ is an open set in $X \times Y$, then $\pi_1(q)$ and $\pi_2(q)$ are
+both open as well, which means that $\pi_1$ and $\pi_2$ are both open maps, as desired.
+
+\subsection{}
+
+\textit{Let $X$ and $X'$ denote a single set in the topologies $\topol$ and $\topol'$
+  respectively; }
 
 \end{document}
 %%% Local Variables:
