@@ -624,10 +624,13 @@ We can follow pretty easily that $C$ and $D$ are not open in both $Y$ and $R$ si
 no open interval/ray that contains $1/2$ and does not contain anything in the interval
 $(-1/2, 1/2)$.
 
-$E$ is a somewhat curious case, but after some thought we can follow that there is
-no interval/ray in both $Y$ and $R$ that contains $0$ and does not contain a point in $1/x$
-for some $x \in Z_+$, as was proven in the previous batch of exercises, when we've proven
-that $R_k$ is strictly finer than the standart topology of $R$.
+We can represent $E$ as
+$$E = (-1, 0) \cup ((0, 1) \setminus K)$$
+We follow that $(-1, 0)$ is an element of a basis of both $Y$ and $R$. Suppose
+that $x \in (0, 1) \setminus K$. Then we follow that there exist lowest $n_1 \in Z_+$ such that
+$1/n_1 < x < 1/(n_1 + 1)$. Therefore we can conclude that if $x \in E$, then there exist
+a basis element $Q$ of both $Y$ and $R$ such that $x \in Q \subseteq Y, R$. Therefore
+we follow that $E$ is an open set in both $Y$ and $R$.
 
 \subsection{}
 
@@ -635,18 +638,29 @@ that $R_k$ is strictly finer than the standart topology of $R$.
   set $f(U)$ is open in $Y$. Show that $\pi_1: X \times Y \to X$ and
   $\pi_2 : X \times Y \to Y$ are open maps.}
 
-Suppose that $q \in X \times Y$ is open. Then we follow that $q = X' \times Y'$, where
-$X'$ is an open set in $X$ and $Y'$ is an open set in $Y$. Therefore we follow that
-$$\pi_1(q) = X_1$$
-$$\pi_2(q) = Y_1$$
-both of which are open.
-Thus we follow that if $q$ is an open set in $X \times Y$, then $\pi_1(q)$ and $\pi_2(q)$ are
-both open as well, which means that $\pi_1$ and $\pi_2$ are both open maps, as desired.
+Suppose that $Q \in X \times Y$ is an open set. Therefore we follow that it is a union of
+some element of a basis of $X \times Y$, therefore there exist a subset $R$ of a basis of
+$X \times Y$ such that $Q = \bigcap{R}$. From a set theory course we know that
+$$U[\bigcup{G}] = \bigcup{\set{R[C]: C \in G}}$$
+for any relation $U$. Therefore we can follow that the same result holds for functions
+$\pi_1, \pi_2$. We can follow that for any $r \in R$ we've got that both $\pi_1(r)$ and
+$\pi_2(r)$ are open by the definition of a basis for the product topology. Therefore we
+conclude that $\pi_1[Q] = \pi_1[\bigcup{R}] = \bigcup{\set{\pi_1[\bigcup{r}]: r \in R}}$.
+Therefore we conclude that $\pi_1[Q]$ is a union of open sets of $X$, therefore we conclude that
+it is in topology of $X$. We can follow the simular result for $\pi_2$ using simular logic.
 
 \subsection{}
 
 \textit{Let $X$ and $X'$ denote a single set in the topologies $\topol$ and $\topol'$
-  respectively; }
+  respectively; let $Y$ and $Y'$ denote a single set in the topologies $U$ and $U'$,
+  respectively. Asuume that these sets are nonempty. }
+
+\textit{(a) Show that if $\topol' \supseteq \topol$ and $U' \supseteq U$, then the product
+  topology on $X' \times Y'$ is finer than the product topology on $X \times Y$}
+
+Suppose that $
+
+
 
 \end{document}
 %%% Local Variables:
