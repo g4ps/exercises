@@ -9,6 +9,7 @@
 \DeclareMathOperator \map {\mathcal {L}}
 \DeclareMathOperator \pow {\mathcal {P}}
 \DeclareMathOperator \topol {\mathcal {T}}
+\DeclareMathOperator \basis {\mathcal {B}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \fld {fld}
@@ -655,8 +656,36 @@ it is in topology of $X$. We can follow the simular result for $\pi_2$ using sim
   respectively; let $Y$ and $Y'$ denote a single set in the topologies $U$ and $U'$,
   respectively. Asuume that these sets are nonempty. }
 
+There're a couple of ways to deconstruct the text of this exercise: 
+we can assume that  $X = X'$,
+$Y = Y'$, $X \in \topol$, $X' \in \topol'$, $Y \in U$ and $Y' \in U'$,
+or we can assume that $X \in \topol$, $X' \in \topol'$, $Y \in U$ and $Y' \in U'$
+without $X = X'$ and $Y = Y'$. The latter case will obviously present some problems
+in the proofs, therefore we will assume that the author intended to use the former case.
+
 \textit{(a) Show that if $\topol' \supseteq \topol$ and $U' \supseteq U$, then the product
   topology on $X' \times Y'$ is finer than the product topology on $X \times Y$}
+
+Let $\basis$ denote the basis for $\topol_{X \times Y}$. Let $q \in X \times Y$.
+Because $\basis$ is a basis for $\topol_{X \times Y}$ we follow that there exists
+$b \in \basis$ such that $q \in b$. Since $b \in \basis$, we follow that there
+exist $x \in \topol$ and $y \in U$ such thaht $b = x \times y$.
+Since $\topol \subseteq \topol'$ and $U \subseteq U'$,
+we follow that $x \in \topol'$ and $y \in U'$. Therefore $x \times y \in \basis'$
+where $\basis'$ denotes the basis for $\topol_{X' \times Y'}$. Therefore we conclude that
+for every $x \in X \times Y$ and every basis element $q \in \basis$ there exists
+$q' \in \basis'$ such that $q' \subseteq q$ and $x \in q'$. Therefore we conclude that
+$\topol_{X \times Y} \subseteq \topol_{X' \times Y'}$, as desired.
+
+\textit{(b) Does the converse of (a) hold? Justify your answer.}
+
+Let $\topol$ and $\topol'$ be defined on a set $Q = \set{a, b}$ and
+$U$ and $U'$ be defined on $W = \set{c, d}$.
+Let $X = X' = \set{a}$, $Y = Y' = \set{c}$, $\topol = \set{\emptyset, \set{a}, \set{b}, Q}$,
+$\topol' = \set{\emptyset, \set{a}, Q}$, and $U = U'$. Then we follow that
+topology defined on $X \times Y$ is finer than the topology defined $X' \times Y'$ (and vice versa),
+but $\topol'$ is not finer than $\topol$.
+
 
 
 \subsection{}
@@ -664,6 +693,64 @@ it is in topology of $X$. We can follow the simular result for $\pi_2$ using sim
 \textit{Show that the countable collection
   $$\set{(a, b) \times (c, d): a < b \land c < d \land a, b, c, d \in Q}$$
   is a basis for $R^2$.}
+
+Let us denote this set by $L$.
+Suppose that $x \in R^2$. We follow that there exist $x_1, x_2, y_1, y_2 \in Q$ such that
+$x_1 < x < x_2$ and $y_1 < y < y_2$, therefore $(\exists l \in L)(x \in l)$. Thus we follow that
+the first condition of a definition of a basis is sastisfied. The last condition can be satisfied
+by through the argument about the density of rationals in reals.
+
+
+We can follow that topology, that is presented by given basis is a subset of the standard topology
+on $R^2$, and we can follow though pretty much the same argument that given topology is
+finer than the standard topology. Therefore I'm pretty sure that we can state that given basis
+generates the standard topology (I'll not provide any proof of that, just stating what I think).
+
+
+\subsection{}
+
+\textit{Let $X$ be an ordered set. If $Y$ is a proper subset of $X$ that is
+  convex in $X$, does it follow that $Y$ is an interval or a ray in $X$?}
+
+Don't think so. I think that the author tries to give us a hint to what's going to come afterwards
+(probably something about the completeness and whatnot).
+
+Pretty sure, that we don't need to prove that $Q$ is a totally ordered set, so we're going to
+take it as a given. Let
+$$M = \set{x \in Q: x^2 < 2 \land x \geq 0}$$
+(I've added the latter condition in order not to be bogged down  by
+several cases, depending on the sign).
+Let $x < y \in M$. Suppose that $z \in Q$ is such that  $x < z < y$. Then
+we follow that $z > x  \geq  0$, thus $z > 0$. Since all of the numbers are positive,
+we're justified to square them and get that
+$x^2 < z^2 < y^2$. Given that $y^2 < 2$, we conclude that $z^2 < 2$ as well. Therefore
+we follow that $z \in M$. Thus we can follow that $z \in (x, y) \ra z \in M$. Therefore
+we can state that presented set is convex.
+
+Given that $M$ is bounded above and below, we follow that it is not a ray. Suppose that
+it is an interval. Then we follow that there exists $k \in Q$ such that $M = [0, k)$. Therefore
+we follow that $k$ is a least lower bound of $M$, which is not the case, as proven in numerous
+real analysis books. Thus we conclude that $M$ is not an interval.
+
+\subsection{}
+
+\textit{If $L$ is a straight line in the plane, describe the topology $L$ inherits as
+  a subspace of $R_l \times R$ and as a subspace of $R_l \times R_l$. In each case it is a
+  familiar topology.}
+
+Let $\basis$ be the basis for $R_l \times R$ and $\basis'$ be the basis for $R_l \times R$.
+Let $q \in \basis$  and suppoe that $b = L \cap q \neq \emptyset$. From plotting elements
+of the basis and the line itself on the graph, we can conclude that $b$ is some sort of an interval
+on the plane (either closed or open), and it might as well be a ray (once again, open or closed).
+In case with $R_l \times R_l$ we conclude that the topology here is once again open or closed
+intervals on the plane.
+
+\subsection{}
+
+\textit{Show that the dictionary order topology on the set $R \times R$ is the same
+  as the product topology $R_d \times R$, where $R_d$ denotes $r$ in the discrete topology.
+  Compare this topology with the standard topology on $R^2$.}
+
 
 \end{document}
 %%% Local Variables:
