@@ -751,6 +751,71 @@ intervals on the plane.
   as the product topology $R_d \times R$, where $R_d$ denotes $r$ in the discrete topology.
   Compare this topology with the standard topology on $R^2$.}
 
+Let $\eangle{x, y} \in R^2$. We follow that there exists $q$ - element of basis of $R_d \times R$
+such that $\eangle{x, y} \in q$. Because $q$ is an element of a basis, we follow that
+$q = w \times r$, where $w \in \topol_{R_d}$ and $r \in \topol_R$. Because $r \in \topol_R$,
+we follow that there exists $(a, b)$ such that $(a, b) \subseteq r$. Therefore we follow that
+element $\set{x} \times (a, b)$ is an element of a basis of dictionary order such that
+$\set{x} \times (a, b) \subseteq q$. Therefore we follow that $R_d \times R$ is
+coarser than dictionary order topology.
+
+Suppose that $\eangle{x, y}$ is in $R^2$ and $q$ is in basis of dictionary topology of $R^2$
+such that $\eangle{x, y} \in q$. By definition (and immediate implications of thereof )
+we follow that the set $q \cap \set{x} \times R$ is nonempty. Since $\eangle{x, y}$
+is in $q$, and $q$ is a basis element, we follow
+that there exist $a, b \in R$ such that $\set{x} \times (a, b) \subseteq q$ (follows from
+definitions and maybe some trivial manipulations of definition of dictionary order). Since
+$\set{x} \times (a, b)$ is an element of a basis of $R_d \times R$, we conclude that
+dictionary order topology is coarser than $R_d \times R$, and thus by double inclusion
+we conclude that topology over $R_d \times R$ and dictionary order topologies
+are equal, as desired.
+
+We can follow that topology in  $R_d$ is strictly finer than standard topology of $R$
+since $R_d = \pow(R)$, and thus it is the largest possible topology. Strictness follows
+from the fact that $\set{0} \in \topol_{R_d}$ and $\set{0} \notin \topol_R$.
+
+Thus we can be pretty sure that there is no element of basis of standard topology on $R \times R$
+that contains $\set{0} \times R$. Since every element of basis of $R \times R$ is also contained
+in $R_d \times R$, we conclude that standard topology on $R^2$ is coarser than $R_d \times R$.
+
+\subsection{}
+
+\textit{Let $I = [0, 1]$. Compare the product topology on $I \times I$, the dictionary order
+  topology on $I \times I$, and the topology $I \times I$ inherits as a subspace of $R \times R$
+  in the dictionary order topology.
+}
+
+Wanted to skip this one, since I've solved it incorrecttly the first time, but
+instead of skipping I'll just present the half-assed proof here for completeness' sake.
+
+Important thing to remember: sets such as $\set{x} \times [0, 0.1)$ are not elements of basis
+of dictionary topology on $I \times I$ 
+
+Let us look at the point $\eangle{0.5, 1}$ and basis element of standard topology
+$[0, 1] \times (0.5, 1]$. We can follow that since the elements of dictionary bases
+cannot just stop at the corners and must wrap around, we follow that there is no element of
+basis of dictionary order topology, that is contained in presented element of basis
+and contains the desired point.
+
+We can follow also that $\set{0.5} \times (0, 1)$ cannot be presented in
+standard topology as well. Thus the first two are not comparable
+
+Suppose that $\eangle{x, y} \in I \times I$ and $q$ is the basis element with respect to
+the dictionary order topology. We follow that we can take a "strand" from
+dictionary (i.e. take a set $\set{x} \times R \cap q$, where $q$ is an element of the basis,
+that contains point $\eangle{x, y}$) and get that dictionary order over $I \times I$ is coarser than
+the topology $I \times I$ inherits as a subspace of $R \times R$ in the dictionary order topology,
+since the strand is the element of the basis of the latter. We can pull the same trick
+that we've used in the previous paragraph to show that the inherited topology is strictly coarser
+than the dictionary topology. Using the "strand" method (i.e. taking basis elements
+in form $\set{x} \times (a, b)$ or its closed analogs) we can prove that the last topology
+is strictly finer than the standard topology on $I \times I$.
+
+
+
+
+
+
 
 \end{document}
 %%% Local Variables:
