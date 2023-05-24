@@ -3627,6 +3627,95 @@ $\set{a} \in G$. Thus $G$ has finite elements, which is a contradiction.
 
 7.2.9 implies that there exists ultrafilter $U$ on $X$ such that $F \subseteq U$.
 
+\subsection*{7.2.10}
+
+\textit{Let $F$ be a nonempty set of filters on $X$. Prove that $\bigcap{F}$ is a filter on $X$.}
+
+For completeness' sake let us state that because
+$$(\forall f \in F)(f \subseteq \pow(X))$$
+thus we follow that $\bigcap{F} \subseteq \pow(X)$.
+
+We can follow that since
+$$(\forall f \in F)(X \in F \land \emptyset \notin F)$$
+that $X \in \bigcap{F}$ and $\emptyset \notin \bigcap{F}$.
+
+Suppose that $Y \in \bigcap{F}$ and there exists $Z$  such that $Y \subseteq Z \subseteq X$.
+We follow that since $Y \in \bigcap{F}$ that
+$$(\forall f \in F)(Y \in f)$$
+thus $Y \subseteq Z \subseteq X$ implies that
+$$(\forall f \in F)(Y \in f \land Y \subseteq Z \subseteq X)$$
+thus
+$$(\forall f \in F)(Z \in f)$$
+therefore $Z \in \bigcap{F}$.
+
+Suppose that $Y, Z \in \bigcap{F}$ are arbitrary. We follow that
+$$(\forall f \in F)(Y, Z \in f)$$
+since every $f$ is a filter we follow that
+$$(\forall f \in F)(Y \cap Z \in f)$$
+thus $Y \cap Z \in \bigcap{F}$. Therefore we can conclude that $\bigcap{F}$ satisfies
+all of the properties of a filter, and thus it is a filter, as desired.
+
+\subsection*{7.2.11}
+
+\textit{Let $F$ be a filter on $X$ and let $a \in X$.}
+
+\textit{(a) Prove that if $\set{a} \in F$, then $a \in A$ for all $A \in F$}
+
+Suppose that $A \in F$ is arbitrary. We follow that since $\set{a} \in F$ that
+$$\set{a} \cap A \in F$$
+if $a \notin A$, we follow that $\set{a} \cap A = \emptyset \in F$, which is a contradiction.
+Therefore we conclude the desired result.
+
+\textit{(b) Suppose that $F$ is an ultrafilter on $X$ and $\set{a} \in F$. Conclude that
+  $F$ is the principal filter on $X$}
+
+Suppose that $S \subseteq X$ is such that $\set{a} \subseteq S$. We follow that
+since $F$ is an ultrafilter that $S \in F$ or $X \setminus S \in F$. The latter is impossible
+by the fact that $a \notin X \setminus S$, and previous point states otherwise. Thus we
+conclude that
+$$(\forall S \in \pow(X))(\set{a} \subseteq S \ra S \in F)$$
+thus $F$ contains a principal filter of $a$.
+
+Previous point proves that principal filter of $a$ contains $F$. Therefore we conclude that
+$F$ is a principal filter of $a$ on $X$ by double inclusion.
+
+\subsection*{7.2.12}
+
+\textit{Let $U$ be an ultrafilter on $X$.}
+
+\textit{(a) Suppose there is a finite set in $U$. Prove that $\set{a} \in U$ for some
+  $a \in X$.}
+
+Let $G$ be a finite set in $U$. Suppose that there is no $a \in X$ such that
+$\set{a} \in U$. We follow that
+$$(\forall a \in X)(\set{a} \notin U)$$
+thus
+$$(\forall a \in X)(X \setminus \set{a} \notin U)$$
+therefore
+$$(\forall a \in G)(X \setminus \set{a} \notin U)$$
+and since $G$ is finite, we follow that $\set{X \setminus \set{a}: a \in G}$ is finite,
+thus
+$$\bigcup{\set{X \setminus \set{a}: a \in G}} = X \setminus G$$
+is also in $U$. Thus we follow that $(X \setminus G) \cap G = \emptyset \in U$, which is
+a contradiction.
+
+\textit{(b) Conclude that if $U$ is nonprincipal, then every $B \in U$ is infinite.}
+
+Previous point implies that if there exists finite $B \in U$, then $U$ has $\set{a}$.
+From previous exercise we follow that because $U$ is an ultrafilter that $U$ is a
+principal filter. Thus we've got the desired result by the contrapositive.
+
+\subsection*{7.2.13}
+
+\textit{Show that $\pow(X) \setminus U = \set{B \in \pow(X): X \setminus B \in U}$, whenever
+  $U$ is an ultrafilter.}
+
+This thing directly follows from the definition of an ultrafilter:
+
+$$y \in \pow(X) \setminus U \lra y \in \pow(X) \land y \notin U \lra
+y \in \pow(X) \land X \setminus y \in U$$
+
+
 \subsection*{7.2.14}
 
 \textit{Let $F$ be a filter on $X$. Let
@@ -3660,10 +3749,133 @@ This result is directly implied by 7.1.6.
 
 \textit{(c) Using Lemma 7.2.6 and Lemma 7.2.8, prove that $U$ is an ultrafilter.}
 
-TODO
+Suppose that $U$ is not an ultrafilter. We follow that there exists
+$y \in \pow(X)$ such that $y \notin U$ and $X \setminus y \notin U$. Lemma 7.2.8
+implies that $U \cup \set{y}$ has FIP. 7.2.6 implies that there exists a filter $H$ on $X$
+such that $U \cup \set{y} \subseteq H$. Since $y \notin U$ we follow that
+$U \neq U \cup \set{y}$ and thus
+$U \subset U \cup \set{y} \subseteq H$, thus $U \subset H$, therefore $U$ is not a maximal element,
+which is a contradiction.
+
+\subsection*{7.2.15}
+
+\textit{Let $F$ be a filter on $X$. Prove that $F$ is an ultrafilter if and only if $F$ is
+  maximal}
+
+Lemma 7.2.4(20) implies that every ultrafilter is maximal. Part (c) of previous exercise provides
+a proof that every maximal filter is an ultrafilter.
+
+\subsection*{7.2.16}
+
+\textit{Let $F$ be a filter on $A$. Let $B^A = \set{f: f \text{ is a function from A to B}}$.
+Define the relation $\sim$ on $B^A$ by
+$$f \sim g \iff \set{x \in A: f(x) = g(x)} \in F$$
+for all $f, g \in B^A$. Prove that $\sim$ is an equivalence relation in $B^A$.}
+
+Suppose that $f\in B^A$. Since $f$ is a function, we follow that
+$$(\forall x \in X)(f(x) = f(x))$$
+thus
+$$\set{x \in A: f(x) = f(x)} = A$$
+therefore we follow that $A \in F$ since $F$ is a filter on $A$. Thus we follow that
+$$(\forall f \in B^A)(f \sim f)$$
+
+Suppose that $f, g, h$ are such that $f \sim g$ and $g \sim h$. We follow that
+$$\set{x \in A: f(x) = g(x)} \in F \land \set{x \in A: g(x) = h(x)} \in F $$
+Since $F$ is a filter we follow that their intersection is in $F$. Thus 
+$$\set{x \in A: g(x) = h(x)} \cap \set{x \in A: f(x) = g(x)} \in F \lra $$
+$$\lra \set{x \in A: f(x) = g(x) \land g(x) = h(x)}\in F \lra$$
+$$ \lra \set{x \in A: f(x) = h(x)}\in F \lra f \sim h$$
+thus we've got that
+$$(\forall f, g, h \in B^A)(f \sim g \land g \sim h \ra f \sim h)$$
+
+Suppose that $f, g \in B^A$ are such that $f \sim g$. We follow that
+$$f \sim g \lra \set{x \in A: f(x) = g(x)} \in F \lra
+\set{x \in A: g(x) = f(x)} \in F \lra g \sim f$$
+thus
+$$(\forall f, g \in B^A)(f \sim g \ra g \sim f)$$
+thus we conclude that $\sim$ is reflexive, transitive and symmetric, and thus it constitutes an
+equivalence relation, as desired.
+
+\section{Well-Orderiing Theorem}
+
+\subsection*{7.3.1}
+
+\textit{Let $\eangle{A_i: i \in I}$ be an indexed function such that $A_i \neq \emptyset$ for
+  all $i \in I$. By Theorem 7.3.1, the set $\bigcup_{i \in I}{A_i}$ has a well-ordering
+  $\preceq$. Define a function $f$ such that $\dom(f) = I$ and
+  $(\forall i \in I)(f(i) \in A_i)$. Thus, $\eangle{f(i): i \in I}$ is a choice
+  function.}
+
+We follow that $A_j \subseteq \bigcup_{i \in I}{A_i}$, and thus there
+exists $\preceq$-least element of $A_j$.
+
+Define $f: I \to \bigcup_{i \in I}{A_i}$ by
+$$f(i) = \preceq-\text{least element of } A_i$$
+we follow that $(\forall i \in I)(f(i) \in A_i)$, as desired.
+
+\subsection*{7.3.2}
+
+\textit{Let $\preceq$ be a total order on $A$. For each $u \in A$, let
+  $s(u) = \set{x \in A: x \prec u}$. Suppose that for every $u \in A$ and $X$,
+  if $X \subseteq s(u)$  is nonempty, then $X$ has a $\preceq$-least element.
+  Prove that $\preceq$ is a well-ordering on $A$.}
+
+Let $Y \subseteq A$ be nonempty. Because it is nonempty we follow that there exsits $u \in Y$.
+If $s(u) = \emptyset$, then we follow that for all $a \in A$ that $a = u$ or $u \prec a$, thus
+$u$ is a $\preceq$-least element of both $A$ and $Y$. Suppose that $s(u) \neq \emptyset$.
+If $Y \cap s(u) = \emptyset$, then we follow by trichotomy that for all $y \in Y$
+$$u = y \lor u \prec y$$
+thus once again, $u$ is the $\preceq$-least element of $Y$. If $s(u) \cap Y$ is
+nonempty, then we follow that since $s(u) \cap Y \subseteq s(u)$ that
+it has a $\preceq$-least element $x$, and thus for all $y \in Y$ we've got that
+$x \preceq y$. Therefore we conclude that if $X$ is a subset of $A$, then it has a
+$\preceq$-least element, which means that $\preceq$ is a well-order on $A$, as desired.
+
+\subsection*{7.3.3}
+
+\textit{Let $\preceq$ be a well-order on $C$ and let $\preceq'$ be a well-ordering
+  on $D$. Suppose that $\preceq \subseteq \preceq'$ and whenever $x \preceq y'$ and
+  $y \preceq y$, then $x \preceq y$.}
+
+\textit{(a) Prove that $C \subseteq D$}
+
+Suppose that it isn't. Then we follow that there exists $c \in C$ such that $c \notin D$. Thus
+$c \preceq c$, therefore $c \preceq' c$, which contradicts the fact that $\preceq'$ is
+a relation on $D$.
+
+\textit{(b) Prove that $\preceq = \preceq' \cap (C \times C)$.}
+
+We follow that $\preceq \subseteq C \times C$ and $\preceq \subseteq \preceq'$, thus
+$\preceq \subseteq \preceq' \cap (C \times C)$. Suppose that $\eangle{x, y} \in
+\preceq' \cap (C \times C)$ for some $x, y \in C$. We follow that
+$x \preceq' y$, and because $\preceq$ is a total order we follow that
+$x \prec y$, $x = y$ or $y \prec x$. We follow that $y \prec x$ contradicts the
+$x \preceq' y$ since $\preceq \subseteq \preceq'$. Thus we follow that
+$x \preceq y$. Therefore we conclude that
+$\preceq' \cap (C \times C) \subseteq \preceq$. Double inclusion gives us the desired equality.
+
+\textit{Prove that if $C \neq D$, then $C = \set{z: z \prec' l}$ for some $l \in D$.}
+
+Suppose that $C \neq D$. We follow that $D \setminus C$ is nonempty. Suppose
+that there exists $d \in D \setminus C$ such that $d \prec' c$ for some $c \in C$.
+We follow that $d \preceq' c$ and $c \preceq c$ by reflexivity of $c$. Thus by restrictions
+in the text of the exercise, we follow that $d \preceq c$. Therefore $d \in C$, which is a
+contradiction.
+
+Thus we conclude that for all $d \in D \setminus C$, $c \preceq' d$ for all $c \in C$.
+Since $D \setminus C$ is nonempty, we follow that it's got a $\preceq'$-least element $l$.
+Since $l \in D \setminus C$, we conclude that $l \neq c$ for all $c \in C$.
+Thus we follow that $C \subseteq \set{z: z \prec' l}$. Suppose that
+$x \in \set{z: z \prec' l}$. We follow that if $x \in D \setminus C$, then both $l \preceq' x$
+and $x \prec' l$ are true, which is a contradiction. Thus we follow that $x \in D \cap C$.
+Therefore we  follow that $x \in \set{z: z \prec' l} \ra x \in C$, therefore
+$\set{z: z \prec' l} \subseteq C$. Double inclusion gives us that
+$\set{z: z \prec' l} = C$, as desired.
+
 
 \end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+
