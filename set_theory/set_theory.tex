@@ -3873,6 +3873,92 @@ $\set{z: z \prec' l} \subseteq C$. Double inclusion gives us that
 $\set{z: z \prec' l} = C$, as desired.
 
 
+\subsection*{7.3.4}
+
+\textit{Let $\trianglelefteq$ be the relation defined on $W$ in the proof of 7.3.1. Prove that
+  $\trianglelefteq$ is a partial order on $W$.}
+
+We follow thta $\preceq \subseteq \preceq$ and for all $x \in \fld(\preceq)$ we follow that
+$x \preceq y \land y \preceq y \ra x \preceq y$. Thus we follow that
+$\preceq \trianglelefteq \preceq$.
+
+Suppose that $\preceq, \preceq', \preceq'' \in W$ are such that
+$\preceq \trianglelefteq \preceq'$ and $\preceq' \trianglelefteq \preceq''$.
+We follow that $\preceq \subseteq \preceq''$ by the transitivity of $\subseteq$.
+Suppose that $x, y \in A$ are such that $x \preceq'' y$ and $y \preceq y$.
+By the fact that $\preceq \trianglelefteq \preceq'$ we follow that $y \preceq' y$.
+By the fact that $\preceq' \trianglelefteq \preceq''$ we conclude that
+$x \preceq' y$. By the $\preceq \trianglelefteq \preceq'$ we conclude that
+$x \preceq y$. Therefore if $x, y \in A$ are such that
+$x \preceq'' y$ and $y \preceq y$, we follow that $x \preceq y$. Therefore
+$\preceq \trianglelefteq \preceq''$ by definition. Therefore we conclude that
+$\trianglelefteq$ is transitive.
+
+We follow antisymmetry by double inclusion. Therefore we conclude that
+$\trianglelefteq$ is a partial order on $W$, as desired.
+
+\subsection*{7.3.5}
+
+\textit{Let $\preceq$ be a well-ordering on a set $X$ and let $a \notin X$. Define
+  a relation $\preceq'$ on $X \cup \set{a}$ by
+  $$\preceq' =  \preceq \cup \set{\eangle{x, a}: x \in X \lor x = a}$$
+}
+
+\textit{(a) Show that $\preceq'$ is well-ordering on $X \cup \set{a}$}
+
+Let $A \subseteq X \cup \set{a}$ and $A \neq \emptyset$.
+If $a \notin A$, then $A \subseteq X$, and thus
+$A$ has the $\preceq$-least element $l$. Since $l \neq A$, we follow that $l$ is
+a $\preceq'$-least element of $A$.
+
+If $a \in A$, then we've got two cases: $A = \set{a}$ or $A \neq \set{a}$. In the former
+case we follow that $a$ is the only element of $A$ and thus it is $\preceq'$-least
+element of $A$. If $A \neq \set{a}$, then we follow that there exists $q \in A$ such that
+$q$ is the $\preceq$-least element of $A \setminus \set{a}$, and because
+$\eangle{q, a} \in \preceq' \lra q \preceq' a$, we follow that $q$ is the $\preceq'$-least
+element of $A$. Therefore we conclude that every nonempty subset of $X \cup \set{a}$ contains
+a $\preceq'$-least element, and thus $\preceq'$ is a well-order, as desired.
+
+\textit{(b) Prove that $\preceq \trianglelefteq \preceq'$, where $\trianglelefteq$
+  is the relation defined in (7.8.) and in the exercise 4.}
+
+We follow that
+$\preceq \subseteq \preceq'$ by definition of $\preceq'$. Suppose that
+$x, y \in X \cup \set{a}$ are such that $x \preceq' y$ and $y \preceq y$.
+We follow that $y \neq a$ since $a \notin \fld(\preceq)$. If $x = a$, then we follow that
+$y \preceq' a$ by definition, and since $y \neq a$, we follow that $y \prec' a$, which
+is a contradiction of trichotomy of $\prec'$ since $x \preceq' y$. Thus we follwo that
+$x \neq a$ as well. Therefore we follow that $x, y \in \fld(\preceq)$, and thus
+$x \preceq' y$ implies that $x \preceq y$. Therefore $\preceq \trianglelefteq \preceq'$,
+as desired.
+
+\subsection*{7.3.6}
+
+\textit{Supposet hat $\preceq$ is a well-ordering on $A$ and that $\preceq'$ is a well-ordering
+  on $B$. Let $\preceq_l$ be the lexicographic ordering on $A \times B$. Prove that $\preceq_l$
+  is a well-ordering.}
+
+I think that it was proven before (in 3.4.19 to be precise) that
+if $\preceq$ and $\preceq'$ are total orders, then $\preceq_l$ is a total order as well.
+
+Let $Q \subseteq A \times B$ is such that $Q \neq \emptyset$. Let
+$$A' = \set{a \in A: (\exists b \in B)(\eangle{a, b} \in Q)}$$
+Since $A' \subseteq A$, and $A'$ is nonempty by the fact that $Q$ is nonempty,
+we follow that it's got a $\preceq$-least element $a'$ in $A'$.
+Let
+$$B' = \set{b \in B: \eangle{a', b} \in Q}$$
+since $B' \subseteq B$ and there exists $\eangle{a', b} \in Q$ by the construction of $A'$,
+we conclude that there exists $\preceq'$-least elenent $b'$ in $B'$.
+
+Construction of those sets imply that $\eangle{a', b'} \in Q$ and
+$$\forall(q \in Q)(\eangle{a', b'} \preceq_l q)$$
+thus $\eangle{a', b'}$ is the $\preceq_l$-least element of $Q$. Since $Q$ is arbitrary,
+we conclude that every nonempty subset of $A \times B$ has a $\preceq_l$-least element,
+thus making $\preceq_l$ a well-order.
+
+  
+
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
