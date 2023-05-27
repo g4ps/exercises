@@ -44,6 +44,22 @@ def congr(a, b, n):
         res += [cb1 + m * i];
     return res;
 
+def is_prime(n):
+    for i in range(2, n):
+        if (n % i == 0):
+            return False;
+    return True;
+
+def prime_decomp(n):
+    ret = [];
+    while(n != 1):
+        for i in range(2, n + 1):
+            if is_prime(i) and n % i == 0:
+                ret += [i];
+                n = n // i;
+                break;
+    return ret;
+
 inp = [
     [4, 1, 7],
     [2, 1, 9],
@@ -65,15 +81,15 @@ for i in inp:
     print(i[0], "x <eq> ", i[1], "(mod ", i[2], ") = ", congr(i[0], i[1], i[2]));
 
 
-inp_trial = [
-    ["lambda x: x ** 2, 1, 16]", lambda x: x ** 2, 1, 16],
-    ["lambda x: x ** 3, 1, 16]", lambda x: x ** 3, 1, 16],
-    ["lambda x: x ** 4, 1, 16]", lambda x: x ** 4, 1, 16],
-    ["lambda x: x ** 8, 1, 16]", lambda x: x ** 8, 1, 16],
-    ["lambda x: x ** 3 + 2 * x + 2, 0, 5]", lambda x: x ** 3 + 2 * x + 2, 0, 5],
-    ["lambda x: x ** 4 + x ** 3 + x**2 + x + 1, 0, 2]", lambda x: x ** 4 + x ** 3 + x**2 + x + 1, 0, 2],
-    ["lambda x: x ** 4 + x ** 3 + 2 * x**2 + 2 * x + 1, 0, 3]", lambda x: x ** 4 + x ** 3 + 2 * x**2 + 2 * x + 1, 0, 3],
-]
+# inp_trial = [
+#     ["lambda x: x ** 2, 1, 16]", lambda x: x ** 2, 1, 16],
+#     ["lambda x: x ** 3, 1, 16]", lambda x: x ** 3, 1, 16],
+#     ["lambda x: x ** 4, 1, 16]", lambda x: x ** 4, 1, 16],
+#     ["lambda x: x ** 8, 1, 16]", lambda x: x ** 8, 1, 16],
+#     ["lambda x: x ** 3 + 2 * x + 2, 0, 5]", lambda x: x ** 3 + 2 * x + 2, 0, 5],
+#     ["lambda x: x ** 4 + x ** 3 + x**2 + x + 1, 0, 2]", lambda x: x ** 4 + x ** 3 + x**2 + x + 1, 0, 2],
+#     ["lambda x: x ** 4 + x ** 3 + 2 * x**2 + 2 * x + 1, 0, 3]", lambda x: x ** 4 + x ** 3 + 2 * x**2 + 2 * x + 1, 0, 3],
+# ]
 
 def trial(func, ans, m):
     ret = []
@@ -82,24 +98,24 @@ def trial(func, ans, m):
             ret += [i];
     return ret;
 
-for i in inp_trial:
-    print(i[0], "=", trial(i[1], i[2], i[3]))
+# for i in inp_trial:
+#     print(i[0], "=", trial(i[1], i[2], i[3]))
 
-inp_ya = [
-    [20, 13],
-    [69, 372],
-    [792, 275],
-    [11391, 5673],
-    [1761, 1567],
-    [507885, 60808]
-    ]
+# inp_ya = [
+#     [20, 13],
+#     [69, 372],
+#     [792, 275],
+#     [11391, 5673],
+#     [1761, 1567],
+#     [507885, 60808]
+#     ]
 
-for i in inp_ya:
-    d = gcd(i[0], i[1]);
-    m = lcm(i[0], i[1]);
-    coef = p_gcd(i[0], i[1])[1];
-    print(f"gcd: %3d; lcm: %10d, %d * %d + %d * %d = %d" % (d, m, coef[0], i[0], coef[1], i[1], d));
+# for i in inp_ya:
+#     d = gcd(i[0], i[1]);
+#     m = lcm(i[0], i[1]);
+#     coef = p_gcd(i[0], i[1])[1];
+#     print(f"gcd: %3d; lcm: %10d, %d * %d + %d * %d = %d" % (d, m, coef[0], i[0], coef[1], i[1], d));
 
 
-for i in range(1, 31):
-    print(f"phi(%d) = %d"%(i, euler(i)));
+# for i in range(1, 31):
+#     print(f"phi(%d) = %d"%(i, euler(i)));

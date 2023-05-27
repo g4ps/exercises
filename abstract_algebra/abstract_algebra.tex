@@ -201,16 +201,92 @@ could be solved at a later time if I encounter some gaps in the theory.}
 \textit{Let $G = \eangle{a}$ be a cyclic group of order 12. List every subgroup of $G$.
 List every group of $Z_{12}$}
 
-12's divisors are $\set{1, 2, 3, 4, 6}$, therefore subgroups of $G$ are
-$\eangle{a^i}$ for $i \in \set{1, 2, 3, 4, 6}$.
+12's divisors are $\set{1, 2, 3, 4, 6, 12}$, therefore subgroups of $G$ are
+$\eangle{a^i}$ for $i \in \set{0, 1, 2, 3, 4, 6}$
 
-Since $Z_{12}$ is cyclic, we follow that  $\eangle{[1, 2, 3, 4, 6]}$
+Since $Z_{12}$ is cyclic, we follow that  $\eangle{[0, 1, 2, 3, 4, 6]}$
 are the subgroups of $Z_{12}$.
 
 \subsection{}
 
 \textit{Let $G = \eangle{a}$ be a cyclic group of order 120. List all of the groups of order 120.
-List all of the elements of order 12 in $G$. }
+  List all of the elements of order 12 in $G$. }
+
+Divisors of $120$ are $\set{1, 2, 3, 4, 5, 6, 8, 10, 12, 24, 60, 120}$, thus
+we can state that subgroups of a cyclic group are $a$ to powers of those numbers
+
+According to the theorems, there should be $\phi(12) = 4$ elements of order 12.
+All of them lie in a subgroup $\eangle{a^{120 / 12}} = \eangle{a^{10}}$
+and are in form $(a^{10})^k$ where $k \in {1, 5, 7, 11}$. 
+
+\textit{How many element of order 12 are there in a cyclic group of order 1200?}
+
+Also 4.
+
+\subsection{}
+
+\textit{Let $p$ be a prime  and $n$ a positive integer. Show that $\phi(p^n) = p^n - p^{n - 1}$}
+
+If $j \in Z_+$ is such that $j = pi$ for some $i \in Z_+$, then we follow that
+$(p^n, j) = p$, therefore they are not relatively prime. Suppose that $(p^n, j) = 1$ for some
+$j \in Z_+$. Let $S$ be a multiset of prime divisors of $p^nN$ and $T$ be a multiset
+of divisors of $j$. Then we follow that $S \cap T = \emptyset$, since otherwise we
+would've had that $j$ is a multiple of $p$, which is not relatively prime to $p^n$.
+Thus we follow that the set of not relatively prime numbers to  $p^n$ is equal to
+the set of multiples of $p$.
+
+We can follow that there are pricicely $p^{n - 1}$ of multiples of $p$ that are
+less or equal to $p^n$ (don't think that we need to prove that),
+therefore the total amount of numbers that are less or equal to
+$p^n$, which are relatively prime to $p^n$ is $p^n - p^{n - 1}$, as desired.
+
+\subsection{}
+
+\textit{Find all positive integers $n$ such that $|U(n)| = 24$.}
+
+We can follow that $\phi(n)$ is an function that tends to infinity
+(i.e. for every $n \in Z_+$ there exists $j \in Z_+$ such that
+$m > n$ implies that $\phi(m) > j$) since $\phi(n)$ is larger than
+the number of prime numbers that is in the set $Z_+ \cap [1, n)$.
+Therefore we conclude that there is an upper bound for a number of
+numbers $n$ such that $\phi(n) = 24$.
+
+Brute-force shows that those numbers are
+$$35, 39, 45, 52, 56, 70, 72, 78, 84, 90$$
+
+Can't come up with a better answer than that, but I'm sure that it's there.
+
+\subsection{}
+
+\textit{Let $G$ be a nonabelian group. If $H$ and $K$ are cyclic subgroups of $G$,
+  does it follow that $H \cap K$ is also a cyclyc subgroup? Prove that it does,
+  or provide a counterexample.}
+
+We follow that every subgroup has an identity in it, thus $e \in H \cap K$.
+Suppose that $j \in H \cap K$. We follow that $j \in H \land j \in K$. Since $H$
+and $K$ are both subgroups, we follow that $j \inv \in H \land j\inv \in K$. Thus
+$j \inv \in H \cap K$. Therefore $H \cap K$ is closed under inverses.
+We can follow also by the same logic that $j, l \in H \cap K$ implies that
+$jl \in H \cap K$. Therefore we can conclude that $H \cap K$ is a subgroup.
+
+We can follow that if $H \cap K = \set{e}$, then it's cyclic. We can follow that
+$H \cap K$ can be not only a trivial subgroup by setting $H = K$. Suppose that
+$H \cap K \neq \set{e}$. By the fact that both $H$ and $K$ are cyclic we follow that
+$H \cap K = \set{a^i: i \in \text{ some subset of } Z_+}$.
+Since $H \cap K \neq \set{e}$, we follow that there exists an element $a \in G$ and
+two sets $H', K' \in \pow(Z_+)$ such that $H = \set{a^i: i \in H'}$ and
+$K = \set{a^i: i \in K'}$. Since both $H$ and $K$ are cyclic we follow that
+both $H'$ and $K'$ are the sets of multiples of some number. Thus
+$H' \cap K'$ is a set of multiples of some number as well (proof ommited). Thus we
+follow that $H \cap K = \set{a^i: i \in H' \cap K'}$ is a cyclic group as well.
+
+\subsection{}
+
+\textit{Let $G = \eangle{a}$ be an infinite cyclic. If $m$ and $n$ are positive integers,
+find a generator for $\eangle{a^m} \cap \eangle{a^n}$.}
+
+If $m = n$, then $\eangle{a^m} \cap \eangle{a^n} = \eangle{a^m} = \eangle{a^n}$.
+Suppose that $m \neq n$. 
 
 
 \end{document}
