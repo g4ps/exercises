@@ -22,6 +22,7 @@
 \DeclareMathOperator \false {false}
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
+\DeclareMathOperator \ineq {\underline{\in}}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
 
@@ -3956,8 +3957,58 @@ thus $\eangle{a', b'}$ is the $\preceq_l$-least element of $Q$. Since $Q$ is arb
 we conclude that every nonempty subset of $A \times B$ has a $\preceq_l$-least element,
 thus making $\preceq_l$ a well-order.
 
-  
+\chapter{Ordinals}
 
+\section{Ordinal Numbers}
+
+\subsection{8.1.1}
+
+\textit{Suppose that $(A, \preceq)$, $(B, \preceq^*)$, and $(C, \preceq^\#)$ are all
+  well-ordered structured. Prove the following: }
+
+\textit{(a) $(A, \preceq) \cong (A, \preceq)$}
+
+We can follow that the identity function is the desired isomorphism
+
+\textit{(b) If $(A, \preceq) \cong (B, \preceq^*)$, then $(B, \preceq^*) \cong (A, \preceq)$}
+
+We can take the isomorphism, for which it is true that
+$(A, \preceq) \cong (B, \preceq^*)$, and prove that the inverse of this isomorphism is
+an isomorphism that gives us
+$(B, \preceq^*) \cong (A, \preceq)$.
+
+\textit{(c) If $(A, \preceq) \cong (B, \preceq^*)$ and $(B, \preceq^*) \cong (C, \preceq^\#)$ ,
+  then $(A, \preceq) \cong (C, \preceq^\#)$}
+
+Composition of two isomorphisms, for which it is true that
+$(A, \preceq) \cong (B, \preceq^*)$ and $(B, \preceq^*) \cong (C, \preceq^\#)$
+is an isomorphism as well, for which it is true that
+$(A, \preceq) \cong (C, \preceq^\#)$
+
+\textit{Conclude that two well-ordered structures have the same order type if and only if
+  the structures are isomorphic.}
+
+Suppose that two well-ordered structures $(A, \preceq)$ and $(B, \preceq^*)$ have
+the same order type $\delta$. We follow by remark 8.1.8 (which comes from a proof of 8.1.4)
+that there exist isomorphisms
+$H: A \to \delta$ and $H': B \to \delta$ to a well-ordered structure $(\delta, \ineq)$.
+Point (b) implies that $H'\inv: \delta \to B$ is an isomorphism as well. Point (c)
+shows that $H'\inv \circ H: A \to B$ is an isomorphism from $A$ to $B$. Therefore we
+follow that $(A, \preceq) \cong (B, \preceq^*)$, as desired.
+
+Reverse implication was proven in the chapter (see Theorem 8.1.10)
+
+\subsection*{8.1.2}
+
+\textit{Let $\alpha$ be an ordinal, and so $(\alpha, \ineq)$ is a well-ordered structure.
+  By the proof of Theorem 8.1.4, there is a function $H$ with domain $\alpha$
+  satisfying 
+  $$H(u) = \set{H(x): x \in u} \text{ for all } u \in \alpha$$
+  Show that $H(u) = u$ for all $u \in \alpha$ and conclude that $\ran(H) = \alpha$}
+
+Suppose that $u \in \alpha$. We follow that
+$$H(u) = \set{H(x): x \in u}$$
+If $y \in u$, then we follow that $H(y) \in H(u)$.
 
 \end{document}
 %%% Local Variables:
