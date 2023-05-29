@@ -3961,7 +3961,7 @@ thus making $\preceq_l$ a well-order.
 
 \section{Ordinal Numbers}
 
-\subsection{8.1.1}
+\subsection*{8.1.1}
 
 \textit{Suppose that $(A, \preceq)$, $(B, \preceq^*)$, and $(C, \preceq^\#)$ are all
   well-ordered structured. Prove the following: }
@@ -4006,9 +4006,80 @@ Reverse implication was proven in the chapter (see Theorem 8.1.10)
   $$H(u) = \set{H(x): x \in u} \text{ for all } u \in \alpha$$
   Show that $H(u) = u$ for all $u \in \alpha$ and conclude that $\ran(H) = \alpha$}
 
-Suppose that $u \in \alpha$. We follow that
-$$H(u) = \set{H(x): x \in u}$$
-If $y \in u$, then we follow that $H(y) \in H(u)$.
+Assume that $C = \set{u \in \alpha: u \neq H(u)}$ is nonempty. Let $a \in \alpha$ be the
+$\ineq$-least element in $C$. Thus we follow that
+$$(\forall x \in a)(H(x) = x)$$
+Thus
+$$H(a) = \set{H(x): x \in a} = \set{x: x \in a} = a$$
+thus $H(a) = a$, which is a contradiction of our assumption that $a \in C$. Thus we follow that
+$C$ is empty. Thus we've got that
+$$(\forall u \in A)(H(u) = u)$$
+thus we conclude that $H$ is an identity relation, and thus $\ran(H) = \alpha)$, as desired.
+
+\subsection*{8.1.3}
+
+\textit{Let $\alpha$ and $\beta$ be ordinals. Prove that either $\alpha \subseteq \beta$ or
+  $\beta \subseteq \alpha$.}
+
+Since $\alpha$ and $\beta$ are both oridnals, we follow that either $\alpha \ineq \beta$
+or $\beta \ineq \alpha$. Assume the former. If $\alpha = \beta$, then we're done.
+If $\alpha \in \beta$, then we follow that $\alpha \subseteq \beta$ by transitivity of
+ordinals. Therefore we've got the desired conclusion.
+
+\subsection*{8.1.4}
+
+\textit{Suppose $\omega \ineq \alpha$, where $\alpha$ is an ordinal. Show that $\alpha$
+  is an infinite set.}
+
+We follow that since $\omega \ineq \alpha$ that $\omega \subseteq \alpha$. Thus we follow
+that there exists an injection from $\omega$ to $\alpha$, which implies that $\alpha$ is
+infinite, as desired.
+
+\subsection*{8.1.5}
+
+\textit{Let $\gamma$ be an ordinal and let $\beta \in \gamma$. Since $\gamma$ is well-ordered
+  by $\ineq$, the initial segment up to $\beta$ is the set
+  $s^\in(\beta) = \set{x \in \gamma: x \in \beta}$. Show that $s^\in(\beta) = \beta$.}
+
+Since $\beta \in \gamma$, we follow that $\beta \subseteq \gamma$. Thus we follow that
+$$\set{x \in \gamma: x \in \beta} = \set{x \in \beta} = \beta$$
+as desired.
+
+\subsection*{8.1.6}
+
+\textit{Suppose $(A, \preceq)$ is a well-ordered structure, and let $H$ and $G$ be
+  functions with domain $A$ satisfying
+  $$H(u) = \set{H(x): x \prec u} \text{ for all } u \in A$$
+  $$G(u) = \set{G(x): x \prec u} \text{ for all } u \in A$$
+  Prove, without appealing to Theorem 6.2.5 that $H = G$
+}
+
+I don't know if appealing to 8.1.4 counts as appealing to 6.2.5, but we can follow that
+both of those functions are isometries from $(A, \preceq)$ to $(\delta, \ineq)$,
+where $\delta$ is an order type of $(A, \preceq)$. Suppose that $H \neq G$.
+
+Let $C = \set{a \in A: H(a) \neq G(a)}$. We follow that there exists $\preceq$-least element
+$c \in C$. Thus we follow that
+$$(\forall y \prec c)(H(a) = G(a))$$
+We follow that
+$$H(c) = \set{H(x): x \prec c} = \set{G(x): x \prec c} = G(c)$$
+which is a contradiction of the fact that $c \in C$. Thus we follow that
+$(\forall a \in A)(H(a) = G(a))$, as desired.
+
+\subsection*{8.1.7}
+
+\textit{Let $(A, \preceq)$ and $(B, \preceq^*)$ be well-ordered structures with order type
+  $\delta$ and $\delta^*$ respectively. Suppose that $f: A \to B$ is a one-to-one
+  function satisfying $x \preceq y$ if and only if $f(x) \preceq^* f(y)$, for all
+  $x$ and $y$ in $A$. Let $H$ and $H^*$ be as in the proof of Theorem 8.1.10. Thus,
+  $\delta = \ran(H)$ and $\delta = \ran(H^*)$.}
+
+\textit{(a) Prove that $H(u) \ineq H^*(f(u))$ for all $u \in A$.}
+
+Given that codomains of both $H$ and $H^*$ are oridnals, we follow that
+there are 3 possible situations: $H(u) \in H^*(f(u))$,
+$H(u) = H^*(f(u))$ or $H^*(f(u)) \in H(u)$. Suppose that latter holds.
+We follow that TODO
 
 \end{document}
 %%% Local Variables:
