@@ -4076,10 +4076,18 @@ $(\forall a \in A)(H(a) = G(a))$, as desired.
 
 \textit{(a) Prove that $H(u) \ineq H^*(f(u))$ for all $u \in A$.}
 
-Given that codomains of both $H$ and $H^*$ are oridnals, we follow that
-there are 3 possible situations: $H(u) \in H^*(f(u))$,
-$H(u) = H^*(f(u))$ or $H^*(f(u)) \in H(u)$. Suppose that latter holds.
-We follow that TODO
+Define $C = \set{x \in A: H^*(f(x)) \in H(x)}$. Assume that $C$ is
+nonempty so that there exists
+$\preceq$-least element of $C$, which we denote by $c$. We follow that
+$$(\forall a \in c)(H(a) \ineq H^*(f(a)))$$
+or in other words
+and
+$$H^*(f(c)) \in H(c)$$
+% Since $H(c) = \set{H(x): x \in c}$ and $H^*(f(c)) = \set{H^*(x) : x \in f(c)} = \set{x : x \in f(c)}$.
+TODO
+
+
+We also follow 
 
 \end{document}
 %%% Local Variables:
