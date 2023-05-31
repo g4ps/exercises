@@ -4080,14 +4080,106 @@ Define $C = \set{x \in A: H^*(f(x)) \in H(x)}$. Assume that $C$ is
 nonempty so that there exists
 $\preceq$-least element of $C$, which we denote by $c$. We follow that
 $$(\forall a \in c)(H(a) \ineq H^*(f(a)))$$
-or in other words
-and
-$$H^*(f(c)) \in H(c)$$
-% Since $H(c) = \set{H(x): x \in c}$ and $H^*(f(c)) = \set{H^*(x) : x \in f(c)} = \set{x : x \in f(c)}$.
-TODO
+Therefore we follow that
+$$H(c) = \set{H(x): x \prec c}$$
+Let $y \in H(c)$. We follow that there exists $k \prec c$ such that $y = H(k)$. Thus
+we follow that $y \in H^*(f(k))$ and by definition of $H^*$ we follow that $y \in H^*(f(c))$.
+Therefore we follow that $H(c) \subseteq H^*(f(c))$.
+Therefore we can follow that $H(c) \ineq H^*(f(c))$, which contradicts our assumtion
+that $c \in C$. Thus we follow that $C$ is empty and thus
+$$(\forall a \in A)(H(a) \ineq H^*(f(a)))$$
+as desired.
 
+\textit{(b) Prove that $\ran(H) \subseteq \ran(H^*)$}
 
-We also follow 
+Suppose that $x \in \ran(H)$. We follow that there exists $a \in A$ such that
+$x = H(a)$. From previous point we follow that $x \ineq H^*(f(a))$.
+If $x = H^*(f(a))$, then we're done. Otherwise if $x \in H^*(f(a))$, then we follow that
+$x \in H^*(f(a))$ and $H^*(f(a)) \in \ran(H^*)$, which gives us that $x \in \ran(H^*)$
+by the fact that $\ran(H)$ is a set of ordinals.
+
+\textit{(c) Prove that $\delta \ineq \delta^*$}
+
+We follow that by previous point.
+
+\subsection*{8.1.8}
+
+\textit{Let $(A, \preceq)$ be a well-ordered structure with order type $\alpha$. Let
+  $\gamma$ be the order type of $(C, \preceq_C)$ where $C \subseteq A$ and $\preceq_C$
+  is the induced relation. Using exercise 7, show that $\gamma \ineq \alpha$.}
+
+We follow that the cropped identity function is an injection that gives us the desired result.
+
+\subsection*{8.1.9}
+
+\textit{Let $\alpha$ and $\beta$ be ordinals.}
+
+\textit{(a) Prove that there is no ordinal $\gamma$ such that $\alpha \in \gamma \in \alpha^+$}
+
+Suppose that such a set exists. We follow that since $\gamma \in \alpha^+$ that
+$\gamma \in \alpha$ or $\gamma = \alpha$. Former case violates the fact that
+$\alpha \in \gamma$, the latter case gives us that $\alpha \in \alpha$, which is also
+a contradiction. Thus we follow that there is no such set. Given that ordinals are sets,
+we follow that no such ordinals exist.
+
+\textit{(b) Suppose that $\alpha \in \beta$. Prove that $\alpha^+ \ineq \beta$.}
+
+Because $\alpha$ is an ordinal, we follow that $\alpha^+$ is an ordinal as well.
+Therefore we need to only prove that the case $\beta \in \alpha^+$ is impossible.
+We follow that this case is impossible by previous point (i.e. we've got that
+$\alpha \in \beta \in \alpha^+$).
+
+\textit{(c) Prove that if $\alpha \in \beta$, then $\alpha^+ \in \beta^+$}
+
+We can state that both $\alpha^+$ and $\beta^+$ are ordinals.
+Suppose that $\alpha^+ = \beta^+$. Then we follow that
+$$\alpha \in \beta \in \beta^+ \lra \alpha \in \beta \in \alpha^+ $$
+which is a contradiction by point (a).
+
+Suppose that $\beta^+ \in \alpha^+$. By the fact that $\alpha \in \beta \in \beta^+$ we've got
+that $\alpha \in \beta^+$. Thus we've got thaht $\alpha \in \beta \in \alpha^+$, which is
+a contradiction by point (a).
+
+\textit{(d) Prove that if $\alpha^+ = \beta^+$, then $\alpha = \beta$}
+
+Suppose that $\alpha^+ = \beta^+$ and $\alpha \neq \beta$. We follow that
+$\alpha \in \beta$ or $\beta \in \alpha$. Former case implies that $\alpha^+ \in \beta^+$,
+and latter case implies that $\beta^+ \in \alpha^+$ by previous point. Therefore
+we conclude that $\alpha = \beta$ implies that $\alpha^+ = \beta^+$.
+
+\textit{(e) Prove that if $\alpha \in \beta$, then $\alpha \cap \beta = \alpha$.}
+
+If $\alpha  \in \beta$, then we follow that $\alpha \subseteq \beta$ by transitivity of
+ordinals. This implies that $\alpha \cap \beta = \alpha$, as desired.
+
+\subsection*{8.1.9}
+
+\textit{Let $\alpha$ be a nonzero ordinal}
+
+\textit{(a) Prove that $\alpha$ is a limit ordinal iff
+  $(\forall \lambda \in \alpha)(\exists \gamma)(\lambda \in \gamma \in \alpha)$.}
+
+Suppose that $\alpha$ is a limit ordinal. This means that
+$$(\forall \lambda \in \alpha) (\lambda^+ \in \alpha)$$
+thus we follow that
+$$(\forall \lambda \in \alpha) (\lambda \in \lambda^+ \in \alpha) \ra
+(\forall \lambda \in \alpha)(\exists \gamma \in \alpha)(\lambda \in \gamma \in \alpha)$$
+
+Suppose that
+$$(\forall \lambda \in \alpha)(\exists \gamma \in \alpha)(\lambda \in \gamma \in \alpha)$$
+Suppose that $\lambda \in \alpha$ and $\gamma \in \alpha$ is such an ordinal
+that $\lambda \in \gamma \in \alpha$. Suppose that $\lambda^+ \notin \alpha$.
+Then we follow that $\alpha \ineq \lambda^+$. If $\alpha = \lambda^+$, then
+$\lambda \in \gamma \in \lambda^+$, which is a contradiction.
+If $\alpha \in \lambda^+$, then $\lambda \in \alpha \in \lambda^+$, which is also
+a contradiction. Thus we conclude that $\lambda^+ \in \alpha$, as desired.
+
+\textit{(b) Prove that $\alpha$ is a limit ordinal if and only if $\alpha = \sup \alpha$.}
+
+Suppose that $\beta$  is not a limit ordinal. Then we follow that
+$\beta = \gamma^+$ for some ordinal $\gamma$. Thus we follow that
+$\beta = \gamma \cup \set{\gamma}$. Therefore $\sup \beta = \bigcup{\beta} = 
+
 
 \end{document}
 %%% Local Variables:
