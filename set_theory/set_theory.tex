@@ -4152,7 +4152,7 @@ we conclude that $\alpha = \beta$ implies that $\alpha^+ = \beta^+$.
 If $\alpha  \in \beta$, then we follow that $\alpha \subseteq \beta$ by transitivity of
 ordinals. This implies that $\alpha \cap \beta = \alpha$, as desired.
 
-\subsection*{8.1.9}
+\subsection*{8.1.10}
 
 \textit{Let $\alpha$ be a nonzero ordinal}
 
@@ -4176,9 +4176,106 @@ a contradiction. Thus we conclude that $\lambda^+ \in \alpha$, as desired.
 
 \textit{(b) Prove that $\alpha$ is a limit ordinal if and only if $\alpha = \sup \alpha$.}
 
-Suppose that $\beta$  is not a limit ordinal. Then we follow that
-$\beta = \gamma^+$ for some ordinal $\gamma$. Thus we follow that
-$\beta = \gamma \cup \set{\gamma}$. Therefore $\sup \beta = \bigcup{\beta} = 
+If $\alpha$ is a any ordinal and $x \in \sup{\alpha}$ then we follow that there
+exists $a \in \alpha$ such that $x \in a \in \alpha$. Thus $x \in \alpha$. Therefore
+if $\alpha$ is an ordinal, then $\sup \alpha \subseteq \alpha$. 
+
+Suppose that $x \in \alpha$. Then we follow that
+$x \subseteq \bigcup \alpha$. Thus $x \ineq \bigcup{\alpha}$. If $x = \bigcup{\alpha}$,
+then we follow that $\bigcup{\alpha} \in x^+$. We know that $x \in \alpha$ implies that
+$x^+ \in \alpha$, which gives us that $x^+ \subseteq \bigcup{\alpha}$, and thus
+$x^+ \ineq \bigcup{\alpha}$, which violates our previous
+conclusion that $\bigcup{\alpha} \in x^+$. Therefore we follow that $x \neq \bigcup{\alpha}$,
+thus $x \in \bigcup{\alpha}$, and thus we follow that if $\alpha$ is a limit ordinal,
+then $\alpha = \sup\alpha$ by double inclusion.
+
+Suppose that $\beta$ is a successor ordinal. Then we follow that there exists $\gamma$
+such that $beta = \gamma \cap \set{\gamma}$. Given that
+$(\forall x \in \gamma)(x \subseteq \gamma)$, we follow that $\sup \beta =
+\bigcup{\gamma \cap \set{\gamma}} = \gamma \in \beta$. Thus we follow that
+if $\beta$ is a successor ordinal, then $\sup \beta \in \beta$ and thus
+$\sup \beta \subset \beta$. Thus we follow that if $\alpha = \sup \alpha$, then
+$\alpha$ is not a successor ordinal, therefore it is a limit ordinal, as desired.
+
+\subsection*{8.1.11}
+
+\textit{Suppose that $(A, \preceq)$ is a well-ordered structure and $a \in A$.
+  Let $s(a) \subseteq A$ be defined by $s(a) = \set{x \in A: x \prec a}$.
+  Thus, $(s(a), \preceq_{s(a)})$ is a well-ordered structure. Let $\delta$ be the
+  order type of $(A, \preceq)$ and let $H: A \to \delta$ be as in the proof of 8.1.4.
+  Show that $\eta$ is the order type of $(s(a), \preceq_{s(a)})$ if and only if
+  $H(a) = \eta$.}
+
+Suppose that order type of $(s(a), \preceq_{s(a)})$ is $\eta$. We follow that for it
+there exists $H^*: s(a) \to \eta$ from theorem 8.1.4 such that $\eta = \ran(H^*)$. From the
+proof of 8.1.4 we follow that $(\forall x \prec x)H^*(x) = H(x)$. Given that
+$(\forall x, y \in s(a))(x \preceq_{s(a)} y \iff x \preceq y)$,
+we follow that for $x \in s(a)$
+$$H^*(x) = \set{H^*(y): y \prec_{s(a)} x} = \set{H^*(y): y \prec x} =
+\set{H(y): y \prec x} = H(x)$$
+thus we follow that $\eta = \ran(H^*) = \set{H^*(y): y \prec_{s(a)} x} = \set{H(y): y \prec x} =
+H(x)$.
+
+Suppose that $\eta = H(x)$. By pretty much the same definitions we can follow the desired
+result.
+
+\subsection*{8.1.12}
+
+\textit{Let $(A, \preceq)$ and $(C, \preceq^*)$ be well-ordered structures. Let $\alpha$
+  be the order type of $(A, \preceq)$ and let $\eta$ be the order type of $(C, \preceq^*)$.
+  Suppose that $\eta \in \alpha$. Prove that there exists an $a \in A$ such that
+  $(s(a), \preceq_{s(a)} \cong (C, \preceq^*)$, where $s(a) = \set{x \in A: x \prec a}$}
+
+Define function $H$ and $H^*$ as in theorem 8.1.4 (those things really need a name)
+for $(A, \preceq)$ and $(C, \preceq^*)$
+respectively. We follow that $H$ is an isomorphism between $(A, \preceq)$ and
+$(\alpha, \ineq)$. Since $H$ is an isomorphism, we follow that it is bijective,
+and thus for $\eta \in \alpha$, there exists $a \in A$ such that
+$H(a) = \eta$. Previous exercise implies that order of  $(s(a), \preceq_{s(a)})$ is
+$\eta$. Thus we follow that two structures $(s(a), \preceq_{s(a)})$ and
+$(C, \preceq^*)$ have the same order type and thus they are isomorphic by exercise 1.
+
+
+\subsection*{8.1.13}
+
+\textit{Let $\delta = \sup{C}$ where $C$ is a set of ordinals. }
+
+\textit{(a) Show that if $\alpha \in C$, then $\alpha \ineq \delta$}
+
+If $\alpha \in C$, then $\alpha \subseteq \bigcup{C}$, thus $\alpha \subseteq \sup{C}$
+and therefore $\alpha \subseteq \delta$, which implies that $\alpha \ineq \delta$.
+
+\textit{(b) Let $\gamma$ be an ordinal. Show that if $\alpha \ineq \gamma$ for
+  all $\alpha \in C$, then $\delta \ineq \gamma$.}
+
+Suppose that $x \in \delta$. Thus $x \in \bigcup{C}$, therefore
+there exists $c \in C$ such taht $x \in c$. Thus $x \in c \ineq \gamma$. Therefore
+$x \in \gamma$. Thus we follow that $\delta \subseteq \gamma$, which implies that
+$\delta \ineq \gamma$. Therefore $\delta$ is indeed a least upper bound for $C$
+(with respect to $\ineq$), as desired.
+
+\subsection*{8.1.14}
+
+\textit{Let $C$ be a nonempty set of ordinals and let $\gamma$ be the $\ineq$-least
+  element in $C$. Prove that $\gamma = \inf C$.}
+
+Suppose that $x \in \gamma$. Since $\gamma$ is the $\ineq$-least
+element in $C$, we follow that $(\forall c \in C)(\gamma \ineq c)$. Thus
+$(\forall c \in C)(x \in \gamma \ineq c)$ and thus $(\forall c \in C)(x \in c)$. Thus
+$x \in \inf(C)$.
+
+Suppose that $x \in \inf C = \bigcap{C}$. We follow that $(\forall c \in C)(x \in c)$
+Since $\gamma \in C$, we follow that $x \in \gamma$. Thus $\inf(C) \subseteq \gamma$.
+Therefore we follow that $\gamma = \inf(C)$ by double inclusion.
+
+\subsection*{8.1.15}
+
+\textit{Prove that there is no set that contains every successor ordinal.}
+
+Suppose that set $B$ contains every successor ordinal. Suppose that $\alpha$ is an
+arbitrary ordinal. Then we follow that $\alpha^+$ is a successor ordinal. Thus
+$\alpha^+ \in B$. Therefore $\alpha \in \bigcup{B}$. Therefore $\bigcup{B}$
+is a set that contains every ordinal, which is a contradiction.
 
 
 \end{document}
