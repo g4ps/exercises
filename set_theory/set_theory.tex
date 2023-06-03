@@ -22,6 +22,7 @@
 \DeclareMathOperator \false {false}
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
+\DeclareMathOperator \On {On}
 \DeclareMathOperator \ineq {\underline{\in}}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
@@ -49,6 +50,8 @@ which I don't remember seeing in the book, but it's pretty useful.
 Sometimes I use $\oplus$ to denote xor.
 
 I also denote $^BA$ as $A^B$, because it's more convinient.
+
+Sometimes I omit parantheses when it's clear what's going on.
 
 \chapter{Introduction}
 
@@ -4276,6 +4279,189 @@ Suppose that set $B$ contains every successor ordinal. Suppose that $\alpha$ is 
 arbitrary ordinal. Then we follow that $\alpha^+$ is a successor ordinal. Thus
 $\alpha^+ \in B$. Therefore $\alpha \in \bigcup{B}$. Therefore $\bigcup{B}$
 is a set that contains every ordinal, which is a contradiction.
+
+\section{Ordinal Recursion and Class Functions}
+
+\subsection*{8.2.1}
+
+\textit{Let $C$ be a set of ordinals with largest element $\gamma$. Show that $\sup{C} = \gamma$}
+
+Largest element in this case means that
+$$(\forall \beta \in C)(\beta \ineq \gamma)$$
+
+Suppose that $x \in \sup{C}$. We follow that $x \in \bigcup{C}$ and therefore
+$(\exists \delta \in C)(x \in \delta)$. Since $\delta \in C$, we follow that
+$\delta \ineq \gamma$. Thus $x \in \delta \ineq \gamma$, therefore
+$\sup{C} \subseteq \gamma$.
+
+Suppose that $x \in \gamma$. Since $\gamma \in C$, we follow that $\gamma \subseteq \bigcup{C}$.
+Thus $\gamma \ineq \bigcup{C}$, and therefore $x \in \gamma \ineq \bigcup{C}$. Thus
+$x \in \bigcup{C}$, therefore $x \in \sup{C}$, and thus $\gamma \subseteq \sup{C}$.
+Double inclusion gives us the desired equality.
+
+\subsection*{8.2.2}
+
+\textit{Let $F: \On \to \On$ be strictly increasing. Prove that $F$ is one-to-one.}
+
+Suppose that it isn't. We follow that there exist $\alpha, \beta$
+such that $\alpha \neq \beta$ and  $F(\alpha) = F(\beta)$. Since
+$\alpha, \beta \in \On$ and $\alpha \neq \beta$, we follow that $\alpha \in \beta$
+or $\beta \in \alpha$. Assume the former. Then we follow that $\alpha \in \beta$
+and $F(\alpha) = F(\beta)$, which contradicts our assumption that $F$ is strictly
+increasing. THus we conclude that $F$ is injective, as desired.
+
+\subsection*{8.2.3}
+
+\textit{Prove Lemma 8.2.12}
+
+8.2.12 states that
+\textit{Suppose that $C$ is a limit set. Then }
+
+\textit{(a) $\sup C$ is a limit ordinal.}
+
+\textit{(b) C is cofinal in $\sup C$}
+
+Now let us assume that $C$ is a limit set. Let $x \in \sup{C}$. We follow that
+$(\exists c \in C)(x \in c)$. Since $C$ is a limit set, we follow that there exists $\beta \in C$
+such that $c \in \beta$. Therefore we've got that $x \in c \in \beta$. Since $\beta \in C$,
+we follow that $\beta \subseteq \sup C$, and thus $\beta \ineq \sup C$. Therefore
+$x \in c \in \beta \ineq \sup C$, thus $x \in c \in \sup C$. Therefore we follow that
+$$(\forall x \in \sup C)(\exists c \in \sup C)(x \in c \in \sup C)$$
+exercise 10(a) in previous section implies that $\sup C$ is a limit ordinal.
+
+We've followed in previous section's exercises that for every ordinal we've got that
+$C \subseteq \sup{C}$. Suppose that $\alpha \in \sup{C}$.
+We follow that $(\exists \beta \in C)(\alpha \in \beta)$ by definition. Thus we follow
+that $C$ is a cofinal in $D$ by definition.
+
+\subsection*{8.2.4}
+
+\textit{Prove Lemma 8.2.13}
+
+Lemma 8.2.13 states that
+\textit{Let $F: \On \to \On$ be normal and let $D$ be a limit set. If $C$ is
+  cofinal in $D$, then $F[D]$ is a limit set and $F[C]$ is cofinal in $F[D]$.}
+
+Assume the premises of 8.2.13. Suppose that $C$ is cofinal in $D$.
+
+Suppose that $\alpha \in F[D]$. We follow that there exists $\eta \in D$ such that
+$F(\eta) = \alpha$. Because $D$ is a limit set, we follow that there exists $\mu \in D$
+such that $\eta \in \mu$. Because $F$ is normal we follow that it is strictly increasing,
+and thus $F(\eta) \in F(\mu)$. Since $\mu \in D$, we follow that there exists $\beta \in F[D]$
+such that $F(\mu) = \beta$. Therefore we follow that $F(\eta) \in F(\mu) \ra \alpha \in \beta$.
+Thus we follow that $F[D]$ is a limit set, as desired.
+
+Because $C \subseteq D$ we follow that $F[C] \subseteq F[D]$ (this is not only true
+for set functions, the proof is trivial). Suppose that $\alpha \in F[D]$.
+We follow that there exists $\gamma \in D$ such that $\alpha = F(\gamma)$. Since
+$C$ is cofinal in $D$, we follow that there exsits $\delta \in C$ such that
+$\gamma \in \delta$. This implies that $F(\gamma) \in F(\delta)$ by the fact that
+$F$ is strictly increasing. Let $\beta = F(\delta)$. Then we follow that
+for all $\alpha \in F[D]$, we've got $\beta \in F[C]$ such that $\alpha \in \beta$.
+Therefore we conlcude that $F[C]$ is cofinal in $F[D]$.
+
+For some reason we haven't used the continuity of $F$, which leads me to beleve that
+I've fudged somemthing up, although I don't see no problems with the proof.
+
+\subsection*{8.2.5}
+
+\textit{Prove Lemma 8.2.14}
+
+Lemma 8.2.14 states
+\textit{Let $D$ be a limit set. If $C$ is cofinal in $D$, then $\sup C = \sup D$.}
+
+Suppose that $x \in \sup{D}$. We follow that $(\exists d \in D)(x \in d)$.
+Since $C$ is cofinal in $D$, we follow that there exists $c \in C$ such that
+$d \in c$. Therefore $x \in d \in c$. Thus $x \in c$. Therefore
+$x \in \sup C$. Thus $\sup {D} \subseteq \sup{C}$. 
+
+Since $C \subseteq D$, we follow that $\bigcup{C} \subseteq \bigcup{D}$, and thus
+$\sup C \subseteq \sup D$. Thus by double inclusion we've got that $\sup C = \sup D$,
+as desired.
+
+\subsection*{8.2.6}
+
+\textit{Let $C$ be a limit set. Using Theorem 4.2.1, define a one-to-one function
+  $h: \omega \to C$. Conclude that $C$ is infinite.}
+
+Since $C$ is a limit set, we follow that there exists a $\ineq$-least element of $C$.
+Denote this element by $q$.
+
+Since $C$ is a limit set we follow that for every $c \in C$ there exists $d \in C$
+such that $c \in d$. Define $f: C \to C$ by
+$$f(c) = \ineq\text{-least element of } C \setminus s^{\ineq}(c)$$
+the fact that $C$ is a limit set tells us that $C \setminus s^{\ineq}(c)$ is
+nonempty for all $c \in C$.
+
+Thus, by theorem 4.2.1 we can follow that there exists a function $h: \omega \to C$
+which is defined by
+$$h(0) = q$$
+$$h(n^+) = f(h(n))$$
+
+Suppose that $c_1, c_2 \in C$ is such that $c_1 \in c_2$. Suppose that
+$f(c_1) = f(c_2)$. We follow that $c_2 \in C \setminus s^{\ineq}(c_1)$ and $c_2 \in f(c_2)$.
+and $f(c_1) \in c_2$. Thus we follow that $f(c_1) = f(c_2)$ presents a contradiction.
+Therefore we conclude that $f$ is injective and thus $h$ is injective as well, as desired.
+
+The fact that we've got injective $h: \omega \to C$ implies that $C$ is infinite.
+
+\subsection*{8.2.7}
+
+\textit{Let $F: \On \to On$ be normal and let $C$ be a limit set. Prove that $F[C]$
+  is also a limit set.}
+
+I think that this was proven in the proof of 8.2.13 in previous exercises.
+
+\subsection*{8.2.8}
+
+\textit{Using exericse 7, prove Corollary 8.2.16}
+
+8.2.15 implies that $\sup F[C] = F(\sup C)$. If $\gamma$ is a limit ordinal, then
+$\sup \gamma = \gamma$, and thus $\sup F[\gamma] = F(\gamma)$. Therefore
+we follow that $F(\gamma)$ is an ordinal. Exercise 7 implies that $F[\gamma]$ is
+a limit set. Lemma 8.2.12 implies that $\sup F[\gamma]$ is a limit ordinal, and thus
+$F(\gamma)$ is a limit ordinal, as desired.
+
+\subsection*{8.2.9}
+
+\textit{Suppose that $F: \On \to \On$ is strictly increasing. Prove that
+  $\alpha \ineq F(\alpha)$ for all ordinals $\alpha$.}
+
+We're going to employ the transfinite recursion on this one.
+Our IH is that
+$$(\forall \eta \in \beta)(\eta \ineq F(\eta))$$
+
+We follow that $\beta \in \On \ra \emptyset \ineq \beta$. Thus $\emptyset \ineq F(\emptyset)$.
+
+Assume that $\beta$ is a nonempty ordinal (we're going to do both limit and successor
+cases here). If $\alpha \in \beta$,
+then $\alpha \ineq F(\alpha)$. Since $\alpha \in \beta$, we follow that $F(\alpha) \in F(\beta)$,
+therefore $\alpha \in F(\beta)$. Thus $\beta \subseteq F(\beta)$, and therefore
+$\beta \ineq F(\beta)$. Thus we follow that if $\beta$ is an ordinal, then $\beta \in F(\beta)$,
+as desired.
+
+\subsection*{8.2.10}
+
+\textit{Suppose $F: \On \to \On$ and $G: \On \to On$ are normal.}
+
+\textit{(a) Prove that the composition $(F \circ G): \On \to \On$ is normal.}
+
+Suppose that $\alpha, \beta \in \On$ and $\alpha \in \beta$. Then we follow that
+$G(\alpha) \in G(\beta)$, and thus $F(G(\alpha)) \in F(G(\beta))$,
+therefore $F \circ G$ is strictly increasing.
+
+If $\beta \in \On$, then $G(\beta) = \sup\set{G(\eta): \eta \in \beta}$, and
+
+Suppose that $x \in F(G(\beta))$. We follow that $x \in \sup\set{F(\eta): \eta \in G(\beta)}$.
+Thus $x \in \bigcup\set{F(\eta): \eta \in G(\beta)}$
+
+$$x \in F(G(\beta)) \lra x \in \sup\set{F(\eta): \eta \in G(\beta)}
+\lra (\exists c \in \set{F(\eta): \eta \in G(\beta)})(x \in c) \lra$$
+$$ \lra
+(\exists \eta \in G(\beta))(c = F(\eta) \land x \in c) 
+$$
+
+TODO
 
 
 \end{document}
