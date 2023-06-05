@@ -4450,18 +4450,167 @@ Suppose that $\alpha, \beta \in \On$ and $\alpha \in \beta$. Then we follow that
 $G(\alpha) \in G(\beta)$, and thus $F(G(\alpha)) \in F(G(\beta))$,
 therefore $F \circ G$ is strictly increasing.
 
-If $\beta \in \On$, then $G(\beta) = \sup\set{G(\eta): \eta \in \beta}$, and
+Let $\beta$ be a limit ordinal. Then we follow that $\beta = \sup \beta$, and thus 
+$$F(G(\beta)) = F(G(\sup \beta)) = F(\sup\set{G(\gamma): \gamma \in \beta}) =
+\sup \set{F(\theta): \theta \in \set{G(\gamma): \gamma \in \beta}} =$$
+$$ =
+\sup \set{F(G(\gamma)): \gamma \in \beta} $$
+therefore concluding that $F \circ G$ is continous.
 
-Suppose that $x \in F(G(\beta))$. We follow that $x \in \sup\set{F(\eta): \eta \in G(\beta)}$.
-Thus $x \in \bigcup\set{F(\eta): \eta \in G(\beta)}$
+Thus we follow that $F \circ G: \On \to \On$ is a normal function, as desired.
 
-$$x \in F(G(\beta)) \lra x \in \sup\set{F(\eta): \eta \in G(\beta)}
-\lra (\exists c \in \set{F(\eta): \eta \in G(\beta)})(x \in c) \lra$$
-$$ \lra
-(\exists \eta \in G(\beta))(c = F(\eta) \land x \in c) 
-$$
+\textit{(b) Show that if $F(G(\alpha)) = \alpha$, then $G(\alpha) = \alpha$ and
+  $F(\alpha) = \alpha$.}
 
-TODO
+From exercise 9 we know that if $F$ is strictly increasing, then $\alpha \in F(\alpha)$.
+
+Assume that $G(\alpha) \neq \alpha$. Then we follow that $\alpha \in G(\alpha)$.
+From this we conclude that $G(\alpha) \ineq F(G(\alpha ))$, thus
+$\alpha \in F(G(\alpha))$, and thus $\alpha \neq F(G(\alpha))$. Simular thing holds for
+$F(\alpha) \neq \alpha$. Therefore we conclude that $F(\alpha) = G(\alpha) = \alpha$, as desired.
+
+\subsection*{8.2.11}
+
+\textit{Let $F, C$, and $h$ be as in proof of Theorem 8.2.19}
+
+\textit{(a) Prove that $h(n) \in h(n^+)$ for all $n \in \omega$. Conclude that $C$ is a
+  limit set.}
+
+We've got that $h(n): \omega \to \On$, and thus we've got that
+for a particular $n \in \omega$ there are three cases:  $h(n) \in h(n^+)$,
+$h(n) = h(n^+)$ and $h(n^+) \in h(n)$.
+Since $F$ is normal, we follow that it is strictly increasing, and thus we've got that
+$\alpha \ineq F(\alpha)$. Thus we follow that
+$$h(n) \ineq F(h(n)) \ra h(n)  \ineq h(n^+)$$
+therefore the last case is impossible.
+
+I think that at that point in the proof it is assumed that $F(\gamma) \neq \gamma$.
+Thus we follow that $h(0) \in F(h(0))$. By the fact that $F$ is strictly increasing
+we follow that $F(h(0)) \in F(F(h(0)))$, thus $h(0^+) \in h((0^+)^+)$. Thus we can
+draw up a pretty simple induction proof.
+
+Let
+$$I = \set{n \in \omega: h(n) \in h(n^+)}$$
+we follow that $0 \in I$ by the stuff that we've proven before. Assume that $n \in I$.
+Then $h(n) \in h(n^+)$, and therefore $F(h(n)) \in F(h(n^+))$, thus $h(n^+) \in h((n^+)^+)$,
+thus following that $n \in I \ra n^+ \in I$. Thus $I = \omega$, and therefore we've got our
+proof.
+
+$C$ is defined to be a range of $h$ (pretty sure that we can use set notation in this case
+since domain of $h$ is a set). Assume that $c \in C$. Then $c = h(n)$ for some $n \in \omega$.
+Thus there exists $h(n^+) \ in C$ such that $c = h(n) \in h(n^+)$, therefore proving that
+$C$ is a limit set, as desired.
+
+\textit{(b) Prove that $F[C]$ is cofinal in $C$.}
+
+Let $x \in F[C]$. Therefore there exsits $c \in C$ such that $x = F(c)$. Since
+$c \in C$, we follow that there exists $n \in \omega$ such that $c = h(n)$.
+Therefore $x = F(h(n))$. Thus $x = h(n^+)$. Therefore $x \in C$.
+Thus $F[C] \subseteq C$.
+
+Assume that $c \in C$. We follow that $c = h(n)$ for some $n \in \omega$. Therefore
+$F(c) \in F[C]$ as well. $F(c) = h(n^+)$ and also $c = h(n) \in h(n^+)$,
+thus we follow that for all $c \in C$ we've got $h(n^+) \in F[C]$ such that
+$c \in h(n^+)$. Therefore $F[C]$ is cofinal in $C$, as desired.
+
+\subsection*{8.2.12}
+
+\textit{Let $F: \On \to \On$ be normal. Suppose $F(\beta) = \beta$. Show that
+  for all $\alpha$, if $\alpha \in \beta$, then $F(\alpha) \in F(\beta)$}
+
+Since $F$ is normal and therefore strictly increasing, we follow
+that $\alpha \in \beta \ra F(\alpha) \in F(\beta)$. Since $F(\beta) = \beta$, we follow that
+$\alpha \in \beta \ra F(\alpha) \in \beta$, as desired.
+
+\subsection*{8.2.13}
+
+\textit{Let $F: \On \to \On$ be normal, and suppose that $C$ is a limit set such that the
+  set $D = \set{\alpha \in C: F(\alpha) = \alpha}$ is cofinal in $C$. Let $\gamma = \sup C$.
+  Prove that $F(\gamma) = \gamma$. }
+
+Since $D$ is cofinal in $C$, we follow that $\sup C = \sup D$ by 8.2.14. This implies that
+$\gamma = \sup C = \sup D$.
+
+$$F(\gamma) = F(\sup C) = F(\sup D) = \sup\set{F(\xi): \xi \in D}$$
+Since $D = \set{\alpha \in C: F(\alpha) = \alpha}$, we follow that $\xi \in D \ra F(\xi) = \xi$.
+Thus
+$$\sup\set{F(\xi): \xi \in D} = \sup\set{\xi: \xi \in D} = \sup D = \gamma$$
+as desired.
+
+\subsection*{8.2.14}
+
+\textit{Let $(A, \preceq)$ be a poset in which every chain $C \subseteq A$ has an upper
+  bound in $A$. Let $n_0 \notin A$. For each chain $C \subseteq A$, let $C_p$ be the set
+  of proper upper bounds for $C$. Let
+  $D  = \set{C_p: C_p \neq \emptyset \land C \subseteq A \text{ is a chain}}$. By AC,
+  there is a function $G$ such that $G(C_p) \in C_p$ for all $C_p \in D$.
+  Let $\phi(f, y)$ be a formula that asserts the following:
+  $$y =
+  \begin{cases}
+    G(f[\gamma]_p) \text { if } f: \gamma \to A \land \gamma \in \On \land f[\gamma] \subseteq A
+    \text{ is a chain } \land f[\gamma]_p \in D \\
+    n_0 \text{ otherwise}
+  \end{cases}
+  $$
+  Hence, for all $f$ there exists a unique $y$ such that $\phi(f, y)$. Theorem 8.2.4 implies that
+  there exists a class function $F: \On \to A \cup \set{n_0}$ such that
+  $\phi(F|\gamma, F(\gamma))$, for all $\gamma \in \On$. Hence, for each ordinal $\gamma$
+  $$F(\gamma) =
+  \begin{cases}
+    G(F([\gamma]_p) \text{ if } F[\gamma] \subseteq A \text{ is a chain }
+    \land F[\gamma]_p \in D \\
+    n_0 \text{ otherwise}
+  \end{cases}
+  $$
+}
+
+\textit{(a) Using Lemma 8.2.5, show that $F(\gamma) = n_0$ for some ordinal $\gamma$.}
+
+8.2.5 implies that since $F(\gamma)$ is a class function from a class of ordinals to
+a set we can follow that $F$ is not injective.
+
+Given that $F(\gamma)$ is not injective, we follow that there exists
+$\alpha, \beta \in \On$ such that $\alpha \neq \beta$ and $F(\alpha) = F(\beta)$.
+Suppose that $F(\alpha)  = F(\beta) \neq n_0$. 
+
+Since $\alpha, \beta \in \On$ are such that $\alpha \neq \beta$, we follow that
+$\alpha \in \beta$ or $\beta \in \alpha$. Assume the former.
+Then we follow that $\alpha \in \beta$. Thus $F(\alpha) \in F[\beta]$. Since $F(\beta) \neq n_0$
+we follow that 
+$$F(\beta) = G(F[\beta]_p) \in F[\beta]_p$$
+Thus $F(\alpha) \in F[\beta]$ and $F(\alpha) \in F[\beta]_p$. Since $F[\beta]$ and $F[\beta]_p$
+are disjoint (althought it wasn't proven directly, it follows easily from definition
+of a proper upper bound and common sense), we follow that we've got a contradiction.
+
+\textit{(b) Let $\alpha$ be the least ordinal such that $F(\alpha) = n_0$. Show that
+  $F[\alpha] \subseteq A$ is a chain with no proper upper bound.}
+
+Let $x, y \in F[\alpha]$. We follow that there exist $\mu, \nu \in \alpha$ such that
+$x = F(\mu) \land y = F(\nu)$. Since $\mu, \nu \in \alpha$ and $\alpha$
+is the lowest ordinal such that $F(\alpha) = n_0$, we follow that
+$F(\mu), F(\nu) \neq n_0$, and thus we follow that $F[\mu], F[\nu]$ are chains.
+
+If $\mu \in \nu$, then we follow that $F(\mu) \in F[\nu]$, and thus $F(\mu) \prec F(\nu)$
+by the fact that $F(\nu) \in F[\nu]_p$ which implies that $x \prec y$.
+Case when $\nu \in \mu$ follows the same logic.
+
+If $\mu = \nu$, then we follow that $F(\mu) = F(\nu) \ra x = y$
+by the fact that $F$ is a class function.
+Thus we conclude that $x, y \in F[\alpha] \ra x \preceq y \lor y \preceq x$ and thus $F[\alpha]$
+is a chain.
+
+Assume that $F[\alpha]$ has got a proper upper bound. Then we follow that
+$F[\alpha]_p \neq \emptyset$ and thus $F[\alpha]_p \in D$. Thus
+$F(\alpha) \in \ran(G) \subseteq A$, which contradicts our assumtion that $n_0 \notin A$.
+
+\textit{(c) By assumption, the chain $F[\alpha]$ has an upper bound m. Show that $m$
+  is a maximal element.}
+
+Assume that it's not a maximal element. This implies that there exists $b \in A$
+such that $m \prec b$. Since $m$ is an upper bound of $F[\alpha]$, we follow that
+$(\forall j \in F[\alpha])(j \prec b )$ by properties of strict partial order.
+Thus we follow that $b$ is a proper upper bound of $F[\alpha]$, which is a contradiction.
+
 
 
 \end{document}
