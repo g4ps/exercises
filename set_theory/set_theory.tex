@@ -4612,6 +4612,167 @@ $(\forall j \in F[\alpha])(j \prec b )$ by properties of strict partial order.
 Thus we follow that $b$ is a proper upper bound of $F[\alpha]$, which is a contradiction.
 
 
+\subsection*{8.2.15}
+
+\textit{Let $A$ be a noempty set and let $n_0 \notin A$. Let
+  $C = \pow(A) \setminus \set{\emptyset}$. Note that $\bigcup{C} = A$. By Theorem 3.3.24,
+  let $G: C \to A$ be a choice function for $C$. Let $\phi(f, y)$ be a formula that
+  asserts the following:
+  $$y =
+  \begin{cases}
+    G(A \setminus f[\gamma]) \text{ if } f: \gamma \to A, \gamma \in \On,
+    A \setminus f[\gamma] \neq \emptyset \\
+    n_0 \text{ otherwise}
+  \end{cases}
+  $$
+  So for all $f$, there exists a unique $y$ such that $\phi(f, y)$. Theorem 8.2.4
+  implies that there exists a class function $F: \On \to A \cup \set{n_0}$ such that
+  $\phi(F | \gamma, F(\gamma))$ for all $\gamma \in \On$. Thus
+  $$F(\gamma) =
+  \begin{cases}
+    G(A \setminus F[\gamma]) \text { if } F[\gamma \subseteq A \land A \setminus F[\gamma] \neq
+    \emptyset \\
+    n_0 \text{ otherwise}
+  \end{cases}
+  $$
+}
+
+\textit{(a) Using Lemma 8.2.5, show that $F(\gamma) = n_0$ for sime ordinal $\gamma$. }
+
+8.2.5 implies that $F$ is not injective.
+
+Assume that $\alpha, \beta \in \On$ are such that $\alpha \neq \beta$. Then we follow by
+trichotomy of ordinals that $\alpha \in \beta$ or $\beta \in \alpha$.
+Assume the former. Then we follow that $F(\alpha) \in F[\beta]$.
+Therefore we follow that $F(\alpha) \notin A \setminus F[\beta]$.
+
+If we assume that there is no $\gamma$ such that $F(\gamma) = n_0$, then we can follow that
+$\alpha \neq \beta \ra F(\beta) \neq F(\alpha)$, thus making $F$ injective, which is a
+contradiction. THerefore we conclude that there exists $\gamma \in \On$ such that
+$F(\gamma) = n_0$.
+
+\textit{(b) Let $\gamma$ be the least ordinal such that $F(\gamma) = n_0$. Show that the set
+function $(F|\gamma): \gamma \to A$ is a bijection.}
+
+We can follow that $\alpha \in \gamma \ra F(\alpha) \neq n_0$, therefore we follow that
+$(F|\gamma)$ is injective by the stuff that we've proven earlier.
+
+Let $a \in A$. Suppose that $a \notin \ran(F|\gamma)$. Then we follow that
+$A \setminus F[\gamma]$ is a nonempty set and also $F[\gamma] \subseteq A$ by the
+fact that $(F|\gamma): \gamma \to A$. Thus we follow that $F(\gamma) \neq n_0$,
+which is a contradiction. Thus we follow that
+$$(\forall a \in A)(\exists \alpha \in \gamma)(F(\alpha) = a)$$
+therefore $F|\gamma$ is surjective. 
+Taking into account previous paragraph we conclude that $F|\gamma$ a bijection, as desired.
+
+\textit{(c) Show that $A$ has a well-ordering}
+
+Define $\preceq \subseteq A \times A$  by
+$$(\forall a, b \in A)(a \preceq b \lra F\inv(a) \ineq F\inv(b))$$
+We follow that since $\ineq$ is a well-ordering on $\gamma$ that $\preceq$ is a well-ordering
+on $A$, as desired.
+
+\section{Ordinal Arithmetic}
+
+\subsection*{8.3.1}
+
+\textit{Let $\alpha$ be an ordinal and let $\phi(\alpha, f, y)$ be a formula that expresses
+  8.14. Let $A$ be an ordinal class function satisfying $\phi(\alpha, A|\beta, A(\beta))$
+  for all $\beta \in \On$. Prove, by transfinite induction that $A(\beta) \in \On$ for
+  all $\beta \in \On$.}
+
+Our transfinite IH is that
+$(\forall \gamma \in beta)(A(\gamma) \in \gamma)$
+
+If $\beta = \emptyset$, then we follow that $A(\emptyset) = \alpha \in \On$
+
+If $\beta$ is a limit ordinal, then we follow that $\beta = \gamma^+$ for some
+$\gamma \in \On$. Thus $A(\beta) = A(\gamma)^+$. Since $\gamma \in \beta$, we follow
+by IH that $A(\gamma) \in \On$, and thus $A(\beta) = A(\gamma)^+ \in \On$.
+
+If $\beta$ is a limit ordinal, then $A(\beta) = \sup A[\beta]$.  By IH we've
+got that $A[\beta]$ is a set of ordinals, thus $A(\beta)$ is a supremum of a set of
+ordinals, and thus itself is an ordinal.
+
+Thus by transfinite induction we follow that $A(\beta) \in \On$ for any $\beta \in \On$,
+as desired.
+
+\subsection*{8.3.2}
+
+\textit{Show that $\omega \in \omega + 1$ and $2 * \omega \neq \omega * 2$.}
+
+We follow that $\omega + 1 = (\omega + 0)^+ = \omega^+$, thus
+we follow that $\omega \in \omega + 1$ by definition of succcessor.
+
+We've proven somewhere already that $\omega$ is a limit ordinal. Thus
+$$ 2 * \omega = \sup\set{2 * n: n \in \omega}$$
+by basic arithmetic we follow that $n \ineq 2 * n$, thus
+$$(\forall m \in \omega)(\exists j \in \set{2 * n: n \in \omega})(m \in j)$$
+thus we follow that $\set{2 * n: n \in \omega}$ is cofinite in $\omega$, and thus
+we've got that
+$$2 * \omega = \sup\set{2 * n: n \in \omega} = \sup \omega = \omega$$
+since $\omega$ is a limit ordinal.
+
+We've got that
+$$\omega * 2 = (\omega * 1) + \omega = (\omega * 0) + \omega + \omega = \omega + \omega =
+\sup\set{\omega + n: n \in \omega}$$
+we've got that $\omega + 1 = \omega^+ \in \set{\omega + n: n \in \omega}$,
+and since $\omega \in \omega^+$, we follow that $\omega \in \sup\set{\omega + n: n \in \omega}$,
+therefore $\omega \neq \sup\set{\omega + n: n \in \omega}$ and
+thus $2 * \omega \neq \omega * 2$, as desired.
+
+\subsection*{8.3.3}
+
+\textit{Show that $(\omega + 1) * 2 \neq \omega * 2 + 1 * 2$. and
+  $(2 * 2)^\omega \neq 2^\omega * 2^\omega$}
+
+We follow that
+$$(\omega + 1) * 2 = \omega * 2$$
+and
+$$\omega * 2 + 1 * 2 = \omega * 2 + 2 = ((\omega * 2)^+)^+$$
+Since no ordinal is equal to its successor, we follow that
+$(\omega + 1) * 2 \neq \omega * 2 + 1 * 2$, as desired.
+
+We can follow that
+$$(2 * 2)^\omega = 4^\omega = \sup\set{4^n: n \in \omega}$$
+we can prove that $\set{4^n: n \in \omega}$ is cofinal in $\omega$, thus
+$(2 * 2)^\omega = \omega$.
+
+We can follow the same logic to show $n^\omega = \omega$ for all $n \in \omega$.
+Thus we follow that $2^\omega * 2^\omega = \omega * \omega \neq \omega$, as proven
+before.
+
+\subsection*{8.3.4}
+
+\textit{Show that $2 + \omega \notin 3 + \omega$, $2 * \omega \notin 3 * \omega$,
+  and $2^\omega \notin 3^\omega$. }
+
+Assume that $n \in \omega$ is such that $n \neq 0$. We follow that
+$$n + \omega = \sup\set{n + m: m \in \omega}$$
+$$n * \omega = \sup\set{n * m: m \in \omega}$$
+$$n^\omega = \sup\set{n^m: m \in \omega}$$
+we can follow easily that all of the sets under supremum are cofinal in $\omega$,
+and thus we follow that $n + \omega = n * \omega = n^\omega = \omega$ for all
+$n \in \omega \setminus \set{0}$. Since $\omega \notin \omega$, we follow the result
+in the text of the exercise.
+
+\subsection*{8.3.5}
+
+\textit{Show that $\omega^2 = \sup{\omega * n: n \in \omega}$}
+
+We follow that
+$$\omega^2 = (\omega^1) * \omega = \omega^0 * \omega * \omega = \omega * \omega =
+\sup\set{\omega * n: n \in \omega}$$
+where we follow everything above from respective definitions and the fact that
+$\omega$ is a limit supremum.
+
+\subsection*{8.3.6}
+
+\textit{Let $\alpha$ be an ordinal such that $1 + \alpha = \alpha$. }
+
+\textit{(a) Prove that $1 + \alpha * (1 + n) = \alpha * (1 + n)$ for all $n \in \omega$.}
+
+TODO
 
 \end{document}
 %%% Local Variables:
