@@ -4859,13 +4859,95 @@ $$\alpha + \beta = \sup\set{\alpha + \delta: \delta \in \beta} =
 \sup\set{\delta: \delta \in \beta} = \beta$$
 as desired.
 
-\subsection*{8.3.9}
+\subsection*{8.3.[9, 10, 11]}
 
-\textit{Prove Lemma 8.3.2}
+\textit{Prove Lemma 8.3.2, 8.3.4 and 8.3.9}
 
 Lemma 8.3.2 states that the class function $A_\alpha: \On \to \On$ is normal.
 
+Let $\beta$ be a limit ordinal. We follow that
+$$A_\alpha(\beta) = \sup A_\alpha[\beta]$$
+by definition, therefore it is continous.
 
+Let $\gamma \in \On$. We follow that $\gamma^+$ is a successor ordinal and thus
+$$A_\alpha(\gamma^+) = A_\alpha(\gamma)^+$$
+by definition of the function. Therefore we can follow that $\gamma \in \On \ra
+A_\alpha(\gamma) \in A_\alpha(\gamma^+)$, and therefore it is strictly increasing
+by one of the lemmas in the previous chapter. Therefore we conclude that
+$A_\alpha$ is continous and strictly increasing, and thus it is a normal function,
+as desired.
+
+Lemma 8.3.4 states that if $\alpha$ is a nonzero ordinal, then $M_\alpha$ is normal.
+
+Assume that $\alpha$ is a nonzero ordinal.
+
+If $\beta$ is a limit ordinal, then
+$$M_\alpha = \sup{M_\alpha[\beta]}$$
+by definition, therefore it is continous. Since $\alpha$ is nonzero, we follow that
+$\emptyset \in \alpha$, and thus we've got that for $\gamma \in \On$
+$$M_\alpha(\gamma^+) = M_\alpha(\gamma) + \alpha$$
+Since $A_\delta$ is a strictly increasing function for any $\delta \in \On$, we follow that
+$A_{M_\alpha(\gamma)}$ is also an increasing function, thus $\emptyset \in \alpha$
+implies that
+$$A_{M_\alpha(\gamma)}(\emptyset) \in A_{M_\alpha(\gamma)}(\alpha)$$
+thus
+$$M_\alpha(\gamma) = M_\alpha(\gamma) + \emptyset \in
+M_\alpha(\gamma) + \alpha = M_\alpha(\gamma^+)$$
+thus we follow that $\gamma \in \On \ra M_\alpha(\gamma) \in M_\alpha(\gamma^+)$, and
+thus $M_\alpha$ is a strictly increasing function for any $\alpha \neq \emptyset$.
+Thus we conclude that for $\alpha \neq \emptyset$  $M_\alpha$ is normal, as desired.
+
+Lemma 8.3.9 states that for $2 \ineq \alpha$ we've got that $E_\alpha$ is normal.
+
+We once again follow that if $\beta$ is a limit ordinal, then
+$E_\alpha(\beta) = \sup{E_\alpha[\beta]}$, therefore making it continous.
+
+If $2 \ineq \alpha$, then we follow that for $\gamma \in \On$ we've got that
+$$E_\alpha(\gamma^+) = E_\alpha(\gamma) * \alpha = M_{E_\alpha(\gamma)}(\alpha)$$
+We also have that 
+$$E_\alpha(\gamma) = M_{E_\alpha(\gamma)}(1)$$
+Since $2 \ineq \alpha$, we follow that $1 \in \alpha$, thus if $E_\alpha(\gamma) \neq \emptyset$,
+then we follow that $E_\alpha$ is strictly increasing by the fact that $M$ is strictly increasing.
+We can also follow that if $2 \ineq \alpha$, then $\emptyset \in E_\alpha(\gamma)$, which
+means that we're done.
+
+\subsection*{8.3.12}
+
+\textit{For every ordinal $\alpha$, prove that there exists an ordinal $\beta \neq 0$ such that
+  $\alpha + \beta = \beta$.}
+
+We've got two cases here: $\alpha \in \omega$ or $\omega \ineq \alpha$. If former is the
+case, then we can set $\beta = \omega$ and we'll get the desired result (easily follows
+from the fact that $1 + \omega = \omega$ and induction; that case was proven before
+by me earlier in this chapter's exercise, but scrapped afterwards for some reason).
+If $\omega \ineq \alpha$, then we follow that setting $\beta = \alpha^2$ will get us
+the desired result by exercise 8 in this chapter.
+
+\subsection*{8.3.13}
+
+\textit{Let $\alpha$ be a nonzero ordinal. Prove that $\beta + \alpha \neq \beta$ for
+  all ordinals $\beta$}
+
+The fact that $\alpha$ is nonzero implies that $\emptyset \in \alpha$.
+Lemma 8.3.2 implies that $A_\beta$ is strictly increasing, and thus 
+$$\beta = A_\beta(0) \in A_\beta(\alpha) = \beta + \alpha$$
+thus $\beta \in \beta + \alpha$ implies the desired result.
+
+\subsection*{8.3.14}
+
+\textit{Prove Lemma 8.3.5(b)}
+
+That lemma states that class function $G: \On \to \On$ defined by
+$G(\xi) = \alpha * \beta + \alpha * \xi$ is normal for any $\alpha, \beta \in \On$.
+There's also a typo in the text of the exercise, there should be an assumption that
+$\alpha \neq 0$.
+
+Assuming that we follow that we an follow that $G(\xi) = A_{\alpha * \beta}(M_\alpha(\xi))$,
+which is a composition of normal functions and therefore it is itself normal, as desired.
+
+\subsection*{8.3.[15, 16]}
+
+\textit{Prove Lemma 8.3.6}
 
 \end{document}
 %%% Local Variables:
