@@ -4949,6 +4949,126 @@ which is a composition of normal functions and therefore it is itself normal, as
 
 \textit{Prove Lemma 8.3.6}
 
+Firstly, let us prove that
+$\alpha + 0 = 0 + \alpha = \alpha$. 
+We've got that $\alpha + 0 = \alpha$ by definition.
+
+Let our transfinite IH be that
+$$(\forall \mu \in \alpha)(0 + \mu = \mu )$$
+we follow that $0 + 0 = 0$ by definition. If $\alpha = \gamma^+$, then
+$$0 + \alpha = 0 + \gamma^+ = (0 + \gamma)^+ = \gamma^+ = \alpha$$
+where we've got third equality from IH. If $\alpha$ is a limit ordinal, then
+$$0 + \alpha = \sup\set{0 + \beta: \beta \in \alpha} = \sup\set{\beta : \beta \in \alpha} =
+\sup \alpha = \alpha$$
+thus we follow that $\alpha \in \On \ra 0 + \alpha = \alpha$. Therefore
+we've got the desired result.
+
+Proof of the  statements
+$$\alpha * 1 = 1 * \alpha = 0$$
+and
+$$\alpha * 0 = 0 * \alpha = 0$$
+have the same logic as the previous one, so they are skipped.
+
+Thus let us do
+$$(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$$
+We're going to do this by transfinite induction.
+Our transfinite IH is that
+$$(\forall \xi \in \gamma)((\alpha + \beta) + \xi = \alpha + (\beta + \xi))$$
+It also can be expressed as
+$$(\forall \in \in \gamma)(A_{A_\alpha(\beta)} (\xi) = A_\alpha (A_\beta(\xi)))$$
+
+If $\gamma = 0$, then
+$$(\alpha + \beta) + \gamma = \alpha + \beta = \alpha + (\beta + \gamma)$$
+by definitions and later results.
+If $\gamma = \delta^+$ for some $\delta \in \On$, then
+$$(\alpha + \beta) + \gamma = (\alpha + \beta) + \delta^+ = 
+((\alpha + \beta) + \delta)^+ = (\alpha + (\beta + \delta))^+ = \alpha + (\beta + \delta)^+ =
+\alpha + (\beta + \gamma)$$
+where we follow everything from definitions and IH.
+
+
+We can follow that since $A_\alpha$ and $A_\beta$ are normal functions that
+their commposition is a normal function as well. Therefore we've got that
+$$\alpha + (\beta + \gamma) = A_\alpha(A_\beta( \gamma)) =
+A_\alpha(A_\beta( \sup \gamma)) = \sup  \set{A_\alpha(A_\beta(\xi)): \xi \in \gamma} =$$
+$$ = 
+\sup  \set{A_{A_\alpha(\beta)} (\xi): \xi \in \gamma} = A_{A_\alpha(\beta)} (\sup \gamma) =
+A_{A_\alpha(\beta)} (\gamma) = (\alpha + \beta) + \gamma$$
+therefore we've got that $(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$
+by transfinite induction.
+
+For 
+$$(\alpha * \beta) * \gamma = \alpha * (\beta * \gamma)$$
+we've got that if $\alpha = 0$ or $\beta = 0$, then
+$\alpha * (\beta * \gamma) = (\alpha * \beta) * \gamma = 0$
+by the 6th point of this theorem. Thus let us assume that $\alpha, \beta \neq \emptyset$.
+This point is needed because we need to assume that $M_\alpha$ and $M_\beta$ are normal.
+Then we can follow the same logic as in proof of associativity of addition in order to get
+the desired result.
+
+\subsection*{8.3.17}
+
+\textit{Prove theorem 8.3.7(1)}
+
+Theorem 8.3.7(1) states that for $\alpha, \beta, \gamma \in \On$
+$$\beta \in \gamma \lra \alpha + \beta \in \alpha + \gamma$$
+Forward direction is followes from the fact thta $A_\alpha$ is a strictly increasing function.
+
+Assume that $\gamma \ineq \beta$. Then we follow that
+$\alpha + \gamma \ineq \alpha + \beta$ by the facts that $A_\alpha$ is a function in case
+of equality, and by the fact that $A_\alpha$ is strictly increasing in case if $\gamma \in \beta$.
+Thus we follow that the desired result by contrapositive.
+
+\subsection*{8.3.18}
+
+\textit{Prove the following: }
+
+\textit{(a) Let $\alpha, \gamma \in \On$. If $\gamma \ineq \alpha \in \gamma + \omega$,
+ten $\alpha = \gamma + n$ for some $n \in \omega$. }
+
+If $\gamma = \alpha$, then we follow that $\alpha = \gamma + \emptyset$.
+
+If $\gamma \in \alpha$, then we follow that
+$$\alpha \in \gamma + \omega \lra \alpha \in \sup{\gamma + n: n \in \omega} \lra
+(\exists m \in \omega)(\alpha \in \gamma + m)$$
+Since $\gamma \neq \alpha$, we follow that
+$$(\exists m \in \omega \setminus \set{0})(\alpha \in \gamma + m)$$
+thus
+$$(\exists j^+ \in \omega )(\alpha \in \gamma + j^+)$$
+Let $k$ be the $\ineq$-lowest ordinal such that $\alpha \in \gamma + k^+$.
+Assume that $\alpha \neq \gamma + k$. Then we follow that $\alpha \in \gamma + k$
+or $\gamma + k \in \alpha$. Former implies that $k^+$ is not lowest number such that
+$\alpha \in \gamma + k^+$ and latter implies that $\gamma + k \in \gamma$,
+both of which are false. Therefore we follow that there exists $k^+ \in \omega$
+such that $\alpha = \gamma + k^+$.
+
+\textit{(b) For all $\zeta \in \On$ we've got that $\zeta + \omega$ is a limit
+  ordinal.}
+
+We know that $A_\zeta$ is a normal function for every $\zeta \in \On$, therefore
+$\zeta + \omega = A_\zeta(\omega)$ is a limit ordinal by corollary 8.2.16, as desired.
+
+\textit{(c) For all $\zeta \in \On$, if $\zeta \neq 0$, then $\omega * \zeta$ is a limit
+  ordinal.}
+
+Let our transfinite IH be
+$$(\forall \xi \in \zeta)(\xi \neq 0 \to \omega * \xi \text{ is a limit ordinal})$$
+
+For $\zeta = 0$ we follow that our case is vacuously true.
+
+If $\zeta = \delta^+$, then
+$$\omega * \zeta = \omega * \delta^+ = (\omega * \delta) + \omega = A_{(\omega * \delta)}(\omega)$$
+thus it is a limit ordinal by the fact that $A_\alpha$ is normal for $\alpha \in \On$.
+
+If $\zeta$ is a limit ordinal, then we follow that since $\omega \neq \emptyset$
+we've got that $M_\omega$ is normal, and thus $\omega * \zeta = M_\omega(\zeta)$ is a
+limit ordinal as well. Therefore we follow desired result by transfinite induction, as desired.
+
+\textit{(d) If $\alpha$ is a limit ordinal, then $\alpha = \omega * \zeta$ for
+  some nonzero ordinal $\zeta$.}
+
+
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
