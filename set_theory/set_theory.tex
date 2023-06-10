@@ -5067,6 +5067,181 @@ limit ordinal as well. Therefore we follow desired result by transfinite inducti
 \textit{(d) If $\alpha$ is a limit ordinal, then $\alpha = \omega * \zeta$ for
   some nonzero ordinal $\zeta$.}
 
+We follow that $\alpha \ineq \omega * \alpha$ by the fact that $\omega \neq \emptyset$,
+thus making $M_\omega$ normal and implications of exercise 8.2.9.
+
+Thus we follow that there exists a set
+$\set{\nu \in \On \land \alpha \ineq \omega * \nu: \nu \in (\omega * \alpha)^+}$.
+We follow that $\omega * \alpha$ is in this set, therefore
+making it nonempty.
+Since it's a set of
+ordinals, we follow that we've got the $\ineq$-lowest element $\nu$ in the bunch.
+We also follow that since $\omega * 0 = 0$ and $0 \in \alpha$ that $\nu \neq 0$.
+Now assume that $\alpha \neq \omega * \nu$ and thus $\alpha \in \omega * \nu$.
+
+If $\nu$ is a successor ordinal, then $\nu = \delta^+$ for some $\delta \in \On$.
+We follow that
+$$\omega * \nu = \omega * \delta^+ = \omega * \delta + \omega$$
+We follow that $\omega * \delta \ineq \alpha \in \omega * \delta + \omega$.
+Point (1) implies that $\alpha = \omega * \delta + n$ for some $n \in \omega$. Since
+$\omega * \delta \in \alpha$, we follow that $n \neq 0$, and thus $n = k^+$ for some
+$k \in \omega$. Therefore $\alpha = \omega * \delta + k^+ = (\omega * \delta + k)^+$,
+which means that $\alpha$ is a successor ordinal, which is a contradiction.
+
+If $\nu$ is a limit ordinal, then we follow that
+$$\omega * \nu = \sup\set{\omega * \mu: \mu \in \nu}$$.
+we follow that $(\forall \mu \in \nu)(\omega * \mu \in \alpha)$.
+If $\epsilon \in \sup\set{\omega * \mu: \mu \in \nu}$, we follow that there
+exists $\mu \in \nu$ such that $\epsilon \in \omega * \mu$. This implies that
+$\epsilon \in \alpha$. Thus we follow that $\sup\set{\omega * \mu: \mu \in \nu} \subseteq
+\alpha$ and thus $\sup\set{\omega * \mu: \mu \in \nu} \ineq \alpha$, which is a
+contradiction.
+
+Therefore we follow that our assumption that $\alpha \neq \omega * \nu$ was incorrect and
+thus $\alpha = \omega * \nu$, as desired.
+
+\textit{(d) If $\alpha$ is a successor ordinal, then $\alpha = \omega * \zeta + n$
+  for some $\zeta \in \On$ and $n \in \omega$.}
+
+We are once again justified to use set
+$\set{\nu \in \On \land \alpha \ineq \omega * \nu: \nu \in (\omega * \alpha)^+}$
+and take the $\ineq$-lowest element $\nu$ from it. Now we've got three cases:
+$\nu = 0$, $\nu$ is a successor ordinal and $\nu$ is a limit ordinal.
+
+If $\nu = 0$, then we follow that $\alpha \ineq \omega * 0 = 0$, thus making
+$\alpha = 0$. Therefore there exists $\zeta = 0, n = 0$ such that
+$\alpha = \omega * \zeta + n$.
+
+If $\nu$ is a successor ordinal, then we follow that $\nu = \delta^+$, thus
+$\omega * \delta \ineq \alpha \in \omega * \delta + \omega$. Thus we follow that
+$\alpha = \omega * \delta + n$ for some $n \in \omega$ by point (1), as desired.
+
+If $\nu$ is a limit ordinal, then we follow that $\omega * \nu \ineq \alpha$ by the
+in the previous point in this exrcise. Neither
+$\omega * \nu = \alpha$ nor $\omega * \nu \in \alpha$ are possible (former by the fact that
+$\omega * \nu$ is a limit ordinal and $\alpha$ isn't; latter by definition of $\nu$),
+thus we follow that this case is impossible.
+
+Therefore we conclude that if $\alpha$ is an ordinal, then there indeed exist $\zeta \in \On$
+and $n \in \omega$ such that $\alpha = \omega * \zeta + n$. Previous point also
+implies that this is the case for all $\alpha \in \On$ (just set $n = 0$.)
+
+\textit{(f) There exists an ordinal $\alpha$ such that $\alpha = \omega * \alpha$}
+
+Easy: $0 = \omega * 0$.
+
+There probably should be some sort of restriction added to the text of this exercise,
+so that we need to remember that Theorem  8.2.19 exists, that proves the result for
+a more general case.
+
+\subsection*{8.3.[19, 20]}
+
+\textit{Prove Theorem 8.3.10}
+
+8.3.10(1) states that for all $\alpha, \beta, \gamma$, if $2 \ineq \alpha$, then 
+$$\alpha^{\beta + \gamma} = \alpha^\beta * \alpha^\gamma$$
+in other words it can be expressed as
+$$E_\alpha(A_\beta(\gamma)) = M_{E_\alpha(\beta)}(E_\alpha(\gamma))$$
+
+Let our transfinite IH be that for all $\xi \in \gamma$
+$$E_\alpha(A_\beta(\xi)) = M_{E_\alpha(\beta)}(E_\alpha(\xi))$$
+
+If $\gamma = 0$, then we follow that
+$$\alpha^{\beta + \gamma} = \alpha^\beta = \alpha^\beta * 1 = \alpha^\beta * \alpha^\gamma\alpha$$
+
+If $\gamma$ is a successor ordinal, we follow that $\gamma = \delta^+$ for some $\delta \in \On$,
+and thus
+$$\alpha^{\beta + \gamma} = \alpha^{\beta + \delta^+} =
+\alpha^{(\beta + \delta)^+} = \alpha^{\beta + \delta} * \alpha =
+\alpha^\beta * \alpha * \delta * \alpha = $$
+$$ = \alpha^\beta * \alpha^{\delta^+} = \alpha^\beta * \alpha^\gamma$$
+where in order to get the desired  we've used nothing but definitions and rules of associativity
+of multiplication.
+
+If $\gamma$ is a supremum ordinal, then we follow that $E_\alpha(\beta) \neq 0$,
+and thus both $E_\alpha \circ A_\beta$ and $M_{E_\alpha(\beta)} \circ E_\alpha$ are normal
+functions. Therefore we follow that 
+$$E_\alpha(A_\beta(\gamma)) = E_\alpha(A_\beta(\sup \gamma)) = \sup E_\alpha \circ A_\beta [\gamma]
+\sup M_{E_\alpha(\beta)} \circ E_\alpha[\gamma]
+= M_{E_\alpha(\beta)}(E_\alpha(\sup \gamma)) = $$
+$$ = M_{E_\alpha(\beta)}(E_\alpha(\gamma))$$
+therefore we conclude that the desired result holds by transfinite induction.
+
+For point (2) we want to prove that
+$$(\alpha^\beta)^\gamma = \alpha^{\beta * \gamma}$$
+we're going to use transfinite induction here as well. We need to expand definitions here a bit
+in order to accomodate for $\alpha = 1$ and $\alpha = 0$, since if we set $\beta = 0$, then
+$$(\alpha^\beta)^\gamma = 1^\gamma$$
+which is undefined.
+I don't see the reason on why we
+can't state that $E_\alpha$ can be definned on $\alpha \in \set{0, 1}$, so let's do that.
+Definitions are preetty straghtforwad: $1^\alpha = 1$ for every $\alpha \in \On$ and
+we've got that $0^0 = 1$ and $0^\alpha = 0$ for all nonzero $\alpha \in \On$.
+
+Thus we follow that if $\gamma = 0$, then
+$$(\alpha^\beta)^\gamma = 1 = \alpha^0 = \alpha^{\beta * \gamma}$$
+If $\gamma = \delta^+$, then
+$$(\alpha^\beta)^\gamma = (\alpha^\beta)^{\delta^+} = (\alpha^\beta)^{\delta} \alpha^\beta =
+\alpha^{\beta * \delta} * \alpha^\beta = \alpha^{\beta * \delta + \beta} = \alpha^{\beta * \delta^+} =
+\alpha^{\beta * \gamma}$$
+
+And if $\gamma$ is a limit ordinal then we follow that we've got two cases: $\beta = 0$
+and $\beta \neq 0$. In the former case we've got that
+$$(\alpha^\beta)^\gamma = 1^\gamma = 1 = \alpha^0 = \alpha^{\beta * \gamma}$$
+and in the latter case we follow the desired result by the fact that both
+$E_\alpha \circ E_\beta$ and $E_\alpha \circ M_\beta$ are both normal.
+Thus we follow the desired result by transfinite induction.
+
+We can expand point (3) a bit to get
+$$\alpha^\beta = \alpha^\gamma \iff \beta = \gamma$$
+
+Assume that $\beta \neq \gamma$. Then we follow that $\beta \in \gamma$ or $\gamma  \in \beta$.
+Assume the former. Then we follow that $\alpha^\beta \in \alpha^\gamma$ by the fact that
+$E_\alpha$ is strictly increasing. Thus we follow that $\beta \neq \gamma \ra \alpha^\beta
+\neq \alpha^\gamma$, which is equivalent to forward direction. Reverse direction is
+followed by the fact that $E_\alpha$ is a class function.
+
+This case also encompasses the fouth point of this theorem.
+
+\subsection*{8.3.21}
+
+\textit{(AC) Let $\alpha$ be a countable ordinal. Prove that for all ordinals $\beta$,
+  if $\beta$ is a countable ordinal, then $\alpha + \beta$, $\alpha * \beta$
+  and $\alpha^\beta$ are countable.}
+
+If $\beta = 0$, then $\alpha * \beta = 0$, $\alpha + \beta = \alpha$ and $\alpha^\beta = 1$,
+thus we can follow that all of them are countable.
+
+If $\beta$ is a successor ordinal, then we follow that
+$$\alpha + \beta = \alpha + \delta^+ = (\alpha + \delta)^+$$.
+We follow that $\alpha + \delta$ is a countable ordinal by IH and we know that
+successors of countable ordinals are countable ordinals as well.
+
+We also follow that if $\beta$ is a successor ordinal, then
+$$\alpha + \beta = \sup\set{\alpha + \delta: \delta \in \beta} =
+\bigcup\set{\alpha + \delta: \delta \in \beta} $$
+we follow that this set is countable by the fact that $\alpha + \delta$ is countable
+by IH and Theorem 5.2.9. This logic also works for $E_\alpha$ and $M_\alpha$ as well.
+
+Thus we can conclude that if $\alpha, \beta \in \On$ are countable, then $\alpha + \beta$
+is also countable.
+
+We've skipped before cases of successor ordinals for $M_\alpha$ and $E_\alpha$,
+because case for $M_\alpha$ depends on $A_\alpha$, and $E_\alpha$ depends on $M_\alpha$.
+Thus let us proceed. 
+
+If $\beta$ is a successor ordinal, then we follow that $\beta = \delta^+$ for
+some $\delta \in \On$. Thus
+$$\alpha * \beta = \alpha * \delta^+ = \alpha * \delta + \alpha$$
+which is a sum of two countable cardinals and therefore it is countable as well.
+Thus we follow that $\alpha * \beta$ is countable.
+We also follow that
+$$\alpha ^\beta = \alpha^{\delta^+} = \alpha^\delta * \alpha$$
+thus we follow that it is a product of two countable ordinals, and therefore it is
+countable as well, as desired.
+
+\textit{Last two exercises and last section are skipped for time reasons. Maybe I will
+return to them at some other time.}
 
 
 \end{document}
@@ -5074,4 +5249,6 @@ limit ordinal as well. Therefore we follow desired result by transfinite inducti
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+
+
 
