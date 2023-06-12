@@ -1,25 +1,24 @@
 My solutions for exercises in math and computer science adjacent topics
 
-As of 28.04.23 (D/M/Y)
+As of 11.06.23 (D/M/Y)
 
    - Understanding Analysis (Stephen Abbott, 1st ed.) - finished
    - Linear Algebra Done Right (Sheldon Axler, 3rd ed.) - finished
+   - Set Theory, A First Course (Cunningham, 1st ed.) - 9th chapter
+   - Topology (James Munkres, 2nd ed.) - 2nd chapter
+   - Abstract Algebra An Introductory Course (Gregory T. Lee, assumed 1st ed.) - 3rd chapter
+   - Probability and Statistics (DeGroot and Schervish, 4th edition) - 2nd chapter
    - Indroduction to Algorithms (Cormen et. al, 4th ed) - 4th chapter
-   - Set Theory, A First Course (Cunningham, assumed 1st ed.) - 5th chapter
-   - Concrete Mathematics (Graham, Knuth, Patashnik, 2nd ed.) - started 1st chapter
-   - Advanced Calculus: A Geometric View (Callahan, 1st ed.) - 2nd chapter (probably will
-   drop this one)
+   - Concrete Mathematics (Graham, Knuth, Patashnik, 2nd ed.) - 2nd chapter
    - SICP (1st chapter)
-   - Probability and Statistics (DeGroot and Schervish, 4th edition) - 1st chapter
-   - Abstract Algebra (Dummit, Foote, 3rd edition) - 2nd chapter
    
 Planned books:
-   - Topology: probably Mukres' book
    - Pearson series in computer science (there are several books in this series, I'll probably
    start with the AIMA)
    - Something on complex analysis
    - Something on differential geometry
    - Something on ODE/PDE's
+   - Measure, Integration and Real Analysis by Sheldon Axler
 
 All of the solutions were written by me alone and none of them were checked by anyone with
 any resemblance of competence. 

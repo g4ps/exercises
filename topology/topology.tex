@@ -814,8 +814,473 @@ is strictly finer than the standard topology on $I \times I$.
 
 \section{Closed Sets and Limit Points}
 
+\subsection{}
+
+\textit{let $C$ be a collection of subsets of the set $X$. Suppose that $\emptyset$ and
+  $X$ are in $C$, and that finite unions and arbitrary intersections of elements of $C$
+  are in $C$. Show that ther collectionn
+  $$T = \set{X \setminus C: C \in C}$$
+  is a topology on $X$.}
+
+We're gonna use the definition of topology on this one. We follow that
+since $X$ and $\emptyset $ are in $C$ that
+$$X \setminus X = \emptyset \in T$$
+$$X \setminus \emptyset = X \in T$$
+
+Assume that $J$ is an arbitrary subset of $T$. We follow that
+for every $j \in J$ there exists a unique $k \in C$ such that $j = X \setminus k$. Thus we
+follow that there exists $C' \subseteq C$ such that 
+$$\set{j: j \in J} = \set{X \setminus k: k \in C'}$$
+thus
+$$\bigcup{J} = \bigcup{\set{j: j \in J}} = \bigcup{\set{X \setminus k: k \in C'}} =
+X \setminus \bigcap{\set{k: k \in C'}} = X \setminus \bigcap{C'}$$
+where we've used DML to justify one of the equations.
+Since $C'$ is an arbitrary subset of $C$ we follow that $\bigcap{C'} \in C$. Thus we follow that
+$X \setminus \bigcap C' \in T$. Thus we follow that
+$J \subseteq T \ra \bigcup{J} \in T$. Therefore we've got second property of topology.
+
+If $J$ is a finite subset of $T$, then we follow that
+we can define $C'$ by the same definition and that $C'$ is finite as well. Thus 
+$$\bigcap{J} = \bigcap{\set{j: j \in J}} = \bigcap{\set{X \setminus k: k \in C'}} =
+X \setminus \bigcup{\set{k: k \in C'}} = X \setminus \bigcup{C'}$$
+thus we follow that if $J$ is a finite subset of $T$ , then $\bigcap{J} \in T$, therefore
+we've got the third and final condition of topology. Thus we follow that $T$ is a
+topology,  as desired.
+
+
+\subsection{}
+
+\textit{Show that if $A$ is closed in $Y$ and $Y$ is closed in $X$, then $A$ is closed in $X$}
+
+Since $Y$ is closed in $X$  we follow that $Y \subseteq X$. Assuming that the
+topology on $Y$ is a subset topology, we follow that if $A$ is a closed set in $Y$,
+then there exists $A' \subseteq X$ such that $A'$ is closed and $A = A' \cap Y$.
+Since both $A'$ and $Y$ are closed in $X$ we follow that $A = A' \cap Y$ is closed in $X$
+as well by definition of topology, as desired.
+
+\subsection{}
+
+\textit{Show that if $A$ is closed in $X$ and $B$ is closed in $Y$, then $A \times B$
+  is closed in $X \times Y$.}
+
+If $A$ is closed in $X$, then we follow that there exists $A'$ such that
+$A = X \setminus A'$, where $A'$ is an open set in $X$. Same goes for $B = Y \setminus B'$.
+Thus we follow that $A' \times B'$ is an open set in $X \times Y$. 
+one of the exercises in chapter 1 gives us that
+$$(A \times B) = (X \setminus A') \times (Y \setminus B') =
+(X \times Y \setminus A' \times Y) \setminus X \times B'$$
+
+We follow that $A' \times Y$ is an open set, then $(X \times Y \setminus A' \times Y)$
+is a closed set. We follow also that $X \times B'$ is an open set,
+thus $X \times Y \setminus X \times B'$ is a closed set. Thus
+$$(X \times Y \setminus A' \times Y) \setminus X \times B' =
+(X \times Y \setminus A' \times Y) \cap (X \times Y \setminus  X \times B')$$
+is an intersection of closed sets and therefore is closed itself. Thus
+we conclude that $A \times B$ is a closed set, as desired. (we can also follow the same thing
+by the following exercise)
+
+\subsection{}
+
+\textit{Show that if $U$ is open in $X$ and $A$ is closed in $X$, then
+  $U \setminus A$ is open in $X$ and $A \setminus U$ is closed in $X$.}
+
+
+Firstly I want to prove that if $A, B \subseteq X$, then
+$$A \setminus B = A \cap (X \setminus B)$$
+We follow that by
+$$x \in A \setminus B \lra x \in A \land x \notin B \lra x \in A \land x \in X \land x \notin B
+\lra x \in A \land (x \in X \setminus B) \lra x \in A \cap (X \setminus B)$$
+
+We can follow by the fact that $U, A \subseteq X$ that 
+$$U \setminus A = U \cap (X \setminus A)$$
+and
+$$A \setminus U = A \cap (X \setminus U)$$
+In the former case we've got finite intersection of two open sets,
+and in the latter we've got finite intersection of two closed sets,
+thus proving that $U \setminus A$ is open and $A \setminus U$ is closed, as desired.
+
+\subsection{}
+
+\textit{Let $X$ be an ordered set in the order topology. Show that
+  $\overline{(a, b)} \subseteq [a, b]$. Under what conditions
+  does equality hold?}
+
+Let us firstly state that $a, b \in X$.
+We follow that $(a, b) \subseteq [a, b]$, thus $[a, b]$ is a closed set that contains
+$(a, b)$, therefore by definition of closure we follow that $\overline{(a, b)} \subseteq [a, b]$.
+
+We follow that $\overline{(a, b)} = [a, b]$ if and only if $a, b$ are limit points of
+$(a, b)$.
+
+\subsection{}
+
+\textit{Let $A, B$ and $A_\alpha$ denote subsets of a space $X$. Prove the following}
+
+\textit{(a) If $A \subset B$, then $\overline{A} \subseteq \overline{B}$}
+
+Assume that $A \subseteq B$. Let $x \in \overline{A}$. We follow that
+every neighborhood of $x$ intersects $A$. Thus every heighborhood of $x$ intersects $B$
+by the fact that $A \subseteq B$. 
+Therefore $x \in \overline{B}$. Therefore $\overline{A} \subseteq \overline{B}$.
+
+\textit{(b) $\overline{A \cup B} = \overline{A} \cup \overline{B}$}
+
+Let $x \in \overline{A \cup B}$. We follow that every heighborhood of $x$
+intersects $A \cup B$. Thus every neighborhood of $x$ intersects $A$ or $B$.
+Assume that $x \notin \overline{A}$ and $x \notin \overline{B}$. Then we follow that
+there exists a neighborhood $U$ of $x$ such that $U \cap A = \emptyset$.
+There also exists neighborhood $U'$ of $x$ such that $U' \cap B$.
+Thus we follow that $U \cap U'$ is a neighborhood of $x$ such that it does
+not intersect $A$ nor $B$. Thus $x \notin \overline{A \cup B}$, which is a contradiction.
+Thus we conclude that $x \in \overline{A \cup B} \ra x \in \overline{A} \cup \overline{B}$.
+
+If $x \in \overline{A} \cup \overline{B}$, then $x \in \overline{A}$ or $x \in \overline{B}$.
+Assume that the former is true. Then we follow that $x \in \overline{A}$.
+Thus we follow that every neighborhood of $x$ intersects $A$. Since $A \subseteq A \cup B$,
+we follow that every neighborhood of $x$ intersects $A \cup B$. Thus $x \in \overline{A \cup B}$,
+as desired.
+
+\textit{(c) $\overline{\bigcup A_\alpha} \supseteq \bigcup \overline{A_\alpha}$. }
+
+I think that we need to assume here that $A_\alpha \subseteq \pow(X)$
+and what we actually need to prove is that
+$$\overline{\bigcup A_\alpha} \supseteq \bigcup \set{\overline{a}: a \in A_\alpha}$$
+if that's the case, then we follow that if $x \in \bigcup \set{\overline{a}: a \in A_\alpha}$,
+then there exists $x \in a \in A_\alpha$ such that $x \in \overline{a}$.
+This means that every neighborhood of $x$ intersects $a$ at some point.
+Since $a \subseteq \bigcup A_\alpha$, we follow that every neighborhood of
+$x$ intersects $\bigcup A_\alpha$ at some point and thus
+$x \in \overline{\bigcup A_\alpha}$.
+
+We can follow that if $A_\alpha = \set{\set{1/n}: n \in Z_+}$ and we've got
+standard topology on reals, then $0 \in \overline{\bigcup{A_\alpha}}$,
+but $0 \notin \bigcup \set{\overline{a}: a \in A_\alpha}$, since there is
+no $a \in A_\alpha$ such that $0 \in \overline{a}$.
+
+\subsection{}
+
+\textit{Critsize the following "proof" that
+  $\overline{\bigcup A_\alpha} \subseteq \bigcup \overline{A_\alpha}$:
+  if $\set{A_\alpha}$ is a collection of sets in $X$ and if
+  $x \in \overline{\bigcup A_\alpha}$,
+  then every neighborhood of $U$ intersects $\bigcup \overline{A_\alpha}$.
+  Thus $U$ must intersets some $A_\alpha$, so that $x$ must belong to the
+  closure of some $A_\alpha$. Therefore $x \in \bigcup{\overline{A_\alpha}}$.}
+
+We don't have implication "Thus $U$ must intersects some $A_\alpha$, so that $x$ must belong to the
+closure of some $A_\alpha$", as it was just made up. Althought every neighborhood of $x$
+indeed intersects some $A_\alpha$, there's no implication that there exists $A_\alpha$
+such that every neighborhood of $x$ intersects $A_\alpha$.
+
+\subsection{}
+
+\textit{Let $A, B$ and $A_\alpha$ denote subsets of a space $X$. Determine whether the
+  following equations hold; if an equality fails, determine whether one of the
+  inclusions holds.}
+
+\textit{(a) $\overline{A \cap B} = \overline{A} \cap \overline{B}$.}
+
+If $x \in \overline{A \cap B}$, then we follow that every neighborhood of $x$
+intersects $A \cap B$ at some point. Thus every neighborhood of $x$ intersects
+$A$ and $B$. Thus $x \in \overline{A}$ and $x \in \overline{B}$. Thus we've got
+forward inclusion.
+
+If $x \in \overline{A} \cap \overline{B}$, then we follow that every neighborhood of $x$
+intersects $A$ and every neighborhood of $x$ intersects $B$. Thus every
+neighborhood of $x$ intersects both $A$ and $B$. This does not mean that
+every neighborhood of $x$ intersects $A \cup B$ since points of intersection can be different.
+We can come up with some counterexample for this claim:
+for example we can set $A = \set{1/2n: n \in Z_+}$ and
+$B = \set{1/(2n + 1): n \in Z_+}$. We follow that $A \cap B = \emptyset$ and thus
+$\overline{A \cap B} = \emptyset$, but $\overline{A} \cap \overline{B} = \set{0}$.
+
+Therefore we follow only the forward inclusion.
+
+\textit{(b) $\overline{\bigcap{A_\alpha}} = \bigcap{\overline{A_\alpha}}$}
+
+We're once again struck with this awful notation, so let's change that
+$$\overline{\bigcap{A_\alpha}} = \bigcap_{a \in A_\alpha}{\overline{a}}$$
+we follow that reverse inclusion is not true, since that would imply
+the correctness of counterexample in previous point.
+
+We follow the forward inclusion by pretty much the same logic as in previous one
+
+If $x \in \overline{\bigcap{A_\alpha}}$, then we follow that every neighborhood of $x$
+intersects $\bigcap{A_\alpha}$ at some point. Thus every neighborhood of $x$ intersects
+every $a \in A_\alpha$. Thus $(\forall a \in A_\alpha)(x \in \overline{a})$.
+Therefore we follow that $a \in \bigcap_{a \in A_\alpha}{\overline{a}}$.
+Thus we've got forward inclusion.
+
+\textit{(c) $\overline{A \setminus B} = \overline{A} \setminus \overline{B}$}
+
+We've got a case against
+$\overline{A \setminus B} \subseteq  \overline{A} \setminus \overline{B}$
+by setting once again $A = \set{1/2n: n \in Z_+}$, $B = \set{1/(2n + 1): n \in Z_+}$.
+We follow that $A \setminus B = A$ since they are disjoint. Therefore we follow that
+$0 \in \overline{A \setminus B}$ but $0 \notin \overline{A} \setminus \overline{B}$,
+since $0 \in \overline{B}$.
+
+If $x \in \overline{A} \setminus \overline{B}$, then we follow that
+every neighborhood of $x$ intersects $A$, but $x$ is not in $\overline{B}$.
+Assume that some neighborhood of $x$ intersects $A$ only at a points $A \cap B$.
+Then we follow that $x \in \overline{A \cap B}$ and thus $x \in \overline{A} \cap
+\overline{B}$. Therefore $x \in \overline{B}$, which is a contradiction.
+Therefore we follow that if $x \in \overline{A} \setminus \overline{B}$
+then every neighborhood of $x$ intersects $A \setminus B$. Therefore
+$x \in \overline{A \setminus B}$, which gives us reverse inclusion.
+
+\subsection{}
+
+\textit{Let $A \subseteq X$ and $B \subseteq Y$. Show that in the space $X \times Y$
+  $$\overline{A \times B} = \overline{A} \times \overline{B}$$.}
+
+Let $x \in X$ and $y \in Y$ be such that  $\eangle{x, y} \in \overline{A \times B}$.
+Let $U$ be an arbitrary neighborhood of $X$ and $V$ be an arbitrary neighborhood for $y$.
+We follow that $U \times V$ is an evement of basis of $X \times Y$ that contains
+$\eangle{x, y}$, and thus it intersects $A \times B$.
+Therefore there exists $\eangle{q, w} \in A \times B \cap U \times V$.
+Thus we follow that $\eangle{q, w} \in (A \cap U) \times (B \cap V)$.
+Therefore we follow that $U$ intersects $A$ and $V$ intersects $B$.
+Since $U$ and $V$ are arbitrary, we follow that every neighborhood of $x$ intersects
+$A$ and every neighborhood of $y$ intersects $B$. Thus $x \in \overline{A}$ and
+$y \in \overline{B}$ and thus $\eangle{x, y} \in \overline{A} \times \overline{B}$.
+
+Suppose that $x \in X, y \in Y$ are such that $\eangle{x, y} \in \overline{A} \times \overline{B}$.
+We follow that $x \in \overline{A}$ and $y \in \overline{B}$. Assume that $U \times V$ is a
+basis element of $X \times Y$ that contains $\eangle{x, y}$.
+We follow that $U$ intersects $A$ and $V$ intersects $B$. Thus there exist
+$u \in U \cap A$ and $v \in V \cap B$. Therefore $\eangle{u, v} \in A \times B \cap U \times V$.
+Therefore $U \times V$ intersects $A \times B$. Thus we follow that every
+basis element that contains $\eangle{x, y}$ intersects $A \times B$, and thus
+$\eangle{x, y} \in \overline{A \times B}$.
+
+Double inclusion produces the desired equality, as desired.
+
+\subsection{}
+
+\textit{Show that every order topology is Hausdorff.}
+
+Let $X$ be a toset, and let $\topol$ be respective order topology.
+I think that definition, that is presented in the book implies that if there is only one element
+in $X$, then the topology is vacuously Hausdorff (same goes for empty set).
+Thus assume that $X$ contains at least two elements, and let $x_1, x_2 \in X$ be such
+that $x_1 \neq x_2$. Since $x_1, x_2 \in X$ and $x_1 \neq x_2$, we follow
+that $x_1 \prec x_2$ or $x_2 \prec x_1$. Assume the former.
+
+Essentially we want to
+produce two open sets, that will prove that the space is Hausdorff, and
+those two sets will be just plain old intervals. But we've got two cases:
+there could exist $x_3$ such that $x_1 \prec x_3 \prec x_2$, or there might not.
+If such an element exists, then set $b_1 = a_2 = x_3$. If there is no such element, then
+set $b_1 = x_2$ and $a_2 = x_1$. 
+Let $a_1$ be either the lowest element of $X$ if such exists, or some element that
+is less than $x_1$ in case that it does not exist.
+Let $b_2$ be either the largest element of $X$ if such exists, or some element that
+is larger than $x_2$ in case that it does not exist.
+
+Then we can follow that $x_1 \in (a_1, b_1)$ and $x_2 \in (a_2, b_2)$ and
+$(a_1, b_1) \cap (a_2, b_2) = \emptyset$ by their respective definitions.
+Thus we follow that the space is Hausdorff, as desired.
+
+\subsection{}
+
+\textit{Show that the product of two Hausdorff spaces is Hausdorff.}
+
+Let $X$ be the first spacce and let $Y$ be the second.
+Let $\eangle{x_1, y_1}, \eangle{x_2, y_2} \in X \times Y$.
+We follow that $x_1 \neq x_2$ or $y_2 \neq y_2$. 
+If we've got $A_1, A_2 \subseteq X$ and $B_1, B_2 \subseteq Y$ such that
+$A_1 \cap A_2 = \emptyset$ or $B_1 \cap B_2 =  \emptyset$, then we follow that
+$$A_1 \times B_1 \cap A_2 \times B_2 = (A_1 \cap A_2) \times (B_1 \cap B_2) = \emptyset$$
+the desired result follows easily from that.
+
+\subsection{}
+
+\textit{Show that a subspace of a Hausdorff space is Hausdorff.}
+
+Assume that $X$ is a Hausdorff space and let $Y \subseteq X$. Let $y_1, y_2 \in Y$.
+We follow that there exist open sets $U, V \subseteq X$ such that
+$y_1 \in U, y_2 \in V, U \cap V = \emptyset$ by the fact that $X$ is Hausdorff.
+We follow that $U \cap Y$ and $V \cap Y$ are open sets in $Y$, and since
+$U \cap V = \emptyset$, we follow that $(U \cap Y) \cap (V \cap Y) = \emptyset$
+by commutatitvity and assocoativity of $\cap$. Therefore we conclude that
+supspace generated by $Y$ is a Hausdorff. Since $Y$ is arbitrary, we follow that
+any subspace of $X$ is Hausdorff, as desired.
+
+\subsection{}
+
+\textit{Show that $X$ is Hausdorff iff diagonal $\Delta = \set{x \times x: x \in X}$
+  is closed in $X \times X$.}
+
+Since $X$ is Hausdorff, we follow that for all $x \in X$ we've got that $\set{\eangle{x, x}}$
+is closed.
+
+Assume that $\Delta \neq \overline{\Delta}$ and thus there exists
+$\eangle{y_1, y_2} \in \overline{\Delta} \setminus \Delta$
+We follow that since $\eangle{y_1, y_2} \notin \Delta$ that $y_1 \neq y_2$. We also
+follow that $y_1, y_2 \in X$. Since $X$ is Hausdorff, we follow that
+$y_1, y_2 \in X$ implies that there exist neighborhoods $U, V \subseteq X$ of $y_1$
+and $y_2$ respestively, such taht $U \cap V = \emptyset$. Thus
+we follow that $U \times V$ is an open set in $X \times X$.
+Then we follow that since $\eangle{y_1, y_2} \in \overline{\Delta}$ that
+there exists $d \in \Delta$ such that $d \in U \cap V$. Thus we follow that
+there exists $d_1 \in X$ such that $\eangle{d_1, d_1} = d$. Therefore
+$\eangle{d_1, d_1} \in U \times V$ and therefore $d_1 \in U \land d_1 \in V$,
+which implies that $d_1 \in U \cap V$, which is a contradiction, since $U \cap V = \emptyset$
+by the fact that $X$ is Hausdorff, as desired.
+
+Therefore we conclude that $\overline \Delta \setminus \Delta = \emptyset$, therefore
+$\Delta = \overline{\Delta}$ and $\Delta$ is a closed set, thus giving us forward
+implication.
+
+Now assume that $\Delta$ is a closed set and $X$ is not Hausdorff. Since $X$
+is not Hausdorff, we follow taht there exists $x_1, x_2 \in X$ such that
+$x_1 \neq x_2$ and
+for all $U \in \topol$ we've got that $x_1 \in U \ra x_2 \in U$.
+
+Let $B$ be an arbitrary basis element that contains $\eangle{x_1, x_2}$. We follow that
+since it is a basis element, that $B = U \times V$, where $U, V$ are open subsets
+of $X$. We follow that $x_1 \in U$ and $x_2 \in V$, that implies that
+$x_1, x_2 \in U$ and $x_1, x_2 \in V$. Thus we follow that $\eangle{x_1, x_2} \in B$.
+Therefore we follow that if $B$ is a basis element, that contains $\eangle{x_1, x_2}$,
+then $B$ intersects $\Delta$ by the fact that $\eangle{x_1, x_1}$ and $\eangle{x_2, x_2}$
+are both in $B$. Thus we follow that $\eangle{x_1, x_2} \in \overline{\Delta}$.
+Since $x_1 \neq x_2$ we follwo that $\eangle{x_1, x_2} \notin \Delta$, which implies
+that $\Delta \neq \overline{\Delta}$, which implies that $\Delta$ is not closed,
+which is a contradiction. Thus we follow that if $\Delta$ is a closed set,
+then $X$ is Hausdorff, which gives us reverse implication, as desired.
+
+\subsection{}
+
+\textit{In the finite complement topology on $R$, to what point or points does
+  the sequence $x_n = 1/n$ converge?}
+
+We can follow pretty easily that finite topology  on $R$ is not Hausdorff
+by the fact that if $U, V$ are nonempty open sets in finite complement topology,
+then $U = R \setminus S_1$, $V = R \setminus S_1$ for some finite subsets $S_1, S_2$ of $R$.
+Thus we follow that $U \cap V = R \setminus S_1 \cap R \setminus S_2 =
+R \setminus (S_1 \cup S_2)$, where we follow that $S_1 \cup S_2$ is finite and therefore
+$R \setminus (S_1 \cup S_2)$ is infinite and therefore nonempty.
+
+Assume that $U$ is a neighborhood of $0$. We follow that
+$U = R \setminus S_1$ such that $0 \notin S_1$. and $S_1$ is finite.
+Since  $x_n$ is an infinite sequence, we follow that there must exist
+$n$ such that $n_0 > n \ra x_n \notin S_1 \ra x_n \in U$. Thus we conclude that $x_n$
+converges to $0$.
+
+By the same logic we follow that if $U$ is a neighborhood of any other number, then
+the same logic applies. Therefore we follow that $x_n$ converges to any number in finite
+complement topology.
+
+\subsection{}
+
+\textit{Show that $T_1$ axiom is equivalent to the condition that for each pair
+  of points of $X$, each has a neighborhood not containing the other.}
+
+Let $x_1, x_2 \in X$ are such that $x_1 \neq x_2$. $T_1$ axiom implies that
+$\set{x_1}$ and $\set{x_2}$ are closed and thus $X \setminus \set{x_1}$ and
+$X \setminus {x_2}$ are open. Since $x_1 \neq x_2$, we follow that
+$x_2 \in X \setminus \set{x_1}$ and $x_1 \in X \setminus \set{x_2}$,
+thus implying that each point has a neighborhood, that does not contain the other point.
+
+\subsection{}
+
+\textit{Consider the five topologies on $R$ given in Exercise 7 of paragraph 13.}
+
+\textit{(a) Determine the closure of the set $K = \set{1/n: n \in Z_+}$ under each of
+  these topologies.}
+
+Under standard topology we follow that $\overline{K} = K \cap \set{0}$ from real
+analysis course.
+
+Under $K$ topology we follow that $R$ is open by default, and thus $R \setminus K$ is
+a basis element, therefore it is open and thus $K = R \setminus (R \setminus K)$ is closed.
+
+Under finite complement topology we follow that all closed sets that are not $R$ are
+finite, and thus only $R$ contains $K$. Therefore $\overline{K} = R$. 
+
+Since the upper limit topology is finer than the $K$-topology, we follow that
+$R \setminus K$ is an open set in upper limit topology, and thus $\overline{K} = K$.
+
+For the topology that has sets $(-\infty, a)$ as a basis, we follow that
+closed sets there are either $R$ or $[a, \infty)$ for some $a \in R$, and thus
+$\overline{K} = [0, \infty)$.
+
+\textit{(b) Which of these topologies satisfy the Hausdorff axiom? The $T_1$ axiom?}
+
+We follow that standard topology satisfies the Hausdorff axiom, as proven in the
+chapter or in the real analysis course. Thus we follow that since standard topology
+is coarser than $K$-topology and upper limit topology, that both of them
+satisfy the axiom as well. In exercise 14 of this section we've shown that
+finite complement topology is definetly not Hausdorff, and for the last topology
+we follow that if $0 \in U$, then $-1 \in U$, therefore it is not Hausdorff as well.
+
+In the chapter we've discussed that $T_1$ axiom is weaker than Hausdorff, thus we follow that
+standard topology, $K$-topology and upper limit topology all satisfy the $T_1$ axiom.
+We can follow that finite complement topology satisfies $T_1$ by some trivial
+implications and the last topology is definetly does not satisfy $T_1$.
+
+\subsection{}
+
+\textit{Consider teh lower limit topology on $R$ and the topology given by the
+  basis $C$ of exercise 8 of paragraph 13. Determine the closures of the intervals
+  $A = (0, \sqrt{2})$ and $B = (\sqrt{2}, 3)$ in these two topologies.
+}
+
+Let's talk about lower limit topology first.
+
+Suppose that $0 \in [a, b)$. We follow that $a \leq 0 < b$, and by density of reals we follow that
+there exists $d \in R$ such that $0 < d < b$ and thus $d \in [a, b)$.
+Thus we follow that every basis element that contains $0$ also intersects $A$, and thus
+$0 \in \overline{A}$. We follow that $[\sqrt{2}, 2)$ is a neighborhood of $\sqrt{2}$ such that
+it does not intersect $A$ at any point. Thus we follow that $\sqrt{2} \notin \overline{A}$.
+There're plenty of methods to state that if $x < 0$ or $x > \sqrt{2}$, then it is not
+in closure of $A$, therefore we conclude that $[0, \sqrt{2})$ is clousre of $A$ under
+lower limit topology.
+
+For $B$ we follow that pretty much the same logic holds with respect to different numbers,
+and thus $\overline{B} = [\sqrt{2}, 3)$.
+
+Now let's talk about the weird topology.
+
+We can follow that pretty much the same argument holds for $0 \in \overline{A}$.
+Now assume that $a \leq \sqrt{2} < b$. We follow that since $a \notin I$, that
+$a \neq \sqrt{2}$, and thus we follow that $a < \sqrt{2} < b$. Thus 
+we follow that $\sqrt{2} \in \overline{A}$. If $\sqrt{2} < c$,
+then we follow that there exist rational $a, b$ such that $\sqrt{2} < a < c < b$,
+and thus $c \notin \overline{A}$. If $c < 0$, then we have pretty much the same result.
+Therefore we follow that $\overline{A} = [0, \sqrt{2}]$.
+
+For the case of $B = (\sqrt{2}, 3)$, we follow that $[3, 5) \cap B = 0$, thus we follow that
+$3 \notin \overline{B}$. We can easily follow that $\sqrt{2} \in \overline{B}$,
+and the rest is followed by pretty much the same logic as in the previous paragraph.
+Therefore we conclude that $\overline{B} = [\sqrt{2}, 3)$.
+
+\subsection{}
+
+\textit{Determine the closures of the following subsets of the ordered square:}
+
+We're talking about the lexicographical order on the set $I \times I$ for $I = [0, 1]$.
+We're also not gonna use the dumb notation.
+
+\textit{$A = \set{\eangle{1/n, 0}: n \in Z_+}$}
+
+Assume that there's an element of the basis that contains $\eangle{0, 0}$.
+We follow that since $\eangle{0, 0}$ is the lowest element in the space, that
+the only elements of basis that contain $\eangle{0, 0}$ are intervals in form
+$(\eangle{0, 0}, \eangle{x_1, x_2})$. We follow that if $x_1 \neq 0$, then $x_1 > 0$,
+and thus there exists 
+
+If we've got a point $\eangle{x_1, x_2}$, then we follow that if $x_2 \neq 0$, then
+there is a strand $(0, 1) \times \set{x_2}$ that does not intersect $A$, thus every point
+of closure is nonzero in the second slot. We also follow that if we've got $\eangle{x_1, 0}$
+where $x_1 \neq 0$ and $x_1 \notin A$, then there's also room for a basis element. therefore we
+follow that $\overline{A} = A \cup \set{\eangle{0, 0}}$.
+
+TODO
+
 \end{document}
 %%% Local Variables:
-%%% mode: latex
+%%% mode: latexp
 %%% TeX-master: t
 %%% End:
