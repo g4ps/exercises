@@ -75,6 +75,14 @@ $$
 \textit{Let $c \geq 0$ be a constant. Show that
   $\sum_{k = 1}^{n}{k^c} = \Theta(n^{c + 1})$}
 
+We can follow that $\sum_{k = 1}^{n}{k^c} \in O(n^{c + 1})$ by
+the fact that $(\forall k \leq n \in Z^+, c \in (0, \infty))(k \leq n^c)$
+and thus
+$$\sum_{k = 1}^{n}{k^c} \leq \sum_{k = 1}^{n}{n^c} = n * n^c = n^{c + 1}$$
+thus
+$$\sum_{k = 1}^{n}{k^c} \in O(n^{c + 1})$$
+
+
 $$
 \sum_{k = 1}^{n}{k^c} = \sum_{k = 1}^{n - 1}{k^c} + n^c =
 n^c\sum_{k = 1}^{n}{\frac{k^c}{n^c}} =
