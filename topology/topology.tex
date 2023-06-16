@@ -1527,8 +1527,27 @@ continous and thus $i$ is an homeomorphism.
   and $g: Y \to X \times Y$ defined by
   $$f(x) = x \times y_0$$
   $$g(x) = x_0 \times y $$
-  are imbeddings}
+  are imbeddings
+}
 
+
+We follow that $\ran(f) = X \times \set{y_0}$ and $\ran(g) = \set{x_0} \times Y$.
+Let $U_x \subseteq X$ and $U_y \subseteq Y$ be open sets.
+We follow that
+$$f[U_x] = U_x \times \set{y_0} = U_x \times Y \cap X \times \set{y_0} =
+U_x \times Y \cap \ran(f) = $$
+$$g[U_y] = \set{x_0} \times U_y = X \times U_y  \cap \set{x_0} \times Y =
+U_x \times Y \cap \ran(g)$$
+since $X \times U_y$ and $U_x \times Y$ are open sets in $X \times Y$ by the fact that
+$U_x$ and $U_y$ are open, we follow that $f[U_x]$ and $g[U_y]$ are open as well.
+
+Let $W \subseteq X \times Y \cap \ran(f)$ be an element of basis. We follow that
+$W = U \times V \cap \ran(f)$ for some $U, V$ - open sets in $X$ and $Y$ respectively.
+Since $\ran(f) = X \times \set{y_0}$, we follow that $W = U \times \set{y_0}$.
+We follow that $W = f[U]$. Since $U$ is an open set and taking into
+account previous paragraph, we conclude that $U$ is open if and only if $f[U]$ is
+open and thus $f$ is an embedding. Simular argument for reverse implication
+also holds for $g$, thus we follow that $g$ is an imbedding as well, as desired.
 
 \end{document}
 %%% Local Variables:
