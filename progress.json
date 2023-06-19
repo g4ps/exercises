@@ -1,5 +1,5 @@
 {
-    "last_update": "11.06.2023",
+    "last_update": "19.06.2023",
     "data":
     [
 	{
@@ -36,7 +36,7 @@
 	    "status": "in_progress",
 	    "progress": {
 		"total_chapters": 14,
-		"finished_chapters": 2
+		"finished_chapters": 3
 	    }
 	},
 	{
@@ -80,7 +80,7 @@
 	    "status": "in_progress",
 	    "progress": {
 		"total_chapters": 14,
-		"finished_chapters": 1.2
+		"finished_chapters": 1.75
 	    },
 	    "note": "First chapter practically doubles my set theory course without presenting precious rigor, therefore it is skipped"
 	}
