@@ -390,7 +390,170 @@ h =
 \end{pmatrix}
 $$
 which gives us that $a\inv h a$ is not in $H$ (details are ommited put can be supplimented
-easily if you feel that you don't have nothing to do). 
+easily if you feel that you don't have nothing to do).
+
+\subsection{}
+
+\textit{Find every normal subgroup of $S_3$.}
+
+We follow that $S_3$ is itself  a normal subgroup. Every sugroup of index 2 is normal,
+thus we follow that in this case that means that every subgroup of size 3 is normal.
+Every subgroup of length 1 must contain the identity, and thus we follow  that the
+only subgroup of size 1 is the one that contains identity. Therefore by
+Lagrange's theorem we follow that the only subgroups left are the ones that have size 2.
+Let $U$ be a subgroup of length 2. We follow that it must contain the identity,
+and thus they have the form
+$$U  = \set{e, s}$$
+where $s \in S_3 \setminus \set{e}$. There are 5 such elements, and thus we can check them
+by hand.
+
+Since $U$ has to be a subgroup, we follow that $s \in S_3$ must be such that
+$s = s \inv$. Thus our search is limited to cycles
+$$(2, 3), (1, 2), (1, 3)$$
+We follow that
+$$(1, 2)\inv \circ (2, 3) \circ (1, 2) = (1, 2) \circ (2, 3) \circ (1, 2) = (1, 3)$$
+$$(2, 3)\inv \circ (1, 2) \circ (2, 3) = (2, 3) \circ (1, 2) \circ (2, 3) = (1, 3)$$
+$$(2, 3)\inv \circ (1, 3) \circ (2, 3) = (2, 3) \circ (1, 3) \circ (2, 3) = (1, 2)$$
+thus we follow that none of those are normal. Therefore we conclude that the only normal
+subgroups of $S_3$ are the ones with size $6, 3$ and $1$.
+
+\subsection{}
+
+\textit{If $N$ is a normal subgroup of $G$, and $|N| = 2$, show that $N \leq Z(G)$}
+
+We follow that
+$$(\forall a \in G)(\forall h \in H)(a\inv h a \in H)$$
+since $|H| = 2$, we follow that $H = \set{e, b}$ for some $a \in G \setminus \set{e}$.
+Let $x \in H$.  If $x = e$, then we follow that $x \in Z(G)$. If $x = b$, then we follow that
+$$a\inv b a \in H \lra a\inv b a = e \lor a\inv b a = b \lra
+b a = a e \lor b a = a b$$
+Since $b \neq e$, we follow that $ba \neq a = ae$, thus we follow that for all $a \in G$
+we've got that $ba = ab$. Thus we follow that $x \in Z(G)$. Therefore we follow that
+$H \subseteq Z(G)$, and thus $H \leq Z(G)$, since the operation is the same, as desired.
+
+\subsection{}
+
+\textit{Let $N$ be a normal subgroup of $G$. Let $H$ be the set of all
+  elements $h$ of $G$ such that
+  $hn = nh$ for all $n \in N$. Show that $H$ is a normal subgroup of $G$.}
+
+Proof that $H$ is a subgroup is trivial and therefore ommited.
+
+Let $a \in G$. We follow that for all $n \in N$,  $a\inv n a \in N$.
+Since $N$ is normal in $G$, we follow that $N = a\inv N a$. Thus 
+for given $a \in G$ and  $n \in N$ there exists
+$n' \in N$ such that $n = a\inv n' a$. Thus $an = n'a$.
+
+We want to show that if $h \in H$, then $a \inv h a \in H$. We follow that
+$a \inv h a \in H$ if and only if for all $n \in N$ we've got that
+$$n (a \inv h a) = (a \inv h a) n$$
+$$(a \inv h a) = n\inv (a \inv h a) n$$
+$$(a \inv h a) = (an) \inv h (a n)$$
+$$(a \inv h a) = (n'a)\inv h (n'a)$$
+$$(a \inv h a) = a\inv n'\inv h n'a$$
+$$(a \inv h a) = a\inv n'\inv n' ha$$
+$$(a \inv h a) = a\inv e ha$$
+$$a \inv h a = a\inv  ha$$
+as desired.
+
+\subsection{}
+
+\textit{Show that the intersection of two normal subgroups of $G$ is also a normal
+  subgroup. Then extend this to show that if $N_i$ is a normal subgroup of $G$ for every $i$
+  in some set $T$, then $\bigcap_{i \in T}{N_i}$ is a normal subgroup of $G$.}
+
+I think that I've shown earlier (maybe in another document) that $\bigcap_{i \in T}{N_i}$
+is a subgroup. If not, then showing that is pretty trivial.
+
+We firsly state here explicitly that $T$ is nonempty, otherwise $\bigcap$ is not defined.
+Let $x \in \bigcap_{i \in T}{N_i}$. This means that
+$$(\forall i \in T)(x \in N_i)$$
+Since $N_i$ is normal for every $i \in T$, we follow that for all $a \in G$ we've got that
+$a\inv x a \in N_i$. Thus
+$$(\forall a \in G)(\forall i \in T)(a\inv x a \in N_i)$$
+which is equivalent to 
+$$(\forall a \in G)(a\inv x a \in \bigcap_{i \in T}{N_i})$$
+thus we conclude that if $x \in \bigcap_{i \in T}{N_i}$, then $a \inv x a \in \bigcap_{i \in T}{N_i}$.
+Therefore for all $x \in \bigcap_{i \in T}{N_i}$ and all $a \in G$ we've got that
+$a \inv x a \in \bigcap_{i \in T}{N_i}$. Therefore $\bigcap_{i \in T}{N_i}$ is normal.
+
+\subsection{}
+
+\textit{Let $N_1 \leq N_2 \leq N_3 \leq  ...$ be normal subgroups of $G$. Show that
+  $\bigcup_{i = 1}^\infty{N_i}$ is a normal subgroup of $G$.}
+
+This exexrcise is pretty much the same as the previous one, except that
+we might have to use a different quantifier.
+
+\subsection{}
+
+\textit{Let $G$ be a group having exactly one subgroup $H$ of order $n$. Show that $H$ is
+  normal in $G$.}
+
+Suppose that $H$ is not normal. Then we follow that $a\inv H a \neq H$.
+Since $a \inv H a$ is a subgorup with $|a \inv H a| = |H| = n$. Thus we follow that
+there are at least two disctinct groups of order $n$, which is a contradiction.
+
+\subsection{}
+
+\textit{Let $G = H \times K$. If $N$ and $L$ are normal subgroups of $H$ and $K$
+  respectively, show that $N \times L$ is a normal subgroup of $G$. Is every normal
+  subgroup of $G$ of this form?}
+
+Let $a \in G$ be arbitrary.  We follow that $a = \eangle{h', k'}$ for some $h' \in H, k' \in K$.
+We follow that $a \inv = \eangle{h'\inv, k'\inv}$. Let $\eangle{n, l} \in N \times L$
+be also arbitrary. 
+We follow that $h'\inv n h' \in N$ and $k'\inv l k' \in L$, and thus
+$\eangle{h'\inv n h', k'\inv l k'} \in N \times L$. Therefore we follow that $N \times L$
+is normal, as desired.
+
+Rule of the thumb is that if someone asks you an open question in a math book, then the
+answer is no, therefore we want to find a contradiction.
+Let $H = K = Z_2$. Let $U = \set{\eangle{1, 1}, \eangle{0, 0}}$. We folloow that since $|U| = 2$,
+index of $U$ is $2$, and thus it is normal.
+
+\subsection{}
+
+\textit{Suppose that $H$ is a subgroup of $G$ and $a\inv b\inv a b \in H$ for all $a, b \in G$.
+  Show that $H$ is normal.}
+
+Let $c \in G$ and $h \in H$ be arbitrary. We follow that $h, h\inv \in G$ by the
+fact that $H$ is a subgroup. Thus
+$$c\inv (h\inv) \inv c (h\inv) \in H$$
+by property of $H$. Thus
+$$c\inv h  c (h\inv) \in H$$
+Since $h \in H$, we follow that 
+$$c\inv h  c (h\inv) h \in H$$
+thus
+$$c\inv h  c \in H$$
+thus $H$ is normal, as desired.
+
+\subsection{}
+
+\textit{Let $H$ and $K$ be subgroups of $G$. Show that $HK$ is a subgroup if and only if
+  $HK = KH$.}
+
+Assume that $HK$ is a subgroup. We follow that since $e \in K$ that $he = h \in HK$ for all
+$h \in H$. Thus $H \leq HK$. We also follow by the same logic that $K \leq HK$.
+Let $j \in KH$. We follow that $j = k'h'$ for some $h' \in H$ and $k' \in K$. 
+Since $H \leq HK$ and $K \leq HK$, we follow that
+$k' \in HK$ and $h' \in HK$, thus $k'h' \in HK$. Thus $KH \subseteq HK$.
+
+Let $hk \in HK$. We follow that $(hk)\inv \in HK$. Thus there exist $h' \in H$
+and $k' \in K$ such that $h'k' = (hk)\inv$. Thus $hk = (h'k')\inv = k'\inv h'\inv$.
+Since $k' \in K$ and $h' \in H$, we follow that $k'\inv \in K$ and $h'\inv \in H$,
+and thus $k'\inv h'\inv \in KH$. Thus $hk = k'\inv h'\inv \in KH$. Therefore $HK \subseteq KH$,
+as desired.
+
+Suppose that $HK = KH$. Since $e \in H$ and $e \in K$ we follow that $e \in HK$.
+Let $hk \in HK$. We follow that
+$(hk)\inv = k\inv h\inv \in KH = HK$. Thus $(hk)\inv \in HK$.
+Let $a, b \in HK$. We follow that $a = hk$ and $b = h'k'$ for somce $h, h' \in H$
+and $k, k' \in K$. Thus
+$$ab = hkh'k' = h(kh')k'$$
+since $h \in HK$, $k \in HK$ and $kh' \in KH = HK$, we conclude that $ab \in HK$.
+Thus $HK$ is a subgroup.
+
 
 \end{document}
 
