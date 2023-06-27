@@ -24,6 +24,7 @@
 \DeclareMathOperator \card {card}
 \DeclareMathOperator \ran {ran}
 \DeclareMathOperator \On {On}
+\DeclareMathOperator \Crd {Crd}
 \DeclareMathOperator \ineq {\underline{\in}}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
@@ -60,7 +61,43 @@ I also denote $^BA$ as $A^B$, because it's more convinient.
 Sometimes I omit parantheses when it's clear what's going on.
 
 I firmly believe that using "injective" and "surjective" instead of "one-to-one" and
-"onto" makes much more sense, and thus I use it here.
+"onto" makes much more sense, and thus I use the former notation here.
+
+\chapter*{On Classes and Collections}
+
+None of the courses in set theory that I've seen so far have proper
+definitions of classes and collections, despite the fact that those words
+occur frequently within texts and definitions. This little fact of life
+generated a lot of confusion when I've first started the course. 
+After some time spent with this book
+I've came up with either a definition or just a useful mneumonic which allowes me
+to be a bit more rigorous. 
+When we say that $C$ is a class and $\alpha \in C$, what we mean is that $C$ is essentially
+just a formula, and $\alpha$ satisfies this formula. For example, when we define
+$\On$ as a class of ordinals, we mean that $\On$ is just a formula
+$$\On(x): x \text{ is transitive} \land x \text{ is well-ordered by } \ineq$$
+thus when we say that $\alpha \in \On$ we actually mean is that
+$$\alpha \text{ is transitive} \land \alpha \text{ is well-ordered by } \ineq$$
+In the language of programming languages, we essentially "overload" the operation $\in$
+to mean "is in the set" in case if we've got a set to the right of that symbol and
+"satisfies the formula" in case if we've got a class to the right of that symbol.
+
+With this definition of class we can define "collection" to be equivalent to a class.
+When we say that a class $C$ is a set, we mean that there exists a set $Q$ such that
+$$x \in Q \iff x \text{ satisfies C}$$
+good example of such a class is a class of natural numbers. In the book we've firstly defined
+them by a logical formula (i.e. a set is a natural number if and only if it is an element of
+every inductive set), and then proved that this class is a set. 
+Thus we can define a proper class to be a formula such that there is no set $Q$ for which
+$$x \in Q \iff x \text{ satisfies C}$$
+this definition gives us a (somewhat useless) equivalence that $C$ is
+a proper class if and only if for all sets $X$ there exists $\alpha \notin X$
+such that $C(\alpha)$.
+
+I'm pretty sure that there's a good reason for why we don't define classes and collections
+in courses of set theory. So far my approach haven't presented any problems during the course
+of this book, and I'm planning to continue to use this definition untill I'm proven wrong.
+
 
 \chapter{Introduction}
 
@@ -5254,6 +5291,8 @@ countable as well, as desired.
 
 \chapter{Cardinals}
 
+\section{Cardinal Numbers}
+
 \subsection*{Notes}
 
 Although it wasn't stated in the book explicitly, I want to add here that
@@ -5264,12 +5303,9 @@ I'm a big fan of functions, and therefore want to add some notation, that concer
 Let us state that 
 $$\card(A) = |A|$$
 where $\card$ is a class function from a class of sets to a class of cardinals.
-Hartogs' Theorem implies that for each set there is a cardinal $\kappa$ such that there
-is no injective $f: \kappa \to A$.
-Axiom of subset implies that $\set{\beta \in \kappa^+ \lra \beta \ineq \kappa:
-  \beta \text{ is a cardinal such there is no injective } f: \beta \to X}$ is a
-set; Hartogs' theorem implies that set is nonempty and well-ordering of ordinals implies that
-there is unique least element in this set. Thus we follow that $\card$ is indeed a class function.
+
+For some reason there is no shorthand for a class of cardinals. Thus I denote it as
+$\Crd$ untill I'm presented with a more widely-used notation.
 
 \subsection*{9.1.1}
 
@@ -5291,12 +5327,16 @@ and thus $|\alpha| \ineq \alpha$, as desired.
 \textit{Let $\kappa$ be a cardinal. Prove that $|\kappa| = \kappa$.}
 
 From previous exercise we know that $|\kappa| \ineq \kappa$. Thus it will suffice to show that
-$|\kappa| \in \kappa$ is implossible.
+$|\kappa| \in \kappa$ is impossible.
 
 Assume that $|\kappa| \in \kappa$. Let $\beta = |\kappa|$. Definition of cardinality
 implies that there exists an injective function $f: \kappa \to \beta$. Thus
 we've got $\beta \in \kappa$ and an injective function $f: \kappa \to \beta$,
 which contradicts the definition of a cardinal.
+
+We can also follow the converse (i.e. $|\kappa| = \kappa \ra \kappa \in Crd$)
+by the fact that codomain of cardinality class function
+if a class of cardinals.
 
 \subsection*{9.1.3}
 
@@ -5318,13 +5358,155 @@ $|\omega^+| = \omega$, as desired.
 
 \textit{Prove that the class $\set{k: k \text{ is a cardinal}}$ is not a set.}
 
-Let us denote the class $\set{k: k \text{ is a cardinal}}$ by $C$.
-Hartogs' Theorem implies that there exists an ordinal $\kappa$ such that there
-is no injection $g: \kappa \to C$. 
+Let  us denote $C = \set{k: k \text{ is a cardinal}}$. We want to show that this thing is a
+proper class.
 
-Assume that $C$ is a set. Then we follow that $C$ has cardinality. Let $\beta = |C|$.
-We follow that there is a bijection $f$ from $C$ to $\beta$.
-Since $f$ is a bijection, we follow that TODO
+We follow that if $C$ is a set, then it is a set of ordinals. Thus
+$\sup C$ is a supremum ordinal of $C$. Therefore by Hartogs' Theorem and the lemma
+that follows it, there exists
+a cardinal $\kappa$ that is greater than $\sup C$. Therefore for all $\alpha \in C$
+we've got that $\alpha \in \kappa$. Therefore
+$$(\forall \sigma \in C)(\kappa \neq \sigma)$$
+which gives us that $\kappa \notin C$, and therefore it is not a cardinal,
+which is a contradiction.
+
+\subsection*{9.1.5}
+
+\textit{Prove Theorem 9.1.10}
+
+Theorem 9.1.10 states that if $C$ is a  set of cardinals, then
+$\sup C$ is a cardinal and if $C$ is a limit set, then $\delta \in \sup C$ for all $\delta \in C$.
+
+Let $C$ be an arbitrary set of cardinals.
+
+We follow that if $C = \emptyset$, then
+$\sup C = \bigcup C = \emptyset = 0$, thus the former case holds. Latter case requires $C$ to
+be a limit set, and a limit set is nonempty by definition, thus that implication holds vacuously
+as well.
+
+Now assume that $C$ is nonempty. Let us denote $\sup C$ by $\kappa$. Assume that $\kappa$
+is not a cardinal and thus there is an injection $f$ from $\kappa$ to some $\beta \in \kappa$.
+Since $\beta \in \kappa$, we follow that $\beta \in \bigcup C$ and thus
+$$(\exists \sigma  \in C)(\beta \in \sigma)$$
+We follow that since $\sigma \in C$ that $\sigma \ineq \kappa$ by the fact that $\kappa$
+is a supremum of $C$. Since $\sigma \in C$ we follow that $\sigma$ is a cardinal,
+and thus there are no injections from $\sigma \to \beta$. But since $\sigma \in \kappa \ra
+\sigma \subseteq \kappa$ and there is an injection $f$  from $\kappa \to \beta$, we conclude that
+there is an injection $f|\sigma: \sigma \to \beta$, which is a contradiction. Thus we've got
+the first case.
+
+Now assume that $C$ is nonempty and a limit set. We follow that
+$\delta \in C \ra \delta \ineq \sup{C}$ by the properties of supremum. Thus we need
+to show that $\delta \neq \sup C$. Assume that $\delta = \sup C$. Since $C$ is a limit
+set, we follow that there exists $\gamma \in C$ such that $\delta \in \gamma$.
+Thus we follow that $\sup C \ineq \gamma$ and $\gamma \in C$, which contradicts the
+fact that $\sup C$ is an upper bound. Therefore we follow that our assumption that
+$\delta = \sup C$ was false, and thus we've got that $\delta \in C \ra \delta \in \sup{C}$,
+as desired. Don't want to spend my time further here, but maybe latter implication holds in
+general for sets of ordinals.
+
+\subsection*{9.1.6}
+
+\textit{let $A$ be a set and $\alpha$ be an ordinal. Suppose that $f: A \to \alpha$ is
+  injective. Define a relation $\preceq$ on $A$ by $x \preceq y$ if and only if $f(x) \ineq f(y)$
+  for all $x, y \in A$. Prove that $\preceq$ is a well-ordering on $A$. If $f: A \to \alpha$
+  is a bijection, then preove that $\alpha$ is the order type of $(A, \preceq)$.}
+
+We follow that $\ran(f) \subseteq \alpha$. Thus we follow that restricted $\preceq$ is a
+well-ordering on $\ran(f)$. We follow that if we restrict codomain of $f$ to
+get a bijection $f': A \to \ran(f)$, then we follow that $\preceq$ is
+indeed a well-ordering by some exercise/lemma that was proven a couple of chapters ago.
+
+If $f$ is bijective, then we follow that $(A, \preceq)$ and $(\alpha, \ineq)$ are isomorphic
+and therefore $\alpha$ is an order type of $A$ by one of the lemmas as well.\
+
+\subsection*{9.1.7}
+
+\textit{Let $\alpha$ be an ordinal. Suppose $g: \alpha \to X$ is a function.
+  Let $A \subseteq \alpha$. Prove that $g[A]$ has a well-ordering and that $|g[A]| \ineq |A|$. }
+
+Any set has a well-ordering if we assume AC, therefore I think that we need not to use
+it in this exercise.
+
+Let $x \in g[A]$. We follow that $g\inv[\set{x}] \subseteq \alpha$ and thus
+there is a unique $\ineq$-least element of $g\inv[\set{x}]$. Thus we can define a function from
+$f: g[A] \to \alpha$ by this construction.
+Since for all $x, y \in g[A]$ such that $x \neq y$ we follow that
+$g\inv[\set{x}] \cap  g\inv[\set{y}]$, we can follow that the function is injective. By previous
+exercise we conclude that there is a well-order $\preceq$ that can be defined on $g[A]$.
+
+We can note that $f$ can be thought as a funtion from $g[A]$ to $A$ instead of generic $\alpha$.
+Thus we follow that there is an injection from $g[A]$ to $A$ and thus $|g[A]| \leq_c |A|$.
+Exercise 11 and Lemma 9.1.7  do not depend on this exercise, thus I think that we're justified
+to use taht fact that $|g[A]| \leq_c |A| \iff |g[A]| \ineq |A|$.
+
+\subsection*{9.1.8}
+
+\textit{Assume that $A$ has a well-ordering and let $B \subseteq A$. Prove that $|B| \ineq |A|$
+  using Definition 9.1.5 }
+
+Let $\alpha = |A|$. We follow that there exists an injection $f: A \to \alpha$ and $\alpha$ is the
+least such ordinal. We follow that since $B \subseteq A$ that $f|B: B \to \alpha$
+is also an injection. Therefore we follow that if $|B| \neq \alpha$ that $|B| \in \alpha$.
+Thus we conclude that $|B| \ineq |A|$, as desired.
+
+\subsection*{9.1.9}
+
+\textit{Prove that if $A$ has a well-ordering and $\kappa = |A|$, then $\kappa$ is a
+  cardinal.}
+
+Assume that $\alpha = |A|$ is not a cardinal. By definition of cardinality we follow that
+there exists an injection $g: A \to \alpha$ and $\alpha$ is the lowest ordinal such that
+an injection exists. 
+Since $\alpha$ is not a cardinal, we follow that there exists $\beta \in \alpha$
+such that there is an injection $f: \alpha \to \beta$. Thus we follow that
+$f \circ g: A \to \beta$ is an injection. Therefore we conclude that $|A| \neq \alpha$,
+which is a contradiction.
+
+Just a quick point: solution of this exercise depends only on definitions, therefore
+our initial discussion about the class functions and whatnot is valid.
+Thus proof of Lemma 9.1.6 is dependent on the stuff in the previous chapter and definitions
+in this section.
+
+\subsection*{9.1.10}
+
+\textit{Let $\kappa$ be a cardinal. Prove that if $f: A \to \kappa$ is a bijection,
+  then $\kappa = |A|$.}
+
+Assume that $|A| \neq \kappa$. Since $f$ is a bijection and therefore
+injection, we follow that $|A| \in \kappa$. Thus we follow that there is an injection
+$g: A \to |A|$. Thus we follow that there is an injection $g \circ f\inv: \kappa \to |A|$.
+Since $|A| \in \kappa$, we conclude that $\kappa$ is not a cardinal, which is
+a contradiction.
+
+\subsection*{9.1.11}
+
+\textit{Prove Lemma 9.1.7}
+
+Lemma 9.1.7 states that
+$$|A| \leq_c |B| \lra |A| \ineq |B|$$
+$$|A| =_c |B| \lra |A| = |B|$$
+$$|A| <_c |B| \lra |A| \in |B|$$
+
+If $|A| \ineq |B|$, then we follow that there are bijections $f_1 : A \to |A|$, $f_2 B \to |B|$,
+and since $|A| \ineq |B|$, we follow that $|A| \subseteq |B|$, thus we follow that there is
+an injection $ f_2\inv \circ f_1$. Thus we follow that $|A| \leq_c |B|$. Reverse point and
+the rest is pretty trivial and depends exclusively on composition of functions and Lemma 9.1.6.
+
+\subsection*{9.1.12}
+
+\textit{Show that the collection $W$ in the proof of Hartogs' Theorem is a set.}
+
+We can follow that since $X$ is a set that $\pow(X)$ is a set. We also follow that $X \times X$
+is a set, thus $\pow(X \times X)$ is a set of all relations on $X$. Thus we follow that
+$\pow(X) \times \pow(X \times X)$ is the set of all pairs between all subsets of $X$ and
+all relations on $X$, and thus $W$ is a subset of this set.
+
+\subsection*{9.1.13}
+
+\textit{Prove Theorem 9.1.13}
+
+9.1.13 states that if $\gamma$ is a limit ordinal, then  $cf(\gamma)$ is a cardinal.
 
 \end{document}
 %%% Local Variables:
