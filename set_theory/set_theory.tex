@@ -5506,7 +5506,269 @@ all relations on $X$, and thus $W$ is a subset of this set.
 
 \textit{Prove Theorem 9.1.13}
 
-9.1.13 states that if $\gamma$ is a limit ordinal, then  $cf(\gamma)$ is a cardinal.
+9.1.13 states that if $\gamma$ is a limit ordinal, then $cf(\gamma)$ is a cardinal.
+Assume that $cf(\gamma)$ is not a cardinal. Let us denote $\kappa = cf(\gamma)$.
+Firstly let us state that $\kappa \neq 0$ by the fact that if it is, then $f: \kappa \to \gamma$
+is an empty function, thus $f[\kappa] = \emptyset$, and $\emptyset$ is not cofinal in any
+limit ordinal by definition of cofinality and common sense.
+Since $\kappa$ is not a cardinal, we follow that there is $\beta \in \kappa$
+and $f: \kappa \to \beta$ such that $f$ is injective. Since $f$ is injective, we follow that
+we can restrict its codomain to get the bijective function $f': \kappa \to \ran(f)$, where
+we note that $\ran(f) \subseteq \beta$. Since $f'$ is a bijection, we follow that
+$f'\inv: \ran(f) \to \kappa$ is also a bijection. Thus we can define a function
+$g: \beta \to \kappa$ by
+$$g(x) =
+\begin{cases}
+  x \in \ran(f) \to f'\inv(x) \\
+  x \notin \ran(f) \to \emptyset \\
+\end{cases}
+$$
+and since $f'\inv: \ran(f) \to  \kappa$ was a bijection, we follow that it was sujective,
+thus we follow that a function that is constructed by expanding domain of $f'\inv$
+is also surjective. 
+
+Since $\kappa = cf(\gamma)$, we follow that there is a function $h: \kappa \to \gamma$
+such that $h[\kappa]$ is cofinal in $\gamma$. We can follow that $h[\kappa] = (h \circ g)[\beta]$
+by the fact that $g$ is surjective, and thus we follow that there is an oridnal $\beta \in \kappa$
+for which there exists a function $(h \circ g)$ such that $(h \circ g)[\beta] = h[\kappa]$ is
+cofinal in $\gamma$. Therefore we conclude that $\kappa$ is not the lowest such ordinal,
+and thus $\kappa \neq cf(\gamma)$, which is a contradiction.
+
+We don't explicitly use here the fact that $\gamma$ is a limit cardinal, but we use it
+implicitly by the fact that $cf$ is defined only on limit ordinal. 
+
+\subsection*{9.1.14}
+
+\textit{Prove Theorem 9.1.15}
+
+9.1.15 states that if $\gamma$ is a limit ordinal, then $cf(\gamma)$ is a regular cardinal.
+Translating this lemma to a more functional language, we need to prove that $cf(cf(\gamma)) =
+cf(\gamma)$.
+
+Firstly we've got to state some heavily implied things in writing.
+Let $\kappa$ be an infinite cardinal. We follow that we
+can take an identity function, and since $\kappa$ is cofinal in $\kappa$ we follow that
+$cf(\kappa) \ineq \kappa$. Thus by trichotomy of $\ineq$ in ordinals we follow that any
+given infinite cardinal is either regular or singular (and not both).
+
+% Suppose that $cf(\gamma)$ is not regular. We follow that there is $\alpha \in cf(\gamma)$
+% and $f: \alpha \to cf(\gamma)$ such that there is no $\theta \in cf(\gamma)$ such that
+% $\ran(f) \subseteq \theta$. We follow that for  all $\mu \in cf(\gamma)$ there
+% exists $\beta \in \ran(f)$ and by extension $\nu \in \alpha$ such that $\beta = f(\nu)$
+% and $\mu \in f(\nu)$. This implies that $\ran(f) = f[\alpha]$ is cofinal in $\gamma$ and thus 
+
+Now let's get back to our proof. Let us denote $\beta = cf(\gamma)$.
+Assume that $\beta$ is not a regular cardinal. We follow that $\beta$ is singular and thus
+$cf(\beta) \in \beta$. Let $\kappa = cf(\beta)$. By definition of cofinality we follow that
+there is a function $f: \kappa \to \beta$ such that $f[\kappa] = \ran(f)$ is cofinal in $\beta$.
+Definition of $\beta$ implies that there is a function $g: \beta  \to \gamma$ such that
+$g[\beta]$ is cofinal in $\gamma$.
+
+Now we need to justify the fact that for well-ordered sets $A$ and $B$,
+if there is a function $f: A \to B$, then there is
+a function $g: A \to B$ such that $x \preceq y \lra g(x) \preceq g(y)$. This is a crude
+method, and there's probably a better proof of this lemma, but I can't seem to find one.
+
+We follow that  $g: \beta \to \gamma$ is a function such that $\ran(g)$ is cofinal in $\gamma$.
+We follow that there is a set $B \subseteq \beta$ such that 
+$$B = \set{\mu \in \beta: (\forall \delta \in \mu)( g(\mu) \neq g(\delta))}$$
+and by definition of it we follow that $g|B$ is injective and it has the same range as $g$.
+Thus we follow that we can define $g': B \to \ran(g) = g|B$, which will be bijective.
+
+Since $g'$ is bijective, we follow that $|B| = |\ran(g)|$. We also follow that
+$B$ and $\ran(g)$ both have well-ordering by $\ineq$, and they also have the same
+order type, which we're gonna name $\alpha$. Thus we follow that there is a bijection
+$l: B \to \ran(g)$ such that $x \in y \lra l(x) \in l(y)$.
+
+We follow that we can create a funtion $p: \beta \to \gamma$ by
+$$p(x) = l(\ineq-\text{least element of $B \setminus x$})$$
+Thus we follow that $\ran(p \circ f)$ is cofinite in $\gamma$, and thus we conclude that
+there is $\kappa \in \beta$ and a function $(p \circ f): \kappa \to \gamma$ such that
+$\ran(p \circ f)$ is cofinite in $\gamma$, which means that $\beta \neq cf(\gamma)$, which
+is a contradiction.
+
+\subsection*{9.1.15}
+
+\textit{Prove that $\aleph: \On \to \On$ is strictly increasing.}
+
+We follow that $\aleph$ is continous by definition. Thus we follow that we need
+to prove that $\aleph(\gamma) \in \aleph(\gamma^+)$, and my Theorem 8.2.9
+we'll get that the function is strictly increasing (and by extension normal).
+
+Let $\gamma \in \On$. We follow that $\aleph(\gamma^+) = S(\aleph(\gamma))$ by definition.
+Since $S$ is defined to be the least cardinal such that $\aleph(\gamma) \in S(\aleph(\gamma))$,
+we follow that $\aleph(\gamma) \in S(\aleph(\gamma)) \lra \aleph(\gamma) \in \aleph(\gamma^+)$.
+Thus we follow by theorem 8.2.9 that $\aleph$ is strictly increasing, as desired.
+
+\subsection*{9.1.16}
+
+\textit{Let $\alpha$ be a limit ordinal. Prove that $cf(\aleph_\alpha) = cf(\alpha)$}
+
+We follow that since $\alpha$ is a limit ordinal that
+$$\aleph_\alpha = \sup \aleph[\alpha]$$
+
+Let $\beta = cf(\alpha)$. We follow that there is a function $f: \beta \to \alpha$
+such that $f[\alpha]$ is cofinal by definition.
+
+Now define a function $g = \aleph \circ f: \beta \to \alpha$. 
+Suppose that $\gamma \in \aleph_\alpha$. We follow that $\gamma \in \sup \aleph[\alpha]$,
+and thus $\gamma \in \bigcup{ \aleph[\alpha]}$. Thus there is $\theta \in  \alpha$
+such that $\gamma \in \aleph(\theta) $. Thus we follow that there is an element $\mu \in \beta$
+such that $\theta \in f(\mu)$, and thus $\aleph(\theta) \in \aleph(f(\mu))$ by the
+fact that $\aleph$ is strictly increasing. Thus we follow that $g[\beta]$ is cofinal in
+$\aleph_\alpha$ and thus we follow that
+$cf(\aleph_\alpha) \ineq cf(\alpha)$.
+
+Now assume that $\nu = cf(\aleph_\alpha)$. We follow that there is a function
+$f: \nu \to \aleph_\alpha$ such that $f[\nu]$ is cofinal in $\aleph_\alpha$.
+Let $\beta \in \alpha$. We follow that there is unique $\aleph_\beta \in \aleph_\alpha$,
+and thus there is $\mu \in \nu$ such that $f(\mu) \in \aleph_\alpha$ such that
+$\aleph_\beta \in f(\mu)$. We follow that $S(f(\mu)) = \aleph_\theta$ for some $\theta \in \alpha$,
+and thus we can define a function $\aleph\inv \circ S \circ f: \nu \to \alpha$
+such that $(\aleph\inv \circ S \circ f)[\nu]$ is cofinal in $\alpha$. Thus
+$\nu = cf(\aleph_\alpha) \ineq cf(\alpha)$, and thus we conclude that
+$cf(\aleph_\alpha) = cf(\alpha)$, as desired.
+
+\subsection*{9.1.17}
+
+\textit{Prove that for all ordinals $\beta$ we have that $\beta \ineq \aleph_\beta$.}
+
+Since $\aleph$ is strictly increasing, we follow by exercise 8.2.9 that $\beta \in \aleph(\beta)$.
+
+\subsection*{9.1.18}
+
+\textit{Prove for every ordinal $\alpha$ there is an ordinal $\beta$ such that
+  $\alpha \ineq \beta$ and $\aleph_\beta = \beta$.}
+
+Follows from the fact that $\aleph$ is normal and theorem 8.2.19
+
+\subsection*{9.1.19}
+
+\textit{Prove there is an ordinal $\xi$ such that $cf(\xi) = \omega$ and $\aleph_\xi = \xi$}
+
+From the proof of 8.2.19 we follow that $cf(C) = cf(\sup C) = \omega$, and
+$aleph_{\sup C} = \sup C$.
+
+\subsection*{9.1.20}
+
+\textit{Let $\kappa$ be an infinite cardinal. Prove that $\aleph_\alpha = \kappa$
+  for some ordinal $\alpha$.}
+
+There is a least ordinal $\alpha$ such that $\kappa \ineq \aleph_\alpha$.
+
+If $\alpha = 0$, then we follow that $\kappa = \omega$, and we're done.
+If $\alpha$ is a successor ordinal, then we follow that $\alpha = \gamma^+$, and
+thus $\aleph(\alpha) = \aleph(\gamma^+) = S(\aleph(\gamma))$. Since $\alpha$ is the lowest
+ordinal such that $\kappa \ineq \aleph_\alpha$, we follow that $\aleph_\gamma \in \kappa$.
+By definition of $S$ and $\aleph_\alpha$ we  follow that both $\aleph_\alpha$ and $\kappa$
+are the lowest cardinals such that $\aleph_\alpha$ is in it. Thus we conclude that
+$\aleph_\alpha = \kappa$.
+
+If $\alpha$ is a limit ordinal, then we follow that
+$$\aleph_\alpha = \sup \aleph[\alpha] = \bigcup \aleph[\alpha]$$
+If $\kappa \in \aleph_\alpha$, we follow that there's $\beta \in \alpha$ is such that
+$\kappa \in \aleph_\beta$, which would contradict the fact that $\alpha$ is the least
+ordinal such that $\kappa \ineq \aleph_\alpha$. Thus we conclude that $\kappa = \aleph_\alpha$.
+
+Therefore we conclude that if $\kappa$ is an arbitrary infinite arcdinal, then there's
+an ordinal $\alpha$ such that $\kappa = \aleph_\alpha$.
+
+\subsection*{9.1.21}
+
+\textit{Let $\alpha$ be an ordinal so that $\aleph_0 \in \alpha \in \aleph_1$.
+  Prove that $\alpha$ is countable.}
+
+Firstly, we follow that $\alpha$ is not a cardinal by definition and following stuff of $\aleph$.
+
+Assume that $\alpha$ is not countable. Since $\alpha \in \aleph_1$, we follow that
+$\alpha \subseteq \aleph_1$, and thus there is an injection from $\alpha$ to $\aleph_1$.
+We follow that there's no injection from $\aleph_1$ to $\alpha$ by the fact that $\aleph_1$
+is a cardinal. Since $\alpha$ is a well-ordered set, we follow that it's got cardinality.
+Thus there's a bijection from $\alpha$ to some cardinal $\beta$. We follow that
+$\beta \notin \aleph_0$ by the fact that $\omega \subseteq \alpha$ and thus $\alpha$
+is infinite. Thus we follow that the only other choice is if $\alpha$ has a bijectiton
+with $\aleph_0$, and thus it is countable, as desired.
+
+\subsection*{9.1.22}
+
+\textit{Let $\alpha \ineq \gamma$ where $\alpha$ is an ordinal and $\gamma$ is a limit
+  ordinal. Let $f: \alpha \to \gamma$ be such that $f[\alpha]$ is cofinal in $\gamma$.
+  Prove that $\bigcup{\set{f(\xi): \xi \in \alpha}} = \gamma$.}
+
+We follow that $f[\alpha]$ is a cofinal set in $\gamma$, thus
+$$\gamma = \sup \gamma = \sup f[\alpha] = \sup \set{f(\xi): \xi \in \alpha} =
+\bigcup \set{f(\xi): \xi \in \alpha} $$
+by the properties of sets of ordinals  in the previos chapter.
+
+\subsection*{9.1.23}
+
+\textit{Assume that for any two sets $X$ and $Y$, either $|X| \leq_c |Y|$ or
+  $|Y| \leq_c |X|$. Now, using Theorem 9.1.8, prove that every set can be well-ordered.}
+
+Let $X$ be a set.  We follow that there is a cardinal $\kappa$ such that  there
+is no injection $f: \kappa \to X$. Thus we follow that $|X| \leq_c |\kappa|$,
+therefore there's an injection from $X$ to $\kappa$. Theorem 9.1.4 implies that
+$X$ has a well-ordering.\
+
+\subsection*{9.1.24}
+
+\textit{Let $\gamma$ be an ordinal. Show that $\preceq_\gamma$ is a total order on
+  $\gamma \times \gamma$}
+
+Let $\eangle{\alpha, \beta}, \eangle{\delta, \theta}, \eangle{\mu, \nu} \in \gamma \times \gamma$.
+We follow that
+$$\max(\eangle{\alpha, \beta}) = \max(\eangle{\alpha, \beta}) \land \alpha = \alpha
+\land \beta \ineq \beta$$
+thus we follow that $\preceq_\gamma$ has reflexivity.
+
+If
+$$\eangle{\alpha, \beta} \preceq_\gamma \eangle{\delta, \theta}
+\land
+\eangle{\delta, \theta} \preceq_\gamma \eangle{\mu, \nu}$$
+then we've got several cases.
+
+Assume that $\max(\alpha, \beta) \in \max(\delta, \theta)$.
+If $\max(\delta, \theta) \in \max(\mu, \nu)$, then $\max(\alpha, \beta) \in \max(\mu, \nu)$
+by well-ordering of $\ineq$ in ordinals.
+If $\max(\delta, \theta) = \max(\mu, \nu)$, then $\max(\alpha, \beta) \in \max(\mu, \nu)$
+
+Assume that $\max(\alpha, \beta) = \max(\delta, \theta)$ and $\alpha \in \delta$.
+If $\max(\delta, \theta) \in \max(\mu, \nu)$, then $\max(\alpha, \beta) \in \max(\mu, \nu)$.
+If $\max(\delta, \theta) = \max(\mu, \nu)$ and $\delta \in \mu$, then $\alpha \in \mu$.
+If $\max(\delta, \theta) = \max(\mu, \nu)$ and $\delta = \mu$, then $\alpha \in \mu$.
+
+Assume that $\max(\alpha, \beta) = \max(\delta, \theta)$, $\alpha = \delta$ and
+$\beta \ineq \theta$.
+If $\max(\delta, \theta) \in \max(\mu, \nu)$, then $\max(\alpha, \beta) \in \max(\mu, \nu)$.
+If $\max(\delta, \theta) = \max(\mu, \nu)$ and $\delta \in \mu$, then $\alpha \in \mu$.
+If $\max(\delta, \theta) = \max(\mu, \nu)$, $\delta = \mu$ and $\theta \ineq \nu$, then
+$\beta \ineq \nu$.
+Thus we conclude that $\preceq_\gamma$ is transitive (phew).
+
+Assume that $\eangle{\alpha, \beta} \preceq_\gamma \eangle{\delta, \theta}$ and
+$ \eangle{\delta, \theta} \preceq_\gamma \eangle{\alpha, \beta}$.
+We follow that if $max(\alpha, \beta) \in \max(\delta, \theta)$,
+then $ \max(\delta, \theta) \notin \max(\alpha, \beta)$ and 
+$ \max(\delta, \theta) \neq \max(\alpha, \beta)$, thus this case is impossible.
+Thus $\max(\alpha, \beta) = \max(\delta, \theta)$. Case with $\alpha \in \delta$ is
+also impossible for a simular reason. Thus we conclude that
+$\alpha = \delta$ and $\beta \ineq \theta$ and $\theta \ineq \beta$. Thus
+$\alpha = \delta \land \beta = \gamma$, thus $\eangle{\alpha, \beta} = \eangle{\delta, \theta}$.
+Therefore we conclude that $\preceq_\gamma$ has antisymmetry. Therefore $\preceq_\gamma$ is
+a preorder.
+
+If $\eangle{\alpha, \beta} =  \eangle{\delta, \theta}$, then
+$\eangle{\alpha, \beta} \preceq_\gamma \eangle{\delta, \theta}$ by reflexivity.
+If $\eangle{\alpha, \beta} \neq \eangle{\delta, \theta}$, then we follow that
+$\alpha \neq \delta \lor \theta \neq \beta$.
+If $\alpha \neq \delta$, then $\alpha \in \delta$ or $\delta \in \alpha$.
+If $\alpha \in \delta$, then we can follow that $\beta \in \theta$, $\theta \in \beta$
+or $\beta = \theta$.
+
+\textit{Rest of this exercise and the next exercise are skipped. Not sure if I'll ever come
+  back to them}
+
+\section{Cardinal Arithmetic}
 
 \end{document}
 %%% Local Variables:
