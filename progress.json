@@ -1,5 +1,5 @@
 {
-    "last_update": "19.06.2023",
+    "last_update": "30.06.2023",
     "data":
     [
 	{
@@ -22,10 +22,10 @@
 	    "author": "Daniel W. Cunnigham",
 	    "edition": "1st",
 	    "link": "https://github.com/g4ps/exercises/raw/master/set_theory/set_theory.pdf",
-	    "status": "in_progress",
+	    "status": "finished",
 	    "progress": {
 		"total_chapters": 9,
-		"finished_chapters": 8
+		"finished_chapters": 9
 	    }
 	},
 	{

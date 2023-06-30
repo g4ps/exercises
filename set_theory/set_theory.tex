@@ -5770,11 +5770,289 @@ or $\beta = \theta$.
 
 \section{Cardinal Arithmetic}
 
+\subsection*{Notes}
+
+$$|R| = |\pow(\omega)| = 2^\omega = 2^{\aleph_0}$$
+so now we follow that CH is essentially a question of whether $|R|  = \aleph_1$.
+Since $|R|$ is a cardinal, we follow that there ought to exist some other.
+
+\subsection*{9.2.1}
+
+\textit{Let $\delta, \theta, \lambda, \kappa$ be infinite cardinals so that
+  $\delta \in \theta \in \lambda \in \kappa$. Simplify the cardinals
+  $(\kappa^{\delta + \theta})^\kappa$ and $\kappa^{\aleph_1 * \aleph_2 + \aleph_1 * \kappa}$}
+
+$$(\kappa^{\delta + \theta})^\kappa = (\kappa^\delta * \kappa^\theta)^\kappa$$
+by one of the properties of exponentiation. $\kappa$ is an infinite cardinal, and thus
+$2\ineq \kappa$, which implies that since $\delta \in \theta$, that
+$\kappa^\delta \ineq \kappa^\theta$. Since $\kappa, \theta$ are infinite, we follow $\theta$
+is nonzero and thus $\kappa^\theta$ is infinite. This implies that
+$$\kappa^\delta * \kappa^\theta = \max(\kappa^\delta, \kappa^\theta) = \kappa^\theta$$
+thus
+$$(\kappa^{\delta + \theta})^\kappa = (\kappa^\theta)^\kappa = \kappa^{\theta * \kappa}$$
+Since $\theta \in \kappa$ and $\kappa$ is infinite, we follow that $\theta * \kappa = \kappa$,
+and thus
+$$(\kappa^{\delta + \theta})^\kappa  = \kappa^{\theta * \kappa} = \kappa^\kappa = 2^\kappa$$.
+where we use identity $\kappa^\kappa= 2^\kappa$ since $\kappa$ is an infintie cardinal.
+I don't know if that counts as a simplification, but I'll state it here anyways.
+
+Since $\delta \in \theta \in \lambda \in \kappa$, and all of them are infinite
+cardinals, we can conclude that $\aleph_3 \ineq \kappa$. We follow this by the fact that
+$\delta$ is an infinite cardinal, and thus $\aleph_0 \ineq \delta$, then follow that
+since $\theta$ is an infinite cardinal and $\delta \in \theta$ that $\aleph_0 \in \theta$
+and thus $\aleph_1 \ineq \theta$ and so on.
+Thus we follow that
+$$\kappa^{\aleph_1 * \aleph_2 + \aleph_1 * \kappa} =
+\kappa^{\max(\aleph_1, \aleph_2) + \max(\aleph_1, \kappa)} = \kappa^{\aleph_2 + \kappa} =
+\kappa^{\max(\aleph_2, \kappa)} = \kappa^{\kappa} = 2^\kappa$$
+
+\subsection*{9.2.[2, 3, 4]}
+
+\textit{Prove the rest of Lemma 9.2.2}
+
+Let $\beta, \theta, \kappa$ be ordinals. We follow that
+$$\theta * (\delta + \kappa) = |\theta \times (\delta  + \kappa)| =
+|\theta \times (\set{0} \times \delta \cup \set{1} \times \kappa )| =
+|(\theta \times (\set{0} \times \delta)) \cup \theta \times (\set{1} \times \kappa) )|$$
+by definitions and some trivial properties of algebra of sets, that involve $\times$
+(not sure that we've proven precise deriviation in this book, but if not, then they
+are probably in topology course; if not, then they are easily derived)
+and we follow that
+$$\theta * \delta + \theta * \kappa = |\set{0} \times (\theta \times \delta) \cup \set{1} \times
+(\theta \times \kappa)|$$
+one can define a bijection between $\set{0} \times (\theta \times \delta) \cup \set{1} \times
+(\theta \times \kappa)$ and
+$(\theta \times (\set{0} \times \delta)) \cup \theta \times (\set{1} \times \kappa) )$
+pretty easily, since they involve rearranging of parameters. Thus we conclude that
+those two sets are equal.
+
+By applying definitions we can follow that items (4) and (5) have bijections as well.
+
+\subsection*{9.2.[5, 6]}
+
+\textit{Prove the rest of Lemma 9.2.9}
+
+LEt $\kappa, \delta, \theta$ be cardinals. Then we follwo that
+$$(\kappa * \delta)^\theta = |(\kappa \times \delta)^\theta|$$
+theorem 5.4.7(2) implies that
+$$|(\kappa \times \delta)^\theta| |\kappa^\theta \times \delta^\theta| =
+\kappa^\theta * \delta^\theta$$
+thus we conclude the desired result.
+
+5.4.7(3) implies that
+$$(\kappa^\delta)^\theta = \kappa^{\delta * \theta}$$.
+
+\subsection*{9.2.7}
+
+\textit{Let $\alpha$ and $\beta$ be ordinals. Show that }
+
+We firstly state that eeny $\aleph$-number is an infinite cardinal.
+
+\textit{(a) $\aleph_\alpha + \aleph_\beta = \aleph_{\max(\alpha, \beta)}$}
+
+This follows from the absorbtion properties of $+$ and the fact that $\aleph$ is
+strictly increasing.
+
+\textit{(b) $\aleph_\alpha * \aleph_\beta = \aleph_{\max(\alpha, \beta)}$}
+
+Follows from the same thing.
+
+\textit{Points (c) and (d) follow from (a) and (b) directly}
+
+\subsection*{9.2.8}
+
+\textit{Let $\kappa$ and $\lambda$ be cardinals. Assume that $2 \ineq \kappa \ineq 2^\lambda$
+  and $\lambda$ is infinite. Prove that $\kappa^\lambda = 2^\lambda$.}
+
+We follow that $2 \ineq \kappa$ implies that
+$$2^\lambda \ineq \kappa^\lambda$$
+Since $\kappa \ineq 2^\lambda$, we also follow that
+$$\kappa^\lambda \ineq 2^{\lambda * \lambda} = 2^{\lambda}$$
+thus we follow that $\kappa^\lambda = 2^\lambda$, as desired.
+
+\subsection*{9.2.9}
+
+\textit{Let $\alpha$ be an ordinal. Prove that $\aleph_{\alpha + 1} \ineq 2^{\aleph_\alpha}$}
+
+We follow that $\aleph_{\alpha + 1}$ is the least cardinal such that $\aleph_\alpha \in
+\aleph_{\alpha + 1}$. Since $\aleph_\alpha \in 2^{\aleph_\alpha}$ and
+$2^{\aleph_\alpha}$ is a cardinal, we follow that $ \aleph_{\alpha + 1} \ineq 2^{\aleph_\alpha} $,
+as desired.
+
+\subsection*{9.2.10}
+
+\textit{Let $\alpha$ be an ordinal.  Prove that if $\beta \in \aleph_{\alpha + 1}$, then
+  $|\beta| \ineq \aleph_\alpha$.}
+
+Assume that $\aleph_\alpha \in |\beta|$.
+Then we follow that $\aleph_{\alpha + 1} \ineq |\beta|$ by the fact that $\aleph_{\alpha + 1}$
+is the lowest ordinal, that is larger than $\aleph_{\alpha + 1}$.
+Since $|\beta| \ineq \beta$, we follow that 
+$\aleph_{\alpha + 1} \ineq \beta$, which is a contradiction.
+
+\subsection*{9.2.11}
+
+\textit{Prove theorem 9.2.13}
+
+9.2.13 states that for each ordinal $\alpha$, the cardinal $\aleph_{\alpha + 1}$ is regular.
+From previous exercise we conclude that
+$$(\forall \delta \in \aleph_{\alpha + 1})(|\delta| \ineq \aleph_\alpha)$$
+
+Assume that $\aleph_{\alpha + 1}$ is singular and thus $cf(\aleph_{\alpha + 1}) \in \aleph_{\alpha + 1}$.
+Since $\aleph_{\alpha + 1}$ is an infinite cardinal, we follow that it is a limit ordinal,
+and thus $cf(\aleph_{\alpha + 1})$ is a regular cardinal, thus we follow that it is
+an infinite cardinal and there is $\beta \ineq \alpha$ such that
+$cf(\aleph_{\alpha + 1}) = \aleph_\beta$. Thus we follow that there is a function
+$f: \aleph_\beta \to \aleph_{\alpha + 1}$ such that $f[\aleph_{\beta}]$ is cofinal in
+$\aleph_{\alpha + 1}$. Thus we follow that $\sup f[\aleph_{\beta}] = \bigcup{f[\aleph_{\beta}]} =
+\aleph_{\alpha + 1}$. Since
+$$(\forall \theta \in f[\aleph_{\beta}])(\theta \in \aleph_{\alpha + 1})$$
+we folllow that
+$$(\forall \theta \in f[\aleph_{\beta}])(|\theta| \ineq \aleph_{\alpha})$$
+thus we follow that
+$$|\bigcup{f[\aleph_{\beta}]}| \ineq |f[\aleph_{\beta}]| * \aleph_\alpha = \aleph_\alpha$$
+which is a contradiction.
+
+\subsection*{9.2.12}
+
+\textit{Let $A$ be a set and let $\kappa$ be an infinite cardinal. Suppose that
+  $|A| \ineq \kappa$ and $|X| \ineq \kappa$ for all $X \in A$. Prove that
+  $|\bigcup{A}| \ineq \kappa$}
+
+9.1.12 implies that
+$$|\bigcup{A}| \ineq |A| * \kappa$$
+and since $|A| \ineq \kappa$ and $\kappa$ is infinite, we follow by absorbtion that
+$$|\bigcup{A}| \ineq |A| * \kappa = \kappa$$
+
+\subsection*{9.2.13}
+
+\textit{Let $A$ be a set and let $\theta$ be an infinite regular cardinal. Suppose that
+  $|A| \in \theta$ and $|X| \in \theta$ for all $X \in A$. }
+
+\textit{(a) Prove that $\sup{\set{|X|: X \in A}} \in \theta$}
+
+We follow that for all sets $X$, $|X|$ is a cardinal, therefore $|X|$ is an ordinal, thus
+$\set{|X|: X \in A}$ is a set of ordinals and thus
+$\sup \set{|X|: X \in A} = \bigcup{\set{|X|: X \in A}}$
+From later discussions we can follow that all of this discussion is useless.
+
+Since $(\forall X \in A)(|X| \in \theta)$, we follow that $\sup \set{|X|: X \in A} \ineq \theta$.
+Assume that $\sup \set{|X|: X \in A} = \theta$. We follow that there is a bijection
+$f: |A| \to A$. We also follow that we can define
+$g: A \to \theta$ by $g(X) = |X|$. Thus $g \circ f: |A| \to \theta$ is a function
+such that $(g \circ f)[|A|] = \ran(g) = \set{|X|: X \in A}$ is cofinal in $\theta$,
+which contradicts the assumption that $\theta$ is regular.
+
+\textit{(b) Prove that $|\bigcup A| \in \theta$}
+
+We know that $|A| \in \theta$ and $|X| \in \theta$. Previous point implies that
+$\sup\set{|X|: X \in A} \in \theta$. Since $\set{|X|: X \in A}$ is a set of cardinals,
+we follow by theorem 9.1.10 that $\sup\set{|X|: X \in A}$ is a cardinal.
+Thus we follow that there is cardinal $\delta = \sup\set{|X|: X \in A}$ such that
+$\delta \in \theta$. Let $\kappa = \max(|A|, \delta)$. We follow that
+for all $X \in A$ we've got that $|X| \ineq \delta$, and thus $|X| \ineq \kappa$.
+Moreover, sice $|A|, \delta \in \theta$, we follow that $\kappa \in \theta$.
+Therefore
+$$|\bigcup A| \ineq |A| * \kappa$$
+since $|A| \ineq \kappa$, we follow that
+$$|A| * \kappa \ineq \kappa * \kappa$$
+But now we've got that $\kappa$ might not be infinite. If $\kappa$ isn't infinite,
+then we follow that $\kappa \in \omega$, thus $\kappa * \kappa \in \omega$,
+and since $\theta$ is infinite and thus $\omega \ineq \theta$, we conclude that
+$|\bigcup A| \in \theta$. If $\kappa$ is infinite, then $\kappa * \kappa = \kappa$, and thus
+$$|\bigcup A| \ineq \kappa \in \theta$$
+which implies the desired result as well.
+
+\subsection*{9.2.14}
+
+\textit{Suppose that $h: A \to B$ is a function. Prove that $|h[A]| \ineq |A|$.}
+
+We follow that since $h$ is a function that $h: A \to h[A]$ is a surjective function.
+Thus we can define a function $g: h[A] \to \pow(A)$ by
+$$g(x) = h\inv[\set{x}]$$
+and by the fact that $h: A \to h[A]$ is a surjective function, we
+follow that $g(x)$ is nonempty for all $x \in h[A]$. We can also foreshadow some resilts,
+and state that for $x, y \in h[A]$ such that $x \neq y$ we've got that $g(x) \cap g(y) = \emptyset$
+by the fact that $h$ is a function.
+
+By AC we follow that there is a function $k: h[A] \to \bigcup{\pow(A)}$ such that
+$k(x) \in g(x)$. Since $\bigcup{\pow(A)}  = A$, we follow that $k: h[A] \to A$.
+Let $x, y \in h[A]$ such that $x \neq y$. We follow that $k(x) \in g(x)$ and $k(y) \in g(y)$
+and since $g(x) \cap g(y) = \emptyset$, we follow that $k(x) \neq k(y)$, thus making
+$k$ an injective function. Therefore we follow that there exists an injection from
+$h[A]$ to $A$, and thus $|h[A]| \leq_c |A| \lra |h[A]| \ineq |A|$, as desired.
+
+\subsection*{9.2.15}
+
+\textit{Show that $2^{\aleph_0} \neq \aleph_{\alpha + \omega}$ for any $\alpha \in \On$.}
+
+Maybe transfinite induction will help with this one.
+
+Our IH is that
+$$(\forall \gamma \in \alpha)(2^{\aleph_0} \neq \aleph_{\gamma + \omega})$$
+
+If $\alpha = 0$, then $2^{\aleph_0} \neq \aleph_{\omega}$.
+
+If $\alpha$ is a succesor orindal, then
+$$\aleph_{\alpha + \omega} = \aleph_{(\gamma + 1) + \omega} =
+\aleph_{\gamma + (1 + \omega)} = \aleph_{\gamma + \omega}$$
+
+If $\alpha$ is a limit ordinal, then
+$$\aleph_{\alpha + \omega} = \aleph(\alpha + \omega) =
+\aleph(\sup{\set{\alpha + \nu: \nu \in \omega}}) =
+\sup \set{\aleph(\alpha + \nu): \nu \in \omega}$$
+
+
+We follow that $\aleph_0 = cf(\aleph_0) = cf(\aleph_\omega)$.
+
+\textit{Skip for now}
+
+\subsection*{9.2.16}
+
+\textit{Show that there is a class function $\beth: \On \to \On$ such that}
+
+\textit{1. $\beth(0) = \aleph_0$}
+
+\textit{2. $\beth(\gamma^+) = 2^{\beth(\gamma)}$}
+
+\textit{3. $\beth(\beta) = \sup{\set{\beth{\alpha}: \alpha \in \beta}}$ when $\beta$ is a
+  limit ordinal.}
+
+We can follow that there's a class fucnction $\psi: \Crd \to \Crd$ that is
+defined by $\psi(\delta) = 2^\delta$. Thus we can create a definition by cases
+$$y =
+\begin{cases}
+  \aleph_0 \text{ if $f$ is an empty function} \\
+  \psi(f(\gamma)) \text{ if $f: \gamma^+ \to \On$ for some $\gamma \in \On$} \\
+  \sup f[\beta] \text{ if $f: \beta \to \On$ for some limit ordinal $\beta$ } \\
+  \emptyset \text{ otherwise}
+\end{cases}
+$$
+and then 8.2.4 implies that there exists a function, that satisfies all requirements of $\beth$.
+
+\subsection*{9.2.17}
+
+\textit{Prove that $\beth: \On \to \On$ is strictly increasing}
+
+We follow that $\beth$ is continous by definition and since $\gamma \in 2^\gamma$, we follow that
+the function is strictly increasing by one of the theorems in chapter 8.
+
+
+\subsection*{9.2.18}
+
+\textit{Prove the following:}
+
+This one is practicly a repeat of the simular exercise in previous chaoter. It all
+comes down to implicatications from a couple of theorems/exercises in previous chapter.
+
+\textit{The last exercise is skipped}
+
+\textit{Later I will probably come back in order to finish several notable exercises,
+  and finish chapters on filters, hierarchy and the 9.3, but for now the course is counted
+  as completed}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
-
-
-
