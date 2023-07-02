@@ -1842,22 +1842,34 @@ Let $f: A \to Y$ be defined as in the exercise. Suppose that there exist two
 functions $g_1, g_2: \overline{A} \to Y$ such that both of them are
 continous and $f \subseteq g_1 \land f \subseteq g_2$.
 
-If $g_1 \neq g_2$, then we follow that there exists $a \in \overline{A}$ such that
-$g_1(a) \neq g_2(a)$. Since $f \subseteq g_1, g_2$, we follow that $a \notin A$. Thus we follow that
-$a$ is a limit point of $A$. We follow that $g_1(a), g_2(a) \in Y$, and because
+If $g_1 \neq g_2$, then we follow that there exists $x \in \overline{A}$ such that
+$g_1(x) \neq g_2(x)$. Since $f \subseteq g_1, g_2$, we follow that $x \notin A$. 
+We follow that $g_1(x), g_2(x) \in Y$, and because
 $Y$ is Hausdorff, we follow that there exist two disjoint neighborhoods $U, V \subseteq Y$
-of $g_1(a)$ and $g_2(a)$ respectively. Since both $g_1, g_2$ are continous, we follow that
-$g_1\inv[U]$ and $g_2\inv[V]$ are neighborhoods of $a$.
+of $g_1(x)$ and $g_2(x)$ respectively. Since both $g_1, g_2$ are continous, we follow that
+$g_1\inv[U]$ and $g_2\inv[V]$ are neighborhoods of $x$. We also follow that
+since $U$ and $V$ are disjoint, we've got that
+$$g_1\inv[U] \cap g_1\inv[V] = \emptyset$$
+$$g_2\inv[U] \cap g_2\inv[V] = \emptyset$$
+but $x \in g_1\inv[U] \cap g_2 \inv[V]$ and thus $g_1\inv[U] \cap g_2 \inv[V]$
+is nonempty. By the fact that $g_1\inv[U]$ and $g_2\inv[V]$ are open, we follow that
+$g_1\inv[U] \cap g_2\inv[V]$ is a finite intersection of open sets and thus it is
+open as well. Thus we follow that $g_1\inv[U] \cap g_2\inv[V]$ is a neighborhood of $x$.
+Thus we follow that it intersects $A$ at some point $a \in A$.
+Since $x \notin A$, we follow that $a \neq x$.
+Therefore we conclude that there's a point $a \in A$ such that $a \in g_1\inv[U] \cap g_2\inv[V]$.
+Since $a \in A$, we follow taht $g_1(a) = g_2(a) = f(a)$. Thus we can conclude that
+$$a \in g_1\inv[U] \ra g_1(a) \in U$$
+$$a \in g_2\inv[V] \ra g_2(a) \in V$$
+and since $g_1(a) = f(a) = g_2(a)$, we follow that $f(a) \in U \cap V$, which contradicts
+our assumption that $U \cap V = \emptyset$.
 
-We follow that $U \cap A$ and $V \cap A$ are open and disjoint. Thus
-we follow that $f\inv[U \cap A]$ and $f\inv[V \cap A]$ are disjoint and open. 
+Therefore we conclude that if $Y$ is Hausdorff, $f: A \to Y$ and there exist
+continous functions
+$g_1, g_2: \overline{A} \to Y$ such that $f \subseteq g_1, g_2$, then $g_1 = g_2$,
+which is not the exact wording of the conclusion of the exercise, but its somewhat more
+exact equivalence.
 
-We follow that
-$$g_1(\overline{A}) \subseteq \overline{g_1(A)} = \overline{f(A)}$$
-thus we follow that $\ran(g_1), \ran(g_2) \subseteq \overline{f(A)}$. Thus $U$ and
-$V$
-
-\textit{TODO: finish this thing}
 
 \end{document}
 %%% Local Variables:
