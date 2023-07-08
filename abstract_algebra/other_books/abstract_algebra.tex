@@ -1,0 +1,563 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My abstract algebra exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\part{Preliminaries}
+
+\chapter{Relations and Functions}
+
+\chapter{The Integers and Modular Arithmetic}
+
+\part{Groups}
+
+\chapter{Introduction to Groups}
+
+\section{An Important Example}
+
+\subsection{}
+
+\textit{In $S_4$, let $\sigma = \
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    3 & 1 & 4 & 2
+  \end{pmatrix}
+  $,
+  and $\tau =
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 \\
+    3 & 4 & 1 & 2
+  \end{pmatrix}
+  $. Calculate $\sigma \tau$, $\tau \sigma$ and $\sigma \inv$.
+}
+
+$$\sigma \tau =
+\begin{pmatrix}
+  1 & 2 & 3 & 4\\
+  4 & 2 & 3 & 1 
+\end{pmatrix}
+$$
+$$ \tau \sigma =
+\begin{pmatrix}
+l  1 & 2 & 3 & 4\\
+  1 & 3 & 2 & 4 
+\end{pmatrix}
+$$
+$$\sigma \inv =
+\begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  2 & 4 & 1 & 3
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{In $S_5$, let $\sigma =
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 & 5 \\
+    5 & 3 & 2 & 1 & 4
+  \end{pmatrix}
+  $
+  and
+  $\tau =
+  \begin{pmatrix}
+    1 & 2 & 3 & 4 & 5 \\
+    2 & 4 & 1 & 3 & 5
+  \end{pmatrix}
+  $
+  calculate $\sigma \tau \sigma$, $\sigma \sigma \tau$, $\sigma \inv$.
+}
+
+$$\sigma \tau \sigma =
+\begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 \\
+  4 & 5 & 1 & 3 & 2
+\end{pmatrix}
+$$
+$$\sigma \sigma \tau =
+\begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 \\
+  2 & 5 & 4 & 3 & 1 
+\end{pmatrix}
+$$
+$$\sigma \inv =
+\begin{pmatrix}
+  1 & 2 & 3 & 4 & 5 \\
+  4 & 3 & 2 & 5 & 1
+\end{pmatrix}
+$$
+
+\subsection{}
+
+\textit{How mamy permutations are there in $S_n$? In $S_5$, how many permutations $\alpha$
+  satisfy $\alpha(2) = 2$?}
+
+We can follow that there are $n!$ permutations total, and if we've got a restriction
+$\alpha(2) = 2$, then we've got $(n - 1)!$ permutation. For the case $S_5$ it means
+that there are $4! = 24$ such permutations.
+
+\subsection{}
+
+\textit{Let $H$ be the set of all permutations $\alpha \in S_5$ satisfying $\alpha(2) = 2$.
+  Which of the properties of closure, associativity, identit, inverses does $H$ enjoy
+  under composition?}
+
+All of them
+
+\subsection{}
+
+\textit{Consider the set of all functions from $6$ to $6$. Which of the ...}
+
+Everything other then inverse
+
+\subsection{}
+
+\textit{Let $G$ be the set of all ...}
+
+All of them
+
+\section{Groups}
+
+\subsection{}
+
+\textit{Give group tables for following additive grops: $Z_3$, $Z_3 \times Z_2$}
+
+$$
+\begin{tabular}{c | c c c}
+   &  0 & 1 & 2 \\
+  \hline
+  0 & 0 & 1 & 2 \\
+  1 & 1 & 2 & 0 \\
+  2 & 2 & 0 & 1 \\
+  \hline
+\end{tabular}
+$$
+
+last one is ommited
+
+\subsection{}
+
+\textit{Give group tables for the following groups: $U(12), S_3$}
+
+We follow that $U(12) = \set{1, 5, 7, 11}$. THus
+$$
+\begin{tabular}{c | c c c c}
+   &  1 & 5 & 7 & 11 \\
+  \hline
+  1 & 1 & 5 & 7 & 11 \\
+  5 & 5 & 1 & 11 & 7 \\
+  7 & 7 & 11 & 1 & 5 \\
+  11 & 11 & 7 & 5 & 1 \\
+  \hline
+\end{tabular}
+$$
+
+One of the programs in progs folder produces desired table for $S_3$ (and can
+produce one for any $S_n$ for that matter).
+
+\subsection{}
+
+\textit{Show that $G \times H$ is abelian iff $G$ and $H$ are both abelian}
+
+Was proven in dummit and foote, check 1.1.29
+
+\textit{Rest of the exercises in this section were either already proven in D\&F, are trivial, or
+could be solved at a later time if I encounter some gaps in the theory.}
+
+\section{}
+\section{}
+\section{}
+
+\section{Cyclic Groups}
+
+\subsection{}
+
+\textit{Let $G = \eangle{a}$ be a cyclic group of order 12. List every subgroup of $G$.
+List every group of $Z_{12}$}
+
+12's divisors are $\set{1, 2, 3, 4, 6, 12}$, therefore subgroups of $G$ are
+$\eangle{a^i}$ for $i \in \set{0, 1, 2, 3, 4, 6}$
+
+Since $Z_{12}$ is cyclic, we follow that  $\eangle{[0, 1, 2, 3, 4, 6]}$
+are the subgroups of $Z_{12}$.
+
+\subsection{}
+
+\textit{Let $G = \eangle{a}$ be a cyclic group of order 120. List all of the groups of order 120.
+  List all of the elements of order 12 in $G$. }
+
+Divisors of $120$ are $\set{1, 2, 3, 4, 5, 6, 8, 10, 12, 24, 60, 120}$, thus
+we can state that subgroups of a cyclic group are $a$ to powers of those numbers
+
+According to the theorems, there should be $\phi(12) = 4$ elements of order 12.
+All of them lie in a subgroup $\eangle{a^{120 / 12}} = \eangle{a^{10}}$
+and are in form $(a^{10})^k$ where $k \in {1, 5, 7, 11}$. 
+
+\textit{How many element of order 12 are there in a cyclic group of order 1200?}
+
+Also 4.
+
+\subsection{}
+
+\textit{Let $p$ be a prime  and $n$ a positive integer. Show that $\phi(p^n) = p^n - p^{n - 1}$}
+
+If $j \in Z_+$ is such that $j = pi$ for some $i \in Z_+$, then we follow that
+$(p^n, j) = p$, therefore they are not relatively prime. Suppose that $(p^n, j) = 1$ for some
+$j \in Z_+$. Let $S$ be a multiset of prime divisors of $p^nN$ and $T$ be a multiset
+of divisors of $j$. Then we follow that $S \cap T = \emptyset$, since otherwise we
+would've had that $j$ is a multiple of $p$, which is not relatively prime to $p^n$.
+Thus we follow that the set of not relatively prime numbers to  $p^n$ is equal to
+the set of multiples of $p$.
+
+We can follow that there are pricicely $p^{n - 1}$ of multiples of $p$ that are
+less or equal to $p^n$ (don't think that we need to prove that),
+therefore the total amount of numbers that are less or equal to
+$p^n$, which are relatively prime to $p^n$ is $p^n - p^{n - 1}$, as desired.
+
+\subsection{}
+
+\textit{Find all positive integers $n$ such that $|U(n)| = 24$.}
+
+We can follow that $\phi(n)$ is an function that tends to infinity
+(i.e. for every $n \in Z_+$ there exists $j \in Z_+$ such that
+$m > n$ implies that $\phi(m) > j$) since $\phi(n)$ is larger than
+the number of prime numbers that is in the set $Z_+ \cap [1, n)$.
+Therefore we conclude that there is an upper bound for a number of
+numbers $n$ such that $\phi(n) = 24$.
+
+Brute-force shows that those numbers are
+$$35, 39, 45, 52, 56, 70, 72, 78, 84, 90$$
+
+Can't come up with a better answer than that, but I'm sure that it's there.
+
+\subsection{}
+
+\textit{Let $G$ be a nonabelian group. If $H$ and $K$ are cyclic subgroups of $G$,
+  does it follow that $H \cap K$ is also a cyclyc subgroup? Prove that it does,
+  or provide a counterexample.}
+
+We follow that every subgroup has an identity in it, thus $e \in H \cap K$.
+Suppose that $j \in H \cap K$. We follow that $j \in H \land j \in K$. Since $H$
+and $K$ are both subgroups, we follow that $j \inv \in H \land j\inv \in K$. Thus
+$j \inv \in H \cap K$. Therefore $H \cap K$ is closed under inverses.
+We can follow also by the same logic that $j, l \in H \cap K$ implies that
+$jl \in H \cap K$. Therefore we can conclude that $H \cap K$ is a subgroup.
+
+We can follow that if $H \cap K = \set{e}$, then it's cyclic. We can follow that
+$H \cap K$ can be not only a trivial subgroup by setting $H = K$. Suppose that
+$H \cap K \neq \set{e}$. By the fact that both $H$ and $K$ are cyclic we follow that
+$H \cap K = \set{a^i: i \in \text{ some subset of } Z_+}$.
+Since $H \cap K \neq \set{e}$, we follow that there exists an element $a \in G$ and
+two sets $H', K' \in \pow(Z_+)$ such that $H = \set{a^i: i \in H'}$ and
+$K = \set{a^i: i \in K'}$. Since both $H$ and $K$ are cyclic we follow that
+both $H'$ and $K'$ are the sets of multiples of some number. Thus
+$H' \cap K'$ is a set of multiples of some number as well (proof ommited). Thus we
+follow that $H \cap K = \set{a^i: i \in H' \cap K'}$ is a cyclic group as well.
+
+\subsection{}
+
+\textit{Let $G = \eangle{a}$ be an infinite cyclic. If $m$ and $n$ are positive integers,
+find a generator for $\eangle{a^m} \cap \eangle{a^n}$.}
+
+We can follow pretty easily that $\eangle{a^m} \cap \eangle{a^n} =
+\eangle{a^{lcm(m, n)}}$
+
+\subsection{}
+
+\textit{Let $n$ be a positive integer and let $T$ be the set of positive integers
+  that divide $n$. Show that $\sum_{k \in T}{\phi(k)} = n$.}
+
+For 12 we've got
+$$T = \set{1, 2, 3, 4, 6, 12}$$
+$$\phi(1) = 1$$
+$$\phi(2) = 1$$
+$$\phi(3) = 2$$
+$$\phi(4) = 2$$
+$$\phi(6) = 2$$
+$$\phi(12) = 4$$
+and we follow that result works.
+
+\section{Cosets and Lagrange's Theorem}
+
+\subsection{}
+
+\textit{For each group $G$ and subgroup $H$, find all the left cosets and right cosets
+  of $H$ in $G$.}
+
+\textit{1. $G = Z, H = 4Z$.}
+
+We follow thaht $0 + H = 4Z = H$, $1 + H = \set{1 + x: x \in Z}$, and so on for $3 + H$.
+Since the group is abelian, we follow that right cosets are the same.
+
+\subsection{}
+
+\textit{Let $G$ be a group whose order is the product of two (not necessarily distinct)
+  primes. Show that every proper subgroup of $G$ is cyclic}
+
+We follow that order of any given proper subgroup is equal to one of those primes, or 1. 
+This implies that this subgroup is cyclic, as desired.
+
+\subsection{}
+
+\textit{Let $G$ be a group of order $p^n$ for some prime $p$ and positive integer $n$.
+  Show that $G$ has an element of order $p$.}
+
+We follow that any proper subgroup is some power of $p$. By induction we can conclude that
+such an element exists.
+
+\subsection{}
+
+\textit{Let $G$ be a group having a subgroup $H$ of order 28 and a
+  subgroup $K$ of order $65$. Show that $H \cap K = \set{e}$.}
+
+We follow that
+$$28 = 2 * 2 * 7$$
+$$65 = 13 * 5$$
+since they don't have no commot prime multiples, we follow that $H \cap K$'s only order
+as a subgroup of both can be only 1. Since every group has an identity, we
+conclude the desired result.
+
+\subsection{}
+
+\textit{blah blah blah}
+
+$$lcm(1, 2, ..., 10)$$
+
+\chapter{Factor Groups and Homomorphisms}
+
+\section{Normal Subgroups}
+
+\subsection{}
+
+\textit{Is each of the following sets a normal subgroup of $GL_2(R)$? }
+
+\textit{1. $H = \set{A \in GL_2(R): \det(A) \in Q}$}
+
+We can follow that this thing is a subgroup by the properties of
+determinants of compositions of matrices and the fact that $Q \setminus \set{0}$ is closed
+under multiplication.
+
+We follow that for all $a \in GL_2(R)$ and $h \in H$ we've got that
+$$\det(a\inv * h * a) = \det(a\inv) * \det(h) * \det(a) =
+\det(a\inv) * \det(a) * \det(h) = \det(I) * \det(h) = \det(h)$$
+and thus we follow that s$H$ is a normal subgroup by  one of the equivalencees in
+of the normal group.
+
+\textit{2. the set of diagonal matrices in $GL_2(R)$.}
+
+We can follow that the thing is a subgroup my matrix identities and whatnot
+(identity is diagonal, inverse of diagonal is diagonal and composition of diagonal
+is diagonal; for justification GOTO linear algebra course, chapter 6 or 7)
+We can't follow that it's a normal group though, since we can set
+$$
+a =
+\begin{pmatrix}
+  1 & 2 \\
+  1 & 2
+\end{pmatrix}
+$$
+$$
+h =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & 2
+\end{pmatrix}
+$$
+which gives us that $a\inv h a$ is not in $H$ (details are ommited put can be supplimented
+easily if you feel that you don't have nothing to do).
+
+\subsection{}
+
+\textit{Find every normal subgroup of $S_3$.}
+
+We follow that $S_3$ is itself  a normal subgroup. Every sugroup of index 2 is normal,
+thus we follow that in this case that means that every subgroup of size 3 is normal.
+Every subgroup of length 1 must contain the identity, and thus we follow  that the
+only subgroup of size 1 is the one that contains identity. Therefore by
+Lagrange's theorem we follow that the only subgroups left are the ones that have size 2.
+Let $U$ be a subgroup of length 2. We follow that it must contain the identity,
+and thus they have the form
+$$U  = \set{e, s}$$
+where $s \in S_3 \setminus \set{e}$. There are 5 such elements, and thus we can check them
+by hand.
+
+Since $U$ has to be a subgroup, we follow that $s \in S_3$ must be such that
+$s = s \inv$. Thus our search is limited to cycles
+$$(2, 3), (1, 2), (1, 3)$$
+We follow that
+$$(1, 2)\inv \circ (2, 3) \circ (1, 2) = (1, 2) \circ (2, 3) \circ (1, 2) = (1, 3)$$
+$$(2, 3)\inv \circ (1, 2) \circ (2, 3) = (2, 3) \circ (1, 2) \circ (2, 3) = (1, 3)$$
+$$(2, 3)\inv \circ (1, 3) \circ (2, 3) = (2, 3) \circ (1, 3) \circ (2, 3) = (1, 2)$$
+thus we follow that none of those are normal. Therefore we conclude that the only normal
+subgroups of $S_3$ are the ones with size $6, 3$ and $1$.
+
+\subsection{}
+
+\textit{If $N$ is a normal subgroup of $G$, and $|N| = 2$, show that $N \leq Z(G)$}
+
+We follow that
+$$(\forall a \in G)(\forall h \in H)(a\inv h a \in H)$$
+since $|H| = 2$, we follow that $H = \set{e, b}$ for some $a \in G \setminus \set{e}$.
+Let $x \in H$.  If $x = e$, then we follow that $x \in Z(G)$. If $x = b$, then we follow that
+$$a\inv b a \in H \lra a\inv b a = e \lor a\inv b a = b \lra
+b a = a e \lor b a = a b$$
+Since $b \neq e$, we follow that $ba \neq a = ae$, thus we follow that for all $a \in G$
+we've got that $ba = ab$. Thus we follow that $x \in Z(G)$. Therefore we follow that
+$H \subseteq Z(G)$, and thus $H \leq Z(G)$, since the operation is the same, as desired.
+
+\subsection{}
+
+\textit{Let $N$ be a normal subgroup of $G$. Let $H$ be the set of all
+  elements $h$ of $G$ such that
+  $hn = nh$ for all $n \in N$. Show that $H$ is a normal subgroup of $G$.}
+
+Proof that $H$ is a subgroup is trivial and therefore ommited.
+
+Let $a \in G$. We follow that for all $n \in N$,  $a\inv n a \in N$.
+Since $N$ is normal in $G$, we follow that $N = a\inv N a$. Thus 
+for given $a \in G$ and  $n \in N$ there exists
+$n' \in N$ such that $n = a\inv n' a$. Thus $an = n'a$.
+
+We want to show that if $h \in H$, then $a \inv h a \in H$. We follow that
+$a \inv h a \in H$ if and only if for all $n \in N$ we've got that
+$$n (a \inv h a) = (a \inv h a) n$$
+$$(a \inv h a) = n\inv (a \inv h a) n$$
+$$(a \inv h a) = (an) \inv h (a n)$$
+$$(a \inv h a) = (n'a)\inv h (n'a)$$
+$$(a \inv h a) = a\inv n'\inv h n'a$$
+$$(a \inv h a) = a\inv n'\inv n' ha$$
+$$(a \inv h a) = a\inv e ha$$
+$$a \inv h a = a\inv  ha$$
+as desired.
+
+\subsection{}
+
+\textit{Show that the intersection of two normal subgroups of $G$ is also a normal
+  subgroup. Then extend this to show that if $N_i$ is a normal subgroup of $G$ for every $i$
+  in some set $T$, then $\bigcap_{i \in T}{N_i}$ is a normal subgroup of $G$.}
+
+I think that I've shown earlier (maybe in another document) that $\bigcap_{i \in T}{N_i}$
+is a subgroup. If not, then showing that is pretty trivial.
+
+We firsly state here explicitly that $T$ is nonempty, otherwise $\bigcap$ is not defined.
+Let $x \in \bigcap_{i \in T}{N_i}$. This means that
+$$(\forall i \in T)(x \in N_i)$$
+Since $N_i$ is normal for every $i \in T$, we follow that for all $a \in G$ we've got that
+$a\inv x a \in N_i$. Thus
+$$(\forall a \in G)(\forall i \in T)(a\inv x a \in N_i)$$
+which is equivalent to 
+$$(\forall a \in G)(a\inv x a \in \bigcap_{i \in T}{N_i})$$
+thus we conclude that if $x \in \bigcap_{i \in T}{N_i}$, then $a \inv x a \in \bigcap_{i \in T}{N_i}$.
+Therefore for all $x \in \bigcap_{i \in T}{N_i}$ and all $a \in G$ we've got that
+$a \inv x a \in \bigcap_{i \in T}{N_i}$. Therefore $\bigcap_{i \in T}{N_i}$ is normal.
+
+\subsection{}
+
+\textit{Let $N_1 \leq N_2 \leq N_3 \leq  ...$ be normal subgroups of $G$. Show that
+  $\bigcup_{i = 1}^\infty{N_i}$ is a normal subgroup of $G$.}
+
+This exexrcise is pretty much the same as the previous one, except that
+we might have to use a different quantifier.
+
+\subsection{}
+
+\textit{Let $G$ be a group having exactly one subgroup $H$ of order $n$. Show that $H$ is
+  normal in $G$.}
+
+Suppose that $H$ is not normal. Then we follow that $a\inv H a \neq H$.
+Since $a \inv H a$ is a subgorup with $|a \inv H a| = |H| = n$. Thus we follow that
+there are at least two disctinct groups of order $n$, which is a contradiction.
+
+\subsection{}
+
+\textit{Let $G = H \times K$. If $N$ and $L$ are normal subgroups of $H$ and $K$
+  respectively, show that $N \times L$ is a normal subgroup of $G$. Is every normal
+  subgroup of $G$ of this form?}
+
+Let $a \in G$ be arbitrary.  We follow that $a = \eangle{h', k'}$ for some $h' \in H, k' \in K$.
+We follow that $a \inv = \eangle{h'\inv, k'\inv}$. Let $\eangle{n, l} \in N \times L$
+be also arbitrary. 
+We follow that $h'\inv n h' \in N$ and $k'\inv l k' \in L$, and thus
+$\eangle{h'\inv n h', k'\inv l k'} \in N \times L$. Therefore we follow that $N \times L$
+is normal, as desired.
+
+Rule of the thumb is that if someone asks you an open question in a math book, then the
+answer is no, therefore we want to find a contradiction.
+Let $H = K = Z_2$. Let $U = \set{\eangle{1, 1}, \eangle{0, 0}}$. We folloow that since $|U| = 2$,
+index of $U$ is $2$, and thus it is normal.
+
+\subsection{}
+
+\textit{Suppose that $H$ is a subgroup of $G$ and $a\inv b\inv a b \in H$ for all $a, b \in G$.
+  Show that $H$ is normal.}
+
+Let $c \in G$ and $h \in H$ be arbitrary. We follow that $h, h\inv \in G$ by the
+fact that $H$ is a subgroup. Thus
+$$c\inv (h\inv) \inv c (h\inv) \in H$$
+by property of $H$. Thus
+$$c\inv h  c (h\inv) \in H$$
+Since $h \in H$, we follow that 
+$$c\inv h  c (h\inv) h \in H$$
+thus
+$$c\inv h  c \in H$$
+thus $H$ is normal, as desired.
+
+\subsection{}
+
+\textit{Let $H$ and $K$ be subgroups of $G$. Show that $HK$ is a subgroup if and only if
+  $HK = KH$.}
+
+Assume that $HK$ is a subgroup. We follow that since $e \in K$ that $he = h \in HK$ for all
+$h \in H$. Thus $H \leq HK$. We also follow by the same logic that $K \leq HK$.
+Let $j \in KH$. We follow that $j = k'h'$ for some $h' \in H$ and $k' \in K$. 
+Since $H \leq HK$ and $K \leq HK$, we follow that
+$k' \in HK$ and $h' \in HK$, thus $k'h' \in HK$. Thus $KH \subseteq HK$.
+
+Let $hk \in HK$. We follow that $(hk)\inv \in HK$. Thus there exist $h' \in H$
+and $k' \in K$ such that $h'k' = (hk)\inv$. Thus $hk = (h'k')\inv = k'\inv h'\inv$.
+Since $k' \in K$ and $h' \in H$, we follow that $k'\inv \in K$ and $h'\inv \in H$,
+and thus $k'\inv h'\inv \in KH$. Thus $hk = k'\inv h'\inv \in KH$. Therefore $HK \subseteq KH$,
+as desired.
+
+Suppose that $HK = KH$. Since $e \in H$ and $e \in K$ we follow that $e \in HK$.
+Let $hk \in HK$. We follow that
+$(hk)\inv = k\inv h\inv \in KH = HK$. Thus $(hk)\inv \in HK$.
+Let $a, b \in HK$. We follow that $a = hk$ and $b = h'k'$ for somce $h, h' \in H$
+and $k, k' \in K$. Thus
+$$ab = hkh'k' = h(kh')k'$$
+since $h \in HK$, $k \in HK$ and $kh' \in KH = HK$, we conclude that $ab \in HK$.
+Thus $HK$ is a subgroup.
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
