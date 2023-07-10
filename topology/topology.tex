@@ -1094,7 +1094,7 @@ Thus we follow that the space is Hausdorff, as desired.
 \textit{Show that the product of two Hausdorff spaces is Hausdorff.}
 
 Let $X$ be the first spacce and let $Y$ be the second.
-Let $\eangle{x_1, y_1}, \eangle{x_2, y_2} \in X \times Y$.
+Let $\eangle{x_1, y_1}, \eangle{x_2, y_2} \in X \times Y$ be distinct.
 We follow that $x_1 \neq x_2$ or $y_2 \neq y_2$. 
 If we've got $A_1, A_2 \subseteq X$ and $B_1, B_2 \subseteq Y$ such that
 $A_1 \cap A_2 = \emptyset$ or $B_1 \cap B_2 =  \emptyset$, then we follow that
@@ -1870,9 +1870,197 @@ $g_1, g_2: \overline{A} \to Y$ such that $f \subseteq g_1, g_2$, then $g_1 = g_2
 which is not the exact wording of the conclusion of the exercise, but its somewhat more
 exact equivalence.
 
+\section{The Product Topology}
+
+\subsection{}
+
+\textit{Prove Theorem 19.2}
+
+Let $X_\alpha$ be an original indexed set of topological spaces and $B_\alpha$ be an arbitrary
+element of the basis. We follow that since each $B_\alpha$ is open that
+$\prod B_\alpha$ is an elemebt of a basis of the box topology and therefore it's open.
+
+Let $x$ be an arbitrary point in the original space with corresponding
+neighborhood $U$. We follow that there is an element of original basis $\prod U_\alpha$
+that is a subset of $U$ and contains $x$. We follow by properties of bases
+that for each $U_\alpha$ there is an element of basis $B_\alpha$ such that
+$x_\alpha \in B_\alpha \subseteq U_\alpha$. Therefore we can conclude that there is
+a set $\prod B_\alpha$ such that $x \in \prod B_\alpha \subseteq \prod U_\alpha$. Therefore
+we conclude by Lemma 13.2 that collection of products of elements of bases indeed
+constitutes a basis for a box topology, as desired. Pretty much the same logic
+with minor tweaks will will imply simular result for product topologies.
+
+\subsection{}
+
+\textit{Prove Theorem 19.3}
+
+Firstly, we state that
+$$\prod U_\alpha \cap \prod A_\alpha = \prod{(U_\alpha \cap A_\alpha)}$$
+the proof for this statement is somewhat redundant, but I like FOL, so I'll state it
+anyways:
+$$x \in \prod U_\alpha \cap \prod A_\alpha \lra
+x \in \prod U_\alpha \land x \in \prod A_\alpha \lra 
+(\forall \alpha \in J)(x_\alpha \in U_\alpha) \land (\forall \alpha \in J)(x_\alpha \in A_\alpha) \lra $$
+$$ \lra 
+(\forall \alpha \in J)(x_\alpha \in U_\alpha \land x_\alpha \in A_\alpha) \lra
+(\forall \alpha \in J)(x_\alpha \in U_\alpha \cap A_\alpha) \lra 
+x \in \prod{(U_\alpha \cap A_\alpha)}$$
+Lemma 16.1 with our definition and logic in Lemma 16.3 now implies the desired result.
+
+\subsection{}
+
+\textit{Prove Theorem 19.4}
+
+Statement in the previous exercise and logic from exercise 17.11 (2.6.11) imply the desired
+result.
+
+\subsection{}
+
+\textit{Show that $(X_1 \times ... \times X_{n - 1}) \times X_n$ is homeomorphic with
+  $X_1 \times ... \times X_n$.}
+
+In set theory course we've defined cartesian product for finite amount of elements
+recursively, so that exercise boils down to basically nothing. I think that here
+we need to show that with our new definition of cartesian product everything works.
+
+Let $f: (X_1 \times ... \times X_{n - 1}) \times X_n \to X_1 \times ... \times X_n$
+be defined by
+$f(\eangle{u, v}) = \eangle{u_1, u_2, ..., u_{n - 1}, v}$
+By common sense we follow that $f$ is bijective. Let $V$ be an open set in
+$X_1 \times ... \times X_n$. Let $B$ be an element of a basis of $X_1 \times ... \times X_n$.
+We follow that $B = \prod U_\alpha$ for $\alpha \in \set{1, ..., n}$ and some open
+sets $U_\alpha$. We follow that
+$$f\inv[B] = (\prod_{\alpha \in \set{1, ..., n - 1}} U_\alpha) \times U_n$$ 
+and thus it is open. Thus $f$ is continous. We also follow that
+$$f\left[\left(\prod_{\alpha \in \set{1, ..., n - 1}}{U_\alpha}\right) \times U_n\right] =
+\prod U_\alpha$$
+thus we follow that $f\inv$ is also continous, thus $f$ is homeomorphism and both
+spaces are homeomorphic.
+
+\subsection{}
+
+\textit{One of the implications stated in Theorem 19.6 holds for the box topology.
+  Which one? }
+
+Example 2 gives a contradiction for reverse implication, therefore the forward implication
+must be true.
+
+\subsection{}
+
+\textit{Let $x_1, x_2, ... $ be a sequence of points of the product space $\prod X_\alpha$.
+  Show that this sequence converges to the point $x$ if and only if the sequence
+  $\pi_\alpha(x_1), \pi_\alpha(x_2), ...$  converges to $\pi_\alpha(x)$ for each $\alpha$.
+  Is this fact true for if one uses the box topology instead of  the product topology?
+}
+
+Suppose that the sequence
+$$x_1, x_2, ...$$
+converges to a point $x$. Then we follow that for each neighborhood $U$ of $x$ there is a
+$n \in \omega$ such that $m \geq n \ra x_m \in U$.
+
+Let $V$ be a neighborhood of $\pi_\alpha(x)$. Just to be clear here, we're gonna state here
+that $\pi_\theta: \prod X_\alpha \to X_\theta$, and thus $\pi_\theta(x) \in X_\theta$.
+It can be followed easily (if it wasn't done already) that $\pi_\theta$ is a continous function
+and thus $\pi_\theta\inv(V)$ is an open set in $\prod X_\alpha$. Thus we follow that there
+is $n \in \omega$ such that $m \geq n \ra x_m \in \pi_\theta\inv(V)$. Since
+$x_m \in \pi_\theta\inv(V)$, we follow that $\pi_\theta(x_m) \in V$. Since everything here
+was chosen arbitrarily, we follow that for each neighborhood $V$ of $\pi_\theta(x)$ there
+is $n \in \omega$ such that $m \geq n \ra x_m \in V$.
+
+Suppose that $\pi_\alpha(x_n)$ converges for every $\alpha$. Let $U$ be a neighborhood of
+$x$. Since $U$ is a neighborhood in box topology, we follow that it is an
+arbitrary union of finite intersection of finite elements in form $\pi_\theta\inv[U_\theta]$.
+Thus we follow that there exists a finite set $C$, whose elements
+are in form $\pi_\theta\inv[U_\theta]$, and $x \in \bigcap{C} \subseteq U$ (trivial proof).
+Thus we follow that there exists a finite set $D \subseteq \omega$ such that
+$$n \in D \ra (\exists \mu)(\pi_\mu[U_\mu] \in C)$$
+Since $D$ is finite, we follow that there is a maximal element of it, and thus there
+is $n \in \omega$ such that
+$$m \in \omega \ra x_m \in \bigcap{C} \subseteq U$$
+thus we can conclude that our original sequence converges, which proves reverse direction.
+
+We can follow that box topology will work just fine in forward direction, but we can
+make a whacky open set (like one in the example 2) in $\prod X_n$ so that reverse
+direrction does not work with infinite "dimentions".
+
+\subsection{}
+
+\textit{Let $R^\infty$ be the subset of $R^\omega$ consisting of all sequences that are
+  "eventually zero", that is, all sequences $(x_1, x_2, ...)$ such that $x_i \neq 0$ for only
+  finitely many values of $i$. What is the closure of $R^\infty$ in $R^\omega$ in the box
+  and product topologies?. Justify your answer.
+}
+
+Let $x \in R^\omega$ and let $U$ be an arbitrary neighborhood of $x$ with respect to
+product topology.
+Since $U$ is an open set, we follow that there's a finite set $C$ that consists
+of elements in form $\pi_\alpha\inv[U_\alpha]$ and such that $x \in \bigcap{C} \subseteq U$.
+Since $C$ is finite, we follow that we can make a function $f: \omega \to R$ such that
+$$
+\begin{cases}
+  \pi_\alpha\inv[U_\alpha] \in C \ra f(\alpha) \in \pi_\alpha\inv[U_\alpha]  \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+we then follow that $f \in R^\infty$, and thus we conclude that every neighborhood of $x$
+intersects $R^\infty$ at some point. Thus we conclude that
+with respect to product topology, $\overline{R^\infty} = R^\omega$.
+
+Now assume box topology and let $x \in R^\omega \setminus R^\infty$. We follow that
+there is an infinite set $D \subseteq \omega$ such that $d \in D \ra x_d \neq 0$.
+Assuming that topology of $R$ is standart, we follow that for every $d \in D$ there
+is an open set $(a, b)$ such that $0 \notin (a, b)$ and $x \in (a, b)$.
+We now can define an indexed set (which is a fancy name for a function) $A: \omega \to \pow(R)$
+by
+$$
+\begin{cases}
+  a \in D \ra A(a) = (a, b) \\
+  A(a) = R \text{ otherwise}
+\end{cases}
+$$
+which won't have no elements of $R^\infty$ on the account that $D$ is infinite and $0 \notin (a, b)$.
+Thus we conclude that for every $x \in R^\omega \setminus R^\infty$ there's a neighborhood
+of $x$ that doesn't contain no elements of $R^\infty$. Thus we conclude that
+$\overline{R^\infty} = R^\infty$ in box topology.
+
+\subsection{}
+
+\textit{Given sequences $(a_1, a_2, ...)$ and $(b_1, b_2, ...)$ of real numbers with $a_i > 0$
+  for all $i$ define $h: R^\omega \to R^\omega$ by the equation
+  $$h((x_1, x_2, ...)) = (a_1 x_1 + b_1, a_2 x_2 + b_2, ...)$$
+  Show that if $R^\omega$ is given the product topology, $h$ is homeomorphism of $R^\omega$ with
+  itself. What happens if $R^\omega$ is given the box topology?
+}
+
+Since $a_i \neq 0$ for all $i$, we follow that $h$ is a bijection (trivial proof).
+
+Let $A$ be a basis element of $R^\omega$ with respect to product topology. We follow that it
+is an indexed set $A_\alpha$ such that $A_\alpha = (c, d)$ or $A_\alpha = R$, and there
+are finitely many $\alpha$'s such that $A_\alpha = (c, d)$. Let $n \in \omega$.
+If $n = \alpha$ for some $\alpha \in J$, then there's an interval $(e, f)$ such that
+$h_\alpha\inv[(e, f)] = (c, d)$ (trivial proof, for clarifications use common sence).
+We also follow that $h_\alpha[R] = R$, and thus
+there is an open set $C$, that consists of product of those intervals and $R$'s such that
+$h\inv[C] = U$. Simular logic holds in reverse direction. Thus we conclude that $h$ is
+homeomorphism.
+
+Since we haven't used the fact that a basis element consists of finitely many iintervals,
+we conclude that $h$ is a homeomorphism with respect to a box topology as well.
+
+\subsection{}
+
+\textit{Show that the choice axiom is equivalent to the statement that for any indexed family
+  $\set{A_\alpha}_{\alpha \in J}$ of nonempty sets, with $J \neq 0$, the cartesial product is
+  not empty.}
+
+Forward direction is directly implied by AC (or its lemma with choice function).
+Reverse implication is almost rewording of AC (or its lemma with choice function).
+For more GOTO set theory course (2nd and 5th chapter if I remember it correctly).
+
+\subsection{}
+
+\textit{Skip for now, but by looking at it, we can probably expect some Zorn Lemma action coming}
+
+\section{The Metric Topology}
 
 \end{document}
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
