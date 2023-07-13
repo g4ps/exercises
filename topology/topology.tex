@@ -2063,4 +2063,54 @@ For more GOTO set theory course (2nd and 5th chapter if I remember it correctly)
 
 \section{The Metric Topology}
 
+\subsection{}
+
+\textit{(a) In $R^n$, define
+  $$d'(x, y) = \sum{|x_i - y_i|}$$
+  Show that $d'$ is a metric that induces the usual topology of $R^n$. Sketch the basis element
+  under $d'$ when $n = 2$. 
+}
+
+Since it's a sum of nonnegative numbers, we follow that $d'(x, y) \geq 0$. We also follow that
+if $x \neq y$, then there exists  $i < n$ such that $x_i \neq y_i$, thus $|x_i - y_i| > 0$
+and thus $d'(x, y) > 0$. We also follow that $x = y$, then $d'(x, x) = 0$.
+Since $|x_i - y_i| = |y_i - x_i|$, we follow that $d'(x, y) = d'(y, x)$.
+By triangle inequality of normal absolute value function we follow the triangle inequality for
+this metric.
+
+We can follow that
+$$\max\set{|x_1 - y_1|, ..., |x_n - y_n|} \leq \sum{|x_i - y_i|}$$
+and thus if we set $\delta = \epsilon$ then 
+$$B_{d'}(x, \delta) \subseteq B_{d}(x, \epsilon)$$
+thus we follow that this topology is finer standart this topology.
+We also follow that
+$$ \frac{\sum{|x_i - y_i|}}{n} \leq \max\set{|x_1 - y_1|, ..., |x_n - y_n|}$$
+and thus we can set $\delta = \frac{\epsilon}{n}$ to get
+$$B_{d}(x, \delta) \subseteq B_{d'}(x, \epsilon)$$
+thus standart topology is finer than given topology. Therefore we conclude that the topologies
+are equal, as desired.
+
+I think that this metric is also called a Manhattan distance. For this one an open set
+is a diamond in $R^2$.
+
+\textit{(b) More generally, given $p \geq 1$, define
+  $$d'(x, y) = \left[\sum_{i = 1}^{n}{|x_i - y_i|}\right]^{1/p}$$
+  for $x, y \in R^n$. Assume that $d'$ is a metric. Show that it induces the usual
+  topology on $R^n$.
+}
+
+We follow that
+$$\max\set{|x_1 - y_1|, ..., |x_n - y_n|} \leq
+\left(\left[\sum_{i = 1}^{n}{|x_i - y_i|}\right]^{1/p}\right)^p$$
+and
+$$\frac{\left(\left[\sum_{i = 1}^{n}{|x_i - y_i|}\right]^{1/p}\right)^p}{n} \leq
+\max\set{|x_1 - y_1|, ..., |x_n - y_n|}$$
+thus we can set $\delta = \epsilon^p$ in the former case and $\delta = \frac{\epsilon^{1/p}}{n}$
+in the latter case to get the desired result (or some variation of those, but the point is clear).
+
+\subsection{}
+
+\textit{Show that $R \times R$ in the dictionary order is metrizable.}
+
+
 \end{document}
