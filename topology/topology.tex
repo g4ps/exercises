@@ -2112,5 +2112,81 @@ in the latter case to get the desired result (or some variation of those, but th
 
 \textit{Show that $R \times R$ in the dictionary order is metrizable.}
 
+We can define a metric by
+$$d(\eangle{x_1, x_2}, \eangle{y_1, y_2}) =
+\begin{cases}
+  x_1 = y_1 \ra \min(|x_2 - y_2|, 1) \\
+  1 \text{ otherwise}
+\end{cases}
+$$
+this is a somewhat modified bounded metric, from which we follow that it is a metric.
+Proof that this metric indeed generates a dictionary topology is somewhat trivial.
+
+\subsection{}
+
+\textit{Let $X$ be a metric space with metric $d$.}
+
+\textit{(a) Show that $d: X \times X \to R$ is continous.}
+
+Let us firstly assume that $R$ has a standart topology, $X$ has a metric topology
+with respect to $d$ and $X \times X$ has a product topology.
+Let $U$ be a basis element of $R$.
+We follow that $U = V_\epsilon(x)$ for some $x, \epsilon \in R$.
+Let $W = d\inv[U]$. Suppose that $\eangle{z, y} \in W$. We follow that
+$d(z, y) \in V_\epsilon(x)$, and thus
+$$x - \epsilon < d(z, y) < x + \epsilon$$
+which a syntactic sugar for
+$$x - \epsilon < d(z, y) \land d(z, y)  < x + \epsilon$$
+
+Let $\eangle{z', y'} \in X \times X$ be such that
+$$d(z', y') < x + \epsilon$$
+Let
+$$\delta = \frac{x + \epsilon - d(z', y')}{2}$$
+Let $B_\delta(z')$ and $B_\delta(y')$ be basis elements. Let $k \in B_\delta(z')$
+and $l \in B_\delta(y')$. Then we follow that
+$$d(k, l) \leq d(k, z) + d(z', y') + d(y', l) < d(z', y') + 2 \delta = $$
+$$ = 
+d(z', y') + 2 \frac{x + \epsilon - d(z', y')}{2} = d(z', y') + x + \epsilon - d(z', y') =
+x + \epsilon $$
+thus we follow that if $\eangle{k, l} \in B_\delta(z') \times B_\delta(y')$ then 
+$$d(k, l) < x + \epsilon $$
+Since $B_\delta(z')$ and $B_\delta(y')$ are basis elements, we follow that they are open,
+thus $B_\delta(z') \times B_\delta(y')$ is an open element in $X \times X$ and thus we follow that
+for every
+$$w \in \set{q \in X \times X: d(q) < x + \epsilon}$$
+there is an open subset $U$  of $X \times X$ such that $w \in U$
+$$U \subseteq \set{q \in X \times X: d(q) < x + \epsilon}$$
+Thus we follow that $\set{q \in X \times X: d(q) < x + \epsilon}$ is an open set.
+
+Let $\eangle{z', y'} \in X \times X$ be such that
+$$x - \epsilon < d(z', y')$$
+from triangular inequality we follow that
+we can set 
+$$\delta = \frac{d(z', y') - (x - \epsilon)}{2}$$
+define $k, l$ and such as in previous paragraph. From triangular inqeuality we follow that 
+$$d(z', y') \leq d(k, z') + d(k, l) + d(l, y')$$
+$$d(z', y') - d(k, z') - d(l, y') \leq d(k, l)$$
+and since $d(k, z'), d(l, y') < \delta$, we follow that
+$$d(z', y') - 2\delta \leq d(k, l)$$
+thus
+$$d(k, l) \geq d(z', y') - 2\delta =  d(z', y') - 2 \frac{d(z', y') - (x - \epsilon)}{2} =
+d(z', y') - d(z', y') + (x - \epsilon) =  $$
+$$ = x - \epsilon $$
+thus by the same logic as in the previous paragraph we follow that 
+$$\set{q \in X \times X: d(q) > x - \epsilon}$$
+is open.
+
+Now we can follow that
+$$\set{q \in X \times X: d(q) < x + \epsilon} \cap \set{q \in X \times X: d(q) > x - \epsilon}$$
+is a finite intersection of open sets, and therefore it is open. By doing some set algebra
+we get
+$$\set{q \in X \times X: d(q) < x + \epsilon} \cap \set{q \in X \times X: d(q) > x - \epsilon} =$$
+$$ = \set{q \in X \times X:  d(q) > x - \epsilon \land d(q) < x + \epsilon } = $$
+$$ = \set{q \in X \times X:  x - \epsilon < d(q) \land d(q) < x + \epsilon } = $$
+$$ = \set{q \in X \times X:  x - \epsilon < d(q) < x + \epsilon }$$
+is an open set, which is precisely equal to $W$. Therefore we conclude that $d\inv$
+maps open sets to open sets, and therefore $d$ is continous, as desired.
+
+
 
 \end{document}
