@@ -26,6 +26,7 @@
 \DeclareMathOperator \ran {ran}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\qed}{\hfill $\blacksquare$}
 
 
 
@@ -2187,6 +2188,56 @@ $$ = \set{q \in X \times X:  x - \epsilon < d(q) < x + \epsilon }$$
 is an open set, which is precisely equal to $W$. Therefore we conclude that $d\inv$
 maps open sets to open sets, and therefore $d$ is continous, as desired.
 
+\textit{(b) Let $X'$ denote a space having the same underlying set as $X$. Show that if
+  $d: X' \times X' \to R$ is continous, then the topology of $X'$ is finer than the topology
+  of $X$.}
 
+Let $x \in X$ and let $U$ be a basis element of $X$ such that $x \in U$.
+We follow that since $U$ is a basis element, there's $k \in R$ and $y \in X$ such
+that $U = B_k(y)$. We now can follow that $(-1, k)$ is open in $R$ and thus
+$d\inv[(-1, y)]$ is open in both $X \times X$ and $X' \times X'$. Now we want to follow that
+$$d\inv[(-1, y)] \cap \set{y} \times R = \set{y} \times B_k(y)$$
+
+Let us firstly state and prove a theorem:
+
+\textbf{Strand theorem: }
+\textit{
+  Let $X, Y$ be topological spaces and let $x \in X$ and $y \in Y$.
+  We follow that if $U$ is an open set in $X \times Y$, then
+  $$U \cap X \times \set{y} = V \times \set{y}$$
+  and
+  $$U \cap \set{x} \times Y = \set{x} \times W $$
+  where $V$ is an open set in $X$ and $W$ is an open set in $Y$.
+}
+
+Suppose that $U$ is an open set in $X \times Y$. We follow that there is an indexed collection
+(i.e. a function) $A_j$
+of elements of basis of $X \times Y$ such that
+$$U = \bigcup_{j \in J}{A_j}$$
+We follow that since $A_j$ is a basis element for all $j \in J$ we've got that
+$$A_j = X_j \times Y_j$$
+such that $X_j$ and $Y_j$ are open sets in $X$ and $Y$ respectively. Let $K \subseteq J$
+be such that if $k \in K$ then $y \in Y_k$. Thus we follow that
+$$\bigcup_{j \in J}{A_j} \cap X \times \set{y} =
+\left(\bigcup_{k \in K}{A_k} \cup \bigcup_{j \in J \setminus K}{A_j}\right)  \cap X \times \set{y} =
+$$
+$$ = 
+\left(\bigcup_{k \in K}{A_k} \cap X \times \set{y}\right)  \cup
+\left( \bigcup_{j \in J \setminus K}{A_j} \cap X \times \set{y} \right)=
+ \left( \bigcup_{k \in K}{A_k} \cap X \times \set{y} \right) \cup \emptyset=$$
+$$ = \bigcup{A_k} \cap X \times \set{y}
+$$
+Now we want to follow that
+$$\bigcup{A_k} \cap X \times \set{y} = \bigcup{X_k} \times \set{y}$$
+$$q \in \bigcup{A_k} \cap X \times \set{y} \lra q = \eangle{x, y} \land x \in \bigcup{X_k} \land
+x \in X \lra
+q = \eangle{x, y} \land x \in \bigcup{X_k} \lra q \in \bigcup{X_k} \times \set{y}$$
+since $X_k$ is a collection of open sets in $X$, we follow that we can set $V = \bigcup{X_k}$
+to get the desired result. The same logic holds for the latrer case as well.
+
+\qed
+
+From the strand theorem we follow that $B_k(y)$ is open in $X'$. Thus we follow that
+topology on $X$ is coarser than $X'$, as desired.
 
 \end{document}
