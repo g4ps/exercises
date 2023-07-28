@@ -2240,4 +2240,178 @@ to get the desired result. The same logic holds for the latrer case as well.
 From the strand theorem we follow that $B_k(y)$ is open in $X'$. Thus we follow that
 topology on $X$ is coarser than $X'$, as desired.
 
+\subsection{}
+
+\textit{Consider the product, uniform and box topologies on $R^\omega$.}
+
+Let $U_p$, $U_u$ and $U_b$ be basis elements of product, uniform and box topologies respectively.
+
+\textit{(a) In which topologies are the following functions from $R$ to $R^\omega$ continous.
+  $$f(t) = (t, 2t, 3t, ...)$$
+  $$g(t) = (t, t, t, ...)$$
+  $$h(t) = (t, \frac{1}{2} t, \frac{1}{3} t, ...)$$
+}
+
+Consider the product topology. Let $U$ be a basis element such that $f\inv[U], g\inv[U],
+h\inv[U] \neq \emptyset$ (not necessarily at the same time, but the point is clear).
+We follow that
+$$U = \prod_{j \in J}{A_J}$$
+We follow that there're finitely many intervals $A_j$ such that $A_j \neq R$ and such that
+$A_j$ is an open interval in $R$. Let $K = \bigcap_{j \in J} A_J$. We follow by the fact that
+there are finitely many $j$'s such that $A_J \neq R$ that $f\inv(U)$ is an open set,
+restriction on which comes from the last $A_j$ such that $A_j \neq R$. We can follow that 
+$$g\inv(U) = K$$
+and we can follow  that $h$ is restricted by the first $A_j$ such that $A_j \neq R$.
+Therefore we conclude that all of the functions are continous in product topology.
+
+When it comes to the uniform topology, then we follow that
+we can create basis  elements 
+$$U = B((1/2 - 1/3, 1/3 - 1/3, 1/4 - 1/3, ...), 1/3)$$
+such that $f\inv[U] = g\inv[U] = \set{0}$. Thus not $g$ nor $f$ are continous in uniform
+topology. We can do a set, simular to the one in box topology set, so that $h$ is
+$h\inv[U]$ is not open as well. Therefore we conclude that no given functions are
+continous under uniform topology.
+
+
+Consider the box topology. We follow that there's a basis element of box topology
+$$U = (-1/2, 1/2) \times (-1/3, 1/3) ... $$
+we can follow that the only $V \subseteq R$ such that $f(t) \in U$ is $V = \set{0}$.
+We can follow that $V$ is not an open set in $R$, and thus $f$ and $g$ are not continous
+with respect to box topology.
+
+We can also create an open set
+$$K = \prod{(1/n - 1/n^{2}, 1/n + 1/n^2)}$$
+We follow that $h(1) \in K$. If $j \neq 1$ thought, then let $k = j - 1$.
+We follow that if $k > 0$, then
+$$h(j) = h(k + 1) = (k + 1, \frac{1}{2}k + \frac{1}{2}, ....)$$
+Since $k \in R$, we follow that there is $l \in Q$ such that $0 < l < k$.
+We follow that there's $o, p \in N$ such that $l = o/p$ and thus
+Thus we follow that
+$$\frac{1}{n}l + \frac{1}{n} = \frac{o}{np} + \frac{1}{n}$$
+and thus there's some  $n \in N$ (namely some $n > p$) such that
+$$ \frac{o}{np} >  \frac{1}{n^2}$$
+and since $h(l) < h(k)$ we conclude that $h(k) \notin K$. Thus we follow that
+$h\inv[K] = \set{1}$, which proves that $h$ is not continous as well.
+
+\textit{(b) In which of topologies do the following sequences converge?}
+
+Firtly, we must state that all of the sequences either converge to $(0, 0, ...)$
+or don't converge at all. For the simplicity of notation I'm gonna use $0$ as a
+shorthand for this vector.
+
+Consider the box topology. We follow that there's
+$$U = \prod_{j \in \omega} (1, -1)$$
+we follow that $0 \in U$ but every element of $w_n$ such that $n > 1$
+has the property that $0 \notin w_n$. Thus we conclude that $w_n$ does
+not converge in box topology.
+
+If we set
+$$U = \prod_{j \in \omega} (1/j^2, -1)$$
+then the fact that $1/j^2 < 1/j$ for all $j \in \omega$ will give us that $x_n$
+does not converge in box topology. Same $U$ will suffice to show that $y_n$
+does not converge in box topology because for every $n \in \omega$ there's $j \in \omega$
+such that $1/n > 1/j$, thus giving us that at $n$'th position both $y_n$ and $x_n$ won't
+be confined inside $U$.
+
+Case with $z_n$ is different though. We follow that if $U$ is a basis element in box topology,
+then there's two open intervals  $A_1, A_2$ such that $A_1, A_2 \in \ran U_j$.
+We follow that $A_1 \cap A_2$ is an interval as well, and thus we follow that there's
+$n \in \omega$ such that $1/n \in A_1 \cap A_2$. Thus we conclude that $z_n$ will converge
+in box topology. Given that both uniform and product topologies are coarser than box
+topology, we can follow that $z_n$ converges in those topologies as well.
+
+Consider uniform topology. We follow that
+$$0 \in B(0, 1)$$
+but $j > 2 \ra w_j \notin B(0, 1)$. Thus we follow that $w_n$ does not converse in uniform
+topology. We can use a method of sliding interval (just as in part (a)) to conclude that
+$x_n$ does not converge in uniform topology.
+
+We can follow that if $x \neq (k, 0, 0, ...)$ for some $k \in R$, then $0 \notin B(x, \epsilon)$.
+Thus we conclude that if $0 \in B(x, \epsilon)$, then $x = (k, 0, 0, ...)$. We can also
+follow pretty easily that $\epsilon > k$. Thus we can follow that $y_n$ converges in uniform
+topology. Since product topology is coarser than uniform, we follow that $y_n$ converges
+in product topology as well.
+
+Consider product topology. Let $U$ be a basis element such that $0 \in U$. We
+follow that
+$$U = \prod_{j \in \omega} U_j$$
+and by the nature of basis elements in product topologies we follow that there's $n \in \omega$
+such that $U_j \neq R \ra j < n$. Thus we follow that there's $n \in \omega$ such that
+$w_n \in U$. Therefore we conclude that $w_n$ converges in product topology.
+Slightly modified logic can tell us that $x_n$ converges in product topology as well.
+
+\subsection{}
+
+\textit{Let $R^\infty$ be the subset of $R^\omega$ consisting of all sequences that
+  are eventually zero. What is the closure of $R^\infty$ in $R\omega$ in the
+  uniform topology?. Justify your answer.}
+
+I want to say that it's all the sequences that converge to 0.
+
+Suppose that $z_n \in R^\omega$  is such that it does converge to 0. Let $B(x_n, \epsilon)$
+be a basis element of uniform topology such that $z_n \in B(x, \epsilon)$.
+We follow that there's $n \in \omega$ such that $m \geq n \ra |x_n| < \epsilon$.
+This gives us that there's an element $y_n$ of $R^\infty$, specifically
+$$
+\begin{cases}
+  m < n \ra y_m = x_n \\
+  m \geq  n \ra y_m = 0 \\
+\end{cases}
+$$
+such that $y_n \in B(x_n, \epsilon)$. Thus we conclude that if $z_n$ converges to $0$, then
+$z_n \in \overline{R^\infty}$ in uniform topology.
+
+Let $x_n \in R^\omega$  be such that it does not converge to 0.
+We follow that there exists $\epsilon > 0$ such that for all $n \in \omega$
+$$|x_n| > \epsilon$$
+moreover, we follow that there's $\epsilon \in (0, 1)$ that will do the job.
+Thus we conclude that there's a basis element $B(x_n, \epsilon)$ such that there's no
+element $z$ of $R^\infty$ such that $z \in B(x_n, \epsilon)$. Therefore we
+conclude that if $x_n$ does not converge to 0, then $x_n \notin \overline{R^\infty}$.
+
+Thus we can conclude that $x_n \in \overline{R^\infty}$ if and only if $x_n$
+converges to 0 (or so I think).
+
+\subsection{}
+
+\textit{Let $\rho$ be the uniform metric on $R^\omega$. Given $x = (x_1, x_2, ...) \in R^\omega$
+  and given $0 < \epsilon < 1$, let
+  $$U(x, \epsilon) = (x_1 - \epsilon, x_1 + \epsilon) \times
+  (x_2 - \epsilon, x_2 + \epsilon) \times ... $$
+}
+
+\textit{(a) Show that $U(x, \epsilon)$ is not equal to $\epsilon$-ball $B_\rho(x, \epsilon)$.}
+
+Let
+$$y = (x_1 + \frac{1}{2} \epsilon, x_2 + \frac{2}{3} \epsilon, ...)$$
+we follow that $y \in U(x, \epsilon)$. At the same time we follow that
+$$\rho(x, y) = \sup\set{\overline{d}(x_n, y_n): n \in \omega} =
+\sup\set{\frac{n - 1}{n} \epsilon: n \in \omega} = \epsilon$$
+since
+$$y \in B_\rho(x, \epsilon) \lra \rho(x, y) < \epsilon$$
+we follow that $y \notin B_\rho(x, \epsilon)$.
+
+\textit{(b) Show that $U(x, \epsilon)$ is nor even open in the uniform topology}
+
+We can follow that there's no basis element of uniform topology such that it contains
+$y$ and is a subset of $U(x, \epsilon)$.
+
+\textit{(c) Show that
+  $$B_\rho(x, \epsilon) = \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
+}
+
+Suppose that $y \in B_\rho(x, \epsilon)$. We follow that
+$$\rho(y, x) < \epsilon$$
+thus we follow that there's $\delta \in R$ such that $\rho(y, x) < \delta < \epsilon$.
+We follow that $y \in U(x, \delta)$ and thus $y \in \bigcup_{\delta < \epsilon}{U(x, \delta)}$.
+Therefore
+$$B_\rho(x, \epsilon) \subseteq \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
+
+If $y \in \bigcup_{\delta < \epsilon}{U(x, \delta)}$, then there's $\delta < \epsilon$
+such thaht $y \in U(x, \delta)$. We follow that $\rho(y, x) \leq \delta < \epsilon$ and thus
+$y \in B_\rho(x, \epsilon)$. Thus
+$$B_\rho(x, \epsilon) \supseteq \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
+Double inclusion gives us the desired result.
+
+
 \end{document}
