@@ -2413,5 +2413,35 @@ $y \in B_\rho(x, \epsilon)$. Thus
 $$B_\rho(x, \epsilon) \supseteq \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
 Double inclusion gives us the desired result.
 
+\subsection{}
+
+\textit{Consider the map $h: R^\omega \to R^\omega$ defined in Exercise 8 of paragraph 19, give
+  $R^\omega$ the uniform topology. Under what conditions on the numbers $a_i$ and $b_i$ is $h$
+  continous? a homeomorphism?}
+
+$h: R^\omega \to R^\omega$ is defined as
+$$h((x_1, x_2, ... )) = (a_1 x_1 + b_1, a_2 x_2 + b_2, ...)$$
+
+If all $a_i$'s are equal to $0$, then we follow that $\ran(h) = \set{(b_1, b_2, ...)}$.
+We follow that if $(b_1, b_2, ...) \in B_\rho(x, \epsilon)$, then
+$h\inv[B_\rho(x, \epsilon)] = R^\omega$. If $(b_1, b_2, ...) \notin B_\rho(x, \epsilon)$,
+then $h\inv[B_\rho(x, \epsilon)] = \emptyset$. Thus we conclude that if $a_n$ is all
+zeroes, then $h$ is still continous. 
+Thus we follow that a conjecture that $a_n$ need not to
+converge to 0 is false.
+Since $\ran(h) = \set{(b_1, b_2, ...)}$, we follow that $h$ is not a bijection and thus it cannot
+be a homeomorphism.
+
+Now we can conjecture something useful: in order for $h$ to be continous $a_n$ and $b_n$ can
+be arbitrary and in order for $h$ to be a homemorphism, there should be no $a_n$ equaling zero.
+
+We follow that
+$$h((x_1, x_2, ... )) = ((x_1, x_2, ...) \cdot (a_1, a_2, ...)) + (b_1, b_2, ...) $$
+thus if $a_i \neq 0$ for all $i \in \omega$
+$$h\inv((x_1, x_2, ...)) = ((x_1, x_2, ... ) - (b_1, b_2, ...))
+\cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...) $$
+thus we can follow that if none of $a_n$ are equal to zero, then $h$ is bijective.
+
+TODO
 
 \end{document}
