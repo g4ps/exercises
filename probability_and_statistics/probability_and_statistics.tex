@@ -434,11 +434,89 @@ TODO later (probably never).
   1 & $Pr(A) / Pr(B)$ \\
   2 & 0 \\
   3 & $Pr(A)$ \\
+  4 & $1/27 \approx 0.037037$ \\
+  5 & - \\
+  6 & $2/3$ \\
+  7 & $1/3$ \\
+  8 & $0.6 / 0.85 \approx 0.706$ \\
+  9a & $3/4$ \\
+  9b & $3/5$ \\
+  10 & $0.4485884485884486$ \\
+  11 & - \\
+  12 & - \\
+  13 & $4/9$ \\
+  14 & $0.056$ \\
+  15 & $0.47$ \\
+  16 & $5/12$ \\
+  17 & - \\
   \hline 
 \end{tabular}
 
+$$Pr(A|B) = \frac{Pr(A \cap B)}{Pr(B)}$$
+
+\subsection*{2.1.5}
+
+$$\frac{r}{r + b} *  \frac{(r + k)}{(r + k) + b} * \frac{(r + 2k)}{(r + 2k) + b} *
+\frac{b}{(r + 3k) + b} $$
+
+\subsection*{2.1.6}
+
+Let $A$ be an event, that we've picked up a card, looked at its side and that the side is green.
+We can follow that
+$$Pr(A) = 1/2$$
+Let $B$ be an event that we've picked up a card, and it's green on both sides. We follow that
+$$Pr(B) = 1/3$$
+Probability that both $A$ and $B$ happened are $1/3$. Thus we follow that 
+$$Pr(B | A) = \frac{Pr(A \cap B)}{Pr(A)} = \frac{1/3}{1/2} = 2/3$$
+This makes me think about Monty Hall problem, as those two are (probably) closely related.
+
+\subsection*{2.1.11}
+
+We want to prove that
+$$Pr(A^c|B) = 1 - Pr(A|B)$$
+we follow that by
+$$Pr(A^c|B) = \frac{Pr(A^c \cap B)}{Pr(B)} = \frac{Pr(B) - Pr(A \cap B)}{Pr(B)} =
+1 - \frac{Pr(A \cap B)}{Pr(B)} = 1 - Pr(A|B)$$
+where
+$$Pr(A^c \cap B) = Pr(B) - Pr(A \cap B)$$
+is proven in Theorem 1.5.6.
+as desired.
+
+\subsection*{2.1.12}
+
+$$Pr(A \cup B | D) = \frac{Pr((A \cup B) \cap D)}{Pr(D)} =
+\frac{Pr((A \cap D) \cup (B \cap D))}{Pr(D)} = $$
+$$ =
+\frac{Pr(A \cap D) + Pr(B \cap D) - Pr(A \cap D \cap B \cap D)}{Pr(D)} = $$
+$$ =  \frac{Pr(A \cap D) + Pr(B \cap D) - Pr(A \cap B \cap D)}{Pr(D)} =  $$
+$$ =  \frac{Pr(A \cap D)}{Pr(D)} + \frac{Pr(B \cap D)}{Pr(D)}
+- \frac{Pr(A \cap B \cap D)}{Pr(D)} =  Pr(A|D) + Pr(B|D) - Pr(A \cap B|D)$$
+every deriviation that was done here was either justified by a theorem in section 1.5 or
+is a property of set operations.
+
+\subsection*{2.1.17}
+
+We can't have
+$$Pr((A|C)|B)$$
+on the account that $A|C$ is not an event, but just a funky notation introduced with the
+probability function. What this notation gives is just a syntactic sugar.
+
+$$Pr(A|C) = \frac{Pr(A \cap C)}{Pr(C)} = \frac{1}{Pr(C)} Pr(A \cap C) =
+\frac{1}{Pr(C)} \sum_{j = 1}^n{Pr(B_j)Pr(A \cap C | B_j)} = 
+$$
+$$ =
+\frac{1}{Pr(C)} \sum_{j = 1}^n{Pr(B_j)\frac{Pr(A \cap C \cap B_j)}{Pr(B_j)}} =
+\sum_{j = 1}^n{Pr(B_j)\frac{Pr(A \cap C \cap B_j)}{Pr(B_j)Pr(C)}} = 
+$$
+$$ =
+\sum_{j = 1}^n{\frac{Pr(A \cap C \cap B_j)}{Pr(C)}} =
+\sum_{j = 1}^n{\frac{Pr(B_j \cap C) Pr(A \cap C \cap B_j)}{Pr(B_j \cap C)Pr(C)}} = 
+$$
+$$ =
+\sum_{j = 1}^n{\frac{Pr(B_j \cap C) Pr(A  \cap B_j \cap C)}{Pr(C) Pr(B_j \cap C)}} = 
+$$
+$$ = \sum_{j = 1}^n{\frac{Pr(B_j \cap C)}{Pr(C)} *
+  \frac{Pr(A \cap B_j \cap C)}{Pr(B_j \cap C)}} = \sum_{j = 1}^n{Pr(B_j|C)Pr(A|B_j \cap C)}$$
+assuming that $Pr(B_j \cap C), Pr(C) \neq 0$ for all $1 \leq j \leq n$.
+
 \end{document}
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
