@@ -628,7 +628,79 @@ $$\sum_{i \in \set{2, 3, 4}}{C(4, i)(1/4)^i(3/4)^{4 - i}} = 67/256 = 0.26171875$
 
 \section{Bayes' Theorem}
 
+\begin{tabular}[center]{||c | c|| }
+  \hline
+  1 & - \\
+  2 & 3 \\
+  3 & 0.3 \\
+  4 & 0.0001899658061548921 \\
+  5 & 0.30508474576271183 \\
+  6a & 0.9896907216494846 \\
+  6b & 0.9846153846153847 \\
+  7a & 0, 1/10, 1/5, 3/10, 2/5 \\
+  8 & skip \\
+  16 & - \\
+  \hline 
+\end{tabular}
 
+\subsection*{2.3.1}
+
+Suppose that $S$ can be partitioned into $B_1, ..., B_k$. Suppose also  that $A$
+is an event such that $Pr(A) > 0$ and 
+$$Pr(B_1|A) < Pr(B_1)$$
+and
+$$Pr(B_i|A) \leq Pr(B_i)$$
+for all $1 < i \leq k$.
+Thus we follow that
+$$\sum{Pr(B_i|A)} < \sum{Pr(B_i)} = 1$$
+thus
+$$\sum{Pr(B_i|A)} <  1$$
+$$\sum{\frac{Pr(B_i \cap A)}{Pr(A)}} <  1$$
+$$\sum{Pr(B_i \cap A)} <  Pr(A)$$
+Given that $B_i$ is a partition of $S$, we follow that $B_i$'s are disjoint (BTW if several sets
+are all pairwise disjoint, then all of them are disjoint), therefore we follow that
+$B_j \cap A$ is disjoint from $B_l \cap A$ for all $1 \leq j, l \leq k$. Thus
+$$\sum{Pr(B_i \cap A)} = Pr(\bigcup{[B_i \cap A]}) = Pr(\bigcup{[B_i]} \cap A) = Pr(S \cap A)
+= Pr(A) <  Pr(A)$$
+which is a contradiction.
+
+\subsection*{2.3.16}
+
+\textit{(a)}
+
+Suppose that $D_1$ is independent of $B$. That is,
+$$Pr(D_1) = Pr(D_1 | B) = 0.01$$
+
+Assume that for some $n$ we've got that
+$$Pr(D_n) = 0.01$$
+We follow that
+$$Pr(D_{n + 1}|B) = 0.01$$ 
+If $B^c$ is true and we know that $n$'th item is normal, then we can follow that 
+$$Pr(D_{n + 1}| D_n^c \cap B^c ) = 1/165$$
+If $n$'th item is defective, then
+$$Pr(D_{n + 1}| D_n \cap B^c ) = 2/5$$
+therefore, because $D$ and $D^c$ are partitioning space, we follow that
+$$Pr(D_{n + 1}|B^c) = Pr(D_n^c) * 1/165 + Pr(D_n) * 2/5 = 0.01$$
+thus we now can follow that
+$$Pr(D_{n + 1}) = 0.1 * 0.7 + 0.01 * 0.3 = 0.1$$
+therefore by induction we can conclude that $Pr(D_n) = 0.01$ for all $n \in N$
+
+\textit{(b)}
+
+Let us assume that we've got a typo in the text, and we actually need to compute $Pr(B|E)$.
+From our initial assumptions we follow that
+$$Pr(E|B) = 0.99^4 * 0.01^2 = 9.65 * 10^{-5}$$
+thus we need to compute
+$$Pr(B|E) = \frac{Pr(E|B) * Pr(B)}{Pr(E|B) * Pr(B) + Pr(E|B^c) * Pr(B^c)}$$
+thus the only thing that we need to compute is $Pr(E|B^c)$.
+We follow that
+$$Pr(E | B^c) = $$
+$$ = Pr(D_1^c \cap D_2^c \cap D_3 \cap D_4 \cap D_5^c \cap D_6^c | B^c) =
+Pr(D_1^c|B^c) Pr(D_2^c |D_1^c \cap B) Pr(D_3| D_2^c \cap B) ...  = $$
+$$ = 0.99 * 164/165 * 1/165 * 2/5 * 3/5 * 164/165 = 0.99 * (164/165)^2 * 1/165 * 2/5 * 3/5  = $$
+$$ =  0.001422598347107438$$
+thus we can now compute the rest and state that
+$$Pr(B|E) = 0.11898006688921978 \approx 12\%$$
 
 
 \end{document}
