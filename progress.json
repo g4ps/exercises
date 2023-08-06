@@ -1,5 +1,5 @@
 {
-    "last_update": "04.08.2023",
+    "last_update": "06.08.2023",
     "data":
     [
 	{
@@ -47,7 +47,7 @@
 	    "status": "in_progress",
 	    "progress": {
 		"total_chapters": 19,
-		"finished_chapters": 2
+		"finished_chapters": 2.5
 	    }
 	},
 	{
