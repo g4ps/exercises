@@ -2439,9 +2439,25 @@ We follow that
 $$h((x_1, x_2, ... )) = ((x_1, x_2, ...) \cdot (a_1, a_2, ...)) + (b_1, b_2, ...) $$
 thus if $a_i \neq 0$ for all $i \in \omega$
 $$h\inv((x_1, x_2, ...)) = ((x_1, x_2, ... ) - (b_1, b_2, ...))
-\cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...) $$
+\cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...) = $$
+$$ =
+((x_1, x_2, ... ) \cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...)  - (b_1, b_2, ...))
+\cdot  (\frac{1}{a_1}, \frac{1}{a_2}, ...)  = $$
+
 thus we can follow that if none of $a_n$ are equal to zero, then $h$ is bijective.
 
-TODO
+\textbf{IDEA}: $a_i$'s ought to be bounded. This gives us continuity for all zeroes and prevents this
+thing from creatign a strand in inverse image of a basis element. If $a_i$'s are bounded, then
+we can make a proof by deconstructing $B(x, \epsilon)$ using identity from previous exercise.
+Then every $x$ in inverse image is surrounded by some space. If $a_i$'s are unbounded, then
+inverse image has a strand around $(b_1, b_2, ...)$ so that no basis element fits in there.
+
+TODO: expand this idea to a full-blown proof.
+
+We also have that if some $a_i$'s are zeros, then function is not bijective, otherwise it is.
+We might want to have bounded set $\set{\frac{1}{a_i}}$ on the account that we want to impose
+equal restraint for continuity for reverse image.
+
+$b_i$'s don't matter whatsoever.
 
 \end{document}
