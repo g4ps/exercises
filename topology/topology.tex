@@ -2421,43 +2421,153 @@ Double inclusion gives us the desired result.
 
 $h: R^\omega \to R^\omega$ is defined as
 $$h((x_1, x_2, ... )) = (a_1 x_1 + b_1, a_2 x_2 + b_2, ...)$$
-
-If all $a_i$'s are equal to $0$, then we follow that $\ran(h) = \set{(b_1, b_2, ...)}$.
-We follow that if $(b_1, b_2, ...) \in B_\rho(x, \epsilon)$, then
-$h\inv[B_\rho(x, \epsilon)] = R^\omega$. If $(b_1, b_2, ...) \notin B_\rho(x, \epsilon)$,
-then $h\inv[B_\rho(x, \epsilon)] = \emptyset$. Thus we conclude that if $a_n$ is all
-zeroes, then $h$ is still continous. 
-Thus we follow that a conjecture that $a_n$ need not to
-converge to 0 is false.
-Since $\ran(h) = \set{(b_1, b_2, ...)}$, we follow that $h$ is not a bijection and thus it cannot
-be a homeomorphism.
-
-Now we can conjecture something useful: in order for $h$ to be continous $a_n$ and $b_n$ can
-be arbitrary and in order for $h$ to be a homemorphism, there should be no $a_n$ equaling zero.
-
-We follow that
+We can also use some notation from linear algebra (where we denote piecewise
+vector multiplication by $\cdot$) to get
 $$h((x_1, x_2, ... )) = ((x_1, x_2, ...) \cdot (a_1, a_2, ...)) + (b_1, b_2, ...) $$
-thus if $a_i \neq 0$ for all $i \in \omega$
+and if none of $a_i$'s are zeroes, then
 $$h\inv((x_1, x_2, ...)) = ((x_1, x_2, ... ) - (b_1, b_2, ...))
 \cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...) = $$
-$$ =
-((x_1, x_2, ... ) \cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...)  - (b_1, b_2, ...))
-\cdot  (\frac{1}{a_1}, \frac{1}{a_2}, ...)  = $$
+$$ = ((x_1, x_2, ... ) \cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...) - (b_1, b_2, ...)
+\cdot (\frac{1}{a_1}, \frac{1}{a_2}, ...))=
+( \frac{x_1}{a_1}, \frac{x_2}{a_2}, ...) - (\frac{b_1}{a_1}, \frac{b_2}{a_2}, ...)$$
+although the notation is somewhat abusive, we only want to show the idea; the same
+conclusion can be drawn with ol' reliable FOL and stuff like that.
 
-thus we can follow that if none of $a_n$ are equal to zero, then $h$ is bijective.
+The conjecture is that set of $a_i$'s need to be bounded.
+Let's expand our idea a bit and let $a_i$ and $b_i$'s be arbitrary for now.
+We follow that if $B(x, \epsilon)$ is a basis element and
+$B(x, \epsilon) \cap h\inv(R^\omega) \neq 0$, then there exists $y \in R^\omega$ such that
+$$h(y) \in B(x, \epsilon)$$
+Suppose that there's a basis element around $y$ such that its image is contained in
+$B(x, \epsilon)$. We follow that there's  $\gamma \in R$  such that $\gamma > 0$ and 
+$$h(B(y, \gamma)) \subseteq B(x, \epsilon)$$
+We follow that there's $\beta \in R$ such that $0 < \beta < \gamma$ and thus we follow that
+$$y + (\beta, \beta, ...) \in B(y, \gamma)$$
+as proven in previous exercise. We follow then that
+$$h(y + (\beta, \beta, ...)) \subseteq B(x, \epsilon)$$
+we thus follow that for all $i$'s we've got that
+$$(y_i + \beta) a_i + b_i \in (x_i - \gamma, x_i + \gamma)$$
+thus
+$$x_i - \gamma < (y_i + \beta) a_i + b_i < x_i + \gamma$$
+$$x_i - \gamma - b_i < (y_i + \beta) a_i  < x_i + \gamma - b_i$$
+$$x_i - \gamma - b_i < y_i a_i + \beta a_i  < x_i + \gamma - b_i$$
+$$x_i - \gamma - b_i - y_i a_i <  \beta a_i  < x_i + \gamma - b_i - y_i a_i$$
+$$x_i - y_i a_i - b_i - \gamma   <  \beta a_i  < x_i - b_i - y_i a_i + \gamma $$
+for all $i$'s.
+Let
+$$z = x - ay - b$$
+i.e.
+$$(z_1, z_2, ...) = (x_1, x_2) - (a_1, a_2, ...) \cdot (y_1, y_2, ...) - (b_1, b_2, ...)$$
+we follow then that
+thus we follow that
+$$\beta a \in U(z, \gamma)$$
+and by using pretty much the same logic we can follow that 
+$$(-\beta) a \in U(z, \gamma)$$
+thus for all $i$'s we've got that
+$$
+\begin{cases}
+  z_i - \gamma < \beta a_i < z_i + \gamma \\
+  z_i - \gamma < -\beta a_i < z_i + \gamma
+\end{cases}
+$$
+let's do some algebra on the second inequality
+$$- z_i + \gamma > \beta a_i > - z_i - \gamma$$
+$$- z_i - \gamma < \beta a_i < - z_i + \gamma$$
+thus we get
+$$
+\begin{cases}
+  z_i - \gamma < \beta a_i < z_i + \gamma \\
+  - z_i - \gamma < \beta a_i < - z_i + \gamma
+\end{cases}
+$$
+thus we follow that we can sum up two inequalities to get
+$$z_i - \gamma - z_i - \gamma < 2 \beta a_i < z_i + \gamma - z_i  + \gamma$$
+$$ - 2\gamma < 2 \beta a_i <  2 \gamma $$
+$$ - \gamma < \beta a_i < \gamma $$
+$$ - \gamma / \beta <  a_i < \gamma / \beta $$
+thus we follow that
+$$|a_i| < \gamma / \beta$$
+which means that $a_i$'s ought to be bounded, otherwise we don't have a basis element
+around $y$ whose image is contained in the original basis element.
 
-\textbf{IDEA}: $a_i$'s ought to be bounded. This gives us continuity for all zeroes and prevents this
-thing from creatign a strand in inverse image of a basis element. If $a_i$'s are bounded, then
-we can make a proof by deconstructing $B(x, \epsilon)$ using identity from previous exercise.
-Then every $x$ in inverse image is surrounded by some space. If $a_i$'s are unbounded, then
-inverse image has a strand around $(b_1, b_2, ...)$ so that no basis element fits in there.
+Now suppose that $a_i$'s are bounded by $M$. If $M$ is zero, then we follow that
+$a_i$'s are ceirtainly are bounded by some nonzero $M$, thus let us follow that in those
+circumstances $M$ is a positive real number. Let $B(x, \epsilon)$ be a basis element.
+Now we follow that there's two cases, namely
+$$B(x, \epsilon) \cap \ran(h) = \emptyset $$
+or
+$$B(x, \epsilon) \cap \ran(h) \neq \emptyset $$
+if the former case is true, then $h\inv[B(x, \epsilon)] = \emptyset$, which is an open set
+and we're done. Thus assume the latter case. Let $y \in B(x, \epsilon) \cap \ran(h)$.
+We want to show now that there's a basis element around $y$ that is contained in
+$y \in B(x, \epsilon) \cap \ran(h)$, which would imply that $h\inv[B(x, \epsilon)]$ is an open
+set. Previous exercise implies that 
+$$B_\rho(x, \epsilon) = \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
+which means that there's $\delta \in R$ such that $0 < \delta < x$ and
+$$h(y) \in U(x, \delta)$$
+we also follow that since $\delta, x \in R$ and $\delta \neq x$ there's $\gamma \in R$ such that
+$$\delta < \gamma < x$$
+and thus
+$$U(x, \delta) \subseteq U(x, \gamma)$$
+therefore
+$$h(y) \in U(x, \gamma)$$
+and
+$$h(y) \in U(x, \delta)$$
+Therefore
+$$h(y) \in \prod[(x_i - \gamma, x_i + \gamma)]$$
+$$h(y) \in \prod[(x_i - \delta, x_i + \delta)]$$
+we follow that for all $i$'s we've got that
+$$x_i - \delta < a_i y_i + b_i < x_i + \delta$$
+$$- \delta < a_i y_i + b_i - x_i <  \delta$$
+$$|a_i y_i + b_i - x_i| <  \delta$$
 
-TODO: expand this idea to a full-blown proof.
+Let $z \in U(y, \frac{\gamma - \delta}{M})$. We follow that for all $i$'s we've got
+$$|y_i - z_i| < \frac{\gamma - \delta}{M}$$
+$$M|y_i - z_i| < \gamma - \delta$$
+given that $|a_i| < M$ for all $a_i$'s, we follow that 
+$$|a_i||y_i - z_i| < \gamma - \delta$$
+$$|a_iy_i - a_iz_i| < \gamma - \delta$$
+$$|a_iy_i - a_iz_i| + \delta < \gamma$$
+using earlier proven inequality $|a_i y_i + b_i - x_i| <  \delta$ we get
+$$|a_iy_i - a_iz_i| + |a_i y_i + b_i - x_i| < \gamma$$
+now we need to use some absolute value properties to get 
+$$|a_iy_i - a_iz_i| + |- a_i y_i - b_i + x_i| < \gamma$$
+let us use the magestic triangle ($|a + b| \leq |a| + |b|$) now
+$$|a_iy_i - a_iz_i - a_i y_i - b_i + x_i| < \gamma$$
+$$| - a_iz_i  - b_i + x_i| < \gamma$$
+$$|a_iz_i  + b_i - x_i| < \gamma$$
+$$-\gamma < a_iz_i  + b_i - x_i < \gamma$$
+$$x_i - \gamma < a_iz_i  + b_i  < x_i + \gamma$$
+thus
+$$h(z) \in U(x, \gamma)$$
+and therefore
+$$h(z) \in B(x, \epsilon)$$
+therefore we conclude that if $z \in U(y, \frac{\gamma - \delta}{M})$ then
+$h(z) \in B(x, \epsilon)$. Given that
+$$B(y, \frac{\gamma - \delta}{M}) \subseteq U(y, \frac{\gamma - \delta}{M})$$
+(proof of that is pretty straightforward, so I'll omit it)
+we follow that
+$$z \in B(y, \frac{\gamma - \delta}{M}) \ra h(z) \in B(x, \epsilon)$$
+thus we conclude that around every point of $h\inv[B(x, \epsilon)]$ there's a basis element
+that is contained in $h\inv[B(x, \epsilon)]$. Thus we conclude that
+for all $B(x, \epsilon)$ we've got that $h\inv[B(x, \epsilon)]$ is open and thus
+$h$ is continous, as desired.
 
-We also have that if some $a_i$'s are zeros, then function is not bijective, otherwise it is.
-We might want to have bounded set $\set{\frac{1}{a_i}}$ on the account that we want to impose
-equal restraint for continuity for reverse image.
+Now to the question of homeomorphism. We can follow pretty easily that if some  $a_i$'s are
+equal to zero, then $h$ is not bijective, and if $a_i$'s are all nonzero, then the function
+is bijective (if the proof of that is not included in my linear algebra course, then it's
+pretty straightforward anyways). Thus we conclude that all $a_i$'s ought to be nonzero
+in order to function to be homeomorphism. If none of the $a_i$'s are zero, then we can follow that
+$$h\inv((x_1, x_2, ...)) = 
+( x_1 \frac{1}{a_1}, x_2 \frac{1}{a_2}, ...) + (- \frac{b_1}{a_1}, - \frac{b_2}{a_2}, ...)$$
+as shown in the beginning of this solution. Thus we follow that $h\inv$ is continous if
+and only if $\frac{1}{a_i}$'s are bounded by some  number. This statement is equivalent
+to saying that there's $\gamma \in R$ such that $\gamma < |a_i|$ for all $a_i$'s.
+This also takes care of the nonzero clause.
 
-$b_i$'s don't matter whatsoever.
+Therefore we conclude that $h$ is a homeomorphism if and only if there
+exist $M, \gamma \in R$ such that
+$$\gamma < |a_i| < M$$
+for all $a_i$'s.
 
 \end{document}
