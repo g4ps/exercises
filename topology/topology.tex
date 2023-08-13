@@ -2570,4 +2570,52 @@ exist $M, \gamma \in R$ such that
 $$\gamma < |a_i| < M$$
 for all $a_i$'s.
 
+\subsection{}
+
+\textit{Let $X$ be the subset of $R^\omega$ consisting of all sequances $x$ such that $\sum{x^2}$
+  converges. Then the formula
+  $$d(x, y) = \left[\sum_{i = 1}^{\infty}{(x_i - y_i)^2}\right]^{1/2}$$
+  defines a metric on $X$. On $X$ we have the three topologies it inherits from the box,
+  uniform and product topologies on $R^\omega$. We have also the topology given by the metric $d$,
+  which we call the $l^2$ topology}
+
+\textit{(a)) Show that on $X$, we have the inclusions
+$$ \text{uniform topology} \subseteq l^2\text{-topology} \subseteq \text{box topology}$$}
+
+Suppose that $B_\rho(x, \epsilon)$ is a basis element of uniform topology such that
+$B_\rho(x, \epsilon) \cap X$ is not empty. We follow that $B_\rho(x, \epsilon) \cap X$ is a
+basis element of inherited topology on $X$ from uniform topology. Let
+$y \in B_\rho(x, \epsilon) \cap X$. We follow that
+$$\rho(x, y) < \epsilon$$
+thus
+$$\sup\set{\overline{d}(x_i, y_i)} < \epsilon$$
+Now let $B_d(x, \epsilon/2)$ be a basis element in $l^2$-topology. We follow that for all
+$z \in B_d(x, \epsilon/2)$ we've got that
+$$\left[\sum_{i = 1}^{\infty}{(x_i - z_i)^2}\right]^{1/2} < \epsilon/2$$
+$$\sum_{i = 1}^{\infty}{(x_i - z_i)^2} < (\epsilon/2)^2$$
+we thus follow that for all $x_i$ and $z_i$ we've got
+$$(x_i - z_i)^2 < (\epsilon/2)^2$$
+thus
+$$|x_i - z_i| < \epsilon/2$$
+therefore $z \in U(x, \epsilon/2)$. Therefore $z \in B_\rho(x, \epsilon)$. Thus we conclude that
+topology inherited from uniform topology on $R^\omega$ is coarser than $l^2$-topology on $X$,
+which gives us the first inclusion.
+
+Now let $B_l(x, \epsilon)$ be a basis element in $l^2$ topology.
+We follow that we can make a basis element in box topology
+$$U = \prod{(x_i - \epsilon * 2^{-i}, x_i + \epsilon * 2^{-i})}$$
+we then follow that if $y \in U \cap X$, then
+$$d(x, y) < \epsilon$$
+thus we conclude that $l^2$-topology is coarser than the box topology, as desired.
+
+\textit{The set $R^\infty$ of all sequences that are eventually zero is contained in $X$.
+  Show that the four topologies that $R^\infty$ inherits as a subspace of $X$ are all distinct.}
+
+
+
+\subsection{}
+
+This one is handled in the linear algebra course.
+
+
 \end{document}
