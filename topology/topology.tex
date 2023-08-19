@@ -2608,10 +2608,39 @@ we then follow that if $y \in U \cap X$, then
 $$d(x, y) < \epsilon$$
 thus we conclude that $l^2$-topology is coarser than the box topology, as desired.
 
-\textit{The set $R^\infty$ of all sequences that are eventually zero is contained in $X$.
+\textit{(b) The set $R^\infty$ of all sequences that are eventually zero is contained in $X$.
   Show that the four topologies that $R^\infty$ inherits as a subspace of $X$ are all distinct.}
 
+Let
+$$U = \prod{(-1/n, 1/n)}$$
+be a basis element in the box topology. We follow that $U \cap R^\infty \neq \emptyset$,
+by the fact that $0$ vector is in both of those elements. Thus we conclude that
+$U \cap R^\infty$ is a nonempty open set in inherited topology with respect to the box
+topology.
 
+Let $B_d(x, \epsilon)$ be a basis element around $0$ with respect to the given metric
+(the one, that defines $l^2$ topology). Since $\epsilon > 0$ we can follow that
+$\epsilon / 2 > 0$ and thus there's $n \in N$ such that $1/n < \epsilon/2$. We follow that
+element
+$$f_x =
+\begin{cases}
+  x = n \ra \epsilon/2  \\
+  0 \text{ otherwise }
+\end{cases}
+$$
+is an element in $R^\infty$, and we can also conlcude that $f \in B_d(x, \epsilon)$
+by the fact that
+$$\sqrt{\sum{(x_i - f_i)^2}} = \sqrt{(\epsilon/2)^2} = \epsilon/2$$
+thus $d(x, f) < \epsilon$. We can also follow that $f \notin U$, because
+we've specifically engineered it not to be in it. Given that $\epsilon$ is
+arbitrary, we can conclude that
+there's an $x$ such that there's no basis neighborhood in $l^2$-topology that is
+a subset of $U \cap R^\infty$ and thus we conclude that $U \cap R^\infty$ is not open
+in $l^2$-topology.
+
+We can define
+$$V = \prod{(0, 1/n)}$$
+to be an open set in $l^2$-topology, whichh is 
 
 \subsection{}
 
