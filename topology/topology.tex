@@ -2640,11 +2640,108 @@ in $l^2$-topology.
 
 We can define
 $$V = \prod{(0, 1/n)}$$
-to be an open set in $l^2$-topology, whichh is 
+to be an open set in $l^2$-topology, whichh is
+
+\textit{TODO: later}
 
 \subsection{}
 
 This one is handled in the linear algebra course.
 
+\section{The Metric Topology (continued)}
+
+\subsection{}
+
+\textit{Let $A \subseteq X$. If $d$ is a metric for the topology of $X$, show that $d|A \times A$
+  is a metric for the subspace topology on $A$.}
+
+We follow that if some metric property does not hold for a pair of points in $A$, then
+it doesn't hold in $X$ as well, which produces contradiction, and thus $d|A \times A$ is
+a metric on set $A$.
+
+Let $U$ be an open set in $A$. We follow that there's an open set $V \subset X$
+such that $U = V \cap A$. Since $V$ is an open set, it is a union of balls, and thus
+$U$ is union of open balls in $A$. Thus we conclude that $d|A \times A$ imposes the same topology,
+as desired.
+
+\subsection{}
+
+\textit{Let $X$ and $Y$ be metric spaces with metrics $d_X$ and $d_Y$ respectively. Let
+  $f: X \to Y$ have the property that for every pair of points $x_1, x_2$ of $X$
+  $$d_Y(f(x_1), f(x_2)) = d_X(x_1, x_2)$$
+  Show that $f$ is an imbedding. It is called isometric imbedding of $X$ in $Y$.}
+
+Suppose thta $x_1, x_2 \in X$ and $x_1 \neq x_2$. We follow that
+$$d_X(x_1, x_2) \neq 0$$
+and thus
+$$d_Y(f(x_1), f(x_2)) \neq 0$$
+thus $f(x_1) \neq f(x_2)$. Thus we concldue that $f$ is injective.
+
+Let $x \in X$ and $\epsilon \in R$ be arbitrary. Then we follow that if we set $\delta = \epsilon$
+and get a point $x' \in X$ such that
+$$d_X(x, x') < \delta$$
+then
+$$d_X(x, x') < \epsilon$$
+and since $d_X(x, x') = d_Y(f(x), f(x'))$ we follow that
+$$d_Y(f(x), f(x')) < \epsilon$$
+thus we conclude that $f$ is continous. By the same logic we can prove that $f\inv: \ran(f) \to X$
+is continous as well.
+
+Thus we follow that $f$ is an imbedding by definition, as desired.
+
+\subsection{}
+
+\textit{Let $X_n$ be a metric space with metric $d_n$ for $n \in Z_+$.}
+
+\textit{(a) Show that
+  $$\rho(x, y) = \max\set{d_1(x_1, y_1), ..., d_n(x_n, y_n)}$$
+  is a metric for the product space $X_1 \times ... \times X_n$
+}
+
+We follow that $\rho(x, y) \geq 0$ for all $x \in R$ by the virtue of the fact that all of the
+numbers under the max are non-negative. If $x = y$, then $d_j(x, y) = 0$ for all $j$'s, and thus
+$\rho(x, y) = \max\set{0} = 0$. If $x \neq y$, then there is a component $j$ such that
+$d_j(x, y) \neq 0$, and thus we've got the first property of the metric.
+
+We can follow commutativity of this thing by common sense.
+
+Suppose that $x, y, z \in \prod{X_i}$. We follow that for all $j$'s we've got 
+$$d_j(x_j, z_j) \leq d_j(x_j, y_j) + d_j(y_j, z_j)$$
+Then we can follow the triangle by either induction or contradiction.
+
+Now suppose that $U$ is a basis element of $\prod{X_i}$ and $x \in U$.
+We follow that there are open sets $V_j$
+such that $U = \prod{V_j}$. Given that any of the $V_j$'s are open, we follow that for each one
+of them there's a basis element $B_j$ such that $B_j$ is centered on $x_j$ and $B_j \subseteq V_j$
+and we follow that $\prod(B_j) \subseteq \prod V_j$. Each $B_j$ has  $\epsilon_j$
+such that $B_j = B_j(x_j, \epsilon_j)$ and thus we can follow that if
+$\rho(x, y) < \max\set{\epsilon_j}$, then $y \in \prod(B_j)$. Thus we follow that
+$$B_\rho(x, \max\set{\epsilon_j}) \subseteq U$$, therefore product topology is a subset of
+topology, that is induced by this metric. We can also follow that every basis element of
+topology, that is induced by this metric is a basis element in product topology, and thus
+we conclude that given metric induces the product topology, as desired.
+
+\textit{(b) Let $\overline{d_i} = \min\set{d_i, 1}$. Show that
+  $$D(x, y) = \sup{\overline{d_i}(x_i, y_i) / i}$$
+  is a metric for the product space $\prod{X_i}$.}
+
+This proof is practically the same as in theorem 20.5. If it ain't, then I skip it anyways
+
+\subsection{}
+
+\textit{Show that $R_l$ and the ordered square satisfy the first contability axiom}
+
+Let $x \in R$. We follow that $[x, x + 1/n)$ is the countable collection, that satisfies the
+countability axiom.
+
+For the ordered square we've got either $(\eangle{x_1, x_2 - 1/n}, \eangle{x_1, x_2 +  1/n})$
+or some simular stuff for the edges.
+
+\subsection*{the rest}
+
+\textit{the rest of the exercises were taken care of in the real analysis course. Maybe later
+  I'll repeat the proofs for s'n'g}
+
+\chapter{Connectedness and Compactness}
 
 \end{document}
