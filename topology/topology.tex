@@ -2744,4 +2744,78 @@ or some simular stuff for the edges.
 
 \chapter{Connectedness and Compactness}
 
+\section{Connected Spaces}
+
+\subsection{}
+
+\textit{Let $\topol$ and $\topol'$ be two topologies on $X$. If $\topol \subseteq \topol'$, what
+  does connectedness of $X$ in one topology imply about connectedness in the other?}
+
+We follow that if $\topol \subseteq \topol'$ and $U$ is a connected subspace of $\topol'$,
+then there's no separations in $\topol'$, and thus there're no separations in $\topol$ as well.
+
+If $U$ is open in $\topol$, then and space $X$ has some sane amout of elements (i.e. not zero or
+one), then we can't follow nothing from it. For example, every topology is a subset
+of a discrete topology on a set, and every subspace of discrete topology is disconnected.
+
+\subsection{}
+
+\textit{Let $\set{A_n}$ be a sequence of connected subspaces of $X$, such that
+  $A_n \cap A_{n + 1} \neq \emptyset$ for all $n$. Show that $\bigcup{A_n}$ is connected.}
+
+We firstly assume that $|\set{A_n}| \leq \omega$ because of the word "sequence"
+
+Assume that $\bigcup{A_n}$ is disconnected and has a separation $U$ and $V$.
+We thus follow that for all $\set{A_n}$ we've got that $A_n$ is in either $U$ or $V$.
+Assume that $A_1$ is in $U$. Thus we follow that there's a minimal $j$ such
+that $A_j \subseteq V$ (if there isn't one, then $V$ is empty, which is a contradiction).
+Therefore $A_{j - 1} \subseteq U$ and $A_j \subseteq V$, which means that
+$A_{j - 1} \cap A_{j} = \emptyset$, which is a contradiction.
+
+\subsection{}
+
+\textit{Let $A_\alpha$ be a collection of connected subspaces of $X$; let $A$
+  be a connected subspace of $X$. Show that if $A \cap A_\alpha \neq \emptyset$ for all $\alpha$,
+  then $A \cup (\bigcup{A_\alpha})$ is connected.}
+
+Unlike the previous exercise, we can't reasonably assume nothing about the collection $A_\alpha$.
+We firstly state that
+$$A \cup (\bigcup{A_\alpha}) = \bigcup{(A \cup A_\alpha)}$$
+which is either handled in the set theory course, or is justified by some trivial FOL.
+
+Since $A \cap A_\alpha \neq \emptyset$ for all $\alpha$, we follow that $A \cap A_\alpha$
+is connected for all $\alpha$, thus 23.3 implies that $\bigcup{(A \cup A_\alpha)}$ is connected as
+well.
+
+\subsection{}
+
+\textit{Show that if $X$ is an infnite set, it is connected in the finite complement topology}
+
+Suppose that it ain't. We follow that sets $U$ and $V$ form separation. Given that
+$U$ and $V$ are open, we follow that 
+$X \setminus U = V$ is finite and thus $V$ is not open, which is a contradiction.
+
+\subsection{}
+
+\textit{A space is totally disconnected if its only connected subspaces are one point sets.
+  Show that if $X$ has the discrete topology, then $X$ is totally disconnected. Does the
+  converse hold?}
+
+I'm pretty sure that we don't need to prove that one point sets are connected. If $U$ is a
+subspace with more than one point in it, then we follow that there's $u \in U$ and thus
+$U \setminus \set{u}$ and $\set{u}$ make a separation of $U$.
+
+We've seen already that $Q$ in $R$ is totally disconnected (if there're 2 or more points
+in $U \subseteq Q$, then we can take $i \in (\inf(U), \sup(U)) \cap I$, where $I$ is
+irrational, and then $(-\infty, i) \cap U$ and $(i, \infty) \cap U$ form the desired separation)
+and it just inherits the standart topology, so the converse doesn't hold.
+
+\subsection{}
+
+\textit{Let $A \subseteq X$. Show that if $C$ is a connected subspace of $X$ that intersects
+  both $A$ and $X \setminus A$, then $C$ intersects $Bd(A)$}
+
+We follow that $C \cap A \subseteq A$ and thus $\overline{C \cap A} \subseteq \overline{A}$.
+TODO
+
 \end{document}
