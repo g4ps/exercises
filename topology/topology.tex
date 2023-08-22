@@ -2815,7 +2815,36 @@ and it just inherits the standart topology, so the converse doesn't hold.
 \textit{Let $A \subseteq X$. Show that if $C$ is a connected subspace of $X$ that intersects
   both $A$ and $X \setminus A$, then $C$ intersects $Bd(A)$}
 
-We follow that $C \cap A \subseteq A$ and thus $\overline{C \cap A} \subseteq \overline{A}$.
-TODO
+We firsly state here that
+$$Bd(A) = \overline{A} \setminus Int(A)$$
+and
+$$Bd(A) = \overline{A} \cap \overline{X \setminus A}$$
+
+Suppose that $C$ does not intersect $Bd(A)$. We firstly want to follow that
+$X \setminus \overline A$ and $\overline{A}$ make a partition of set $X$, and since
+$Bd(A)$ and $Int(A)$ are partitions of $\overline{A}$, we follow that
+$X \setminus \overline A$, $Bd(A)$ and $Int(A)$ form a partition of $X$.
+We also note that $X \setminus \overline A$ and $Int(A)$ are open sets. 
+Since $C$ does not intersect $Bd(A)$, we follow that there're sets
+$X \setminus \overline{A} \cap C$ and $Int(A) \cap C$ that form a separation of $C$, which
+means that $C$ is not connected, which is a contradiction.
+
+\subsection{}
+
+\textit{Is the space $R_l$ connected? Justify your answer.}
+
+We follow that
+$$(-\infty, 0), [0, \infty)$$
+are both open in $R_l$ since
+$$(-\infty, 0) = \bigcup_{n \in Z_+}{[-n, -n + 1) }$$
+$$[0, \infty) = \bigcup_{n \in Z_+}{[n - 1, n) }$$
+and
+$$(-\infty, 0) \cup [0, \infty) = R$$
+thus we follow that those two sets constitute a separation.
+
+\subsection{}
+
+\textit{Determine whether or not $R^\omega$ is connected in the uniform topology}
+
 
 \end{document}
