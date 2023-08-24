@@ -2860,8 +2860,28 @@ $R^\omega$.
   $$(X \times Y) \setminus (A \times B)$$
   is connected.}
 
-We can follow that $X \times Y$ is connected by the fact that both $X$ and $Y$ are connected.
-TODO
+The idea here is to plant a cross somewhere in the desired set, and then add
+strands to this set, untill we prove that the desired set is connected.
 
+Let  $z \notin A$ and $q \notin B$ (those points exist since both $A$ and $B$
+are proper subsets).
+Thus $\eangle{z, q} \in (X \times Y) \setminus (A \times B)$.
+Now we can follow that set
+$$\eangle{z, q} \in \set{z} \times Y \cup X \times \set{q}$$
+is a subset of
+$$(X \times Y) \setminus (A \times B)$$
+and the set $\set{z} \times Y \cup X \times \set{q}$ is connected.
+Now let us use the identity
+$$(X \times Y) \setminus (A \times B) =  [X \times (Y \setminus B)] \cup
+[(X \setminus A) \times Y]$$
+we now follow that for all $j \in (Y \setminus B)$ it is true that
+every set $X \times \set{j}$ is connected and also that 
+$$X \times \set{j} \cap \set{z} \times Y \cup X \times \set{q}$$
+is nonempty. Therefore we conclude that
+$$[X \times (Y \setminus B)] \cup \set{z} \times Y \cup X \times \set{q}$$
+is connected. By the same logic we follow that 
+$$[(X \setminus A) \times Y] \cup \set{z} \times Y \cup X \times \set{q}$$
+is connected. Since both of those sets have a point $\eangle{z, q}$ in common, we conclude that 
+the desired set is connected as well, as desired.
 
 \end{document}
