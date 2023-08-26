@@ -24,6 +24,7 @@
 \DeclareMathOperator \false {false}
 \DeclareMathOperator \dom {dom}
 \DeclareMathOperator \ran {ran}
+\DeclareMathOperator \spc {\text{ }}
 \newcommand{\eangle}[1]{\langle #1 \rangle}
 \newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\qed}{\hfill $\blacksquare$}
@@ -44,9 +45,26 @@
 
 \subsection{}
 
-This exercise is handled in real analysis/seet theory course, as well all other exercises
-in this section
+This exercise is handled in real analysis/set theory course, as well all other exercises
+in this section. First one was handled in NIP section of the real analsys course,
+second one is in set theory course and proof of which stems from the existence of
+injection from $\omega \times \omega$ to $\omega$, and the third one was proven in both
+books under the section of Cantor's Theorem
 
-\subsection{The Alphabet of a First-Order Language}
+\section{The Alphabet of a First-Order Language}
+
+\section{Terms and Formulas in First-Order Languages}
+
+\section{Induction in the Calculi of Terms and of Formulas}
+
+\subsection{}
+
+\textit{(a) Let the calculus $C_v$ consist of the following rules:
+  $$\frac{}{x \spc x}$$
+  $$\frac{y \spc t_i}{y \spc f t_1 ... t_n} \text{ if $f \in S$ is n-ary and
+    $i \in \set{1, ..., n}$}$$
+  Show that, for all variables $x$ and all $S$-terms $t$, $xt$ is derivable in $C_v$, iff
+  $x \in var(t)$
+}
 
 \end{document}

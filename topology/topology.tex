@@ -2884,4 +2884,49 @@ $$[(X \setminus A) \times Y] \cup \set{z} \times Y \cup X \times \set{q}$$
 is connected. Since both of those sets have a point $\eangle{z, q}$ in common, we conclude that 
 the desired set is connected as well, as desired.
 
+\subsection{}
+
+\textit{Let $\set{X_\alpha}_{\alpha \in J}$ be an indexed family of connected spaces; let $X$ be a
+  prodcut space
+  $$X = \prod_{\alpha \in J}{X_\alpha}$$
+  Let $a = (a_\alpha)$ be a fiexd point of $X$.}
+
+Important point: in this exercise we assume the product topology on $X$.
+
+\textit{(a) Given any finite subset $K$ of $J$, let $X_K$ denote the subspace of $X$ consisting
+  of all points $x = (x_\alpha)$ such that $x_\alpha = a_\alpha$ for $\alpha \notin K$. Show that
+  $X_K$ is connected.}
+
+We can prove the desired result by stating that $\prod_{j \in K}{X_j}$ is homeomorphic
+to $X_K$, and since the former is a cartesian product of finite amount of connected spaces
+we follow that both of those spaces are connected.
+
+\textit{(b) Show that the union $Y$ of the spaces $X_K$ is connected}
+
+All of $X_k$'s have point $a$ in common, and thus their union is connected.
+
+\textit{(c) Show that $X$ equals the closure of $Y$; conclude that $X$ is connected.}
+
+Suppose that $b \in X$. Let $U$ be a basis neighborhood of $b$ (in the product topology of course).
+Since $U$ is a basis element, we follow that there's a finite set $K$ and function
+$f: J \to \pow(\bigcup{X_j})$ such that
+$$f(j) =
+\begin{cases}
+  j \notin K \ra X_k \\
+  j \in K \ra V_j
+\end{cases}
+$$
+and 
+$$U = \prod_{j \in J}{f(j)}$$
+since $K$ is fintite, we follow that $U$ intesects $X_K$ for that particular $K$, and
+since $Y$ is a union of $X_K$'s, we follow that $U$ intersects $Y$. Since $U$
+is arbitrary, we follow that $b$ is in a closure of $Y$. Therefore
+$$X \subseteq \overline{Y}$$
+We can also state that $\overline{Y} \subseteq X$ since we use the product topology on $X$,
+and thus we conclude that $\overline{Y} = X$ by double inclusion, as desired.
+
+\textit{Last two exercises are left for the time, when I'm finished with quotient products.}
+
+\section{Connected Subspaces of the Real Line}
+
 \end{document}
