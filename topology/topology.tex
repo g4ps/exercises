@@ -2929,4 +2929,71 @@ and thus we conclude that $\overline{Y} = X$ by double inclusion, as desired.
 
 \section{Connected Subspaces of the Real Line}
 
+\subsection{}
+
+\textit{(a) Show that no two spaces $(0, 1)$, $(0, 1]$, and $[0, 1]$ are homeomorphic.}
+
+Suppose that $h: (0, 1] \to (0, 1)$ is a homeomorphism. Since both of those sets have the same
+cardinality, we follow that there's a bijection betweeen the two, and therefore we won't dispute
+that.
+
+Let $u = h(1)$. We follow that $u \in (0, 1)$ and thus $(0, 1) \setminus \set{h(1)}$
+is a disconnected set. Thus we follow that
+$$h[(0, 1)] = h[(0, 1]] \setminus h(1) = (0, 1) \setminus \set{h(1)}$$
+is a disconnected set, which contradicts the fact that $h$ is a homeomorphism.
+
+By pretty much the same logic, but applied to two points we can show that the
+resulting two pairs aren't homeomorphic.
+
+\textit{(b) Suppose taht there exists imbeddings $f: X \to Y$ and $g: Y \to X$. Show
+  by means of an example that $X$ and $Y$ need not be homeomorphic.}
+
+We've shown earlier that any two  closed intervals  are homeomorphic, and also that any
+two open intervals are homeomorphic as well. Thus we can follow that we can create imbeddings
+out of homeomorphisms
+$$f: [0, 1] \to [1/3, 2/3]$$
+and
+$$g: (0, 1) \to (1/3, 2/3)$$
+by expanding their respective codomains. Thus we've got the desired functions, and previous
+point shows that given sets aren't homeomorphic, as desired.
+
+\textit{(c) Show that $R^n$ and $R$ aren't homeomorphic if $n > 1$.}
+
+Since $R^n$ is Hausdorff, we follow that $\set{0}$ is open and thus punctured eucledian
+space $R^n \setminus \set{0}$ is connected, which means that if there's a bijection $h: R^n \to R$,
+then the set $h[R^n \setminus \set{0}]$ is always disconnected, which means that no bijection
+between those two sets can be continous.
+
+\subsection{}
+
+\textit{Let $f: S^1 \to R$ be a continous map. Show there exists a poit $x$ of $S^1$ such that
+  $f(x) = f(-x)$.}
+
+Firstly, we want to assume that $f(-x)$ means that we apply $f$ to the $x$'s additive
+inverse in vector notation, because no other meaning makes sense.
+Since scalar multiplication of vectors is continous, we follow that
+$$f(-x) = (f \circ T)(x)$$
+where $T(x) = -x$ is continous as well. Thus we follow that we can define $g: S \to R$ by
+$$g(x) = f(x) - f(-x)$$
+is a composition of continous operator $-$ and two continous functions, and thus $g$ itself
+is continous.
+We also follow that
+$$g(-x) = f(-x) - f(-(-x)) = f(-x) - f(x) = -g(x)$$
+
+Now let $s \in S$. If $g(s) = 0$, then
+$$f(x) - f(-x) = 0 \lra f(x) = f(-x)$$
+and we're done. If $g(s) > 0$, then we follow that
+$$g(-s) = -g(s) < 0$$
+therefore IVT implies together with the connectedness of $S$ imply that there's a point $s' \in S$
+such that $g(s') = 0$. If $s < 0$, then we can set $s' = -s$ and default to the previous case.
+Therefore we derive the desired result.
+
+\subsection{}
+
+\textit{Let $f: X \to X$ be continous. Show that if $X = [0, 1]$, there is a point $x$
+  such that $f(x) = x$. The point $x$ is called a fixed point of $f$. What happens if $X$
+  equals $[0, 1)$ or $(0, 1)$?}
+
+TODO
+
 \end{document}
