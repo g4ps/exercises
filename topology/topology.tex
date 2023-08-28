@@ -2994,6 +2994,175 @@ Therefore we derive the desired result.
   such that $f(x) = x$. The point $x$ is called a fixed point of $f$. What happens if $X$
   equals $[0, 1)$ or $(0, 1)$?}
 
-TODO
+Set $g: X \to R$ by
+$$g(x) = f(x) - x$$
+since the indentity function, $f(x)$ and $-: R \times R \to R$ are all continous functions,
+we follow that
+$g$ is a continous function as well. We can also argue
+that condition that $f(x) = x$ is equivalent to condition $g(x) = 0$; thus we
+need to show that there's a $x \in X$ such that $g(x) = 0$.
+
+We can follow that
+$$g(0) = f(0) - 0 = f(0)$$
+and thus $g(0) \in X$. If $g(0) = 0$, then we're done, thus assume that $g(0) \neq 0$.
+We then conclude that $g(0) \in (0, 1]$.
+
+Let us consider also $g(1)$. We follow that
+$$g(1) = f(1) - 1 \in [-1, 0]$$
+We follow that if $g(x) = 0$, then we're done, and thus $g(x) \in [-1, 0)$.
+
+Now we can combine two arguments to follow that $g(0) > 0$ and $g(1) < 0$, which means that
+there's $x \in [0, 1]$ such that $g(x) = 0$, as desired.
+
+We can also follow that we can define function $h: R \to R$
+$$h(x) = \frac{x + 1}{2}$$
+we follow that we can restrict domain of $h$ to either $[0, 1)$ or $(0, 1)$ and in those
+cases we'll have that
+$$\ran(h|[0, 1)) \subseteq [0, 1)$$
+$$\ran(h|(0, 1)) \subseteq (0, 1)$$
+Some trivial analsis can show us that $h(x) \neq x$ for all $[0, 1)$. Thus we conclude thhat
+if we restrict domain and codomain to presented values, then we can't say nothing about the
+existence of the fixed point.
+
+
+\subsection{}
+
+\textit{Let $X$ be an ordered set in the order topology. Show that if $X$ is connected, then
+  $X$ is a linear continuum.}
+
+Suppose that $X$ is not a linear continuum. If the first condition does not hold,
+then we follow that there are $x, y \in X$ such that $x < y$ and there's no $z \in X$
+such that $x < z < y$. Thus we follow that $(-\infty, y)$ is an open set,
+as well as $(x, \infty)$, and they constitute separation of $X$, which is a contradiction.
+
+Suppose that $X$ does not have a least upper boundary property. Thus we follow that
+there's a subset $U$ of $X$ such that $U$ is bounded above and does not have a least upper bound.
+Define
+$$V = \bigcup_{u \in U}{(-\infty, u)}$$
+Since $U$ is bounded, we follow that $V \neq X$. Let $i \in X \setminus V$. We follow that $i$
+is an upper bound, but because there's no least upper bound, we follow that there's $i' \in X$
+such that $i' < i$ and $i'$ is also an upper bound for $V$. AC implies that we've got a
+function on our hands, and thus we follow that
+$$\bigcup_{i \in X \setminus V}{(f(i), \infty)}$$
+is an open set, that is disjoint from $V$, and is equal to $X \setminus V$.
+Since $U$ is nonempty, we follow that $V$ is also nonempty, and thus $V$ is both open
+and closed, which implies that $X$ is disconnected, which is a contradiction.
+
+Therefore we follow that if $X$ is connected, then it satisfies both conditions of linear
+continuum, as desired.
+
+\subsection{}
+
+\textit{Consider the following sets in the dictionary order. Which are linear
+  continua?}
+
+\textit{(a) $Z_+ \times [0, 1)$}
+
+$Z_+$ is a woset, and thus the next exercise will imply that the desired set is linear
+continuum. The intuitive conclusion is that this thing is homeomorphic to $R$.
+
+\textit{(b) $[0, 1) \times Z_+$}
+
+We follow that there's no elements between $\eangle{0, 1}$ and $\eangle{0, 2}$
+on the account that $Z_+$ does not hold neither of the preoperties of
+linear continuum.
+
+\textit{(c) $[0, 1) \times [0, 1]$}
+
+We can follow that $[0, 1) \times [0, 1] = \set{i \in I^2: i < \eangle{1, 0}}$, thus we
+follow that given set is convex, and thus by sub-theorem of 24.1 we conclude that it
+is connected. Since it is a connected set in order topology, we follow that it is
+a linear continuum.
+
+\textit{(d) $[0, 1] \times [0, 1)$}
+
+We follow that the subset
+$$U = \set{\eangle{0, 1/n}: n \in Z_+}$$
+does not have a supremum, and thus we conclude that given set cannot be a linear continuum.
+
+\subsection{}
+
+\textit{Show that if $X$ is a well-ordered set, then $X \times [0, 1)$ in the dictionary
+  order is a linear continuum.}
+
+Let $x, y \in X \times [0, 1)$ be such that $x < y$. We follow that
+$$x = \eangle{a, b}$$
+$$y = \eangle{c, d}$$
+If $a = c$, then we follow that there's $q \in [0, 1)$ such that $b < q < d$, and thus
+$$x < \eangle{a, q} < y$$
+If $a < c$, then we follow that there are two cases: $c \neq a^+$ or $c = a^+$.
+If former is the case, then we follow that
+$$x < \eangle{a^+, 0} < y$$
+if the latter is the case, then we follow that there's $q \in (b, 1)$ such that
+$$x < \eangle{a, q} < y$$
+thus we conclude that $x < y$ implies that there's $z \in X \times [0, 1)$ such that
+$$x < z < y$$
+which proves the second requirement of the linear continuum.
+
+Now let $U$ be a bounded set of $X \times [0, 1)$. We can set
+$$s = \sup\set{x \in X: \exists y \in [0, 1): \eangle{x, y} \in U}$$
+i.e. the supremum of the first parts of elements of a given set.
+Now define
+$$V = \set{u \in U: \exists y \in [0, 1): \eangle{s, y} \in U}$$
+i.e. set of elements of with the supremum in the first part.
+
+Now we can define an element $j$ by cases on $V$. If $V = \emptyset$,
+then we can set $j = \eangle{s, 0}$. Construction of $j$ implies that $j$ is
+indeed an upper bound, and we follow that if $k < j$, then
+there's $l \in X, q \in [0, 1)$ such that $k = \eangle{l, q}$ and thus $l < s$.
+Now construction of $s$ implies that $k$ is not an upper bound. Thus we can conclude that
+$j$ is indeed a least upper bound.
+
+Let $y$ be equal to the supremum of the second parts of $V$. IF $y \neq 1$, then we set
+$j = \eangle{s, y}$, and if $y = 1$, then we can set $j = \set{s^+, 0}$.
+Some trivial logic shows that $j$ is indeed the least upper bound for $U$.
+
+Thus we conclude that $X \times [0, 1)$ is indeed a linear continuum, as desired.
+
+\subsection{}
+
+\textit{(a) Let $X$ be ordered sets in the order topology. Show that if $f: X \to Y$
+  is order preserving and surjective, then $f$ is a homeomorphism.}
+
+We firstly note that $X$ is a toset (implied by the fact that $X$ is in the order topology,
+which was defined so far exclusively on tosets), and thus it's got a trichotomy.
+Thus we follow that if $x \neq y$, then we can assume that $x < y$, thus
+$f(x) < f(y)$, and thus $f$ is injectieve. Now surjectivity of $f$ with respect to the
+chosen codomain makes it a bijection.
+
+Now let $a, b \in Y$. We follow that
+$$\forall x \in X: x \in f\inv[(a, b)] \lra f\inv(a) < x < f\inv(b)$$
+(all of this stuff can be derived pretty easily). Thus we follow that
+if $U$ is a basis oin $Y$, then $f\inv[U]$ is open, thus making $f$ continous. Check that
+$f \inv$ is continous is well is the same as this one. Thus we conclude that
+$f$ is a homeomorphism, as desired.
+
+\textit{(b)  Let $X = Y = \overline{R_+}$. Given a positive inveger $n$, show that the function
+  $f(x) = x^n$ is order preserving and surjective. Conclude that its inverse, the $n$th root
+  function is continous.}
+
+We follow that if $n = 1$, then $f$ is an identity, thus it's order preserving and surjective.
+Suppose that $f(x) = x^{n - 1}$ is order preserving and surjective. Let $z, y \in \overline{R_+}$
+are such that $z < y$. We follow that $z, y, z^j, y^j$ are all nonnegative for all $j \in \omega$.
+Thus we follow that 
+$$z < y \iff f(z) < f(y) \iff z^{n - 1} < y^{n - 1} $$
+now $z < y$ and $z^{n - 1} < y^{n - 1}$ and nonnegativity of those things imply that
+$$z * z^{n - 1} < y * y^{n - 1}$$
+$$z^{n} < y^{n}$$
+given that $z$ and $y$ are arbitrary, we conclude that $f(x) = x^n$ is order preserving.
+Thus we conclude that
+$$f(x) = x^n$$
+is order preserving for all $n \in \omega$ by induction.
+
+Now by induction we can also prove that $f$ is continous and nonnegative. Thus we
+can follow that IVT implies that $f$ is surjective. Therefore we conclude that
+$f$ is order-preserving and surjective, which means that it's a homeomorphism.
+Thus we conclude that $f\inv$ is indeed continous.
+
+\textit{(c) blah blah blah}
+
+Yes, it is, but not with respect to the subset topology, but with respect to the order topology
+defined on $(-\infty, 1) \cup [0, \infty)$. goto page 90 of original book for
+examples and explanation
 
 \end{document}
