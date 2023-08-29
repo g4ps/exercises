@@ -3165,4 +3165,111 @@ Yes, it is, but not with respect to the subset topology, but with respect to the
 defined on $(-\infty, 1) \cup [0, \infty)$. goto page 90 of original book for
 examples and explanation
 
+\subsection{}
+
+\textit{(a) Is a product of path-connected spaces necessarily path connected?}
+
+It seems to be so. Let $X$ and $Y$ be path-connected spaces. Now let $q, w \in X \times Y$.
+We follow that
+$$q = \eangle{a, b}$$
+$$w = \eangle{c, d}$$
+We now follow that there exist continous functions $f: [x_1, x_2] \to X$ and $g: [y_1, y_2] \to Y$
+such that 
+$$f(x_1) = a, f(x_2) = c, g(y_1) = b, g(y_2) = d$$
+We can follow that spaces $X$ and $X \times \set{b}$ with respect to the subset topology of a
+product topology in $X \times Y$ are homeomorphic. Thus we follow that we can define
+continous 
+$f': [x_1, x_2] \to X \times Y$ by
+$$f'(x) = \eangle{f(x), b}$$
+and $g': [x_2, (y_2 - y_1) +  x_2] \to X \times Y$ by
+$$g'(y) = \eangle{c, g(y - x_2 + y_1)}$$
+We can follow that $f'(x_2) = \eangle{f(x_2), b} = \eangle{c, b} = g'(x_2)$. Thus we follow that
+we can concatenate those two functions to get the desired path.
+
+By induction we can follow that finite product of path-connected spaces is path connected.
+
+\textit{(b) If $A \subseteq X$ and $A$ is path connected, is $\overline{A}$ necessarily
+  path connected?}
+
+Let $S$ be the topologist's sine curve. If $x, y\in S$, then we follow that obviously there
+is a continous function such that everything connects, but $\overline{S}$ is not
+path connected, and thus we've got the contradiction.
+
+\textit{(c) If $f: X \to Y$ is continous and $X$ is path connected, is $f[X]$ necessarily
+  path connected?}
+
+Suppose that $y_1, y_2 \in f[X]$. We follow that there are $x_1, x_2 \in X$ (maybe not unique,
+but still) such that $f(x_1) = y_1, f(x_2) = y_2$. Since $X$ is path connected, we follow that
+there's a continous $g: [a, b] \to X$ such that $g(a) = x_1$ and $g(b) = x_2$.
+Since $f$ and $g$ are both continous, we follow that
+$f \circ g$ is also continous, and thus we've got the desired path.
+
+\textit{(d) If $\bigcup{A_\alpha}$ is a collection of path-connected subspaces of $X$
+  and if $\bigcap{A_\alpha} \neq \emptyset$, is $\bigcup{A_\alpha}$ necessarily
+  path-connected?}
+
+Suppose that $x, y \in \bigcup{A_\alpha}$. We follow that there's
+$q \in \bigcap{A_\alpha}$. Thus we follow that there's a path between $x$ and $q$ and
+a path between $q$ and $y$, which means that there's a concatenated path between $x$ and $y$.
+(Although it feels like a somewhat liberal proof, we can follow all the rigorous stuff
+pretty easily)
+
+\subsection{}
+
+\textit{Assume that $R$ is uncountable. Show that if $A$ is a countable subset of $R^2$,
+  then $R^2 \setminus A$ is path connected.}
+
+Let $x, y \in R^2$. 
+We follow that there are uncountable amount of lines that pass through each one of those points.
+We can also follow that there's no point $a \in A$ such that there are two lines from
+a single point, that intersect $a$. Thus we follow that
+the set of lines from $x$ that does not intersect $A$ is uncountable. Same goes for $y$.
+We can follow now that there are uncountably many unparrallel pairs of lines that go through
+the $x$ and $y$, which gives us the desired path.
+
+\subsection{}
+
+\textit{Show that if $U$ is an open connected subspace of $R^2$, then $U$ is path connected.}
+
+Let $x_0 \in U$ and let $A$ denote the set of points in $U$, from which there's a path to $x_0$.
+We follow that $A$ is a subset of $U$, and we also follow that it's nonempty, since
+there's always a path from $x_0$ to $x_0$.
+
+Let $y \in A$. Since $y \in U$ and $U$ is open, we follow that there's a
+basis element $B$ inside $U$
+such that $y \in B$. Since $y$ is quite literally the center of the basis element $B$,
+we follow that there's a path to any given element of $B$ from $y$. Thus we follow that
+$B \subseteq A$, which allows us to conclude that $A$ is open.
+
+Suppose that $l \in U$ is a limit point of $A$. We follow that there's a basis neighborhood
+around $l$ that intersets $A$ and lies fully within $U$. Thus we conclude that
+once again we can connect $l$ to some point inside $A$, and thus we conclude that $l \in A$.
+Therefore $A$ contains all of its limit points, that are in $U$, and thus we conclude that
+$A$ is both open and closed inside subset topology of $U$. THus we conclude that
+$A = \emptyset$ or $A = U$, where former is impossible, as we've shown before. Thus we
+conclude that $U$ is path connected, as desired.
+
+\subsection{}
+
+\textit{If $A$ is a connected subspace of $X$, does it follow that $Int(A)$ and $Bd(A)$ are
+  connected?}
+
+We can define a set
+$$\set{\eangle{x, y} \in R^2: 0 \leq y \leq x || 0 \geq y \geq x}$$
+(i.e. two triangular regions, that meet at the origin).
+THen we follow that the origin is not in the interior of $A$, since no basis neighborhood
+of $A$ is contained within $A$. But $A$ in general is connected, which is trivially
+proven. Thus we conclude that $A$ being connected does not imply anything about connectedness
+of its interior.
+
+We can also punch two holes through $R^2$ to get a boundary that will consist of two points in
+$R^2$, which will obviously be disconnected.  Thus we conclude that
+connectedness of $A$ does not imply nothing about connectedness of $Int(A)$ or $Bd(A)$.
+
+Suppose that both $Int(A)$ and $Bd(A)$ are connected. We follow that $Int(A)$ or $Bd(A)$ can
+be both open and closed, which would imply that $A$ is disconnected. It can be connected as well.
+So we can't conclude much from it.
+
+\textit{The last exercise is left for later}
+
 \end{document}
