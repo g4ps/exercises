@@ -4,7 +4,6 @@
 #include <string.h>
 #include <sys/time.h>
 
-
 void fill_rand_arr(int *arr, int size) {
   const int MIN_ARR = 0;
   const int DELTA  = 100;
@@ -117,4 +116,8 @@ int is_sorted(int *arr, int size)
     }
   }
   return 1;
+}
+
+void prepare_random() {
+  srand(get_time_ms());
 }
