@@ -6,6 +6,27 @@
 \usepackage{hyperref}
 \author{Evgeny Markin}
 \date{2023}
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \topol {\mathcal {T}}
+\DeclareMathOperator \basis {\mathcal {B}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\qed}{\hfill $\blacksquare$}
 
 \begin{document}
 \maketitle
@@ -1002,14 +1023,67 @@ Everything follows from this crudely-derived limit
 $$\lim_{n \to \infty}{\frac{\sum_{j = 1}^d {a_j n^j}}{n^k}} = a_d n^{d - k} $$
 where $d, k \in N \cup \{0\}$.
 
+\subsection*{3.4.5}
+
+\textit{(a)}
+
+We follow that
+$$\Theta(\Theta(f(n)))$$
+is a dumpster fire of an expression, because it is nothing more that an artifact of
+our abusal of notation.
+
+\textit{(b) }
+
+Let $f \in \Theta(h)$ and let $g \in O(h)$. We follow that there exists constantst
+$c_1, ...$ such that 
+$$ c_1 h(n) \leq f(n) \leq c_2 h(n)$$
+$$ g(n) \leq c_3 h(n)$$
+Since $g$ is positive, we follow that
+$$0 \leq  g(n) \leq c_3 h(n)$$
+and thus
+$$ c_1 h(n) + 0 \leq g(n) + f(n) \leq (c_2 + c_3) h(n)$$
+tthus we follow that $f + g \in \Theta(h)$, which can be translated to the given expression.
+
+\textit{(c)}
+
+Suppose that $f \in \Theta(h_1)$ and $g \in \Theta(h_2)$.
+We follow that there are $c_1, c_2, c_1', c_2'$ such that for $n \geq n_0$ we've got 
+$$c_1 h_1(n) \leq f(n) \leq c_2 h_1(n)$$
+$$c_1' h_2(n) \leq g(n) \leq c_2' h_2(n)$$
+thus we follow that
+$$c_1' h_2(n) + c_1 h_1(n) \leq f(n) + g(n) \leq c_2 h_1(n) + c_2' h_2(n)$$
+Let $q_1 = \min\set{c_1', c_1}, q_2 = \max\set{c_2', c_2}$. We then follow that
+$$ c_1' h_2(n) + c_1 h_1(n) \geq q_1 h_2(n) + q_1 h_1(n) = q_1(h_2(n) + h_1(n))$$
+simular result holds for the upper bound as well. Thus we can conclude that
+$$f \in \Theta(h_1) \land g \in \Theta(h_2) \ra f + g \in \Theta(h_1 + h_2)$$
+
 TODO: finish those exercises (maybe)
 
 
 \chapter{Divide-and-Conquer}
 
-\end{document}
+\section{Multiplying square matrices}
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
+\subsection*{4.1-1}
+
+\textit{Generalize Matrix-Multiply-Recursive to multiply $n \times n$ matrices for which
+  $n$ is not necessarily an exact power of $2$. Give a recurrence describing its running
+  time. Argue that it runs in $\Theta(n^3)$ time in the worst case.}
+
+Given that the product of two block-diagonal matrices is the block-diagonal matrix with the
+consecutive products of the blocks on the diagonal, we can follow that we can
+pad a given matrix with a row and a column of zeroes, in case given matrix has an odd number
+of rows/columns. 
+
+Then we follow that the running time of produced algorithm at maximum is
+$$T'(n) = 8 (T'((n + 1) / 2)) + \Theta(1)$$
+We follow that for powers of $2$ we've got that $T(n) = T'(n)$, which kinda implies that
+$T' \in \Theta(n^3)$.
+
+\textit{Skipping the rest for now}
+
+\section{Strassen's algoruthm for matrix multiplication}
+
+
+
+\end{document}
