@@ -3272,4 +3272,38 @@ So we can't conclude much from it.
 
 \textit{The last exercise is left for later}
 
+\section{Compact Spaces}
+
+\subsection{}
+
+\textit{(a) Let $\topol$ and $\topol'$ be two topologies on the set $X$; suppose that
+  $\topol \subseteq \topol'$. What does compactness of $X$ under one of these topologies
+  imply about the other?}
+
+We follow that if $X$ is compact under $\topol'$, and $U$ is a collection of
+open sets from $\topol$, that form open cover for $X$, we can conclude that $U$
+is an open cover in $\topol'$ as well, thus there's a finite subcover, and thus we
+follow that $X$ is compact in $\topol'$ as well. If $X$ is compact only in $\topol$, then we
+can't conclude nothing. Example: standart and discrete topologies on $R$.
+
+\textit{(b) Show that if $X$ is compact Hausdorff under both $\topol$ and $\topol'$, then either
+  $\topol$ or $\topol'$ are equal or they are not compatible.}
+
+We essentially want to prove that $\topol$ cannot be a proper subset of $\topol'$ and
+vice versa. We follow that they can be equal (duh), so assume that $\topol \subset \topol'$.
+
+We know that $X$ is a compact space under $\topol'$. Let $U$ be an open set of $\topol'$
+such that $U \notin \topol$. We can state now that $U \neq \emptyset$, since $U \notin \topol$
+and $\emptyset \in \topol$ by definition.
+
+We can follow that $X \setminus U$ is a closed set. Since $U \subseteq X$, we follow that
+$X \setminus U \subseteq X$. Thus $X \setminus U$ is a closed subspace of $X$, and since $X$
+is compact we follow that $X \setminus U$ is compact. Since $U \notin \topol$, we follow that
+$X \setminus U$ is not closed in $X$ with respect to $\topol$, and thus we follow that
+there's an open cover $C$ for $X \setminus U$ in $\topol$, that does not have a finite
+subcover for $X \setminus U$. Since $C \subseteq \topol$, we follow that $C \subseteq \topol'$,
+which means that $C$ is an open cover for $X \setminus U$ for which there's no finite
+subcover, which implies that $X \setminus U$ is not compact, which is a contradiction.
+
+
 \end{document}
