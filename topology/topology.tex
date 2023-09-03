@@ -3305,5 +3305,160 @@ subcover for $X \setminus U$. Since $C \subseteq \topol$, we follow that $C \sub
 which means that $C$ is an open cover for $X \setminus U$ for which there's no finite
 subcover, which implies that $X \setminus U$ is not compact, which is a contradiction.
 
+\subsection{}
+
+\textit{(a) Show that in the finite complement topology on $R$, every subspace is compact.}
+
+Let $U$ be a subset of $R$ and let $C$ be an open cover for $U$.
+
+If $U = \emptyset$, then we folllow that any set in $C$ will constitute an finite subcover.
+
+Suppose that  $U \neq \emptyset$. Let $C_1 \in C$. We follow that
+$U \setminus C_1 \subseteq X \setminus C_1$, and thus it's a finite subset. Thus we follow that
+we can create a finite collection $V_u$ such that for each $V \in V_u$ there's $u \in U$
+such that $u \in V$. Thus we follow that $V_u \cup \set{C_1}$ will be a finite subcover of $U$,
+thus making $U$ compact.
+
+Since subcovers and sets were chosen
+arbitrarely, we conclude that we've got the desired result. We also can conclude that
+since we haven't used the properties of $R$, given statement will follow for any set.
+
+\textit{(b) If $R$ has the topology consisting of all sets $A$ such that $R \setminus A$
+  is either countable of all of $R$, is $[0, 1]$ a compact subspace?}
+
+We can define a collection
+$$C_n = R \setminus \set{\frac{1}{m}: m \in Z_+ \land m < n}$$
+i.e.
+$$C_1 = R \setminus \set{1/2, 1/3, 1/4, ...}$$
+$$C_2 = R \setminus \set{1/3, 1/4, 1/5, ...}$$
+and so on. Then we follow that although $\bigcup{C} = R$, we follow that there's no finite subcover
+for $[0, 1]$.
+
+\subsection{}
+
+\textit{Show that a finite union of compact subspaces of $X$ is compact.}
+
+Let $C_n$ be a finite collection of compact subspaces of $X$ and let $V_n$ be a cover of
+$\bigcup{C_n}$. We follow that since $V_n$ covers $\bigcup{C_n}$, it also covers
+every individual $C_n$. Thus we follow that there's a finite subcover $U_n \subseteq V_n$
+for all $C_n$. Therefoore $\bigcup{C_n}$ is covered by $\bigcup{U_n}$, and given that
+each individual $U_n$ is finite we conclude that set of subspaces that cover the finite
+union is also finite.
+
+\subsection{}
+
+\textit{Show that every compact subspace of a metric space is bounded in that metric and is closed.
+  Find a metric space in which not every closed bounded subspace is compact.}
+
+Since every metric space is Hausdorff, we follow that every compact subspace of a metric space
+is closed. Now suppose that $X$ is not bounded. Let $\epsilon > 0$. Since $X$ is not
+bounded, we follow that it's nonempty and thus there's $x_1 \in X$.
+Let $U_1 = B(x_1, \epsilon)$. Since $X$ is unbounded, we follow that $B(x, \epsilon)$
+does not cover $X$, and thus there's $x_2 \in X$. We then can define $B(x_2, \epsilon)$
+and in the same fashion inductively we can define $B_n$. We then follow that
+$B_n$ is an infinite open cover of $X$, and given the cover's construction we conclude that
+there's no finite subcover that covers the whole space. Thus we conclude that if
+a subspace is compact, then it's closed and bounded.
+
+We follow that in the standart bounded metric on $R$ we've got that $R$ is closed, and it's
+bounded by $M = 1.1$. Since standart bounded metric induces standart topology, we conclude that
+$R$ is not compact.
+
+\subsection{}
+
+\textit{Let $A$ and $B$ be disjoint compact subspaces of the Hausdorff space $X$. Show that
+  there exists disjoint open sets $U$ and $V$ containing $A$ and $B$ respectively.}
+
+Since $A$ is compact, we follow that for all $b \in B$ we've got that $b \notin A$, and thus
+for all $b \in B$ there exists a pair $U_b$ and $V_b$ such that $A \subseteq U_b$
+and $b \in V_b$. We then conclude that collection of $V_b$'s is an open cover for $B$
+and thus it's got a finite subcover $\set{V_\alpha}_{\alpha \in A}$. We follow then that
+we can take $\set{U_\alpha}_{\alpha \in A}$, and since $A$ is finite, we follow that
+$$\bigcap{U_\alpha}$$
+is an open set, that contains $A$ and is disjoint from every $\set{V_\alpha}_{\alpha \in A}$.
+Thus we conclude that we can create two disjoint sets
+$\bigcap{U_\alpha}$ and $\bigcup{V_\alpha}$, as desired.
+
+\subsection{}
+
+\textit{Show that if $f: X \to Y$ is continous, where $X$ is compact and $Y$ is
+  Hausdorff, then $f$ is a closed map (that is, $f$ carries closed sets to closed sets)}
+
+Let $U \subseteq X$ be a closed set. Since $X$ is compact, we follow that $U$ is compact as well.
+Since $f$ is continous, we follow that $f[U]$ is compact as well, and since $Y$ is Hausdorff
+and $f[U] \subseteq Y$ is compact, we follow that $f[U]$ is closed as well. Thus we've got the
+desired result.
+
+\subsection{}
+
+\textit{Show that if $Y$ is compact, then the projection $\pi_1: X \times Y \to X$ is a
+  closed map}
+
+Let $U$ be a closed set in $X \times Y$.
+If for all $x \in X$ there exists $y \in Y$ such that  $\eangle{x, y} \in U$, then we follow that
+$\pi_1(U) = X$, and since both $U$ and $X$ are closed, we follow that we're done.
+
+Thus assume that there exists $x \in X$ such that for all $y \in Y$ there's no $\eangle{x, y} \in U$.
+We follow that $\set{x} \times Y \notin U$, and since $(X \times Y) \setminus U$ is open, we follow
+that there exists a neighborhood $W$ of $x$ such that
+$W \times Y \subseteq (X \times Y) \setminus U$. This essentially implies that
+for all $q \in X \setminus \pi_1(U)$ there exists a neighborhood around $q$ such that
+this neighborhood is contained in $X \setminus \pi_1(U)$. This in turn implies that
+$X \setminus \pi_1(U)$ is open and thus $\pi_1(U)$ is closed, as desired.
+
+\subsection{}
+
+\textit{\textbf{Theorem}. Let $f: X \to Y$; let $Y$ be compact Hausdorff. Then $f$ is
+  continous if and only if the graph of $f$,
+  $$G_f = \set{\eangle{x, f(x)}: x \in X}$$
+  is closed in $X \times Y$.}
+
+Suppose that $f$ is continous. Let $q = \eangle{x, y} \in G_f$. Let $B$ be a
+basis neighborhood around $q$.
+
+Suppose that there exists $q = \eangle{x, y'} \in X \times Y$ such that 
+$q \notin G_f$. We follow that there also exists $w = \eangle{x, y} \in G_f$ such that
+$y \neq y'$. The fact that $Y$ is Hausdorff gives us that there exist disjoint neighborhoods
+$U$ and $V$ of $y$ and $y'$ respectively. Since $f$ is continous, we follow that $f\inv[U]$
+is open as well. We now can follow that $f\inv[U] \times V$ is a neighborhood of $q$
+that does not intersect $G_f$, and thus we conclude that
+if $x \notin G_f$, then $x \notin \overline{G_f}$, which implies that $G_f$ is closed.
+
+Now assume that $G_f$ is closed. Let $x_0 \in X$. We follow that $\eangle{x_0, f(x_0)} \in G_f$.
+Let $V$ be a neighborhood of $f(x_0)$. Since $V$ is open, we follow that $X \times V$
+is open and thus $(X \times Y) \setminus (X \times V) = X \times (Y \setminus V)$
+is closed. Thus $G_f \cap X \times (Y \setminus V)$ is closed. Previous
+exercise implies that
+$$\pi_1[G_f \cap X \times (Y \setminus V)]$$
+is closed. Thus
+$$\set{x \in X: f(x) \notin V}$$
+is closed. Therefore $f\inv[V] = X \setminus \set{x \in X: f(x) \notin V}$ is open,
+which implies that $f$ is continous, as desired.
+
+\subsection{}
+
+\textit{Generalize the tube lemma as follows: }
+
+\textit{\textbf{Theorem: } Let $A$ and $B$ be subspaces of $X$ and $Y$, respectively; let $N$
+  be an open set in $X \times Y$ containing $A \times B$. If $A$ and $B$ are compact, then there
+  exists open sets $U$ and $V$  in $X$ and $Y$ respectively, such that
+  $$A \times B \subseteq U \times V \subseteq N$$}
+
+\textit{TODO later}
+
+% \section{Compact Subspaces of the Real Line}
+
+% \subsection{}
+
+% \textit{Prove that if $X$ is an ordered set in which every closed interval is compact, then $X$
+%   has the least upper bound property.}
+
+% Suppose that $X$ has no least upper bound property. Let $U \subseteq X$.
+
+% \subsection{}
+
+% \textit{Let $X$ be a metric space with metric $d$; let $A \subseteq X$ be nonempty.}
+
+% \textit{(a) Show that }
 
 \end{document}
