@@ -1084,6 +1084,20 @@ $T' \in \Theta(n^3)$.
 
 \section{Strassen's algoruthm for matrix multiplication}
 
+\section{The substitution method for solving recurrences}
 
+\subsection{}
+
+\textit{Use the substitution method to show that each of the following recurrences defined
+  on the reals has the asymptotic solution specified.}
+
+\textit{(a) $T(n) = T(n - 1) + n$ has solution $T(n) = O(n^2)$.}
+
+We can do this thing without recurrence, and show that a function $f(x) = \frac{(n + 1)n}{2} + T(0)$
+satisfies given recurrence, but let's be a bit more dilligent.
+
+We follow that
+$$T(n) \leq c (n - 1)^2 + n = cn^2 - 2cn + 1 + n \leq cn^2$$
+provided that $c \geq 1$ and $n \geq 1$. 
 
 \end{document}

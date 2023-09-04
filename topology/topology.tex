@@ -3446,19 +3446,60 @@ which implies that $f$ is continous, as desired.
 
 \textit{TODO later}
 
-% \section{Compact Subspaces of the Real Line}
+\section{Compact Subspaces of the Real Line}
 
-% \subsection{}
+\subsection{}
 
-% \textit{Prove that if $X$ is an ordered set in which every closed interval is compact, then $X$
-%   has the least upper bound property.}
+\textit{Prove that if $X$ is an ordered set in which every closed interval is compact, then $X$
+  has the least upper bound property.}
 
-% Suppose that $X$ has no least upper bound property. Let $U \subseteq X$.
+Since $X$ is closed, we follow that it's compact as well. Assume that $X$ does not have a
+least upper bound property. We then can follow that there exists $U \subseteq X$ such that
+$U$ is bounded above (in the sence that there exists $M \in X$ such that $u < M$ for all $u \in U$).
+and it does not have a least upper bound. Since $U$ is bounded, we follow that there exists
+set $P$, which consists of upper bounds of $U$. We follow that we can define a collection of sets
+$V$ by
+$$V_p = (p, \infty)$$
+for all $p \in P$. Since $X$ has an order topology, we follow that each $V_p$ is open. Now
+let us define a collection of open sets $W$ by
+$$W_u = (u, \infty)$$
+for all $u \in U$. Let $x \in X$. We follow that $x$ is either an upper bound of $U$, in which
+case it's located in $\bigcup{V}$, or it's not an upper bound of $U$, in which case there
+exists $u \in U$ such that $x < u$, and thus $x \in \bigcup{W}$. Therefore we conclude that
+$V \cap W$ constitutes an open cover of $U$. Since $U$ does not have a lowest upper bound,
+we can also conclude that $U$ is an infinite set, and thus we follow that $W$ is an infinite
+collection as well.
 
-% \subsection{}
+We can now follow pretty easily that for all $x \in U$ there exists a unique set $Q$ in $V \cup W$
+such that $x \in Q$, thus implying that $V \cup W$ does not have an open subcover, which
+in turn implies that $X$ is not compact, which is a contradiction.
 
-% \textit{Let $X$ be a metric space with metric $d$; let $A \subseteq X$ be nonempty.}
+\subsection{}
 
-% \textit{(a) Show that }
+\textit{Let $X$ be a metric space with metric $d$; let $A \subseteq XX$ be nonempty.}
+
+\textit{(a) Show that $d(x, A) = 0$ if and only if $x \in \overline{A}$.}
+
+Suppose that $d(x, A) = 0$. Let $B(x, \epsilon)$ be an arbitrary basis neighborhood around $x$.
+Since $d(x, A) = 0$ and thus
+$$\inf\set{d(x, a): a \in A} = 0$$
+we follow that there exists $a' \in A$ such that $d(x, a') < \epsilon$. Thus we follow that
+$a' \in B(x, \epsilon)$, and thus we conclude that every basis neighborhood and therefore
+every neighborhood of $x$ intersects $A$ at some point. Thus we conclude that $x \in \overline{A}$.
+
+Let $x \in \overline{A}$. We follow that every basis neighborhood of $x$ intersects $A$ at some
+point. Thus we follow that for all $\epsilon > 0$ there's $a \in A$ such that
+$d(x, a) < \epsilon$. Thus we follow that $0$ is the lower bound of
+$$\set{d(x, a): a \in A}$$
+and since metric is nonnegative we conclude that infinum of this set is $0$, as desired.
+
+\textit{(b) Show that if $A$ is compact, $d(x, A) = d(x, a)$ for some $a \in A$.}
+
+Let $U$ be a collection of basis neighborhoods around $a$ defined by
+$$U_\epsilon = B(x, \epsilon)$$
+for all $\epsilon > 0$. We follow that $U$ is a open cover of $A$, and thus it's got a finite
+subcover.
+
+\textbf{This is wrong reasoning; needs work}
 
 \end{document}
