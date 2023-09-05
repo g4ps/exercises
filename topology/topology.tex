@@ -3495,11 +3495,45 @@ and since metric is nonnegative we conclude that infinum of this set is $0$, as 
 
 \textit{(b) Show that if $A$ is compact, $d(x, A) = d(x, a)$ for some $a \in A$.}
 
-Let $U$ be a collection of basis neighborhoods around $a$ defined by
-$$U_\epsilon = B(x, \epsilon)$$
-for all $\epsilon > 0$. We follow that $U$ is a open cover of $A$, and thus it's got a finite
-subcover.
+We follow that if $x \in A$, then $d(x, A) = d(x, x) = 0$, and thus we're done. Thus
+assume that $x \notin A$.
 
-\textbf{This is wrong reasoning; needs work}
+Let us define a collection of closed sets $C$ by
+$$C_\epsilon = \set{q \in X: d(q, x) \geq \epsilon}$$
+for $\epsilon \geq d(x, A)$.
+We follow that collection $V$ defined by
+$$V_\epsilon = R \setminus C_\epsilon$$
+is a set of open sets.
+
+Assume that there's no point $q \in X$ such that $d(x, q) = d(x, A)$. 
+We follow then that $C_\epsilon$ does not contain any points in $A$, and thus we follow that
+$V_\epsilon$ is an open cover for $A$. Since $A$ is compact, we follow that
+there's a finite cover of $A$ in $V$. Since $V$ is a set of nested opened sets (it's
+not hard to check that $\epsilon > \delta \ra V_\epsilon \subseteq V_\delta$ ), we follow that
+there exists $\epsilon$ such that $A \subseteq V_\epsilon$, which implies that
+$d(x, A) > d(x, A)$, which is a contradiction.
+
+\textit{(c) Define the $\epsilon$-neighborhood of $A$ in $X$ to be the set
+  $$U(A, \epsilon) = \set{x: d(x, A) < \epsilon}$$
+  Show that $U(A, \epsilon)$ equals the union of the open balls $B_d(a, \epsilon)$ for
+  $a \in A$.}
+
+Let $x \in U(A, \epsilon)$. We follow that $d(x, A) < \epsilon$. Thus
+$$\inf\set{d(x, a): a \in A} < \epsilon$$
+which in turn implies that there exists $a \in A$ such that $d(x, a) < \epsilon$. This in turn
+implies that $x \in B_d(a, \epsilon)$, and thus
+$$x \in \bigcup_{a \in A}{B_d(a, \epsilon)}$$
+thus we conclude that
+$$U(A, \epsilon) \subseteq \bigcup_{a \in A}{B_d(a, \epsilon)}$$
+
+Let $x \in B_d(a, \epsilon)$ for some $a \in A$. We follow that $d(x, a) < \epsilon$,
+and thus $d(x, A) < \epsilon$. Therefore  $x \in U(A, \epsilon)$ by definition. Thus
+we've got the desired equality by double inclusion.
+
+% \textit{(d) Assume that $A$ is compact; let $U$ be an open set containing $A$. Show that
+%   some $\epsilon$-neighborhood of $A$ is contained in $U$.}
+
+% Suppose that there's no $\epsilon > 0$ such that there exists a $\epsilon$-neighborhood
+% is contained in $U$. 
 
 \end{document}
