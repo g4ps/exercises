@@ -3533,7 +3533,14 @@ we've got the desired equality by double inclusion.
 \textit{(d) Assume that $A$ is compact; let $U$ be an open set containing $A$. Show that
   some $\epsilon$-neighborhood of $A$ is contained in $U$.}
 
-\textit{TODO (actually gonna finish this thing)}
+Let $a \in A$. We follow that since $A$ is compact we've got that $A$ has a
+Lebesgue number $\delta$. Since $U$ contains $A$, we follow
+that $\set{U}$ it's a finite open cover of $A$. We also follow that $a \in B_d(a, \delta)$,
+and thus proof of Lemma 27.5 implies that $\delta$-neighborhood of $a$ is contained
+in $U$.
+
+Since every $\delta$-neighborhood of each $a \in A$ is contained in $U$, we follow by
+previous point that $U(A, \delta)$ is contained in $U$, as desired.
 
 \textit{(e) Show the result in (d) need not to hold if $A$ is closed but not
   compact}
