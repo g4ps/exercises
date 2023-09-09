@@ -3553,6 +3553,62 @@ $$U = \set{\eangle{x, y}: x, y \in R_+}$$
 we have already proven that the former is a closed set, and it's not that hard to understand why
 the latter is an open set. Showing that those two sets satisfy the desired constraints is trivial
 
+\subsection{}
 
+\textit{Recall that $R_K$ denoted $R$ in the K-topology}
+
+\textit{(a) Show that $[0, 1]$ is not compact as a subspace of $R_K$.}
+
+Just to remind myself, $K = \set{1/n: n \in Z_+}$ and $R_K$ is the topology
+whose basis is all of the open intervals in $R$, as well as all intervals minus $K$. 
+
+We can follow that $(-1, 2) \setminus K$ is open in $K$. We also follow that for
+every $k \in K$ such that $k = 1/n$ there's an open interval $(1/n - 1/2n, 1/n + 1/2n)$
+so that we've got that
+$$(1/n - 1/2n, 1/n + 1/2n) \cap K = \set{k}$$
+Thus we can define collection $V$ by adding set $(-1, 2) \setminus K$ to it, as well as every
+$(1/n - 1/2n, 1/n + 1/2n)$ for every $n \in Z_+$. Some trivial checks will imply that
+given collection constitutes an open cover for $[0, 1]$, for which there's no finite
+subcover of $[0, 1]$, which implies that $[0, 1]$ is not compact.
+
+\textit{(b) Show that $R_K$ is connected.}
+
+We follow that both $(-\infty, 0)$ and $(0, \infty)$ inherit their usual topologies
+as subspaces of $R_K$, as shown shomewhere in the book before. If not, then it's pretty trivial
+to check.
+
+Now let $B$ be a basis neighborhood of $0$. We follow that if $B$ is just a standart interval,
+that it intersects both of those sets. If $B$ is in form $(a, b) \setminus K$, then we follow that
+$b > 0$, and then we can follow that there's an irrational number $i$ such that
+$0 < i < b$. Since $i \notin K$ ($K \subseteq Q$), we follow that any basis neighborhood
+of $K$ intersects both of sets $(-\infty, 0)$ and $(0, \infty)$, thus it's a
+limit point for both of those sets, and thus $(-\infty, 0]$ and $[0, \infty)$ are
+both connected, which implies that $R$ is connected under $K$-topology, as desired.
+
+\textit{(c) Show that $R_K$ is not path connected.}
+
+Let $f: [a, b] \to [0, 1]$ be a map, where we treat $[a, b]$ as a subspace in standart topology
+and $[0, 1]$ as the subspace in $K$-topology such that $f(a) = 0$ and $f(b) = 1$. If this
+map is not continous, if we treat $[0, 1]$ in standart topology, then we can follow that
+it isn't continous with respect to $K$-topology as well, since $K$-topology is finer than
+the standart topology. Thus assume that it is continous with respect to standart topology.
+IVT gives us that since $[a, b]$ is connected and $[0, 1]$ is continous with respect to
+the standart topology (which is order topology), that we've got IVP on this function
+and thus image of this function is $[0, 1]$. This implies that with respect to the
+$K$-topology $f$ maps compact $[a, b]$ onto non-compact $[0, 1$, as proven in part (a).
+
+Thus we can conclude that $f$ is not continous. Since $a, b$ are arbitrary, we conclude that
+points $0$ and $1$ are not path connected, and thus $R_K$ itself is not path-connected, as desired.
+
+\subsection{}
+
+\textit{Show that a connected metric space having more than one point is uncountable}
+
+Let $X$ be such a space. Since $X$ is metric, we follow that it's Hausdorff. Let $x \in X$.
+We follow that $\set{x}$ is closed, since it's Hausdorff. Thus if $\set{x}$ is open,
+then $X$ is not connected, which is a contradiction, which implies that $\set{x}$
+is not open, which implies that $X$ doesn't have any isolated points.
+
+Now suppose that $X$ does not have a compact subspace. This implies that TODO
 
 \end{document}
