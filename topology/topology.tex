@@ -3609,6 +3609,39 @@ We follow that $\set{x}$ is closed, since it's Hausdorff. Thus if $\set{x}$ is o
 then $X$ is not connected, which is a contradiction, which implies that $\set{x}$
 is not open, which implies that $X$ doesn't have any isolated points.
 
-Now suppose that $X$ does not have a compact subspace. This implies that TODO
+Let $x_1, x_2$ be two distinct  points of a given space. We follow that there exists
+$c > 0$ such that $d(x_1, x_2) = c$. Now suppose that there exists $b \in R$ such that
+$0 < b < c$  and there's no $x_3 \in X$ such that $d(x_1, x3) = b$. Let
+$y \in X \setminus B_d(x, b)$. We follow that $d(x_1, y) > b$ and thus we follow that
+if $q \in B_d(y, d(x_1, y) - b)$, then
+$$d(y, q) < d(x_1, y) - b \leq d(x_1, q) + d(q, y) - b$$
+$$d(y, q) < d(x_1, q) + d(q, y) - b$$
+$$d(y, q) < d(x_1, q) + d(y, q) - b$$
+$$0 < d(x_1, q) - b$$
+$$b < d(x_1, q)$$
+thus we conclude that $q \in X \setminus B_d(x, b)$. This implies that
+$$B_d(y, d(x_1, y) - b) \subseteq X \setminus B(x, b)$$
+which implies that $X \setminus B_d(x, b)$ is an open set, which implies that
+$B_d(x, b)$ and $X \setminus B_d(x, b)$ form a separation of $X$, which means that $X$
+is not connected, which is a contradiction.
+
+This gives us that for all $q \in R$ such that  $0 < q \leq d(x_1, x_2)$ there
+exists $x' \in X$ such that $d(x_1, x') = q$. This implies that we can define a function
+$f: (0, d(x_1, x_2)) \to \pow(X)$ by
+$$f(y) = \set{x \in X: d(x_1, x) = y}$$
+and that for all $q$'s we follow that $f(q)$ is nonempty. Now we can employ AC to give us a
+function $g(q): (0, d(x_1, x_2)) \to X$ such that
+$$d(x_1, g(q)) = q$$
+We can follow that if $a, b \in (0, d(x_1, x_2))$ and $a \neq b$, then
+$$d(x_1, g(a)) \neq d(x_1, g(b))$$
+and thus $g(a) \neq g(b)$, which means that $g$ is injective, which implies that we've got
+injective function from $(0, d(x_1, x_2))$ to $X$, which means that
+$$|(0, d(x_1, x_2))| \leq_C |X|$$
+Since every given interval has a bijection with $R$ we follow that 
+$$|\omega| <_c|(0, d(x_1, x_2))|$$
+and then we can conclude that
+$$|\omega| <_C |X|$$
+thus $X$ is uncountable, as desired.
+
 
 \end{document}
