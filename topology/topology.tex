@@ -3643,5 +3643,58 @@ and then we can conclude that
 $$|\omega| <_C |X|$$
 thus $X$ is uncountable, as desired.
 
+\subsection{}
+
+\textit{Let $X$ be a compact Hausdorff space; let $\set{A_n}$ be a countable collection of
+  closed sets of $X$. Show that if each set $A_n$ has empty interior in $X$, then
+  the union $\bigcup{A_n}$ has empty interior in $X$.}
+
+Since $\set{A_n}$ is a countable collection, let us denote distinct $A_n$'s by $A_n$ where
+$n \in \omega$ for clarity's sake.
+
+If $\bigcup{A_n}$ is empty, then its interior is empty since the interior is the
+subset of its original set, thus let us assume that $\bigcup{A_n}$ is nonemty.
+
+Since $X$ is compact, we follow that each $A_n$ is a closed subspace of a compact space, and
+thus it is compact as well. Now lemma 26.4 implies that for each $y \notin A_n$ there
+exist disjoint open sets $U$ and $V$ such that $y \in U$ and $A_n \subseteq V$.
+
+Let $x \in \bigcup{A_n}$ and let $U$ be a neighborhood of $x$ with respect to topology on $X$.
+Since each $A_n$ has an empty interior and $x \in \bigcup{A_n}$ and thus $x \in A_n$ for some
+$n \in \omega$, we follow that $U \not \subseteq A_n$, and
+thus $U \setminus A_n$ is nonempty. Thus there exists $y \in U \setminus A_n$ and open $V', W$
+such taht $y \in V'$ and $A_n \subseteq W$. Since $V'$ and $U$ are open and $y$ is
+contained in both, we follow that there exists $V = V' \cap U$.
+
+We can follow that if $w \in W$, then there exists a neighborhood $Q$ of $w$ that is a
+subset of $W$, and since $V$ and $W$ are disjoint, we follow that $Q$ and $V$ are
+disjoint, which implies that $w$ is not a limit point of $V$, thus implying that
+$w \notin \overline{V}$. Therefore we follow that $W$ and $\overline{V}$ are disjoint.
+Same logic applies to the set $\overline{V \cap U}$
+
+Thus we follow that we can take some point $x \in \bigcup{A_n}$, take
+its neighborhood $U$, apply given argument to a sequence 
+$$A_1, A_2, A_3...$$
+which will produce a sequence of nested closed sets
+$$\overline{V_1} \supseteq \overline{V_2} \supseteq \overline{V_3} ...$$
+such that for all $n \in \omega$ we'll have that 
+$$\overline{V_n} \cap A_n = \emptyset$$
+and
+$$\overline{V_n} \subseteq U$$
+since this sequence is nested, we follow that it's got finite intersection property,
+and since it's closed and $X$ is compact, we can follow $\bigcap{V_n}$ is nonempty.
+Then we can follow that if $z \in \bigcap{V_n}$, then $z \in U$ since every $V_n$ is
+in $U$, and we can also follow that $z \notin A_n$ for all $n \in \omega$.
+
+Thus we can conclude that if $x \in \bigcup{A_n}$, then every neighborhood of $x$
+has a point, that is not contained in $\bigcup{A_n}$. This implies that no open
+sets are contained in $\bigcup{A_n}$, which implies that it's got an empty interior,
+as desired.
+
+\subsection{}
+
+\textit{This exercise was handled fully in my real analysis course.}
+
+\section{Limit Point Compactness}
 
 \end{document}
