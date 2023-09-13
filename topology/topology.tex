@@ -3697,4 +3697,46 @@ as desired.
 
 \section{Limit Point Compactness}
 
+\subsection{}
+
+\textit{Give $\set{0, 1}^\omega$ the uniform topology. Find an infinite subset of this
+  space that has no limit point.}
+
+Let $x_n \in \set{0, 1}^\omega$ be defined by
+$$x_1 = (1, 1, 1, 1, 1, 1, ...)$$
+$$x_2 = (0, 1, 0, 1, 0, 1, ...)$$
+$$x_3 = (0, 0, 1, 0, 0, 1, ...)$$
+i.e. every $x_n$ has $1$'s in every position that is divisible by $n$. We can follow
+that there's no limit point in $\set{0, 1}^\omega$ for given set. TODO: expand and verify
+
+\subsection{}
+
+\textit{Show that $[0, 1]$ is not limit point compact as a subspace of $R_l$.}
+
+We follow that we can set
+$$x_n = 1 - 1/n$$
+Since $\set{1}$ is opened in this topology (i.e. $[1, 2) \cap [0, 1] = \set{1}$) and
+none of the $x_n$'s are in $\set{1}$, we follow that $1$ is not a limit point of a given
+set. Since $R_l$ is finer than standart topology and $1$ is the only limit point of
+a given set in standart topology, we conclude that given set does not have no limit points
+with respect to $R_l$, as desired.
+
+\subsection{}
+
+\textit{Let $X$ be limit point compact.}
+
+\textit{(a) If $f: X \to Y$ is continous, does it follow that $f(X)$ is limit point compact?}
+
+Earlier exercise in continuity shows that just because some sequence
+$(x_n)$ in $X$ has a limit point, it doesn't mean that $(f(x_n))$ has a limit point, but
+the main counterexample of this argument stemmed from $|f[X]| = 1$. In this case
+if $|f[X]| = 1$, then it follows that $f[X]$ is limit point compact vacuously.
+
+In general we can follow that if $Y$ is finite, then it's limit point compact vacuously,
+since it doesn't have any infinite subsets.
+
+We can also follow that if $X$ is plainly compact, then its image is also compact and
+thus limit point compact. 
+
+
 \end{document}
