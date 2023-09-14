@@ -3699,15 +3699,16 @@ as desired.
 
 \subsection{}
 
-\textit{Give $\set{0, 1}^\omega$ the uniform topology. Find an infinite subset of this
+\textit{Give $[0, 1]^\omega$ the uniform topology. Find an infinite subset of this
   space that has no limit point.}
 
-Let $x_n \in \set{0, 1}^\omega$ be defined by
-$$x_1 = (1, 1, 1, 1, 1, 1, ...)$$
-$$x_2 = (0, 1, 0, 1, 0, 1, ...)$$
-$$x_3 = (0, 0, 1, 0, 0, 1, ...)$$
-i.e. every $x_n$ has $1$'s in every position that is divisible by $n$. We can follow
-that there's no limit point in $\set{0, 1}^\omega$ for given set. TODO: expand and verify
+Let sequence of $x_n \in [0, 1]^\omega$ be defined by
+$$x_n(i) =
+\begin{cases}
+  i \leq n \ra 0 \\
+  1 \text{ otherwise}
+\end{cases}
+$$
 
 \subsection{}
 
@@ -3736,7 +3737,18 @@ In general we can follow that if $Y$ is finite, then it's limit point compact va
 since it doesn't have any infinite subsets.
 
 We can also follow that if $X$ is plainly compact, then its image is also compact and
-thus limit point compact. 
+thus limit point compact. TODO
+
+\textit{(b) If $A$ is a closed subset of $X$, does it follow that $A$ is limit point
+  compact?}
+
+Suppose that $U$ is an infinite subset of $A$. Since $A \subseteq X$, we follow that
+$U \subseteq X$, and thus there is a limit point $j$ of $U$. Since $U \subseteq A$
+and $A$ is closed, we follow that $\overline{U} \subseteq \overline{A}$ (exercise 17.6),
+and since $A$ is closed we follow that $\overline{A} = A$ and thus $\overline{U} \subseteq A$.
+Since $j$ is a limit point of $U$ we follow that $j \in \overline{U}$ and thus $j \in A$.
+Thus we conclude that any infinite subset of $A$ has a limit point, which means that
+$A$ is limit point compact, as desired.
 
 
 \end{document}
