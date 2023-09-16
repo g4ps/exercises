@@ -3728,16 +3728,11 @@ with respect to $R_l$, as desired.
 
 \textit{(a) If $f: X \to Y$ is continous, does it follow that $f(X)$ is limit point compact?}
 
-Earlier exercise in continuity shows that just because some sequence
-$(x_n)$ in $X$ has a limit point, it doesn't mean that $(f(x_n))$ has a limit point, but
-the main counterexample of this argument stemmed from $|f[X]| = 1$. In this case
-if $|f[X]| = 1$, then it follows that $f[X]$ is limit point compact vacuously.
-
-In general we can follow that if $Y$ is finite, then it's limit point compact vacuously,
-since it doesn't have any infinite subsets.
-
-We can also follow that if $X$ is plainly compact, then its image is also compact and
-thus limit point compact. TODO
+Let $Q$ consist of two points and let it have trivial topology. We follow that
+$X = Z_+ \times Q$ is limit point compact (follows from example in the chapter). Thus we can define
+$f: X \to Z_+$ to be the projection function. We follow that this function is continous
+(as proven in the book previously), however $Z_+$ is not limit point compact (since it
+has discrete topology), thus proving the counterpoint for this particular case
 
 \textit{(b) If $A$ is a closed subset of $X$, does it follow that $A$ is limit point
   compact?}
@@ -3750,5 +3745,25 @@ Since $j$ is a limit point of $U$ we follow that $j \in \overline{U}$ and thus $
 Thus we conclude that any infinite subset of $A$ has a limit point, which means that
 $A$ is limit point compact, as desired.
 
+\textit{(c) If $X$ is a subspace of Hausdorff space $Z$, does it follow that $X$ is closed
+  in $Z$?}
+
+We can follow that with order topology $\overline{S_\Omega}$ is Hausdorff. As it was shown
+previously, $S_\Omega$, which is a subspace of $\overline{S_\Omega}$ is limit point compact.
+We follow that if $B$ is a basis neighborhood of $\Omega$, then there exists $a \in S_\Omega$
+such that $B \subseteq (a, \infty)$. Since $S_\Omega$ does not have a highest element,
+we follow that $a$ is not a highest element of $S_\Omega$, and thus there exists
+$j \in S_\Omega$ such that $j \in B$. Thus $\Omega$ is a limit point of $S_\Omega$ (there's
+a more approachable set-theoretical explanation there if we assume GCH and instead of $S_\Omega$ we
+consider $N_1$) It follows that $\Omega$ is a limit point of $S_\Omega$,
+which implies that $S_\omega$ does not contain its limit points and thus it is not closed.
+
+\subsection{}
+
+\textit{A space $X$ is said to be countably compact if every countable open covering
+  of $X$ contains a finite subcollection that covers $X$. Show that for a $T_1$ spase $X$,
+  countable compactness is equivalent to limit point compactness.}
+
+Suppose that $X$ is $T_1$ (meaning that any singleton is closed).
 
 \end{document}
