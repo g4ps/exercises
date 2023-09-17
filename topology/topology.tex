@@ -3764,6 +3764,105 @@ which implies that $S_\omega$ does not contain its limit points and thus it is n
   of $X$ contains a finite subcollection that covers $X$. Show that for a $T_1$ spase $X$,
   countable compactness is equivalent to limit point compactness.}
 
-Suppose that $X$ is $T_1$ (meaning that any singleton is closed).
+Suppose that $X$ is $T_1$ (meaning that any singleton is closed). This condinition
+implies that any given finite subset is closed (i.e. contains its limit points) by
+basic properties of closed subsets.
+
+Suppose that $X$ is limit point compact. We firstly state that if $X$ is finite, then its
+topology is finite (topology is a subset of a power set, and the size of a power set is $2^{|X|}$)
+and thus vacuously there's always a finite subcovering. Thus assume that $X$ is infinite.
+Let $U_n : \omega \to \pow(X)$ be a countable
+open covering for $X$ and assume that there's no finite subcollection of $U_n$
+that covers $X$. Since $U_n$ does not have a finite subcovering, we follow that there exists
+a point $x \notin U_1$. In general we can follow that
+$$X \setminus \bigcup_{j \leq n}{U_j}$$
+is nonemty. Moreover, for the same reason we may conclude that $X \setminus \bigcup_{j < n}{U_n}$
+is infinite for any given $n \in \omega$. Thus let us define a sequence $x_n: \omega \to X$ by
+$$x_n \in (X \setminus (\bigcup_{j \leq n}{U_n} \cup \set{x_1, x_2, ... x_{n - 1}})$$
+(the idea here is to have a sequence such that $x_n \notin U_1 \cup U_2 ... \cup U_n$ and
+such that each $x_n$ is unique so that the range of this sequence is infinite). 
+We follow that sequence $x_n$ will constitute an infinite subset of $X$, and thus it'll
+have a limit point $l \in X$.
+
+Since $X$ has $T_1$ property, we follow that $\set{x_1, x_2, ..., x_j}$ is closed. Thus
+$X \setminus \set{x_1, x_2, ..., x_j}$ is open. Thus
+$$U_j \cap (X \setminus \set{x_1, x_2, ..., x_j})$$
+is open.
+
+Assume now that $l = x_m$ for some $m \in \omega$,
+then we follow that $l \in U_j$ for some $j \in \omega$,
+which implies that for all $k \geq j$ we've got that $x_k \notin U_j$. Thus $U_j$
+intersects $\set{x_1, ..., x_{j - 1}}$ at some point other than $x_m$. Since
+$\set{x_1, ..., x_{j - 1}} \setminus \set{x_m}$ is a closed set, we follow that
+$$U_j \setminus (\set{x_1, ..., x_{j - 1}} \setminus \set{x_m})$$ is an open
+neighborhood of $l = x_m$, which
+intersects $(x_n)$ at some point other that $l$, which is a contradiction, since all
+of the points of $(x_n)$ (perhaps with exception of $x_m$) are outside of this set.
+
+Thus we conclude that $l \notin (x_n)$. 
+Let $j \in \omega$ be such that $l \in U_j$. We follow $U_j$ intersects a sequence $(x_n)$ at
+some point other than $l$. We follow that for all $i \geq j$ we've got that $x_i \notin U_j$
+by definition, and none of the points $\set{x_1, ..., x_{j - 1}}$ are in the neighborhood
+$$U_j \setminus \set{x_1, ..., x_{j - 1}}$$
+of $l$.
+Thus we conclude that $l$ has a neighborhood that does not intersect $(x_n)$, which implies that
+it's not a limit point, which is a contradiction.
+
+Therefore we conclude that our original assumntion that $U_n$ does not have a finite
+subcovering is false, thus implying that as long as $X$ is $T_1$, then limit point
+compactness of $X$ implies its countable compactness.
+
+Now suppose that $X$ is countably comact. Let $K$ be an countably infinite subset of $X$
+that does not have a limit point. That means that it contain all of its limit points
+and thus $K$ is closed. Thus we follow that $X \setminus K$ is open, and moreover,
+$$X \setminus (K \setminus \set{k_n})$$
+is open for all $k_n$. Since $X \setminus (K \setminus \set{k_n})$ constitutes a
+countable open cover of $X$, we follow that it's got a finite subcover, and thus we
+conclude that $K$ is finite, which is a contradiction.
+
+Thus we conclude that any countably infinite subset of $X$ has a limmit point. Now
+if $Q$ is uncountably infinite subset of $X$, then none of its subsets have a limit point,
+which implies that countable subsets of $Q$ don't have limit point, which is a contradiction. Thus
+we conclude that any infinite subset of $X$ has a limit point, thus $X$ is limit point compact, as
+desired.
+
+\textit{Given the fact that we haven't used $T_1$ in the proof of the converse, we either
+  have some sort of a nice property of countable compactness in general, and not just $T_1$
+  sets, or I've made a mistake. My money is on the latter.}
+
+\subsection{}
+
+\textit{Show that $X$ is countably compact if and only if every nested sequence
+  $$C_1 \supseteq C_2 \subseteq ... $$
+  of closed nonempty sets of $X$ has a nonempty intersection.}
+
+Suppose that $X$ is countably compact. We follow that if
+$$C_1 \supseteq C_2 \subseteq ... $$
+is a nested sequence of closed nonempty sets of $X$, then
+$$X \setminus C_n$$
+is a sequence of open sets of $X$. Thus $C_1 \supseteq C_2 \subseteq ... $ is empty if and only if
+the union of $X \setminus C_n$ is $X$. The latter then constitutes a countable open cover,
+which has a finite subcover. Given that the given sequence of open sets is also nested, but
+in the other direction (i.e.
+$$X \setminus C_1 \subseteq X \setminus C_2 \subseteq ...$$
+we follow that there exists $j \in \omega$ such taht $X \setminus C_j = X$. This implies that
+$C_j = \emptyset$, which is a contradiction.
+
+Now assume that every nested sequence $C_1 \supseteq C_2 ... $ of closed nonempty sets of $X$
+has a nonempty intersection. Let $U_n$ be a countable open subcover of $X$. We follow that
+$$X \setminus \bigcup_{j \leq n}{U_j}$$
+constitutes a nested sequence of closed nonempty sets of $X$. Thus it's got a nonempty
+intersection, which in turn implies that $U_n$ does not cover $X$, which is a contradiction.
+
+\subsection{}
+
+\textit{Let $(X, d)$ be a metric space. If $f: X \to X$ satisfies the condition
+  $$d(f(x), f(y)) = d(x, y)$$
+  for all $x, y \in X$, then $f$ is called an isometry of $X$. Show that if $f$ is an
+  isometry and $X$ is compact, then $f$ is bijective and hence a homeomorphism.}
+
+We follow that if $x \neq y$, then $d(x, y) \neq 0$, thus $d(f(x), f(y)) \neq 0$, which
+implies that $f(x) \neq f(y)$, which makes $f$ injective. TODO
+
 
 \end{document}
