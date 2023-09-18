@@ -1086,6 +1086,20 @@ $T' \in \Theta(n^3)$.
 
 \section{The substitution method for solving recurrences}
 
+\subsection*{Notes}
+
+I still don't get the specificity that we go into, when we deal with base cases for
+our induction procedures. And this goes back to the definition of the algrorithmic recurrences
+that we've been given before: how in heck can a function $T(n)$ not be
+in $\Theta(1)$ for $n < n_0$ for some $n_0 \in N$? Since the function is defined
+on natural numbers, we follow that $n < n_0$ is a compact set, thus $T(n)$ has a minimum
+and maximum value, which implies that for given values
+$$T(n) \in \Theta(g)$$
+for any $g: R \to R$. And even if we don't take into account compactness and all that stuff,
+I still don't understand how exactly can a function not be in $\Theta(g)$ for given
+values, given that definition of $\Theta(g)$ specifies exactly that its restrictions
+are only applied for a large enough $n$.
+
 \subsection{}
 
 \textit{Use the substitution method to show that each of the following recurrences defined
@@ -1122,23 +1136,37 @@ as desired.
 
 \textit{(d) $T(n) = 2T(n/2 + 17) + n$ has a solution $T(n) = O(n \lg(n))$}
 
-$$T(n) \leq c n \lg(n)$$
+$$T(n) = 2T(n/2 + 17) + n$$
 
-$$T(n) e= 2 T(n/2 + 17) + n \leq 2 c (n/2 + 17) \lg(n/2 + 17) + n  \leq$$
-$$ \leq
- 2 c (3n/4) \lg(3n/4) + n  = 3cn/4 (\lg(3n) - 2) + n
-$$
-
-$$T(n) \leq c (n \lg(n) - 2n)$$
-
-$$T(n) = 2 T(n/2 + 17) + n \leq 2 c ((n/2 + 17) \lg(n/2 + 17) - 2(n/2 + 17)) + n  = $$
-$$ =
-2 c ((n/2 + 17) \lg(n/2 + 17) - n - 34) + n  = 2 c ((n/2 + 17) \lg(n/2 + 17) - n - 34) + n \leq
-$$
-$$ \leq 2 c ((3n/4) \lg(3n/4) - n - 34) + n = 2 c (3n/4) \lg(3n/4) - 2 c n - 2 c 34 + n = $$
-$$   c 3n/2  (\lg(3n) - 2) - 2 c n - 2 c 34 + n =
-c 3n/2  (\lg(n) + \lg(3) - 2) - 2 c n - 2 c 34 + n \leq c 3n/2 \lg(n)$$
-
-TODO
+Suppose that for all $m < n$ we've got that
+$$T(m) \in O(m\lg(m))$$
+thus there exists $c \in R$ such that
+$$T(m) \leq c m\lg(m))$$
+We firstly follow that for all $n$
+$$\lg(n/2 + 17) = \lg(n(1/2 + 17/n)) = \lg(n) + \lg(1/2 + 17/n)$$
+and thus for $n > 34$ we've got that 
+we follow that
+$$T(n) = 2T(n/2 + 17) + n \leq c (n/2 + 17) \lg (n/2 + 17) + n \leq $$
+now we use the point, that we've shown earlier
+$$ c (n/2 + 17) (\lg(n) + \lg(1/2 + 17/n)) + n \leq$$
+use some algebra
+$$ c n/2 (\lg(n) + \lg(1/2 + 17/n)) + 17 c (\lg(n) + \lg(1/2 + 17/n)) + n \leq$$
+applying the fact that $cn/2 = cn - cn/2$
+$$ c n (\lg(n) + \lg(1/2 + 17/n)) - c n/2 (\lg(n) +
+\lg(1/2 + 17/n)) + 17 c (\lg(n) + \lg(1/2 + 17/n)) + n \leq$$
+using some more algebra
+$$ c n (\lg(n) + \lg(1/2 + 17/n)) + (17 c - cn/2) (\lg(n) + \lg(1/2 + 17/n)) + n \leq$$
+shifting some elements around
+$$ c n (\lg(n) + \lg(1/2 + 17/n)) -  (cn/2 - 17 c) (\lg(n) + \lg(1/2 + 17/n)) + n \leq$$
+then assuming that $n > 4$, which implies that $\lg(n) > 2$ and in turn
+$\lg(n) + \lg(1/2 + 17/n) > \lg(n) + \lg(1/2) > 2 - 1 \geq 1$ by the fact that $\lg$
+is monotonically increasing
+$$ c n (\lg(n) + \lg(1/2 + 17/n)) -  (cn/2 - 17 c) + n \leq$$
+then doing some asymptotics magic and assuming that $n$ is large enough (larger than
+34 to be precise)
+$$ c n (\lg(n) + \lg(1/2 + 17/n)) \leq$$
+and then assuming that $n > 34$ once again, which implies that $17/n < 1/2$, which implies that
+$1/2 + 17/n < 1$ and thus $\lg(1/2 + 17/n) < 0$
+$$ c n \lg(n)$$
 
 \end{document}
