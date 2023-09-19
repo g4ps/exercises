@@ -3862,7 +3862,66 @@ intersection, which in turn implies that $U_n$ does not cover $X$, which is a co
   isometry and $X$ is compact, then $f$ is bijective and hence a homeomorphism.}
 
 We follow that if $x \neq y$, then $d(x, y) \neq 0$, thus $d(f(x), f(y)) \neq 0$, which
-implies that $f(x) \neq f(y)$, which makes $f$ injective. TODO
+implies that $f(x) \neq f(y)$, which makes $f$ injective. 
 
+If there exists $a \in X$ such that $a \notin f[X]$. We follow that since $X$ is compact, that
+there exists $\epsilon$-neighborhood of $a$ that is located outside of $f[X]$.
+Let
+$$x_1 = a$$
+$$x_2 = f(x_1)$$
+$$x_3 = f(x_2)$$
+and in general
+$$x_n = f(x_{n - 1})$$
+We follow that since $x_2 \in f[X]$ that $x_2 \notin B_d(x, \epsilon)$, and thus
+$d(x_2, x_1) \geq \epsilon$. By the same logic we can follow that since $x_n \in f[X]$
+for all $n > 1$, we follow tha $d(x_n, x_1) \geq \epsilon$.
+We can also follow that since
+$$d(f(x), f(y)) = d(x, y)$$
+that
+$$d(x_3, x_2) = d(f(x_2), f(x_1)) = d(x_2, x_1) \geq \epsilon$$
+in general we can follow that if $m > n$, then
+$$d(x_m, x_n) = d(f(x_{m - 1}), f(x_{n - 1})) = d(x_{m - 1}, x_{n - 1}) = ... = d(x_{m - n + 1}, x_1)
+\geq \epsilon$$
+thus by commutativity of $d$ we follow that if $m \neq n$, then $d(x_m, x_n) \geq \epsilon$
+(although this reasoning is pretty thorough, it's not as rigorous as it can be; more rigorous
+proof of this conclusion can be drawn from induction; GOTO set theory course, part on arithmetics
+for a more concrete example).
+
+This in turn implies that we can take our initial sequence, take bases around its elements
+with radius less than $\epsilon$, and we'll get infinite cover of this subsequence,
+which will not have finite subcover. Since $X$ is metrizable, we follow that its compactness
+is equivalent to limit point compactness, and we follow that given sequence can
+not have a limit point, which implies that we've got a contradiction. Thus we conclude that
+there does not exist $a \in X \setminus f[X]$, which implies that $f$ is bijective.
+And within given circumstances it is trivial to prove that given function is a homeomorphism.
+
+\subsection{}
+
+\textit{Let $(X, d)$ be a metric space. If $f$ satisfies the condition
+  $$d(f(x), f(y)) < d(x, y)$$
+  for all $x, y \in X$ with $x \neq y$, then $f$ is called a shrinking map. If there's a number
+  $\alpha < 1$ such that
+  $$d(f(x), f(y)) < \alpha d(x, y)$$
+  for all $x, y \in X$ then $f$ is called a contraction. A fixed point of $f$ is a point $x$ such
+  that $f(x) = x$. }
+
+\textit{(a) If $f$ is a contraction and $X$ is compact, show $f$ has a unique fixed point.}
+
+Define
+$$C_0 = X$$
+$$C_1 = f[X]$$
+$$C_2 = f[f[X]]$$
+and in general
+$$C_n = f^n[X]]$$
+Since $X$ is compact and nonempty, we follow that $f[X]$ is compact and
+nonempty, and in general $f^n[X]$ is compact and nonempty
+(more rigorously this thing can be proven once again by induction).
+Since every compact subspace in a Hausforff space is closed, we follow that every $C_n$ is closed.
+Thus we follow that $\bigcap{C_n}$ is nonempty. Let $x \in \bigcap{C_n}$. Suppose that $x \neq f(x)$.
+We follow that $d(x, f(x)) = \epsilon$ for some $\epsilon \in R$. We also follow that
+$f(x) \in \bigcap{C_n}$. We can follow that the diameter of all the $C_n$'s converging to zero,
+which implies that there couldn't be two points in $\bigcap{C_n}$. This in turn implies that we've got
+a contradiction, and thus $x = f(x)$. We also follow for the same reason that given $x$ is
+unique, as desired.
 
 \end{document}
