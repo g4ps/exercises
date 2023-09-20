@@ -282,6 +282,46 @@ The tuple is actually just a re-writing of particular set
 $$(a_1, a_2, ..., a_n) = \{\{a_1\}, \{a_1, a_2\}, \{a_1, a_2, a_3\} ...
 \{a_1, a_2, a_3, ..., a_n\}\}$$
 
+\chapter{Counting and Probability}
+
+\section*{C.1 Counting}
+
+\subsection*{C.1-15}
+
+\textit{Show that for all integers $n \geq 0$
+  $$\sum_{k = 0}^n{C(n, k) k} = n 2^{n - 1}$$
+}
+
+We can use the Gauss' argument for the sum of triangle numbers. Basically that
+$$\sum_{k = 1}^n = 1 + 2 + ... + n$$
+implies that 
+$$2 \sum_{k = 1}^n = (1 + 2 + ... + n) + (n + (n - 1) + ... 2 + 1) =
+(n + 1)  + (n - 1 + 2) + ... = n(n + 1) $$
+and thus
+$$\sum_{k = 1}^n = n(n + 1)/2$$
+
+We follow that
+$$\sum_{k = 0}^n{C(n, k) k} = 0 C(n, 0) +  C(n, 1) + 2 C(n, 2) ... + n C(n, n)$$
+thus
+$$2 \sum_{k = 0}^n{C(n, k) k} = (0 C(n, 0) +  C(n, 1) + 2 C(n, 2) ... + n C(n, n)) + $$
+$$ + 
+(n C(n, n) +  (n - 1)C(n, n - 1) + ... + 2 C(n, 2) + C(n, 1) + 0 C(n, 0))$$
+We know from properties of binomials that $C (n, k) = C(n, n - k)$ (which rigorously can
+be proven by the explicit function), and thus
+$$2 \sum_{k = 0}^n{C(n, k) k} = (0 C(n, 0) +  C(n, 1) + 2 C(n, 2) ... + n C(n, n)) + $$
+$$ + 
+(n C(n, 0) +  (n - 1)C(n, 1) + ... + 2 C(n, n - 2) + C(n, n - 1) + 0C(n, 0))$$
+thus
+$$2 \sum_{k = 0}^n{C(n, k) k} = n C(n, 0) +  n C(n, 1) + n C(n, 2) ... + n C(n, n) = $$
+$$ n (C(n, 0) +   C(n, 1) +  C(n, 2) ... +  C(n, n)) = $$
+$$ n(\sum_{k = 0}^n{C(n, k)} = n 2^n$$
+therefore we can compress the whole shebang to get
+$$2 \sum_{k = 0}^n{C(n, k) k} = n 2^n$$
+and thus
+$$\sum_{k = 0}^n{C(n, k) k} = n 2^{n - 1}$$
+as desired.
+
+
 
 \end{document}
 %%% Local Variables:
