@@ -1191,6 +1191,18 @@ the input.
   $Random(0, 1)$. What is expected running time of your procedure, as a function of $a$ and $b$?}
 
 Let's firstly assume that we want the uniform distribution of the numbers between $a$ and $b$ here.
-Then we can follow that we can simplify the given task to 
+Then we can follow that we can simplify the given task to creating a function, that
+returns a random number from $0$ to $a - b$. We can follow that we also can create a function
+from $0$ to some power of $2$ by determining "bits" from our original function. We can conclude
+that given function will have running time of $\lg(a - b)$ in case $a - b$ is a power of two.
+If $a - b$ is not a power of $2$, then we can use a function that creates a random
+number in span of power of $2$, then throwing this number out in case our resulrting
+number is greater than $a - b$ and starting over untill the resulting number is less or equal
+to $a - b$. Thus we conclude that creating a number that is exactly a power of $2$
+will happen in $\lceil \lg(a - b) \rceil$, and given that expected number of runs to
+produce the number in the correct span is $2$, we follow that the resulting algorithm will
+have a running time of $2 \lceil \lg(a - b) \rceil$. Our discussions in the third chapter allow
+us to conclude that the asymptotic expected  running time of this algorithm
+will be $\Theta(\lg(a - b))$
 
 \end{document}
