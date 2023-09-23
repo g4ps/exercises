@@ -3924,4 +3924,59 @@ which implies that there couldn't be two points in $\bigcap{C_n}$. This in turn 
 a contradiction, and thus $x = f(x)$. We also follow for the same reason that given $x$ is
 unique, as desired.
 
+\textit{(b) Show more generally that if $f$ is a shrinking map and $X$ is compact, then $f$
+  has a unique fixed point.}
+
+We can define $C_n$ in the same way as in the previous point, and also conclude the same
+things as before. Define sequence $x_n$ such that $x_n \in C_n$. We follow that if $a$ is the
+limit of some subsequence, then every neighborhood of $a$ intersects $x_n$. Thus we follow that
+a ball with any given radius intersects $x_n$ at some point. Thus we follow that if
+$a \notin \bigcap{C_n}$, then we follow that there exists $j \in \omega$ such that
+$a \notin C_j$. Given that any of the $C_j$ is the closed set, we follow that $x \setminus C_j$
+is open, and thus there exists a neighborhood of $a$ that does not intersect $C_j$. Given
+that all the $C_n$'s are nested, we follow that given neighborhood of  $a$ does not intersect
+any of the $C_n$'s for $n \geq j$, and thus does not intersect any of the $x_n$'s for the
+same $n$'s. Given that there are finitely many of $x_n$'s such that $n < j$, we follow that
+$a$ is not a limit point of $x_n$, which is a contradiction. Thus we conclude that
+$a \in \bigcap{C_n}$. We follow that if $f(a) \neq a$, then TODO
+
+
+\textit{(c) Let $X = [0, 1]$. Show that $f(x) = x - x^2/2$ maps $X$ into $X$ and is a shrinking map
+  that is not a contraction.}
+
+We follow that $f'(x) = 1 - x$ and thus $f'(x) = 0 \lra x = 1$ and $x \in [0, 1) \ra f'(x) > 0$.
+Thus we can follow that minimal point of $f$ on $X$ happens in $0$ and maximal point happens at
+$1$. We follow that $f(0) = 0$ and $f(1) = 1/2$, thus $f[X] = [0, 1/2] \subseteq [0, 1]$.
+For the discussion on the extremums and whatnot goto any given calculus book and/or
+real analysis course. BTW, given "into" notation is defined as "$f$ maps $A$ into $B$
+if and only if $f[A] \subseteq B$"
+
+Now we need to follow that this thing is a shrinking map. Assume that $x > y$. Our discussion
+concerning $f'(x)$ implies that $f$ is strictly increasing on $X$, and thus $f(x) > f(y)$. Therefore
+$$d(f(x), f(y)) = |x - x^2/2 - (y - y^2/2)| = x - x^2/2 - (y - y^2/2) = x - x^2/2 - y + y^2/2 = $$
+$$ = (x - y) - (x^2/2 - y^2/2)$$
+We can follow with pretty much the same arguments that $g(x) = x^2/2$ is incresing on
+$X$, thus $x^2/2 - y^2/2 > 0$, and therefore
+$$d(f(x), f(y)) = (x - y) - (x^2/2 - y^2/2) < x - y = |x - y| = d(x, y)$$
+if $x > y$. If $x < y$, then we follow the same result since $d$ is commutative. Case of $x = y$
+is obvious, and doesn't require our attention sice definition of a shrinking map excludes this
+case for obvious reasons. Thus we conclude that $f$ is shrinking.
+
+Now MVT implies that if $b > a$, then there exists $c \in [a, b]$ such that
+$$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+thus
+$$f'(c)(b - a) = f(b) - f(a)$$
+and given that we can set $b = 1$ and $a$ to be arbirtarily close to $b$,  we follow that
+there's no $\alpha < 1$ such that
+$$\alpha(b - a) = f(b) - f(a)$$
+for all $b > a \in X$.  Thus we can use the fact that $f$ is increasing on a given set and
+use commutativity of $d$ to follow that there's no $\alpha \in [0, 1)$ such that 
+$$\alpha d(a, b) \geq d(f(a),f(b))$$
+which implies that $f$ is not a shrinking map on $X$. It's (probably) important to note
+here that although $f$ is not shrinking on $X$, it might be shrinking on some subset of $X$,
+thus concluding that domain of the function playes the role in whether or not the function
+is shrinking (or a contraction for that matter).
+
+\textit{The rest (i.e. part b and d) of this exercise is left for better times}
+
 \end{document}
