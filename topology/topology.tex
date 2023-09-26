@@ -3979,4 +3979,27 @@ is shrinking (or a contraction for that matter).
 
 \textit{The rest (i.e. part b and d) of this exercise is left for better times}
 
+\section{Local Compactness}
+
+\subsection*{Notes}
+
+We can follow pretty easily that a space $X$ is locally compact at $a$ if and only if some compact
+subspace $C$ of $X$ that contains a basis neighborhood of $X$.
+
+\subsection{}
+
+\textit{Show that the rationals $Q$ are not locally compact}
+
+We can follow that given $a, b \in R$ such that $a \neq b$ the set $[a, b] \cap Q$ is not comact. 
+Since there exists $i_1, i_2 \in [a, b]$ such that $i_1, i_2 \in I$ and $i_1 \neq i_2$
+we follow that $i_1, i_2 \notin [a, b] \cap Q$ and thus $([a, i_1) \cup (i_1, i_2) \cup (i_2, b])
+\cap Q = [a, b] \cap Q$. We can follow
+pretty easily that $(i_1, i_2)$ is not compact that thus $[a, b] \cap Q$ is not compact.
+
+Let $a \in Q$. Let $U$ be a basis neighborhood of $a$. We follow that there exist $a, b \in R$
+such that $U = (a, b) \cap Q$. We then follow that there exists an interval $[a', b']$
+such that $[a', b'] \subseteq (a, b)$ and $a \in [a', b']$, which implies that no
+subspace $C$ that contains $U$ is compact. Since $U$ and $a$ is arbitrary, we follow that
+at no point the space $Q$ is locally compact, as desired.
+
 \end{document}
