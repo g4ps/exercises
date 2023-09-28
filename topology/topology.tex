@@ -4002,4 +4002,28 @@ such that $[a', b'] \subseteq (a, b)$ and $a \in [a', b']$, which implies that n
 subspace $C$ that contains $U$ is compact. Since $U$ and $a$ is arbitrary, we follow that
 at no point the space $Q$ is locally compact, as desired.
 
+\subsection{}
+
+\textit{Let $\set{X_\alpha}$ be an indexed family of nonempty spaces.}
+
+\textit{(a) Show that if $\prod{X_\alpha}$ is locally compact, then each $X_\alpha$ is locally
+  compact and $X_\alpha$ is compact for all but finitely many values of $\alpha$.}
+
+We can follow that if $\set{X_\alpha}$ is a finite set, then our implication doesn't say anything.
+Thus assume that $\set{X_\alpha}$ is infinite.
+
+Suppose that there exist infinitely many $n$'s such that $X_n$ is not locally compact.
+Suppose that $b \in \prod{X_\alpha}$ and $U$ is a basis neighborhood of $b$. We follow that
+there exists a collection of open sets $A_n $ such that
+$$U = \prod{A_n}$$
+and such that $A_n \neq X_n$ for finitely many $n$ since we assume the product topology here.
+We follow that there exists $n$ such that $X_n$ is not locally compact and $A_n = X_n$.
+
+Since $X_n$ is not locally compact, we follow that there exists $j \in X_n$ such that
+there's no compact subspace of $X_n$ that contains a neighborhood of $j$.
+
+Suppose that there's a compact subspace of $\prod{X_\alpha}$ that contains $b$ and is a superset of $U$.
+We then can follow pretty easily  that this would give us that $X_n$ is compact, which
+is a contradiction. 
+
 \end{document}
