@@ -4022,8 +4022,89 @@ We follow that there exists $n$ such that $X_n$ is not locally compact and $A_n 
 Since $X_n$ is not locally compact, we follow that there exists $j \in X_n$ such that
 there's no compact subspace of $X_n$ that contains a neighborhood of $j$.
 
-Suppose that there's a compact subspace of $\prod{X_\alpha}$ that contains $b$ and is a superset of $U$.
-We then can follow pretty easily  that this would give us that $X_n$ is compact, which
-is a contradiction. 
+Suppose that there's a compact subspace of $\prod{X_\alpha}$ that contains
+$b$ and is a superset of $U$. We then can follow pretty easily
+that this would give us that $X_n$ is compact, which is a contradiction.
+
+\textit{(b) Prove the converse, assuming the Tychonoff theorem}
+
+To refresh the memory: Tychonoff theorem states that product of infinite compact spaces
+is compact.
+
+Now suppose that each $X_\alpha$ is locally compact and $X_\alpha$ is compact for all but
+finitely many values of $\alpha$.
+
+Let $\set{X_\alpha}$ consist of two locally compact spaces, namely $X_1$ and $X_2$.
+Let $\eangle{q, w} \in X_1 \times X_2$. We follow that $q \in X_1$, $w \in X_2$ and
+thus there exist neighborhoods $U$ and $W$ of $q$ and $w$ respectively in $X_1$ and
+$X_2$ respectively such that there exist compact subspaces $C_1$ and $C_2$
+such that $U \subseteq C_1$, $W \subseteq C_2$. Product of compact spaces is compact, thus
+we follow that $C_1 \times C_2$ is compact. Thus we follow that $U \times W$ is an open
+subset of $X_1 \times X_2$ that is a neighborhood of $\eangle{q, w}$, which implies that
+$X_1 \times X_2$ is locally compact at $\eangle{q, w}$. Since points $q$ and $w$ are
+arbitrary, we follow that the space $X_1 \times X_2$ is locally compact, which in turns
+implies by induction that finite product of locally compact spaces is also compact.
+
+Now let's emabark on a bit of a tangent: I want to define and prove some helpful things.
+
+Firstly, let us define a notion of \textbf{reordering}.  Although it might have been proven before
+somewhere in this text (or in the book itself), I can't recall encountering this notion before.
+Let $\set{X_\alpha}$ be a set of topological spaces. Then reordering of $\prod{X_\alpha}$ is
+the product of spaces $X_\alpha$ indexed under (maybe a) different index. This "(maybe a)"
+insures that initial product is itself a reordering. As an example there are
+spaces $X_1 \times X_2$ and $X_2 \times X_1$. We can follow pretty easily that those
+two spaces are homeomorphic, and not only that, we can also prove by induction on the case
+of two spaces that product of any finite family of spaces is homeomorphic to any of its
+reorderings.
+If $\set{X_\alpha}$ is an infinite family, then we can follow that under product, uniform,
+and box topologies the reorderings of any given family are homeomorphic as well, which can 
+be followed from definitions of reordering and respective topologies.
+Some exposure to set theory lets us also follow that if $\set{X_\alpha}$ is indexed on a set $J$
+(i.e. $\alpha \in J$ for arbitrary set $J$), then product of those spaces is
+homeomorphic to $\set{X_\gamma}$ such
+that $\gamma \in \Gamma$, where $\Gamma$ is a cardinal. Let us henseforth name such a reordering
+a \textbf{cardinal reordering}. This will give us some nice well-orders and therefore
+some nice notation, but otherwise will be pretty useless.
+
+Second definition is a particular case of reordering: given that reorderings are
+homeomorphic, we follow that we can define a notion of \textbf{homeomorphic product commutativity}.
+Homeomorphic product commutativity is the fact that $X_1 \times X_2$ and $X_2 \times X_1$
+are homeomorphic.
+
+Lastly, I want to define a notion of \textbf{homeomorphic product associativity}. This
+notion comes from the fact that strictly speaking, cartesian product is not associative.
+Namely, with set-theoretic definitions we've got that 
+$$(X_1 \times X_2) \times X_3 \neq X_1 \times (X_2 \times X_3)$$
+but one can pretty easily follow that although those sets aren't equal, they are homeomorphic.
+This notion can also be extended to product, uniform and box topologies, when we look
+at the definitions of those topologies.
+
+Basically the point of this tangent and all those definitions is simple: as long as the sets
+are the same, we can mix and match them under product sign however we like, and the resulting
+products will be homeomorphic.
+
+Now we can proceed with our initial task: assume that $\set{X_\alpha}$ consists
+of locally compact spaces, which are compact for all but the finite number of spaces.
+We follow that we can reorder the given family and put all the non-compact spaces at the front.
+Thus $\set{X_\beta}$ is a cardinal reordering of $\set{X_\alpha}$ such that there exists
+$n \in \omega$ such that $X_m$ is locally compact if and only if $m \leq n$. We thus
+can follow that product of $X_\beta$'s up to and including $n$ is locally compact by
+the fact that the set of those spaces is finite. Tychonoff theorem in turn implies that
+the product of the rest of the given family is also compact, and thus locally compact. This
+in turn implise that
+$$\prod_{j \leq n}{X_j} \times \prod_{\gamma > n}{X_\gamma}$$
+is a product of two locally compact spaces and thus itself locally compact. 
+Now homeomorphic product associativity and  implies that
+$$\left(\prod_{j \leq n}{X_j}\right) \times \left(\prod_{\gamma > n}{X_\gamma}\right)$$
+is homeomorphic to the original product $\prod{X_\alpha}$. One can prove pretty easily that
+if some space is homeomorphic to a locally compact space, then it's locally compact. Thus
+we conclude that $\prod{X_\alpha}$ is locally compact, as desired.
+
+\subsection{}
+
+\textit{Let $X$ be a locally compact space. If $f: X \to Y$ is continous, does it follow that
+  $f[X]$ is locally compact? What if $f$ is both continous and open? Justify your answers.}
+
+Let $f$ be compact and let
 
 \end{document}
