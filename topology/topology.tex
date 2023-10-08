@@ -57,6 +57,12 @@ This notation includes:
 
 $$V_\epsilon(x) = (x - \epsilon, x + \epsilon)$$
 
+Set of natural numbers is defined with the 0. It's denoted by either $N$, or most oftenly,
+$\omega$.
+
+Countable means that there's an injection into $\omega$ (i.e. both finite and infinitely countable
+are presumed to be countable). Countably infinite means that there's a bijection with $\omega$.
+
 \part{General Topology}
 
 \chapter{Set Theory and Logic}
@@ -4105,6 +4111,27 @@ we conclude that $\prod{X_\alpha}$ is locally compact, as desired.
 \textit{Let $X$ be a locally compact space. If $f: X \to Y$ is continous, does it follow that
   $f[X]$ is locally compact? What if $f$ is both continous and open? Justify your answers.}
 
-Let $f$ be compact and let
+Let us firstly answer the last question: if $f$ is both continous and open, then we follow that
+for some $y \in f[X]$ there exists $x \in X$ such that $f(x) = y$. Around $x$ there exists
+a neighborhood $U$, for which we follow that $y \in f[U]$, and since $f$ is open, we follow that
+$f[U]$ is a neighborhood of $y$. We also follow that for this particular neighborhood there
+exists compact subspace  $C$ such that $U \subseteq C$, and since $f$ is continous, we follow that
+$f[C]$ is also compact, thus for $y$ there exists a neighborhood $f[U]$, that is contained
+in compact $f[C]$, which means that $f[X]$ is locally compact in $y$. Since $y$ is arbitrary,
+we conclude that $f[X]$ is locally compact in general, as desired.
+
+The problem with ordinaly (i.e. not necessarily open) $f: X \to Y$ comes from the fact
+that there might not exist a neighborhood around a particular $y$ that will satisfy the desired
+conditions.
+
+We can follow that $\omega$, as any given totally ordered space is locally compact. We can also
+follow that order topology on $\omega$ is the same as discrete topology. Since $Q$ is
+infinitely countable, we follow that there's a bijection between $Q$ and $\omega$.
+Let us denote this bijection by $h$. Since $\omega$ has discrete topology, we follow that
+any given function (such as $h$) is continous. But we can follow that $h[\omega] = Q$ is
+not locally compact, which proves that image of a locally compact space under plain
+continuity is not necessarily locally compact, which proves my answer to the first question.
+
+
 
 \end{document}
