@@ -3713,7 +3713,7 @@ $$x_n(i) =
 \begin{cases}
   i \leq n \ra 0 \\
   1 \text{ otherwise}
-\end{cases}
+\end{cases}\
 $$
 
 \subsection{}
@@ -4138,7 +4138,74 @@ continuity is not necessarily locally compact, which proves my answer to the fir
 
 We need to prove two things here: firstly that the closure of any given
 basis element in uniform topology in this sense is equal to the the
-product of the boxes. The second is that the product of the boxes is not
-compact by the fact that it's not limit point compact, as proven before; TODO
+product of the closed intervals. The second is that the product of the closed intervals is not
+compact by the fact that it's not limit point compact, as proven before.
+
+Let $W$ be a basis element in $[0, 1]^\omega$. We follow that there exists $\epsilon \in R$
+such that $\epsilon > 0$ and $W = B(x, \epsilon) \cap [0, 1]^\omega$. From one of our
+previous exercises we know that
+$$W = \bigcup_{\delta < \epsilon}{U(x, \delta)}$$
+where
+$$U(x, \delta) = (x_1 - \delta, x_1 + \delta) \times (x_2 - \delta, x_2 + \delta) ...$$
+Let
+$$K = [x_1 - \epsilon, x_1 + \epsilon] \times [x_2 - \epsilon, x_2 + \epsilon] ...$$
+we follow that if $y \in K$ and $J$ is a neighborhood of $y$, then there exists $\gamma \in R$
+such thaht
+$$J = \bigcup_{\delta < \gamma}{U(y, \delta)}$$
+Let $0 < \alpha < \gamma$. We follow that $U(y, \alpha) \subseteq J$. Thus let us look at
+$$U(y, \alpha) = \prod{(y_i - \alpha, y_i + \alpha)}$$
+and
+$$K = \prod{[x_i - \epsilon, x_i + \epsilon]}$$
+Since $x_i - \epsilon \leq y_i \leq x_i + \epsilon$  we follow that $y_i - \alpha < x_i + \epsilon$
+and $y_i + \alpha > x_i - \epsilon$ for all $i$'s. Moreover, we can follow that there
+exists fixed $\theta \in R$ such that $0 < \theta < \epsilon$ (althought I don't provide
+rigorous proof here, a simple picture can do wonders in this partuicular case) such that
+$y_i - \alpha < x_i + \theta$ and $y_i + \alpha > x_i - \theta$. Since $i$ is arbitrary,
+we follow that $U(y, \alpha)$ and $U(x, \theta)$ intersect, which in turn implies that
+$U(y, \alpha)$ and $B(x, \epsilon)$ intersect by the virtue that
+$U(x, \theta) \subseteq B(x, \epsilon)$, which in turns imply that $J$ and $B(x, \epsilon)$
+intersect. Given that $y$ and $J$ are arbitrary we can conclude that
+$K \subseteq \overline{B(x, \epsilon)}$.
+
+Now assume that $q \notin K$. We follow that there exists $i \in \omega$ such that
+$q_i < x_i - \epsilon$ or $q_i > x_i + \epsilon$. Assume the former. Then we follow that
+there exsits a nonzero $\mu \in R$ such that $\mu < x - \epsilon - q_i$. Density of reals
+and some basic implication will show that $B(q, \mu)$ will not intersect $B(x, \epsilon)$.
+This now implies that $q \notin K \ra q \notin \overline{B(x, \epsilon)}$, which implies that
+$K = \overline{B(x, \epsilon)}$, as desired. Thus we follow that
+$$\overline{W} = \overline{B(x, \epsilon)} \cap [0, 1]^\omega = K \cap [0, 1]^\omega$$
+
+Now let $x \in [0, 1]^\omega$. Assume that $[0, 1]^\omega$ is locally compact.
+Since $[0, 1]^\omega$ is Hausdorff (as can be proven pretty easily,
+if not already), we follow that given arbitrary neighborhood $U$
+there must exist $\overline{B(x, \epsilon)}$ such that
+$\overline{B(x, \epsilon)} \cap [0, 1]^\omega$ is compact. We follow that
+$$\overline{B(x, \epsilon)} = \prod{[x_i - \epsilon, x_i + \epsilon]}$$
+and thus
+$$\overline{B(x, \epsilon)} \cap [0, 1]^\omega = \prod{[a_i, b_i]}$$
+for some $a_i$'s and $b_i$'s such that $a_i \neq b_i$ for all $i$'s, as can be easily checked.
+Moreover, we can follow that $|a_i - b_i| > \theta$ for some $\theta \in R_+$ and all $i$'s
+on the account that closure contains $B(x, \epsilon)$
+We now can define a sequence $f_i$ by
+$$f_i(j) =
+\begin{cases}
+  j < i \ra a_i \\
+  b_i \text{ otherwise}
+\end{cases}
+$$
+and then follow that if $q \in f_i$, then by original definition of uniform topology we will
+have that $B(q, \theta)$ (or some value less than $\theta$, which exsists by the density of reals)
+will contain only $q$ itself, and given $q \notin f_i$, one can also prove (athough
+thruogh a pretty tedious process) that there's a neighborhood of $q$ that does not intersect $f_i$
+(this is the same idea as in the first exercise in the previous chapter). Thus we can conclude that
+$$\overline{B(x, \epsilon)} \cap [0, 1]^\omega = \prod{[a_i, b_i]}$$
+does not have limit points, and thus is not limit point compact, which implies that
+given set is also not compact, which gives us a contradiction, as desired.
+
+\subsection{}
+
+\textit{if $f: X_1 \to X_2$ is a homeomorphism of locally compact Hausdorff spaces,
+show that $f$ extends to a homeomorphism of their one-point compactification.} 
+
 
 \end{document}
