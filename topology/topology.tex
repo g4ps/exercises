@@ -4205,7 +4205,32 @@ given set is also not compact, which gives us a contradiction, as desired.
 \subsection{}
 
 \textit{if $f: X_1 \to X_2$ is a homeomorphism of locally compact Hausdorff spaces,
-show that $f$ extends to a homeomorphism of their one-point compactification.} 
+  show that $f$ extends to a homeomorphism of their one-point compactification.}
+
+
+Let $f$ be such a homeomorphism. Let us denote one-point compactifications of $X_1$ and $X_2$
+by $X_1'$ and $X_2'$ respectively, and by extent, let $f'$ be an extension of $f$ such that
+it maps new point to a new point. We want to prove that $f'$ is a homeomorphism as well.
+
+We firsly follow some obvious things: $f'$ is obviously a bijection, if $U \subseteq X_1$
+or $U \subseteq X_2$, then we follow taht $f'\inv[U]$ or $f'[U]$ are open since original $f$ is
+a homeomorphism.
+
+Let us now denote $p \in X_1' \setminus X$. Let $U$ be an open set such that $p \in U$.
+We follow that $U$ is not in $X_1$, and thus there's a compact subspace $F \subseteq X$ such
+that $U = X_1' \setminus F$. We then follow that
+$$f'[U] = f'[X_1 \setminus F] = f'[X_1] \setminus f'[F] = X_2' \setminus f'[F]$$
+where we can derive all the preceding stuff by either basic properties of functions in general,
+or basic properties of bijections in particular. 
+Since $F \subseteq X_1$, we follow that $f'[F] = f[F]$, and since $F$ is compact and $f$
+is continous, we follow that $f[F]$ is compact as well. Thus $f'[U] = X_2' \setminus f'[F]$
+is a type 2 set of topology of one-point compactification of $X_2$, and thus it is itself open.
+
+Since all open sets of $X_1'$ either have or don't have $p$ in them, we follow that $f'$
+maps open sets to open, which implies that $f'\inv$ is continous. The same logic
+can be applied to $f'\inv$ and $X_2'$, which means that $f'$ is a bijection, that is itself
+continous and whose reverse functtion is also continous, which means that $f'$ is a homeomorphism,
+as desired.
 
 
 \end{document}
