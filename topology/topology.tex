@@ -4232,5 +4232,27 @@ can be applied to $f'\inv$ and $X_2'$, which means that $f'$ is a bijection, tha
 continous and whose reverse functtion is also continous, which means that $f'$ is a homeomorphism,
 as desired.
 
+\subsection{}
+
+\textit{Show that the one-point compactification of $R$ is homeomorphic with the circle $S^1$.}
+
+Let $S' = S^1 \setminus \set{\eangle{0, 1}}$. We then follow that $S'$ is locally compact
+Hausdorff space since it's a subspace of $R^2$, which is locally compact and Hausdorff. We
+now want to prove that $S'$ is homeomorphic to $R$. We know that there's a homeomorphism
+from $R$ to any given open interval, and we thus there's a homeomorphism to $(0, 2\pi)$.
+There's a function $g: (0, 2\pi) \to S'$
+$$g(x) = \eangle{\sin(x), \cos(x)}$$
+which is continous, since $\sin$ and $\cos$ are continous. We can also follow from calculus that
+this function is a bijection. Some geometry (or its variarion from calculus) can also give us that
+a given function is an open map, which implies that $(0, 2\pi)$ and $S'$ are homeomorphic. Thus
+$S'$ and $R$ are homeomorphic.
+
+Since $S^1$ is compact we follow that $S^1$ is one-point
+compactification of $S'$, and since there's a homeomorphism between $R$ and $S'$ and
+both of those spaceas are locally compact Hausdorff, we follow by previous exercise that
+one-point compactification of $R$ and $S^1$ are homeomorphic, as desired.
+
+\textit{Last several exercises are left for some better times, probably in the (somewhat)
+  near future}
 
 \end{document}
