@@ -3743,6 +3743,7 @@ has discrete topology), thus proving the counterpoint for this particular case
 \textit{(b) If $A$ is a closed subset of $X$, does it follow that $A$ is limit point
   compact?}
 
+
 Suppose that $U$ is an infinite subset of $A$. Since $A \subseteq X$, we follow that
 $U \subseteq X$, and thus there is a limit point $j$ of $U$. Since $U \subseteq A$
 and $A$ is closed, we follow that $\overline{U} \subseteq \overline{A}$ (exercise 17.6),
@@ -4251,6 +4252,31 @@ Since $S^1$ is compact we follow that $S^1$ is one-point
 compactification of $S'$, and since there's a homeomorphism between $R$ and $S'$ and
 both of those spaceas are locally compact Hausdorff, we follow by previous exercise that
 one-point compactification of $R$ and $S^1$ are homeomorphic, as desired.
+
+\subsection{}
+
+\textit{Show that the one point compactification of $S_\Omega$ is homeomorphic
+  with $\overline{S_\Omega}$}
+
+We know that $S_\Omega$ is Hausdorff since it's got the order topology, and the same
+applies to $\overline{S_\Omega}$. 
+We also know that $S_\Omega$ is a subset of $\overline{S_\Omega}$ and $\overline{S_\Omega} \setminus
+S_\Omega = \set{\Omega}$. If we can prove that $\overline{S_\Omega}$ is compact, then we can
+follow that $S_\Omega$ is locally compact, in which case $\overline{S_\Omega}$ is homeomorphic
+to the one-point compactification of $S_\Omega$. We can also prove that $S_\Omega$ is
+locally compact, which will give us pretty much the same conclusion.
+
+Let $k \in S_\Omega$. We follow that there exists $k^+$ (or the element, that goes right after
+the $k$, since $S_\Omega$ is well-ordered, i.e. successor). If there exists an element
+$a \in S_\Omega$ such that $k = a^+$ (i.e. $k$ is a successor ordinal), then we follow that
+$\set{k} = (a, k^+)$, which is both open and closed, which implies that $S_\Omega$ is
+locally compact at $k$. If there's no such element, then we follow that
+$[0, k]$ is countable. Let $U$ be an infinite open cover of $[0, k]$. We follow that there's
+an element $V \in U$ such that $k \in V$, and since $V$ is open, we follow that there's a
+basis element $B$ such that $k \in B \subseteq V$. Since $k \in B$ and $V$ is in open cover
+of $[0, k]$, we follow that there's an element $q \in [0, k]$ such that $B = (q, k]$.  We will
+instead follow that if $[0, q)$ is infinite, then TODO
+
 
 \textit{Last several exercises are left for some better times, probably in the (somewhat)
   near future}
