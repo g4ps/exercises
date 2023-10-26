@@ -4266,19 +4266,13 @@ follow that $S_\Omega$ is locally compact, in which case $\overline{S_\Omega}$ i
 to the one-point compactification of $S_\Omega$. We can also prove that $S_\Omega$ is
 locally compact, which will give us pretty much the same conclusion.
 
-Let $k \in S_\Omega$. We follow that there exists $k^+$ (or the element, that goes right after
-the $k$, since $S_\Omega$ is well-ordered, i.e. successor). If there exists an element
-$a \in S_\Omega$ such that $k = a^+$ (i.e. $k$ is a successor ordinal), then we follow that
-$\set{k} = (a, k^+)$, which is both open and closed, which implies that $S_\Omega$ is
-locally compact at $k$. If there's no such element, then we follow that
-$[0, k]$ is countable. Let $U$ be an infinite open cover of $[0, k]$. We follow that there's
-an element $V \in U$ such that $k \in V$, and since $V$ is open, we follow that there's a
-basis element $B$ such that $k \in B \subseteq V$. Since $k \in B$ and $V$ is in open cover
-of $[0, k]$, we follow that there's an element $q \in [0, k]$ such that $B = (q, k]$.  We will
-instead follow that if $[0, q)$ is infinite, then TODO
+Since $S_\Omega$ is a woset, it is a toset, and thus it's simply ordered. We know that if $A$ is a
+bounded subset of $S_\Omega$, then the set of upper bounds of $S_\Omega$ is a woset, thus we follow
+that $A$ has a least upper bound. Thus we conclude that $S_\Omega$ is locally compact, as it was
+proven to us in the chapter, and thus it's got a one-point compactification.
 
-
-\textit{Last several exercises are left for some better times, probably in the (somewhat)
-  near future}
+We can also follow (from 27.1) that $\overline{S_\Omega}$ is compact, and thus we conclude by
+the first theorem in the chapter that $\overline{S_\Omega}$ is homeomoprhic with a one
+point compactification of $S_\Omega$.
 
 \end{document}
