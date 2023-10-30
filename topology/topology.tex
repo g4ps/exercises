@@ -4275,4 +4275,43 @@ We can also follow (from 27.1) that $\overline{S_\Omega}$ is compact, and thus w
 the first theorem in the chapter that $\overline{S_\Omega}$ is homeomoprhic with a one
 point compactification of $S_\Omega$.
 
+\chapter{Countability and Separation Axioms}
+
+\section{The Countability Axioms}
+
+\subsection{}
+
+\textit{(a) A $G_\sigma$ set in a space $X$ is a set $A$ that equals a countable intersection
+  of open sets of $X$. Show that in a first-countable $T_1$ space, every one-point set is a
+  $G_\sigma$ set}
+
+Assume that $Q$ is a first-countable $T_1$ space and let $q \in Q$. We follow that there's a
+countable collection of open sets $B$ such that every neighborhood $U$ contains an element of $B$.
+Since $B$ is a collection of neighborhoods of $q$ we conclude that
+$q \in \bigcup{B}$. Now let $j \in \bigcap{B}$. We conclude that if $j \neq q$, then $\set{j}$
+is closed and thus there's an open set $Q \setminus \set{j}$ that contains
+an element of $B$ and thus $j \notin \bigcap{B}$, which gives us contradiction. Thus we
+conclude that
+$$\bigcap{B} = \set{q}$$
+which proves that singletons are $G_\sigma$, as desired.
+
+\textit{(b) There's a familiar space in which every one-point set is a $G_\sigma$ set, which
+  nevertheless does not satisfy the first countability axiom. What is it?}
+
+Since metrizability implies first countability, we need to look at some non-metrizable spaces.
+
+$\overline{S_\Omega}$ won't do since every collection of basis neighborhoods of $\set{\Omega}$
+got a point other than $\Omega$, which means that the sequence of those points have an upper
+bound other than $\Omega$, which means that $\set{\Omega}$ isn't $G_\sigma$, which sucks.
+
+The other option is a space $R^\omega$ in box topology. We follow that we can create a
+collections of concentric balls (i.e. product of $U$'s with diameter $1/n$)
+around an arbitrary $x \in R^\omega$, whose intersection
+will be $x$, thus provind that singletons in $R^\omega$ in box topology are $G_\sigma$. Thus
+we need to prove that $R^\omega$ is not first countable (if it is, obviously).
+
+Let $B$ be a countable collection of neighborhoods of $x$ such that every neighborhood of $x$
+contains at least one elememt of $B$. TODO
+
+
 \end{document}
