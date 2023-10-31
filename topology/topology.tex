@@ -4307,11 +4307,18 @@ bound other than $\Omega$, which means that $\set{\Omega}$ isn't $G_\sigma$, whi
 The other option is a space $R^\omega$ in box topology. We follow that we can create a
 collections of concentric balls (i.e. product of $U$'s with diameter $1/n$)
 around an arbitrary $x \in R^\omega$, whose intersection
-will be $x$, thus provind that singletons in $R^\omega$ in box topology are $G_\sigma$. Thus
-we need to prove that $R^\omega$ is not first countable (if it is, obviously).
+will be $x$, thus provind that singletons in $R^\omega$ in box topology are $G_\sigma$. We
+can also follow the same thing from the fact that uniform topology is coarser than box
+topology. Thus we need to prove that $R^\omega$ is not first countable (if it is, obviously).
 
-Let $B$ be a countable collection of neighborhoods of $x$ such that every neighborhood of $x$
-contains at least one elememt of $B$. TODO
-
+We can follow that if $B$ is a countable neighborhoods  of $x$, then if it's finite, then
+intersection of those sets is an infinite open set, and since $R^\omega$ is Hausdorff,
+we can create some open set, that does not contain none of the elements of $B$.
+If $B$ is infinite however, then we can create a bijection $f$ from $\omega$ to $B$.
+Then for each $n \in \omega$ we can take an open neighborhood $C_n$ of $R$ such that is contained
+in $n$'th projection of $f(n)$ and contains the $x_n$. Then we can conclude that
+$\prod{C_n}$ is a neighborhood of $x$ that does not contain any of $B$ since it's a subset
+of a projection of this set at some $n \in \omega$, which implies that $R^\omega$ is not
+first countable, as desired.
 
 \end{document}
