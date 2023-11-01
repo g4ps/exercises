@@ -4311,14 +4311,64 @@ will be $x$, thus provind that singletons in $R^\omega$ in box topology are $G_\
 can also follow the same thing from the fact that uniform topology is coarser than box
 topology. Thus we need to prove that $R^\omega$ is not first countable (if it is, obviously).
 
-We can follow that if $B$ is a countable neighborhoods  of $x$, then if it's finite, then
+We can follow that if $B$ is a set of countable neighborhoods of $x$, then if it's finite, then
 intersection of those sets is an infinite open set, and since $R^\omega$ is Hausdorff,
 we can create some open set, that does not contain none of the elements of $B$.
 If $B$ is infinite however, then we can create a bijection $f$ from $\omega$ to $B$.
-Then for each $n \in \omega$ we can take an open neighborhood $C_n$ of $R$ such that is contained
-in $n$'th projection of $f(n)$ and contains the $x_n$. Then we can conclude that
-$\prod{C_n}$ is a neighborhood of $x$ that does not contain any of $B$ since it's a subset
-of a projection of this set at some $n \in \omega$, which implies that $R^\omega$ is not
+Then for each $n \in \omega$ we can take an open neighborhood $C_n$ of $x_n$ such that is
+properly contained in $n$'th projection of $f(n)$. Then we can conclude that
+$\prod{C_n}$ is a neighborhood of $x$, since for every $n \in \omega$ we've got that
+$x_n \in C_n$ and that this neighborhood  does not contain any of $B$ because for every
+$n \in \omega$ we've got that $n$'th projection of $B$ is  a proper superset of $C_n$, thus
+proving that $\prod{C_n}$ does not contain $B$. Thus we conclude that for every countable
+collection of neighborhoods $B$ of arbitrary $x \in X$ we've got that there exists a neighborhood
+of $x$ that does not contain any of $B$'s, thus implying that $R^\omega$ in box topology isn't
 first countable, as desired.
+
+\subsection{}
+
+\textit{Show that if $X$ has a countable basis $\set{B_n}$, then every basis $C$ for $X$ contains
+  a countable basis for $X$.}
+
+Let us try to use the hint and collect a set $C_{n, m}$ such that
+$B_n \subseteq C_{n, m} \subseteq B_m$. If there's several sets in $C$ that are in between
+two sets in $B$, then let us just pick one. Then we follow that $\set{C_{n, m}}$ is countable,
+since it's indexed by a countable set (set of pairs of elements of $\omega$ is coubtable).
+If the set $\set{C_{n, m}}$ happens to be a basis, then definition of $B_n$, together with
+lemma 13.3 (and some omitted magic for the second clause of the theorem) will imply that
+those two sets have same topologies.
+
+Assume that it isn't and there's $x \in X$ such that
+there are no $n, m \in \omega$ such that $B_n \subseteq C_{n, m} \subseteq B_m$ and
+such that $x \in C_{n, m}$. Since $\set{B_n}$ is a basis, we conclude that there is
+$n \in \omega$ such that $x \in B_n$. 
+We then follow that $B_n$ is an open set, and thus there's a collection $Q$ of sets in $C$
+such that $B_n = \bigcup{Q}$. Since $B_n = \bigcup{Q}$, we follow that there's a set $U \in Q$
+such that $x \in U$, and since $U$ is an $Q$ and $Q$ is a subset of a basis we conclude that
+$U$ is also an open set, which implies that there's a collection $D \subseteq \set{B_n}$ such that
+$U = \bigcup{D}$. We then conclude that there's a set $B_m \in D$ such that $x \in B_m$,
+which implies that $B_m \subseteq U \subseteq B_n$, and since $U$ is in $Q$, which is a subset
+of $C$, we conclude that there exist an element of $C$ that satisfies the constrains
+of $\set{C_{n, m}}$ and thus  there's a  $C_{m, n}$ such that $B_m \subseteq C_{m, n} \subseteq B_n$
+for which $x \in B_m \subseteq C_{m, n}$, which gives us a contradiction.
+
+Now suppose that $x \in X$ is such that there exist $m, n \in \omega$ such that
+$x \in C_n \cap C_m$ (we've re-indexed the set $\set{C_{n, m}}$ here to simplify the notation a bit;
+since we've proven already that the  set is  countable, we can index it however we like).
+Since $C_n$ and $C_m$ are open, we conclude that there's a $k \in \omega$ such that
+$x \in B_k$ and $B_k \subseteq C_n \cap C_m$. We then follow that there's a set $Q \in C$
+such that $x \in Q \subseteq B_k$, and then we follow that there's a set $B_l$ such that 
+$x \in B_l \subseteq Q \subseteq B_k$, thus there's $o \in \omega$ such that
+$x \in B_l \subseteq C_o \subseteq B_k \subseteq C_m \cap C_n$, which simplifies to
+$$x \in C_o \subseteq C_m \cap C_n$$
+which gives us the second constraint of the basis, thus proving that $\set{C_{n, m}}$ is a basis.
+
+\subsection{}
+
+\textit{Let $X$ have a countable basis; let $A$ be an uncountable subset of $X$. Show that
+  uncountably many points of $A$ are limit points of $A$.}
+
+To refresh the memory: a limit point of a set is a point, any heighborhood of which intersects
+the set at some point, other than the limit point itself.
 
 \end{document}
