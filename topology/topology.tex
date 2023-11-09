@@ -4368,7 +4368,18 @@ which gives us the second constraint of the basis, thus proving that $\set{C_{n,
 \textit{Let $X$ have a countable basis; let $A$ be an uncountable subset of $X$. Show that
   uncountably many points of $A$ are limit points of $A$.}
 
-To refresh the memory: a limit point of a set is a point, any heighborhood of which intersects
-the set at some point, other than the limit point itself.
+We firstly follow that since $A$ is a subset of $X$ that it is itself second-countable. Now we
+need to prove that if $A$ is an uncountable second-countable space, then it's got an
+uncountably many limit points. Since $A$ is second-countable, we follow that there exists
+a countable subset $Q$ of $A$ that is dense in $A$. Since $A$ is uncountable, $Q$ is
+countable and $Q \subseteq A$, we follow that $A \setminus Q$ is uncountable. We now wanna show
+that every point of $A \setminus Q$ is a limit point of $A$. Let $j \in A \setminus Q$. We
+follow that since $j \in A$ that $j \in \overline{Q}$. Thus we follow that every neighborhood of $j$
+intersects $Q$ and since $j \notin Q$ and $Q \subseteq A$ we follow that every neighborhood
+of $j$ intersects $A$ at some point other than $j$ itself. Thus we follow that a set of limit points
+of $A$ has an uncountable subset, which implies that the set of limit points
+of $A$ is uncountable as well. Therefore now we can conclude that every uncountable second-countable
+spaces have uncountable set of limit points, and since $A$ is such a set, we follow the desired
+conclusion.
 
 \end{document}
