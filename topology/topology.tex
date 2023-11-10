@@ -4382,4 +4382,68 @@ of $A$ is uncountable as well. Therefore now we can conclude that every uncounta
 spaces have uncountable set of limit points, and since $A$ is such a set, we follow the desired
 conclusion.
 
+\subsection{}
+
+\textit{Show that every compact metrizable space $X$ has a countable basis}
+
+Let $V_1$ be a collection of all basis neighborhoods with diameter $1/1 = 1$. In general define
+collections $V_n$ that consists of all basis neighborhoods with the diameter $1/n$. We then
+follow that each one of those collections will be an open cover of $X$, and since $X$ is compact
+we'll follow that each $V_n$ has a finite subcover. Since there are countable amount of $V_n$'s,
+we conclude that we can put all of those finite subcovers together to get a countable collection
+of sets $Q$, which we will prove is a basis of $X$. We firsly follow that since $V_1 \in \set{V_n}$
+and $\bigcup{V_1} = X$ that the union of the resulting set is equal to $X$, which satisfies the
+first criteria of the basis. Now let $x \in X$ be located in the intersection of two elements
+$q_1, q_2 \in Q$. We follow that $q_1 = U(y_1, \lambda_1)$ and $q_2 = U(y_2, \lambda_2)$
+for some $y_1, y_2 \in X$ and $\lambda_1, \lambda_2 \in R_+$. Since both $q_1, q_2$ are
+open in original topology, we follow that there's a basis element $g = (s, \theta)$ for some
+$s \in X$ and $\theta \in R_+$ such that $x \in g$ and $g \subseteq q_1 \cap q_2$. We then follow
+that there's $n \in \omega$ such that $1/n < \theta/2$, which implies that there's some $v \in Q$
+such that $x \in v$ and $v \subseteq g$, which in turn satisfies the second criteria for the basis,
+which implies that $Q$ is indeed a basis for $X$.
+
+Other than that we need to prove that basis $Q$ induces topology the same topology as the
+original metric topology, but it's pretty trivial. If we would've elected to actually prove it,
+we whould prove that they nave the same topology by the fact that both topologies are finer
+than each other.
+
+\subsection{}
+
+\textit{(a) Show that every metrizable space with a countable dense subset has a countable basis.}
+
+Let the original space be called $X$ and the dense countable subset be called $A$. We follow that
+for all $a \in A$ there's a countable collection basis elements $A_n = U(a, 1/n)$. We can then unite
+all of those countable collections, which will result in the countable union of countable sets,
+which will be countable as well, and let us call this collection $Q$. By pretty much the same
+reasoning as in the previous exercise we can conclude that the resulting set $Q$ constitutes a
+countable basis of $X$ with the same topology.
+
+\textit{(b) Show that every metrizable Lindelof space has a countable basis.}
+
+Let $V_n$ be a collection of all basis elements whose radius is $1/n$. Since the
+space is Lindelof, we can follow that $V_n$ has a countable subcover of the snpace $Q_n$. We then
+can unite all $Q_n$'s to get countable family $M$ that'll be a countable basis of the original
+space.
+
+\subsection{}
+
+\textit{Show that $R_l$ and $I_o^2$ are not metrizable.}
+
+We know from the example 3 that $R_l$ is Lindelof. If it's metrizable, then $R_l$ is
+second-countable, which is not true.
+
+For $I_o^2$ we can follow that it's Lindelof from the example, and we can prove that it's not
+separable. We can follow that in order $I_o^2$ to be separable, there's got to
+exist a set $Q$ such that each of the strands
+$(0, 1) \times \set{x}$ for all $x \in [0, 1]$ has a point $q \in Q$ that is in this set. We then
+follow that since those sets are disjoint and the collection $(0, 1) \times \set{x}$ for all
+$x \in [0, 1]$ is uncountable that $Q$ is also uncountable, and thus we can have a contradiction.
+Thus we conclude that $I_o^2$ is not separable, which means that $I_o^2$ must hot be metrizable
+since Lindelof and separability are equivalent for metrizable spaces, as desired.
+
+\subsection{}
+
+\textit{Which one of four countabiliy axioms does $S_\Omega$ satisfy? What about
+  $\overline{S_\Omega}$?}
+
 \end{document}
