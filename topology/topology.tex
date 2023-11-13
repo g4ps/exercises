@@ -4446,4 +4446,42 @@ since Lindelof and separability are equivalent for metrizable spaces, as desired
 \textit{Which one of four countabiliy axioms does $S_\Omega$ satisfy? What about
   $\overline{S_\Omega}$?}
 
+For $S_\Omega$ we can follow that for any given element $k \in S_\Omega$ there's an element $k^+$
+and a collection of basis elements $(a, k^+)$ for all $a < k$. Since there are countable
+amount of $a < k$ we follow that for any given element $k \in S_\Omega$ it's first countable,
+and thus $S_\Omega$ as a whole is single countabe. $\overline{S_\Omega}$ on the other hand is not
+first-countable since there's no good collection for $\Omega$ (low point of each basis element
+will be in $S_\Omega$, which will constitute a countable collection in $S_\Omega$, which will have
+a limit point, thus proving that $\overline{S_\Omega}$ is not first-countable in $\Omega$).
+
+To show that $S_\Omega$ is not second-countable, I'm gonna use the same trick, as the author have
+shown with $R_l$. Let $B$ be a basis of $S_\Omega$. For each $k \in S_\Omega$ take $B_k$
+such that $k \in B_k \subseteq [0, k_+)$. Then we'll follow that $x \neq k \ra B_x \neq B_k$,
+which shows that no basis is countable for $S_\Omega$. The same trick can be also used to show
+that $\overline{S_\Omega}$ is not second-countable, or we can just use the fact that $S_\Omega$
+is a non-second-countable subspace of $\overline{S_\Omega}$, which will also suffice.
+
+We now can follow that if $K$  is a countable subset of $S_\Omega$, then it's got a upper
+bound in $S_\Omega$, which in turn implies that there's $m \in S_\Omega$ such that
+$m > k$ for all $k \in K$, which means that there's an open set $(m, \infty)$ that does
+not intersect any elements of $K$, which implies that $K$ is not dense, which in turn implies
+that not $S_\Omega$ nor $\overline{S_\Omega}$ are separable.
+
+We can follow that if $U$ is an open covering for $\overline{S_\Omega}$, then there's an
+element $q \in U$ such that $\Omega \in q$, which in turn means that there's $k \in S_\Omega$
+such that there's a basis element $(k, \Omega] \subseteq q$. Then we follow that since
+$k \in S_\Omega$ that $[0, k]$ is countable, and thus we can pick $V_n$ such that
+$n \in V_n$ for all $n \in [0, k]$, and then we follow that $\set{V_n} \cup \set{q}$ is a
+countable subcover of $\overline{S_\Omega}$, which implies that $\overline{S_\Omega}$ is
+Lindelof.
+
+The only question that is left is whether or not $S_\Omega$ Lindelof. For all $k \in S_\Omega$
+we can take elements $[0, k)$ (i.e. $S_k$) that are gonna constitute an open cover for $S_\Omega$.
+We can follow that each one of $S_k$'s will have an upper bound, which means that if
+we've got a countable subcollection of $S_k$ then  there's a
+countable set of upper bounds of $\set{S_k}$, which will itself have an upper bound, which will
+be lower than some element of $S_\Omega$, which will be outside of this countable subcover,
+and thus we will conclude that there's no countable subcover for this particular cover, which means
+that $S_\Omega$ is not Lindelof, which is pretty neat.
+
 \end{document}
