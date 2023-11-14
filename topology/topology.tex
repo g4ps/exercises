@@ -4484,4 +4484,31 @@ be lower than some element of $S_\Omega$, which will be outside of this countabl
 and thus we will conclude that there's no countable subcover for this particular cover, which means
 that $S_\Omega$ is not Lindelof, which is pretty neat.
 
+\subsection{}
+
+\textit{Which of our four countability axioms does $R^\omega$ in the uniform topology satisfy?}
+
+Since $R^\omega$ in the uniform topology is metrizable (it's even defined by the metric), we can
+follow that $R^\omega$ is first countable. We can also follow that for any given sequence in
+$\set{0, 1}^\omega$ there's a basis element of $R^\omega$ (namely the one with diameter of
+somethings less than $0.5$) such that none of those basis elements intersect each other. This
+implies that in any given dense set there should be at least $\set{0, 1}^\omega$ elements,
+which, given the fact that the latter is uncountable, means that no countable set is dense
+in $R^\omega$ with uniform topology. This now will imply that $R^\omega$ with uniform
+topology is not separable, and given the fact that it's metric we can follow that it's neither
+second-countable, nor Lindelof, as desired.
+
+\subsection{}
+
+\textit{Let $A$ be a closed subspace of $X$. Show that if $X$ is Lindelof, then $A$ is Lindelof.
+  Show by example that if $X$ has a countable dense subset, $A$ need not have a countable
+  dense subset.}
+
+Let $B$ be an open cover for $A$. We follow that $A \subseteq \bigcup{B}$, which in addition to the
+fact that $X \setminus A$ is open implies that $Q = B \cup \set{X \setminus A}$ constitutes
+an open cover for $X$. $X$ is Lindelof, and thus $Q$ has got a countable subcover $V$. We can
+follow that we can painlessly remove $X \setminus A$ from $V$ if it happens to still be there,
+and then $V$ will be a countable subcover of $A$, which means that $A$ is Lindelof, as desired.
+
+
 \end{document}
