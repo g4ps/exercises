@@ -4520,7 +4520,7 @@ be well-founded, we can use the derivative of $R_l$ (namely Sorgenfrey plane) to
 
 Firstly, we want to prove that $R_L^2$ is separable, which is pretty easy. We can follow that
 since $Q$ is dense in $R_l$ that $Q \times Q$ is dense in $R_l^2$ (more rigorous proof comes
-from analyzing bases of $R_l^2$). 
+from analyzing bases of $R_l^2$ and is presented in the next exersise). 
 We know that the negative diagonal $L$ in a Sorgenfrey plane is closed.
 We then can follow that for any given
 $x \in R_l$ we've got that $\set{\eangle{x, -x}} = ([x, \infty) \times [-x, \infty)) \cap L$,
@@ -4529,6 +4529,99 @@ We then can follow that given the fact that $R_l$ is uncountable that $L$ is unc
 and thus any countable subset of $L$ is closed and thus closure of any given subspace of $L$ is
 equal to itself, which proves that $L$ is not separable, as desired.
 
+\subsection{}
+
+\textit{Show that if $X$ is a countable product of spaces having countable dense subsets, then $X$
+  has a countable dense subset}
+
+Firstly we wanna state the obvious: if $X$ is an infinite product, then we're gonna look at the
+product topology.
+Another thing that we should also state is the fact that if we just take a countable product
+of countable spaces, then in infinite cases cardinality of the resulting set will be at
+least the same as  $\omega^\omega$, which is not countable, thus we can conclude that the obvious
+answer won't do here. Therefore we need to do something smart.
+
+Although the power set of $\omega$ is not countable, we can look into whether or not the set of
+finite subsets of $\omega$ is countable. Let $k$ be a finite subset of $\omega$. We follow that
+we can order $k$ by ascention and get a finite list of numbers $k'$. Then we can raise
+prime numbers to the power of an entry in corresponding position (substituting empty
+entries by $0$) to get a natural number (i.e. $(2, 6, 7) \to 2^2 * 3^6 * 5^7$). We then can
+conclude that given function will be an injection from a set of finite numbers in $\omega$ to
+$\omega$, which proves that set of finite subsets of $\omega$ is countable.
+
+Since the set of finite subsets of countable set is countable, we can follow that we can take
+a union of products of corresponding spaces with some constant value of $X$ to get the
+desired countable dense set.
+
+\subsection{}
+
+\textit{Let $f: X \to Y$ be continous. Show that if $x$ is Lindelof, of if $X$ has a countable
+  dense subset, then $f[X]$ satisfies the same condition.}
+
+Let $X$ be Lindelof. We follow that if $\set{U_n}$ is an open covering of $f[X]$, then
+$\set{f\inv[U_n]}$ is an open covering of $X$, which has a countable subcover $\set{V_n}$.
+Taking the corresponding indices from $\set{V_n}$ and applying them back to $\set{U_n}$ will
+produce an open cover for $f[X]$.
+
+Let $X$ has a countable dense subset $A$. We follow that if $U$ is an open  subset of $f[X]$,
+then $f\inv[U]$ is open in $X$, thus we follow that $f\inv[U]$ intersects $A$, and thus $U$
+intersects $f[A]$. Therefore we conclude that any open subset of $f[X]$ intersects $f[A]$, thus
+proving that $f[A]$ is dense in $f[X]$. Since $|U| \geq_c |f[U]|$ for any given set, we follow that
+$f[A]$ is a countable dense set in $f[X]$, as desired.
+
+\subsection{}
+
+\textit{Let $f: X \to Y$ be a continous open map. Show that if $X$ satisfies the first of the second
+  countability axopm, then $f[X]$ satisfies the same axiom.}
+
+We follow that if $x \in X$ and $B$ is a countable basis at $x$, then $f[B_n]$ is an open
+neighborhood of $f(x)$ by the fact that $f$ is open. We then follow that if $U$ is a neighborhood
+of $f(x)$, then $f\inv[U]$ is a neighborhood of $x$ by continuity of $f$, and thus there's an
+$n \in \omega$ such that $B_n \subseteq f\inv[U]$. We then follow that $f[B_n] \subseteq U$,
+which implies that $\set{f[B_n]}$ is a countable basis at $f(x)$. Given that $x$ is arbitrary,
+we conclude that $f[X]$ is first-countable, as desired.
+
+If $B$ is a countable basis of $X$, then we can follow by simple manipulations that $f[B]$ is basis
+of $f[X]$ (if it wasn't already proven before). Countability of $f[B]$ comes from the same reasoning,
+as in the previous exercise.
+
+\subsection{}
+
+\textit{Show that if $X$ has a countable dense subset, every collection of disjoint open sets
+  in $X$ is countable}
+
+Let $U$ be a collection of disjoing open sets in $X$, and let $K$ be a countable dense subset of $X$.
+We then follow that there's a function from each $V \in U$ to a power set of $K$, such that
+$$k \in f(V) \iff k \in V \cap K$$
+Given that $U$ is a set of disjoint sets, we follow that $k \neq q \ra f(k) \cap f(q) = \emptyset$.
+Now we can use AC to get a function $g: U \to K$ such that
+$$g(V) \in V \cap K$$
+previously stated fact for $f$ now implies that $g$ is injective, which implies that $U$ has
+an injection into countable $K$, which implies that $U$ is countable itself, as desired.
+
+\subsection{}
+
+\textit{Show that if $X$ is Lindelof and $Y$ is compact, then $X \times Y$ is Lindelof}
+
+We're probably gonna use the good ol'fashioned tube method.
+Let $U$ be an open cover for $X \times Y$. For each $x \in X$ we follow that there's a collection
+of sets $K$ indexed by $J$ in $U$ such that $K \cap \set{x} \times Y \neq \emptyset$.
+Since $Y$ is compact and $U$ is an open cover for $X \times Y$ we folow that
+$Y = \bigcup{\pi_Y(K_j)}$ and thus there's finite set $I \subseteq J$ such that
+$$\bigcup_{i \in I}{\pi_Y(K_i)} = Y$$
+since projection is an open map and $I$ is finite, we follow that $\bigcap_{i \in I}{\pi_X(K_i)}$
+is an open set. We then follow that since $x \in X$ is arbitrary,  for each $x$ we can
+make such a set $Q_x = \bigcup_{i \in I}{\pi_X(K_i)}$, which will constitute an open cover for $X$.
+Since $X$ is Lindelof, we follow that there's a countable subcollection of $Q$'s, and for each
+one of those $Q$'s there's a finite collection $V_x$ of sets in $U$ such that
+$Q_x \times Y \subseteq V_x$. We then can unite all the $V_x$'s to get a countable union of
+finite sets, which will be a countable cover for the whole $X \times Y$, which since $U$
+and everything else is arbitrary implies that $X \times Y$ is Lindelof as long as
+$X$ is Lindelof and $Y$ is compact, as desired.
+
+Little remark: we couldn't do such a thing with a product of Lindelof spaces since we don't
+have an implication that $\bigcap_{i \in I}{\pi_X(K_i)}$ is open, because this implication
+depends on finality of $I$
 
 
 \end{document}
