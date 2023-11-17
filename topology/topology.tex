@@ -4510,5 +4510,25 @@ an open cover for $X$. $X$ is Lindelof, and thus $Q$ has got a countable subcove
 follow that we can painlessly remove $X \setminus A$ from $V$ if it happens to still be there,
 and then $V$ will be a countable subcover of $A$, which means that $A$ is Lindelof, as desired.
 
+Now we have got to look at some spaces, that would show the latter point. Firstly we want to follow
+that we don't want to look at the metrizable spaces, since their separability is equivalent
+to Lindelof, which means that any subspace of that space is metrizable and Lindelof, which implies
+that it's separable. Not $S_\Omega$ nor $\overline{S_\Omega}$ are separable, so they won't do the
+trick. We've also shown that $I_o^2$ isn't separable, which disqualifies it as well. Thus we
+can make a reasonable assunmption that our main suspect is $R_l$. Although this susption can
+be well-founded, we can use the derivative of $R_l$ (namely Sorgenfrey plane) to do our bidding.
+
+Firstly, we want to prove that $R_L^2$ is separable, which is pretty easy. We can follow that
+since $Q$ is dense in $R_l$ that $Q \times Q$ is dense in $R_l^2$ (more rigorous proof comes
+from analyzing bases of $R_l^2$). 
+We know that the negative diagonal $L$ in a Sorgenfrey plane is closed.
+We then can follow that for any given
+$x \in R_l$ we've got that $\set{\eangle{x, -x}} = ([x, \infty) \times [-x, \infty)) \cap L$,
+thus proving that any given singleton on the diagonal is open, thus giving $L$ discrete topology.
+We then can follow that given the fact that $R_l$ is uncountable that $L$ is uncountable as well,
+and thus any countable subset of $L$ is closed and thus closure of any given subspace of $L$ is
+equal to itself, which proves that $L$ is not separable, as desired.
+
+
 
 \end{document}
