@@ -1,5 +1,10 @@
+# ignoring emacs files
 *~
+
+# algorithms might have some binaries in'em and there's no reason to push them
 a.out
+
+# ignoring temporary files that come out of compiling tex's
 *.log
 *.out
 *.toc
@@ -8,4 +13,5 @@ a.out
 *.bbl
 *.blg
 
-calculus_manifolds
+# that folder contains symbolic links to the current books
+current_books

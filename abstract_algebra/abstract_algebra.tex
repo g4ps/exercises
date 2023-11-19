@@ -1,0 +1,145 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My abstract algebra exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \topol {\mathcal {T}}
+\DeclareMathOperator \basis {\mathcal {B}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{Groups}
+
+\section{Symmetries of  a Regular Polygon}
+
+\textit{Content of this section was pretty much taken care of in a previous try at an
+  abstract algebra coutse}
+
+\section{Introduction to Groups}
+
+\textit{For the next 14 exercises decide whether or not hte given pair forms a group.}
+
+\subsection{}
+
+\textit{The pair $(N, +)$}
+
+No, since there are no inverses for nonzero elements
+
+\subsection{}
+
+\textit{The pair $(Q \setminus \set{-1}, \star)$, where $a \star b = a + b + ab$}
+
+$$a \star (b \star c) = a \star (b + c + bc) = a + (b + c + bc) + ab + ac + abc$$
+so associativity checks out.
+
+We can follow that $0$ is an identity, since
+$$a \star 0 = a + 0 + a0 = a$$
+
+Suppose that $a \in Q \setminus \set{-1}$. We follow that
+$$a + b + ab = 0$$
+$$b = -a(1 + b)$$
+$$b/(1 + b) = -a$$
+$$- b/(1 + b) = a$$
+since $b \in Q \setminus \set{-1}$, we follow that $b = m/n$, and thus
+$$- \frac{m/n}{1 + m/n} = a$$
+$$- \frac{m/n}{(n + m)/n} = a$$
+$$- \frac{m}{n + m} = a$$
+since $a \in Q \setminus \set{-1}$ we follow that $a = k/l$, and thus
+$$- \frac{m}{n + m} = k/l$$
+$$\frac{- m}{n + m} = \frac{k}{l}$$
+$$
+\begin{cases}
+  m = -k \\
+  n = l + k
+\end{cases}
+$$
+thus we follow that as long as $n \neq 0$, $a$ will have an inverse. $n = 0 \iff l = -k \iff a = -1$,
+and since $a \neq -1$, we conclude that any given element in the given set is an inverse, and thus
+the given set satisfies all the axioms of a group.
+
+\subsection{}
+
+\textit{The pair $\eangle{Q \setminus \set{0}, /}$}
+
+We follow that if $a \in lhs$, then $a = m/n$, and thus $n/m$ is the inverse, thus every element
+got an inverse ($a \neq 0$, thus $m \neq 0$).
+
+$$a / (b / c) = a / \frac{b}{c} = a \frac{c}{b} = \frac{ac}{b}$$
+$$(a / b) / c = \frac{a}{b} / c = \frac{a}{b} \frac{1}{c} = \frac{a}{bc}$$
+nonzero $a, b, c$ ($\eangle{1, 2, 3}$ should do the trick) will give us a concrete
+proof that $/$ is not associative, which means that there's no group
+
+\subsection{}
+
+\textit{The pair $\eangle{A, +}$ where $A = \set{x \in Q: |x| < 1}$}
+
+Assuming that $|\star|$ means absolute value, we follow that $+$ won't be a binary operation on $A$.
+
+\textit{The rest of the exercises are left for better times}
+
+\section{Properties of Group Elements}
+
+\subsection{}
+
+\textit{Find the orders of $\overline{5}$ and $\overline{6}$ in $(Z/21Z, +)$}
+
+We follow that order of $\overline{5}$ is $21$ and $7$ for $\overline{6}$.
+
+\subsection{}
+
+\textit{Find the orders of $\overline{21}$ in $Z/52$}
+
+It's' 13
+
+\subsection{}
+
+\textit{Calculate the order of $\overline{285}$ in the group $Z/360Z$}
+
+$$(285 * 24) / 360 = 19$$
+thus the order is 19
+
+
+\textit{The rest of the exercises (or exercises similar to those given in a book) were
+  taken care of previously in previous books}
+
+\subsection*{1.3.18}
+
+\textit{Prove that $(Q, +)$ is not a cyclic group.}
+
+We can follow that $q \in Q$ is either positive, negative or zero. Thus $q^n$ is either positive,
+negative or zero respectively for all $n \in \omega$, thus proving that no element of $Q$ can be
+a generator, which means that $Q$ has no generator.
+
+
+
+\section{Concept of a Classification Theorem}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
