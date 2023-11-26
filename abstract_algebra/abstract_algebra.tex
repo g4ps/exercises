@@ -102,6 +102,14 @@ Assuming that $|\star|$ means absolute value, we follow that $+$ won't be a bina
 
 \section{Properties of Group Elements}
 
+\subsection*{Notes}
+
+Order of a group is defined as cardinality of $G$, which is a functional and not a function. This
+is not that big of a deal, all things considered. Order of an element is a separate entity
+altogether, that is defined as a function from a set $G$, to an extended natural line
+with excluded $0$ (i.e. $\omega \setminus 0 \cup \set{\infty}$), where we define order
+in the latter by obvious means.
+
 \subsection{}
 
 \textit{Find the orders of $\overline{5}$ and $\overline{6}$ in $(Z/21Z, +)$}
@@ -121,9 +129,56 @@ It's' 13
 $$(285 * 24) / 360 = 19$$
 thus the order is 19
 
+\subsection{}
 
-\textit{The rest of the exercises (or exercises similar to those given in a book) were
-  taken care of previously in previous books}
+\textit{Calculate the order of $r^{16}$ in $D_{24}$}
+
+We follow that $|r| = 24$, and thus
+$$|r^{16}| = \frac{24}{gcd(16, 24)} = \frac{24}{gcd(16, 24)} = 3$$
+$$(r^{16})^3 = r^{48} = (r^{24})^2 = e^2 = e$$
+
+\subsection*{1.3.11}
+
+\textit{Prove 1.2.12}
+
+The definition of powers in the book as not as rigorous, as one might want. We can rigorously
+a function $f_x: \omega \to G$ for an arbitrary group $G$ and arbitrary $x \in G$
+by setting
+$$f_x(0) = e$$
+and
+$$f_x(n^+) = x f(n)$$
+which will give us a proper function by recursive definition. Thus we can create
+a function from $G$ to a set of functions, defined this way, and then can expand the domains to $Z$
+of resulting function by setting
+$$f_x(-n) = f_{x\inv}(n)$$
+to then get a function $\pow: G \times Z \to G$, which we're gonna call the power function.
+That way we don't have to prove that the power function is indeed a function and all that nonsense.
+
+Now we can follow that
+$$\pow(x, 0) = e$$
+$$\pow(x, n + 1) = \pow(x, n + 1) = \pow(x, n) n = \pow(x, n - 1) n n =
+n \pow(x, n - 1) n = n n \pow(x, n - 1) = \pow(x, n + 1)$$
+and the same thing for negative numbers, which by induction will give us that
+$$\pow(x, n) x = x \pow(x, n)$$
+for arbitrary $x \in G$ and $n \in Z$.
+
+Now we want to prove that
+$$x^m x^n = x^{m + n}$$
+with a functional notation, we want to prove that
+$$\pow(x, m) \pow(x, n) = \pow(x, m + n)$$
+We firstly can follow that
+$$\pow(x, m) \pow(x, 0) = \pow(x, m) e = \pow(x, m) = \pow(x, m + 0)$$
+then we follow that
+$$\pow(x, m) \pow(x, n^+) = \pow(x, m) x \pow(x, n) = \pow(x, m) \pow(x, n) x = \pow(x, m + n) x =
+\pow(x, m + n^+)$$
+and this will give us an inductive proof that $x^m x^n = x^{m + n}$ for arbitrary $m \in Z$ and
+$n \in \omega$. Some burocracy with regards to domains, maybe a trivial proof of the
+fact that $\pow(x, m) x\inv = \pow(x, m - 1)$  and whatnot will give us inductive proof for
+arbirtrary pairs of $m, n \in Z$. Same kind of reasoning (i.e. setting arbitrary $m$ and
+then do the inductive proof over $n$) can be applied to the latter part of the theorem,
+which is gonna be as boring as this one.
+
+
 
 \subsection*{1.3.18}
 
@@ -133,13 +188,236 @@ We can follow that $q \in Q$ is either positive, negative or zero. Thus $q^n$ is
 negative or zero respectively for all $n \in \omega$, thus proving that no element of $Q$ can be
 a generator, which means that $Q$ has no generator.
 
+\subsection*{1.3.19}
 
+\textit{Prove 1.3.5}
+
+1.3.5 states that $|x\inv| = |x|$. Let $n = |x|$. Assume that $|x| \in \omega$.
+If $|x\inv| = m \neq n$,
+then we follow that if  $m < n$ then
+$$x^n (x\inv)^m = x^{n - m}$$
+which gives us that either $|x| \neq n$ or that our properties of powers don't work,
+both of which are contraciction. Same logic (with some obvious handling of a case
+when $|x\inv| = \infty$) can be applied for
+$m > n$, thus giving us the desired conclusion for $|x| \in \omega$. If $|x| = \infty$
+and $|x\inv| = n$ for $n \in \omega$ we follow practically the same thing: 
+$x^n (x\inv)^n$ is either not equal to $e$, or equal to it, both of which aren't good for
+not having contradictions.
+
+\subsection*{1.3.23}
+
+\textit{Let $x \in G$ be an element of finite order $n$. Prove that $e, x, x^2, ..., x^n - 1$
+  are all distict. Deduce that $|x| \leq |G|$}
+
+\textbf{The premise of the given exercise should be given as a proposition in the book. Don't
+put the theorems in exercises, it doesn't help anyone}
+
+If $0 < i < j < n$ are such that $x^i = x^j$, then $n - i \neq n - j$ but
+$$e = x^n = x^{n - i} x^i$$
+$$e = x^n = x^{n - j} x^j$$
+and thus
+$$e = x^{n - j} x^j = x^{n - j} x^i = x^{n - j + i}$$
+since $i < j $ we follow that $-j + i < 0$ thus $n - j + i < n$ and therefore $n$ is not
+an order of $|x|$, as desired.
+
+
+\subsection*{1.3.29}
+
+\textit{Using a CAS find all the orders of all the elements in $GL_2(F_3)$}
+
+We can use
+\begin{verbatim}
+for i in GL(2, GF(3)):
+    print(i.order())
+\end{verbatim}
+in SAGE to ge the desired result
+
+\textit{The rest of the exercises (or exercises similar to those given in a book) were
+  taken care of previously in previous books}
 
 \section{Concept of a Classification Theorem}
 
+\subsection*{Notes}
+
+An obvious remark: if $G$ and $H$ are finite, then $|G \oplus H| = |G \times H| = |G||H|$.
+
+\subsection{}
+
+\textit{Find all orders of all elements in $Z_4 \oplus Z_2$}
+
+We can follow that
+$$|\eangle{0, 0}| = 1$$
+$$|\eangle{1, 0}| = 4$$
+$$|\eangle{2, 0}| = 2$$
+$$|\eangle{3, 0}| = 4$$
+$$|\eangle{0, 1}| = 2$$
+$$|\eangle{1, 1}| = 4$$
+$$|\eangle{2, 1}| = 2$$
+$$|\eangle{3, 1}| = 4$$
+
+\subsection{}
+
+\textit{What is the largest order of an element in $Z_{75} \oplus Z_{100}$? Illustrate with a
+  specific element}
+
+We follow that for $\eangle{x, y} \in Z_{75} \oplus Z_{100}$ we've got that 
+$$|\eangle{x, y}| = lcm(|x|, |y|)$$
+we thus want to maximize the desired value of $lcm$. Both $Z_{75}$ and $Z_{100}$ are
+cyclic, and thus
+$$|n| = \frac{75}{gcd(n, 75)}$$
+for $n \in Z_{75}$ and it's simular for a $Z_{100}$. We thus want to maximize the function
+$$lcm(75/gcd(n, 75), 100/gcd(m, 100))$$
+fundamental theorem of arithmetics essentially states that eny given positive number greater than
+2 can be destructed to a multiset of primes, whose product is gonna be that number. $lcm$ in
+that matter presents some sort of a uniom of multisets, that are connected to a given number,
+and thus we can practically follow that we want $n$ and $m$ such that
+$$n * m = lcm(75, 100)$$
+since
+$$75 = 3 * 5^2$$
+and
+$$100 = 2^2 * 5^2$$
+let's take $n = 5^2 = 25$ so that $|n| = 3$ and let us take $m = 1$ so that $|m| = 2^2 * 5^2$.
+this way we'll have that
+$$lcm(n, m) = 3 * 2^2 * 5^2 = 300$$
+Since we were'nt required to present a proper proof that a given number is an absolute maximum,
+I'm gonna leave this exercisee at that.
+
+\subsection{}
+
+\textit{Show that $Z_5 \oplus Z_2$ is cyclic}
+
+We follow that $|Z_5 \oplus Z_2| = 5 * 2 = 10$ and that
+$$|\eangle{1, 1}| = 10$$
+
+\subsection{}
+
+\textit{Show that $Z_4 \oplus Z_2$ is not cyclic}
+
+We've seen the orders of elements of those groups previously, and none of them are $8$.
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{Let $A$ and $B$ be groups. Prove that the direct sum $A \oplus B$ is abelian of and
+  only if $A$ and $B$ are both abelian}
+
+Let's start with reverse implication: if $A$ and $B$ are abelian, then
+$$\eangle{a, b} \eangle{c, d} = \eangle{ac, bd} = \eangle{ca, db} = \eangle{c, d} \eangle{a, b}$$
+for arbitatry blah-blah-blah and thus as desired.
+
+If $A \oplus B$ is abelian, then assume that $e$ is an identity for $B$ and $a, b \in A$ are
+such that $ab \neq ba$. We follow then that $\eangle{ab, e} \neq \eangle{ba, e}$ but we've got that
+$$\eangle{a, e} \eangle{b, e} = eangle{ab, e} = \eangle{b, e} \eangle{a, e}$$
+which contradicts. Thus we conclude that $A$ is abelian, and the same can be followed by the
+same thread of logic for $B$ and in general for arbitrary (but finite) direct sum of groups.
+
+\subsection{}
+
+\textit{Let $G$ and $H$ be two finite groups. Prove that $G \oplus H$ is cyclic if and only
+  if $G$ and $H$ are both cyclic with $gcd(|G|, |H|) = 1$ }
+
+if $G, H$ are cyclic and $gcd(|G|, |H|) = 1$, then we can take generators $a, b$ of both groups
+to get
+$$|\eangle{a, b}| = lcm(|a|, |b|) = lcm(|G|, |H|) = |G||H|$$
+thus making the direct sum cycic, as desired.
+
+$G \oplus H$ is cyclic if and only if there's an element $\eangle{a, b} \in G \oplus H$ such that
+$$|\eangle{a, b}| = |G \oplus H|$$
+i.e.
+$$|\eangle{a, b}| = |G| |H|$$
+we know that $|\eangle{a, b}| = lcm(|a|, |b|)$ and therefore $|\eangle{a, b}| = |G| |H|$ iff
+$$lcm(|a|, |b|) = |G||H|$$
+for all elements $k$ of an arbitrary finite group $K$ we've got that $|k| \leq |K|$ and thus 
+if $|G|$ is not cycic, then $|a| < |G|$, and thus this equality won't hold. Same goes for $|H|$,
+thus we follow that both $G, H$ are cyclic. We also follow that the equality won't hold if
+$gcd(|G|, |H|) \neq 1$, which gives the desired conclusion.
+
+\subsection{}
+
+This one is trivial, skip.
+
+\subsection{}
+
+\textit{Find all groups of order 5}
+
+Cyclic group is one of those.
+
+If $|x| = 4$ then $e, x, x^2, x^3$ are all distinct. We follow that $|x^2| = 4/2 = 2$ and
+$|x^3| = 4$. We then follow that $x\inv = x^3$ and $x^2$ is an inverse of itself. Thus we follow
+that the last element $k$ is an inverse of itself, and thus has order of $2$. We then follow that
+if $xk = k$, then $x = e$, which is not the case. Thus $xk = x^n$, which means that $k = x^{n - 1}$,
+which is also not the case, thus giving us a contradiction.
+
+If $|x| = 3$ and the group is not cyclic, then $\eangle{e, x, x^2}$ are all distinct. Let's name
+the other elements as $a, b$ and thus we'll have a group $\set{e, x, x^2, a, b}$.
+We follow that $ax \neq x^2$ since that would imply that $a = x$. We also follow that
+$ax = a \ra x = e$, $ax = x \ra a = e$ and $ax = e \ra x\inv = a \ra a = x^2$, all of which
+are contradictions. Thus we conclude that $ax = b$. Same reasoning leads us to a conclusion
+that $bx = a$. Thus $bx^2 = ax = b$, and thus $bx^2 = b$, which implies that $x^2 = e$, which is
+a contradiction. Thus we conclude that there's no element of order $3$.
+
+If $|x| = 2$ and the group is not cyclic, then $e, x$ are distinct. This means that
+we've got a group $\set{e, x, a, b, c}$. We follow from previous paragraph that there are
+no elements of order $3$ or $4$, which implies that $|x| = |a| = |b| = |c| = 2$. We now
+can follow that since all of the elements are equal to their inverses
+$$ab = (ab)\inv = b\inv a\inv = ba$$
+thus making the group abelian. We can also follow without loss of generality that
+$ab = e \ra a = b\inv \ra a = b$, which gives us a contradiction, thus proving that
+$ab \notin set{a, b}$. If $x = ab$, then $xc = abc$, therefore
+$x \neq abc$, and thus $abc \in \set{a, b, c}$. If $abc = a$, then $bc = e$ and therefore $b = c$,
+which is a contradiction. In general we follow that $abc \notin \set{a, b, c}$, and thus
+$abc = e$. This implies that $xc = e$, which is a contradiction. Thus we conclude that
+$xc$ is cannot be equal to non of the elements, which implies that there's no element,
+whose order is equal to $2$ and the group is not cyclic, as desired.
+
+
+\subsection{}
+
+\textit{We consider groups of order 6. We know that $Z_6$ is a group of order $6$. We now
+  look for all the others. Let $G$ be any group of order $6$ that is not cyclic.}
+
+\textit{(a) Show that $G$ cannot have an element of order $7$ or higher}
+
+Order of an element of a group is less than the order of the group, in which it is located. There's
+an exercise that proves it.
+
+\textit{(b) Show that $G$ cannot have an element of order $5$}
+
+If $|x| = 5$ then $G = \set{e, x, x^2, x^3, x^4, a}$, therefore $ax = x^n$, which gives us
+a countradiction.
+
+\textit{(c) Show that $G$ cannot have an element of order $4$.}
+
+Let $G = \set{e, x, x^2, x^3, a, b}$. We follow that
+$$xa = e \ra a = x^3$$
+$$xa = x \ra a = e$$
+$$xa = x^2 \ra a = x$$
+$$xa = x^3 \ra a = x^2$$
+$$xa = a \ra x = e$$
+thus $xa = b$. We then follow for the same reason that $xb \notin \set{e, x, x^2, x^3, b}$,
+thus $xb = a$. Therefore $xa = xxb = x^2b = b$, thus $x^2 = e$, which gives us a contradiction.
+
+\textit{(d) Show that the nonidentity elements of $G$ have order $2$ or $3$}
+
+We follow that it's got to be either 2, 3, or 6. 6 is not an option since $G$ is not cyclic.
+
+\textit{(e) Conclude that there exist only two subgroups of order $6$. In particular,
+  there exists one abelian group of order $6$ (cyclic) and one nonabelian group of order $6$
+  ($D_3$ is such a group)}
+
+We follow that
+$$|0| = 1, |1| = 6, |2| = 3, |3| = 2, |4| = 3, |5| = 6$$
+for the cyclic group and
+$$|e| = 1, |r| = 3, |r^2| = 3, |s| = 2, |sr| = 2, |sr^2| = 2$$
+for the dihedral group.
+
+We follow that order of all nonidentity elements cannot be equal to $3$, since there are
+5 of those and none of them are equal to their inverses.
+
+TODO
+
 \end{document}
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
