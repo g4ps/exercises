@@ -415,9 +415,52 @@ $$|e| = 1, |r| = 3, |r^2| = 3, |s| = 2, |sr| = 2, |sr^2| = 2$$
 for the dihedral group.
 
 We follow that order of all nonidentity elements cannot be equal to $3$, since there are
-5 of those and none of them are equal to their inverses.
+5 of those and none of them are equal to their inverses. Thus there's got to be an element of
+order $2$.
 
-TODO
+If all the elements are of order $2$, then we follow that the group is abelian.
+Let us denote first nonidentity element by $a$ and the second one by $b$. We follow that
+$ab \notin \eangle{e, a, b}$, thus let $c = ab$. We now follow that $abc = c^2 = e$. We then
+follow that there are also another two elements $d, f$. If $df = a$, then we follow that
+$f = ad$ and $d = fa$ and thus we've got that
+$$db = e \ra d = b$$
+$$db = a \ra d = ab \ra d = c$$
+$$db = b \ra d = e$$
+$$db = c \ra db = ab \ra d = a$$
+$$db = d \ra b = e$$
+$$db = f \ra fdb = e \ra ab = e \ra c = e $$
+thus we've got ourselves a much desired contradiction. Thus we can conclude that there's an
+element of $G$ that is not of order $2$, which means that at least one of the elements of $G$
+has order $3$. We then can follow that there are at least two of those, since it's got to
+have an inverse.
+
+Now suppose that there are 4 elements of order 3. We name'em by $a, a\inv, b, b\inv$. We follow
+that $|a^2| = 3$ and $a^2 \notin \set{e, a\inv, b}$, thus $a^2 = b\inv$. For the same
+reason $b^2 = a\inv$. Thus $ab = (b\inv a\inv)\inv = (a^2 b^2)\inv = b^{-2} a^{-2}$. Thus
+$$ab \notin \set{e, a, b}$$
+$$ab = b\inv \ra ab = a^2 \ra b = a$$
+$$ab = a\inv \ra ab = b^2 \ra a = b$$
+thus we conclude that $ab = c$, which is our only element of order $2$. Thus
+$$ab = (ab)\inv$$.
+Therefore $ab = (ab)\inv = b\inv a\inv = a^2 b^2$. THus
+$$ab = a^2 b^2 \ra b = ab^2 \ra ab = e$$
+which is a contradiction. Thus we conclude that there couldn't be 4 elements of order 3 and thus
+we conclude that there are only 2 of them.
+
+Now let $G$ be a group of order $6$, that is not cyclic. We follow that it's got $e$, an
+element $s$ of order $2$ and an element $r$ of order $3$. We then follow that
+$\set{e, r, r^2}$ are all distinct and that $s \neq r^2$ since $|s| = 2$ and
+$|r^2| = 3/gcd(3, 2) = 3$. Since $r$ and $r^2$ are the only elements of order $3$, we conclude
+that $r\inv = r^2$. We now follow that $sr \notin \set{e, s, r, r^2}$ and thus it's its own element.
+$$sr^2 \notin \set{e, s, r, r^2}$$, thus it's its own element as well. We then can create
+a Caley table fot all those elements to prove that they don't have no contradiction, thus concluding
+that this is the only possible non-cyclic group of order $6$.
+
+The cyclic group is unique, since all 6 powers of a generator have got to be unique. Thus we
+conclude that the given group (i.e. $D_3$) and cyclic groups are the only ones that have
+order $6$.
+
+\textit{The rest is skipped}
 
 \end{document}
 
