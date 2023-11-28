@@ -460,7 +460,35 @@ The cyclic group is unique, since all 6 powers of a generator have got to be uni
 conclude that the given group (i.e. $D_3$) and cyclic groups are the only ones that have
 order $6$.
 
-\textit{The rest is skipped}
+\subsection{}
+
+\textit{Let $G = \set{e, v, w, x, y, z}$ be a group of order $6$. For the following partial table,
+  decide if it can be completed to the Cayley table of some $g$ and if so fill it in.}
+
+Let us first cover the identities
+
+\begin{tabular}[center]{|c|c|c|c|c|c|c|}
+  * & e & v & w & x & y & z \\
+  \hline
+  e & e & v & w & x & y & z \\
+  v & v & - & - & - & w & - \\
+  w & w & - & - & - & - & e \\
+  x & x & - & - & - & - & - \\
+  y & y & z & - & - & - & - \\
+  z & z & - & e & v & - & - \\
+\end{tabular}
+
+We firstly follow that $vy \neq yv$, thus we can conclde that the given group is not commutative.
+$zw = e \ra w = z\inv$, and thus $z$ has order, greater than $2$.
+
+$$vy = w \ra v = wy\inv$$
+$$yv = z \ra v = y\inv z$$
+$$v^2 = y\inv z w y\inv = y^{-2}$$
+$$vy = y\inv = w$$
+which implies that $z = y$, which is false. Thus we conclude that this square cannot be completed.
+
+\textit{The last exercise is left alone}
+
 
 \end{document}
 
