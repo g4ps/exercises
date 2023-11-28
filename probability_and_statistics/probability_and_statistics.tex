@@ -744,6 +744,13 @@ which is good enough for me to prove that this thing is always below $1/4$, as d
 
 \section{Random Variables and Discrete Distributions}
 
+\subsection*{Notes}
+
+p.d.f is defined as a function from $R$ to $R$ such that there's a countable subset $U$ of $R$ such
+that $u \in U \iff f(u) > 0$ and such that $\sum_{u \in U}{f(u)} = 1$. If $f(u) = x$ for some
+$x \in R$ and all $u \in U$, the the function has uniform distribution. If $U = \set{0, 1}$,
+then the function is Bernoulli with parameter $f(1)$.
+
 \begin{tabular}[center]{||c | c|| }
   \hline
   1 & 6/11 \\
