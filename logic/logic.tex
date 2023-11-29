@@ -1,0 +1,94 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My topology exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny Markin}
+\date{2023}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \topol {\mathcal {T}}
+\DeclareMathOperator \basis {\mathcal {B}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\qed}{\hfill $\blacksquare$}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter*{Preface}
+
+Those are my solutions and notes for "A Concise Introduction to Mathematical Logic" (3rd edition)
+by Wolfgang Rautenberg
+
+\chapter{Propositional Logic}
+
+\section{Boolean Functions and Formulas}
+
+\subsection{}
+
+\textit{$f \in B_n$ is called linear if $f(x_1, ..., x_n) = a_0 + a_1 x_1 + ... + a_n x_n$ for
+  suitable coefficients $a_0, ..., a_n \in \set{0, 1}$}
+
+We firstly going to assume that $+$ is associative and commutative.
+
+\textit{(a) Show that the above representation of a linear function $f$ is unique}
+
+By constructing an appropriate table we can prove that
+$$a_0 + a_1 x_1 = b_0 + b_1 x_1 \iff a_0 = b_0 \land a_1 = b_1$$
+
+Assume that
+$$\sum_{i < n}{a_i x_i} = \sum_{i < n}{b_i x_i} \iff \set{a_n} = \set{b_n}$$
+Now assume that
+$$\sum_{i < n}{a_i x_i} + a_n x_n = \sum_{i < n}{b_i x_i} + b_n x_n$$
+we follow that if $a_n \neq b_n$, then without loss of generality we can assume that
+$a_n = 0$ and $b_n = 1$. Thus
+$$\sum_{i < n}{a_i x_i} + x_n = \sum_{i < n}{b_i x_i}$$
+Let $\set{q_n}$ be a vector of boolean variables. Substituting all the $x$'s in
+$\sum_{i < n}{a_i x_i}$ for $q$'s we're going to get result $m$. If $m = 0$, then we can
+set $x_n$ to $1$ to follow that
+$$\sum_{i < n}{a_i q_i} + q_n = 1 \neq  \sum_{i < n}{b_i x_i}$$
+and if $m = 1$, then we can set $q_n = 1$ to also get
+$$\sum_{i < n}{a_i q_i} + q_n = 0 \neq  \sum_{i < n}{b_i x_i}$$
+thus concluding that (attention to $\leq$)
+$$\sum_{i \leq n}{a_i x_i} + a_n x_n = \sum_{i \leq n}{b_i x_i} + b_n x_n \lra \set{a_n} = \set{b_n}$$
+now we can use the induction to conclude the desired result.
+
+\textit{(b) Determine the number of $n$-ary Boolean functions}
+
+For $n = 1$ we can follow that
+$$f(x) = 1 + x = \neg x$$
+$$f(x) = 0 + x = x$$
+thus there are two of them. If there are $2^{n - 1}$ $(n-1)$-ary functions, then for each
+$f \in B_{n - 1}$ there are
+$$f(x) + 1 = \neg f(x)$$
+and
+$$f(x) + 0 =  f(x)$$
+thus for each one of $2^{n - 1}$ $(n-1)$-ary functions we've got $2$ $n$-ary functions. Thus
+we can use induction to conclude that there are $2^n$ $n$-ary functions.
+
+\textit{(c) Prove that each formula $\alpha$ in $\neg, +$ (i.e. $\alpha$ is a formula of the
+  logical signature $\set{\neq, +}$) represents a linear Boolean functions.}
+
+This one is a standart pigeionhole problem (i.e. negating this proposition would imply the
+contradiction for the previous point)
+
+\textit{The rest of the exercises are pretty trivial, so I'm gonna leave them alone}
+
+\end{document}

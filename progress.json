@@ -1,7 +1,6 @@
 {
-  "last_update": "31.10.2023",
-  "data":
-  [
+  "last_update": "29.11.2023",
+  "data": [
     {
       "name": "Understanding Analysis",
       "author": "Stephen Abbott",
@@ -92,8 +91,18 @@
       "progress": {
 	"total_chapters": 14,
 	"finished_chapters": 3
-      },
-      "note": "First chapter practically doubles my set theory course without presenting precious rigor, therefore it is skipped"
+      }
+    },
+    {
+      "name": "A Concise Introduction to Mathematical Logic",
+      "author": "Wolfgang Rautenberg",
+      "link": "https://github.com/g4ps/exercises/raw/master/logic/logic.pdf",
+      "edition": "3rd",
+      "status": "in_progress",
+      "progress": {
+	"total_chapters": 7,
+	"finished_chapters": 0.1
+      }
     }
   ]
 }

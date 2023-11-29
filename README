@@ -1,6 +1,6 @@
 My solutions for exercises in math and computer science adjacent topics
 
-As of 20.08.23 (D/M/Y)
+As of 29.11.23 (D/M/Y)
 
    - Understanding Analysis (Stephen Abbott, 1st ed.) - finished
    - Linear Algebra Done Right (Sheldon Axler, 3rd ed.) - finished
@@ -8,12 +8,11 @@ As of 20.08.23 (D/M/Y)
    - Topology (James Munkres, 2nd ed.) - 4th chapter
    - Probability and Statistics (DeGroot and Schervish, 4th edition) - 3rd chapter
    - Indroduction to Algorithms (Cormen et. al, 4th ed) - 4th chapter
-
+   - Abstract Algebra, A First Course (Stephen Lovett, 2nd ed) - 1st chapter
+   - A Concise Introduction to Mathematical Logic (Wolfgang Rautenberg, 3rd ed) - 1st chapter
    
 Planned books:
-   - Something on the FOL
    - Measure, Integration and Real Analysis by Sheldon Axler
-   - Abstract Algebra, A First Course by Stephen Lovett
    - Pearson series in computer science (there are several books in this series, I'll probably
    start with the AIMA)
    - Something on complex analysis
@@ -21,6 +20,9 @@ Planned books:
    - SICP - left on 1st chapter
    - Something on differential geometry
    - Something on ODE/PDE's
+   - Something on functional analysis or something like that
+   - A more in-depth (probably something from GTM) on real analysis
+   - Something on Galois Theory
 
 All of the solutions were written by me alone and none of them were checked by anyone with
 any resemblance of competence. 
