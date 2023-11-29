@@ -72,23 +72,18 @@ now we can use the induction to conclude the desired result.
 
 \textit{(b) Determine the number of $n$-ary Boolean functions}
 
-For $n = 1$ we can follow that
-$$f(x) = 1 + x = \neg x$$
-$$f(x) = 0 + x = x$$
-thus there are two of them. If there are $2^{n - 1}$ $(n-1)$-ary functions, then for each
-$f \in B_{n - 1}$ there are
-$$f(x) + 1 = \neg f(x)$$
-and
-$$f(x) + 0 =  f(x)$$
-thus for each one of $2^{n - 1}$ $(n-1)$-ary functions we've got $2$ $n$-ary functions. Thus
-we can use induction to conclude that there are $2^n$ $n$-ary functions.
+Since linear functions are determined uniquely by their coefficients, it's easy to say
+that there are $2^{n + 1}$ $n$-ary linear Boolean functions
 
 \textit{(c) Prove that each formula $\alpha$ in $\neg, +$ (i.e. $\alpha$ is a formula of the
-  logical signature $\set{\neq, +}$) represents a linear Boolean functions.}
+  logical signature $\set{\neg, +}$) represents a linear Boolean functions.}
 
-This one is a standart pigeionhole problem (i.e. negating this proposition would imply the
-contradiction for the previous point)
+We follow that
+$$\neg(x + y) = 0 + x + y$$
+Given associativity and commutativity of the $+$ we follow the desired result
 
 \textit{The rest of the exercises are pretty trivial, so I'm gonna leave them alone}
+
+\subsection{Semantic Equivalence and Normal Forms}
 
 \end{document}
