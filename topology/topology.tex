@@ -4625,5 +4625,21 @@ depends on finality of $I$
 
 \section{The Separation Axioms}
 
+\subsection{}
+
+\textit{Show that if $X$ is regular, every pair of points of $X$ have neighborhoods whose
+  closures are disjoint.}
+
+Let $x, y \in X$.  We follow that $X$ is Hausdorff, thus there exist two disjoint neighborhoods
+$U, V$ such that $x \in U$ and $y \in V$. 31.1 implies that there are neighborhoods $U', V'$ of
+$x$ and $y$ respectivety such that $\overline{U'} \subseteq U$ and $\overline{V'} \subseteq V$.
+The fact that $U$ and $V$ are disjoint implies that $U', V'$ are disjoint as well, and since
+the points $x$ and $y$ are arbitrary we've got the desired result.
+
+\textit{Show that if $X$ is normal, every pair of disjoint closed sets have neighborhoods
+  whose closured are disjoint}
+
+Same logic as in the previous exercise, but with the latter part of 31.1
+
 
 \end{document}
