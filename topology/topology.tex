@@ -4641,5 +4641,69 @@ the points $x$ and $y$ are arbitrary we've got the desired result.
 
 Same logic as in the previous exercise, but with the latter part of 31.1
 
+\textit{Show that every order topology is regular}
+
+Let $X$ be an order topology, let $x \in X$ and let $U$ be a basis neighborhood of $x$.
+We already know that since $X$ is order that it's Hausdorff, as was proven couple of chapters
+ago. If $U = (a, \infty)$  for some $a \in X$, then we follow that if $a^+ = x$, then $(-\infty, x)$
+is is an open set such that $U = X \setminus (-\infty, x)$, thus proving that $U$ is closed.
+If $a^+ \neq x$, then we follow that there's $q \in X$ such that $a < q < x$, and thus
+$x \in X \setminus (-\infty, q)$, where the latter is the closed set.
+Same idea goes for $U = (-\infty, b)$. If there are $a < b$ such that $a < x < b$, then we can
+follow that if $a^+ \neq x \land x^+ \neq b$, then there are $q, w$ such that
+$a < q < x < w < b$ and thus $x \in [q, w] \subseteq (a, b)$. If $a^+ = x$ and $x^+ = b$ then
+$(a, b)$ is a closed set itself. If $a^+ \neq x \land x^+ = b$, then there's $q \in X$ such that
+$a < q < x < b$ and since $x^+ = b$ we follow that $[q, b]$ is a closed set. Same idea goes
+for the case when $a^+ = x \land x^+ \neq b$. Thus we conclude that if $U$ is a basis neighborhood
+of $x$, then there's $V \subseteq x$ such that $x \in \overline{V} \subseteq U$, and
+since $x$ and $U$ are arbitrary we can conclude that that $X$ is regular as desired.
+
+\subsection{}
+
+\textit{Let $X$ and $X'$ denote a single set under two topologies $\topol$ and $\topol'$,
+  respectively; assume that $\topol \subseteq \topol'$. If one of the spaces is Hausdorff (or
+  regular, or normal), what does that imply about the other?}
+
+If $X'$ is Hausdorff, regular or normal, then we can follow that $\topol$
+could be trivial (i.e. $\topol = \set{X, \emptyset}$), thus we can conclude that there's noting
+to be implyed.
+
+If $x, y \in X$ and $X$ is Hausdorff, then there are $U, V \in \topol$ such that
+$x \in U$, $y \in V$ and $U \cap V = 0$. We can follow that $U, V \in \topol \ra U, V \in \topol'$,
+thus proving that $X'$ is Hausdorff as well.
+
+In general we can conclude that since open and closed sets in $X$ are also open and closed
+in $X'$ we can conclude that if $\topol$ is regular/normal, then $\topol'$ is regular/normal. With
+a bit more enthusiasm one can write out all the rigorous details, if one desires.
+
+\subsection{}
+
+\textit{Let $f, g: X \to Y$ be continous; assume that $Y$ is Hausdorff. Show that
+  $\set{x \in X: f(x) = g(x)}$ is closed in $X$.}
+
+Let $U = \set{x \in X: f(x) = g(x)}$ and $V = f[U]$.
+
+Let $x \in X \setminus U$. We follow that $f(x) \neq g(x)$,
+and thus there exist neighborhoods $U$ and $V$
+of $f(x)$ and $g(x)$ respectively such that $U \cap V = \emptyset$. Moreover, we can follow that
+since $U \cap V = \emptyset$ that $f\inv[U] \cap f\inv[V] = \emptyset$ and
+$g\inv[U] \cap g\inv[V] = \emptyset$. But $x \in f\inv[U] \cap g\inv[V]$, thus we can follow that
+$f\inv[U] \cap g\inv[V] = \emptyset$ and since both $U$ and $V$ are neighborhoods and
+$f$ and $g$ are continous we follow that $f\inv[U] \cap g\inv[V]$ is a neighborhood of $x$.
+If $q \in f\inv[U] \cap g\inv[V]$ then we follow that $f(q) \in U$ and $g(q) \in V$ and thus
+$f(q) \neq g(q)$, thus concluding that $f\inv[U] \cap g\inv[V] \subseteq X \setminus U$.
+
+Now we can conclude that for all $x \in X \setminus U$ there's a neighborhood $V$ such that
+$x \in V \subseteq X \setminus U$, thus proving that $U$ is open, and thus we can conclude that
+the desired set is closed.
+
+\subsection{}
+
+\textit{Let $p: X \to Y$ be a closed continous surjective map. Show that if $X$ is normal,
+  then so is $Y$.}
+
+Let us firstly assume that $X$ is normal. Let $K$ be a closed set in $Y$ and let $U$ be
+an open set that contains $K$. We follow that $p\inv[K]$ is closed and $p\inv[U]$ is open
+and contains $p\inv[K]$. TODO
 
 \end{document}
