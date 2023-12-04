@@ -4704,6 +4704,18 @@ the desired set is closed.
 
 Let us firstly assume that $X$ is normal. Let $K$ be a closed set in $Y$ and let $U$ be
 an open set that contains $K$. We follow that $p\inv[K]$ is closed and $p\inv[U]$ is open
-and contains $p\inv[K]$. TODO
+and contains $p\inv[K]$.
+
+We firstly want to prove that $Y$ is $T_1$ (i.e. singletons are closed). Let $y \in Y$. We follow
+that since $p$ is surjective we follow that there's $x \in X$ such that $f(x) = y$. Since $X$
+is normal and thus Hausdorff, and $\set{x}$ is closed we follow
+that $f[\set{x}] = \set{y}$ is closed as
+well. Since $y$ is arbitrary we follow that $Y$ is $T_1$, as desired.
+
+Let $y \in Y$ and let $U$ be an open set that contains $p\inv[\set{y}]$. Since $Y$ is $T_1$ we
+follow that $\set{y}$ is closed and thus continuity of $f$ implies that $p\inv[\set{y}]$ is closed.
+Now the fact that $p\inv[\set{y}]$ is closed, fact that $X$ is normal, and the fact $U$
+is an open set that contains $p\inv[\set{y}]$ all imply that there's an open set $W'$ such that
+$W' \subseteq U \subseteq X$. TODO
 
 \end{document}
