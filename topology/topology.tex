@@ -4716,6 +4716,39 @@ Let $y \in Y$ and let $U$ be an open set that contains $p\inv[\set{y}]$. Since $
 follow that $\set{y}$ is closed and thus continuity of $f$ implies that $p\inv[\set{y}]$ is closed.
 Now the fact that $p\inv[\set{y}]$ is closed, fact that $X$ is normal, and the fact $U$
 is an open set that contains $p\inv[\set{y}]$ all imply that there's an open set $W'$ such that
-$W' \subseteq U \subseteq X$. TODO
+$W' \subseteq U \subseteq X$. We now follow that $X \setminus U$ is closed and thus
+$p[X \setminus U]$ is closed. Thus $Y \setminus p[X \setminus U]$ is an open set.
+We also follow that if $x \in X \setminus U$ then $p(x) \neq y$ by definition of $U$.
+Thus $y \in Y \setminus p[X \setminus U]$ and therefore $Y \setminus p[X \setminus U]$ is a
+neighborhood of $y$. Let us name $W = Y \setminus p[X \setminus U]$ for simplicity's sake.
+We also follow that if $y \in W$ then $y \notin p[X \setminus U]$ thus
+$p\inv(y) \notin X \setminus U$ and $p\inv(y) \in U$. Now since $y$ is arbitrary we follow that
+for all $y \in Y$ if $U$ contains $p\inv[\set{y}]$, then there's a neighborhood $W$ of $y$
+such that $p\inv[W] \subseteq U$.
+
+Now suppose that $K$ and $P$ are disjoint closed sets in $Y$. We follow that
+$p\inv[K]$ and $p\inv[P]$ are closed since $p$ is continous. Since $X$ is normal we follow that
+there are two disjoint open sets $U$ and $V$ such that $p\inv[K] \subseteq U$ and
+$p\inv[P] \subseteq V$. Now our previous result gives us that for all $k \in K$ there's a
+neighborhood $J_k$ such that $p\inv[J_k] \subseteq U$. Thus we can unite all $J_k$'s for all
+$k \in K$ to get a neighborhood around $K$, which we're gonna name $W_K$. Same idea goes for
+$P$, for which we can create a set $W_P$.  Now suppose that $W_K \cap W_P \neq \emptyset$ and
+thus there's $y \in W_K \cap W_P$. We follow that there are $y_1 \in K$ and
+$y_2 \in P$ such that they have neihgborhoods $J_1, J_2 \subseteq Y$ such that
+$y \in p\inv[J_1] \cap p\inv[J_2]$, which contradicts our previous conclusion.
+
+\subsection{}
+
+\textit{Let $p: X \to Y$ be a closed continous surjective map such that $p\inv(\set{y})$ is
+  compact for each $y \in Y$ (such a map is called a perfect map)}
+
+\textit{(a) Show that if $X$ is Hausdorff, then so is $Y$}
+
+Since $X$ is Hausdorff, it's $T_1$. If $y \in Y$ then there's $x \in X$ such that
+$p(\set{x}) = \set{y}$  and since $p$ is closed we follow that $\set{y}$ is closed as well. Thus
+we conclude that $Y$ is also $T_1$. 
+
+Let $y_1, y_2 \in Y$ be such that $y_1 \neq y_2$. We follow that since $p$ is surjective there are
+$x_1, x_2 \in X$ such that $x_1 \neq x_2$ by basic properties of functions.  
 
 \end{document}
