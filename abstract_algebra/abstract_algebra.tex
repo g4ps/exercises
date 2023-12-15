@@ -489,10 +489,78 @@ which implies that $z = y$, which is false. Thus we conclude that this square ca
 
 \textit{The last exercise is left alone}
 
-\subsection{Symmetric Groups}
+\section{Symmetric Groups}
 
 \textit{Lots of exercise like the ones that were given in this chapter were handled in previous
   endeavours into abstract algebra}
+
+\section{Subgroups}
+
+\textit{Once again, everything was taken care of in previous books}
+
+\section{Abstract Subgroups}
+
+\subsection{}
+
+\textit{In $(Z, +)$, list all the elements in the subgroup $\eangle{12, 20}$}
+
+Basic number theory, that was covered in appendices implies that the elements of given subgroup
+are the multiples of $gcd(12, 20) = 4$.
+
+\subsection{}
+
+\textit{In $D_8$, list all the elements in the subgroup $\eangle{sr^2, sr^6}$.}
+
+We follow that $|sr^2| = |sr^6| =  2$, thus powers won't do.
+$sr^2sr^6 = r^{-2}s\inv sr^6 =  r^4 = sr^6sr^2$, $sr^2 r^4 = sr^6$, $sr^6 r^4 = sr^10 = sr^2$.
+$r^4 sr^2 = s\inv r^{-4} r^{2} = sr{-2} = sr^6$ and $r^4 s r^6 = sr^2$. Also, $|r^4| = 2$,
+thus the only elements in this subgroup are
+$$i, sr^2, sr^6, r^4$$
+
+\subsection{}
+
+\textit{In $U(40)$, list all the elements in $\eangle{3, 31}$}
+
+We follow that the powers of generators (i.e. $1, 3, 9, 27$ and $31$) are in the group.
+We follow that
+$$31 * 3 \% 40 = 13$$
+$$31 * 9 \% 40 = 39$$
+$$31 * 27 \% 40 = 37$$
+are in the group. By going through the groups again and again we can follow that those are the only
+elements in the given subgroup.
+
+\textit{Next several exercises were skipped}
+
+\subsection*{1.7.12}
+
+\textit{Prove that if $A \subseteq B$ are subsets of a group $G$, then $\eangle{A} \leq \eangle{B}$}
+
+We can follow that all the words that we can muster from $A$ can be mustered just as well in $B$,
+thus $\eangle{A} \subseteq \eangle{B}$. Given that $\eangle{A}$ is a subset and a group
+within $\eangle{B}$ we conclude that it's a subgroup, as desired.
+
+\subsection*{1.7.13}
+
+\textit{Let $G$ be a group and let $S \subseteq G$ be a subset. Let $C$ be the ccollection
+  of subgroups of $G$ that contain $S$. Prove that
+  $$\eangle{S} = \bigcap_{H \in C}H$$}
+
+If $s \in \eangle{S}$, then we follow that there's a finite list $l$ of elements of
+$S$ such that $s = \bigstar_{x \in l}{x}$ with appropriate order applied. Since every
+$c \in C$ contains elements in list $l$, we follow that for every $c \in C$ we've got that
+$\bigstar_{x \in l}{x} \in C$. Thus we conclude that $\bigstar_{x \in l}{x} \in H$, and therefore
+$\eangle{S} \subseteq H$.
+
+We can follow that $\eangle{S}$ contains all the elements of $S$, thus $\eangle{S} \in C$, and
+therefore if $h \in H$, then $h$ is "computable" by elements of $\eangle{S}$ and thus $h \in S$.
+Double inclusion implies the desired result.
+
+\subsection*{1.7.14}
+
+\textit{Let $G$ be a group that is finitely generated. Prove that any subgroup of $G$ is finitely
+  generated.}
+
+Let $S$ be a subgroup of $G$. We follow that if $s \in S$, then there's a TODO
 
 \end{document}
 
