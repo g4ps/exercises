@@ -4714,15 +4714,14 @@ well. Since $y$ is arbitrary we follow that $Y$ is $T_1$, as desired.
 
 Let $y \in Y$ and let $U$ be an open set that contains $p\inv[\set{y}]$. Since $Y$ is $T_1$ we
 follow that $\set{y}$ is closed and thus continuity of $f$ implies that $p\inv[\set{y}]$ is closed.
-Now the fact that $p\inv[\set{y}]$ is closed, fact that $X$ is normal, and the fact $U$
-is an open set that contains $p\inv[\set{y}]$ all imply that there's an open set $W'$ such that
-$W' \subseteq U \subseteq X$. We now follow that $X \setminus U$ is closed and thus
+We now follow that $X \setminus U$ is closed and thus
 $p[X \setminus U]$ is closed. Thus $Y \setminus p[X \setminus U]$ is an open set.
 We also follow that if $x \in X \setminus U$ then $p(x) \neq y$ by definition of $U$.
 Thus $y \in Y \setminus p[X \setminus U]$ and therefore $Y \setminus p[X \setminus U]$ is a
 neighborhood of $y$. Let us name $W = Y \setminus p[X \setminus U]$ for simplicity's sake.
 We also follow that if $y \in W$ then $y \notin p[X \setminus U]$ thus
-$p\inv(y) \notin X \setminus U$ and $p\inv(y) \in U$. Now since $y$ is arbitrary we follow that
+$p\inv(y) \cap X \setminus U = \emptyset$ and $p\inv(y) \subseteq U$.
+Now since $y$ is arbitrary we follow that
 for all $y \in Y$ if $U$ contains $p\inv[\set{y}]$, then there's a neighborhood $W$ of $y$
 such that $p\inv[W] \subseteq U$.
 
@@ -4749,6 +4748,42 @@ $p(\set{x}) = \set{y}$  and since $p$ is closed we follow that $\set{y}$ is clos
 we conclude that $Y$ is also $T_1$. 
 
 Let $y_1, y_2 \in Y$ be such that $y_1 \neq y_2$. We can follow that $p\inv(\set{y_1})$ and
-$p\inv(\set{y_2})$ are both closed and compact 
+$p\inv(\set{y_2})$ are both closed and compact subspaces of $X$. Exercise $5$ in the section about
+compact spacces implies that there are disjoint neighborhoods of those two sets (yes, there is
+such a thing as a neighborhood of a set, which was defined in that section as well).
+
+In previous exercise we've presented a proof that if $U$ is a neighborhood of
+$p\inv(\set{y_1})$, then there's a neighborhood $W$ of $y_1$ such that $p\inv[W] \subseteq U$.
+Proof of that does not depend on the normality of $X$ and thus we can use it in this case as well.
+Thus previous paragraph implies that there are two disjoint neighborhoods of $p\inv(\set{y_1})$,
+and the proof in the previous exercise implies that there are two disjoint neighborhoods
+of $y_1$ and $y_2$, which implies that $Y$ is Hausdorff, as desired.
+
+\textit{(b) Show that if $X$ is regular, then so is $Y$.}
+
+Let $K$ be a closed subset of $Y$ and let $l \in Y \setminus K$. We can follow that $p\inv[\set{l}]$
+is closed and compact and that $p\inv[K]$ is closed. Since $X$ is regular, we follow that for
+every $x \in p\inv[\set{l}]$ there're neighborhoods $U_x$ and $V_x$ such that $x \in U_x$,
+$p\inv[K] \subseteq V_x$ and $U_x$ and $V_x$ are disjoint. Now we follow that
+set of $U_x'$ constitutes an open cover for $p\inv[\set{l}]$ and the fact that $p\inv[\set{l}]$ is
+compact implies that there's a finite subcover for $p\inv[\set{l}]$, thus allowing us
+to conclude that there exist a pair of  disjoint neighborhoods of $p\inv[\set{l}]$ and
+$p\inv[K]$ respectively. After this step we can use the lemma from the previous exercise to
+conclude the desired result.
+
+\textit{(c) Show that if $X$ is locally compact, then so is $Y$}
+
+Let $y \in Y$. We follow that $p\inv[\set{y}]$ is compact. Since $X$ is locally compact we follow
+that for each $x \in p\inv[\set{y}]$ there's a compact subspace $C_x$ that contains a
+neighborhood $U_x$ of $x$. Since $p\inv[\set{y}]$ is compact we follow that there's a finite
+indexing set $J$ such that
+$$p\inv[\set{y}] \subseteq \bigcup_{j \in J}{U_j} \subseteq \bigcup_{j \in J}{C_j}$$
+lemma from the previous exercise now implies that there's a neighborhood $W$ of $y$ such that
+$p\inv[W] \subseteq \bigcup_{j \in J}{U_j}$. We can also follow that $\bigcup_{j \in J}{C_j}$
+is compact since $J$ is finite and continuity of $p$ implies that $p[\bigcup_{j \in J}{C_j}]$
+is compact. We now follow that $y \in W \subseteq p[\bigcup_{j \in J}{C_j}]$ and since $y$
+is arbitrary we can conclude that $Y$ is locally compact, as desired.
+
+\textit{The rest are left for better days}
 
 \end{document}
