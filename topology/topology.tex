@@ -4828,4 +4828,37 @@ Both of those topologies are metrizable and therefore normal.
 
 \textit{The rest is marked as TODO for now}
 
+\section{The Urysohn Lemma}
+
+\subsection{}
+
+\textit{Examine the proof of the Urysohn lemma, and show that for given $r$
+  $$f\inv(\set{r}) = \bigcap_{p > r}{U_p} \setminus \bigcup_{q < r}{U_q}$$
+  p, q rational}
+
+We follow that if
+$$x \in \bigcap_{p > r}{U_p} \setminus \bigcup_{q < r}{U_q}$$
+then for all $p > r$ we've got that there exists $p' \in Q$ such that $p > p' > r$, and thus
+by definition of $U_p$'s we've got that $x \in \overline{U_p} \subseteq U_{p'}$. This implies that
+$f(x) \leq p$ for all $p < r$, and thus we follow that $f(x) \leq r$. Simular logic with
+regards to the latter part implies that $f(x) \geq r$, and thus we conclude that
+$$f[\bigcap_{p > r}{U_p} \setminus \bigcup_{q < r}{U_q}] = \set{r}$$
+and thus
+$$f\inv[\set{r}] \supseteq \bigcap_{p > r}{U_p} \setminus \bigcup_{q < r}{U_q}$$
+
+Then we follow that if $a \in f\inv[\set{r}]$, then for all $p > r$ we've got that
+$a \in \bigcap_{p > r}{U_p}$ by definition of $f$ and $a \notin \bigcup_{q < r}{U_q}$
+once again by definition of $f$, which gives us double inclusion, which gives us the
+desired conclusion
+
+\subsection{}
+
+\textit{(a) Show that a connected normal space having more than one point is uncountable}
+
+If a space is connected, normal and has more than one point, then it has two disjoint
+subsets $A$ and $B$. Urysohn lemma implies that there's a continous function  from this space to an
+uncountable set (namely $[a, b]$), and continuity of $f$ implies that a given function is a
+surjection, which now implies that the space is uncountable, as desired.
+
+
 \end{document}
