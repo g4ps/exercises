@@ -574,8 +574,45 @@ $k_l \notin \set{k_1, ..., k_n, j}$. We follow that there's a
 
 $$k_l = k_1 k_2 j k_3 k_4 j k_5 j$$
 
-Well, it turns out that the conclusion of this exercise is wrong. Oopsie-fucking-daisy
+Well, it turns out that the conclusion of this exercise is wrong.
+Oopsie-fucking-daisy
 
+\subsection*{1.7.15}
+
+\textit{This one was taken care of in linear algebra course pretty much}
+
+\subsection*{1.7.18}
+
+\textit{Let $G$ be an abelian group that is not necessarily finite. Define the subset $Tor(G)$
+  to be the subset of elements that have finite order. PRoce that $Tor(G)$ is a subgroup.}
+
+We follow that the identity is in $Tor(G)$ on the account that the order of the identity is zero
+and thus finite. We follow that if $x, y \in Tor(G)$ with orders $a, b$, then
+$$(xy\inv)^{a * b} = x^{a * b} * y^{a * b} = e^b * e ^a  = e$$
+thus we conclude that the given subset is a subgroup, as desired.
+
+\subsection*{1.7.20}
+
+\textit{Prove that $$Z(G) = \bigcap_{a \in G}{C_G(a)}$$}
+
+If $g \in Z(G)$, then it commutes with all $a \in G$, and thus $g \in C_G(a)$ for all $a \in G$,
+thus $$Z(G) \subseteq \bigcap_{a \in G}{C_G(a)}$$.
+
+If $g \in \bigcap_{a \in G}{C_G(a)}$,  then it commutes with all $a \in G$, thus $g \in Z(G)$. Double
+inclusion gives us the desired result.
+
+\subsection*{1.7.27}
+
+\textit{Prove proposition 1.7.13}
+
+1.7.13 states that for any subset $A \neq \emptyset$ of a group $G$, we have $N_G(A) \leq G$.
+
+We follow that $eAe\inv = eAe = A$, thus identity is in the $N_G(A)$. We follow that
+$$gAg\inv = A \iff A = g\inv A g$$. Now if $x, y \in N_G(A)$,
+then $$xy\inv A (xy\inv)\inv = x y\inv A y x \inv =  x (y\inv A y) x \inv = x A x\inv = A$$
+thus getting us the desired conclusion.
+
+\section{Lattice of Subgroups}
 
 \end{document}
 
