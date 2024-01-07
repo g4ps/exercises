@@ -4863,8 +4863,67 @@ surjection, which now implies that the space is uncountable, as desired.
 \textit{(b) Show that a connected regular space having more than one point is uncountable}
 
 Suppose that $X$ is a connected countable regular space that has more than
-one point. We can follow that it's Lindelof and thus every open cover of $X$
-has a countable subcover. Let $x \in X$ and let $K \subseteq X$ be a closed subspace of $X$.
-We follow that 
+one point. We can follow that it's Lindelof by the fact that it's countable, and thus exercise
+32.4 implies that it's normal, and thus uncountable, which is a contradiction.
+
+\subsection{}
+
+\textit{Give a direct proof of the Urysohn lemma for a metric space $(X, d)$ by setting
+  $$f(x) = \frac{d(x, A)}{d(x, A) + d(x, B)}$$}
+
+We follow that if $x \in A$, then $f(x) = \frac{0}{0 + d(x, B)} = 0$ since $d(x, B) > 0$
+since $A$ and $B$ are disjoint. If $x \in B$, then $f(x) = \frac{d(x, A)}{d(x, A)} = 1$.
+We follow that $d: X \times X \to R$ is a contious function, which also implies that
+$d'(x) = d(x, A): X \to R$ is also a continous function, which implies that the
+given function is continous as well.
+
+\subsection{}
+
+\textit{Recall that $A$ is a "$G_\sigma$ set" in $X$ if $A$ is the intersection of a countable
+  collection of open sets of $X$.}
+
+\textit{\textbf{Theorem} Let $X$ be normal. There exists a countinous function $f: X \to [0, 1]$
+  such that $f(x) = 0$ for  $x \in A$ and $f(x) > 0$ for $x \notin A$ if and only if $A$ is a
+  closed $G_\sigma$ set.}
+
+\textit{A function satisfying the requirement of this theorem is said to vanish precisely on $A$.}
+
+Let $X$ be normal. Suppose that there's a function $f: X \to [0, 1]$ and a subset
+$A \subseteq X$ such that $f(x) = 0$ for $x \in A$ and $f(x) > 0$ for $x \notin A$.
+Since $\set{0}$ is closed in $R$, we follow that $f\inv[\set{0}] = A$ is closed as well.
+We also follow that $[0, q)$ is open for all $q \in R$, thus $[0, q)$ is open for all $q \in Q$.
+Since $[0, q)$ is open, we follow that $f\inv[[0, q)]$ is open, and thus we can construct a
+countable collection of sets $f\inv[[0, q)]$ for all $q \in Q$, whose intersection will be $A$.
+Thus we conclude that $A$ is a closed $G_\sigma$ set, as desired.
+
+If $A$ is a closed $G_\sigma$ set, then we follow that there exists a countable collection
+of open sets $V_n$ such that $\bigcap{V_n} = A$. We follow that for each $n \in \omega$
+$\bigcap_{j \leq n}{V_j}$ is an open set, that contains $A$, and thus there's an open set $U_n$
+such that $A \subseteq \overline{U_n} \subseteq \bigcap_{j \leq n}{V_j}$. By plugging
+this collection to the proof of Uryson Lemma we can get the desired $f$.
+
+\subsection{}
+
+\textit{Prove: }
+
+\textit{\textbf{Theorem (Strong form of the Urysogn Lemma)} Let $X$ be a normal space.
+  There's a continous function $f: X \to [0, 1]$ such that $f(x) = 0$ for $x \in A$,
+  and $f(x) = 1$ for $x \in B$ and $0 < f(x) < 1$ otherwise, if and only if $A$ and $B$
+  are disjoint closed $G_\sigma$ sets in $X$.}
+
+Follows almost directly from the previous exercise.
+
+\subsection{}
+
+\textit{A space $X$ is said to be perfectly normal if $X$ is normal and every closed set in $X$
+  is a $G_\sigma$ set in $X$.}
+
+\textit{(a) Show that every metrizable space is perfectly normal.}
+
+We have already followed that metrizable spaces are normal. We follow that for every
+$q \in Q \cap (0, 1]$ there's a countable  collection $\bigcup_{x \in A}{B(x, q)}$
+whose intersection is $A$.
+
+
 
 \end{document}
