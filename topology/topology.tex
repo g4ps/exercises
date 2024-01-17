@@ -4792,7 +4792,7 @@ is arbitrary we can conclude that $Y$ is locally compact, as desired.
 
 \textit{Show that a closed subspace of a normal space is normal}
 
-Let $X$ be a normal space and let $Y$ be its subspace. We follow that if $A$ and $B$ are
+Let $X$ be a normal space and let $Y$ be its closed subspace. We follow that if $A$ and $B$ are
 closed subsets of $Y$, then they are closed subspaces of $X$, and thus are disconnected
 by neighborhoods $U$ and $V$. Since $U$ and $V$ are open, we follow that $Y \cap U$ and $Y \cap V$
 are open as well, that proves that $Y$ is normal as well.
@@ -4824,9 +4824,52 @@ Lindelof instead of second countable.
 
 \textit{Is $R^\omega$ normal in the product topology? In the uniform topology?}
 
-Both of those topologies are metrizable and therefore normal.
+Both of those topologies are metrizable and hence normal.
 
-\textit{The rest is marked as TODO for now}
+\subsection{}
+
+\textit{A space $X$ is said to be \textbf{completely normal} if every subspace of
+  $X$ is normal. Show that $X$ is completely normal if and only if every pair $A, B$ of
+  separated sets in $X$ (that is, sets such that $\overline{A} \cap B = \emptyset$ and
+  $A \cap \overline{B} = \emptyset$), there exist disjoint open sets containing them}
+
+Suppose that for every pair of separated sets there exists a pair of disjoint open sets
+that contains the original pair. Let $Y$ be an arbitrary subspace of $X$, and let
+$A$ and $B$ be closed subspaces of $Y$ with respect to the subset topology.
+We follow that the fact that $A$ is closed in $Y$ implies that $Y \setminus A$
+is open in $Y$, thus there's a open subspace $K \subseteq X$ such that
+$Y \setminus A = Y \cap K$. Since $K$ is open in $X$ we follow that $X \setminus K$
+is closed, and thus $B \subseteq \overline{B} \subseteq X \setminus K$. We also
+follow that $A \subseteq K$ by the fact that $A \cap B = \emptyset$ and $A, B \subseteq Y$.
+We thus can conclude that $A \subseteq K$ and $\overline{B} \subseteq Y \cap K$, which implies
+that $A \cap \overline{B} = \emptyset$. Going by the same logic we can conclude that
+$\overline{A} \cap B = \emptyset$, thus proving that $A$ and $B$ are separable,
+and by our hypothesis there exists a pair
+of disjoint  open sets $U$ and $V$ such that $A \subseteq U$ and $B \subseteq V$. We then
+follow that $A \subseteq Y \cap U$ and $B \subseteq Y \cap V$, where the
+latter two sets are open in $Y$. Now since $A$ and $B$ are arbitrary, we can conclude that
+$Y$ is normal in general, and thus $X$ is completely normal, as desired.
+
+Now assume that $X$ is completely normal. Let $A$ and $B$ be separated sets in $X$.
+We can follow that $\overline{A} \cap \overline{B}$ is a intersection of two closed sets,
+and thus closed itself, and therefore $X \setminus \overline{A} \cap \overline{B}$ is
+open. Since $X$ is completely normal we follow that $X \setminus \overline{A} \cap \overline{B}$
+is normal. We follow that if $\overline{A} \cap \overline{B} = \emptyset$, then
+$\overline{A}$ and $\overline{B}$ are disjoint closed subsets of $X$, and
+since $X$ is completely normal and $X \subseteq X$ we conclude that $A$ and $B$
+are separable by a pair of disjoint open sets by definition of normality.
+Thus assume that $\overline{A} \cap \overline{B} \neq \emptyset$.
+
+We also follow that $A, B \subseteq X \setminus \overline{A} \cap \overline{B}$ since
+$A$ and $B$ are separable. We follow that
+$\overline{A} \cap X \setminus \overline{A} \cap \overline{B}$ is closed in
+the subspace topology of $X \setminus \overline{A} \cap \overline{B}$, and
+the same can be said about $\overline{B}$. Since $X$ is completely normal we know that
+$X \setminus \overline{A} \cap \overline{B}$ is normal, which implies that there's a
+pair of sets $U$ and $V$ such that
+$$A \subseteq \overline{A} \cap X \setminus \overline{A} \cap \overline{B} \subseteq U$$
+$$B \subseteq \overline{B} \cap X \setminus \overline{A} \cap \overline{B} \subseteq V$$
+which gives us the desired conclusion
 
 \section{The Urysohn Lemma}
 
@@ -4923,7 +4966,6 @@ Follows almost directly from the previous exercise.
 We have already followed that metrizable spaces are normal. We follow that for every
 $q \in Q \cap (0, 1]$ there's a countable  collection $\bigcup_{x \in A}{B(x, q)}$
 whose intersection is $A$.
-
 
 
 \end{document}
