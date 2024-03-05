@@ -7,6 +7,7 @@
 \date{2023}
 
 \DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
 \DeclareMathOperator \ns {null}
 \DeclareMathOperator \range {range}
 \DeclareMathOperator \inv {^{-1}}
@@ -28,7 +29,28 @@
 
 \section{Experiments and Events}
 
-\section{Set Theory }
+\section{Set Theory}
+
+Although the section is not pretty complex, some definitions can use a tad bit of rigor.
+
+Sample space is a set of outcomes.
+
+Event is a subspace of a sample space.
+
+If $S$ is a sample space, and $f: \pow(S) \to R$ is a function such that
+\begin{enumerate}
+\item $\range(f) \subseteq [0, \infty)$
+\item $f(S) = 1$
+\item if $A$ is a countable set of events (i.e. $K \subseteq \pow(S)$ and $|K| \leq_c \omega$),
+  and it is indexed by $\omega$  (i.e. $A = \set{A_1, A_2, ...}$) then
+  $f(\bigcup_{i \in \omega}{A_i}) = \sum{f(A_i)}$
+\end{enumerate}
+then $f$ is called a probability measure, or just measure. Canonical representation of
+probability measure is $Pr$ and above mentioned items are usually refered to as
+axioms of probability.
+
+Definitions for this note were compiled from the book itself, book on measure theory (MIRA by Axler)
+and general notes from the internet.
 
 \textit{Exercises in this section (or exercises similar to them) are handled in the set theory
   course}
@@ -746,10 +768,42 @@ which is good enough for me to prove that this thing is always below $1/4$, as d
 
 \subsection*{Notes}
 
-p.d.f is defined as a function from $R$ to $R$ such that there's a countable subset $U$ of $R$ such
-that $u \in U \iff f(u) > 0$ and such that $\sum_{u \in U}{f(u)} = 1$. If $f(u) = x$ for some
-$x \in R$ and all $u \in U$, the the function has uniform distribution. If $U = \set{0, 1}$,
-then the function is Bernoulli with parameter $f(1)$.
+Let $S$ be a sample space
+
+A random variable is a function $f: S \to R$ (which is confusing). Canonical representations
+of random variables are capital English letters (i.e. $X, Y, etc.$)
+
+If $X$ is a random variable, then $R$ can be thought of as a sample space, and then
+we can define $g: \pow(R) \to R$ such that
+$$g(C) = Pr(\set{s \in S: X(s) \in C})$$
+Function $g$ is then called distribution of $X$, and it is a probability measure on $S$
+(in the book, definition of probability is somewhat un-intuitive, but the not just below the
+definition produces given definition)
+
+Random variable $X$ has a discrete distribution (we also say that $X$ is a discrete variable)
+if $\range(X)$ is countable. Distribution of the variable does not show up in the definition, which
+is not helpful.
+
+In general, we abuse notation in this book a lot. It's not hard to decode what $Pr(X = c)$ is
+supposed to mean.
+
+If $X$ is discrete and $g$ is a distribution of $X$,
+then a probability function $f: R \to R$ is a function such that
+$f(x) = g(\set{x})$
+Closure of $\set{x \in R: f(x) > 0}$ is called a support of $X$. 
+Although the term "closure" was not defined anywhere in this book, from the internet it seems that
+it is the topological notion of closure. It is nice that in the course of that book we've defined
+union, but we haven't mentioned closure at all.
+
+If random variable $X$ has range $\set{0, 1}$ with $Pr(X = 1) = p$ for some $p \in R$, then we say
+that $X$ has the Bernoulli distribution with parameter $p$. Although it might seem that
+any given random variable with range of size of 2 has Bernoulli distribution, I'm
+pretty sure that we won't encounter such variables in the wild, but if for some reason
+I will ever have to use such a function, I'll name its distribution proto-Bernoulli.
+
+Random variable $X$ has uniform distribution of the integers $a, ..., b$
+(i.e. $Z \cap [a, b]$ for some $a, B \in Z$ such that $a \leq b$) if $f(m) = f(n)$ for
+all $m, n \in Z \cap [a, b]$. 
 
 \begin{tabular}[center]{||c | c|| }
   \hline
