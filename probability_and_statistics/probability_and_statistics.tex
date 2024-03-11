@@ -21,6 +21,17 @@
 \maketitle
 \tableofcontents
 
+\chapter*{Preface}
+
+\section{Notation}
+
+Some notable deviations from book's notation are presented here
+\begin{enumerate}
+\item Sometimes instead of p.d.f. and the likes of it, we write PDF
+\item Countable set is defined as a set that has an injection into naturals (i.e. countably infinite
+  and finite)
+\end{enumerate}
+
 \chapter{Introduction to Probability}
 
 \section{The History of Probability}
@@ -837,19 +848,33 @@ all $m, n \in Z \cap [a, b]$.
 
 \section{The Cumulative Distribution Function}
 
-Exercises in this section are once again exercises in trivial calculus and graphing. Skip
+\subsection*{Notes}
+
+c.d.f. is a really nice way to describe distribution of a given random variable. Firstly,
+we don't care whether or not the variable is discrete, continous, or whatever, it's got to
+have a c.d.f. Secondly, it's an increasing bounded function from reals to reals, which implies
+that any discontinuity in a given function is a jump discontinuity (see section 4.6. in real
+analysis course) and the set of its discontinuities is countable. Also, given distribution
+of a random variable, the c.d.f. is unique.
+
+If we get into deeper parts of the book, we can conclude that we can ditch somewhat
+non-rigorous notions of p.d.f and p.f. and concentrate exclusively on c.d.f. of a given
+random variable for all the theoretical parts.
+
+
 
 \section{Bivariate Distributions}
 
 \begin{tabular}[center]{||c | c|| }
   \hline
   1 & 1/2, 1/4 \\
-  2 & 0.27, ... \\  
+  2 & 0.27, ... \\
+  3 & 1/40, 1/20, 0.175(7/40), 7/10 \\
   \hline 
 \end{tabular}
 
 Exercises are a bunch of integrals/sums and other borderline trivial stuff. This is practically
-exercise in Maxima. Skip
+an exercise in Maxima. Skip
 
 \section{Marginal Distributions}
 
@@ -879,6 +904,7 @@ The rest is calculus
   2 & $6$, $6 \beta(4 - k - k, k + j + 2)$, TODO\\
   \hline 
 \end{tabular}
+
 
 % \section{Functions of a Random Variable}
 
