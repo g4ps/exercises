@@ -44,9 +44,21 @@ Some notable deviations from book's notation are presented here
 
 Although the section is not pretty complex, some definitions can use a tad bit of rigor.
 
-Sample space is a set of outcomes.
+Sample space is a set. An element of this set is called an outcome.
 
-Event is a subspace of a sample space.
+Event is a subspace of a sample space. Sometimes elements of sample space (i.e. outcomes)
+are called elementary events in some litrature. It might also be the case that elementary
+outcomes denote singletons (i.e. sets with one element) that contain an element of a sample space
+(i.e. an outcome). Same idea can be applies to the term "outcome" (i.e. sometimes
+singletons are reffered to as an outcome)
+
+Although this books says that any given subset of a sample space is an event, Cormen's
+book notes that there are some restrictions when it comes to whacky subsets of uncountably infinite
+sets. I guess that eventually MIRA will place everything in order.
+
+Event that is equal to the sample space is called a certain event. Empty event is
+called a null set. Disjoint events are called mutually exclusive. It doesn't take
+a genius to figure out that elementary events are mutually exclusive.
 
 If $S$ is a sample space, and $f: \pow(S) \to R$ is a function such that
 \begin{enumerate}
@@ -56,12 +68,14 @@ If $S$ is a sample space, and $f: \pow(S) \to R$ is a function such that
   and it is indexed by $\omega$  (i.e. $A = \set{A_1, A_2, ...}$) then
   $f(\bigcup_{i \in \omega}{A_i}) = \sum{f(A_i)}$
 \end{enumerate}
-then $f$ is called a probability measure, or just measure. Canonical representation of
+then $f$ is called a probability measure, or just probability. Canonical representation of
 probability measure is $Pr$ and above mentioned items are usually refered to as
 axioms of probability.
 
 Definitions for this note were compiled from the book itself, book on measure theory (MIRA by Axler)
-and general notes from the internet.
+and general notes from the internet. Some definitions and terms were also borrowed from
+the Cormen's (et. al) book on algorithms (Appendix C). As of the time of writing this, the
+course on Cormen's book is currently ongoing within the same project, and MIRA is in the backlog.
 
 \textit{Exercises in this section (or exercises similar to them) are handled in the set theory
   course}
@@ -870,6 +884,8 @@ random variable for all the theoretical parts.
   1 & 1/2, 1/4 \\
   2 & 0.27, ... \\
   3 & 1/40, 1/20, 0.175(7/40), 7/10 \\
+  4 & 3/2, 3/8, 1/8, 1/2, 0 \\
+  5 & 5/4, 49/256, 13/16, 0\\
   \hline 
 \end{tabular}
 
@@ -906,7 +922,7 @@ The rest is calculus
 \end{tabular}
 
 
-% \section{Functions of a Random Variable}
+\section{Functions of a Random Variable}
 
 % \begin{tabular}[center]{||c | c|| }
 %   \hline
