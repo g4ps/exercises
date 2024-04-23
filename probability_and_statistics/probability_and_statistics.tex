@@ -879,6 +879,47 @@ random variable for all the theoretical parts.
 
 \section{Bivariate Distributions}
 
+\subsection*{Notes}
+
+It's kinda hard to describe the terminology here on the account of the
+fact that it doesn't make any sense.
+
+We've already defined distibution as the probability on the set of
+reals. By that logic, we can follow that bivariate distribution is
+some whacky kind of a distribution, that we want to describe further,
+right?  Well, no. Bivariate distribution is a probability, that is
+defined on the $R^2$. Hense it's a completely different beast altogether. 
+
+Suppose that we've got a couple of random variables (which are the
+functions, so in turn we gotta have a couple of sample spaces, two
+probabilities for those sample spaces, etc.).  We follow that we can
+in that case see $R^2$ as the
+sample space, that we've concocted out of all of those things. In that
+case we say that the probability on the $R^2$ is
+a joint (or a bivariate) distribution. Going a bit further I can also
+foreshadow that multivariate distribution is also not a distribution,
+but a probability, that is defined on $R^n$ for arbitrary $n \in
+\omega$ that we get out of several different random variables (and all
+of the things that go with a random variable).
+
+It's also important to note that if we take two discrete variables and
+make a joint distribution out of them, we get a discrete joint
+distribution.
+
+In a fashion similar to a standart distribution we can define discrete
+and continous joint distributions. Discrete joint distribution is a
+joint distribution that is nonzero on a countable subset of $R^2$ and
+continous joint distribution is the one whose probability can be
+described by an integral. 
+
+By taking half-opened (where we include the higher bound of the
+interval, i.e. the oppositve of the $R_l$) intervals and making a
+cartesian product of them we can also define a joint cumulative
+distribution (or joint distribution) function.
+There are similar things goint on with joint distributions and
+joint cumulative distribution functions as with the standart ones:
+given a joint distribution we can always have its joint c.d.f.
+
 \begin{tabular}[center]{||c | c|| }
   \hline
   1 & 1/2, 1/4 \\
@@ -894,10 +935,65 @@ an exercise in Maxima. Skip
 
 \section{Marginal Distributions}
 
+\subsection*{Notes}
+
+Given a joint distribution (or probably multivariable too) we can
+get a joint c.d.f. Given a joint c.d.f, we can use it on subsets, that
+consist of cartesian product of a half-closed interval, that are bounded by some $k \in R$
+and the whole $R$. Out of those things we can make a real functions:
+$F_x: R \to R$ and $F_y: R \to R$ such that
+$$F_x(x) = F(x, \infty)$$
+$$F_y(y) = F(\infty, y)$$
+those things are called marginal c.d.f.'s, and out of them we can create either probability
+density functions, probability functions and all sorts of other stuff.
+
+Given a joint probability function (i.e. the one for the discrete
+joint distribution) we can sum it over a variable to get a marginal
+p.f. of a specific variable. By using integrals over the whole real
+line instead of sums we get p.d.f's out of joint p.d.f.'s.
+
+Remember independent events? Me neither. To refresh the memory: if $A$
+and $B$ are events (i.e. subsets of the sample space), then they are
+called independent (given a probability, of course) if
+$$Pr(A \cap B) = Pr(A) Pr(B)$$
+At this point the book goes completely off the rails and starts
+abusing notation like there's no tomorrow. Instead of doing that, I'm
+just gonna note that joint c.d.f. is called independent in its variables if and only if 
+$$F(x, y) = F_x(x) F_y(y)$$
+where in the rhs we've got marginal c.d.f.'s. We then follow that if
+you think about it a little bit, then you can see how the original
+notion of independence is connected to the presented one. For instance,
+given a probability $Pr$ over $R^2$ and two subsets $A, B$ of $R$ we've got that 
+$$Pr(A \times B) = Pr(A \times R \cap R \times B)$$
+and hence
+$$Pr(A \times B) = Pr(A \times R) Pr(R \times B)$$
+if and only if $A \times R$ and $R \times B$ are independent.
+
+Out of definition of independence in variables of c.d.f. we can define
+various independence of p.f's, p.d.f's and so on and so
+forth. Thankfully, it's usually clear from context what exactly we're
+trying to do in each particular case. The only thing of note that is
+that our original idea in the definition of independence of a joint c.d.f
+translates neatly into various p.d.f's and p.f.'s and whatnot:
+given independent joint thing, we can state that 
+$$f(x, y) = f_x(x) f_y(y)$$
+where rhs are marginal things for $x, y \in R$.
+
+Sometimes, when we look at some formula for some joint p.f/p.d.f. or
+whatever, we see how the formula might break down into product of two
+formulas in one variable. Although it might look like the initial
+joint thing is independent, it's not necessarily true. Theorem 3.5.6
+states that it's true for continous joint p.d.f.'s if and only if the
+support (i.e. region in which the function is positive) for the
+initial p.d.f. is a cartesian of two intervals. It's probably also
+somehow true for p.f.'s and whatnot, but let's not digress.
+
+
 \begin{tabular}[center]{||c | c|| }
   \hline
   1 & f(y) = (d - c)k, f(y) = (b - a) k \\
   2 & $f(y) = \frac{y + 1}{30}, f(x) = \frac{2x + 3}{15}$, dependent \\
+  3 & $f(y) = 3 y^2, f(x) = 1/2$, yes, yes \\
   \hline 
 \end{tabular}
 
