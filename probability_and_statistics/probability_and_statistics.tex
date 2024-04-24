@@ -1001,19 +1001,159 @@ this section is also an exercise in calculus.
 
 \section{Conditional Distributions}
 
+\subsection*{Notes}
+
+In this book we concern ourselves with conditional probabilities
+exclusively with joint p.f.'s, p.d.f's, or joint p.f./p.d.f's.
+
+From the standpoint of sets and whatnot we've got that
+$$Pr(A | B) = \frac{Pr(A \cap B)}{Pr(B)}$$
+where the lhs is just a syntactic sugar for the rhs.
+
+In the book, if we've got joint p.f (or p.d.f, or p.f./p.d.f), then we
+define conditional probability as the family of functions
+$g(.|y): R \to R$ as
+$$g(x|y) = \frac{f(x, y)}{f_y(y)}$$
+for $y \in R$ such that $f_y(y) > 0$ and 
+where the funky notation in the lhs is nothing, but a funky notation,
+and $f_y$ in the rhs is the marginal p.f./p.d.f. Quick note: it works for
+both $x$'s, and $y$'s, (i.e. first and second positions in the vector).
+
+In the book we also define p.d.f's for cases $y \in R$ such that
+$f_y(y) = 0$ as $g(x|y)$ being some sort of a p.d.f. (no matter which
+one).  The only implication that we get out (as far as I undesrtand
+it) of it is that $g(x|y)$ is a p.d.f. for all $y \in R$. I don't like
+that definition, and hence want to define it to be $g(x|y) = 0$ for
+all $y \in R$ such that $f_y(y) = 0$. We lose that implication, yes,
+but we can reformat it a bit and state that $g(x|y)$ is a p.d.f. given
+that $f_y(y) > 0$. If we define the function this way, then out of
+somewhat sane p.d.f we don't get a whacky family of functions, but a
+pretty well-defined function. We can also do practically the same thing
+for a p.f., and out of all of that we can define $g$ to be $R^2 \to R$. 
+
+If we've got a conditional function $g(.|y)$ and $f_y$, then we
+can reconstitute original joint thing by using some algebra on the original
+definition:
+$$f(x, y) = g(x|y) f_y(y)$$
+We also include here marginal cases with $f_y(y) = 0$, and both the book's
+definition and my definition work out pretty much fine.
+
+If the joint thing is independent in its variables, then we follow that
+$$g(x|y) = f_x(x)$$
+which we follow from the corresponding definitions and whatnot.
+
+As the consequence of all things said, we can follow that
+$$f(x, y) = g(x|y) f_y(y)$$
+and
+$$f(x, y) = g(y|x) f_x(x)$$
+and hence
+$$g(x|y) f_y(y) = g(y|x) f_x(x)$$
+which gives us the Bayes rule or something like that. Although
+everything here desperatly lacks rigor, if you think about it a little
+bit, it's not hard to figure out all the missing pieces.
+
 \subsection{}
 
 $$f(x|y) = \frac{3y^2}{2{x^2 - 1}^{3/2}}$$
 for appropriate values of $x$ and $y$.
 
-The rest is calculus
+The rest is calculus and counting
 
 \section{Multivariate Distributions}
+
+\subsection*{Notes}
+
+Multivariate distributions are originally defined from making a c.d.f
+from the random functions (and spaces, and probabilities, etc.) in an
+obvious way:
+$$F(x_1, ..., x_n) = Pr((-\infty, x_1] \times ... \times (-\infty, x_n))$$
+We also start denoting this thing as joint as well, but we say that
+it's joint in $n$ variables, which does not help. Important to note
+that joint might denote either bivariate or multivariate (bivariate by
+that logic is a part of multivariate). If we want clarity, we usually
+use terms "univariate" for 1 variable, "bivariate" for 2 and
+"multivariate" for 2 or more. Shoulda seen it coming and use the
+term "bivariate" exclusively way earlier.
+
+
+If every given initial distribution has a p.d.f, then in an obvious
+way we define multivariate p.d.f, and so on. Same thing applies to
+discrete distributions. Thus taking a whaky sum or a whacky integral
+out of whose p.f./p.d.f/whatnots gives us a probability of an event.
+Just as with the joint p.f/p.d.f we can take sums and integrals
+together whenever it's appropriate.
+
+If we've got p.f.'s and p.d.f's mixed together into one happy function,
+then we call it that distribution mixed.
+
+You don't have to be a genious in order to get a marginal c.d.f from
+the original c.d.f: just restrict one of the variables, set the rest
+to infinity, and you're golden. If you've got a p.d.f or some other
+such thing, integrate/sum over the rest of the variables over $R$.
+The only thing of note is that we can fix several variables and have a
+whacky marginal c.d.f over several variables. 
+
+Fun starts whenever we get to independence. Firstly, if
+$$F(x_1, ..., x_n) = F_1(x_1)...F_n(x_n)$$
+then we've got independence in all of the variables (as expected).
+Same thing applies to p.f.'s and p.d.f's.
+$$f(x_1, ..., x_n) = f_1(x_1)...f_n(x_n)$$
+if some of the  $f_j$'s are equal, then
+(according to the book) the random variables, that correspond to those
+things are called independent and identically distributed (or i.i.d.).
+I don't like this definition on the account of the fact that it breaks
+the original definition of the random variable, and I don't see the
+reason not to call the marginal c.d.f.'s with the same name.
+For obvious reasons, the multivariate distribution that we get out of
+initial $F$ cannot be mixed. Length of the equal marginal things in
+that case is called sample size. According to the book, "random
+sample" is the collection of those random variables, whatever that
+means.
+
+For conditional stuff we once again constraint ourselves with p.f's,
+p.d.f's or something mixed (no funny stuff). We also start using the vector
+notation extensively here: we denote
+$$\bold x  := x_1, ..., x_n$$
+there's actually no rigorous definitions for this stuff, we just kinda
+start abusing notation a great bit.
+There are subvectors and whatnot, for example we can split
+$$\bold x  := x_1, ..., x_n$$
+into
+$$\bold z  := x_1, ..., x_j$$
+$$\bold y  := x_{j + 1}, ..., x_n$$
+we can also mix'em together a bit, and have
+$$\bold q := x_1, x_3, x_j, x_n$$
+and so forth. When we deconstruct and reconstitute vector back
+together, we tend to use commans (e.g. $\bold x = \bold y, \bold
+z$). It's usually clear from the context what exactly what we mean.
+
+Conditional stuff is defined in an intuitive way: given that $\bold x$
+destructs into two subvectors $\bold y$ and $\bold z$ we have
+$$g_1(\bold y | \bold z) = \frac{f(\bold y, \bold z)}{f_2(\bold z)}$$
+where in the rhs $f_2$ denotes the marginal p.f/p.d.f over variables
+of $\bold z$ and provided that $f_2(\bold z)$ is positive. We can use
+the same thing as in the bivariate distribution and in both p.f. and
+p.d.f. cases define $g_1(. | \bold z)$ to be zero in zero cases for
+$f_2(\bold z)$. We also got
+$$f(y, z) = g_1(y| z) f_2(z)$$
+just as with the bivariate stuff, and we also get the Bayes theorem
+out of this
+$$g_2(z| y) f_1(y)= g_1(y| z) f_2(z)$$
+
+We also can define something interesting: we say that variables are independent
+given some other variables if
+$$g(\bold x | \bold z) = \prod_{x \in \bold x}{g_x(x|\bold z)}$$
+definition in the book kinda implies that everything is consecutive in
+there, which it might not be.
+
+Then the book goes on a tanget about histograms for some reason.
+
+
 
 \begin{tabular}[center]{||c | c|| }
   \hline
   1 & $1/3$,  $x_3 + 1/3 x_1 + 1/3$, $5/13 \approx 0.38461538461538464$\\
-  2 & $6$, $6 \beta(4 - k - k, k + j + 2)$, TODO\\
+  2 & $6$, $f(0, 0) = f(1, 1) = 3/10; f(0, 1) = f(1, 1) = 1/5$, $f(x_1) = 20 x_1^3 (1 - x_1)$\\
   \hline 
 \end{tabular}
 
