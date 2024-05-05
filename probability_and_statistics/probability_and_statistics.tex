@@ -1160,10 +1160,58 @@ Then the book goes on a tanget about histograms for some reason.
 
 \section{Functions of a Random Variable}
 
-% \begin{tabular}[center]{||c | c|| }
-%   \hline
-%   1 & 
-%   \hline 
-% \end{tabular}
+\subsection*{Notes}
+
+If we've got a random variable (and everything that usually
+accompanies a random variable), we can create another random variable
+through a composition with another real function.
+
+Generally speaking, whenever we have a fandom variable $X$, there's a
+c.d.f $F$ of that variable. $F$ is defined as
+$$F(y) = Pr(X \leq y)$$
+this can be restated as
+$$F(y) = Pr(x \in (-\infty, y])$$
+if $g: R \to R$ is some function of a random variable, then its
+c.d.f $G$ is
+$$G(y) = Pr(g(x) \in (-\infty, y])$$
+since the $Pr$ is the same. We then can use the identity
+$$g(x) \in A \iff x \in g\inv[A]$$
+to conclude that
+$$G(y) = Pr(x \in g\inv[(-\infty, y]])$$
+By computing the $g\inv[(-\infty, y]]$ and corresponding probability,
+we can compute the proper c.d.f. of a function of a random variable,
+given the variable and the corresponding function.
+
+For example, if $g(x) = x^2$, then
+$$G(y) = Pr(g(x) \in (-\infty, y])$$
+$$G(y) = Pr(x \in [-\sqrt{y}, \sqrt{y}])$$
+
+If $h$ is a linear function (i.e. $h(x) = ax + b$), then
+$$G(y) = Pr(ax + b \leq y)$$
+$$G(y) = Pr(ax + b \in (-\infty, y])$$
+$$G(y) = Pr(ax \in (-\infty, y - b])$$
+if $a > 0$, then 
+$$G(y) = Pr(x \in (-\infty, \frac{y - b}{a}])$$
+$$G(y) = Pr(x \leq \frac{y - b}{a}) = F(\frac{y - b}{a})$$
+and if $a < 0$, then
+$$G(y) = Pr(x \in [\frac{y - b}{a}, \infty)) =
+1 - Pr(x \in (\infty, \frac{y - b}{a})) = 1 - F(\frac{y - b}{a})$$
+and hence if the initial function $f$ is continous with c.d.f $F$,
+then p.d.f. $g$ of $G$ is
+$$g(y) = \frac{d}{dy}G(y)$$
+if $a > 0$, then
+$$g(y)= \frac{d}{dy}F(\frac{y - b}{a}) = f(\frac{y - b}{a}) \frac{1}{a}$$
+where the last part was derived from the chain rule of the differentiation. 
+If $a < 0$, then
+$$g(y)= \frac{d}{dy}(1 - F(\frac{y - b}{a})) = -f(\frac{y - b}{a}) \frac{1}{a}$$
+by using absolute value of $a$ we can combine previous 2 cases into
+one case for $a \neq 0$
+$$g(y) = f(\frac{y - b}{a}) \frac{1}{|a|}$$
+
+Probability Integral Theorem states that if the function of the random
+variable is the c.d.f. of that function, then the resulting function
+has unifom distribution on $[0, 1]$. Somehow it's used in the later
+parts of the book
+
 
 \end{document}
