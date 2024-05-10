@@ -1210,8 +1210,36 @@ $$g(y) = f(\frac{y - b}{a}) \frac{1}{|a|}$$
 
 Probability Integral Theorem states that if the function of the random
 variable is the c.d.f. of that function, then the resulting function
-has unifom distribution on $[0, 1]$. Somehow it's used in the later
-parts of the book
+has unifom distribution on $[0, 1]$. Its main use is the implication
+that if we've got a random variable $X$ with the uniform distribution
+over $[0, 1]$, and a random variable $Y$, whose quantile function is
+$G\inv$, then  $G\inv(X)$ is the function with the same distribution as
+$Y$. This gives us an idea on how to implement a halfway decent random
+variable, when we're given a random variable with uniform distribution
+over $[0, 1]$ in a given programming environment.
+
+\subsection{}
+
+\textit{Suppose that a p.d.f. of a random variable $X$ is as follows}
+$$
+  f(x) = 
+  \begin{cases}
+    3x^2 \text{ for } 0 < x < 1 \\
+    0 \text{ otherwise}
+\end{cases}
+$$
+\textit{Also, suppose that $Y = 1 - X^2$. Determine the p.d.f of $Y$.}
+
+We follow that
+$$G(y) = Pr(g(x) \leq  y) = Pr(1 - x^2 \leq y) = Pr(x^2 \geq 1 - y) = Pr(x \geq \sqrt{1 - y})$$
+where the latest implication does not include the $Pr(x \leq -\sqrt{1
+- y})$ on the account of the fact that it's zero due to the
+restrictions on the original function.
+We then follow that
+$$G(y) = Pr(x \geq \sqrt{1 - y}) = \int_{\sqrt{1 - y}}^{1}{3x^2} = x^3]^{1}_{\sqrt{1 - y}} = 1 - (1 - y)^{3/2}$$
+and hence
+$$g(y) = d/dx 1 - (1 - y)^{3/2} = -\sqrt{1 - y}3/2$$
+as desired
 
 
 \end{document}
