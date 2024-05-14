@@ -1241,5 +1241,41 @@ and hence
 $$g(y) = d/dx 1 - (1 - y)^{3/2} = -\sqrt{1 - y}3/2$$
 as desired
 
+\subsection{}
+
+\textit{Suppose that a random variable $X$ can have each of the seven
+  values $\set{-3, ..., 3}$ with equal probability. Determine the p.f.
+  of $Y = X^2 - X$.}
+
+We've got
+$$f(x) =
+\begin{cases}
+  x = 12 \to 1/7 \\
+  x = 6 \to 2/7 \\
+  x = 2 \to 2/7 \\
+  x = 0 \to 2/7 \\
+\end{cases}
+$$
+
+\subsection{}
+
+\textit{Suppose that the p.d.f. of a random variable $X$ is as follows:}
+$$f(x) =
+\begin{cases}
+  \frac{1}{2} x \text{ for } 0 < x < 2 \\
+  0 \text{ otherwise}
+\end{cases}
+$$
+\textit{Also suppose thta $Y = X(2 - X)$. Determine the c.d.f and the p.d.f. of
+  $Y$}
+
+We've got that (i've skipped some calculus and algebra in the deriviation,
+but the idea is pretty straightforward):
+$$G(y) = Pr(Y \leq y) = Pr(X \leq 1 - \sqrt{1 - y}) + Pr(X \geq 1 + \sqrt{1 - y}) =
+1 - \sqrt{1 - y}$$
+differentiating over the thing we get
+$$g(y) = \frac{1}{2\sqrt{1 - y}}$$
+for $y \in [0, 1]$
+
 
 \end{document}
