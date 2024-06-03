@@ -1329,6 +1329,13 @@ functions (i.e. $R^n \to R^m$). This chapter only discusses scalar
 functions. Not only that, here we start to discuss exclusively continous
 and discrete functions. Nothing mixed and/or arbitrary is discussed at all.
 
+One thing of note is that it appears that there's a lot more depth to
+some of the concepts, that were defined in the chapter. It seems that
+convolution, for example, is a somewhat notable concept in functional
+analysis, so the planned MIRA jorney will hopefully shed light on some
+of the concepts, that I'm currently not fully grasping in regards to
+this chapter
+
 \subsection{}
 
 \textit{Suppose that $X_1$ and $X_2$ are i.i.d. and each of them has
@@ -1345,7 +1352,51 @@ $$
 is a p.d.f for $X_1$ and $X_2$. Although there's a convolution theorem, it's
 somewhat easier to wrap your head around an idea of brute-forcing this thing.
 
-TODO
+We can dance for a long time around the more general concepts of supports
+and their respective intersections with the desired sets, but it'll
+be more straightforward to see the desired function as the area of intersection
+of the triangle with a square at the origin. After a brief interaction
+with a graph calculator one might obtain a function
+$$g(y) =
+\begin{cases}
+  y \in [0, 1] \to y \\
+  y \in (1, 0] \to 2 - y \\
+\end{cases}
+$$
 
+\subsection{}
+
+\textit{Fot the conditions of Exercise 1, find the p.d.f. of the average $(X_1 + X_2) / 2$}
+
+Although there's a arguable reason to use the linear case, we can also
+see, that the desired function is nothing more than a function of the
+function, that we've already derived.
+
+By using methods from the previous chapter, we can follow that c.d.f. $H$
+of the newfound function is 
+$$H(y) = Pr(Y/2 < y) = Pr(Y < 2y) = \int_0^{2y}{g(x)} =
+\begin{cases}
+  2y \in [0, 1] \to 2y^2 \\
+  2y \in [1, 2] \to 1/2 +  4y - 2y^2
+\end{cases} = 
+$$
+$$
+= \begin{cases}
+  y \in [0, 1/2] \to 2y^2 \\
+  y \in [1/2, 1] \to 1/2 + 4y - 2y^2
+\end{cases} = 
+$$
+and the appropriate p.d.f. is
+$$h(y) =
+\begin{cases}
+  y \in [0, 1/2] \to 4y \\
+  y \in [1/2, 1] \to 4 - 4y \\
+\end{cases}
+$$
+and the appropriate values otherwise.
+
+\subsection{}
+
+\textit{}
 
 \end{document}
