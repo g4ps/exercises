@@ -1,5 +1,5 @@
 {
-  "last_update": "20.05.2024",
+  "last_update": "02.07.2024",
   "data": [
     {
       "name": "Understanding Analysis",
@@ -39,13 +39,13 @@
       }
     },
     {
-      "name": "Abstract Algebra: A First Course",
-      "author": "Stephen Lovett",
+      "name": "Fundamentals of Abstract Algebra",
+      "author": "Mark J. DeBonis",
       "link": "https://github.com/g4ps/exercises/raw/master/abstract_algebra/abstract_algebra.pdf",
-      "edition": "2nd",
+      "edition": "1st",
       "status": "in_progress",
       "progress": {
-	"total_chapters": 6,
+	"total_chapters": 10,
 	"finished_chapters": 0.1
       }
     },
