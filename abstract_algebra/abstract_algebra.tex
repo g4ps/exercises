@@ -43,7 +43,9 @@ time.
 
 So far, it's been most pleasurable journey. This book embodies all the
 things, that I like in the mathematics books: lots of rigor and a bit of
-lightheartedness, that really lights it up. 
+lightheartedness, that really lights it up.
+
+Some of the notation was migrated from my previous endeavours in the maths.
 
 
 \chapter{A Potpourri of Preliminary Topics}
@@ -235,12 +237,141 @@ divides both $m$ and $n$, which implies that $k = lcm(m, n)$, as desired.
 
 \subsection{}
 
-% \textit{Definition 2.6 says that a group is a set $G$ with a
-% composition law satisfying three axioms.  In particular, it says that
-% there's an identity element $e \in G$ that works on both sides and
-% that every element $g \in G$ has an inverse that works on both
-% sides. Suppose that we weaken the requirements to specify that }
-TODO
+\textit{Definition 2.6 says that a group is a set $G$ with a
+composition law satisfying three axioms.  In particular, it says that
+there's an identity element $e \in G$ that works on both sides and
+that every element $g \in G$ has an inverse that works on both
+sides. Suppose that we weaken the requirements to specify that the
+identity and inverse work only on one side. In other words, we suppose
+that $G$ is a set with a composition law satisfying the following
+weaker axioms: }
 
+\textit{(a) (Right-Identity Axiom) There is an element $e \in G$ so
+  that $g * e = g$ for all $g \in G$}
+
+\textit{(b) (Right-Inverse Axiom) For all $g \in G$ there is an
+  element $h \in G$ so that $g * h = e$}
+
+\textit{(c) (Associative Law) $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
+for all $g_1, g_2, g_3 \in G$.}
+
+\textit{Prove that $G$ is a group.}
+
+We're gonna start with establishing the inverse axiom for $G$,
+as suffested in the hint to the exercise.
+Suppose that for $g \in G$ there's $h \in G$ such that 
+$$g * h = e$$
+we also follow that for $h$ there's an element $k$ such that
+$h * k = e$ by the same axiom. We thus follow that
+$$ h * g = h * g * e = h * g * h * k = h * (g * h) * k = h * e * k = (h * e) * k = h * k = e $$
+where we use justification of
+$$a \to (\text{h * k = e}) \to c \to b \to c \to a \to (\text{h * k = e})$$
+in our equalities (given axioms are presented by letters).
+Thus we've got that $h * g = e = g * h$ (i.e. normal inverse axiom)
+
+Now suppose that $g \in G$. We follow that
+$$e * g = g * g\inv * g = g * (g\inv * g) =  g * e = g$$
+which practially establishes the Identity axiom. The associative law
+is unchanged from the stadart definition of the group, and thus we're
+following that $G$ is indeed a group, as desired.
+
+\subsection{}
+
+\textit{There are other sorts of algebraic structures that are similar to groups in that
+  they are sets $S$ that have a composition law}
+$$S \times S \to S, (s_1, s_2) \to s_1 * s_2$$
+\textit{but they have fewer or different asiomx than a group. In this exercise we explore two
+  of these structures.}
+
+\textit{The set $S$ with its composition law is a monoid if it has an
+identity element $e \in S$ and satisfies the associative law, but
+elements are not required to have inverses.}
+
+\textit{The set $S$ with its composition law is a semigroup if its
+composition law is associative, but it need not have an identity
+element or inverses.}
+
+i.e. monoid satisfies associative and identity, semigroup satisfies associative,
+and group satisfies all of them. Hence we've got nested classes of structures:
+
+semigroup $\subseteq$ monoid $\subseteq$ group
+
+\textit{For each of the following sets $S$ and composition laws $*$
+determine if $(S, *)$ is a group, a monoid, or a semigroup.}
+
+\textit{(a) The set of natural numbers $N = \set{1, 2, 3,
+    ...}$ with the composition law being addition.}
+
+I usually do include $0$ into the set of naturals, but in this particular case
+it seems that we don't do it.
+
+In this particular case we follow that $N$ has associativity with $+$,
+rigorous proof of which comes from the construction of the naturals.
+In the course of the set theory I've gone through that proof, but
+I'm pretty sure that it's not required here.
+
+If we don't include $0$ into $N$, then we don't have an identity in
+$N$, which can be proven by defining order $>$ on $N$ and proceeding
+from there (which was also handled in the course on set theory).
+Hence it is only a semigroup. If we include it, however, then we get an
+identity, and thus this set becomes a monoid.
+
+We can also state that it's not got identities.
+
+\textit{(b) The set of extended  natural numbers $N_0 = \set{0, 1, 2, 3,
+    ...}$ with the composition law being addition.}
+
+handled in part (a)
+
+\textit{(c) $(Z, +)$}
+
+We can follow that it's a superset of $N$, which gets its inverses ($a\inv = -a$)
+and hence becomes a full-blown group.
+
+\textit{(d) $(N, *)$}
+
+We follow that it's associative, has the identity $1$, and hence is at
+least a monoid. It's not got multiplicative inverses (because that
+would be $Q_+$), and hence is not a group.
+
+\textit{(e) $(N_0, *)$}
+
+Same as previous, $0$ does not change associativity and identities. Is
+not a group for the same reason as the previous case.
+
+\textit{(f) $(Z, *)$}
+
+Same as previous for the same reason.
+
+\textit{(g) The set of integets $Z$ with the composition law $m * n = max\set{m, n}$}
+
+If there's $m \in Z$, then there's $n_0, n_1 \in Z$ such that
+$$n_0 < m < n_1$$
+and hence
+$$n_0 * m = n_0, n_1 * m = m$$
+and hence we follow that there's no identity.
+
+We follow that
+$$(n * m) * k = max\set{max\set{n, m}, k} = max\set{n, m, k} = max\set{n, max\set{m, k}} = n * (m * k)$$
+hence we've got associaativity. Thus the given structure is a semigroup.
+
+\textit{(h) The set of naturals $N$ with the composition law $m * n = max\set{m, n}$}
+
+It's got associativity and hence this thing is a semigroup. We can follow that
+$1 \leq m$ for all $m \in N$, and thus $max\set{1, m} = m$. Thus we follow that we also
+have a monoid. Inverses are not present, and thus it's not a group.
+
+\textit{(i) The set of naturals $N$ with the composition law $m * n = min\set{m, n}$}
+
+We've got associativity. If $m \in N$, then there's $n \in N$ such that $n > m$, and thus
+$min\set{m, n} = m$, which means that there's no identity, and hence this thing is only a semigroup.
+
+\textit{(j) The set of naturals $N$ with the composition law $m * n = mn^2$}
+
+We follow that
+$$(m * n) * k = (mn^2) * k = mn^2k^2$$
+$$m * (n * k) = m * nk^2 = mn^2k^4$$
+setting m, n, k to primes we can follow that $(m * n) * k \neq m * (n * k)$, which implies that
+this thing is neither a group, a monoid, nor a semigroup.
 
 \end{document}
