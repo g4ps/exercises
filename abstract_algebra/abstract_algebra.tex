@@ -374,4 +374,40 @@ $$m * (n * k) = m * nk^2 = mn^2k^4$$
 setting m, n, k to primes we can follow that $(m * n) * k \neq m * (n * k)$, which implies that
 this thing is neither a group, a monoid, nor a semigroup.
 
+\subsection{}
+
+\textit{Look up magmas, Moufang loops, quandles, and matroids}
+
+Magma is just a set with a binanry function. There are some
+discussions about closure, but as long as the thing provided with a
+set is a binary function, it's a magma.
+
+TODO: look up the rest
+
+\section{Interesting Examples of Groups}
+
+\subsection{}
+
+\textit{Let $G$ be a finite cyclic group of order $n$, and let $g$ be
+a agenerator of $G$.  Prove that $g^k$ is a generator of $G$ if and
+only uf $gcd(k, n) = 1$.}
+
+Suppose that $g^k$ is a generator of $G$. If $k = 1$,
+then we follow that $gcd(k, n) = gcd(1, n) = 1$, thus
+assume that $k \neq 1$. 
+
+We follow that there's $m \in \omega$ such that $m \neq 0$
+and
+$$(g^k)^m = g^{km} = g$$
+thus
+$$g^{km - 1}  = e$$
+and hence we follow that $km - 1$ is multiple of order of $G$.
+Thus there exits $j \in Z$ such that $km - 1 = jn$.
+Thus $km - jn = 1$, which implies that $gcd(k, n) = 1$,
+as desired.
+
+Every implication in the forward direction is pretty much a
+biconditional (not exactly though, we need to add some quantifiers
+to the mix), so it works in the reverse direction as well.
+
 \end{document}
