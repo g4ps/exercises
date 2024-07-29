@@ -112,6 +112,9 @@ $$
 
 \section{Abstract Groups}
 
+
+\subsection{}
+
 \textit{Let $G$ be a group. In this exercise you will prove the remaining parts of
   Proposition 2.9. Be sure to justify each step using the group axioms or by reference to a
   previously proven fact}
@@ -386,6 +389,59 @@ TODO: look up the rest
 
 \section{Interesting Examples of Groups}
 
+\subsection*{Notes}
+
+Although I'm pretty sure that a the collection of groups is a proper class
+(i.e. not a set), I don't have a proof for that. I'll try to change it now.
+
+Empty sets cannot be groups since they've gotta have an element (identity).
+
+Although we can try do to something with cardinals and whatnot, we know that for
+any set $S$ there's an injection to the set $S^S$. We then follow that there's
+a subset of bijections in $S^S$. We then follow that this subset of bijections
+is a group (permutations), and hence we conclude that for each set there's a
+group, and thus a collection of groups is a proper class, as desired.
+
+We can also skip all this stuff, and state singleton of any set $S$ is
+a trivial group under projection. Trivial group (if I'm not mistaken) is a
+group that's got only an identity in it.
+
+Permutation Group practically states that a set of bijections over a
+set constitutes a group under composition. There are no further
+restrictions, which is pretty neat.
+
+Matrix group leads us to an interesting idea, which is also bleeding
+into dihedral groups: as long as a subset of the set of bijections is
+closed under composition, includes inverses, and includes an
+indentity, given subset is a group (associativity is a property of
+composition). Can we lose some restrictions though?
+
+Suppose that there's a set of bijections over a set and it is closed
+under composition. If a set is finite, then we can follow that the set of pairs of
+bijections is larger than the set of bijections, hence there's got to be a pair
+$$S \circ C = S$$
+or something like that, which would imply that $C$ is an identity.
+If the set is infinite, then this proof will not do.
+Finality of the set does not imply the existence of inverses: $\set{C, e}$ will be
+closed under composition, will have an identity, and will not have inverses.
+
+Given a set of nonzero naturals $N$, for each $n \in N$ we can have $S_n: \omega \to \omega$
+$$S_n(x) = x + n$$
+For each $n, m \in N$ we've got that
+$$(S_n \circ S_m)(x) = S_n(x + m) = x + m + n = S_{m + n}(x)$$
+which gives us a set of bijections, that is closed under a
+composition, does not include an identity ($0 \notin N$ by our
+restriction), and no element has an inverse.
+
+Thus we conclude that if a set of bijections is finite and is a singleton, then it's a group.
+If it's not a singleton and is finite, then it's a monoid (i.e. associativity and identity).
+If it's not finite, then it's just a semigroup (i.e. associativity exclusively).
+
+We can't have a group of functions, where the set is not a singleton and
+domain and range of the function are distinct, since two functions are supposed
+to compose. We can't have non-bijections be present, since we've got to have
+both left-hand side and right-hand side inverses of any given element.
+
 \subsection{}
 
 \textit{Let $G$ be a finite cyclic group of order $n$, and let $g$ be
@@ -401,13 +457,145 @@ and
 $$(g^k)^m = g^{km} = g$$
 thus
 $$g^{km - 1}  = e$$
-and hence we follow that $km - 1$ is multiple of order of $G$.
-Thus there exits $j \in Z$ such that $km - 1 = jn$.
-Thus $km - jn = 1$, which implies that $gcd(k, n) = 1$,
-as desired.
+and hence we follow that $km - 1$ is multiple of order of $G$.  Thus
+there exits $j \in Z$ such that $km - 1 = jn$.  Thus $km - jn = 1$,
+which implies that $gcd(k, n) = 1$, as desired.
 
 Every implication in the forward direction is pretty much a
-biconditional (not exactly though, we need to add some quantifiers
-to the mix), so it works in the reverse direction as well.
+biconditional (not exactly though, we need to add some quantifiers to
+the mix), so it works in the reverse direction as well.
+
+Also, we haven't gone into a proof that $gcd(m, n) = l$ if and only if
+$l$ is the lowest positive number such that there exist $i, j \in Z$
+such that
+$$mi + jn = l$$
+but we've essentially proven the result for $gcd(m, n) = 1$ in 1.35
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{Prove that the Dihedral group $D_n$, as described in Example
+  2.22, has exactly 2n elements}
+
+We can follow that there are $n$ vertices, and each of them gotta go
+to one of the other $n$ spaces. There are $n$ ways to put the first vertex
+into any of those places. Whenever we put the first vertex $n$ into some place,
+there are 2 places where the second vertiex can go, so now we're down to $2n$
+possible positions. Whenever we put the second vertex down, positions of the
+rest are determined, and hence we can follow that there are total of $2n$
+possible positions, as desired.
+
+\subsection{}
+
+\textit{(a) Let $Q^*$ be the set of non-zero rational numbers, with
+  the group law being multiplication. Prove that $Q^*$ is a group.}
+
+We follow that $1 * q = q$, and hence we've got an identity.  If $q
+\in Q^* \ra q \neq 0 \land q \in Q$, then we follow that $1/q$ exists,
+and thus there's $q\inv$ such that $q q\inv = 1$. Multiplication's
+associativity does not require a proof (or can be provided, but in
+this course it is assumed), and thus we conclude that $Q^*$ is a group
+(moreover, an abelian group), as desired.
+
+\subsection{}
+
+\textit{(b) Let $p$ be a prime number. Prove that the set of non-zero
+  elements of $Z/pZ$ is a group using multiplication as the group law}
+
+We fillow that for each $i \in Z/pZ$, $i * 1 = i$, and thus $i$ is our
+identity. Associativity of multiplication under $Z$ implies our associativity.
+
+From group theory we know that there's $x$ such that $ax \equiv 1 (mod
+m)$ if and only if $gcd(a, m) = 1$.
+We then follow that for any given $i \in Z/pZ$ we've got that
+$gcd(i, p) = 1$ since $p$ is prime, and thus there's $a \in Z/pZ$
+such that $a * i = 1$. Thus we've got the inverse, and $Z/pZ$ is a
+group under multiplication, as desired.
+
+We can probably also prove the other direction if we want. If $p$ is
+not $1$ and is not a prime, then there's a divisor $q$ of $p$ in
+$Z/pZ$, which implies that only multiple of $q$ is its multiple, or
+$0$, which implies that it's got no inverse and hence $Z/pZ$ is not a
+group, as desired. If $p$ is not a prime, however, then we've got that
+$Z/pZ$ is a trivial group. We can probably reword this thing so it
+becomes a theorem, but I'm too lazy to do this.
+
+\textit{(c) Heck, I've proven this already and I didnt even read this section}
+
+\textit{(d) blah blah blah}
+
+Got pretty much the same proof as part (a). The only thing of note is
+that we've got new notation:
+$$(Z/pZ)^*$$
+which is a group under multiplication of numbers relatively prime to $p$.
+
+\subsection{}
+
+\textit{Let $C$ be the set of complex numbers, that is, the (... a
+crude definition of complex numbers)}
+
+\textit{(a) We make $C$ into ...}
+
+It's a group under addition, yes. Proof is trivial
+
+\textit{(b) $C^* = C \setminus \set{0}$ is a group under multiplication.}
+
+Yes it is. Multiplicative inverse is kinda whacky in complex numbers, let me find it:
+
+$$\frac{1}{a + bi} = \frac{(a - bi)}{(a + bi)(a - bi)} =
+\frac{(a - bi)}{a^2 - b^2i^2} = \frac{(a - bi)}{a^2 - b^2 * (-1)}  =
+\frac{(a - bi)}{a^2 + b^2}  = \frac{a}{a^2 + b^2}  - \frac{b}{a^2 + b^2}i$$
+which I would never ever find on my own, if I wouldn't start a complex
+analysis course at some time in the past (probably should look into 
+it not, this thing looks pretty fun)
+
+\subsection{}
+
+\textit{(a) Let
+$$GL_2(R) = \set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix}: a, b, c, d \in R, ad - bc \neq 0}
+  $$
+  be the indicated set of 2-by-2 matrices, with composition law being matrix multiplication.
+  Prove that $GL_2(R)$ is a group.
+}
+
+It's a set of bijections, that is closed under composition (see linear
+algebra course), each element is invertible by the restriction, and
+has identity, thus it's a group.  We can also scale this thing to
+complex numbers, and we can also increase dimensions of the underlying
+sets and substitute restriction from the determinant-based to just
+being invertible (which are equivalent).
+
+\textit{(b)Let
+$$SL_2(R) = \set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix}: a, b, c, d \in R, ad - bc = 1}
+  $$
+  be the indicated set of 2-by-2 matrices, with composition law being matrix multiplication.
+  Prove that $SL_2(R)$ is a group.
+}
+
+Same logic as before. We can scale with determinants here as well.
+
+This group does not include all the isometries though, which is kinda
+interesting.  Some isometries (e.g. $1, -1$ on diagonal) will not be
+included here. TODO: research this thing a bit more
+
+\textit{(c) ... }
+
+Pretty much is solved by my discussion in previous points. A thing to remeber though:
+
+\textbf{General} linear group is a set of invertible linear functions.
+
+\textbf{Special} linear group is a set of matrices with 1 for the
+determinant.
 
 \end{document}
