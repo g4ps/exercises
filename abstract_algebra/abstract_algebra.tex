@@ -598,4 +598,128 @@ Pretty much is solved by my discussion in previous points. A thing to remeber th
 \textbf{Special} linear group is a set of matrices with 1 for the
 determinant.
 
+\subsection{}
+
+\textit{Let $GL_2(R)$ be the general linear group. Prove or disprove
+  that each of the following subsets of $GL_2(R)$ is a group. In the
+  case of non-groups, indicate which of the group conditions fail.
+}
+
+\textit{(a)
+  $$\set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix} \in GL_2(R): a, b, c, d \in R, ad - bc = 2}
+  $$
+}
+Not a group, identity is not in there, and composition is not closed ($|A B | = |A| |B| = 2 * 2 = 4$)
+
+\textit{(b)
+  $$\set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix} \in GL_2(R): a, b, c, d \in R, ad - bc \in \set{1, -1}}
+  $$
+}
+
+Is a group, pretty sure that those describe the isometries. 
+
+\textit{(c)
+  $$\set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix} \in GL_2(R): a, b, c, d \in R, c = 0}
+  $$
+}
+
+Is a set of upper-triangulars, which are closed under composition, and contain the identity.
+Inverses of upper-triangular are also upper-triangular, thus we've got a group.
+
+\textit{(d)
+  $$\set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix} \in GL_2(R): a, b, c, d \in R, d = 0}
+  $$
+}
+
+Does not contain the identity, and inverses arent present
+
+\textit{(e)
+  $$\set{
+  \begin{pmatrix}
+    a & b \\
+    c & d \\
+  \end{pmatrix} \in GL_2(R): a, b, c, d \in R, a = d = 1, c = 0}
+  $$
+}
+
+Pretty sure that this once is a group as well.
+
+\subsection{}
+
+\textit{Let $Q = \set{\pm 1, \pm i, \pm j, \pm k}$ be the group of quaternions.
+  We clamed that the group law for $Q$ is determined by
+  $$i^2 = j^k = k^2 = i j k = -1$$
+  Use there formulas to prove following formulas, which completely determine the group
+  opetrations on $Q$:
+}
+
+We firstly follow that $(-1)\inv = -1$. Thus
+$$i * i = -1$$
+$$(i * i)\inv = (-1)\inv$$
+$$i\inv * i\inv = -1$$
+$$i\inv = -1 * i $$
+$$i\inv = -i$$
+where the last part comes from the note that $-1$ commutes with eveything.
+We can follow that $k\inv = -k$ and $j\inv = -j$ by the same logic.
+
+We follow now that
+$$i * j = i * j * 1 = i * j * (k * -k) = (i * j * k) * -k = -1 * -k = k$$
+$$j * k = 1 * j * k = (-i * i) * j * k = -i * -1 = i$$
+$$k * i =  1 * k * i = -j * j * k * i = -j * (j * k) * i = -j * i * i = -j * -1 = j$$
+we then follow that
+$$-k = k\inv = (i * j) \inv = -j * -i = j * i$$
+and so on for all the inverses.
+
+\subsection{}
+
+Skip
+
+\subsection{}
+
+\textit{Practically continue with the functions in the notes. Part (a)
+is handled}
+
+\textit{(b) If $X$ is a finite set with $n$ elements, Prove that
+  $\mathcal{E}_X$ is a finite monoid and compute how many elements it has.}
+
+We follow that the number of functions is $n^n$, the rest is handled in the notes
+
+\textit{(c) If $|X| \geq 3$, prove that $\mathcal{E}_X$ is not commutative, i.e.
+  show that there are elements $\phi, \psi \in \mathcal{E}_X$ satisfying
+  $\phi \circ \psi \neq \psi \circ \phi$.}
+
+We can map a portion of this set to ${1, 2, 3}$, and then get functions
+$$\phi(x) =
+\begin{cases}
+  1 \to 2 \\
+  2 \to 2 \\
+  3 \to 2 \\ 
+\end{cases}
+$$
+$$\psi(x) =
+\begin{cases}
+  1 \to 3 \\
+  2 \to 3 \\
+  3 \to 3 \\ 
+\end{cases}
+$$
+which will suffice.
+
+
 \end{document}
