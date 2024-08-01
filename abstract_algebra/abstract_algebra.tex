@@ -45,7 +45,7 @@ So far, it's been most pleasurable journey. This book embodies all the
 things, that I like in the mathematics books: lots of rigor and a bit of
 lightheartedness, that really lights it up.
 
-Some of the notation was migrated from my previous endeavours in the maths.
+Some of the notation migrated from my previous endeavours in the maths.
 
 
 \chapter{A Potpourri of Preliminary Topics}
@@ -720,6 +720,65 @@ $$\psi(x) =
 \end{cases}
 $$
 which will suffice.
+
+\section{Group Homomorphism}
+
+\subsection{}
+
+\textit{Recall that two groups $G_1$, $G_2$ are said to be isomorphic
+  if there is a bijective homomorphism
+  $$\phi: G_1 \to G_2$$
+  The fact that $\phi$ is bijective means that the inverse map $\phi \inv : G_2 \to G_1$ exists.
+  Prove that $\phi_1$ is a homomorphism from $G_2$ to $G_1$. 
+}
+
+We essentially need to prove that
+$$\phi\inv(h_1 * h_2) = \phi \inv (h_1) * \phi \inv (h_2)$$
+for all $h_1, h_2 \in G_2$.
+
+$\phi$ is a bijection, and thus for $h_1, h_2 \in G_2$ there are $g_1, g_2 \in G_1$ such that
+$\phi(g_1) = h_1, \phi(g_2) = h_2$. By the fact that $\phi$ is a bijection we also follow that
+$g_1 = \phi\inv(h_1), g_2 = \phi\inv(h_2)$. Thus we've got that 
+$$\phi\inv(h_1 * h_2) = \phi\inv(\phi(g_1) * \phi(g_2)) =
+\phi\inv(\phi(g_1 * g_2)) = g_1 * g_2  = \phi\inv(h_1) * \phi\inv(h_2) $$
+as desired
+
+\subsection{}
+
+\textit{Let $G$ be a group, and consider the functiion
+  $$\phi: G \to G, \phi(g) = g\inv$$
+}
+
+\textit{(a) Prove that $\phi(\phi(g)) = g$ for all $g \in G$}
+
+$$\phi(\phi(g)) = \phi(g\inv) = (g\inv)\inv = g$$
+
+\textit{(b) Prove that $\phi$ is a bijection.}
+
+We follow that for each $g \in G$ there's $g\inv \in G$, thus
+$\phi(g\inv) = g$, which implies that the range of $\phi$ is $G$.
+
+We follow that if $g_1 \neg g_2$, then $g_1\inv \neq g_2\inv$, and thus
+$\phi$ is injective.
+
+\textit{(c) Prove that $\phi$ is a group homomorphism if and ony if
+  $G$ is an abelian group.}
+
+\textbf{Forward direction:}
+We know that $\phi$ is bijective, and thus for all $h_1, h_2 \in G$
+there are $g_1, g_2 \in G$ such that $\phi(g_1) = h_1, \phi(g_2) =
+h_2$. If $G$ is a group homomorphism, then we follow that
+$$h_1 * h_2 = \phi(g_1) \phi(g_2) = \phi(g_1 g_2) = (g_1 g_2)\inv = g_2\inv g_1 \inv = h_2 * h_1$$
+thus the group is abelian.
+
+\textbf{Reverse direction:}
+
+Let us keep assumptions about our variables. If $G$ is abelian, then
+we follow that
+$$h_2 * h_1 = g_2\inv g_1 \inv  =  (g_1 g_2)\inv  = \phi(g_1 g_2)$$
+$$h_1 * h_2 = g_1\inv g_2 \inv  =  \phi(g_1) * \phi(g_2)$$
+Since $G$ is abelian we follow that $h_1 h_2 = h_2 h_1$, and thus
+we can equate given equalities to get the desired result.
 
 
 \end{document}
