@@ -47,6 +47,9 @@ lightheartedness, that really lights it up.
 
 Some of the notation migrated from my previous endeavours in the maths.
 
+I might mix up isometry and isomorphy here and there, but it's
+pretty clear from context what exactly do I mean.
+
 
 \chapter{A Potpourri of Preliminary Topics}
 
@@ -813,6 +816,58 @@ as desired.
 
 \textit{(a) Prove that $C_2$ and $S_2$ are isomorphic.}
 
-TODO
+We follow that both $C_2$ and $S_2$ have $2$ and $2! = 2$ elements
+respectively. Non-identity elements can interact with identity in a
+predictible way, or with themselves, where they've got an order of
+$2$. This pretty much concludes the proof.
+
+\textit{(b) Prove that $D_3$ is isomorphic to $S_3$.}
+
+We know that $D_3$ is a subgroup (although we haven't defined at this
+point what a subgroup is, it doesn't take a genius to guess) of $S_3$,
+with the same cardinality.
+
+\textit{(c) Let $m \geq 3$. Prove that for every $n$, the groups $C_m$ and $S_n$ are not
+  isomorphic.}
+
+If $m \neq n!$, then we follow that groups have different cardinalities, thus
+there's no bijection between the two, and thus no isomorphisms.
+
+If $m = n!$, then we follow that since $m \geq 3$ that $n \geq 3$ as
+well.  We follow that there are elements of $S_n$ that map $(1, 2, 3)$
+to $(1, 3, 2)$ and $(2, 1, 3)$ and the rest to identity. Composition
+of those elements is not commutative ($(2, 3, 1)$ and $(3, 1, 2)$ in
+forward and reverse respectively), and thus $S_n$ is not abelian.
+$C_n$ on the other hand is commutative, and thus we follow
+that they aren't isomorhic. This also proves that $S_n$ is non-abelian
+for any $n \geq 3$.
+
+\textit{(d) Prove that for every $n \geq 4$ the groups $D_n$ and $S_n$
+  aren't isomorphic}
+
+They dont have the same cardinalities.
+
+\textit{(e) More generally, let $m \geq 4$, and let $n \geq 4$. Prove
+  that the groups $D_m$ and $S_n$ aren't isomorphic.}
+
+We once again look at the case when $2m = n!$. We probably want to
+find some irregularities with orders of the elements here.  We follow
+that if $m$ is odd, then there is only 1 element of order $2$ ($f$).
+If $m$ is even, then we've got 3 such elements ($f, r^{m/2}, fr^{m/2}$).
+For $S_n$ for $n \geq 4$ we follow that there are at least 6 of them
+(bijections that swap elements, there are $C(4, 2) = 6$ of them at least).
+
+\textit{(f) The cyclic group $C_8$, the dihedral group $D_4$, and the quaternion group
+  $Q$ are non-abelian groups of order $8$. Prove that they ren't isomorphic.}
+
+First of all, $C_8$ is abelian (as is any cyclic group for that
+matter). If we ignore that, then we can follow that there is one
+element of order 4 ($2$) in $C_8$, and there are 6 ($\pm i, \pm j, \pm
+k$) in $Q$. There are 3 elements of order $2$ in $D_4$, but only one
+in $C_8$. $Q$ has 1 element of order $2$.
+
+\subsection{}
+
+Skip
 
 \end{document}
