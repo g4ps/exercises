@@ -897,6 +897,10 @@ non-abelian and multiset in abelian) of elements of $S$ or their
 inverses, and also the smallest subgroup, that contains the entirety
 of $S$.
 
+We also follow that if $H_1, H_2$ are subgroups of $G$, then $H_1 \cap
+H_2$ is a subgroup of $G$, which is sort of trivial to prove. Importatnt
+to note that union of two subgroups is not necessarily a group.
+
 \subsection{}
 
 \textit{Let $G$ be a group and let $g \in G$ be an element of order
@@ -1075,5 +1079,134 @@ $S$ is a subgroup, as desired.
 We follow that $L \in K$, and thus $\eangle{S} = \bigcap_{H \in K}{H}
 \subseteq L$ by definition.
 
+\textit{(d) Let $T$ ve the set of inverses of the elements in $S$; i.e.
+  $$T = \set{g\inv: g \in S}$$
+  Prove that $\eangle{S}$ is equal to the following set of products
+  $$\eangle{S} = \set{e * g_1 g_2 ... g_n: g_{1..n} \in S \cup T}$$
+  (I've deviated a tad bit from the definition in the book since we gotta
+  take care of the $S = \emptyset$ case))
+}
+
+We firstly follow that $S \subseteq \eangle{S}$, and since
+$\eangle{S}$ is a subgroup of $G$ we conclude that $T \subseteq
+\eangle{S}$ by definition of $T$. We thus follow that for any
+$$q \in \set{e * g_1 g_2 ... g_n: g_{1..n} \in S \cup T}$$
+$q \in \eangle{S}$ by closure of composition in the subgroup, thus
+we've got the $\supseteq$ case.
+
+We now follow that $rhs$ is nonempty by definition (in case when $S =
+\emptyset$ we follow that $e \in rhs$). If $a, b \in rhs$, then
+there are finite lists $l_1, l_2$ over elements of $S \cap T$ such that
+$$\prod{l_1} = a; \prod{l_2} = b$$
+we thus follow that $b\inv$ is also in $rhs$ since inverses of $S \cup
+T$ is closed under inverses by definition, and thus we've gotta invert
+elements of $l_2$ and order them in reverse to get $b\inv$. Thus we conclude
+that $a b\inv \in rhs$ since $a b\inv$ will be just a longer list of
+elements of $S \cup T$, and thus we follow that $rhs$ is a subgroup of $G$ that
+contains $S$. This implies that $\eangle{S} \subseteq rhs$ by definition, which
+in tandem with previous paragraph gives us the desired equality.
+
+\subsection{}
+
+\textit{Let $G$ be a finite group, let $m \geq 1$ be an integer, and let
+  $$G[m] = \set{g \in G: g^m = e}$$
+  be the set of elements of $G$ whose order divides $m$. }
+
+\textit{(a) If $G$ is an abelian group, prove that $G[m]$ is a subgroup of $G$.}
+
+We follow that $e^m = e$, thus $e \in G[m]$, and thus $G[m] \neq
+\emptyset$.
+
+We follow that if $b \in G$, then $b^m = e$, thus $(b\inv)^m = e$, and
+thus $b\inv \in G[m]$.  Let $a, b \in G[m]$. We follow that $(a b\inv
+)^m = a^m b^{-m} = e * e = e$ where we can use the first equality due
+to the fact that $G$ is abelian, which implies that $ab\inv \in G[m]$,
+which implies that $G[m]$ is a subgroup, as desired.
+
+\textit{(b) Give an example of non-abelian group and $m \geq 1$ such
+  that $G[m]$ is not a subgroup of $G$.}
+
+We are aware of several non-abelian groups: permutation group, special
+linear group, and dihedral group.
+
+Ler us look at $D_3$ and get all orders of that group:
+$$|e| = 1$$
+$$|r| = 3$$
+$$|r^2| = 3$$
+$$|s| = 2$$
+$$|sr| = 2$$
+$$|sr^2| = 2$$
+We thus follow that $D_3[2] = \set{e, s, sr, sr^2}$. We then follow
+that $|s sr| = |r| = 3$, and thus we conclude that this set is not
+closed under composition, and thus it is not a group, as desired.
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{Let $G$ be a group, let $A, B \subseteq G$ be subgroups of
+  $G$, and let $\phi$ be the map
+  $$\phi: A \times B \to G, \phi(a, b) = ab$$}
+
+\textit{(a) Prove that $A \cap B = \set{e}$ if and only if the map $\phi$ is an injection}
+
+Suppose that $A \cap B = \set{e}$. Let $a_1, a_2 \in A$, $b_1, b_2 \in
+B$, and suppose that
+$$\phi(a_1, b_1) = \phi(a_2, b_2)$$
+we follow that
+$$a_1 b_1 = a_2 b_2$$
+$$a_1  = a_2 b_2 b_1\inv$$
+$$a_2 \inv a_1  = b_2 b_1\inv$$
+We follow that $a_2 \inv a_1 \in A$ and $b_2 b_1 \inv \in B$, and
+since they are equal we conclude that
+$$a_2 \inv a_1 = b_2 b_1\inv  = e$$
+which implies that $a_1 = a_2$ and $b_1 = b_2$, which in turn implies
+that $\phi$ is an injection, as desired.
+
+Now suppose that $\phi$ is an injection. Supposde that there's $q \in
+A \cap B$ such that $q \neq e$. Intersection of any two subgroups is a
+subgroup, and thus $q\inv \in A \cap B$. And since $q \neq e$ we
+follow that $q\inv \neq e$. Thus we follow that $\phi(e, e) = e * e =
+e = q q\inv = phi(q, q\inv)$ while $\eangle{e, e} \neq \eangle{q,
+q\inv}$, which implies that $\phi$ is not an injection, which is a
+contradiction.
+
+\textit{(b) We can turn $A \times B$ into a group by using the group
+  operation
+  $$\eangle{a_1, b_1} * \eangle{a_2, b_2}  = \eangle{a_1* a_2, b_1 * b_2}$$
+  Prove that $\phi$ is a homeomorphism of groups if and only if element of $A$
+  commutes with every element of $B$.}
+
+Suppose that $\phi$ is a homeomorphism. This implies that
+$$\phi(\eangle{a_1, b_1} * \eangle{a_2, b_2}) =
+\phi(\eangle{a_1, b_1}) * \phi(\eangle{a_2, b_2}) =
+a_1 b_1 a_2 b_2 $$
+it also implies that 
+$$\phi(\eangle{a_1, b_1} * \eangle{a_2, b_2}) =
+\phi(\eangle{a_1, b_1} * \eangle{a_2, b_2}) =
+\phi(\eangle{a_1 * a_2 , b_1 * b_2}) =
+a_1 a_2 b_1 b_2 $$
+thus
+$$a_1 a_2 b_1 b_2 = a_1 b_1 a_2 b_2$$
+for all $a_1 a_2 \in A, b_1, b_2 \in B$. By setting $a_1 = b_2 = e$ we
+get the desired implication.
+
+By not setting $a_1 = b_1 = e$ and running the argument for the
+forward implication (with possible reorder of equalities) in reverse
+we can also get the reverse implication, which gives us the desired
+result.
+
+\subsection{}
+
+\textit{Let $g$ be a finite group, and let $A, B \subseteq G$ be
+subgroup of $G$, and supposet that $gcd(|A|, |B|) = 1$. Prove that $A
+\cap B = e$}
+
+$A \cap B$ is a subgroup of both $A$ and $B$, and thus its order gotta
+divide orders of both $A$ and $B$. Since $gcd(|A|, |B|) = 1$ we
+conclude that order of $A \cap B$ is $1$, which gives us the desired
+result.
 
 \end{document}
