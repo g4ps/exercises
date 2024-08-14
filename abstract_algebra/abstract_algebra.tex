@@ -1209,4 +1209,43 @@ divide orders of both $A$ and $B$. Since $gcd(|A|, |B|) = 1$ we
 conclude that order of $A \cap B$ is $1$, which gives us the desired
 result.
 
+\subsection{}
+
+\textit{Let $G$ be a group. The center of $G$, denoted by $Z(G)$, is
+the seet of elements of $G$ that commute with every other element;
+i.e.
+$$Z(G) = \set{g \in G: (\forall h \in G)(gh = hg) }$$}
+
+\textit{(a) Prove thtat $Z(G)$ is a subgroup of $G$.}
+
+We follow that for all $h \in H$ we've got that $eh = h = he$, thus
+$e \in Z(G)$, and hence $Z(G) \neq \emptyset$
+
+Let $a, b \in Z(G)$. Let $h \in G$ be arbitrary. We follow that
+$$bh = hb$$
+$$(bh)b\inv = (hb) b\inv$$
+$$(bh)b\inv = h$$
+$$(bh)b\inv = lb\inv h$$
+$$b\inv (bh)b\inv = b\inv h$$
+$$(b\inv b)hb\inv = b\inv h$$
+$$e hb\inv = b\inv h$$
+$$hb\inv = b\inv h$$
+we thus follow that since $h, b$ are arbitrary that $b \in Z(G)$
+implies that $b\inv \in Z(G)$.
+
+With the same assumptions we then follow that
+$$(a b\inv) h = a (b\inv h) = a h b\inv = (a h) b\inv = h (a b\inv)$$
+thus $a b\inv \in Z(G)$, and thus we conclude that $a, b \in Z(G)$
+implies that $ab\inv \in Z(G)$, which with nonemptyness of $Z(G)$
+gives us the desired result.
+
+\textit{(b) When does $Z(G)$ equal $G$?}
+
+The obvious case of equality comes when $G$ is abelian. Assume that
+$G$ is non-abelian. This implies that there are $a, b \in G$ such that
+$ab \neq b a $. We thus conclude that neither $a$ nor $b$ are in
+$Z(G)$, and thus $Z(G) \neq G$, which implies that $Z(G) = G$ if and
+only if $G$ is abelian.
+
+
 \end{document}
