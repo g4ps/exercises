@@ -899,6 +899,10 @@ non-abelian and multiset in abelian) of elements of $S$ or their
 inverses, and also the smallest subgroup, that contains the entirety
 of $S$.
 
+Another important definition is the definition of centralizer.  The
+centralizer of the subset ($Z_G(S)$) is the most general of them, they
+are provided below
+
 We also follow that if $H_1, H_2$ are subgroups of $G$, then $H_1 \cap
 H_2$ is a subgroup of $G$, which is sort of trivial to prove. Importatnt
 to note that union of two subgroups is not necessarily a group.
@@ -1225,13 +1229,10 @@ $e \in Z(G)$, and hence $Z(G) \neq \emptyset$
 
 Let $a, b \in Z(G)$. Let $h \in G$ be arbitrary. We follow that
 $$bh = hb$$
-$$(bh)b\inv = (hb) b\inv$$
+$$(bh)b\inv = h b b\inv$$
 $$(bh)b\inv = h$$
-$$(bh)b\inv = lb\inv h$$
-$$b\inv (bh)b\inv = b\inv h$$
-$$(b\inv b)hb\inv = b\inv h$$
-$$e hb\inv = b\inv h$$
-$$hb\inv = b\inv h$$
+$$b\inv b h b\inv = b\inv h$$
+$$h b\inv = b\inv h$$
 we thus follow that since $h, b$ are arbitrary that $b \in Z(G)$
 implies that $b\inv \in Z(G)$.
 
@@ -1323,5 +1324,203 @@ definition), nor do their inverses, and thus none of them are in
 $Z(Q)$. $\pm 1$ on the other hand commute with everything (once again,
 by definition), and thus $Z(Q) = \set{\pm 1}$.
 
+\subsection{}
+
+\textit{Let $G$ be a group, and let $g \in G$. The centralizer of $g$,
+  denoted $Z_G(g)$ is the set of elements of $G$ that commute with $g$,
+  i.e.
+  $$Z_G(g) = \set{g' \in G: gg' = g'g}$$
+}
+
+\textit{(a) Prove that $Z_G(g)$ is a subgroup of $G$.}
+
+The proof is pretty much the same as with centralizer of the entire
+group. We can also note that the definition implies that $Z(G)$ is a
+subgroup of $Z_G(g)$ for any given $g \in G$. Also important to note
+that $g \in Z_G(g)$.
+
+\textit{(b) Compue the centralizer $Z_G(g)$ for the following groups:}
+
+\textit{(i) $G = D_4$ and $g = r$}
+
+$4$ is even, and thus $\set{e, r^2}$ are in $Z_G(g)$. Any rotation is
+also there.  $sr \neq sr^3$, and thus $s$ is not included there. $sr^j
+r = sr^j \neq sr{j - 1} = r sr^j$, which implies that none of the
+$sr^j$ are in there
+
+\textit{(ii) $G = D_4$ and $g = sr^j$}
+
+$r$ and $r^3$ aren't in there. If $j = 2$, then $s$ is also in there,
+otherwise it isn't.  If $j = 2$, then $sr sr^2 = r^{3}$ and $sr^2 sr =
+r$, thus $sr$ is not in there.  $sr^3$ is the inverse of $sr$, and
+thus it's not in there. The rest can be handled pretty easily.
+
+\textit{(iii) $G = GL_2(R)$ and $g = \
+  \begin{pmatrix}
+    a & 0 \\
+    0 & d
+  \end{pmatrix}
+  $
+}
+
+We follow that this matrix is diagnogal, and thus it commutes with other
+diagonal matrices. If matrix is not diagonal then
+$$
+  \begin{pmatrix}
+    a & 0 \\
+    0 & d
+  \end{pmatrix}
+  \begin{pmatrix}
+    q & w \\
+    e & r
+  \end{pmatrix} =
+  \begin{pmatrix}
+    qa & wa \\
+    ed & rd
+  \end{pmatrix}
+  $$
+  $$
+  \begin{pmatrix}
+    q & w \\
+    e & r
+  \end{pmatrix}
+  \begin{pmatrix}
+    a & 0 \\
+    0 & d
+  \end{pmatrix} =
+  \begin{pmatrix}
+    qa & wd \\
+    ea & rd
+  \end{pmatrix}
+  $$
+  thus we need $wa = wd$ and $ea = ed$. Therefore if $a \neq d$ we
+need $w = e = 0$ and this would include only include other diagonal
+matrices, that we've already included. If $a = d$, then any matrix
+will do.
+
+\textit{(c) Prove that $Z_G(g) = G$ if and only if $g \in Z(G)$.}
+
+IF $g \in Z(G)$, then by definition every element of $G$ commutes
+with $G$, and thus $Z_G(g) = G$.
+
+Assume that $Z_G(g) = G$. We follow that every element of $G$ commutes
+with $g$, and thus $g \in Z(G)$.
+
+\textit{(d) More generally, if $S \subseteq G$ is any subset of $G$,
+then the centralizer of $S$ is the set
+  $$Z_G(S) = \set{g \in G: (\forall s \in S)(sg = gs)}$$
+  Prove that$ Z_G(S)$ is a subgroup of $G$ }
+
+Proof is borderline identical to the case of centralizer of
+group/element.
+
+\subsection{}
+
+\textit{This exercise explains when two elements of $G$ determine the
+  same coset of $H$. Let $G$ be a group, let $H$ be a subgroup of $G$,
+  and let $g_1, g_2 \in G$. Prove that the following three statements
+  are equivalent:}
+
+\textit{(1) $g_1 H = g_2 H$. }
+
+\textit{(2) There are $h \in H$ such that $g_1 = g_2 h$. }
+
+\textit{(3) $g_2\inv g_1 \in H$. }
+
+Assume that $g_1 H = g_2 H$. We follow that $e \in H$ and thus
+$g_1 e \in g_2 H$. Thus there's $h \in H$ such that $g_1 e = g_1 = g_2 h$
+by definition. Thus
+$$g_1 = g_2 h$$
+$$g_2 \inv g_1 = h \in H$$
+We can run this in reverse to establish equivalence of (2) and (3).
+We follow that since $g_1 = g_2 h$ that $g_1 H \cap g_2 H \neq \emptyset$,
+and thus they are equal.
+
+\subsection{}
+
+\textit{Let $G$ be a finite group whose only subgroups are $\set{e}$
+and $G$.  Prove that either $G = \set{e}$ or else that $G$ is a cyclic
+group whose order is prime.}
+
+Set with $G = \set{e}$ is trivial, thus assume that $G \neq \set{e}$.
+Let $q \in G \neq e$. We follow that since $G$ is finite that $q$ has
+an order, and thus its powers constitute a subgroup
+$\eangle{q}$. Since order of $G$ is a prime we follow that order of
+$\eangle{q}$ divides the order of $G$ and thus order of  $\eangle{q}$ is
+either $1$ or order of $G$. Since $q \neq e$ we conclude the latter,
+and thus $\eangle{q} = G$, which implies that $G$ is cyclical, as desired.
+
+\subsection{}
+
+\textit{Let $G$ be a group, and let $K \subseteq H \subseteq G$ be
+subgroups. We may thus view $K$ as a subgroup of $G$ or as a subgroup
+of $H$. We also recall that the index of a subgroup is its numbder of
+distinct cosets. }
+
+\textit{(a) If $G$ is finite, prove the Index Multiplication Rule:
+  $$(G:K) = (G:H) (H:K)$$
+}
+
+We follow that
+$$|H| = |K| (H:K)$$
+$$|G| = |H| (G:H)$$
+and
+$$|G| = |K| (G:K)$$
+therefore
+$$|G| / |K| =  (G:K)$$
+thus
+$$|G| = |K| (H:K) (G:H)$$
+$$|G| / |K| =  (H:K) (G:H)$$
+$$|G| / |K| =  (G:H) (H:K) $$
+$$(G:K) =  (G:H) (H:K) $$
+as desired.
+
+\textit{(b) Prove that the Index Multiplication Rule is true even if
+  $G, H, K$ are allowed to be infinite groups, provided that we assume
+  that $(G:K)$ is finite}
+
+Let $Q'$ be the set of distinct cosets of $H$ in $G$.  Let $W'$ be the
+set of distinct cosets of $K$ in $H$.  For each $q' \in Q'$ there's an
+element $q$ of $G$ such that $qH = q'$. By AoC we can define subset
+$Q$ of $G$ that correspond to $Q'$ For each $w' \in W'$ there's an
+element $w$ of $H$ such that $wK = w'$. By AoC we can define subset
+$W$ of $H$ that correspond to $W'$
+
+Let $j$ be a coset of $K$ in $G$. We follow that there's $g \in G$
+such that $gK = j$. We follow that $gH$ is a coset of $H$, and thus
+there's a unique $q \in Q$ such that $qH = gH$. We follow then that
+$g\inv q \in H$ (see a couple of exercises above), and thus $(q\inv g)
+K$ is a coset of $K$ in $H$. Thus there's a unique $w \in W$ such that
+$$w K = (q\inv g ) K$$
+thus
+$$q w K = gK$$
+therefore for each coset of $K$ in $G$ there's a pair $\eangle{q, w}
+\in Q \times W$. By uniqueness of $q$ and $w$ in $Q$ and $W$,
+and the fact that $j$ is an arbitrary coset we
+conclude that there's an injection from a set
+of cosets of $K$ in $G$ to $Q \times W$.
+
+Let $\eangle{q_1, w_1}, \eangle{q_2, w_2} \in Q \times W$ are such that
+$\eangle{q_1, w_1} \neq \eangle{q_2, w_2}$. We follow that
+if $q_1 \neq q_2$, and thus $q_1 H \neq q_2 H$ by definition.
+$w_1 w_2 \in H$, and thus $w_1 w_2 H = H$. Since $K \subseteq H$ we follow that
+$$q_1 w_1 K \subseteq q_1 H$$
+$$q_2 w_2 K \subseteq q_2 H$$
+and thus
+$$q_1 w_1 K \neq q_2 w_2 K$$
+If $q_1 = q_2$ we follow that $w_1 \neq w_2$. This implies that
+$$w_1 K \neq w_2 K$$
+and thus
+$$q_1 w_1 K \neq q_1 w_2 K$$
+and since $q_1 = q_2$ we follow that
+$$q_1 w_1 K \neq q_2 w_2 K$$
+This implies that if $\eangle{q_1, w_1}, \eangle{q_2, w_2} \in Q \times W$ then
+$q_1 w_1 K \neq q_2 w_2 K$, and thus we conclude that there's an injection from
+$Q \times W$ to a set of cosets of $K$. Shroder-Bernstein now implies that
+the set of cosets of $K$ in $G$ is equal to $|Q \times W|$. If the latter is finite,
+then we follow that $(G:K) = |Q| * |W|$. Definition of $Q$ and $W$ respectively
+imply that $|Q| = (G:H)$ and $|W| = (H:K)$, which implies that
+$$(G:K) = (G:H) (H:K)$$
+as desired.
 
 \end{document}
