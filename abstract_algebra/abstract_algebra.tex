@@ -1606,5 +1606,53 @@ biconditional, which gives us this implication
 
 \textit{the rest of the exercises are skipped}
 
+\chapter{Rings - Part 1}
+
+\section{Abstract Rings and Ring Homomorphisms}
+
+\subsection*{Notes}
+
+Distributive law can be generalized through application of
+associativity, which will give us
+$$a * (b + c + d) = ab + ac + ad$$
+and the same for the other direction. We can also by induction
+do the same with a general sum.
+$$b \sum{a_i} = \sum{b a_i}$$
+
+\subsection{}
+
+\textit{Let $R$ be a ring, and let $a, b \in R$.}
+
+\textit{(a) Prove that
+  $$(-a) * (-b) = a * b$$}
+
+$$(-a) * (-b) = (0 + (- a)) * (-b) = (a + (-a) + (-a)) * (-b) = a * (-b) + (-a) * (-b) + (-a) * (-b)$$
+(we've added 0 to the $-a$ and then distibuted over it) thus
+$$(-a) * (-b) = a * (-b) + (-a) * (-b) + (-a) * (-b)$$
+and cancelation law implies that
+$$0 = a * (-b) + (-a) * (-b)$$
+this in turn implies that
+$$(- (a * (-b))) =  (-a) * (-b)$$
+we can do a similar thing for $(-b)$, which will result in
+$$(- ((-a) * b)) =  (-a) * (-b)$$
+Given that everything has additive inverse, we can follow that
+$$a + b = (-((-a) * b)) = (- (a * (-b)))$$
+which will imply that
+$$(-a) * (-b) = (- (a * (-b))) = (- ((-(-a)) * (-b))) = (- ((-(-a)) * (-b))) = (- (- (-(-a)) * b)) = $$
+$$ =  (- (- (a * b))) = a * b$$
+as desired.
+
+\textit{(b) Our proof of Proposition 3.2(a) used the multiplicative
+  identity element $1_R$ of $R$. Find a proof that works even if $R$ does not
+  have a multiplicative identity}
+
+We follow that for all $b \in R$
+$$ab = a * (b + 0) = ab + a0$$
+thus by cancelation law of the group we follow that
+$$-(ab) + ab   = -(ab) + ab   + a0$$
+$$0 = 0 + a0$$
+$$0 = a0$$
+as desired.
+
 
 \end{document}
