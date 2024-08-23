@@ -1619,6 +1619,10 @@ and the same for the other direction. We can also by induction
 do the same with a general sum.
 $$b \sum{a_i} = \sum{b a_i}$$
 
+The idea of ring homomorphism can be summed up to preserving
+functions upon application of the function, and mapping identities
+to identities.
+
 \subsection{}
 
 \textit{Let $R$ be a ring, and let $a, b \in R$.}
@@ -1673,5 +1677,22 @@ $+$ is a group, thus we're justified to use cancelation to get that
 $$1_R + 1_R = 0$$
 as desired
 
+\subsection{}
+
+\textit{(b) Conversely, if $2 = 0$ in the ring $R$, prove that
+  $f(a)^2$ is a homomorphism from $R$ to $R$}
+
+We follow that
+$$0^2 = 0$$
+$$1^2 = 1$$
+so identities are there.
+
+One thing to point out is that $R$ is commutative, which is used in deriviations here
+$$f(a + b) = (a + b)^2 = (a + b)(a + b) = a(a + b) + b(a + b) = $$
+$$ = a^2 + ab + ab + b^2 = f(a) + ab + ab + f(b) = f(a) + f(b) + ab(1 + 1) = $$
+$$ = f(a) + f(b) +  * 0 = f(a) + f(b)$$
+thus we've got the addition
+$$f(a * b) = (a * b)^2 = (a * b) * (a * b) = a * b * a * b = a^2 * b^2 = f(a) * f(b)$$
+and multiplication, that now satisfies the definition of the homomorphism.
 
 \end{document}
