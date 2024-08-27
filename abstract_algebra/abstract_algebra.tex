@@ -1897,4 +1897,30 @@ $$ = (ac - bd) + \rho(ad + bc - bd)$$
 thus this thing is also closed under multiplication, which makes $Z[\rho]$ a
 subring, as desired.
 
+\subsection{}
+
+\textit{This one is reasoned in the notes, and is a bunch of arithmetic}
+
+\subsection{}
+
+\textit{Let $R$ be commutative ring, let $c \in R$, and let $E_c: R[x]
+  \to R$ be evaluation map $E_c(f) = f(c)$.}
+
+\textit{(a) Prove that $E_c$ is a ring homomorphism.}
+
+We follow that there's a polynomial $x - c$ and $x - c + 1$ that maps
+identities.
+We follow that
+$$E_c(f + g) = (f + g)(c) = f(c) + g(c) = E_c(f) + E_c(g)$$
+$$E_c(f * g) = (f * g)(c) = f(c) * g(c) = E_c(f) * E_c(g)$$
+by algebraic properties of functions.
+
+\textit{(b) Prove that $E_c(f) = 0$ if ans only if there's a
+  polynomial $g(x) \in R[x]$ satisfying $f(x) = (x - c)g(x)$}
+
+$$f(x) = f(x) - 0 = f(x) - f(c) = \sum{a_i (x^j - c^j)}$$
+We know that
+$$x^n - c^n = (x - c)\sum_{i = 1}^n{x^{n - i} c^i}$$
+Which gives us the desired result (needed to look this one up).  Reverse is trivial
+
 \end{document}
