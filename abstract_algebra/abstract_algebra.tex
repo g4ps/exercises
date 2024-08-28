@@ -8,6 +8,7 @@
 
 \DeclareMathOperator \map {\mathcal {L}}
 \DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \real {\mathbb {R}}
 \DeclareMathOperator \topol {\mathcal {T}}
 \DeclareMathOperator \basis {\mathcal {B}}
 \DeclareMathOperator \ns {null}
@@ -70,6 +71,13 @@ mean isomorphism
 
 I might mix up isometry and isomorphy here and there, but it's
 pretty clear from context what exactly do I mean.
+
+Since it's an algebra book, and algebra has rings, that are denoted by
+$R$, and those are used in similar context with reals, that are also
+denoted by me by $R$, we can see that there's a need to differentiate
+between the two. Thus approximately halfway through the chapter about
+rings I've started using $\real$ for reals.
+
 
 
 \chapter{A Potpourri of Preliminary Topics}
@@ -1742,6 +1750,11 @@ subrings.
 Matrix ring is an important example of the fact that two non-zero
 elements when multiplied can produce a zero.
 
+Although we haven't observed any product rings (i.e. rings that are
+made up by sticking two rings into cartesian product), it's pretty
+obvious that we can define them and everything will line up
+
+
 \subsection{}
 
 \textit{Let $m \geq 1$ be an integer, and define a map
@@ -1921,6 +1934,201 @@ by algebraic properties of functions.
 $$f(x) = f(x) - 0 = f(x) - f(c) = \sum{a_i (x^j - c^j)}$$
 We know that
 $$x^n - c^n = (x - c)\sum_{i = 1}^n{x^{n - i} c^i}$$
-Which gives us the desired result (needed to look this one up).  Reverse is trivial
+Which gives us the desired result (needed to look this one up).
+Reverse is trivial
+
+\subsection{}
+
+\textit{Let $R$ be a non-commutative ring, with elements $\alpha,
+  \beta \in R$ such that $\alpha \neq \beta$. We can still turn $R[x]$
+  into a ring by always writing polynomials in the form
+  $$p(x) = \sum{a_i x^i}$$
+  and using the usual rule that $x$ commutes with all of the elements
+  of $R$.  We can also define an evaluation map $E_\alpha: R[x] \to R$
+  by setting
+  $$E\alpha(\sum{a_i x^i}) = \sum{a_i \alpha^i}$$
+  Prove that if $R$ is non-commutative, then $E_\alpha$ is not a
+  homomorphism.}
+
+We follow that
+$$E\alpha(0) = 0$$
+$$E\alpha(1) = 1$$
+thus we've got identities, and so there's nothing there.
+
+We know that both $\alpha$ and $\beta$ are polynomials, but
+$$E_\alpha(x * \beta) = E_\alpha(\beta x) = \beta \alpha$$
+$$E_\alpha(x) * E_\alpha(\beta) = \alpha * \beta$$
+which implies that $E_\alpha(x) * E_\alpha(\beta) \neq E_\alpha(x *
+\beta)$, which in turn implies that $E_\alpha$ is not a homomorphism,
+as desired.
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{For any commutative ring $R$, let
+  $$M_2(R) = \set{
+    \begin{pmatrix}
+      a & d \\ c & d
+    \end{pmatrix}: a, b, c, d \in R
+  }$$
+  be the set of 2-by-2 matrices with entries in $R$. Define addition
+  and multiplication in an obvious way }
+
+\textit{(a) Prove that $M_2(R)$ is a ring.}
+
+Additive identity is the matrix with zeros in it. Multiplicative
+identity is the one with multiplicative identites on the diagonal, and
+the rest being zeroes.
+
+Properties that this thing is an abelian group
+under addition are following from the fact that $R$ is an abelian
+group.
+
+Closure under multiplication is derived from the definition of
+multiplication.  Detiviations of associativity and distributivity take
+a lok of paper, but are pretty uneventful.
+
+\textit{(b) Prove that $M_2(R)$ is non-commutative}
+
+This is where our assumtions that $0 \neq 1$ are kicking in: if
+a trivial ring is a singleton, then this thing is commutative.
+But we don't assume that, and thus
+$$
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+  1 & 0 \\
+  1 & 1
+\end{pmatrix}
+$$
+$$
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  0 & 1 \\
+  1 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+  1 & 1 \\
+  0 & 1
+\end{pmatrix}
+$$
+which given that $1 \neq 0$ implies the desired result.
+
+\textit{(c) Find non-zero elements $A, B \in M_2(R)$ such that $AB = 0$}
+$$
+\begin{pmatrix}
+  1 & 0 \\
+  0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+  0 & 0 \\
+  0 & 1
+\end{pmatrix} = 0
+$$
+as desired.
+
+\textit{(d) Let $A \in M_2(R)$. Prove that there's $B \in M_2(R)$
+satisfying $AB = I$ if and only if $ad - bc$ has a multiplicative
+inverse in $R$.}
+
+Let's start with the forward direction, and assume the appropriate
+things. We're gonna implicitly derive the determinant here. We follow that
+$$
+\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}
+\begin{pmatrix}
+  p & q \\
+  r & s
+\end{pmatrix} =
+\begin{pmatrix}
+  pa + rb & qa + sb \\
+  pc + rd & qc + sd  
+\end{pmatrix} = I
+$$
+thus we follow that
+$$
+\begin{cases}
+  pa + rb = qc + sd = 1 \\
+  qa + sb = pc + rd = 0 \\
+\end{cases}
+$$
+thus
+
+$$
+\begin{cases}
+  (pa + rb) * (qc + sd) = 1  \\
+  (qa + sb) * (pc + rd) = 0
+\end{cases}
+$$
+$$
+\begin{cases}
+  paqc + pasd + rbqc + rbsd = 1 \\
+  qapc + qard + sbpc + sbrd = 0
+\end{cases}
+$$
+$$
+\begin{cases}
+  paqc + pasd + rbqc + rbsd = 1 \\
+  paqc + qard + sbpc + rbsd = 0
+\end{cases}
+$$
+thus
+$$ paqc + pasd + rbqc + rbsd -   (paqc + qard + sbpc + rbsd) = 1 $$
+$$ pasd + rbqc - (qard + sbpc) = 1 $$
+$$ psad + rqbc - rqad - psbc = 1 $$
+$$ ps(ad - bc) + rq(bc - ad) = 1 $$
+$$ ps(ad - bc) - rq(ad - bc) = 1 $$
+$$ (ps - rq) (ad - bc) = 1 $$
+which implies that there's $ps - rq \in R$ that is a multiplicative
+inverse of $(ad - bc)$, as desired.
+
+Assume that $ad - bc$ has a multiplicative inverse. The following is
+just a simple formula for computing inverse of the matrix in $R^2$. We
+follow that
+$$
+\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}
+\begin{pmatrix}
+  d & -b \\
+  -c & a
+\end{pmatrix} =
+\begin{pmatrix}
+  da - cb & -ba + ba \\
+  -dc + cd & -bc + ad 
+\end{pmatrix} =
+\begin{pmatrix}
+  ad - bc & 0 \\
+  0 & ad - bc 
+\end{pmatrix}
+$$
+We then follow that if we would've changed every entry $e$ in the
+right matrix for $e / (ad - bc)$, then we would've gotten identity as
+the result. Thus we conclude that there's a matrix $B$ such that
+$AB = I$, as desired
+
+\textit{(e) Let $A, B \in M_2(R)$. Prove that $AB = I$ if and onyl if $BA = I$}
+
+Given previous point and lots of notation, we can conclude the desired result.
+
+
 
 \end{document}
+
