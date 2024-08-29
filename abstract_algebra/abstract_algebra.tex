@@ -2128,6 +2128,169 @@ $AB = I$, as desired
 
 Given previous point and lots of notation, we can conclude the desired result.
 
+\textit{(f) More generally, prove all of the above for $M_n(R)$ for $n \geq 2$.}
+
+I'm not gonna prove this thing rigorously, but I'll outline a proof
+because of the fact that most of it is tedious and not particualarly
+interesting.
+
+When it comes to a ring, we get grop properties for free, closure of
+multiplication is somewhat trivial. Districutivity can be handled piecewise:
+for $(A + B) * C$ let $q_{i, j}$ be some entry in the resulting matrix 
+$$q_{i, j} = \sum_{k = 1}^{n}{(a_{i, k} + b_{i, k}) c_{k, j} } =
+\sum{c_{k, j}a_{i, k}} + \sum{c_{k, j}b_{i, k}}$$
+and through lots of notation we can follow the rest pretty easily,
+thus making $M_n(R)$ a ring.
+
+By putting our original matrix for $M_2(R)$ into the upper left corner
+of the matrix we get non-commutativity.
+
+Proof that $A A^{adj} = (\det A) I$ is heavily dependent on what we
+choose to be the definition of the determinant. If we start with the
+Laplace's formula as the definition of the determinant, we can follow
+that matrices with identical rows/columns are zero, and thus
+everything that is not on diagonal is zero. We would then follow that
+diagonals are determinants by definition, and thus we get desired result.
+
+$A A^{adj} = (\det A) I$ implies that if $(\det A)$ has a
+multiplicative inverse in $R$, then we would get that $(\det
+A)A^{adj}$ is an inverse of $A$ (we would need to weave through or
+define scalar multiplication for matrices), which gives the desired
+result. Proof that invertible $A$ commutes with $A\inv$ can be shown
+piecewise.
+
+One important point to note is that here we don't get any benefits for
+going through determinant to define such things. We would get
+practically the same results, if we would've gone through the usual
+definitions of linear transformations and whatnot.
+
+\subsection{}
+
+\textit{Let $R_1$ and $R_2$ be commutative rings, and let $\phi: R_1
+  \to R_2$ be homomorphism. We define a map $\Phi: R_1[x] \to R_2[x]$ by
+  $$\Phi(\sum{a_i x^i}) = \sum {\phi(a_i) x^i}$$
+}
+
+\textit{(a) Prove that $\Phi$ is a ring homomorphism.}
+
+We get identities by the fact that $\phi$ is a homomorphism. We follow that
+
+$$\Phi(\sum{a_i x^i}) + \Phi(\sum{b_i x^i}) = \sum{\phi(a_i) x^i} + \sum{\phi(b_i) x^i} = $$
+$$ =  \sum{\phi(a_i) x^i + \phi(b_i) x^i}= \sum{(\phi(a_i) + \phi(b_i)) x^i} = $$
+$$ =  \sum{(\phi(a_i + b_i)) x^i}= \sum{(\phi(a_i + b_i) x^i}= \Phi(\sum{(a_i + b_i) x^i}) =
+\Phi(\sum{a_i x^i} + \sum{b_i x^i} )$$
+
+$$ \Phi(\sum{a_i x^i}) + \Phi(\sum{b_i x^i}) =
+(\sum{\phi(a_i) x^i}) * ( \sum{\phi(b_i) x^i}) = \sum{\sum{\phi(a_i) \phi(b_j) x^{i + j}}} = $$
+$$ = \sum{\sum{\phi(a_i b_j) x^{i + j}}} = \Phi(\sum{\sum{a_i b_j x^{i + j}}}) =
+\Phi((\sum{a_i x^i}) * (\sum{b_i x^i}))$$
+as desired.
+
+\textit{(b) If $\phi$ is a ring isomorphism, prove that $\Phi$ is a
+ring isomorphism}
+
+$R_1[x]$ is a polynomial, which by definition is the list. There's a
+general theorem (if not proven explicitly, then derived pretty
+easily), that piecewise application of a bijection on elements of a
+given list gives us a bijection. This implies that if $\phi$ is a
+bijection, then $\Phi$ is a bijection, which given homomorphism
+implies isomorphism, as desired.
+
+\subsection{}
+
+\textit{Lots of notation, but the essense boils down to the fact that
+we can define $R[x. y]$ - a set of polynomials with two variables. All
+the things that concern evaluation and whatnot are essentially the
+same in reagards to this version. We can also define such a thing for
+a polynomial in an arbitrary number of variables.}
+
+\subsection{}
+
+\textit{Let $R[x, y]$ be the ring of polynomials in two variables with
+coefficients in R, as described in Exercise 3.13. In this exercise we
+will look at polynomials that don’t change if we swap x and y. For
+example, the polynomials
+$$x + y, xy, x^2 + y^2$$
+are invariant under $x \lra y$ swap. We observe that our third example
+can be expresset using the first two examples,
+$$x^2 + y^2 = (x + y)^2 - 2xy$$
+In other words, if we let $g_2(u, v) = u^2 - 2v$, then $x^2 + y^2 = g_2(x + y, xy)$}
+
+\textit{(a) Do the same for $x^3 + y^3$ and $x^4 + y^4$}
+
+We follow that generally speaking there's a binomial expansion
+$$(x + y)^n = \sum_{i = 0}^n {bc(i, n)x^iy^{n - i}}$$
+from which we follow that
+$$(x + y)^n = \sum_{i = 1}^{n - 1} {bc(i, n)x^iy^{n - i}} + x^n + y^n$$
+which implies that
+$$ x^n + y^n = (x + y)^n -  \sum_{i = 1}^{n - 1} {bc(i, n)x^iy^{n - i}} =
+(x + y)^n -  xy \sum_{i = 1}^{n - 1} {bc(i, n)x^{i - 1}y^{n - i - 1}} = $$
+$$ = (x + y)^n -  xy \sum_{i = 0}^{n - 2} {bc(i, n)x^{i}y^{n - i}} $$
+
+Let us look at the problem at hand:
+$$(x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 = x^3 + y^3 + 3xy(x + y)$$
+
+We follow that for $n = 3$ we've got that
+$$\sum_{i = 1}^{n - 1}{bc(n, i) x^i} = 3x^2y + 3xy^2 = 3xy(x + y)$$
+thus $\sum_{i = 1}^{n - 1}{bc(n, i) x^i} = g(x + y, xy)$ for $n = 3$.
+Assume that for all $j$ such that $j < n$ we've got that $\sum_{i =
+1}^{n - 1}{bc(n, i) x^i} = g(x + y, xy)$
+we then follow that for arbitrary $n$
+$$ \sum_{i = 1}^{n - 1} {bc(i, n)x^iy^{n - i}} =
+xy \sum_{i = 1}^{n - 1} {bc(i, n)x^{i - 1}y^{n - i - 1}} = $$
+$$ = xy \sum_{i = 0}^{n - 2} {bc(i, n)x^{i}y^{n - i}}  = xy * g(x + y, xy)$$
+thus we follow that we've got the inductive step, and thus for all $n
+\geq 3$ we've got the IH. This implies that for all $n \geq 3$
+$$x^n + y^n = (x + y)^n -  \sum_{i = 1}^{n - 1} {bc(i, n)x^iy^{n - i}} =
+(x + y)^n - g(x + y, xy) = g'(x + y, xy)$$
+as desired.
+
+\textit{(b) Handled in the previous point.}
+
+\textit{(c) Even more generally, suppose that $f(x, y) \in R[x, y]$ is any polynomial
+  with the symmetry property
+  $$f(x, y) = f(y, x)$$
+  Prove that there's a polynomial $g$ such that
+  $$f(x, y) = g(x + y, xy)$$}
+
+If $f(x, y) = f(y, x)$, then we follow that for every element of the
+sum $a_i x^i y^j$ there's an element $a_i x^j y^i$. This implies that
+$f(x, y)$ can be partitioned into pairs $a_i x^i y^j + a_i x^j
+y^i$. This implies that for each such pair we can take
+$$a_i x^i y^j + a_i x^j y^i = a x^{j - i}y^{j - i}(x^i + y^i)$$
+latter part ($x^i + y^i$) of this product is a polynomial of form $g(x
++ y, xy)$ by the previous point, which in turn implies that the whole
+polynomial is a sum of pollynomials in form $g(x + y, xy)$, which is
+itself a polynomial in form $g(x + y, xy)$, which implies the desired
+conclusion.
+
+\subsection{}
+
+\textit{I've practically done this one before in the real analysis
+  course. There might be some deviations, but I'm pretty sure that they
+  are minor.  If it isn't the case, then skip.}
+
+\subsection{}
+
+\textit{For a quaternion $\alpha = a + bi + cj + dk \in H$, let
+  $\overline \alpha = a - bi - cj - dk$. }
+
+\textit{(a) Prove that $\alpha \overline \alpha \in \real$.}
+
+$$(a + bi + cj + dk) * (a - bi - cj - dk) = $$
+$$ = 
+a^2 - abi - acj - adk + abi + b^2 - bicj - bidk
++ acj - cjbi + c^2 - cjdk + adk - dkbi - dkcj + d^2 = $$
+$$ = 
+a^2 - abi - acj - adk + abi + b^2 - bck + bdj
++ acj + bck + c^2 - cdi + adk - bdj + cdi + d^2 = $$
+$$ =  a^2 + b^2  + c^2 + d^2 \in R$$
+as desired.
+
+\textit{(b) Prove that $\alpha \overline \alpha = 0$ if and only if $\alpha = 0$}
+
+Follows from the fact that $a^2 + b^2 + c^2 + d^2 = 0 \lra a = b = c =
+d = 0$ for any elements of $\real$
 
 
 \end{document}
