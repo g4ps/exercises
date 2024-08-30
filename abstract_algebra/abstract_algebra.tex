@@ -2292,6 +2292,91 @@ as desired.
 Follows from the fact that $a^2 + b^2 + c^2 + d^2 = 0 \lra a = b = c =
 d = 0$ for any elements of $\real$
 
+\textit{(c) Suppose that $\alpha, \beta \in H$ and that $\alpha \beta = 0$. Prove that either
+  $\alpha = 0$ or $\beta = 0$.}
+
+Assume that $\alpha \neq 0$. We follow that there's $q \in \real$ such that
+$\alpha \overline \alpha = q = a^2 + b^2 + c^2 + d^2$. We then follow that 
+$$\overline{\alpha} * \frac{1}{q}$$
+is a multiplicative inverses of $\alpha$. This in turn implies that
+$$\alpha\inv \alpha \beta = \alpha \inv 0$$
+$$1 \beta =  0$$
+$$\beta =  0$$
+
+Same idea applies to $\beta$, but from the different side, which implies the desired result.
+
+\textit{(d) Let $\alpha, \beta \in H$. Prove that
+  $$\overline{\alpha + \beta} = \overline \alpha + \overline \beta$$
+  and
+  $$\overline{\alpha * \beta} = \overline \alpha * \overline \beta, $$
+}
+
+$$\overline \alpha + \overline \beta = (a - bi - cj - dk) + (a' - b'i - c'j - d'k) = $$
+$$= (a + a') - (b + b')i - (c + c')j - (d + d')k =  \overline{\alpha + \beta}$$
+by distributivity and whatnot. Multiplicity is proven in the same way,
+but it's more tedious.
+
+\textit{(e) Let $\alpha \neq 0$. Prove that there's $\beta \in H$ such
+  that $\alpha \beta = \beta \alpha = 1$}
+
+handled in point (c)
+
+\subsection{}
+
+\textit{let $R$ be a possibly non-commutative ring. The
+\textbf{center} of $R$ consists of the elements of $R$ that commute
+with every other element of $R$.
+  $$R^{center} = \set{a \in R: \alpha \beta = \beta \alpha \text{ for every } \beta \in R}$$
+}
+
+\textit{(a) Prove that $R^{center}$ is a commutative subring of $R$}
+
+Proof goes along the samy way as the center of group.
+
+\textit{(b) What is the center of the ring of quaternions $H$?}
+
+We follow that every real entry is commutative.
+
+$$(a + bi + cj + dk) * k = ak + bik + cjk + dk^2 = ak - bj + ci - d$$
+$$k * (a + bi + cj + dk) = ak + bki + ckj + dk^2 = ak + bj - ci - d$$
+this implies that $(a + bi + cj + dk)$ is not commutative with $k$ if
+$b = 0$ and $c = 0$. Multiplying with $j$ will give the same result,
+but for $c$ and $k$, which in sum implies that only reals are in the
+center.
+
+\textit{Skipped the rest}
+
+\section{Some Important Special Types of Rings}
+
+\subsection{}
+
+\textit{Let $m$ be a positive integet.}
+
+\textit{(a) Prove that $Z/mZ$ is an integral domain if and ony if $m$
+  is a prime}
+
+Suppose that $Z/mZ$ is an ingeral domain. Assume that it's not a
+prime.  if $m = 1$, then this thing is trivial, and thus assume that
+$m > 1$.  This implies that there's a divisor $n$ of $m$ that is less
+than $m$.  We follow that $m / n$ is a nonzero element of $Z/mZ$, and
+thus
+$$n * (m / n) = m = 0$$
+which implies that $Z/mZ$ is not an integral domain, which is a
+contradiction.
+
+Suppose that $m$ is a prime. We follow that $(Z/mZ)^*$ is a group
+under multiplication, and thus product of two nonzeroes is closed
+there, and thus is nonzero. This implies that $Z/mZ$ is an integral
+domain, as desired.
+
+\textit{(b) Prove that $Z/mZ$ is a field if and ony if $m$
+  is a prime}
+
+If $Z/mZ$ is a field, then it's an integral domain, and thus $m$ is a prime.
+Implications from the fact that $(Z/mZ)^*$ is a group give us the fact that
+all non-zeroes got inverses, and thus $Z/mZ$ is a field, as desired.
+
+
 
 \end{document}
 
