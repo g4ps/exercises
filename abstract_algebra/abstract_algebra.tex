@@ -2348,6 +2348,18 @@ center.
 
 \section{Some Important Special Types of Rings}
 
+\subsection*{Notes}
+
+Important note: definition of the field requires a commutative
+ring. Thus we can follow that field is a couple of abelian groups,
+that are stich together, have distributivity, and thus one of them is
+not defined over anothers identity.
+
+For cancelation property we require we require biconditional for some
+reason, but $b = c$ or $a = 0$ implies that $ab = ac$ for any given
+ring, and thus I'm assunming that there's a typo there (in the text
+of the theorem we even see the word "implication")
+
 \subsection{}
 
 \textit{Let $m$ be a positive integet.}
@@ -2375,6 +2387,71 @@ domain, as desired.
 If $Z/mZ$ is a field, then it's an integral domain, and thus $m$ is a prime.
 Implications from the fact that $(Z/mZ)^*$ is a group give us the fact that
 all non-zeroes got inverses, and thus $Z/mZ$ is a field, as desired.
+
+\subsection{}
+
+\textit{Let $R$ be a field. Prove that $R$ is an integral domain.}
+
+Suppose that $R$ is a field, but not integral domain. The fact that
+it's not an integral domain implies that there are nonzero
+$\alpha, beta \in R$ such that 
+$$\alpha \beta = 0$$
+the fact that $\alpha$ is a nonzero in a field implies that there exists $\alpha \inv$.
+This implies that
+$$\alpha \inv \alpha \beta = \alpha \inv 0 $$
+$$ \beta =  0 $$
+which is a contradiction.
+
+\subsection{}
+
+\textit{Prove that each of the following rings is not a field}
+
+\textit{(a) $Z[i]$}
+
+We follow that $2 * (a + bi) = 2a + 2bi$, where the latter part is not identity.
+
+\textit{(b) $\real[x]$}
+
+We follow that $x * 1 = x$ and $x * \sum{a_i x^i} = \sum{a_i x^{i +
+    1}}$, which implies the desired.
+
+\textit{(c) $H$}
+
+This one took me by surprise a bit, but it's important to note that
+$H$ \textbf{has inverses}, but since it's not mutliplicative, we
+follow that it's not a field. Same is true for the next point, but it
+is also not an intefral domain.
+
+\subsection{}
+
+\textit{Let $R$ be a commutative ring. Prove that $R$ is an integral
+  domain if and only of it's got cancellation property.}
+
+Let $R$ be an integral domain.  Let $a, b, c \in R$ be such that $ab =
+ac$ and $a \neq 0$.
+$$ab = ac \lra ab - ac = 0 \lra a(b - c) = 0$$
+Given that $a \neq 0$ we follow that there are no nonzero elements $q$
+of $R$ such that $aq = 0$, and thus we conclude that
+$$b - c = 0$$
+which implies the desired result. Given that every implication here is
+biconditional, we get the reverse case for free.
+
+\subsection{}
+
+\textit{Let $R$ be a finite integral domain. Prove that $R$ is a
+  field.}
+
+Let $R$ be a finite integral domain, and let $a \in R \neq 0$. We
+follow that if $ab = ac$, then $b = c$, which implies that
+multiplication by $a$ is an injection. Given that $R$ is finite and
+multiplication by $a$ is a function with domain equal to its codomain,
+we follow that multipication by $a$ is a bijection, and thus there's
+$b \in R$ such that $a * b = 1$, which implies that $R$ is a field, as
+desired.
+
+\subsection{}
+
+\textit{This one is a lot of notation, but not a lot of substance}
 
 
 
