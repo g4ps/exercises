@@ -2453,6 +2453,42 @@ desired.
 
 \textit{This one is a lot of notation, but not a lot of substance}
 
+\subsection{}
+
+\textit{Let $R$ be a commutative ring. The degree of a non-zero
+polynomial $f(x) \in R[x]$ is the highest power of $x$ that appears in
+$f(x)$.}
+
+\textit{(a) Prove that for all $f(x), g(x) \in R[x]$ we have
+  $$deg(f(x) + g(x)) \leq \max \set{deg(f(x)), deg(g(x))}$$
+}
+
+We know that sum of polynomials is the piecewise addition of the
+coefficients, that correspond to each degree, thus implying that
+the desired result
+
+\textit{(b) If $deg(f) \neq deg(g)$, prove that the previous equation
+  is an equality}
+
+Once again, follows directly from the definition
+
+\textit{(c) Suppose that $R$ is an integral domain. Prove that
+  for all non-zero $f(x), g(x) \in R[x]$ we have
+  $$deg(f(x) g(x)) = deg(f(x)) + deg(g(x)))$$}
+
+We follow that the largest powers of $f(x)$ and $g(x)$ are
+in the form $a_i x^i$ and $b_j x^j$, and thus the largest power of
+the product is
+$$a_i x^i b_j x^j = (a_i b_j)x^{i + j}$$
+the fact that $R$ is an integral domain implies that $a_i b_j$ is
+not zero, thus implying the desired result.
+
+\textit{(d) Let $R = Z/6Z$. Find polynomials $f(x), g(x) \in R[x]$
+  with $deg(f) = deg(g) = 1$ such that previous equality does not hold.}
+
+We follow that
+$$3x * 2x = 6x = 0x = 0$$
+as desired.
 
 
 \end{document}
