@@ -1754,6 +1754,10 @@ Although we haven't observed any product rings (i.e. rings that are
 made up by sticking two rings into cartesian product), it's pretty
 obvious that we can define them and everything will line up
 
+We can rephrase the condition of uniqueness of homomorphism from $ZZ$:
+if $f$ and $g$ are homomorphims from $Z$ to some ring $R$, then $f =
+g$.
+
 
 \subsection{}
 
@@ -2490,6 +2494,76 @@ We follow that
 $$3x * 2x = 6x = 0x = 0$$
 as desired.
 
+\subsection{}
+
+\textit{Let $R$ be a commutative ring.}
+
+\textit{(a) Prove that there's exactly one integral domain $R$ such
+that the map
+$$f: R \to R, f(a) = a^6$$
+is a ring homomorphism.}
+
+Firstly, we want to state what exactly what "exactly one integral
+domain" mean. We want to follow that firstly there exists an integral
+domain such that all the rules apply, and that if there's another ring
+that that satisfies those conditions, then it's isomorphic to the
+ring, that we've made firstly.
+
+We know that if there's a ring homomorphism from $f(a) = a^n$, then
+$2^n - 2 = 0$ (from the second exercise in this chapter). In this case
+we've got $62 = 0$. It is important to note that this statement is an
+implication, and not a biconditional.
+
+We know that prime decomposition of $62$ is
+$$62 = 31 * 2$$
+
+With $Z/2Z$ we follow that $f$ is an identity ($f(0) = 0^6 = 0, f(1) =
+1^6 = 1$), and this thing is a ring homomorphism. We also follow that
+$Z/2Z$ is a field, and thus an integral domain. Thus we follow that there's a
+ring such that $f$ is a homomorphism (and isomorphism also).
+
+With $Z/3Z$ we follow that $f(0) = 0, f(1) = 1, f(2) = 1$, which
+implies that
+$$f(2) + f(1) = 1$$
+$$f(2 + 1) = f(3) = 0$$
+which means that $Z/3Z$ does not satisfy the conditions.
+
+For multiplication we follow that
+$$f(a * b) = (ab)^6 = a^6 b^6 = f(a) * f(b)$$
+which is true for all commutative rings. Identities are also pretty
+trivial.
+
+Addition is a bit more interesting:
+$$f(a + b) = (a + b)^6 = \sum{bc(n, i)a^n b^{n - i}}$$
+$$f(a) + f(b) = a^6 + b^6$$
+thus we need
+$$\sum_{i = 1}^{n - 1}{bc(n, i)a^n b^{n - i}} = 0$$
+list of binomial coefficients in this case is
+$$6, 15, 20, 15, 6$$
+
+We can also follow that
+$$\sum_{i = 1}^{n - 1}{bc(n, i)a^n b^{n - i}} =
+ab \sum_{i = 1}^{n - 1}{bc(n, i)a^{n - 1} b^{n - i - 2}}$$
+We'll then follow that both $a, b$ are nonzero, then $ab$ is also
+nonzero, and thus
+$$\sum_{i = 1}^{n - 1}{bc(n, i)a^{n - 1} b^{n - i - 2}}$$
+must be zero. We then follow that none of the products of powers of
+$a$ and $b$ are zeroes. We then can also follow that
+
+We follow that
+$$f(1 + 1) = 2^6 = f(1) + f(1) = 2$$
+thus
+$$2^6 = 2$$
+we then follow by induction that
+$$a^6 = a$$
+thus by cancellation property $a^5 = 1$ or $a = 0$.
+
+Suppose that there's a ring, that's got distinct elements $0, 1,
+k$. We follow that
+$$f(k + 1) = (k + 1)^6$$
+$$f(k) + f(1) = f(k) + 1 = k^6 + 1$$
+
+TODO
+
 
 \end{document}
-
