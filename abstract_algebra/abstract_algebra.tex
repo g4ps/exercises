@@ -2541,6 +2541,8 @@ $$\sum_{i = 1}^{n - 1}{bc(n, i)a^n b^{n - i}} = 0$$
 list of binomial coefficients in this case is
 $$6, 15, 20, 15, 6$$
 
+$$(a + b)^6 = a^6 + 6a^5b + 15a^4b^2 + 20a^3b^3 + 15a^2b^4 + 6ab^5 + b^6$$
+
 We can also follow that
 $$\sum_{i = 1}^{n - 1}{bc(n, i)a^n b^{n - i}} =
 ab \sum_{i = 1}^{n - 1}{bc(n, i)a^{n - 1} b^{n - i - 2}}$$
@@ -2563,7 +2565,97 @@ k$. We follow that
 $$f(k + 1) = (k + 1)^6$$
 $$f(k) + f(1) = f(k) + 1 = k^6 + 1$$
 
-TODO
+TODO later, can't figure this one out
 
+\subsection{}
+
+\textit{Let $R$ be a ring. We define three properties that ann element
+  $a \in R$ may posess.}
+
+\textit{$a$ is nilpotent if $a^n = 0$ for some $n \geq 1$.}
+
+\textit{$a$ is unipotent if $a - 1$ is nilpotent}
+
+\textit{$a$ is idempotent if $a^2 = a$.}
+
+\textit{(a) If $R$ is an integral domain, describe all of the
+  nilpotent, unipotent, and idempotent elements of $R$.}
+
+We follow that if $a^n = 0$, then $a = 0$ by cancellation property,
+which implies that there's one nilpotent element.
+
+If $a - 1$ is nilpotent, then $(a - 1)^n = 0$, thus $(a - 1) = 0$, and therefore $a = 1$.
+
+If $a$ is idempotent, then $a^2 = a$, thus $a = 0$ or $a = 1$ by
+cancelation property.
+
+\textit{(b) Let $p \in Z$ be a prime and let $k \geq 1$. Describe all of the
+  nilpotent elements in $Z/p^kZ$}
+
+\textit{Skipped the rest of the exercises for later.}
+
+\section{Unit groups and Product rings}
+
+\subsection{}
+
+\textit{(a) Compute the unit group $Z^*$}
+
+We follow that anything times zero is zero, so it's out of the
+question for all the subsequent things.
+
+We know that $-1, 1$ have themselves as inverses, and any other number
+fails to have one.
+
+\textit{(b) Compute the unit group $Q^*$}
+
+All of the $Q^*$ is the unit group.
+
+\textit{(c) Compute the unit group $Z[i]^*$}
+
+We follow that $-1, 1$ are in the unit group. $i^4 = 1$, and thus $i,
+-i$ are also in the group. Thus we follow that for the more general
+case
+$$a + bi$$
+that if one of the numbers $a, b$ are equal to $1$, while the other is
+zero, we've got it in the unit group. If $a = b = 1$, then we're out
+of luck though.
+
+We know that
+$$1 / (a + bi) = \frac{a}{a^2 + b^2}  - \frac{b}{a^2 + b^2}i$$
+and thus in order to $a + bi$ to be in $Z[i]$ we need both
+$\frac{a}{a^2 + b^2}$ and $\frac{b}{a^2 + b^2}$ to be integers.
+We follow that
+$$|a| \leq a^2 \leq a^2 + b^2$$
+and for $a \notin \set{-1, 0, 1}$ we follow that
+$$|a| < a^2 \leq a^2 + b^2$$
+which implies that there for the case $a \notin \set{-1, 0, 1}$ there are
+no inverses for $a + bi$. We've got the same conclusions for $b$,
+and thus we conclude that $\set{1, -1, i, -i}$ is the unit group
+(which seems to be pretty straightforward).
+
+\textit{(d) Consider the ring $Z[\sqrt{2}]$. Prove that $1 + \sqrt{2}
+  \in Z[\sqrt{2}]^*$. Prove that the powers of $1 + \sqrt{2}$ are all
+  different, and use that fact to deduce that $Z[\sqrt{2}]$ has
+  infinitely many elements.}
+
+We follow that
+$$\frac{1}{1 + \sqrt{2}} =
+\frac{(1 - \sqrt{2})}{(1 - \sqrt{2})(1 + \sqrt{2})} =
+\frac{(1 - \sqrt{2})}{1 - 2} = -(1 - \sqrt{2}) = -1 + \sqrt{2}$$ by
+pretty much same deriviation we can follow that $(1 + \sqrt{2})^n$
+(and by extension $(1 - \sqrt{2})^n$) are in $Z[\sqrt{2}]^*$.
+We follow that power function is strictly increasing, and thus
+$(1 + \sqrt{2})^n$ are all different for all $n \in \omega$, and
+thus $Z[\sqrt{2}]^*$ has infinite amount of elements.
+
+\textit{(e) Prove that $\real[x] = \real^*$}
+
+We follow that by multiplying any nonzero polynomial in $\real$ by
+other polynomial nonzero we get only polynomials of equal or greater
+degree, and thus follow that the only one order of polynomial that
+has an option of having multiplicative inverses is the polynomial of
+degree $1$.
+
+\textit{TODO the rest}
 
 \end{document}
