@@ -2873,7 +2873,7 @@ R_1 \times R_2$ that also satisfy $e_1 e_2 = 0$. Prove that if $\alpha
 \in R_1 \times R_2$, then there are unique elements $a_1 \in R_1$ and
 $a_2 \in R_2$ such that $\alpha = a_1 e_1 + a_2 e_2$.}
 
-At this time I'm assuming that there's a typo in this exercise
+There's no typo, TODO
 
 \subsection{}
 
@@ -2891,20 +2891,10 @@ $$(a + bL) * (c + dL) = ac + adL + bLc + bLdL = ac + bd + (ad + bc)L$$
 
 \textit{(b) Prove that the ring $R$ has zero divisors}
 
-If
-$$(a + bL) * (c + dL) = 0$$
+If $L = 1$, then it does not. But if we add an assumption that $L \notin Z$,
 then
-$$(ac + bd) + (ad + bc)L = 0$$
-this implies that
-$$(ac + bd) = -(ad + bc)L$$
-$$ac + bd = -adL - bcL$$
-$$ac + adL  = - bd - bcL$$
-$$a(c + dL)  = -b(d + cL)$$
-$$a(c - d) = b(c - d) = 0$$
-thus either $c - d = 0$ or $a = b = 0$.
+$$(1 - L) (1 + L) = 1 + L - L - L^2 = 1 - 1 =  0$$
 
-TODO
-
-
+\textit{(c) prove that the ring $R$ is not isomorphic to the ring $Z \times Z$}
 
 \end{document}
