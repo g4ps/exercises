@@ -2884,6 +2884,9 @@ There's no typo, TODO
   $$L^2 = 1, La = aL$$
 }
 
+\textit{For the rest of this thing we're assuming that $L \notin Z$, since
+otherwise some things don't hold}
+
 \textit{(a) Fint a formula for the product $(a + bL) * (c + dL)$.}
 
 We follow that
@@ -2895,6 +2898,50 @@ If $L = 1$, then it does not. But if we add an assumption that $L \notin Z$,
 then
 $$(1 - L) (1 + L) = 1 + L - L - L^2 = 1 - 1 =  0$$
 
-\textit{(c) prove that the ring $R$ is not isomorphic to the ring $Z \times Z$}
+\textit{(c) Prove that the ring $R$ is not isomorphic to the ring $Z \times Z$}
+
+Assume that there's an isomorphism $f$. Identites are mapped pretty
+easily,
+$$0 \to (0, 0)$$
+$$1 \to (1, 1)$$
+but we then need to map $L$ somewhere. We follow that there is $(a,
+b)$ such that $f(L) = (a, b)$. Since $L$ is not in the $Z$, we
+conclude that $a \neq b$. We then follow that $L * L = 1$, and thus
+$$a * a = 1$$
+$$b * b = 1$$
+and since there are no multiplicative inverses for any $a, b \in Z$
+apart from $1$ and $-1$ we follow that $a, b \in \set{1, -1}$.  This
+in turn implies that either $f(L) = (-1, 1)$ or $f(L) = (1, -1)$.
+Assume the latter. We then follow that
+$$f(1 + L) = (2, 0)$$
+$$f(1 - L) = (0, 2)$$
+
+Now let's try to square some numbers:
+$$f((1 + L)(1 - L)) = f(1 - L + L - L^2) = f(0) = 0$$
+$$f((1 + L)(1 - L)) = (2, 0) * (0, 2) = 0$$
+which is unhelpful.
+
+$$f((1 - L)(1 - L)) = f(1 - L - L - L^2) = f(-2L) = (-2, 2)$$
+$$f((1 - L)(1 - L)) = (0, 2) * (0, 2) = (4, 0)$$
+which is the desired contradiction.  Thus we conclude that $L \neq (1,
+-1)$, and the proof that $L \neq (-1, 1)$ is similar, which gives us
+the desired result.
+
+\textit{(d) However, prove that the ring
+  $$S = \set{a + bL: a, b \in Q}$$
+  is isomorphic to the ring $Q \times Q$.
+}
+
+We somehow need to map the thing to the thing. Let's try things:
+let $f: S \to Q \times Q$ be a function that is defined by:
+$$f(0) = (0, 0)$$
+$$f(1) = (1, 1)$$
+and then let us try to map $L$ somewhere.
+We follow that
+$$f(L * L) = (1, 1)$$
+and thus
+$$f(L) * f(L) = (1, 1)$$
+which implies that both indices should be nonzero in this case.
+TODO
 
 \end{document}
