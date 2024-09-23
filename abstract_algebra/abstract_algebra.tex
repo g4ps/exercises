@@ -2921,27 +2921,59 @@ $$f((1 + L)(1 - L)) = f(1 - L + L - L^2) = f(0) = 0$$
 $$f((1 + L)(1 - L)) = (2, 0) * (0, 2) = 0$$
 which is unhelpful.
 
-$$f((1 - L)(1 - L)) = f(1 - L - L - L^2) = f(-2L) = (-2, 2)$$
-$$f((1 - L)(1 - L)) = (0, 2) * (0, 2) = (4, 0)$$
-which is the desired contradiction.  Thus we conclude that $L \neq (1,
--1)$, and the proof that $L \neq (-1, 1)$ is similar, which gives us
-the desired result.
+$$f((1 - L)(1 - L)) = f(1 - L - L + L^2) = f(2 - 2L) = (0, 4)$$
+$$f((1 - L)(1 - L)) = (0, 2) * (0, 2) = (0, 4)$$
+which is also unhelpful.
+
+I'm pretty sure that we somehow need to prove that the $R$ has
+multiplicative inverses for some elements, but $Z \times Z$ does not.
+We can follow that
+$$(2 - L) * (1 + L) = 2 + 2L - L - 1 = 1 + L$$
+while
+$$((2, 2) - (1, -1)) * ((1, 1) + (1, -1)) = (1, 3) * (2, 0) = (2, 0)$$
+which might be wrong again.
+
+Let us try to prove the thing then, and maybe we'll have some problems
+then. All the identities are handled, additivity is trivial, and for
+multiplication we've got
+$$f((a + bL) * (c + dL)) = f((ac + bd) + (ad + bc)L)
+= (ac + bd + ad + bc, ac + bd - ad - bc)$$
+$$f(a + bL) * f(c + dL) = (a + b, a - b) * (c + d, c - d)
+= (ac + ad + bc + bd, ac - ad - bc + bd)$$
+so we're kinda shafted in this regard. Maybe the $f$ is not a
+bijection then. It's ceirtanly a function from $R$ to $Z \times Z$,
+and is defined on all $R$. If there are $a, b \in R$ such that $a \neq
+b$ and $f(a) = f(b)$, then we conclude that $f(a - b) = f(a) - f(b) =
+0$, and hence there's a nonzero element $q \in R$ such that it maps to
+$0$. Construction of $f$ though prohibits such a thing, and thus we
+must conclude that it's an injection.
+
+Okay, now I've got it. Let $a + bL \in R$. We follow that
+$$f(a + bL) = (a + b, a - b)$$
+we then conclude that the difference between those two
+$$a + b - a + b = 2b$$
+is always even. Thus we conclude that there's no way for example to
+map the thing to $(1, 0)$, since the difference between indices is odd,
+and thus we conclude that $f$ is not surjective, and thus we conclude that
+$R$ and $Z \times Z$ are not isomorphic. 
 
 \textit{(d) However, prove that the ring
   $$S = \set{a + bL: a, b \in Q}$$
   is isomorphic to the ring $Q \times Q$.
 }
 
-We somehow need to map the thing to the thing. Let's try things:
-let $f: S \to Q \times Q$ be a function that is defined by:
-$$f(0) = (0, 0)$$
-$$f(1) = (1, 1)$$
-and then let us try to map $L$ somewhere.
-We follow that
-$$f(L * L) = (1, 1)$$
-and thus
-$$f(L) * f(L) = (1, 1)$$
-which implies that both indices should be nonzero in this case.
-TODO
+This case grants us on the other hand the ability to get surjectivity,
+that we can prove through a lot of notation, but it's easy to see why
+it is the case from the last paragraph of the previous point.
+
+\subsection{}
+
+\textit{Let $R_1, R_2, ...$ be an infinite list of
+rings. blah-blah-blah, we can define rings from infinite list of rings
+by the same reason as for the multiple rings (i.e. piecewise
+application). Part (b) comes fromm the fact that the ring that is
+there's an inection from $2^\omega$ to $Z/2Z^\omega$}
+
+\textit{Skip the rest}
 
 \end{document}
