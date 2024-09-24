@@ -2976,4 +2976,57 @@ there's an inection from $2^\omega$ to $Z/2Z^\omega$}
 
 \textit{Skip the rest}
 
+\section{Ideals and Quotient Rings}
+
+\subsection{}
+
+\textit{Let $R$ be a commutative ring.}
+
+\textit{(a) Let $c \in R$. Prove that
+  $$\set{cR: r \in R}$$
+  is an ideal of $R$.
+}
+
+Let's name the unnamed set $Q$ and assume that $q, w \in Q$. We follow that
+there are $a, b \in R$ such that $q = ca$ and $w = cb$. We then follow that
+$$q + w = ca + cb = c(a + b) \in Q$$
+where we derive the last relation by definition of $Q$.
+
+If $r \in R$, then we conclude that
+$$rq = rca = cra \in Q$$
+where deriviations come from the fact that $R$ is commutative. Hence we conclude that
+$Q$ is an ideal by definition. 
+
+\textit{(b) ... straightforward applications of definitions and
+commutative/distributive properties of $R$ will give us this
+conclusion}
+
+\subsection{}
+
+\textit{Let $R$ be a commutative ring. Prove that $R$ is a field if
+and only if its only ideals are the zero ideal and the entire ring
+$R$.}
+
+Assume that $R$ is a field and let $c \in R$ be nonzero. We follow that
+there's $c\inv \in R$, and thus $c\inv R$ is a subset of $R$ by closure. Multiplying
+$c$ by this subset we get that $R \subseteq cR$, and thus $c \neq 0 \ra cR = R$.
+If $c = 0$ we can trivially conclude that $cR = \set{0}$.
+
+Now assume that $R$ is a commutative ring whose only ideals are
+$\set{0}$ and $R$. Let $q \in R$ be nonzero. We follow that $qR = R$,
+and thus there's $w \in R$ such that $qw = 1$. This implies that $w =
+q\inv$, and thus we conclude that the fact that $q$ is arbitrary
+together with this implication constitutes a definition of a field,
+as desired.
+
+\subsection{}
+
+\textit{Let $R$ be a commutative ring, and let $I$ be an ideal of $R$. The radical of $I$
+  is defined to be the set
+  $$Rad(I) = \set{a \in R: (\exists n \in \omega)(n \geq 1 \land a^n \in I)}$$
+  Prove thaht $Rad(I)$ is an ideal of $R$.
+}
+
+TODO
+
 \end{document}
