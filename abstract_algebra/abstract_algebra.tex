@@ -3027,6 +3027,31 @@ as desired.
   Prove thaht $Rad(I)$ is an ideal of $R$.
 }
 
-TODO
+Let $a \in Rad(I)$ and $b \in R$. We follow that there's $n \in \omega$ such that $a^n \in I$
+by definition of $Rad(I)$. We also follow that since $b \in R$ that $b^n \in R$ and thus
+we follow that $(ab)^n = a^n b^n$ is a product of an element of $I$ and an element of $R$, and
+thus is in $I$ by the fact that $I$ is an ideal.
+
+
+Let $a \in Rad(I)$. We follow that there's a $n \in \omega$ such that
+$a^n \in I$. We then follow that for all $m \geq n$ that
+$a^m = a^n a^{n - i}$ and thus $a^m$ is a multiple of an element of $I$ ($a^n$)
+and an element of $R$, and thus it is itself an element of $I$.
+
+Now assume that $a, b \in Rad(I)$ and $m, n \in \omega$ are such that
+$a^n, b^m \in I$. We follow that
+$$(a + b)^k = \sum_{i \in \set{0..k}}{bc(i, k)a^i b^{k - i}}$$
+for any $k \in \omega$. Thus if $k \geq 2\max(m, n)$, then for any
+element of the sum
+$$bc(i, k)a^i b^{k - i}$$
+either $i$ or $k - i$ is greater than $\max(m, n)$, and thus $a^i$ or
+$b^{k - i}$ is in $I$, thus the whole product is in $I$, and thus then
+the sum is a sum of elements of $I$, thus making the whole sum an
+element of $I$. Thus we follow that there's an element $n$ of $\omega$
+such that $(a + b)^n \in I$, and therefore we conclude that $a + b \in
+Rad(I)$.
+
+Those two properties constitute a definition of the ideal, as desired.
+
 
 \end{document}
