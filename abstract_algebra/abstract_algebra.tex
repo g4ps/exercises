@@ -2978,6 +2978,101 @@ there's an inection from $2^\omega$ to $Z/2Z^\omega$}
 
 \section{Ideals and Quotient Rings}
 
+\subsection*{Notes}
+
+Firstly it's important to note that ideals are mostly not subrings due
+to the fact that the ones that aren't equal to the whole space $R$
+don't have multiplicative identitites in them. They are subgroups
+under addition however, which is evident from their definition.
+
+Given that ideals are subgroups under the addition, we can conclude
+from our endeavours in group theory that the set of distinct cosets
+of an ideal constitutes a partition of a ring $R$. A partition of a
+ring $R$ with respect to an ideal $I$ is denoted by $R/I$. Apart from
+the initial ideal $I$ we can follow that no other element of $R/I$ is
+an ideal due to the fact that any given ideal $I$ has got to have $0$
+in it.
+
+Suppose that we've got an $R/I$. Let $q \in R/I$ and $b \in q$.  Since
+$q \in R/I$ we follow that by definition there is an element $j \in R$
+such that
+$$q = j + I$$
+(where sum of an element of $R$ and a subset of $R$ is defined in an
+obvious way). $b \in q$, and thus by defnition of addition of a set to
+an element we conclude that there's an element $k \in I$
+such that
+$$b = j + k$$
+and thus
+$$j = b - k$$
+and therefore if $w \in q$ is an arbitrary element, then there's $e
+\in I$ such that
+$$w = j + e$$ 
+thus
+$$w = b - k + e$$
+since $k, e \in I$ we follow that $-k \in I$, thus $-k + e \in I$, and
+therefore $w \in b + I$. Thus $q \subseteq b + I$. The case with
+$\supseteq$ is kinda similar, which gives us an identity $q = b + I$,
+which together with the fact that $b$ and $q$ are arbitrary element
+gives us a biconditional
+$$q \in R/I \land b \in q \lra q = b + I$$
+thus any given element of $R/I$ can be represented as a sum of any of
+its elements and $I$.
+
+Formulas that were egiven in the book don't give out too much
+rigor, and thus let us redefine the whole shebang:
+
+Given $a, b \in R/I$, we can define sum and
+product functions $+: R/I \times R/I \to \pow(R)$
+$*: R/I \times R/I \to \pow(R)$ by
+$$a + b = \set{q + w \in R: q \in a \land w \in b}$$
+$$a * b = \set{q * w \in R: q \in a \land w \in b}$$
+where it is essentially a range of underlying $+$ and $*$ respectively
+over a set of pairs between elements of $a$ and $b$. Problem is that
+those functions are having a codomain of $\pow(R)$, but we want to
+prove specifically that we can restrict codomains of those functions
+to $R/I$.
+
+Let $a', b' \in R/I$.  Let $a \in a', b \in b'$. We follow that
+$$a' = a + I$$
+and
+$$b' = b + I$$
+as discussed previously. Now let us prove the identity in the book. Let
+$$q \in (a + b) + I$$
+We follow that it is the caseif and only if there's $w \in I$ such that
+$$q = (a + b) + w \lra q = (a + 0) + (b + w)$$
+which implies that
+$$q \in (a + I) + (b + I)$$
+Reverse implication is similar, which implies that 
+$$(a + I) + (b + I) = (a + b) + I$$
+which gives us the formula from the book. This formula together with
+our initial assetion that $a' = a + I$ and $b' = b + I$ implies that
+the codomain of the $+$ can be indeed restricted to $R/I$, as desired.
+
+Let $a, b \in R$. We follow that
+$$q \in (a + I)  * (b + I)$$
+implies that there are $c, d \in I$ such that
+$$q = (a + c) * (b + d)$$
+$$q = ab + cb + ad + cd$$
+we follow that $cb, ad, cd \in I$ by definition of ideal, and thus
+$$cb + ad + cd \in I$$
+therefore
+$$q \in ab + I$$
+which gives us a statement
+$$(a + I)  * (b + I) \subseteq a * b + I$$
+
+Reverse case is a bit trickier, assume that $q \in a * b + I$. We follow that there's $w \in I$
+such that
+$$q = ab + w$$
+$$q = ab + w + 0$$
+$$q = ab + w(1 + 0)$$
+$$q = ab + w((a - b) + 1 + (b - a))$$
+
+$$w = cb + ad + cd$$
+
+
+
+
+
 \subsection{}
 
 \textit{Let $R$ be a commutative ring.}
@@ -3052,6 +3147,58 @@ such that $(a + b)^n \in I$, and therefore we conclude that $a + b \in
 Rad(I)$.
 
 Those two properties constitute a definition of the ideal, as desired.
+
+\subsection{}
+
+\textit{The goal of this exercise is to prove that every iideal in $Z$
+is principal ideal.}
+
+\textit{(a) Let $I$ be a non-zero ideal in $Z$. Prove that $I$
+contains a positive integer.}
+
+If $I$ is a non-zero ideal, then it's got $a \in I$ such that $a \neq
+0$. If $a > 0$, then we're done, and if not, then we follow that $-1 *
+a > 0 \in I$.
+
+\textit{(b) Let $I$ be a non-zero ideal in $Z$. Let $c$ be the
+smallest positive integer in $I$. Prove that every element of $I$ is a
+multiple of $c$.}
+
+We follow that all the multiples of $c$ are in $I$. If there's some
+element $q \in I$ that is not a multiple of $c$, then we follow that
+$gcd(q, c) < c$, and thus there are integers $a, v \in Z$ such that
+$aq + vc = gcd(q, c)$. Since $q, c \in I$ we follow that $gcd(q, c)
+\in I$, and thus we conclude that there's a positive element of $I$
+that is less than $c$, which is a contradictions
+
+\textit{(c) Prove that every ideal in $Z$ is principal.}
+
+Directly follows from the previous point.
+
+\subsection{}
+
+\textit{Prove the remaining parts of Proposition 3.32. Let $R$ be a
+commutative ring, and let $I$ be an ideal of $R$.}
+
+\textit{(a) Let $a + I$ and $a' + I$ be two cosets. Prove that $a + I
+= a' + I$ if and only of $a - a' \in I$.}
+
+Suppose that $a + I = a' + I$. We follow that there are elements $i,
+i' \in I$ such that $a + i = a' + i'$. Then we follow that $a - a' =
+i' - i$. Since $i', i \in I$ we follow that $-i \in I$ and $i' - i \in
+I$, and thsus $a - a' \in I$.
+
+If $a - a' \in I$, then we follow that there's and element $i \in I$
+such that $a - a' = i$, thus $a = a' + i$. We then follow that for
+every element in $q \in a + I$ there's an element $i' \in I$ such that
+$q = a + i'$, and thus $q = a' + i + i'$. By the additive closure of
+$I$ we follow that $i + i' \in I$, and thus we conclude that $q \in a'
++ I$, which gives us the $\subseteq$ relation between those
+sets. Reverse direction is kinda similar, and thus we conclude the
+desired reverse implication.
+
+\textit{(b) Prove that addition of cosets is well-defined.}
+
 
 
 \end{document}
