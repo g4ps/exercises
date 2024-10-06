@@ -3018,9 +3018,36 @@ $$q \in R/I \land b \in q \lra q = b + I$$
 thus any given element of $R/I$ can be represented as a sum of any of
 its elements and $I$.
 
-Formulas that were egiven in the book don't give out too much
-rigor, and thus let us redefine the whole shebang:
+Formulas that were given in the book don't give out too much
+rigor, and thus let us clarify the whole shebang:
 
+In the book we're given formulas
+$$(a + I) + (b + I) = (a + b) + I$$
+$$(a + I) * (b + I) = (a * b) + I$$
+and without any context this thing does not make much sense. We know
+that for any given coset $q$ there's an element $a \in R$ such that $q
+= a + I$ (which we're gonna call an \textit{additive representation}
+of a coset). Additive representations are only representations, and
+from our previous point in the notes we can follow that any given
+coset can have several additive representations, and a single representation
+refers only to one coset. Thus this representation can be formulated
+as "one-to-many" from cosets to representations.
+
+With our notion of representations we can now make sense of the
+formulas. Given two representations we follow that there exists a
+single representation, that conforms to the provided formulas. Given
+that there is a single coset that is represented by a representation,
+we conclude that formula essentially is a binary function from
+representations to cosets. In the book (and further in the exercises)
+we are proving the fact that those formulas are "well defined",
+i.e. that given two cosets, there exists only one coset, to which
+their respective representations are being sent, and thus that we can
+define a proper function from pairs of cosets to cosets, that conforms
+to the formula.
+
+Although with proper maintenance we can define sums and procuts
+in a way, that they were defined in the book, I wonder if we could
+define the same thing in terms of ranges. 
 Given $a, b \in R/I$, we can define sum and
 product functions $+: R/I \times R/I \to \pow(R)$
 $*: R/I \times R/I \to \pow(R)$ by
@@ -3030,8 +3057,42 @@ where it is essentially a range of underlying $+$ and $*$ respectively
 over a set of pairs between elements of $a$ and $b$. Problem is that
 those functions are having a codomain of $\pow(R)$, but we want to
 prove specifically that we can restrict codomains of those functions
-to $R/I$.
+to $R/I$. Material in the book and the exercises certainly implies
+that ranges of functions over underlying sets are subsets of
+a single coset (i.e. given $a, b \in R/I$ there's $c \in R/I$
+such that $a + b \subseteq c$ and the same goes for $*$).
 
+In order to try to prove that our definitions are indeed equivalent to
+the ones in the book, we might want to prove some other things about
+cosets. Notably we need to show that if $b' \in R/I$, $w \in I$, and
+$b \in b'$, then $b + w \in b'$. We can do that by a straightforward
+application of the definition of coset.
+
+Let $a', b', w \in R/I$ be such that $a' + b' \subseteq w$. Let $q \in w$.
+We follow that since $q \in w$ that $w = q + I$. Let $a \in a'$, $b \in b'$.
+We follow that $a + b \in w$, and thus $a + b \in q + I$. Therefore
+there is an element $e \in I$ such that $a + b = q + e$. Therefore
+$a + b - e = q$. Since $e \in I$ we follow that $-e \in I$, thus
+$b - e \in b'$, and therefore we conclude that for $q \in w$ there
+is a pair of element $\eangle{a, b - e} \in a' \times b'$ such that
+$q = a + b - e$, and thus $w \subseteq a' + b'$, which implies that
+$a' + b' = w$.
+
+Let $a', b', w \in R/I$ be such that $a' * b' \subseteq w$. Let $q \in w$.
+We follow that since $q \in w$ that $w = q + I$. Let $a \in a'$, $b \in b'$.
+We follow that $a * b \in w$, and thus $a * b \in q + I$. Therefore
+there is an element $e \in I$ such that $a * b = q + e$. Therefore
+$a * b - e = q$.
+
+$$(a + w) * (b + e) = ab + wb + ae + we$$
+$$a * (b - e) = ab - ae$$
+$$(a - w) * b = ab - wb$$
+$$(a - w) * (b - e) = ab - wb - ae + we$$
+$$(a + w) * (b + e) + (a - w) + (b - e) = 2ab + 2we = 2(ab + we)$$
+TODO
+
+With our definitions we can try to produce formulas, that were
+given in the book:
 Let $a', b' \in R/I$.  Let $a \in a', b \in b'$. We follow that
 $$a' = a + I$$
 and
@@ -3042,11 +3103,17 @@ We follow that it is the caseif and only if there's $w \in I$ such that
 $$q = (a + b) + w \lra q = (a + 0) + (b + w)$$
 which implies that
 $$q \in (a + I) + (b + I)$$
-Reverse implication is similar, which implies that 
+
+Now assume that $q \in (a + I) + (b + I)$. We follow that there are
+$w, e \in I$ such that
+$$q = a + w + b + e$$
+thus
+$$q = (a + b) + (w + e)$$
+given  that $w, e \in I$ we follow that $w + e \in I$ and thus
+$$q \in (a + b) + I$$
+thus giving us an identitty
 $$(a + I) + (b + I) = (a + b) + I$$
-which gives us the formula from the book. This formula together with
-our initial assetion that $a' = a + I$ and $b' = b + I$ implies that
-the codomain of the $+$ can be indeed restricted to $R/I$, as desired.
+which gives us the formula from the book.
 
 Let $a, b \in R$. We follow that
 $$q \in (a + I)  * (b + I)$$
@@ -3059,18 +3126,6 @@ therefore
 $$q \in ab + I$$
 which gives us a statement
 $$(a + I)  * (b + I) \subseteq a * b + I$$
-
-Reverse case is a bit trickier, assume that $q \in a * b + I$. We follow that there's $w \in I$
-such that
-$$q = ab + w$$
-$$q = ab + w + 0$$
-$$q = ab + w(1 + 0)$$
-$$q = ab + w((a - b) + 1 + (b - a))$$
-
-$$w = cb + ad + cd$$
-
-
-
 
 
 \subsection{}
@@ -3199,6 +3254,12 @@ desired reverse implication.
 
 \textit{(b) Prove that addition of cosets is well-defined.}
 
+Was taken care of in the notes.
 
+\textit{(c) Prove that addition and multiplication of cosets turns
+  $R/I$ into a commutative ring.}
+
+Definition of the sum and the axioms of underlying ring imply all the
+necessary conditions in a straightforward fashion.
 
 \end{document}
