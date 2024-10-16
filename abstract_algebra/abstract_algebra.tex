@@ -3343,4 +3343,53 @@ is an element of $R$ such that $f(i) = k$, which implies that $\phi$
 is surjective, which gives us the fact that $\phi$ is an isomorphism,
 as desired.
 
+\subsection{}
+
+\textit{Let $R$ be a commutative ring and let $I$ be an ideal of
+  $R$. For $a \in R$, we will denote the coset $a + I$ by
+  $\overline{a}$, i.e.
+  $$R \to R/I: a \to \overline{a}$$
+  is the reduction modulo $I$ homomorphism. We define a map of
+  polynnomial rings
+  $$\phi: R[x] \to (R/I)[x], \phi(\sum {a_i x^i}) = \sum {\overline{a_i} x^i}$$
+  by reducing the coefficieents modulo $I$. Prove that $\phi$ is a ring
+  homomorphism.}
+
+We can easily follow that identities are mapped as expected. The rest is basically taken care of
+by the definitions and previous proves:
+$$\phi(a + b) = \phi(\sum {a_i x^i} + \sum {b_i x^i}) = \phi(\sum {(a_i + b_i) x^i}) =
+\sum {\overline{(a_i + b_i)} x^i}$$
+$$\phi(a)  + \phi(b) = \sum {\overline{a_i} x^i} + \sum {\overline{b_i} x^i}) =
+\sum {\overline{(a_i + b_i)} x^i}$$
+
+
+$$\phi(a * b) = \phi(\sum {a_i x^i} * \sum {b_i x^i}) = \phi(\sum{\sum {a_i b_j x^{i + j}}}) =
+\sum{\sum {\overline{a_i b_j} x^{i + j}}}$$
+$$\phi(a) * \phi(b) = \sum {\overline{a_i} x^i} * \sum {\overline{b_i} x^i})
+= \sum{\sum {\overline{a_i b_j} x^{i + j}}}$$
+as desired.
+
+\subsection{}
+
+\textit{Let $R$ be a commutative ring and let $I$ and $J$ be ideals of $R$}
+
+\textit{(a) Prove that the intersection $I \cap J$ is an ideal of $R$.}
+
+We follow that if $w, e \in I \cap J$, then $w + e \in I$ by axioms of
+$I$ and $w + e \in J$ by axioms of $J$, and thus $w + e \in I \cap
+J$. If $q \in R$ is arbitrary, then $wq \in I$ by axioms of $I$ and
+$wq \in J$ by axioms of $J$, which implies that $wq \in I \cap
+J$. This constitutes a definition of an ideal, as desired.
+
+\textit{(b) Prove that the ideal sum (that is defined in an obvious
+way) is an ideal of $R$ }
+
+If $q, w \in I + J$, then there are $a, b \in I$ and $c, d \in J$ such
+that $q = a + c, w = b + d$, and we can follow that then
+$$q + w = a + b + c + d = (a + c) + (b + d) \in I + J$$
+If $e \in R$ is arbitrary, then
+$$e + q = e + a + b = (e + a) + b \in I + J$$
+which implies that $I + J$ is indeed an ideal, as desired.
+
+
 \end{document}
