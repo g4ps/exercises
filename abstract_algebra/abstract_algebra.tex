@@ -3062,6 +3062,11 @@ that ranges of functions over underlying sets are subsets of
 a single coset (i.e. given $a, b \in R/I$ there's $c \in R/I$
 such that $a + b \subseteq c$ and the same goes for $*$).
 
+UPDATE: after doing some exercises, I became convinced that this thing
+wont work after all. Defining product as a sum of products (as with
+ideals) might solve the problem, but I wont investigate this thing
+further. 
+
 In order to try to prove that our definitions are indeed equivalent to
 the ones in the book, we might want to prove some other things about
 cosets. Notably we need to show that if $b' \in R/I$, $w \in I$, and
@@ -3390,6 +3395,88 @@ $$q + w = a + b + c + d = (a + c) + (b + d) \in I + J$$
 If $e \in R$ is arbitrary, then
 $$e + q = e + a + b = (e + a) + b \in I + J$$
 which implies that $I + J$ is indeed an ideal, as desired.
+
+\textit{(c) The ideal product of two ideals is defined to be
+  $$IJ = \set{\sum{a_i b_i}: n \geq 1 \land a_n \in J \land b_n \in J}$$
+  Prove that IJ is an ideal of $R$}
+
+Pretty much the same idea as before: sums do not even need to be rearranged,
+and
+$$c\sum{a_i b_i} = \sum{c a_i b_i} = \sum{(c a_i) b_i}$$
+which by power of the fact that $I$ is an ideal gives us the desired result.
+
+\textit{(d) One might ask why the product $IJ$ of ideals isn't simply
+defined as the set of products. The answer is that the set of product
+need not be an ideal. Here is an example. Let $R = Z[x]$, and let $I$
+and $J$ be the ideals
+$$I = 2Z[x] + xZ[x], J = 3Z[x] + xZ[x]$$
+Prove  that the set of products is not an ideal.}
+
+We follow that
+$$a_1 = x, a_2 = -2 \in I$$
+$$b_1 = x, b_2 = 3 \in I$$
+We then follow that $a_1 b_2 = 3x$, $a_2 b_1 = -2x$ are in the set of
+products. We then follow that $3x - 2x = x$ is a sum of elements of
+the set of products. Let $i \in I$ and $j \in J$ be arbitrary.
+We follow that if $i * j = x$, then degrees of $i$ and $j$ got
+to be $1$ and $0$ in order for the product to be of order $1$.
+Since $1$ is a multiple of neither $2$ or $3$ we can follow that
+there are no polynomials, which implies that the set is not closed
+under addition, and thus is not an ideal.
+
+\textit{(e) On the other hand, prove in general that if either $I$ or
+  $J$ is a principal ideal, then the set of products is an ideal.}
+
+Assume that $I$ is a principal ideal. We follow that if $a', c' \in I$
+and $b, d \in J$ are elements, then their pairwise products are in the
+set of procuts, and thus for arbitrary $e \in R$ we've got that
+$$c a'b = (ea') * b$$
+which satisfies the multiplication part of the definition of an ideal.
+Since $I$ is a principal ideal, we follow that there's $q \in R$ that
+is a defining element of $I$, and thus there are $a, c \in R$ such
+that $a' = qa, c' = qc$. Thus
+$$a'b + c'd = qab + qcd = q(ab + cd)$$
+$b, d \in J$, and thus $ab \in J$ and $cd \in J$. Together with the
+fact that $q \in I$ we follow that the abovementioned element is
+indeed an element of the set of products, which gives us the closure
+of the set under addition. ] Together with the previous part it
+constitutes a definition of an ideal, as desired.
+
+\subsection{}
+
+\textit{Let $R$ be a ring, let $I$ be an ideal of $R$, and for any other ideal $J$ of $R$,
+  let $\overline{J}$ be the following subset of the quotient ring $R/I$:
+  $$\overline{J} = \set{a + I: a \in J}$$}
+
+\textit{(a) Prove that $\overline{J}$ is an ideal of $R/I$.}
+
+If $q', w' \in \overline{J}$, we follow that
+$$q' + w' = q + I + w + I = (q + w) + I$$
+$q + w \in J$ by the powers of $J$, and thus the whole thing is
+$\overline{J}$. By similar logic product of any element of $R/I$ and
+$\overline{J}$ is in $\overline{J}$, which concludes the proof.
+
+\textit{(b) Let $\overline{K}$ be an ideal of $R/I$. Prove that the
+  set
+  $$Q = \bigcup_{a + I \in \overline{K}}{(a + I)}$$
+  is an ideal of $R$ that contains $I$.}
+
+By definition of $\overline{K}$ and  underlying $K$ we follow that
+$0 \in K$, and thus $0 + I = I \in \overline{K}$, which implies that
+$I \subseteq Q$. If $a, b \in Q$, then there are appropriate $a', b' \in K$,
+and thus
+$$ca = c (a + k) = ca + ck$$
+$ck \in K$, and thus the abovementioned thing is an element of $ca + K$.
+$$a + b = a_1 + k_1 + b_1 + k_2 = (a_1 + b_1) + (k_1 + k_2)$$
+and thus blah-blah-blah, it is all covered.
+
+\textit{(c) Lots of talking, not much meat}
+
+\subsection{}
+
+\textit{Prove that the set of nilpotent elements is an ideal of $R$.}
+
+It's the radical of ideal $\set{0}$.
 
 
 \end{document}
