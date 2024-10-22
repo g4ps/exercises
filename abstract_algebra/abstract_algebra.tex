@@ -3478,5 +3478,79 @@ and thus blah-blah-blah, it is all covered.
 
 It's the radical of ideal $\set{0}$.
 
+\section{Prime Ideals and Maximal Ideals}
+
+\subsection{}
+
+\textit{Let $I$ be the following subset of the ring $Z[x]$ of
+  polynomials having integer coefficient.
+  $$I = \set{2a(x) + x b(x) : a(x), b(x) \in Z[x]}$$ 
+}
+
+\textit{(a) Prove that $I$ is an ideal of $Z[x]$.}
+
+We follow that both $a(x), b(x)$ are ideals, both $2 a(x)$ and $x
+b(x)$ are principal ideals, and thus $I$ is a set of sums of two ideals,
+and thus itself  an ideal (as proven in the exercises).
+
+\textit{(b) Prove that $I \neq Z[x]$}
+
+$1$ is not present in $I$
+
+\textit{(c) Prove that $I$ is not a principal ideal}
+
+Assume that $q(x)$ is an ideal, that generates $I$. We follow that it
+generates both $2$ and $x$, for which the only common multiple is $1$,
+which implies that $q = 1$, which implies that $I = Z[x]$, which is
+not true.
+
+\textit{(d) Prove that $I$ is a maximal ideal of $Z[x]$}
+
+Let $J$ be an ideal of $Z[x]$ that properly contains $I$.  Assume that
+$q \notin I$. We follow that since $q \notin I$ that it cannot be a
+multiple of $x$, and thus it has to contain an element $b$ of sum of
+degree $0$. Since $q \notin I$ we follow that this element is not even
+(and thus odd). Thus we then follow that $q - b$ is a multiple of $x$
+that does not have an element of the sum of degree $0$, and thus is a
+multiple of $x$. Therefore we can state that $q - b \in I$, which
+implies that $q - (q - b) = b \in J$. Since $b \in J$ is an odd
+number, we follow that $b - 2n \in J$ for all $n \in Z$, which implies
+thaat $1 \in J$, which in turn implies that $J = Z[x]$, as desired.
+
+\subsection{}
+
+\textit{(a) Let $m \neq 0$ be an integer. Prove that the ideal $mZ$ is
+a maximal ideal if and only if $|m|$ is a prime number}
+
+Assume that $mZ$ is a maximal ideal. If $m$ is not a prime, then there are
+$a \in Z \setminus \set{0, 1}, b \geq 2$ such that $m = ab$. By the restriction on
+$b$ we follow that $a, b$ aren't multiples of $m$, and thus $mZ$ is not a prime ideal.
+Thus contrapositive of this statement implies that $m$ is a prime, as desired.
+
+Assume now that $m$ is a prime and let $b \in Z \setminus mZ$. We
+follow that $gcd(m, b) = 1$, thus there are integers $a, v$ such that
+$am + bv = 1$, which implies that if $J$ is an ideal that contains both $mZ$ and $b$,
+then $J = Z$, which implies that $mZ$ is a maximal ideal, as desired.
+
+\textit{(b) Let $F$ be a field, and let $a, b \in F$ with $a \neq
+  0$. Prove that the principal ideal $(ax + b)F[x]$ is a maximal ideal
+  of the polynomial ring $F[x]$.}
+
+Since $a \in F$ and $a \neq 0$ we follow that $a \inv \in F$. Thus by pretty much the same logic
+as in previous exercise (part c) we conclude the same result.
+
+\textit{(c) Skip}
+
+\subsection{}
+
+\textit{Let $R$ be a ring, let $M \subseteq R$ be a maximal ideal, and let $R^*$ be its group
+  of units. Prove that the following is equivalent}
+
+\textit{(a) $M$ is the only maximal ideal of $R$}
+
+\textit{(b) $R = M \cup R^*$.}
+
+Assume (a) and contradict (b). Let $q \in R \setminus (M \cup R^*)$. We follow that  TODO
+
 
 \end{document}
