@@ -3470,7 +3470,19 @@ $ck \in K$, and thus the abovementioned thing is an element of $ca + K$.
 $$a + b = a_1 + k_1 + b_1 + k_2 = (a_1 + b_1) + (k_1 + k_2)$$
 and thus blah-blah-blah, it is all covered.
 
-\textit{(c) Lots of talking, not much meat}
+\textit{(c) Conclude that there is  a bijective map
+  $$ \set{\text{ideals of }R\text{ that contain } I} \to \set{\text{ideals of }R/I}, J \to J/I$$}
+
+By point (a) for every ideal of $R$ (whether or not it contains $I$)
+there's an appropriate ideal of $R/I$. If $R_1 \neq R_2$ are ideals that contain $I$,
+then we follow that there is $r_1 \in R_1 \setminus I$ such that $r_1 \notin R_2$
+(if not, then swap'em around and assume so). Thus $r_1 + I$ is in the $\overline{R_1}$
+but not in $\overline{R_2}$ by their respective definitions. Thus the whole thing
+is injective. If $Q$ is an ideal of $R/I$, then by point $(b)$ we've got an ideal of
+$R$ that contains $I$. If $I \subseteq J$ and $J$ is an ideal, then we
+can follow that point (b) is essentially an inverse function of
+construction of $\overline{J}$, which produced the desired result.
+
 
 \subsection{}
 
@@ -3479,6 +3491,42 @@ and thus blah-blah-blah, it is all covered.
 It's the radical of ideal $\set{0}$.
 
 \section{Prime Ideals and Maximal Ideals}
+
+\subsection*{Notes}
+
+There's gotta be an easier way to do this, but we gonna try to prove
+that for every non-invertible element of an $R$ there's a maximum
+ideal, that contains it. Let us assume that $q \in R$ is such that
+$q \notin R^*$. We follow that all of the $\pow(R)$ is a set, and thus
+there's a set of all ideals of $R$. Therefore there's a set of all
+ideals of $R$ that contain $q$, and if we remove $R$ from this set,
+then we get a set of all ideals of $R$, that are not $R$, but contain
+$q$ (this set is not empty due to restriction on $q$; this can be
+derived, but it's not that complicated, key is to assume that since
+$q \notin R^*$ that there's no nonzero power of $q$ that is equal to
+$1$ ). We then follow that this thing is a poset under $\subseteq$,
+and let $C$ be a chain in it. We then conclude that
+$$1 \in \cup C \ra \exists Q' \in C: 1 \in Q' \ra Q' = R$$
+which implies that $1 \notin \cup C$. Now if $r, w \in \cup C$,
+then we follow that $r \in Q_1, w \in Q_2$, and by the
+fact that $C$ is a chain we follow that $r \in Q_2$ or $w \in Q_1$,
+which in turn implies that $r + w \in Q_1$ or $r + w \in Q_2$,
+and thus $r + w \in \cup C$. By similar process we conclude that for
+arbitrary $r \in R$ and $c \in \cup C$ we've got that $rc \in \cup C$,
+which implies that $\cup C$ is an ideal that contains $q$, and thus
+$\cup C \in C$.
+
+By Zorn's lemma then we follow that there's a maximal element $M$ in
+the set of ideals of $R$ that aren't $R$ and contain $q$ under
+$\subseteq$. Let now $r \in R \setminus M$. We follow that if $J$ is
+an ideal such that $M \subseteq J$ and $r \in J$, then by definition
+of $M$ and $r$, $J$ is not an ideal of $R$ that isn't $R$, and thus $J
+= R$, which implies that $M$ is a maximal ideal . Thus we conclude the
+following:
+
+\textbf{Let $R$ be a commutative ring. If $q \notin R^*$, then there's
+a maximal ideal $M$ that contains $q$.}
+
 
 \subsection{}
 
@@ -3536,21 +3584,44 @@ then $J = Z$, which implies that $mZ$ is a maximal ideal, as desired.
   0$. Prove that the principal ideal $(ax + b)F[x]$ is a maximal ideal
   of the polynomial ring $F[x]$.}
 
-Since $a \in F$ and $a \neq 0$ we follow that $a \inv \in F$. Thus by pretty much the same logic
-as in previous exercise (part c) we conclude the same result.
+Since $a \in F$ and $a \neq 0$ we follow that $a \inv \in F$. Thus by
+pretty much the same logic as in previous exercise (part c) we
+conclude the same result.
 
 \textit{(c) Skip}
 
 \subsection{}
 
-\textit{Let $R$ be a ring, let $M \subseteq R$ be a maximal ideal, and let $R^*$ be its group
-  of units. Prove that the following is equivalent}
+\textit{Let $R$ be a ring, let $M \subseteq R$ be a maximal ideal, and
+let $R^*$ be its group of units. Prove that the following is
+equivalent}
 
 \textit{(a) $M$ is the only maximal ideal of $R$}
 
 \textit{(b) $R = M \cup R^*$.}
 
-Assume (a) and contradict (b). Let $q \in R \setminus (M \cup R^*)$. We follow that  TODO
+\textit{A ring having a unique maximal ideal is called a local ring.}
 
+What is interesting is that if $r \in R^*$, then there is $r\inv \in
+R^*$, and thus if $r \in M$ then $r r\inv = 1 \in M$ by properties of
+an ideal, and thus $M = R$, which is not true. This implies that $M
+\cap R^* = \emptyset$ for any maximal ideal $M$. Thus the whole thing
+is a partition.
+
+Assume (a) and contradict (b). Let $q \in R \setminus (M \cup
+R^*)$. Theorem in the notes implies that there's a maximal ideal,
+that contains $q$, and thus definition of $q$ implies that $M$ is
+not the only maximal ideal, which is a contradiction (holy heck,
+that was an overkill)
+
+Let us assume (b). Prerequisites of the exercise imply that $M$ has
+got to be a maximal ideal, so we are only required to derive the
+uniqueness of it. Assume that $M'$ is a maximal ideal of $R$,
+that is different from $M$. We follow that $M'$ cannot
+be a subset of $M$, since $M'$ is a maximal ideal, and thus
+there's $q \in M' \setminus M$. (b) now implies that $q \in R^*$,
+and thus there's $q\inv \in R$, which means that $q q\inv = 1 \in M'$,
+which implies that $M' = R$, which is false, and thus we conclude the
+desired result, which was pretty easy.
 
 \end{document}
