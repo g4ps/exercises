@@ -1937,7 +1937,7 @@ by algebraic properties of functions.
 
 $$f(x) = f(x) - 0 = f(x) - f(c) = \sum{a_i (x^j - c^j)}$$
 We know that
-$$x^n - c^n = (x - c)\sum_{i = 1}^n{x^{n - i} c^i}$$
+$$x^n - c^n = (x - c)\sum_{i = 1}^n{x^{n - i} c^{i - 1}}$$
 Which gives us the desired result (needed to look this one up).
 Reverse is trivial
 
@@ -3637,6 +3637,55 @@ desired result, which was pretty easy.
 
 \section{Abstract Fields and Homomorphisms}
 
+\subsection{}
 
+\textit{Let $F$ be a field and let $f(x) \in F[x]$ be a non-zero polynomial.}
+
+\textit{(a) Suppose that $\alpha \in F$ is a root of $f(x)$ Prove that
+there is a polynomial $g(x) \in F[x]$ such that $f(x) = (x - \alpha)
+g(x)$.}
+
+This one is a repeat of an exercise two chapters before (3.8(b))
+
+\textit{(b) More generally, suppose that $\alpha_1, ..., \alpha_n \in
+F$ are distinct roots of $f(x)$. Prove that there is a polynomial
+$g(x)$ such that
+  $$f(x) = (x - \alpha_1) (x - \alpha_2) ... (x - \alpha_n) g(x)$$
+}
+
+We're gonna use the induction on this one. Part (a) will suffice as a
+base case. Let $f(x) = (x - \alpha_1) g(x)$ and $\alpha_2 \neq
+\alpha_1$ is a root of $f(x)$. We follow then that
+$$(\alpha_2 - \alpha_1) g(\alpha_2) = 0$$
+Since $F$ is a field, it's an integral domain, and thus it's got
+cancellation property.  $(\alpha_2 - \alpha_1) \neq 0$ by our
+assumption, and thus we follow that $g(\alpha) = 0$.  Part(a) implies
+all the things that it needs to imply, which gives us the desired
+result.
+
+\textit{(c) Use (b) to deduce the following important result:}
+
+\textit{\textbf{Theorem} Let $F$ be a field, and let $f(x) \in F[x]$
+be a nonzero polynomial.  Then $f(x)$ has at most $deg(f)$ distinct
+roots in $F$.}
+
+If there are more roots, than the degree, then part (b) implies that
+it's got such a decomposition, which gives it greater degree than it's
+got, which gives us a contradiction.
+
+\subsection{}
+
+Done this one.
+
+\section{Interesting Examples of Fields}
+
+\subsection{}
+
+\textit{Prove that each of the following subsets of $R$ is a field}
+
+\textit{(a) $Q(\sqrt{3})$}
+
+
+TODO
 
 \end{document}
