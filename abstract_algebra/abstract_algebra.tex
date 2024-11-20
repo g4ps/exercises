@@ -3735,7 +3735,21 @@ $\sqrt{2}$ is not present in $Q(i)$.
 \subsection{}
 
 \textit{(a) Prove that
-$$\sqrt{6} \notin \set{a + b\sqrt{2} + c\sqrt{}}
+  $$\sqrt{6} \notin \set{a + b\sqrt{2} + c\sqrt{3}: a, b, c \in Q}$$
+  and conclude that this set of real numbers is not a ring }
+
+Suppose that there are $a, b, c \in Q$ such that
+$$\sqrt{6} = a + b\sqrt{2} + c\sqrt{3}$$
+we then can square the whole thing to get
+$$6 = (a + b\sqrt{2} + c\sqrt{3})^2 = a^2 + ab\sqrt{2} + ac\sqrt{3} + ab\sqrt{2} + 2b^2 + bc\sqrt{6} +
+ac\sqrt{3} + bc\sqrt{6} + 3c^2 = $$
+$$ = a^2 + 2b^2 + 3c^2 + 2 ab\sqrt{2} + 2 ac \sqrt{3} + 2bc\sqrt{6}$$
+thus we concluded that
+$$ 2 ab\sqrt{2} + 2 ac \sqrt{3} + 2bc\sqrt{6} = 6 - ... \in Q$$
+by closure of addition and inverses under $Q$, which would be true if
+$2ab = 2ac = 2bc = 0$, thus $a = b = c = 0$, which is not the case,
+which gives us the desired contradiction.
+
 
 
 \end{document}
