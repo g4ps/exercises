@@ -3740,16 +3740,72 @@ $\sqrt{2}$ is not present in $Q(i)$.
 
 Suppose that there are $a, b, c \in Q$ such that
 $$\sqrt{6} = a + b\sqrt{2} + c\sqrt{3}$$
-we then can square the whole thing to get
-$$6 = (a + b\sqrt{2} + c\sqrt{3})^2 = a^2 + ab\sqrt{2} + ac\sqrt{3} + ab\sqrt{2} + 2b^2 + bc\sqrt{6} +
-ac\sqrt{3} + bc\sqrt{6} + 3c^2 = $$
-$$ = a^2 + 2b^2 + 3c^2 + 2 ab\sqrt{2} + 2 ac \sqrt{3} + 2bc\sqrt{6}$$
-thus we concluded that
-$$ 2 ab\sqrt{2} + 2 ac \sqrt{3} + 2bc\sqrt{6} = 6 - ... \in Q$$
-by closure of addition and inverses under $Q$, which would be true if
-$2ab = 2ac = 2bc = 0$, thus $a = b = c = 0$, which is not the case,
-which gives us the desired contradiction.
+we follow then that
+$$\sqrt{6} - a = b\sqrt{2} + c\sqrt{3}$$
+$$(\sqrt{6} - a)^2 = (b\sqrt{2} + c\sqrt{3})^2$$
+$$6 - 2a\sqrt{6} + a^2 = 2b^2 + 2bc\sqrt{6} + 3c^2$$
+$$6  + a^2 - 3c^2 - 2b^2 = 2bc\sqrt{6} + 2a\sqrt{6} $$
+$$6  + a^2 - 3c^2 - 2b^2 = \sqrt{6}(2bc + 2a) $$
+lhs here is rational, and thus if $(2bc + 2a) \neq 0$ we've got a contradiction. Thus
+we conclude that $2bc + 2a = 0 \ra bc + a = 0 \ra a = -bc$.
 
+$$\sqrt{6} - c\sqrt{3}= a + b\sqrt{2} $$
+$$6 + c^23 - 6c \sqrt{2}= a^2 + 2b^2 + 2ab\sqrt{2}$$
+$$6 + c^23 - a^2 - 2b^2 =  2ab\sqrt{2} +  6c \sqrt{2}$$
+$$6 + c^23 - a^2 - 2b^2 =  \sqrt{2}(2ab + 6c)$$
+by the same logic $2ab + 6c = 0$
+
+$$\sqrt{6} - b\sqrt{2}= a + c\sqrt{3} $$
+$$6 + 2b^2 - 4b\sqrt{3}= a^2 + 3c^2 + ac\sqrt{3}$$
+$$6 + 2b^2 - (a^2 + 3c^2) = ac\sqrt{3} + 4b\sqrt{3}$$
+$$6 + 2b^2 - (a^2 + 3c^2) = \sqrt{3}(ac + 4b)$$
+by the same logic $ac + 4b = 0$
+thus
+
+$$
+\begin{cases}
+  a = -bc \\
+  2ab + 6c = 0 \\
+  ac + 4b = 0
+\end{cases}
+$$
+$$
+\begin{cases}
+  2(-bc)b + 6c = 0 \\
+  (-bc)c + 4b = 0
+\end{cases}
+$$
+$$
+\begin{cases}
+  -2b^2c + 6c = 0 \\
+  -bc^2 + 4b = 0
+\end{cases}
+$$
+$$
+\begin{cases}
+  c(-b^2 + 3) = 0 \\
+  b(-c^2 + 4) = 0
+\end{cases}
+$$
+the fact that $b \in Q$ implies that $b^2 \neq 3$, and thus $c =
+0$. Therefore $-c^2 + 4 \neq 0$, which implies that $b = 0$, and thus
+$a = 0$. Therefore we conclude that $a = b = c = 0$, which implies
+$$a + b\sqrt{2} + c\sqrt{3} = 0$$
+which is a contradiction (I might've messed up some of the
+calculations here, but it has got to get the same result w/ the right
+ones). More general case of this thing is somewhat whacky, maybe I'll try
+to get a hold of it sometime in the future.
+
+\textit{(b) Prove that the set
+  $$Q(\sqrt{2}, \sqrt{3}) = \set{a + b\sqrt{2} + c\sqrt{3} + d\sqrt{6}, a, b, c, d \in Q}$$
+  is a subring of $R$.
+}
+
+It's closed under all the respective properties and it has zeroes.
+
+\textit{(c) Prove that $Q(\sqrt{2}, \sqrt{3})$ is a subfield of $R$}
+
+TODO
 
 
 \end{document}
