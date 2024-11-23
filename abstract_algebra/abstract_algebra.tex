@@ -3805,7 +3805,60 @@ It's closed under all the respective properties and it has zeroes.
 
 \textit{(c) Prove that $Q(\sqrt{2}, \sqrt{3})$ is a subfield of $R$}
 
-TODO
+Assume that
+$$a + b\sqrt{2} + c\sqrt{3} + d\sqrt{6} \in Q(\sqrt{2}, \sqrt{3})$$
+we want to find $a' + b'\sqrt{2} + c'\sqrt{3} + d'\sqrt{6} \in Q(\sqrt{2}, \sqrt{3})$ such that
+$$ (a + b\sqrt{2} + c\sqrt{3} + d\sqrt{6}) * (a' + b'\sqrt{2} + c'\sqrt{3} + d'\sqrt{6}) = 1$$
+moreover, we can relax this thing, to get any given number
+$$ (a + b\sqrt{2} + c\sqrt{3} + d\sqrt{6}) * (a' + b'\sqrt{2} + c'\sqrt{3} + d'\sqrt{6}) = j$$
+so that $j \in Q$ and $j \neq 0$
+we follow that
+
+$$(a + b\sqrt{2} + c\sqrt{3} + d\sqrt{6}) * (a' + b'\sqrt{2} + c'\sqrt{3} + d'\sqrt{6}) = $$
+
+$$ (a a' + a b'\sqrt{2} + a c'\sqrt{3} + a d'\sqrt{6}) + $$
+$$ (b \sqrt{2} a' + 2 b b' + b \sqrt{2} c'\sqrt{3} + b \sqrt{2} d'\sqrt{6}) + $$
+$$ ( c\sqrt{3} a' + c\sqrt{3} b'\sqrt{2}  + 3 c c' + c\sqrt{3} d'\sqrt{6}) + $$
+$$ ( d\sqrt{6} a' + d\sqrt{6} b'\sqrt{2}  + d\sqrt{6} c'\sqrt{3}  + 6 d d') = $$
+
+$$ (a a' +     a b'\sqrt{2} +              a c'\sqrt{3} +              a d'\sqrt{6}) + $$
+$$ (2 b b' +   a' b \sqrt{2} +             b  c'\sqrt{6} +             3 b  \sqrt{3} d') + $$
+$$ (3 c c' +   c\sqrt{3} a' +              cb'\sqrt{6} +               3 c \sqrt{2} d') + $$
+$$ (6 d d' +   d\sqrt{6} a' +              d2\sqrt{3} b' +             3 d\sqrt{2} c') = $$
+
+$$ (a a' +     a b'\sqrt{2} +              a c'\sqrt{3} +              a d'\sqrt{6}  ) + $$
+$$ (2 b b' +   a' b \sqrt{2} +             3 b d' \sqrt{3}  +           b c'\sqrt{6}  ) + $$
+$$ (3 c c' +   3 c d' \sqrt{2} +           c a' \sqrt{3} +              cb'\sqrt{6}   ) + $$
+$$ (6 d d' +   3 c'd \sqrt{2} +           2 db'\sqrt{3}  +            da'\sqrt{6} ) $$
+
+thus given (presumed) linear independence of roots of integers under $Q$, we follow that we need
+to find such $a', b', c', d' \in Q$ so that
+$$
+\begin{cases}
+  ab' + a'b + 3cd' + 3c'd = 0 \\
+  ac' + 3bd' + ca' + 2db' = 0  \\
+  ad' + bc' + cb' + da' = 0  \\  
+\end{cases}
+$$
+now let us move some variables around (the ones without the dash are
+our given constants in this case)
+
+$$
+\begin{cases}
+  b a' + a b' + 3d c' + 3c d' = 0 \\
+  da' + cb' + bc' + ad' = 0 \\
+  -ca' + 2db' + ac' + 3bd' = 0 \\
+\end{cases}
+$$
+
+and probably this one leads to the satisfying answer TODO
+
+\subsection{}
+
+\textit{Let $F$ be a finite field. Prove that
+  $$\prod_{\alpha \in F^*}{\alpha} = -1$$
+}
+
 
 
 \end{document}
