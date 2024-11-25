@@ -3859,6 +3859,30 @@ and probably this one leads to the satisfying answer TODO
   $$\prod_{\alpha \in F^*}{\alpha} = -1$$
 }
 
+Given $\alpha \in F^*$ we can follow that there is $\alpha\inv \in
+F^*$ as well, but they do not need to be distinct (i.e. there's a case
+when $\alpha = \alpha\inv$). Thus we can partition the whole set into
+subsets, that contain one or two elements, where each subset that
+contains two elements is a set of an element and its inverse.
+Product of those sets is then $1$, and thus we follow that
+the entire product is the product of all elements, that are equal
+to its inverses.
 
+For our not-so general case of $F_{13}$ we have a case that
+the whole product can be partitioned into
+$$\set{2, 7}, \set{3, 9}, \set{4, 10}, \set{5, 8},
+\set{6, 11}, \set{12}$$
+
+(needed a hint on this one)
+Suppose that there is an element $q \in F$ such thaht $q^2 = 1$ and
+such that $q$ is distinct from $1$ and $-1$. We follow that
+$$(q - 1) (q + 1) = q^2 - 1 = 1 - 1 = 0$$
+thus
+$$(q - 1)( q + 1) = 0$$
+this implies that $q - 1 = 0$ or $q + 1 = 0$, which implies that $q =
+\pm 1$, which is a contradiction. Thus we conclude several things,
+chief among them is the fact that any element that is not equal
+to $\pm 1$ is distinct from its inverse. Thus we conclude by previous
+point (1st paragraph) the desired result.
 
 \end{document}
