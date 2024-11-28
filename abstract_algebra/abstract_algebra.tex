@@ -3885,7 +3885,34 @@ chief among them is the fact that any element that is not equal
 to $\pm 1$ is distinct from its inverse. Thus we conclude by previous
 point (1st paragraph) the desired result.
 
-
 \textit{The rest of this section is TODO}
+
+\section{Subfield and Extension Fields}
+
+\subsection{}
+
+\textit{(a) Let $K/F$ be an extension of fields. Prove that
+  $$[K:F] = 1 \lra K = F$$
+}
+
+Since $K/F$ is an extension, by definition we have that $F \subseteq
+K$.
+
+Suppose that $[K:F] = 1$. This means that $dim_F(K) = 1$, and
+therefore $\set{1}$ spans $K$. Thus if $k \in K$, then there is $f \in
+F$ such that $f * 1 = k$, and thus $f = k$. Therefore we have that $k
+\in F$, and thus $K \subseteq F$, which implies the right
+side. Reverse is trivial.
+
+\textit{(b) Let $L/F$ be a finite extension of fields, and suppose
+that $[L:F]$ is a prime. Suppose further that $K$ is a fiels such that
+$F \subseteq K \subseteq L$. Prove that either $K = F$ or $K = L$.}
+
+We follow that $[L:K]$ is finite (if it's infinite, then $[L:F]$
+is infinite, which is not the case), and thus
+$$[L:F] = [L:K] * [K:F]$$
+the fact that $[L:F]$ is prime implies that $[L:K]$ or $[K:F]$
+is equal to one, which by previous point implies the desired result
+
 
 \end{document}
