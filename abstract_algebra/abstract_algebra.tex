@@ -3948,17 +3948,43 @@ such that
 $$c_i = \sum{q_{i, j} a_j}$$
 and thus
 $$l = \sum{\sum{q_{i, j} a_j} b_i}$$
-by unfolding this sum we get the desired result. 
+by unfolding this sum we get the desired result.
 
+\textit{(b) Prove that $|C| = mn$, i.e. prove that the $mn$ products
+  of $a_i b_j$ are distinct.}
 
+Assume that there are $a_i b_j$ and $a_q b_w$ such that
+$a_i \neq a_q$ and $b_j \neq b_w$, but
+$$a_i b_j = a_q b_w$$
+One thing that we can follow is that $a_i, a_q, b_j, b_w \neq 0$ since
+they are part of a basis for $L$ and $K$ respectively.
+We then follow that
+$$a_i a_q \inv b_j = b_w$$
+which implies that $b_j$ is a nonzero multiple of $b_w$ in $L/K$,
+which implies that the list is then not linearly independent, thus
+making $B$ not a basis, which gives us a contradiction
 
-\textit{Rest is marked as TODO for now }
+\textit{(c) Prove that $L/F$ is an infinite extension if and only
+  if at least one of $L/K$ or $K/F$ is
+  an infinite extension}
+
+Part (a) of this theorem is fully cooked at this point, which gives us
+an easy forward implication. Thus assume that one of the $L/K$ or $K/F$
+is infinite. We can then see that the proof for finite case does not
+depend on finality of $A$ nor $B$, and thus we conclude that $C$
+in that case is indeed a basis for $L/F$. We then see that
+$$[L:F] = \dim_F(L) = |C|$$
+which is still the case for infinite sets, which gives us the desired
+conclusion
+
+\textit{The rest of this section was previously attempted in the notes,
+not foint to repeat it here}
 
 \section{Polynomial Rings}
 
 \subsection{}
 
-\textit{Repeat of the previous exercise}
+\textit{Repeat of a previous exercise}
 
 \subsection{}
 
