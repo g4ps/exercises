@@ -3988,6 +3988,39 @@ not foint to repeat it here}
 
 \subsection{}
 
-\textit{}
+\textit{Let $F$ be a field, let $f(x), g(x) \in F[x]$ be polynomials
+with $g(x) \neq 0$, and suppose that there are polynomials $q_1(x),
+q_2(x), r_1(x), r_2(x) \in F[x]$ satisfying
+$$f(x) = g(x) q_1(x) + r_1(x)\text{ with } \deg(r_1) < \deg(g)$$
+$$f(x) = g(x) q_2(x) + r_2(x)\text{ with } \deg(r_2) < \deg(g)$$
+prove that $q_1(x) = q_2(x)$ and $r_1(x) = r_2(x)$. }
+
+If $\deg(f) < \deg(g)$, then we follow that if $q_1 \neq q_2$, then one of
+$q_1, q_2$ aren't zero. Assume that $q_1 \neq 0$, and then
+$$\deg(g(x)q_1(x)) = \deg(g(x)) + \deg(q_1(x))$$
+since $\deg(r(x)) < \deg(g(x))$, we follow that
+$$\deg(g(x)q_1(x) + r(x)) = \deg(g(x)) + \deg(q_1(x)) \geq \deg(g(x)) > \deg(f(x))$$
+and thus
+$$g(x)q_1(x) + r(x) \neq f(x)$$
+which gives us a contradiction.
+
+Since
+$$f(x) = g(x) q_1(x) + r_1(x)$$
+$$f(x) = g(x) q_2(x) + r_2(x)$$
+we follow that
+$$g(x) q_1(x) + r_1(x) - (g(x) q_2(x) + r_2(x)) = f(x) - f(x) = 0$$
+$$g(x) q_1(x) + r_1(x) - (g(x) q_2(x) + r_2(x))  = 0$$
+$$g(x) (q_1(x) - q_2(x)) + (r_1(x) -  r_2(x))  = 0$$
+$$g(x) (q_1(x) - q_2(x)) = r_2(x) - r_1(x)$$
+thus
+$$\deg(g(x) (q_1(x) - q_2(x))) = \deg(r_2(x) - r_1(x))$$
+If $q_1 \neq q_2$, then we follow that  $q_1 - q_2 \neq 0$, and thus
+$\deg(g(x) (q_1(x) - q_2(x))) \geq \deg(g(x))$. Degree of rhs here is
+less than $\deg(g(x))$, which gives us a contradiction. Thus we
+conclude that $q_1 = q_2$, which then implies that
+$$r_2(x) - r_1(x) = g(x) * 0 = 0$$
+which implies the desired result.
+
+
 
 \end{document}
