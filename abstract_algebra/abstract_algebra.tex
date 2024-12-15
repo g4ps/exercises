@@ -3982,6 +3982,21 @@ not foint to repeat it here}
 
 \section{Polynomial Rings}
 
+\subsection*{Notes}
+
+Let us reiterate a couple of things here: given a ring $R$ there is a
+set of finite lists of elements of $R$, whose first element is not
+zero. We call those lists polynomials, and denote the set of
+them by $R[x]$. Degree of a polynomial is the length of a given list
+minus 1 for nonzero polynomials, and $-\infty$ for the zero
+polynomial. Thus $\deg$ is a function
+$$\deg: R[x] \to \omega \cup \set{-\infty}$$
+for any given $R$. Purpose of including $-\infty$ to the mix is to
+ensure that we've got an identity
+$$\deg(f_1 f_2) = \deg(f_1) + \deg(f_2)$$
+where we define addntion between a random element of omega (or
+$-\infty$) with $-\infty$ in an obvious manner.
+
 \subsection{}
 
 \textit{Repeat of a previous exercise}
@@ -4020,6 +4035,25 @@ less than $\deg(g(x))$, which gives us a contradiction. Thus we
 conclude that $q_1 = q_2$, which then implies that
 $$r_2(x) - r_1(x) = g(x) * 0 = 0$$
 which implies the desired result.
+
+\section{Building Extension Fields}
+
+\subsection{}
+
+\textit{Let $F$ be a field}
+
+\textit{(a) Prove that every polynomial of degree $1$ in $F[x]$ is irreductible}
+
+Let $g \in F[x]$ be a polynomial of degree 1. We follow that if there
+are $h, k \in F[x]$ such that
+$$g = h * k$$
+then
+$$\deg(g) = \deg(h * k) = \deg(h) + \deg(k)$$
+thus
+$$\deg(h) + \deg(k) = 1$$
+Thus we conclude that $\deg(h) = 0$ or $\deg(k) = 0$, which implies
+the desired result.
+
 
 
 
