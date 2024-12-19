@@ -2665,7 +2665,7 @@ We follow that power function is strictly increasing, and thus
 $(1 + \sqrt{2})^n$ are all different for all $n \in \omega$, and
 thus $Z[\sqrt{2}]^*$ has infinite amount of elements.
 
-\textit{(e) Prove that $\real[x] = \real^*$}
+\textit{(e) Prove that $\real[x]^* = \real^*$}
 
 We follow that by multiplying any nonzero polynomial in $\real$ by
 other polynomial nonzero we get only polynomials of equal or greater
@@ -4038,6 +4038,22 @@ which implies the desired result.
 
 \section{Building Extension Fields}
 
+\subsection*{Notes}
+
+One thing that we can say is that if a polynomial has roots,
+then an exercise from chapter 3 implies that it is reductible.
+Equivalently irreductible polynomials dont have roots.
+Reverse is not necessarily true, we can have rootless reductible
+polynomials.
+
+We also follow that if $f \in F[x]$ is of degree 1, then
+we can follow that $f(x) = a_1 x + a_0$
+and thus
+$$a_1 x + a_0 = 0$$
+$$a_1 x = - a_0$$
+$$ x = - a_0 / a_1$$
+and thus $f$ has roots. 
+
 \subsection{}
 
 \textit{Let $F$ be a field}
@@ -4054,6 +4070,130 @@ $$\deg(h) + \deg(k) = 1$$
 Thus we conclude that $\deg(h) = 0$ or $\deg(k) = 0$, which implies
 the desired result.
 
+\textit{(b) Let $f \in F[x]$ be a polynomial of degree 2. Prove that
+  $f(x)$ is irreductible if and only if it has no roots in $F$.}
+
+Irreductibility implies lack of roots in general, as indicated in the
+notes. Now assume that $f$ has no roots in $F$. We follow that if $f$
+is reductible, then there are nonconstant $g, h \in F[x]$
+such that
+$$f(x) = g(x) * h(x)$$
+we then follow that
+$$\deg(f(x)) = \deg(g(x) * h(x)) = \deg(g(x)) + \deg(h(x)) = 2$$
+Since $g, h$ are nonconstant, we follow that $\deg(g(x)) = \deg(h(x))
+= 1$, which implies that they have roots, and thus $f$ has roots as
+well, which is a contradiction.
+
+\textit{(c) Let $f \in F[x]$ be a polynomial of degree 3. Prove that
+  $f(x)$ is irreductible if and only if it has no roots in $F$.}
+
+Same kind of idea as in point (b), but we follow that either $g$
+or $h$ has roots.
+
+\textit{(d) Let $f(x) = x^4 + 2$. Prove that $f(x)$ is irreductible in
+  $Q[x]$.}
+
+We can follow that if $f$ has roots, then
+$$x^4 + 2 = 0$$
+$$x^4 = -2$$
+which is a contradiction, and thus $f$ has no roots. If $f$ is
+reductible, then there are $g, h \in Q[x]$
+such that
+$$f(x) = g(x) h(x)$$
+this implies that either $g(x)$ or $h(x)$ has degree $1$ or $2$ (other needs to
+have degreee 3 or 2).
+
+If $g(x)$ has degree 1, then it's got roots, and thus $f$ has roots,
+which is not the case.
+
+Suppose that there is $g(x)$ such that there is $h(x)$
+so that
+$$x^4 + 2 = g(x) h(x)$$
+we follow that both $g$ and $h$ have degree 2. Assume that $g, h$ are
+both monic polynomials. Then we can give indicate indices of $g$ as $a$ and
+indices of $h$ as $b$, which gives us
+$$(x^2 + a_1 x + a_2) * (x^2 + b_1 x + b_2) = x^4 + 2$$
+$$x^4 + b_1 x^3 + b_2 x^2 + a_1 x^3 + a_1 b_1 x^2 + a_1 b_2 x + a_2 x^2 + a_2 b_1 x + a_2 b_2 = x^4 + 2$$
+$$x^4 + (b_1 + a_1)x^3 + (b_2 + a_1 b_1 + a_2)x^2 + (a_1 b_2 + a_2 b_1) x + a_2 b_2 = x^4 + 2$$
+$$(b_1 + a_1)x^3 + (b_2 + a_1 b_1 + a_2)x^2 + (a_1 b_2 + a_2 b_1) x + a_2 b_2 = 2$$
+therefore
+$$
+\begin{cases}
+  b_1 + a_1 = 0 \\
+  b_2 + a_1b_1 + a_2 = 0 \\
+  a_1 b_2 + a_2 b_1 = 0 \\
+  a_2 b_2 = 2
+\end{cases}
+$$
+$$
+\begin{cases}
+  a_1 = -b_1 \\
+  b_2 -  b_1^2 + b_2\inv 2 = 0 \\
+  -b_1 b_2 +  b_2\inv 2 b_1 = 0 \\
+  a_2 = b_2\inv 2
+\end{cases}
+$$
+$$
+\begin{cases}
+  a_1 = -b_1 \\
+  b_2 -  b_1^2 + b_2\inv 2 = 0 \\
+  b_1 (- b_2 +  b_2\inv 2) = 0 \\
+  a_2 = b_2\inv 2
+\end{cases}
+$$
+Let us concentrate on the third equation, which by the fact that $Q$ is a field,
+and thus an integral domain, gives us two cases: $b_1 = 0$ or $-b_2 +
+b_2\inv 2 = 0$. If we assume the former, then second equation becomes
+$$b_2 + b_2 \inv 2 = 0$$
+$$b_2^2 + 2 = 0$$
+and no such elements of $Q$ exist. Thus we conclude the latter case, which gives us that
+$$- b_2  + b\inv 2 = 0$$
+$$- b_2^2  + 2 = 0$$
+$$b_2^2  = 2$$
+and once again, no such element of $Q$ exists, which implies that
+there are no monic polynomials of degree $2$, that multiply to $f$. Now if
+$g(x)$ and $h(x)$ are arbitrary polynomials of degree 2, that multiply to $f$,
+then we conclude that coefficients for $x^2$ in both $g$ and $h$ has got to
+multiply to $1$. Thus we conclude that multiplying both polynomials by
+inverses of their coefficients for $x^2$ gives us a pair of monic
+polynomials, which gives us a hasty contradiction, and thus implies the desired
+result.
+
+One last thing to point out: if we generalize the case, and include 
+
+
+\textit{(e) Let $f = x^4 + 4$. Prove tht $f$ is reductible in $Q[x]$,
+  despite the fact that it has no roots in $Q$.}
+
+$$x^4 + 4 = (x^2 + 2x + 2) * (x^2 - 2x + 2)$$
+
+\subsection{}
+
+\textit{Let $F$ be a field, and suppose that the polynomial $X^2 + X
+  + 1$ is irreductible in $F[X]$. Let
+  $$K = F[X] / (X^2 + X + 1)F[X]$$
+  be the quotient ring.}
+
+\textit{(a) Find a polynomial $p(X) \in F[x]$ of degree at most 1 such that
+  $$\overline{p(X)} = \overline{(X + 3)} * \overline{(2X + 1)}$$
+}
+
+We follow that
+$$(X + 3) * (2X + 1) = 2X^2 + 7X + 3$$
+we then want to get an element of $(X^2 + X + 1)F[X]$,
+whose sum with given element is of power of 1 or less. This is easy,
+we can get
+$$2(X^2 + X + 1) = 2X^2 + 2X + 21$$
+and then substract one from another to get
+$$2X^2 + 7X + 3 - 2X^2 - 2X - 2 = 5X + 1$$
+
+\textit{(b) Find a polynomial $q(X) \in F[X]$ of degree at most 1 satisfying
+  $$\overline{q(X)} * \overline{X + 1} = \overline{1}$$
+}
+
+We can follow that
+$$\overline{1} = \overline{X^2 + X + 2}$$
+and then we follow that
 
 
 
