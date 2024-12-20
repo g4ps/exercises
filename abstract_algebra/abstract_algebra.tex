@@ -1,4 +1,4 @@
-\documentclass[11pt,oneside,titlepage]{book}
+ \documentclass[11pt,oneside,titlepage]{book}
 \title{My abstract algebra exercises}
 \usepackage{amsmath, amssymb}
 \usepackage{geometry}
@@ -4191,9 +4191,23 @@ $$2X^2 + 7X + 3 - 2X^2 - 2X - 2 = 5X + 1$$
   $$\overline{q(X)} * \overline{X + 1} = \overline{1}$$
 }
 
-We can follow that
-$$\overline{1} = \overline{X^2 + X + 2}$$
-and then we follow that
+Exercise says that we can get an element of degree 1 in here, so let's
+try that
+$$x * (x + 1) = x^2  + x$$
+initial guess wont do, so let us try dividing the initial polynomial
+with the remainter
+$$(x^2 + x + 1) = x(x + 1) + 1$$
+thus we might get a guess of plugging $-x$, which gives us
+$$(-x) * (x + 1) = -x^2 - x \equiv 1$$
+as desired. Here we might try to develop a proper way of finding
+multiplicative inverses, but I'm too eager to mmove forward to
+actually do that
+
+
+\textit{(c) Find a polynomial $r \in F[x]$ of degree at most 1 satisfying
+  $$r^2 = - 3$$}
+
+
 
 
 
