@@ -4205,9 +4205,70 @@ actually do that
 
 
 \textit{(c) Find a polynomial $r \in F[x]$ of degree at most 1 satisfying
-  $$r^2 = - 3$$}
+  $$\overline{r}^2 = \overline{- 3}$$
+}
 
+We can follow that
+$$\overline{- 3} = \overline{x^2 + x + 1 - 3} =
+\overline{x^2 + x - 2} = \overline{(x - 1) * (x + 2)}$$
+we then try to plug in some coefficients into $x^2 + x + 1$
+so that its sum with $-3$ is a square. We follow that
+$4$ is such a number:
+$$4x^2 + 4x + 1 = (2x + 1)^2$$
+which in turn implies that
+$$\overline{(2x + 1)}^2 = \overline{4x^2 + 4x + 1} = \overline{-3}$$
+as desired.
 
+\subsection{}
+
+\textit{Let
+  $$f(x) = \sum_{0 \leq i \leq d}{c_i x^i} \in Z[x]$$
+  be a polynomial of degree $d \geq 1$}
+
+\textit{(a) Prove that if $a/b \in Q$ is a root of $f(x)$, written in lowert terms,
+  then $a | c_0$ and $b | c_d$}
+
+We follow that
+$$\sum_{0 \leq i \leq d}{c_i x^i}  = c_0 + \sum_{1 \leq i \leq d}{c_i x^i} $$
+and thus
+$$f(a/b) = c_0 + \sum_{1 \leq i \leq d}{c_i (a/b)^i} =
+c_0 + \sum_{1 \leq i \leq d}{c_i a^i b^{-i}} =
+c_0 + a \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{-i}}$$
+since $a/b$ is a root of $f(x)$ we follow that
+$$f(a/b) = c_0 + a \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{-i}}$$
+$$0 = c_0 + a \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{-i}}$$
+$$-c_0 = a \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{-i}}$$
+$$-c_0 b^d = a b^d \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{-i}}$$
+$$-c_0 b^d = a \sum_{1 \leq i \leq d}{c_i a^{i - 1} b^{d - i}}$$
+by our multiplication by $b^d$ we got rid of elements of $Q$, and now
+this whole shebang is in $Z$.  We then follow that since $a/b$ are in
+their lowest terms that they dont have any common primes as multiples,
+which implies that
+$$a | c_0$$
+as desired.
+
+We can then do similar trich with $c_d$ to get 
+$$0 = f(a / b) = \sum_{0 \leq i \leq d}{c_i a^i b^{-i}} =
+c_d b^{-d} +  \sum_{0 \leq i \leq d}{c_i a^i b^{-i}}$$
+
+$$0 = c_d a^d b^{-d} +  \sum_{0 \leq i \leq d - 1}{c_i a^i b^{-i}}$$
+$$0 = c_da^d  +  b^d \sum_{0 \leq i \leq d - 1}{c_i a^i b^{-i}}$$
+$$-c_da^d =  b^d \sum_{0 \leq i \leq d - 1}{c_i a^i b^{-i}}$$
+$$-c_da^d =  b \sum_{0 \leq i \leq d}{c_i a^i b^{d - 1 - i}}$$
+which also implies the desired result.
+
+\textit{(b) Use (a) to find the small finite set of integers $A$ and $B$ so that
+  all of the rational roots of the polynomial
+  $$g(x) = 45x^4 + 62x^3 + 56x^2 + 11x - 6$$
+  are in the set
+  $$\set{\pm \frac a b : a \in A, b \in B}$$}
+
+Part (a) here gives us the idea that we can get a total set of
+divisors of the first and the last coefficients of any given
+polynomials, then get a set of fractions out of those two sets, and
+this set in the end will contain all of the rational roots of the
+given polynomial. I've written the desired program (polyq.py in
+progs/, bruteforced a couple of things), and the result is pretty fun
 
 
 
