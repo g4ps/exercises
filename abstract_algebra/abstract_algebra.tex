@@ -4336,11 +4336,66 @@ $$x^q - x = x(x^{q - 1} - 1)$$
 and thus its zeroes are all nonzero elements, and zero
 (i.e. the whole field)
 
-\textit{(c) Prove the formula
-  $$\prod_{a \in F}{(x - a)} = x^q - x$$}
+\textit{(c) Prove the formula $$\prod_{a \in F}{(x - a)} = x^q - x$$ }
 
 Since every $a \in F$ is a root of $x^q  - x$ we follow that
 it can be deconstructed into lhs (exercise 5.1(b) directly implies it)
 
+
+\subsection{}
+
+\textit{Let $m$ and $n$ be positive integers}
+
+\textit{(a) Prove that $x^m - 1$ divides $x^n - 1$ in $F[x]$ if and
+  only if $m$ divides $n$ in $Z$.}
+
+Suppose that $m$ divides $n$. Definition states that there exists
+$k \in N_+$ such that $n = mk$. Thus
+$$x^n - 1 = x^{mk} - 1$$
+and thus
+$$(x^m - 1) * \sum_{0 \leq i \leq k - 1}{x^{im}} =
+\sum_{0 \leq i \leq k - 1}{x^{im} * (x^m - 1)} =
+\sum_{0 \leq i \leq k - 1}{x^{(i + 1)m} - x^{im}} =
+$$
+$$ =
+\sum_{0 \leq i \leq k - 1}{x^{(i + 1)m}} - \sum_{0 \leq i \leq k - 1}{x^{im}} =
+\sum_{1 \leq i \leq k}{x^{im}} - \sum_{1 \leq i \leq k - 1}{(x^{im})} - 1 = $$
+$$ =
+x^{km} + \sum_{1 \leq i \leq k - 1}{x^{im}} - \sum_{1 \leq i \leq k - 1}{(x^{im})} - 1 =
+x^{km} - 1
+$$
+as desired (deriviation of the desired polynomial was done by
+observing polynomial division for lower powers, i.e. $x^6 - 1$ and
+$x^2 - 1$, and then generalizing the hypothesis).
+
+Now assume that $x^m - 1$ divides $x^n - 1$. Thus there is a polynomial $h(x)$
+such that
+$$(x^m - 1) * h(x) = x^n - 1$$
+We follow that there is $g(x)$ such that
+$$(x^m - 1) * (x^{n - m} + g(x)) = x^n - 1$$
+$$(x^m - 1) * (x^{n - m} + g(x)) = x^n - 1$$
+$$x^n + x^mg(x) - x^{n - m} - g(x)  = x^n - 1$$
+$$x^mg(x) - x^{n - m} - g(x)  =  - 1$$
+$$(x^m - 1)g(x) = x^{n - m}  - 1$$
+and this is the moment where induction should kick somewhere here.
+
+Our hypothesis is that if $x^m - 1$ divides $x^n - 1$, then for all $k
+\in N_+$ such that $mk \leq n$ we have that $x^m - 1$ divides $x^{n -
+mk} - 1$. Base case is provided, and the inductive step is not much
+different from the base case, which gives us the desired conclusion. We
+then can state that if $m$ does not divide $m$, then there is $k \in
+N_+$ and $0 < r < m$ such that
+$$n = km + r$$
+and thus
+$$x^{n} - 1 = x^{km + r} - 1$$
+our little lemma gives us that since $x^m - 1$ divides $x^n - 1$
+that $x^m - 1$ divides $x^{r} - 1$, which is impossible by the
+degrees rule, which gives us the desired contradiction.
+
+\textit{(b) Let $a \geq 2$ be an integer. Prove that $a^m$ divides
+  $a^n - 1$ in $Z$ if and only if $m$ divides $n$ in $Z$.}
+
+Proof is similar to the proof of previous point, where we swap
+appropriate things. 
 
 \end{document}
