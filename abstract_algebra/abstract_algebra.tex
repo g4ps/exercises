@@ -2874,7 +2874,13 @@ R_1 \times R_2$ that also satisfy $e_1 e_2 = 0$. Prove that if $\alpha
 \in R_1 \times R_2$, then there are unique elements $a_1 \in R_1$ and
 $a_2 \in R_2$ such that $\alpha = a_1 e_1 + a_2 e_2$.}
 
-There's no typo, TODO
+Something tells me that we can use $\eangle{1, 0}$ and $\eangle{0, 1}$
+as our $e_1$ and $e_2$ respectively. We then follow that if
+$\alpha \in R_1 \times R_2$, then it's in the form $\eangle{a,b}$,
+which in turn implies that we can take
+$$a * e_1, + b * e_2$$
+to be our value. The fact that this factorization is unique is kinda trivial
+
 
 \subsection{}
 
@@ -3084,18 +3090,6 @@ is a pair of element $\eangle{a, b - e} \in a' \times b'$ such that
 $q = a + b - e$, and thus $w \subseteq a' + b'$, which implies that
 $a' + b' = w$.
 
-Let $a', b', w \in R/I$ be such that $a' * b' \subseteq w$. Let $q \in w$.
-We follow that since $q \in w$ that $w = q + I$. Let $a \in a'$, $b \in b'$.
-We follow that $a * b \in w$, and thus $a * b \in q + I$. Therefore
-there is an element $e \in I$ such that $a * b = q + e$. Therefore
-$a * b - e = q$.
-
-$$(a + w) * (b + e) = ab + wb + ae + we$$
-$$a * (b - e) = ab - ae$$
-$$(a - w) * b = ab - wb$$
-$$(a - w) * (b - e) = ab - wb - ae + we$$
-$$(a + w) * (b + e) + (a - w) + (b - e) = 2ab + 2we = 2(ab + we)$$
-TODO
 
 With our definitions we can try to produce formulas, that were
 given in the book:
@@ -4396,6 +4390,40 @@ degrees rule, which gives us the desired contradiction.
   $a^n - 1$ in $Z$ if and only if $m$ divides $n$ in $Z$.}
 
 Proof is similar to the proof of previous point, where we swap
-appropriate things. 
+appropriate things.
+
+\textit{The rest of this section is marked as TODO}
+
+\chapter{Groups - Part  2}
+
+\section{Normal Subgroups and Quotient Groups}
+
+\subsection{}
+
+\textit{Let $\psi: G \to G'$ be a homomorphism of groups.}
+
+\textit{(a) Prove that the image of $\psi$ is a subgroup of $G'$}
+
+We can follow that if $h', g' \in \psi[G]$, then there are by
+definition $h, g \in G$ such that
+$$\psi(h) = h', \psi(g) = g'$$
+thus
+$$\psi(h\inv g) = \psi(h\inv) \psi(g) = \psi(h)\inv \psi(g) = h'\inv g$$
+as desired.
+
+\textit{(b) Suppose that $G$ is a finite group. Prove that
+  $$|G| = |\ker(\phi)| * |\phi[G]|$$}
+
+Let $a * \ker(\phi)$ be a left coset of $G$. We follow that if $q \in
+a * \ker(\phi)$, then there is $b \in \ker(\phi)$ such that
+$$q = a * b$$
+and thus
+$$\phi(q) = \phi(a * b) = \phi(a) * \phi(b) = \phi(a) * 1 = \phi(a)$$
+Thus we can follow that different element of the same cosets are sent
+to the same element of $G'$ , which implies that there is a bijection
+between a set of cosets, and elements in the range of $\phi[G]$.
+Thus there is by definition the same number of elements of $\phi[G]$
+and cosets of $\ker(\phi)$. Then Lagrange's theorem implies the desired
+conclusion
 
 \end{document}
