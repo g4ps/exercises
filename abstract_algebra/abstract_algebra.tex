@@ -4426,4 +4426,72 @@ Thus there is by definition the same number of elements of $\phi[G]$
 and cosets of $\ker(\phi)$. Then Lagrange's theorem implies the desired
 conclusion
 
+\subsection{}
+
+\textit{Let $G$ be a group, and let $H \subseteq G$ be a subgroup.}
+
+\textit{(a) Suppose that $g\inv H g \subseteq H$ for all $g \in G$.
+  Prove that $H$ is a normal subgroup of $G$.}
+
+Fix $g \in G$ and let us assume that
+$$g\inv H g \subseteq H$$
+we can also follow that by our assumptions we've got that
+$$g H g\inv \subseteq H$$
+
+Now let $h \in H$. We want to prove that there is $h' \in H$
+such that
+$$h = g\inv h' g$$
+we follow that
+$$h' = g h g\inv$$
+thus $h' \in g H g\inv$, and since $g H g\inv \subseteq H$ we follow that
+$h' \in H$, as desired.
+
+\textit{(b) Let $g \in G$. Prove that $g\inv H g$ is a subgroup of $G$}
+
+Since $e \in H$, we follow that
+$$e = g\inv g = g\inv e g \in h\inv H G$$
+We can also follow taht if $q, w \in g\inv H g$, then
+there are $h, h' \in H$ such that
+$$q = g\inv h g, w = g\inv h' g$$
+then
+$$q\inv w = g\inv h g g\inv h' g = g\inv h h' g$$
+and since $h h' \in H$ we conclude that $q\inv w \in g\inv H g$, thus making
+$g\inv H g$ a subgroup
+
+\textit{(c) Let $g \in G$. Prove that the following map is a group
+  isomorphism:
+  $$H \to g\inv H g, h \to g\inv h g$$
+}
+
+Multiplication by an element is injective, and definition of $g\inv H
+g$ implies that the map is surjective, thus making the map bijective.
+
+We can also see that
+$$\psi(a b) = g\inv a b g = g \inv a e b g = g \inv a g g\inv  b g = \psi(a) \psi(b)$$
+as desired
+
+\textit{(d) If $H$ is finite. prove that every conjugate of $H$ has
+  the same number of elements as $H$}
+
+Bijection in the previous point implies that
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{Prove that every subgroup of the quaternion group is normal}
+
+Quaternion group has $8$ elements, which implies that its only
+subgroups are of order $1, 2, 4, 8$. We then follow that $1$ and $8$
+are trivial and the entire group respectively, the only group of order
+$2$ is $\set{\pm 1}$, and thus the only order that is left is $4$.  We
+then follow that the only groups of order $4$ are in the form
+$$\set{\pm 1, \pm x}$$
+where $x \in \set{i, j, k}$. After this we can proceed with a simple
+enumeration, that we're gonna skip, which implies the desired result
+
+
+
 \end{document}
