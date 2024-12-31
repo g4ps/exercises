@@ -4492,6 +4492,37 @@ $$\set{\pm 1, \pm x}$$
 where $x \in \set{i, j, k}$. After this we can proceed with a simple
 enumeration, that we're gonna skip, which implies the desired result
 
+\subsection{}
+
+\textit{Let $G$ be a group and let $H \subseteq G$ be a subgroup of
+  $G$ of index 2.  Prove that $H$ is a normal subgroup of $G$.}
+
+Suppose that there is an element $g \in G$ such that there exists $h
+\in H$ so that $g\inv h g \notin H$. We then follow that if
+$g\inv h \in H$, then $g\inv \in H$, and thus $g \in H$
+and $g\inv h g \in H$, which is a contradiction, and thus
+$g, g\inv \notin H$. This implies that $g\inv H, g H \neq H$,
+and thus we follow that $g\inv h g \in gH$. Thus
+there is $h' \in H$ such that
+$$g\inv h g = g\inv h'$$
+$$h g = h'$$
+$$g = h\inv h'$$
+which implies that $g \in H$, which is a contradiction. Thus
+we conclude that there is no element $g \in G$ such that
+there is $h \in H$ so that $g\inv h g \notin H$. This implies that
+for all $g \in G$ and all $h \in H$ we have that 
+$$g\inv h g \in H$$
+which implies that
+$$g\inv H g \subseteq H$$
+which implies the desired result. (did this one een without a hit,
+what a rush)
+
+% \subsection{}
+
+% \textit{Let $G$ be a group, let $H \subseteq G$ and $K \subseteq G$
+%   be subgroups, and assume that $K$ is a normal subgroup of $G$}
+
+% \textit{(a) Prove that $HK = \set{hk: h \in H, k \in k}$ is a subgroup of $G$}
 
 
 \end{document}
