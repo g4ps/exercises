@@ -4517,12 +4517,117 @@ $$g\inv H g \subseteq H$$
 which implies the desired result. (did this one een without a hit,
 what a rush)
 
-% \subsection{}
+\subsection{}
 
-% \textit{Let $G$ be a group, let $H \subseteq G$ and $K \subseteq G$
-%   be subgroups, and assume that $K$ is a normal subgroup of $G$}
+\textit{Let $G$ be a group, let $H \subseteq G$ and $K \subseteq G$
+  be subgroups, and assume that $K$ is a normal subgroup of $G$}
 
-% \textit{(a) Prove that $HK = \set{hk: h \in H, k \in k}$ is a subgroup of $G$}
+\textit{(a) Prove that $HK = \set{hk: h \in H, k \in k}$ is a subgroup of $G$}
 
+We can follow that $e \in H$ and $e \in K$, and thus $e = e * e \in HK$.
+Now let $q, w \in HK$. We folllow that they can be deconstructed to
+$q = hk, w = h' k'$. We then conclude that 
+$$q w\inv  = hk (h' k')\inv = h k k' \inv h'\inv = h e k k'\inv h'\inv  =
+h h'\inv h' k k'\inv h'\inv = h h'\inv (h' k k'\inv h'\inv)$$
+We then can see that $h h'\inv \in H$ and by the fact that $K$ is normal
+we follow that $(h' k k'\inv h'\inv) \in K$, which implies that the whole thing
+is in $HK$, as desired.
+
+\textit{(b) Prove that $H \cap K$ is a normal subgroup of $H$ and that $K$
+  is a normal subgroup of $HK$}
+
+We can follow that $H \cap K$ is a subgroup of $H$ by properties
+of subgroups.
+Let $h \in H$ and $q \in H \cap K$ be arbitrary. We follow that
+$h\inv q h \in H$ by the fact that it's a product of elements of $H$,
+and $h\inv q h \in K$ by the fact that $K$ is normal subgroup of $G$.
+Thus $h\inv q h \in H \cap K$, which means that $H \cap K$ is a
+normal subgroup of $H$, as desired
+
+$K$ is a normal subgroup of $G$, and thus it's a normal subgroup of any
+subgroup that contains it by a pretty straightforward application
+of definition.
+
+\textit{(c) Prove that $HK/K$ is isomorphic to $H/(H \cap K)$}
+
+We can follow that $f_1: H \to HK$ defined by identity is a homomorphism,
+and since $K$ is a normal subgroup of $HK$ we can follow there is
+a homomorphism $f_2: HK \to HK/K$. Thus there is a homomorphism
+$f_3: H \to HK/K$. We follow that if
+$q \in H \cap K$, then $q \in K$, and thus
+$$f_3(q) = qK = K = f_3(0)$$
+If $w \in H \setminus K$,then
+$$f_3(w) = wK \neq K = f_3(0)$$
+which implies that $H \cap K$ is a kernel of $f_3$. Thus we can define
+$f_4: H/(H \cap K) \to HK / K$, which will be an injective homomorphism.
+We can also follow that if $C \in HK/K$, then there is $q \in HK$
+where $q = hk$ such that
+$$C = qK = hkK = hK = f_4(h(H \cap K))$$
+which implies that $f_4$ is surjejctive, and thus it is bijective,
+which implies the desired result.
+
+\textit{(d) Skip}
+
+\subsection{}
+
+\textit{Let $G$ be a group, let $K \subseteq H \subseteq G$ be
+  subgroups, and assume that $K$ is normal.}
+
+\textit{(a) Prove that $H/K$ is naturally a subgroup of $G/K$}
+
+We can follow that if $C \in H/K$, then there is $h \in H$ such that
+$C = hK$, and since $H \subseteq G$ we follow that $C \in G/K$, which
+implies that $f: H/K \to G/K$ defined as an identity with the expanded
+codomain is an injective homomorphism
+
+\textit{(b) Conversely, prove that every subgroup of $G/K$ looks like
+  $H/K$ for some subgroup $H$ satisfying $K \subseteq H \subseteq G$}
+
+Let $Q \subseteq G/K$ be a subgroup. We follow that each $q \in Q$ is
+of the form $q = gK$ for some $g \in G$.  We then can unionize $Q$ in
+order to get
+$$H = \bigcup Q$$
+we then follow that if $w, r \in H$, then there are cosets $wK, rK \in
+Q$, and since $Q$ is a group there is $w\inv in K$.  Thus
+$$w\inv K r K = w\inv r K \in Q$$
+this implies that $w\inv r K \subseteq H$, and thus
+$$w\inv r e = w\inv r \in H$$
+which implies that $H$ is a subgroup of $G$. We also follow that since
+$Q$ is a group that $eK = K \in Q$, which implies that $K \subseteq
+H$. Then we follow that if $q \in Q$, then there for all $t \in q$ we
+have that $q = tK$. Thus $t \in H$ and therefore $tK \in H/K$, which
+implies that $Q \subseteq H/K$. Similar argument shows the inverse
+inclusion, which implies the desired result.
+
+\textit{(c) Prove tha $H$ is a normal subgroup of $G$ if and only if
+  $H/K$ is a normal subgroup of $G/K$}
+
+Assume that $H$ is normal, and let $gK \in G/K, hK \in H/K$. We follow that
+$$g\inv K h K g K = (g\inv h g) K$$
+since $h$ is normal we follow that $(g\inv h g) \in H$ and this implies that
+$H/K$ is normal.
+
+Assume that $H/K$ is normal. We follow that if $g \in G, h \in H$, then
+$$g\inv h g \in g\inv h g H = g\inv H h H g H = g\inv H g H = H$$
+which implies that $H$ is normal
+
+\textit{(d) If $H$ is a normal subgroup of $G$, prove that
+  $$\frac{G/K}{H/K} \cong G/H$$}
+
+There's a surjective homomorpshism $f_1: G \to G/H$ with kernel $H$, and
+since $K \subseteq H$ we follow that there is a surjective
+homomorphism $f_2: G/K \to G/H$.
+
+Let $q \in G/K$.  If $q \in H/K$, then $q = hK$ for some $h \in H$ and thus
+$$f_2(q) = f_2(hK) = f_1(h) = e$$
+if $q \notin H/K$, then there is $g \in G \setminus H$ such that $q = gK$. Thus
+$$f_2(q) = f_2(gK) = f_1(g) \neq 0$$
+which implies that $H/K$ is the kernel of $f_2$. This implies that
+there is an isomorphism $f_3: \frac{G/K}{H/K} \to G/H$, which implies
+the desired result.
+
+\subsection{}
+
+\textit{Skip}
 
 \end{document}
