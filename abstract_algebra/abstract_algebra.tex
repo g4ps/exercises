@@ -4630,4 +4630,138 @@ the desired result.
 
 \textit{Skip}
 
+\section{Group Acting on Sets}
+
+\subsection*{Notes}
+
+Initial definition of the group action is a tad bit lacking, by action
+we denote a function $\cdot: G \times A \to A$ with all the axioms
+attached
+
+Then, I want to follow some things. If $x, y \in A$ and $g \in G$,
+then we follow that
+$$gx = gy$$
+implies that
+$$g\inv (g x) = g\inv (gy)$$
+$$(g\inv g) x = (g\inv g)y$$
+$$e x = e y$$
+$$x = y$$
+which implies that with fixed $g \in G$, our initial map is injective.
+
+If $x \in A$ is fixed, then if $g_1, g_2 \in G$ we have
+$$g_1 x = g_2 x$$
+$$g_1 \inv g_1 x = g_1 \inv g_2 x$$
+$$e x = (g_1 \inv g_2) x$$
+and we might not have cancelation properties here, so we're assuming
+that injectivity is not implied here.
+
+Orbit is the image of an element of $X$, and the stabilizer is
+the values of $G$ that leave particular $x \in X$ unchanged. 
+Thus orbit is a subset of $X$ and stabilizer is a subset of $G$.
+Both of them are indexed by a particular $x \in X$.
+
+Now I want to re-word the proof of 6.19(b):
+
+With fixed $x \in X$ our initial map becomes a function of $G$,
+whose range is the orbit of $X$. A union of the set of all orbits
+constitutes $X$ (we have that $e * x = x$, which implies this).
+And on top of that, if there are two elements $x, y$ such that
+$$Gx \cap Gy \neq \emptyset$$
+then there are $g_1, g_2 \in G$ such that
+$$g_1 x = g_2 y$$
+$$ x = g_1 \inv g_2 y$$
+$$ x = (g_1 \inv g_2) y$$
+which means that $x \in Gy$ and $y \in Gx$.
+
+If $q \in Gx$, then there is $g' \in G$ such that
+$q = gx \lra x = g\inv q$, and then we follow that if $r \in Gq$, then
+$$(\exists g \in G) (r = gq) \ra (\exists g, g' \in G) (r = gg'x) \ra r \in Gx$$
+thus $Gq \subseteq Gx$. By the similar logic if $r \in Gx$ then
+$$(\exists g \in G) (r = gx) \ra (\exists g, g' \in G) (r = gg'q) \ra r \in Gq$$
+which implies that $Gq = Gx$.
+
+Combining our discovery into the previous point, we get that
+$$Gy = Gx$$
+which means that orbits of elements of $X$ constitute partition of $X$
+This gives us a thing, that is similar to cosets: they can be indexed
+by any on their elements. Moreover, if we have $x \in X$, then
+$ex = x  \in Gx$, which implies that $x \in Gy \iff Gy = Gx$
+
+Let us also re-word the 6.19(c): \textit{If $G$ is a group that acts
+on $X$, then for every $x \in X$ there is a bijection
+$$\alpha: G/G_x \to Gx$$
+such that
+$$(\forall C \in G/G_x): (\forall g \in C)(\alpha(C) = gx)$$}
+
+\textit{Proof: } If $C \in G/G_x$ and $g, g' \in C$, then by definition of
+the coset for all $q \in C$ we have $C = qG_x$. Thus
+$C = gG_x = g'G_x$. This implies that there is $h \in G_x$
+such that
+$$g = g' h$$
+and therefore
+$$gx = g' h x = g' (h x) =  = g'x$$
+where $hx = x$ is derived from the definition of $G_x$.
+This implies that
+$$(\forall C \in G/G_x)(\forall g \in C)(\exists !  y \in X)(gx = y)$$
+which means that there is a function $\beta: G/G_x \to X$ that satisfies
+$$(\forall C \in G/G_x)( \forall g \in C)(\beta(C) = gx)$$
+Furthermore, since for every $C \in G/G_x$ we have that $\beta(C) = gx$
+for some $g \in G$ we can follow that $\beta[G/G_x] \subseteq Gx$,
+and thus we can restrict its codomain to $\beta: G/G_x \to Gx$.
+
+We then follow that if $q \in G_x$, then $qx = x$, and thus
+$$\beta(G_x) = x$$
+Moreover, if $g \in G$, then $g \in gG_x$, and thus by restriction on $\beta$
+we have that
+$$\beta(gG_x) = gx$$
+thus if $y \in Gx$, then there is $g \in G$ such that $y = gx$ by definition,
+and thus
+$$\beta(gG_x) = gx = y$$
+which implies that $\beta$ is surjective.
+
+Let  $C_1, C_2 \in G/G_x$ and assume that $\beta(C_1) = \beta(C_2)$.
+We follow then that for all $g \in C_1$ and $g' \in C_2$ we have
+$$gx = g'x$$
+by definition of $\beta$. This gives us
+$$x = g\inv g'x \ra g\inv g' \in G_x$$
+Thus there is $r \in G_x$ such that $g\inv g' = r$, and therefore
+$g' = gr$. Therefore we conclude that
+$$C_1 = g'G_x = gr G_x = g G_x = C_2$$
+which implies that $\beta$ is injective, and thus we have the desired
+bijection.
+
+\subsection{}
+
+\textit{Let $G = C_n$ be a cyclic group of order $n$, and let $X =
+\set{x_1, ..., x_n}$ be a set containing $n$ elements. For each part,
+find an action of $G$ on $X$ that there is an element $x \in X$ having
+the indicated property}
+
+Firstly, for convenience's sake we note that every cyclic group of
+order $n$ is isomorphic to $Z/nZ$, and thus we're gonna take
+$G = Z/nZ$. We're also gonna take $X = Z/nZ$ for some easy notation.
+
+\textit{(a) The stabilizer is $G_x = \set{e}$}
+
+We can set $\times$ to be normal $+$, which gives this thing trivial.
+
+We can also see that $|G| / |G_x| = |Gx|$, which knocks out point (d)
+
+\textit{(b) The stabilizer is $G_x = G$}
+
+We can set
+$$j \times x_i = x_i$$
+same idea applies to point (c)
+
+\subsection{}
+
+\textit{Let $G$ be a group, let $X$ be a set, and let $S_X$ be the
+  symmetry group of $X$. Let
+  $$\alpha: G \to S_X$$
+  be a function, and for $g \in G, x \in X$, let $g * x = \alpha
+  (g)(x)$. Prove that this defined a group action if and only if $\alpha$
+  is a group homomorphism.}
+
+Suppose that this thing defines a group action.
+
 \end{document}
