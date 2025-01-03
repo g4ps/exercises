@@ -4762,6 +4762,93 @@ same idea applies to point (c)
   (g)(x)$. Prove that this defined a group action if and only if $\alpha$
   is a group homomorphism.}
 
-Suppose that this thing defines a group action.
+Suppose that this thing defines a group action. This means that
+we can define a function $\times: G \times X \to X$ by
+$$g \times x = \times(g, x) = \alpha(g)(x)$$
+with properties that
+$$e \times x = \times (e, x) = x$$
+and
+$$(g * g')  \times x = \times(g * g', x) = \alpha (g * g')(x)
+= \times(g, \times (g', x)) = \alpha(g)(\alpha(g')(x))$$
+
+Thus for all $g, g' \in G, x \in X$
+$$ \alpha(g  g')(x) = (g g') \times x =
+g (g' \times x) = \alpha(g)( \alpha(g')(x))$$
+which gives us
+$$\alpha(g * g') = \alpha(g) \cdot \alpha(g')$$
+which proves that this thing is a homomorpism.
+
+Now if $\alpha$ is a homomorphism, then
+$$\alpha(e) = Id$$
+and thus
+$$\alpha(e)(x) = x$$
+thus satisfying the first condition. We also have the same
+deriviation, but in reverse for the rest of conditions.
+
+\subsection{}
+
+\textit{(a) Prove that $G$ acts transitively in $X$ if and only there
+  is at least one $x \in X$ such that $Gx = X$.}
+
+Forward implication is handled by definition.
+
+Suppose that there exists $x \in X$ such that $Gx = X$. This means
+that for all $y \in X$ there is $g \in G$ such that $gx = y \lra x = g\inv y$.
+Thus we follow that if $j \in X$, then there is $g' \in G$ such that
+$g'x = j$, and therefore $g' g\inv y = j$, thus implying that $j \in
+Gy$, thus implying that $X \subseteq Gy$, which gives us the desired result.
+
+\textit{(b) Prove that $G$ acts transitively on $X$ if and only if for
+  every pair of elements $x, y \in X$ there exists a group element $g \in G$
+  such that $gx = y$.}
+
+If $G$ acts transitively, then if $x, y \in X$ we follow that $y \in X = Gx$,
+and thus there is $g \in G$ such that $y = gx$.
+
+We then follow that if for all $x, y \in X$ there is $g \in G$ such that
+$gx = y$ then by fixing $x$ and shoving $y$ into the thing we get a
+surjective function from $Gx$ to $G$, which implies the desired result.
+
+\textit{(c) If $G$ acts transitively in $X$, prove that $|X|$ divides
+  $|G|$.}
+
+Probably we're assuming here that everything is finite.
+
+If $G$ acts transitively, then $X = Gx$ for all $x \in X$, and thus
+$$|X| = |Gx| = |G| / |G_x|$$
+which implies the desired result.
+
+\subsection{}
+
+\textit{Let $G$ be a group that acts on a set $X$. We say that the
+  action is doubly transitive if it has the following property: }
+
+\textit{For all $x_1, x_2, y_1, y_2 \in X$ with $x_1 \neq x_2$ and
+  $y_1 \neq y_2$ there exists an element $g \in G$ of the group
+  satisfying $g x_1 = y_1$, $g x_2 = y_2$. }
+
+
+\textit{(a) Let $Z$ be the following set of ordered pairs:
+  $$Z = \set{(z_1, z_2) \in X \times X: z_1 \neq z_2}$$
+  Let $G$ act on $Z$ by the rule
+  $$g(z_1, z_2) = (gz_1, gz_2)$$
+  Prove that the action of $G$ on $X$ is doubly transitive if and only
+  if the action of $G$ on $Z$ is transitive.
+}
+
+Suppose that the action on $X$ is doubly transitive. Fix $q = (q_1,
+q_2) \in Z$. Since $q \in Z$ we follow that $q_1 \neq q_2$.  Let $z
+\in Z$. We follow that $z = (z_1, z_2)$ for some $z_1, z_2 \in X$ such
+that $z_1 \neq z_2$. We then follow that for $q_1, q_2 \in X$ there is
+$g \in G$ such that $gq_1 = z_1$ and $gq_2 = z_2$.  Thus
+$g(q_1, q_2) = (z_1, z_2)$ and thus $z \in Gq$. Since $z$ is arbitrary
+we conclude that $Z \subseteq Gq$, which implies the desired result.
+Running about the same result but in reverse gives us the reverse
+implication.
+
+\textit{(b) skip}
+
+\section{The Orbit-Stabilizer Counting Theorem}
+
 
 \end{document}
