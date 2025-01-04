@@ -4850,5 +4850,154 @@ implication.
 
 \section{The Orbit-Stabilizer Counting Theorem}
 
+\subsection{}
+
+\textit{Let $G$ be a group, and let $X$ be a set on which $G$ acts.}
+
+\textit{(a) Suppose that $|G| = 15$ and $|X| = 7$. Prove that there is
+  some element of $X$ that is fixed by every element of $G$.}
+
+OSCT states that
+$$|X| = \sum_{i = 1}^{k}{\frac{|G|}{|G_{x_i}|}}$$
+elements in the sum in rhs are nonzero divisors of $15$ (by the fact
+that $|G| = 15$), of which there are $1, 3, 5$. The only way that we
+can have them sum up to $|X| = 7$ is
+$$3 + 3 + 1$$
+or
+$$5 + 1 + 1$$
+which implies that there's gotta be an element $x_i$ such that
+$|G_{x_i}| = |G|$, which implies that there is $x_i$ such that
+$G_{x_i} = G$, which implies the desired result.
+
+\textit{(b) What goes wrong with your proof in (a) if $|G| = 15$ and
+  $|X| = 6$ or $|X| = 8$?}
+
+The fact that then we can sum up the divisors into this number:
+$$6 = 3 + 3$$
+$$8 = 5 + 3$$
+
+\subsection{}
+
+\textit{Skip}
+
+\subsection{}
+
+\textit{Let $G$ act on itself by conjugation as described in 6.25.
+  Let $x \in G$. The conjugacy class of $x$ is the orbit of $X$ for this
+  action.}
+
+\textit{(a) Prove that $G$ is the disjoint union of its conjugacy classes.}
+
+We can follow that for every $g \in G$ we have $g = e g e$, thus
+implying that every element of $G$ is in some conjugacy class, which
+implies the union part.
+
+We then follow that if $C$ is a conjugacy class, and  $q \in C$,
+then there is $g, g' \in C$ such that $g$ generates this class,
+and $q = g' g g'\inv$. Thus $g = g'\inv q g'$, and if $w \in C$,
+then there is $r \in G$ such that
+$$w = r g r' = r g'\inv q g' r\inv = r g'\inv q (r g'inv)\inv $$
+which implies that $w$ is in conjugacy class of $q$, and thus $C$
+is a subset of the conjugacy class of $q$. Reverse inclusion is similar
+to this one, which implies that
+$$C_1 \cap C_2 \neq \emptyset \ra C_1 = C_2$$
+which implies the desired result.
+
+\textit{(b) Prove that $G$ is abelian if and only if each conjugacy class
+  of $G$ contains a single element.}
+
+If $G$ is abelian, then $g q g\inv = g g\inv q = q$ for all $g \in G$,
+which implies that conjugacy classes are singletons.
+
+If $G$'s conjugacy classes are singletons, then for every pair $g, q \in G$
+we have
+$$g q g\inv = q$$
+(the only element in conjugacy class is $q$ since $e \in G$).
+This implies that
+$$gq = qg$$
+which implies the desired result.
+
+\textit{Skip the rest}
+
+\subsection{}
+
+\textit{Let $p$ be a prime. We proved in 6.26 that a group with $p^2$
+  elements must be abelian. Let $G$ be a group with $p^3$ elements}
+
+\textit{(a) Mimic the proof of corollary 6.26 to try to prove that $G$ is
+  abelian. Where does the proof do wrong?}
+
+We firstly can show that $p$ divides $|Z(G)|$, since nothing else in
+that part of the proof is dependent on the square. We then follow that
+$$G/Z$$
+does not have to be cyclic, which diverts from our initial proof.
+
+
+\textit{(b) Give two examples of non-abelian groups with $2^3$ elements}
+
+$Q$ and $D_4$.
+
+\textit{(c) What sort of information about $G$ can you deduce from the
+  proof in (a) that failed?}
+
+That $G/Z(G)$ is an abelian group (since its order is $p^2$)
+
+\subsection{}
+
+\textit{Let $G$ be a group, and let $a, b \in G$. We say that $a$
+commutes with $b$ if $ab = ba$. Is "commutes with" an equivalence
+relation}
+
+By direct implication of valious definitions, "commutes with"
+is reflexiva and symmetric, but I think that transitiveness
+is not exaclty covered here. For example $a$ commutes with $e$
+and $e$ commutes with $b$ does not imply that $a$ commutes with
+$b$ (e.g. $i * 1$, $1 * k$, $ik \neq ki$ in $Q$)
+
+\subsection{}
+
+\textit{Let $G$ be a group.}
+
+\textit{(a) Prove that the center $Z(G)$ of $G$ is a normal subgroup of $G$.}
+
+We follwo that $e$ commutees with evverything, and thus $e \in Z(G)$.
+Let $g, h \in Z(G)$, then let $q$ be arbitrary. We follow that
+$$q g\inv = (g\inv g )q g\inv = g\inv (g q) g\inv = g\inv qg  g\inv = g\inv q$$
+which gives us that $g\inv in Z(G)$. We also have that
+$$ghq = gqh = qgh$$
+thus implkying that $Z(G)$ is a subgroup, as desired.
+
+Now assume that $g \in G, z \in Z(G)$. We follow that
+$$g\inv z g = g\inv g z = z \in Z(G)$$
+which implies that $Z(G) \subseteq g\inv Z(G) g$, thus making $Z(G)$
+normal, as desired
+
+\textit{(b) Let $H \susbeteq G$ be a subgroup of $G$. Prove that
+  the centralizer $Z_G(H)$ is a subgroup of $G$. }
+
+We follow that $e \in Z_G(H)$ since $eHe = H$. If $g \in Z_G(H)$, then
+for all $q \in H$
+$$q g\inv = (g\inv g )q g\inv = g\inv (g q) g\inv = g\inv qg  g\inv = g\inv q$$
+and if $g, g' \in Z_G(H)$ then
+$$gg'h = ghg' = hgg'$$
+thus implying the desired result
+
+\textit{(c) Let $H \subseteq G$ be a subgroup of $G$.  Prove the the
+  normalizer $N_G(H)$ is a subgroup of $G$.}
+
+We once again follow that $e \in N_G(H)$. If $g, g' \in N_G(H)$ then
+$$g H g\inv = g g\inv H g g\inv = H$$
+thus $g\inv \in N_G(H)$ and
+$$g g' H (g g') \inv = g g' H g' g = g H g = H$$
+as desired.
+
+\subsection{}
+
+\textit{Skip}
+
+\section{Sylow's Theorem}
+
+
+
 
 \end{document}
