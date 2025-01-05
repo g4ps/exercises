@@ -4972,7 +4972,7 @@ $$g\inv z g = g\inv g z = z \in Z(G)$$
 which implies that $Z(G) \subseteq g\inv Z(G) g$, thus making $Z(G)$
 normal, as desired
 
-\textit{(b) Let $H \susbeteq G$ be a subgroup of $G$. Prove that
+\textit{(b) Let $H \subseteq G$ be a subgroup of $G$. Prove that
   the centralizer $Z_G(H)$ is a subgroup of $G$. }
 
 We follow that $e \in Z_G(H)$ since $eHe = H$. If $g \in Z_G(H)$, then
@@ -4997,7 +4997,50 @@ as desired.
 
 \section{Sylow's Theorem}
 
+\subsection{}
+
+\textit{Fix a prime $p$ and an integer $n \geq 1$. For $m \geq 1$, we
+  consider the product
+  $$A_m = \prod_{i = 0}^{p^n - 1}{p^nm - i}$$
+  Suppose that we factor $A_m$ as $A_m = p^kB_m$ with $p \not | B_m$
+}
+
+\textit{(a) Assume that $p \not | m$. Find a simple closed formula for $k$ that depends
+  only on $p$ and $n$.}
+
+Let us look at $p^nm - i$. Let us factor $p$ out of $i$
+and get $i = p^js$, where $p$ does not divide $s$. We follow then that
+$$p^nm - i = p^j(p^{n - j}m - s)$$
+For every $i \in \omega$ there is $j$ such that $i = p^js$ and $p \not | s$,
+and thus we conclude that there is a function $f: \omega \to \omega$
+such that $f(i) = j$. We then follow that if $a, b \in \omega$, then
+$$f(a * b) = f(a) + f(b)$$
+(as can be proven quite trivially) and we also note that $k = f(A_m)$
+in our conditions. Thus
+$$A_m = \prod_{i = 0}^{p^n - 1}{p^nm - i}$$
+$$k = f(A_m) = f(\prod_{i = 0}^{p^n - 1}{p^nm - i}) = \sum_{i = 0}^{p^n - 1}{f(p^nm - i)}$$
+we then can follow that if $p | a$, then
+$$f(a + b) = \max(f(a), f(b))$$
+and in our case where $i \leq p^n - 1$ we have that
+$$f(p^nm - i) = f(i)$$
 
 
+If $S \subseteq \omega$ is finite, then we can follow an interesting thing.
+Namely that if $J$ is a set of finite subsets of $\omega$, then 
+we can define $Q_i: J \to \omega$ as
+$$Q_i(S) = \text{the number of the elements of $S$ that are greater or equal to }i$$
+then
+$$\sum{S} = \sum_{i = 0}^{\omega}{Q_i(S)}$$
+and also if $j$ is the highest element of $S$, then
+$$\sum{S} = \sum_{i = 0}^{j}{Q_i(S)}$$
+This allows us then to follow that for our sum we can add up all the
+quantities of elements that divide $p^n$, $p^{n - 1}$, ..., $p$ and
+we will get the same $k$
+
+In our set $[0, p^n - 1]$ we have $1$ element that is a multiple of $p^n$
+(namely 0), $p$ elements that are multiples of $p^{n - 1}$, and generally
+$p^{j}$ elements, that are multiples of $p^{n - j}$. Thus we have that
+$$k = \sum_{i = 0}^{n - 1}{p^i} = \frac{p^n - 1}{p - 1}$$
+as desired.
 
 \end{document}
