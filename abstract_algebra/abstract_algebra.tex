@@ -5065,5 +5065,100 @@ Since $p$ does not divide $m$ we conclude that $f(p^nm)  = n$ and thus
 $$k = \frac{p^{n} - 1}{p - 1}$$
 as desired
 
+\textit{(b) Use (a) to give a quick proof of Lemma 6.30}
+
+Proof is essentialy the same, but we note that the maximal power of
+$p$ in both numerator and denominator are the same, and thus the whole
+shebang is not divisible by $p$
+
+\textit{(c) What happens if we allow $p$ to divide $m$?}
+
+We get that if $j$ is the highest power of $p$ that divides $m$ then
+the whole product's highest power of $p$ is also $j$ (as seen in the
+proof of (a)).
+
+\subsection{}
+
+\textit{Let $p$ be a prime, and let $G$ be a group of order $p^n$. Prove
+  that for evert $0 \leq r \leq n$ there is a subgroup $H$ of order $p^r$.}
+
+Sylow's theorem implies the existence for $p^n$ (i.e. the whole group), and
+we can state also that $\set{e}$ is also a subgroup of order $p^0$.
+
+Assume that $|G| \geq 2$, and let $q \in G$ be non-identitiy. We
+follow that its order $j$ divides $|G|$, and thus since it's a
+non-identity, its order is $p^k$ for some $1 \leq k \leq n$. Then we
+follow that order of $j^k$ is $p$, which implies that there is a
+subgroup of $G$, whose order is $p$.
+
+Assume that for some $n \in \omega$ we have the desired property.
+Let $G$ be an arbitrary group of order $p^{n + 1}$. We follow that
+its center is non-trivial, and then follow that its center has
+a subgroup $H$ of order $p$. Since $H$ is a subgroup of the center,
+we can quickly follow that it's normal, and thus $G/H$ constitues
+a group. Order of $G/H$ is going to be $p^n$ by Lagrange's theorem. We
+then follow that by our assumption, there are subgroups of $G/H$
+of order $p^0, p^1, ..., p^n$. Let us label them by $C_0, C_1, ...,
+C_n$. Exercise 6.7(b) (one, that is also solved in this work),
+implies that for each $C_j$ there is a subgroup $Q_j \subseteq G$
+such that $C_j = Q_j / H$. In the proof of that exercise we
+essentially state that the union of all the elements of $C_j$ is
+itself a subgroup of $G$, and now we're adding that by the fact that
+all the elements of $C_j$ are disjoint (by properties of cosets) we
+conclude that $|Q_j| = |C_j| * |H| = p^j * p = p^{j + 1}$. Thus we
+conclude that for all $0 \leq j \leq n$ there are subgroups
+of $G$ of order $p^{j + 1}$. In combination with the fact that
+the trivial subgroup $\set{e}$ is a subgroup of $G$, we
+conclude that $G$ has subgroups of $p^j$ for all $0 \leq j \leq n + 1$.
+By the fact that $G$ is arbitrary, we conclude that it is true for
+all groups of order $p^{n + 1}$.
+
+If we now take our previous proof, and combine it with one of the
+deriviation at the start, we get a proof by induction of the fact all
+groups $G$ of order $p^n$ with $n \in \omega$ have the desired
+property. We also note, that we did not restrict $p$, which also
+implies that the result is true for any prime $p$.
+
+\subsection{}
+
+\textit{This exercise asks you to give two different proofs of the following
+  stronger version of the first part of Sylow's Theorem}
+
+\textit{\textbf{Theorem: } Let $G$ be a finite group. let $p$ be a
+  prime, and suppose that $|G|$ is divisible by $p^r$ for $r \in
+  \omega$.  There is a subgroup of $G$ of order $p^r$.}
+
+\textit{(a) Give a proof that directly mimics the proof in the book.}
+
+Let $n$ be the highest power of $p$ that divides $|G|$. We follow then
+that
+$$|G| = p^nm$$
+where $p \not | m$, and thus for any given $1 \leq j \leq n - 1$ we have
+$$|G| = p^{n - j}p^j{m}$$
+then we state that there are $C(p^{n - j}p^j{m}, p^j)$ subsets of
+$|G|$ that are of size $p^j$, and thus
+$$C(p^{n - j}p^jm, p^j) = \sum_{i = 1}^{r}{\frac{p^{n - j}p^jm}{|G_{A_r}|}}$$
+we then follow that by first exercise in this section, the maximal power
+of $p$ in $C(p^{n - j}p^jm, p^j)$ is $p^j$, and thus there is $B$ such that
+$p \not | B$ and 
+$$C(p^{n - j}p^jm, p^j) = p^j B = \sum_{i = 1}^{r}{\frac{p^{n - j}p^jm}{|G_{A_r}|}}$$
+thus
+$$p^j B = \sum_{i = 1}^{r}{\frac{p^{n - j}p^jm}{|G_{A_r}|}}$$
+$$p^j B_m = p^j \sum_{i = 1}^{r}{\frac{p^{n - j}m}{|G_{A_r}|}}$$
+$$B_m = \sum_{i = 1}^{r}{\frac{p^{n - j}m}{|G_{A_r}|}} = $$
+which implies that there is $r$ such that $|G_{A_r}| | p^{n - j}$.
+After this point, the proof is practically the same as well, thus giving
+us implication that for all $1 \leq j \leq n - 1$ we have a subgroup of $G$
+of order $p^{n - j}$, which is equivalent to the desired conclusion.
+
+\textit{(b) Combine the version of Sylow's Theorem that we did prove
+  with the previous exercise}.
+
+Let $G$ be a finite group. We follow that if $n$ is the highest order
+of a prime $p$ such that $p^n | |G|$, then there is a subgroup of $G$
+of order $p^n$. Previous exercise implies that the resulting subgroup
+has subgroups of order $p^0, p^1, ..., p^n$ of its own, and since
+subgroup $J$ of a subgroup $K$ of a group $L$ is a subgroup of $L$ we
+get the desired result.
 
 \end{document}
