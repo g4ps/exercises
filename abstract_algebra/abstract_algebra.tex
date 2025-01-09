@@ -5163,7 +5163,40 @@ get the desired result.
 
 \subsection{}
 
-\textit{Skip}
+\textit{In example 6.36 we showed that there are exactly two groups of
+  order $10$. Do a similar calculation to find all groups of order $15$}
+
+15 is divided by $5$ and $3$, and thus we follow that there are $H_5$
+and $H_3$. We then once again follow that the only $k$ such that
+$k \mid |G|$ and $k \equiv 1 (\mod 5)$ is $1$, thus implying that
+$H_5$ is the only subgroup of order $5$ and thus normal
+
+Then let us uncombine those groups to get
+$$H_3 = \set{e, a, a^2}, H_5 = \set{e, b, b^2, b^3, b^4}$$
+we then note that since $gcd(3, 5)$ that $H_3 \cap H_5 = \set{e}$,
+and thus $a, a^2 \notin H_5$. This in turn gives us that
+$$eH_5 = H_5, aH_5, a^2H_5$$
+are cosets of $H_5$ that decompose the group, and thus any given
+$g \in G$ is of the form $g = a^ib^j$ for some $i, j \in \omega$.
+
+We then note that $a\inv ba \in H_5$ and thus there is $0 \leq j \leq 4$
+such that
+$$a b a\inv = b^j$$
+which is equivalent to
+$$b = a\inv b^j a$$
+thus we can follow that
+$$b = a\inv b^j a = (a\inv b a)^j = (a\inv (a\inv b^j a) a)^j = $$
+$$ = (a\inv (a\inv b a)^j a)^j = (a\inv (a\inv (a\inv b^j a) a)^j a)^j = $$
+$$ = (a\inv (a\inv b^j a) a)^{j^2} = (a\inv b^j a)^{j^2} = b^{j^3}$$
+which is practically the same deriviation as in the book, but with an
+extra appplication of substitution of $b$ for $a\inv b^j a$.
+Thus we have that
+$$b = b^{j^3} \lra e = b^{j^3 - 1}$$
+thus we have that
+$$j^3 \equiv 1 (\mod 5)$$
+we then follow that the only such $j$ is $j = 1$, which implies that
+$G$ is abelian, and then by the same deriviation we conclude that $G$
+is cyclic group of order 15. 
 
 \subsection{}
 
