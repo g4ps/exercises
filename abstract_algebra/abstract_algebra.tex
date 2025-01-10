@@ -5204,15 +5204,27 @@ is cyclic group of order 15.
   having the property that $gcd(|H_1|, |H_2|) = 1$. Prove that elements
   of $H_1$ and $H_2$ commute.}
 
-Let $a \in H_1$ and $b \in H_2$
+Let us look at
+$$aba\inv b\inv = (a b a\inv) b\inv $$
+since $H_2$ is normal we follow that $aba\inv \in H_2$ and thus
+$$aba\inv b\inv \in H_2 b\inv$$
+by the fact that $b\inv \in H_2$ we conclude thta
+$$H_2 b\inv = H_2$$
+and thus
+$$aba\inv b\inv \in H_2$$
+by similar logic we have
+$$aba\inv b\inv = a(ba\inv b) \in a H_1 = H_1$$
+and thus
+$$aba\inv b\inv \in H_1 \cap H_2$$
 
-$$ab a\inv \in H_1$$
-$$aba\inv b\inv \in H_1 b\inv$$
-$$b a\inv b\inv \in H_2$$
-$$a b a\inv b\inv \in a H_2$$
-thus
-$$ab a\inv b\inv \in H_1 b\inv \cap a H_2$$
-TODO
-
+If $H_1 \cap H_2$ is non-trivial, then we follow that there is $h \in
+H_1 \cap H_2$ such that $h \neq e$. Thus the order of $h$ is some
+$j > 1$ and therefore $h$ generates a cyclic subgroup of
+order $j$. Therefore we follow that $j$ divides both $|H_1|$
+and $|H_2|$ by Lagrange's theorem, which implies that
+$gcd(|H_1|, |H_2|) > 1$, which is a contradiction. Thus we conclude that
+$H_1 \cap H_2$ is trivial, and therefore
+$$aba\inv b\inv = e \ra ab = ba$$
+which is the desired result.
 
 \end{document}
