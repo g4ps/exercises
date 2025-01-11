@@ -5227,4 +5227,101 @@ $H_1 \cap H_2$ is trivial, and therefore
 $$aba\inv b\inv = e \ra ab = ba$$
 which is the desired result.
 
+\subsection{}
+
+\textit{Let $G$ be a finite group of order $|G| = pq$ where $p, q$ are
+  primes satisfying $p > q$. Assume further that $p \not \equiv 1 (\mod
+  q)$. }
+
+\textit{(a) Prove that $G$ is an abelian group. }
+
+We follow that there are $H_p, H_q$ - respective $p$-Sylow and
+$q$-Sylow subgroups of $G$ of order $p$ and $q$ respectively.  Their
+order implies that $H_p$ and $H_q$ are abelian. Example 6.37 implies
+that $H_p$ is normal (while we know nothing of the $H_q$).  We then
+follow that our assumption that $p \not \equiv 1 (\mod q)$ gives us an
+ability to use example 6.37 to prove by same idea mutatis mutandis
+that $H_q$ is also normal. Thus previous exrcise implies that elements
+of $H_p$ and $H_q$ commute.
+
+We then follow that every element $g \in G$ can be expressed as
+$$g = a b$$
+for some $a \in H_p$ and $b \in H_q$ (by the same deriviation as in
+example 6.36 or two exercises ago). Thus let $g_1, g_2 \in G$. We
+follow that there are $a, a' \in H_p$ and $b, b' \in H_q$ such that
+$$g_1 = a b, g_2 = a' b'$$
+and thus
+$$g_1 g_2 = ab a' b' = a (b a') b' = a a' b b'
+= (a a') (b b') = a' (a b') b = a' b' a b = g_2 g_1$$ which implies
+the desired result.
+
+\textit{(b) Prove that $G$ is a cyclic group}
+
+We can use the same deriviation as in example 6.36
+
+\subsection{}
+
+\textit{Let $G$ be a group. An isomorphism from $G$ to itself is
+  called an automorphism of $G$. The set of automorphisms is denoted
+  $$Aut(G) = \set{\text{ group isomorphisms } G \to G}$$
+  We define a composition law on $Aut(G)$ by composition of functions
+}
+
+\textit{(a) Prove that this composition law makes $Aut(G)$ into a
+group}
+
+We can follow that the general identity is the identity for the group.
+If $f \in Aut(G)$ is an element, then $f\inv$ is a function by the
+fact that everything in $Aut(G)$ is a bijection. Inverse of an
+isomorphism is an isomorphism itself, and thus we have inrverses in
+the $Aug(G)$.  Association is taken care of by the general association
+of the composition of functions, which gives us the desired result
+
+\textit{(b) Let $a \in G$. Define a map $\phi_a: G \to G$ by the
+  formula
+  $$\phi_a(g) = a g a\inv$$
+  Prove that $\phi_a \in Aut(G)$ and that the map
+  $$q: G \to Aut(G), q(a) = \phi_a$$
+  is a group homomorphism.
+}
+
+We follow that $\phi_a$ is a composition of products of elements of a
+group, and thus is injective. If $h \in G$, then
+$$\phi_a(a\inv h a) = h$$
+thus making $h$ surjective, which implies that $\phi_a \in Aut(G)$.
+Then we follow that
+$$q(ab) = \phi_{ab}$$
+$$q(a)q(b) = \phi_a\phi_b$$
+now let $g \in G$. We follow that
+$$\phi_{ab}(g) = ab g(ab)\inv = abgb\inv a$$
+$$\phi_{a}\phi_{b}(g) = \phi_a(bgb\inv) = a b g b\inv a\inv$$
+which implies that $q$ is indeed a homomorphism, as desired.
+
+\textit{(c) Prove that the kernel of homomorphism 6.23 is the center
+  $Z(G)$ of $G$.}
+
+Let $c \in Z(G)$. We follow that for $g \in G$
+$$\phi_c(g) = c g c\inv = c c\inv g = eg = g$$
+and if $v \notin Z(G)$, then if $q(v) = id$ then for all $g \in G$
+$$\phi_v(g) = g$$
+thus
+$$v g v\inv = g$$
+$$v g = gv$$
+which implies that $v \in Z(G)$, which is a contradiction. Thus we
+have the desired result.
+
+\textit{(d) Elements of $Aut(G)$ that are equal to $\phi_a$ for some
+  $a \in G$ are called inner automorphisms, and all other elements of
+  $Aut(G)$ are called outer automorphisms. Prove that $G$ is abelian if
+  and only if its only inner automorphism is the identity map}
+
+Inner automorphisms are essentially images of $q$.  If $G$ is abelian,
+then $Z(G) = G$, and thus $q(g) = id$ as per the previous exercise. If
+the range of $q$ is $\set{id}$, then for all $v ,g \in G$
+$$\phi_v(g) = g$$
+$$v g v\inv = g$$
+$$v g  = gv$$
+which implies the desired result.
+
+
 \end{document}
