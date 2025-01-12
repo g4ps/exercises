@@ -5323,5 +5323,25 @@ $$v g v\inv = g$$
 $$v g  = gv$$
 which implies the desired result.
 
+\textit{(e) More generally, if $H$ is a normal subgroup of $G$, prove that
+  there is a well-defined group homomorphism
+  $$w: G \to Aut(H), q(a)(h) = a h a\inv $$
+  and that the kernel of this homomorphism is the centralizer of $H$ in $G$
+}
+
+We can follow that if $f$ is an inner automorphism of $G$, then for $h
+\in H$ we have
+$$f(h) = a h a\inv$$
+and more generally
+$$f[H] = a H a\inv = H$$
+thus we can make $f$ into an automorphism on $H$ by restricting its
+domain. We call the function that does such a thing $j$.  Thus by
+composing homomorphism from (b) with $j$ we get the desired function.
+We then follow that if $k \in Z_G(H)$, then
+$$w(k)(h) = k h k\inv = k k\inv h = h$$
+for all $h \in H$, thus implying that $w(k) = id$. Now assume that
+$k\notin Z_G(H)$ and we have that $w(k) = id$. Then for all $h \in H$
+$$h = w(k)(h) = k h k\inv  \ra kh = hk \ra k \in Z_G(H)$$
+which is a desired contradiction.
 
 \end{document}
