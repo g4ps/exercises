@@ -5373,4 +5373,39 @@ $$phi(j)(g) = g^j$$
 is the desired isomorphism
 
 
+\subsection{}
+
+\textit{Let $G$ be a group of order $|G| = 75$.}
+
+\textit{(a) Prove that $G$ has a subgroup $H$ with all three of the
+  folllowing properties: $|H| = 25$, $H$ is a normal subgroup of $G$,
+  $H$ is abelian}
+
+Let $H$ be a 5-Sylow subgroup of $G$. We follow that its order is
+25. Since its order is a square of a prime, it's abelan. Numbers that
+divide 75 are
+$$1, 3, 5, 15, 25, 75$$
+none of which give 1 mod 5, except for $1$, which implies that this is
+the only 5-Sylow subgroup, which implies that the thing is normal.
+
+\textit{(b) Suppose that the subgroup $H$ in (a) is cyclic of order
+  $25$.  Prove that $G$ is abelian.}
+
+We follow that there is also a 3-Sylow subgroup. Since its order is
+$3$ we follow that it's cyclic. By the example's deriviation we have 
+$$aba\inv = b^j$$
+$$b = a\inv b^j a$$
+$$b = b^{j^3}$$
+$$j^3 \equiv 1 \mod 25$$
+the only such $j$ is $1$, which implies that 3-Sylow and $H$ commute.
+Let $a$ now generate $H$ and $b$ generate the 3-Sylow subgroup. We
+follow that $ab$'s order is finite and let this order be $j$. We
+follow that
+$$e = (ab)^j \ra e = a^j b^j \ra a^{-j} = b^j \in H \cap H_3
+= \set{e} \ra$$
+$$\ra a^k = b^k = e \ra 3 | k \land 25 | k \ra k = 75$$
+which is pretty much the same deriviation as in one of the examples in
+the chapter
+
+
 \end{document}
