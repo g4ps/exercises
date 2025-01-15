@@ -5407,5 +5407,44 @@ $$\ra a^k = b^k = e \ra 3 | k \land 25 | k \ra k = 75$$
 which is pretty much the same deriviation as in one of the examples in
 the chapter
 
+\section{Double Cosets and Sylow's Theorem}
+
+\subsection{}
+
+\textit{Let $G$ be a finite group of order $|G| = pm$, where $p$ is
+  prime and $p \not | m$. Assume further that $m$ has the following
+  property: The only divisor $d$ of $m$, that satisfies $d \equiv m
+  (\mod p)$ is $d = m$.}
+
+\textit{(a) Prove the $p$-Sylow subgroup of $G$ is a normal subgroup
+  of $G$.}
+
+Let us name the $p$-Sylow sugroup of $G$ as $H$.
+
+We firstly follow that if $p$-Sylow subgroup is normal, then its
+conjugates are equal to the group, thus making this group the one
+and only $p$-Sylow subgroup of $G$. Same goes in the other
+direction, thus $p$-Sylow is normal if and only if $k = 1$ (variables
+definition here is the same as in the text in the book).
+
+Now assume that $H$ is not normal. We follow that $k > 1$. We also
+have that $k | pm$. If $p | k$, then $k \equiv 0 \mod p$, which is a
+contradiction, which implies that $p \not | k$. Since $p \not | m$
+we follow then that
+$$k | m$$
+which implies that there is $n \in N_+$ such that $m = kn$. Moreover
+we have that $n < m$ since $k > 1$. Now we can follow that
+$$k \equiv 1 (\mod p)$$
+$$nk \equiv n (\mod p)$$
+$$m \equiv n (\mod p)$$
+$$n \equiv m (\mod p)$$
+which directly contradicts the premise (this proof is somewhat
+awkward, and can be easily converted to the direct one).
+
+\textit{Skipping the rest of those exercises, maybe will come back for
+  them later}
+
+
+
 
 \end{document}
