@@ -5441,10 +5441,44 @@ $$n \equiv m (\mod p)$$
 which directly contradicts the premise (this proof is somewhat
 awkward, and can be easily converted to the direct one).
 
+
+
 \textit{Skipping the rest of those exercises, maybe will come back for
   them later}
 
+\chapter{Rings - Part 2}
 
+\subsection{}
+
+\textit{Let $R$ be an integral domain, and let $a, b \in R$. Prove
+  that the following are equivalent:}
+
+\textit{(a) $a | b$ and $b | a$ }
+
+\textit{(b) There is a unit $u \in R^*$ satisfying $a = bu$. }
+
+\textit{(c) There is an equality of principal ideals $aR = bR$.}
+
+There's probably a cyclical imlication here, so assume that $a | b$ and $b | a$.
+Definition implies that $a, b \neq 0$ and also that there are $k_1,
+k_1 \in R$ such that $a = bk_1$ and $b = a k_2$. We follow then that
+$$a = bk_1 = a k_2 k_1$$
+thus
+$$a * 1 = a k_2 k_1$$
+which by the fact that $a \neq 0$ and $R$ being integral domain implies that
+$$k_2 k_1 = 1$$
+thus implying that $k_1, k_2 \in R^*$, which implies (b) from deriviation that
+$a = bk_1$.
+
+Now if $a = bu$ for some $u \in R^*$, then we follow that
+$$h \in aR \ra (\exists r \in R)( h = ar) \ra
+(\exists r \in R)( h = bur) \ra  (\exists ur \in R)( h = b(ur)) \ra h \in bR$$
+thus implying that $aR \subseteq bR$. Reverse inclusion is kinda similar here,
+which implies (c)
+
+If $aR = bR$, then $a \in bR$, which implies that there is $r \in R$ such
+that $a = br$, which implies that $b | a$. Similar implication holds
+for the other condition.
 
 
 \end{document}
