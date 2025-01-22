@@ -5506,8 +5506,19 @@ of an integral domain
 \textit{(a) Prove that $d$ divides both $a$ and $b$}
 
 We can follow that since $dR = aR + bR$ we have that $0 \in bR$ and
-thus $aR = aR + 0 \subseteq dR$. Therefore we have that
-$a \in dR$ and thus there is $r \in R$ such that $a = dr$, which implies that
-$d | a$, as desired. Similar thing holds for $b$.
+thus $aR = aR + 0 \subseteq dR$. Therefore we have that $a \in dR$ and
+thus there is $r \in R$ such that $a = dr$, which implies that $d |
+a$, as desired. Similar thing holds for $b$.
+
+
+\textit{(b) Let $c \in R$ be a non-zero element that divides both $a$
+  and $b$. Prove that $c$ divides $d$.}
+
+Since $c \vert a$ and $c \vert b$ we follow that there are $n, k \in R$
+such that $nc = a$ and $kc = b$. Since $dR = aR + bR$ and $d \in dR$
+we follow that there are $r, r' \in R$ such that
+$$d = ar + br' = ncr + kcr' = c(nr + kr')$$
+which implies the desired result
+
 
 \end{document}
