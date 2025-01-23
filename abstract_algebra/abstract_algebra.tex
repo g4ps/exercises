@@ -5520,5 +5520,20 @@ we follow that there are $r, r' \in R$ such that
 $$d = ar + br' = ncr + kcr' = c(nr + kr')$$
 which implies the desired result
 
+\subsection{}
+
+\textit{Let $R$ be a Eucledian domain with size function $\sigma$ and
+  let $a \in R$ be a nonzero element of $R$. Prove that
+  $$a \in R^* \iff \sigma(a) = \sigma(1)$$
+}
+
+$a \in R^*$ implies that for all $b \in R \setminus \set{0}$ we have
+$$\sigma(ba) = \sigma(b)$$
+thus since $1 \neq 0$ we have
+$$\sigma(a) = \sigma(1 * a) = \sigma(1)$$
+which gives us the forward implication.
+
+Since $\sigma(1) = \sigma(a)  = \sigma(1 * a)$
+we follow the desired result by 7.15
 
 \end{document}
