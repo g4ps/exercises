@@ -5536,4 +5536,41 @@ which gives us the forward implication.
 Since $\sigma(1) = \sigma(a)  = \sigma(1 * a)$
 we follow the desired result by 7.15
 
+\subsection{}
+
+\textit{Let $R$ be an integral domain, and let
+  $$\sigma: R \setminus \set{0} \to \omega$$
+  be a function that has property (1) in the definition of a Eucledian
+  domain. Define a new function
+  $$\tau: R \setminus \set{0} \to \omega,
+  \tau(r) = \min \set{\sigma(rc): c \in R \setminus \set{0}}$$
+  Prove that $\tau$ has both properties (1) and (2)
+}
+
+So we have that for each nonzero $a, b \in R$ there is $q, r \in R$ such
+that
+$$a = bq + r$$
+and either $\sigma(r) < \sigma(b)$ or $r = 0$. We firsly state that
+$\tau$ has the right domain and codomain to be a size function. Then
+assume that $r, b \in R$ are such that $\sigma(r) < \sigma(b)$.
+Then let us pick $c, c' \in R$ such that
+$$\sigma(cr) = \tau(r)$$
+$$\sigma(c'b) = \tau(b)$$
+(the existence of such elements is directly implied from the definition
+of $\tau$ and the fact that $\omega$ is a woset). We want to follow that
+$$\tau(r) = \sigma(cr) < \sigma(cb) = \tau(b)$$
+We follow
+$$\sigma(r) = \sigma(1 * r) \geq \sigma(cr) = \tau(r)$$
+$$\sigma(b) = \sigma(1 * b) \geq \sigma(c'b) = \tau(b)$$
+which implies that
+$$\tau(r) \leq \sigma(r * 1) =  \sigma(r) < \sigma(b) \ra \tau(r) < \sigma(b)$$
+
+Suppose that $b, c \in R$ are arbitrary nonzero elements.  We follow
+that there are $a, a' \in R \setminus \set{0}$ such that $\tau(b) =
+\sigma(ab)$, $\tau(cb) = \sigma(acb)$. Since $R$ is an integral domain
+and $a, c$ are nonzero we follow that $ac \neq 0$. By definition of
+$\tau$ we follow that for all $q \in R \setminus \set{0}$ we have that
+$\tau(b) \leq \sigma(qb)$, and thus $\tau(b) \leq \sigma((ac)b) =
+\tau(cb)$ which implies the part (2) of the definition.
+
 \end{document}
