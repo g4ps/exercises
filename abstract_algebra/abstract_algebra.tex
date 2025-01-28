@@ -5547,24 +5547,6 @@ we follow the desired result by 7.15
   Prove that $\tau$ has both properties (1) and (2)
 }
 
-So we have that for each nonzero $a, b \in R$ there is $q, r \in R$ such
-that
-$$a = bq + r$$
-and either $\sigma(r) < \sigma(b)$ or $r = 0$. We firsly state that
-$\tau$ has the right domain and codomain to be a size function. Then
-assume that $r, b \in R$ are such that $\sigma(r) < \sigma(b)$.
-Then let us pick $c, c' \in R$ such that
-$$\sigma(cr) = \tau(r)$$
-$$\sigma(c'b) = \tau(b)$$
-(the existence of such elements is directly implied from the definition
-of $\tau$ and the fact that $\omega$ is a woset). We want to follow that
-$$\tau(r) = \sigma(cr) < \sigma(cb) = \tau(b)$$
-We follow
-$$\sigma(r) = \sigma(1 * r) \geq \sigma(cr) = \tau(r)$$
-$$\sigma(b) = \sigma(1 * b) \geq \sigma(c'b) = \tau(b)$$
-which implies that
-$$\tau(r) \leq \sigma(r * 1) =  \sigma(r) < \sigma(b) \ra \tau(r) < \sigma(b)$$
-
 Suppose that $b, c \in R$ are arbitrary nonzero elements.  We follow
 that there are $a, a' \in R \setminus \set{0}$ such that $\tau(b) =
 \sigma(ab)$, $\tau(cb) = \sigma(acb)$. Since $R$ is an integral domain
@@ -5572,5 +5554,17 @@ and $a, c$ are nonzero we follow that $ac \neq 0$. By definition of
 $\tau$ we follow that for all $q \in R \setminus \set{0}$ we have that
 $\tau(b) \leq \sigma(qb)$, and thus $\tau(b) \leq \sigma((ac)b) =
 \tau(cb)$ which implies the part (2) of the definition.
+
+
+Assume that $b, r \in R \setminus 0$ are such that $\sigma(b) >
+\sigma(r)$. We firstly can follow that $\sigma(r) \geq \tau(r)$
+by definition of $\tau$, and $\tau(b) = \sigma(cb) \geq \sigma(b)$ by
+previous point, which implies that
+$$\tau(b) \geq \sigma(b) > \sigma(r) \geq \tau(r)$$
+which gives us point (1) and the desired result.
+
+\subsection{}
+
+\textit{this one was taken care of in the linear algebra course}
 
 \end{document}
