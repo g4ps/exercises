@@ -5567,4 +5567,21 @@ which gives us point (1) and the desired result.
 
 \textit{this one was taken care of in the linear algebra course}
 
+\subsection{}
+
+\textit{Explain why proof of the fact that $Z[i]$ is a Eucledian domain
+  won't work on $Z[\sqrt{3}]$ }
+
+We firstly follow that $Z[\sqrt{3}]$ is a subring of $R$, and thus
+it's got to be an integral domain. We can also state that
+there is a bijection between $Z[\sqrt{3}]$ and $Z^2$ which
+can also give us a plane, just as in $Z[i]$ case. We can also define
+$\sigma: Z[\sqrt{3}] \to R$ by setting
+$$\sigma(a + b \sqrt{3}) = a^2 + b^2$$
+we can follow that $\sigma(\zeta) = 0 \lra \zeta = 0$, but can we do the
+second part? We can see that
+$$\sigma(\sqrt{3} * \sqrt{3}) = \sigma(3) = 3^2 + 0^2 = 9$$
+$$\sigma(\sqrt{3}) * \sigma(\sqrt{3}) = 1 * 1 = 1 \neq 9$$
+which gives us problems.
+
 \end{document}
