@@ -3542,7 +3542,7 @@ $1$ is not present in $I$
 
 \textit{(c) Prove that $I$ is not a principal ideal}
 
-Assume that $q(x)$ is an ideal, that generates $I$. We follow that it
+Assume that $q(x)$ is an element, that generates $I$. We follow that it
 generates both $2$ and $x$, for which the only common multiple is $1$,
 which implies that $q = 1$, which implies that $I = Z[x]$, which is
 not true.
@@ -5583,5 +5583,86 @@ second part? We can see that
 $$\sigma(\sqrt{3} * \sqrt{3}) = \sigma(3) = 3^2 + 0^2 = 9$$
 $$\sigma(\sqrt{3}) * \sigma(\sqrt{3}) = 1 * 1 = 1 \neq 9$$
 which gives us problems.
+
+\subsection{}
+
+\textit{For each of the following rings $R$ and elements $\alpha$,
+  determine whether $\alpha$ is irreductible in $R$. Justify
+  your answer by either factoring $\alpha$ or proving that it is
+  irreductible}
+
+\textit{(a) $R = Z[i]$ and $\alpha = 2 + 3i$}
+
+We can follow that we have a function $\sigma(x + yi) = x^2 + y^2$ is
+having a property $\sigma(ab) = \sigma(a)\sigma(b)$. We then follow that
+$$\sigma(\alpha) = \sigma(2 + 3i) = 4 + 9 = 15 = 3 * 5$$
+thus we can try to make up elements with sizes $3$ and $5$. The problem is
+that $3$ is not a sum of squares, and thus we can follow that there is
+no element $a$ of $Z[i]$ such that $\sigma(a) = 3$, which implies that the
+element is irreductible.
+
+\textit{(b) $R = Z[i]$ and $\alpha = 4 + 3i$}
+
+We follow that
+$$\sigma(\alpha) = \sigma(4 + 3i) = 16 + 9 = 25 = 5^2$$
+we then can heck around with $Z[i]$ to get that
+$$(2 - i) * (1 + 2i) = 2 + 4i - i + 2 = 4 + 3i$$
+thus giving us the desired result.
+
+\textit{(c) $R = F_2[x]$ and $\alpha = x^5 + x + 1$}
+
+Here we firstly note that the size function is $\deg$, which has
+property $\deg(a * b) = \deg(a) + \deg(b)$, thus stating that our
+resulting elements are of order $1, 4$ or $2, 3$. We also note that
+both elements should have a non-zero constant value in order
+to result in a non-zero constant value in the result. There
+are only a finite amount of polynomials of both degrees, and thus
+we can try to go through all of them
+$$(x + 1) (x^4 + 1) = x^5 + x^4 + x + 1$$
+$$(x + 1) (x^4 + x + 1) = ... $$
+we then note an interesting thing: polynomial multiplication in $F_2$
+looks kinda similar to multiplication in a base 2. We follow that in
+base 2
+$$\alpha = 2^5 + 2 + 1 = 35 = 5 * 7$$
+and $5 = x^2 + 1$, $7 = x^2 + x + 1$. We then follow that
+$$(x^2 + 1) * (x^2 + x + 1) =
+x^4 + x^3 + x^2 + x^2 + x + 1 = x^4 + x^3 + x + 1$$ thus concluding
+that we were wrong on this one (but it's still pretty interesting how
+exactly this thing translates to binary). Thus let us go back to
+just calculating the things
+$$(x + 1) (x^4 + 1) = x^5 + x^4 + x + 1$$
+$$(x + 1) (x^4 + x + 1) = x^5 + x^2 + x + x^4 + x + 1 = x^5 + x^4 + x^2 + x + 1$$
+$$(x + 1) (x^4 + x^2 + x + 1) = x^5 + x^3 + x^2 + x + x^4 + x^2 + x + 1 = x^5 + x^4 + x^3 + 1$$
+$$(x + 1) (x^4 + x^3 + x^2 + x + 1) =
+x^5 + x^4 + x^3 + x^2 + x + x^4 + x^3 + x^2 + x + 1 = x^5 + 1$$
+after doing this thing for a while, I thought that maybe a better idea
+is to think about theproblem a bit. If we're multiplying $(x + 1)$ by any
+polynomial with 4th power, then the fourth power will be in the resulting
+polynomial, which does not give us the desired result. Thus we can
+skip this thing to get to the powers $3, 2$:
+$$(x^2 + 1) (x^3 + 1) = x^5 + x^2 + x^3 + 1$$
+$$(x^2 + 1) (x^3 + x + 1) = x^5 + x^3 + x^2 + x^3 + x + 1 = x^5 + x^2 + x + 1$$
+$$(x^2 + 1) (x^3 + x^2 + 1) = x^5 + x^4 + x^2 + x^3 + x^2 + 1 = x^5 + x^4 + x^3 + 1$$
+$$(x^2 + 1) (x^3 + x^2 + x + 1) = x^5 + x^4 + x^3 + x^2 + x^3 + x^2 + x + 1 =
+x^5 + x^4 + x + 1$$
+$$(x^2 + x + 1) (x^3 + 1) = x^5 + x^4 + x^3 + x^2 + x + 1$$
+$$(x^2 + x + 1) (x^3 + x + 1) = x^5 + x^3 + x^2 + x^4 + x^2 + x + x^3 + x + 1 =
+x^5 + x^4 + 1$$
+$$(x^2 + x + 1) (x^3 + x^2 + 1) = x^5 + x^4 + x^2 + x^4 + x^3 + x + x^3 + x^2 + 1
+x^5 + x + 1$$
+which gives us $\alpha$, and thus the desired result.
+
+\textit{(d) $R = F_2[x]$ and $\alpha = x^5 + x^2 + 1$}
+we've got only one polynomial to check, thus let us do this:
+$$(x^2 + x + 1) (x^3 + x^2 + x + 1) = x^5 + x^4 + x^3 + x^2 + x^4 + x^3 + x^2 + x + x^3 + x^2 + x + 1
+x^5 + x^3 + x^2 + 1$$
+thus we've gone through all the applicable polynomials, which implies that
+there $\alpha$ is irreductible. 
+
+\subsection{}
+
+\textit{This one mirrors the proof of 3.51(c) since we haven't used
+degrees in that proof}
+
 
 \end{document}
