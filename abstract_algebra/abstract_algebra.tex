@@ -5662,7 +5662,24 @@ there $\alpha$ is irreductible.
 \subsection{}
 
 \textit{This one mirrors the proof of 3.51(c) since we haven't used
-degrees in that proof}
+  degrees in that proof}
+
+\section{Factorization in PID}
+
+\subsection{}
+
+\textit{Let $R$ be a principal ideal domain, and let $a, b c \in R$. Prove that
+  if $a$ is irreductible, does not divide $b$, and $a | c$, $b | c$, then $ab | c$.}
+
+We can follow that there are nonzero $n ,k \in R$ such that
+$$an = c, bk = c$$
+thus
+$$an = bk \ra a | bk$$
+since $a$ does not divice $b$ we follow that $a | k$. Thus there is $j \in R$
+such that $aj = k$, and therefore
+$$bk = b aj = c$$
+which implies that $ba = ab$ divides $c$, as desired.
+
 
 
 \end{document}
