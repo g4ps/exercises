@@ -5680,6 +5680,38 @@ such that $aj = k$, and therefore
 $$bk = b aj = c$$
 which implies that $ba = ab$ divides $c$, as desired.
 
+\subsection{}
+
+\textit{Let $R$ be a PID. Prove the 7.19 without the assumption that
+  $R$ is a Eucledian domain by assuming that $a \in R$ is non-zero
+  non-unit, not a product of irreductibles, and following the following
+  steps.
+}
+
+\textit{(a) Show that you can write $a = a_1 b_1$ as a product of
+  non-units such that $b_1$ is not a product of irreductibles and then
+  that you can write $a = a_1 a_2 b_2$ as a product of non-units such
+  that $b_2$ is not a product of irreductibles etc. In this way, for
+  every $n$ you get a product of non-units $a = a_1 a_2 ... a_n b_n$
+  such that $b_n$ is not a product of irreductibles. 
+}
+
+Since $a$ is not a non-unit, and not irreductible, we follow taht
+there are $a_1, b_1$ such that
+$$a = a_1 b_1$$
+We follow that if both of $a_1, b_1$ are irreductibles, then $a$ is a
+product of irreductibles, which is a contradiction. Therefore we
+conclude that at least one of $a_1, b_1$ is not irreductible. We then
+follow that at least one of $a_1, b_1$ also has to be a product of
+non-irreductibles, otherwise we have that $a$ is a product of
+irreductibles. By relabeling if necessary and proceeding with induction
+we get the desired result.
+
+\textit{(b) Prove that the ideals $I_n = b_nR$ satisfy $I_1 \subseteq
+  I_2 \subseteq I_3 ... $}
+
+We can follow that by construction of $b_n$ we have that $b_{n + 1} | b_n$,
+and thus $b_{n + 1}R \subseteq  b_n$, which implies this result.
 
 
 \end{document}
