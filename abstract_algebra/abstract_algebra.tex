@@ -5748,25 +5748,34 @@ implies in turn that $a_{k + 1}\in R^*$.
 
 \textit{(a) Prove that $\pm 1$ are the only units in $R$.}
 
-$\pm 1$ are obviously units here, as can be proven trivially. 
+$\pm 1$ are obviously units here, as can be proven trivially.
 
 If we take a number $q$ that is in $Z$ and not equal to $\pm 1$, then
-we follow that if we multipy it by another member of $Z$, then we're not
-getting $1$ (ddue to basic properties of $Z$). If we multiply them by any
-$a + b\sqrt{-3}$ with non-zero $b$, then we're getting non-zero $b$ in
-the result as well, thus proving that no member of $Z$ is a unit.
+we follow that if we multipy it by another member of $Z$, then we're
+not getting $1$ (ddue to basic properties of $Z$). If we multiply them
+by any $a + b\sqrt{-3}$ with non-zero $b$, then we're getting non-zero
+$b$ in the result as well, thus proving that no member of $Z$ is a
+unit.
 
 If $q \notin Z$, then we follow by previous point that its supposed
-multiplicative inverse cannot be in $Z$ by previous point. If $q = b\sqrt{-3}$,
-then we follow that by  multiplicating this thing by some $b'\sqrt{-3}$
-will give us $-3bb'$, which cannot be equal to $1$ with $b, b' \in Z$.
-Multiplication by $a' + b'\sqrt{3}$ with nonzero $a'$ will give us
-nonzero $\sqrt{-3}$ in the result, so it won't do. Thus the only other
-case happens if $q = a + b\sqrt{-3}$ with $a, b \neq 0$. Multiplicating
-this $q$ by any $a' + b'\sqrt{-3}$ with zero $a$ or $b$ will give us
-previous point, thus we need to assume that $a', b' \neq 0$. We follow
-that $|q| > 1$ in this case, which implies that no other member of
-$Z[\sqrt{-3}]$ will make it equal to $1$, which implies the desired result.
+multiplicative inverse cannot be in $Z$ by previous point. If $q =
+b\sqrt{-3}$, then we follow that by multiplicating this thing by some
+$b'\sqrt{-3}$ will give us $-3bb'$, which cannot be equal to $1$ with
+$b, b' \in Z$. Multiplication by $a' + b'\sqrt{3}$ with nonzero $a'$
+will give us nonzero $\sqrt{-3}$ in the result, so it won't do. Thus
+the only other case happens if $q = a + b\sqrt{-3}$ with $a, b \neq
+0$. Multiplicating this $q$ by any $a' + b'\sqrt{-3}$ with zero $a$ or
+$b$ will give us previous point, thus we need to assume that $a', b'
+\neq 0$. We follow that
+$$(a + b\sqrt{-3})(a' + b'\sqrt{-3}) = 1$$
+we then follow that
+$$(a - b\sqrt{-3})(a' - b'\sqrt{-3}) = 1$$
+and mmultyplying them we get
+$$(a^2 + 3b^2)(a'^2 + 3b'^2) = 1$$
+we then follow that $(a^2 + 3b^2)$ for nonzero $a, b$ is greater or
+equal to $4$, thus implying that there is no way to pick such numbers,
+thus impying the desired result
+
 
 
 \end{document}
