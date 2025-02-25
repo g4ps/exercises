@@ -5833,6 +5833,31 @@ a^2v^2 + baww + bw = a^2v^2 + b(aw^2 + w)$$
 and therefore we follow that $a^2R + bR = R$. By induction we can
 prove that $a^mR + bR = R$, which would imply the desired result 
 
+\textit{Next one is also proven by induction}
+
+\subsection{}
+
+\textit{let $R$ be a PID}
+
+\textit{(a) Let $a, b \in R$. Prove that
+  $$aR + bR = R \lra aR \cap bR = abR$$
+}
+
+Assume the former. We follow that if $x \in abR$ then there is $q \in
+R$ such that $x = abq$, and thus $x \in aR, x \in bR$, which implies
+that
+$$abR \subseteq aR \cap bR$$
+Let $x \in abR$. Since $aR + bR = R$ we follow that there are $u, w
+\in R$ such that $au + bw = x$. There is also $q \in R$ such that $abq
+= x$, and therefore
+$$au + bw = abq$$
+thus we have that
+$$au - abq = a(u - bq) = bw$$
+and therefore $bw \in aR$. By similar reasoning $au \in bR$, and thus
+$x = abq = au + bw \in aR \cap bR$, thus implying the forward
+implication.
+
+
 
 
 \end{document}
