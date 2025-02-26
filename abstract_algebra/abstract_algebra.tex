@@ -5837,7 +5837,7 @@ prove that $a^mR + bR = R$, which would imply the desired result
 
 \subsection{}
 
-\textit{let $R$ be a PID}
+\textit{Let $R$ be a PID}
 
 \textit{(a) Let $a, b \in R$. Prove that
   $$aR + bR = R \lra aR \cap bR = abR$$
@@ -5847,17 +5847,26 @@ Assume the former. We follow that if $x \in abR$ then there is $q \in
 R$ such that $x = abq$, and thus $x \in aR, x \in bR$, which implies
 that
 $$abR \subseteq aR \cap bR$$
-Let $x \in abR$. Since $aR + bR = R$ we follow that there are $u, w
-\in R$ such that $au + bw = x$. There is also $q \in R$ such that $abq
-= x$, and therefore
-$$au + bw = abq$$
-thus we have that
-$$au - abq = a(u - bq) = bw$$
-and therefore $bw \in aR$. By similar reasoning $au \in bR$, and thus
-$x = abq = au + bw \in aR \cap bR$, thus implying the forward
-implication.
+If $x \in aR \cap bR$, then we follow that there are $u, w \in R$ such that
+$au = bw = x$. Since $aR + bR = R$ we follow also that there are $q, e \in R$
+such that
+$$aq + be = 1$$
+and thus
+$$u = u * 1 = u(aq + be) = auq + bue = bwq + bue = b(wq + ue)$$
+and thus we have that
+$$x = au = a b(wq + ue) \in abR$$
+which gives us the forward implication.
 
+Since $R$ is a PID we follow that there is $d \in R$ such that
+$$aR + bR = dR$$
+thus there are $u, w \in R$ such that
+$$au + bw = d$$
+We then follow that by one of the previous exercises
+$d | a$ and $d | b$. Therefore
 
+$$ak = bj = aby$$
+$$duk = dwj = aby$$
 
+TODO
 
 \end{document}
