@@ -5862,11 +5862,21 @@ $$aR + bR = dR$$
 thus there are $u, w \in R$ such that
 $$au + bw = d$$
 We then follow that by one of the previous exercises
-$d | a$ and $d | b$. Therefore
-
-$$ak = bj = aby$$
-$$duk = dwj = aby$$
-
-TODO
+$d | a$ and $d | b$. Therefore there are $n, j \in R$
+such that
+$$d n = a$$
+$$d k = b$$
+and thus we follow that
+$$dnk = ak = bn \in aR \cap bR = abR$$
+therefore we have that there is $q \in R$ such that
+$$dnk = abq$$
+and thus
+$$dnk = dndkq$$
+since $R$ is a PID we follow that it's an integral domain, and thus
+we can cancel out the terms to obtain
+$$dnk = dndkq$$
+$$1 * (dnk) = (dnk) * dq$$
+$$1 = dq$$
+which implies that $d \in R^*$, and thus $dR = R$, which gives us the desired result.
 
 \end{document}
