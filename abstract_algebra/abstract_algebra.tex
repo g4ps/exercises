@@ -5879,4 +5879,38 @@ $$1 * (dnk) = (dnk) * dq$$
 $$1 = dq$$
 which implies that $d \in R^*$, and thus $dR = R$, which gives us the desired result.
 
+\textit{(b) Let $c_1, ..., c_n \in R$, and suppose that $c_iR + c_jR =
+R$ for all $i \neq j$. Prove that
+  $$c_1 R \cap c_2 R ... \cap c_nR = c_1 c_2 ... c_n R$$
+}
+
+As before, we can follow that $c_1 c_2 ... c_n R \subseteq c_1 R \cap
+c_2 R ... \cap c_nR$ by a straightforward application of the
+definition.
+
+Now the proof of 7.25 (particularly the IH part) gives us that
+$$c_1 c_2 ... c_n R + c_{n + 1} R = R$$
+namely throught the deriviation that
+$$c_1 R + c_3 R = R$$
+$$c_2 R + c_3 R = R$$
+$$c_1 u_1 + c_3 w_1 = 1$$
+$$c_2 u_2 + c_3 w_2 = 1$$
+$$(c_1 u_1 + c_3 w_1) (c_2 u_2 + c_3 w_2) = 1$$
+$$c_1 c_2 u_1 u_2 + c_3 c_1 u_1 w_2 + c_3 ... = c_1 c_2 u_1 u_2 + c_3 (...) = 1$$
+thus we fllow that
+$$c_1 R \cap c_2 R \cap c_3 R =
+(c_1 R \cap c_2 R) \cap c_3 R = c_1 c_2 R \cap c_3 R = c_1 c_2 c_3R$$
+which by induction givesus the desired result.
+
+\textit{(c) Prove that (a) may be false if $R$ is not a PID by giving
+a counterexample for the ring $F[x, y]$ where $F$ is a field.  }
+
+Let us look at $xF[x, y]$ and $yF[x, y]$. We follow that if $q \in
+xF[x, y] \cap yF[x, y]$, then every sum element of $q$ is a multiple
+of $x$ and $y$, and thus $xy$, thus implying that $q \in xyR$, and the
+reverse inclusion is also trivial. However, we have that
+$$1 \notin xF[x, y] + yF[x, y]$$
+which implies the desired result.
+
+
 \end{document}
