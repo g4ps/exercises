@@ -5912,5 +5912,58 @@ reverse inclusion is also trivial. However, we have that
 $$1 \notin xF[x, y] + yF[x, y]$$
 which implies the desired result.
 
+\subsection{}
+
+\textit{Prove the generalized version of the CRT}
+
+We're going to try to replicate the proof of the version 2
+here, but with additional points. Thus we firstly need to
+prove the version for 2 ideals.
+
+Let us denote $I = I_1 \cap I_2$.  We follow that since $I_1 + I_2 =
+R$, that there are $i \in I_1, j \in I_2$ such that
+$$i + j = 1$$
+there is an obvious map
+$$\psi: R \to R/I_1 \times R/I_2, \psi(r) = (r \mod I_1, r \mod I_2)$$
+we then follow that if $x \in I = I_1 \cap I_2$, then $\psi(x) = (x
+\mod I_1, x \mod I_2) = (0, 0)$, thus implying that $I \subseteq
+\ker(\psi)$.
+(by $\mod$ here we mean standart addition of the cosets, the same as
+in the chapter).
+
+Now assume that $r \in \ker(\psi)$. We follow that $r + I_1 = I_1$ and
+$r + I_2 = I_2$, thus we have that $r \in I_1$ and $r \in I_2$,
+and thus $r \in I$. Therefore we conclude that $I \subseteq \ker(\psi)$,
+and thus $\ker(\psi) = I$.
+
+Thus we have an injective homomorphism
+$$\phi: R/I \to R/I_1 \times R/I_2$$
+we've aasumed in the beginning that $i + j = 1$, and thus we have that
+$i = 1 - j$, and $j = 1 - i$. We follow that
+$$\phi(1 - j) = \phi(i) = (i + I_1, 1 - j + I_2) = (0, 1)$$
+and similar for the other case, which implies that $\psi$ is
+surjective, as desired.
+
+Now for the inductive step. We're going to state it only for the
+case of 3, which can be generalized further. We follow that there are
+$i_1 \in I_1, i_2 \in I_2, i_{3, 1}, i_{3, b2} \in I_3$ such that
+$$i_1 + i_{3, 1} = 1$$
+$$i_2 + i_{3, 2} = 1$$
+thus giving us that
+$$(i_1 + i_{3, 1})(i_2 + i_{3, 2}) = 1$$
+$$i_1 i_2 + i_1 i_{3, 2} + i_{3, 1} i_2 + i_{3, 1} i_{3, 2} = 1$$
+we follow that
+$$i_1 i_{3, 2} + i_{3, 1} i_2 + i_{3, 1} i_{3, 2} \in I_3$$
+and
+$$i_1 i_2 \in I_1 \cap I_2$$
+which implies that there are $q \in I_1 \cap I_2, r \in I_3$ such that 
+$$q + r = 1$$
+thus givin us the fact that
+$$I_1 \cap I_2 + I_3 = R$$
+this is the point where our previous proof will kick in, and by the same
+deriviation as in the original proof, we get the desired result.
+
+\textit{Skipping the rest of the exercises}
+
 
 \end{document}
