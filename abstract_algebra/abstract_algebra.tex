@@ -5965,5 +5965,51 @@ deriviation as in the original proof, we get the desired result.
 
 \textit{Skipping the rest of the exercises}
 
+\section{Field of Fractions}
+
+\subsection{}
+
+\textit{Prove the following results, which are needed to complete the
+  proof of Theorem 7.30}
+
+\textit{(a) Prove that the relation $(a, b) \equiv (a', b')$ defined
+  by $ab' = a'b$ is an equivalence relation.}
+
+Firstly it's obvious that
+$$ab = ab$$
+thus giving us the reflexivily. Symmetry is also kinda trivial.  If
+$$(a_1, b_1) \equiv (a_2, b_2), (a_2, b_2) \equiv (a_3, b_3)$$
+then we follow that
+$$a_1 b_2 = a_2 b_1, a_2 b_3 = a_3 b_2$$
+we thus can multiply both equations to get 
+$$a_1 b_2 a_2 b_3 = a_2 b_1 a_3 b_2$$
+since $R$ is an indegral domain, we follow that we can cancel and thus
+$$a_1 a_2 b_3 = a_2 b_1 a_3$$
+$$a_1  b_3 =  b_1 a_3$$
+thus implying that
+$$(a_1, b_1) \equiv (a_3, b_3)$$
+which is the desired conclusion.
+
+\textit{(b) If $(a_1', b_1') \equiv (a_1, b_1)$ and $(a_2', b_2')
+  \equiv (a_2, b_2)$, prove that their multiplication is well-defined
+}
+
+We can follow that we need to prove that
+$$(a_1' a_2', b_1' b_2') \equiv (a_1 a_2, b_1 b_2)$$
+by definition of the multiplication. Thus we need to prove that
+$$a_1' a_2'b_1 b_2 = a_1 a_2 b_1' b_2'$$
+by definition of $\equiv$. By our assumptions we have that
+$$a_1' b_1 = a_1 b_1'$$
+$$a_2' b_2 = a_2 b_2'$$
+
+Thus we have
+$$a_1' a_2'b_1 b_2 = a_1 a_2 b_1' b_2'$$
+$$a_1' b_1 a_2' b_2  = a_1 b_1' a_2 b_2'$$
+$$(a_1' b_1) (a_2' b_2)  = a_1 b_1' a_2 b_2'$$
+$$(a_1 b_1') (a_2 b_2')  = a_1 b_1' a_2 b_2'$$
+$$a_1 b_1' a_2 b_2'  = a_1 b_1' a_2 b_2'$$
+(which you can chain, or use the same thing as in the proof for the
+addition to get a solid proof).
+
 
 \end{document}
