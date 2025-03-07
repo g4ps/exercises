@@ -6011,5 +6011,33 @@ $$a_1 b_1' a_2 b_2'  = a_1 b_1' a_2 b_2'$$
 (which you can chain, or use the same thing as in the proof for the
 addition to get a solid proof).
 
+\textit{(c) Prove that the map $\lambda$ defined by 7.23 is a field
+  homomorphism from $F$ to $K$.}
+
+We can follow that
+$$\lambda(1, 1) = \phi(1) * \phi(1)\inv = \phi(1) * \phi(1) = 1 * 1 = 1$$
+where we follow that $\phi(1) = 1$ by the fact that it's a
+homomorphism (with 1's in their respective rings/fields).
+
+We also have
+$$\lambda((a, b) + (c, d)) = \lambda((ad + bc, bd)) = $$
+$$ = \phi(ad + bc) * \phi(bd)\inv$$
+$$\lambda(a, b) + \lambda(c, d) = \phi(a) * \phi(b)\inv + \phi(c) * \phi(d)\inv = $$
+$$= \phi(a) * \phi(b)\inv * 1 + \phi(c) * \phi(d)\inv * 1 =
+\phi(a) * \phi(b)\inv * 1 + \phi(c) * \phi(d)\inv * 1 = $$
+$$ =
+\phi(a) * \phi(b)\inv * \phi(d) * \phi(d)\inv +
+\phi(c) * \phi(d)\inv * \phi(b) * \phi(b)\inv = $$
+$$ =
+\phi(ad) * \phi(b)\inv * \phi(d)\inv +
+\phi(cb) * \phi(d)\inv  * \phi(b)\inv = $$
+$$=  (\phi(ad) + \phi(cb)) * \phi(b)\inv * \phi(d)\inv =
+(\phi(ad + cb)) * \phi(bd)\inv $$
+which states that addition is fine, and we also have that
+$$\lambda((a, b) * (c, d)) = \lambda((ac, bd))= \phi(ac) * \phi(bd)\inv$$
+$$\lambda((a, b)) * \lambda((c, d)) =
+\phi(a) * \phi(b)\inv * \phi(c) * \phi(d)\inv = \phi(ac) * \phi(bd)\inv$$
+which provess that multiplication is also fine, thus proving that
+$\lambda$ is indeed a homomorphism, as desired
 
 \end{document}
