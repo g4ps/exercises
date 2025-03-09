@@ -6040,4 +6040,83 @@ $$\lambda((a, b)) * \lambda((c, d)) =
 which provess that multiplication is also fine, thus proving that
 $\lambda$ is indeed a homomorphism, as desired
 
+\subsection{}
+
+\textit{Let $F$ be a field. An informal definition of the projective
+  line is that it is the union
+  $$P^1(F) = F \cup \set{\infty}$$
+  of the field $F$ and one extra point "at infinity". Then for $\alpha
+  \in F$, we define an evaluation map
+  $$E_\alpha: F(X) \to P^1(F)$$
+  as follows. For rational functions $\phi \in F(X)$, we write
+  $\phi(X) = f(X)/g(X)$ as a ration of polynomials having no common
+  factors in $F[X]$, and then we set
+  $$E_\alpha(\phi) =
+  \begin{cases}
+    f(\alpha)/g(\alpha) \text{ if } g(\alpha) \neq 0 \\
+    \infty \text{ if } g(\alpha) = 0 \\
+  \end{cases}
+  $$
+}
+
+\textit{(a) Prove that $E_\alpha(\phi)$ is well-defined; i.e. that is
+  does not depend on the choice of $f$ and $g$.}
+
+Let $\phi \in F(X)$. We know that $F(X)$ is a field of fractions, and
+thus assume that $(f_1, g_1), (f_2, g_2)$ are both representations of
+$\phi$. We follow that by definition
+$$f_1 g_2 = f_2 g_1$$
+We know also that $F[X]$ is PID, and thus a UFD. Therefore we follow
+that we can deconstruct $f_1, g_1$ into irreductible polynomials, and
+then remove common factors, (or the factors that differ by multiplication
+by a unit). Thus we can get $f, g \in F[X]$ with such property.
+Since we've removed common factors, we follow that there is a
+product of those factors $q$, and thus we have that
+$$f_1 = fq, g_1 = gq$$
+and thus we have that
+$$f_1 gq = fq g_1$$
+and since $F[X]$ is an integral domain we follow that
+$$f_1 g = f g_1$$
+thus concluding that
+$$(f_1, g_1) \sim (f, g)$$
+thansitivity of $\sim$ implies that
+$$(f_2, g_2) \sim (f, g)$$
+
+Now we've proven that two representations of a rational "function" can
+be mapped into one single pair of polynomials, that have no common
+factors, but we don't have that outputting pair is unique. And it does
+not have to be, since we can differ for example factors of polynomials
+in $R$ by a unit, and get different pair. Thus we still need to prove
+that if $(f, g)$ and $(f', g')$ are both polynomials, that have
+no common factors that are equivalent to each other, then their
+quotient at $\alpha$ is the same.
+
+Since $(f, g) \sim (f', g')$ we have that
+$$fg' = f'g$$
+and therefore we have
+$$(fg')(\alpha) = (f'g)(\alpha)$$
+or in other words
+$$E_\alpha(f g') = E_\alpha(f' g)$$
+evaluation of $F[X]$ is a ring homomorphism, thus giving us that
+$$E_\alpha(f g') = E_\alpha(f) E_\alpha(g')  = E_\alpha(f g') = E_\alpha(f') E_\alpha(g)$$
+or in other words
+$$f(\alpha) g'(\alpha) = f'(\alpha) g(\alpha)$$
+we then can follow that if $g'(\alpha), g(\alpha) \neq 0$, then
+$$f(\alpha) g(\alpha)\inv = f'(\alpha) g'(\alpha) \inv$$
+which gets us the desired result.
+If $g(\alpha) = 0$ and $g'(\alpha) \neq 0$, then we follow that
+there is $q \in F[X]$ such that
+$$g = q(x - \alpha)$$
+by exercise 5.1. Since $g'(\alpha) \neq 0$ we follow that $(x - \alpha)$ is
+not a factor of $g'$. But we have that
+$$fg'(\alpha) = f'g(\alpha) = 0$$
+$$f(\alpha) g'(\alpha) = 0$$
+$$f(\alpha) = 0$$
+thus implying that $f$ is also factored by $(x - \alpha)$, thus implying that
+$f$ and $g$ have common factors, which is false.
+And in conclusion we have that if $g(\alpha) = g'(\alpha) = 0$, then
+$E_\alpha(\phi) = \infty$, which implies the desired result.
+
+
+
 \end{document}
