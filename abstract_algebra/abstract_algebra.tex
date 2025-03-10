@@ -6117,6 +6117,47 @@ $f$ and $g$ have common factors, which is false.
 And in conclusion we have that if $g(\alpha) = g'(\alpha) = 0$, then
 $E_\alpha(\phi) = \infty$, which implies the desired result.
 
+\textit{Skip this one}
+
+\subsection{}
+
+\textit{This exercise describes a generalization of the construction
+  of the field of fractions. Let $R$ be a ring. A subset $S \subseteq R$ is
+  said to be multiplicatively closed if it has the following properties:
+  $$1 \in S \text{ and } 0 \notin S$$
+  and
+  $$\text{If } a, b \in S \text{ then } ab \in S$$
+  We define an equivalence relation $\sim_S$ on the set of paints $(a,
+  b) \in R \times S$ by
+  $$(a, b) \sim_S (a', b') \iff cab' = ca'b \text{ for some } c \in S$$
+  and we write $R_S$ for the set of equivalence classes. We define
+  addition and multiplication on $R_S$ exactly as we did for the field
+  of fractions.
+}
+
+Little note: for this chapter we assume that rings are all associative
+
+\textit{(a) Prove that $\sim_S$ is an equivalence relation}
+
+We follow that for $(a, b), (a', b'), (a'', b'') \in R \times S$ we have
+$$ab = ab \ra (a, b) \sim_S (a, b)$$
+thus giving us reflexivity. We also follow that if
+$$(a, b) \sim_S (a', b')$$
+then there is $c \in S$ such that 
+$$cab' = ca'b \ra (a', b') \sim_S (a, b)$$
+thus giving us symmetry. We also have that if
+$$(a, b) \sim_S (a', b') \land (a', b') \sim_S (a'', b'') $$
+then there are $c, c' \in S$ such that
+$$cab' = ca'b \land c'a'b'' = c'a''b'$$
+and therefore we can just as before multiply both sides to get
+$$cab'c'a'b'' = ca'bc'a''b' $$
+$$cb'c'a'(ab'') = ca'c'b'(a''b) $$
+setting $q = cb'c'a'$ we get
+$$q (ab'') = q(a''b)$$
+thus proving that
+$$(a, b) \sim_S (a'', b'')$$
+thus giving us transitivity and the desired result.
+
 
 
 \end{document}
