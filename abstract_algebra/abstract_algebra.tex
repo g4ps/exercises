@@ -6158,6 +6158,49 @@ thus proving that
 $$(a, b) \sim_S (a'', b'')$$
 thus giving us transitivity and the desired result.
 
+\textit{(b) Prove that addition and multiplication on $R_S$ are
+  well-defined.}
 
+Let $(a_1, b_1), (a_1', b_1'), (a_2, b_2), (a_2', b_2') \in R \times
+S$ be such that
+$$(a_1, b_1) \sim_S (a_1', b_1'), (a_2, b_2) \sim_S (a_2', b_2')$$
+We follow that
+$$(a_1, b_1) + (a_2, b_2) = (a_1 b_2 + a_2 b_1, b_1 b_2)$$
+$$(a_1', b_1') + (a_2', b_2') = (a_1' b_2' + a_2' b_1', b_1' b_2')$$
+thus we need to show that there is $c \in S$ such that 
+$$c (a_1 b_2 + a_2 b_1) (b_1' b_2') = c (a_1' b_2' + a_2' b_1') (b_1 b_2)$$
+we then pull the same trick as in the book
+$$0 = 0$$
+$$(c_1 a_1b_1' - c a_1' b_1 ) = (c_2 a_2' b_2 - c' a_2  b_2')$$
+$$c_1 (a_1b_1' - a_1' b_1 ) = c_2 (a_2' b_2 -  a_2  b_2')$$
+we then multiply lhs by $c_2$ and rhs by $c_1$ (which we can do since both are still zero)
+$$c_1 c_2 (a_1b_1' - a_1' b_1 ) = c_1 c_2 (a_2' b_2 -  a_2  b_2')$$
+we then set $c = c_1 c_2$ and get that 
+$$c b_2 b_2' (a_1b_1' - a_1' b_1 ) = c b_1 b_1'(a_2' b_2 - a_2  b_2')$$
+$$c a_1 b_2 b_1' b_2' - c a_1' b_2' b_1 b_2 = c a_2' b_1' b_1 b_2 - c a_2 b_1 b_1' b_2'$$
+$$c a_1 b_2 b_1' b_2' + c a_2 b_1 b_1' b_2' = c a_1' b_2' b_1 b_2 + c a_2' b_1' b_1 b_2$$
+$$(c a_1 b_2 + c a_2 b_1) (b_1' b_2') = (c a_1' b_2' + c a_2' b_1') (b_1 b_2)$$
+$$c (a_1 b_2 + a_2 b_1) (b_1' b_2') = c (a_1' b_2' + a_2' b_1') (b_1 b_2)$$
+which is precisely the desired result.
+
+We could've also simplified this proof by firstly stating that if
+$$(a_1, b_1) \sim_S (a_1', b_1'), (a_2, b_2) \sim_S (a_2', b_2')$$
+then there are $c_1, c_2 \in S$ such that
+$$c_1 a_1 b_1' = c_1 a_1' b_1, c_2 a_2 b_2' = c_2 a_2' b_2$$
+and therefore we follow that
+$$c_1c_2  a_1 b_1' = c_1c_2 a_1' b_1, c_1 c_2 a_2 b_2' = c_1 c_2 a_2' b_2$$
+and thus there is a single $c = c_1 c_2 \in S$ (product is in $S$
+since it's multiplicatively closed) such that
+$$c a_1 b_1' = ca_1' b_1, c a_2 b_2' = c a_2' b_2$$
+
+For multiplication we gotta prove that
+$$(a_1, b_1) * (a_2, b_2) = (a_1 a_2, b_1 b_2)$$
+$$(a_1', b_1') * (a_2', b_2') = (a_1' a_2', b_1' b_2')$$
+By our assumptions and previous paragraph we have that there is $c \in
+S$ such that
+$$ca_1' b_1 = ca_1 b_1'$$
+$$ca_2' b_2 = ca_2 b_2'$$
+which then workd out in the same manner, as our proof for intergal
+domains
 
 \end{document}
