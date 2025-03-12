@@ -6135,7 +6135,9 @@ $E_\alpha(\phi) = \infty$, which implies the desired result.
   of fractions.
 }
 
-Little note: for this chapter we assume that rings are all associative
+Little note: for this chapter we assume that rings are all associative,
+and also we are not assuming that $R_S$ is a afield, only indicating that
+it is a ring.
 
 \textit{(a) Prove that $\sim_S$ is an equivalence relation}
 
@@ -6202,5 +6204,88 @@ $$ca_1' b_1 = ca_1 b_1'$$
 $$ca_2' b_2 = ca_2 b_2'$$
 which then workd out in the same manner, as our proof for intergal
 domains
+
+\textit{(c) Prove that $R_S$ with the indicated addition and
+multiplication is a ring. The ring $R_S$ is called the localization of
+$R$ in $S$.}
+
+We firstly follow that the identitiies proof is the same as in the
+usual field of fractions, same goes for distributivity. For identity
+we need to prove that $(0, 1) \not \sim_S (1, 1)$, thus firstly assume
+that $(0, 1) \sim_S (1, 1)$.  Then we have that there is $c \in S$
+such that
+$$0 * 1 * c = 1 * 1 * c \ra 0 = 1$$
+which is not true by the assumption that $R$ is a ring.
+
+The fact that
+$R_S$ under plus is commutative follows directly from the definition,
+we follow that for $(a, b) \in R_S $ we have that
+$$(a, b) + (-a, b) = (ab - ba, bb) = (0, ab) = (0, 1)$$
+thus proving inverses for the addition. We also follow that
+$$((a_1, b_1) + (a_2, b_2)) + (a_3, b_3) =
+(a_1 b_2 + a_2 b_1, b_1 b_2) + (a_3, b_3) =
+(a_1 b_2 b_3 + a_2 b_1 b_3 + a_3 b_1 b_2, b_1 b_2 b_3)$$
+$$(a_1, b_1) + ((a_2, b_2) + (a_3, b_3)) =
+(a_1, b_1) + (a_2 b_3 + a_3 b_2, b_2 b_3) = 
+(a_1 b_2 b_3 + a_2 b_3 b_1 + a_3 b_2 b_1, b_1 b_2 b_3)$$
+thus giving us the associativity and proving that $R$ is
+indeed an abelian group under $+$.
+
+The only thing that is left for the ring properties is associativity,
+which is also trivial:
+$$((a_1, b_1) * (a_2, b_2)) * (a_3, b_3) = (a_1 a_2 a_3, b_1 b_2 b_3) =
+(a_1, b_1) * ((a_2, b_2) * (a_3, b_3))$$
+
+One note: we see that in all of the given proofs we have
+denominators being products of elements of $S$, which by assumption
+of $S$ give us the fact that they aren't 0. 
+
+Here we are also note why this thing is a ring, and not a field:
+$R_S$ is a cartesian of $R$ and $S$, which implies that if
+$q \in R \setminus S$ and $q \neq 0$, then $(q, 1) \neq 0$ for example
+may not have an inverse in $R_S$ since $(1, q) \notin R_S$.  If $R
+\setminus S = \set{0}$ however, then
+$$(a, b) * (b, a) = (ab, ab)$$
+but here we can have a problem that there might be the case that $ab =
+0$ since $R$ is not an integral domain, which would imply that $(ab,
+ab) \notin R_S$.
+
+\textit{(d) Suppose that $R$ is an integral domain and that $S$ is
+  multiplicatively closed. Prove that $R_S$ is a subring of the field
+  of fractions of $R$.}
+
+If $R$ is an integral domain, then we follow that there is indeed a
+field of fractions. $R_S$ in this case by the way it's defined is
+indeed a subset of a field of fractions, with the same addition and
+multiplication functions, and as proven in the previous point it is a
+ring, thus making it a subring of the field of fractions.
+
+\textit{(e) Let $I$ be an ideal of $R$ and let
+  $$S = R \setminus I$$
+  Prove that $S$ is multiplicatively closed if and only if $I$
+  is a prime ideal.}
+
+Here we're gonna assume that $I$ is given as an ideal, and then
+multiplicative closuse of $S$ is followed directly, as indicated in the
+definition in the book.
+
+\textit{(f) Let $b \in R$ be an element, and let
+  $$\eangle{b} = \set{1, b^1, b^2, ...}$$
+  be the set of powers of $b$. Prove that $\eangle{b}$ is multiplicatively
+  closed if and only if $b$ is not nilpotent.}
+
+Suppose that $\eangle{b}$ is multiplicatively closed. We follow that
+there are no $q, w \in \eangle{b}$ such that $qw = 0$ since $qw \in
+\eangle{b}$ and $0 \notin \eangle{b}$. Thus we conclude that there
+are no $m, n \in Z$ such thaht $b^m b^n = 0$, and thus $b$
+is not nilpotent, as desired.
+
+If $b$ is not nilpotent, then we follow that there is no $m \in Z$
+such that $b^m = 0$. We follow that $1 \in \eangle{b}$,
+$0 \notin \eangle{b}$, and if $b^m, b^n \in \eangle{b}$ for some
+$m, n \in Z$ then $b^mb^n \in \eangle{b}$, as desired.
+
+\textit{Skipping the rest due to triviality}
+
 
 \end{document}
