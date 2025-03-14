@@ -6287,5 +6287,25 @@ $m, n \in Z$ then $b^mb^n \in \eangle{b}$, as desired.
 
 \textit{Skipping the rest due to triviality}
 
+\chapter{Fields - Part 2}
+
+\section{Algebraic Numbers and Transcendental Numbers}
+
+\subsection{}
+
+\textit{Let $F$ be a field, let $f(x) \in F[x]$ be a non-zero
+  polynomial, and let $\alpha$ be a root of $f(x)$ in some extension
+  field of $F$. Prove that
+  $$[F(\alpha):F] = \deg(f) \ra f(x) \text{ is irreductible in } F[x]$$
+}
+
+Suppose that $[F(\alpha):F] = \deg(f)$. By 8.6(a) we have that
+$$\dim_F F[x]/f(x)F[x] = \deg(f)$$
+and thus
+$$[F(\alpha):F] = \dim_F F(\alpha) = \dim_F F[x]/f(x)F[x] = \deg(f)$$
+thus there is an isomorphism $\phi: F(\alpha) \to F[x]/f(x)F[x]$.
+Since $\alpha$ is algebraic over $F$ we follow that $F(\alpha) =
+F[\alpha]$. Thus we conclude that $F[x]/f(x)F[x]$ is a field,
+and therefore by 7.16 $f$ is irreductible, as desired.
 
 \end{document}
