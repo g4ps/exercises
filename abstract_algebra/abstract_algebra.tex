@@ -6299,13 +6299,58 @@ $m, n \in Z$ then $b^mb^n \in \eangle{b}$, as desired.
   $$[F(\alpha):F] = \deg(f) \ra f(x) \text{ is irreductible in } F[x]$$
 }
 
-Suppose that $[F(\alpha):F] = \deg(f)$. By 8.6(a) we have that
-$$\dim_F F[x]/f(x)F[x] = \deg(f)$$
+By definition we have that
+$$[F(\alpha):F] = \dim_F(F(\alpha))$$
 and thus
-$$[F(\alpha):F] = \dim_F F(\alpha) = \dim_F F[x]/f(x)F[x] = \deg(f)$$
-thus there is an isomorphism $\phi: F(\alpha) \to F[x]/f(x)F[x]$.
-Since $\alpha$ is algebraic over $F$ we follow that $F(\alpha) =
-F[\alpha]$. Thus we conclude that $F[x]/f(x)F[x]$ is a field,
-and therefore by 7.16 $f$ is irreductible, as desired.
+$$\dim_F(F(\alpha)) = \deg(f) = \dim_F F[x]/f(x)F[x]$$
+By the same reasoning as in proof of 8.6(b) we have that there is a
+well-defined surjective ring homomorphism
+$$F[x]/f(x)F[x] \to F(a)$$
+which is also a linear map between two $F$-spaces.
+Since this map is a linear map of spaces with the same dimension,
+we follow that surjectivity here implies bijectivity (see LADR for
+clarifications), thus making this map an isomorphism, which implies that
+$F[x]/f(x)F[x]$ is a field, for which by 7.16 we follow that $f(x)$
+is irreductible, as desired.
+
+\subsection{}
+
+\textit{Prove that each of the following numbers is algebraic over $Q$
+  by finding a polynomial in $Q[x]$ for which it is a root:}
+
+\textit{(a) $\sqrt[n]{c}$ where $c \in Q$ and $n \geq 1$.}
+
+We can say that
+$$f(x): x^n - c$$
+is such a polynomial.
+
+\textit{(b) $\sqrt{2} + \sqrt{3}$}
+
+We can follow that
+$$(\sqrt{2} + \sqrt{3})^2 = 2\sqrt{6} + 5$$
+thus
+$$((\sqrt{2} + \sqrt{3})^2 - 5) / 2 = \sqrt{6}$$
+and therefore
+$$(((\sqrt{2} + \sqrt{3})^2 - 5) / 2)^2 = 6$$
+$$(((\sqrt{2} + \sqrt{3})^2 - 5) / 2)^2 - 6 = 0$$
+then we sub $\sqrt{2} + \sqrt{3}$ for $x$ and get
+$$((x^2 - 5) / 2)^2 - 6 = 0.25 (x^2 - 5)^2 - 6 = 0.25 (x^4 - 10x^2 + 25)  - 6 =
+\frac{1}{4}x^4 - \frac{10}{4}x^2 + \frac{1}{4}$$
+which is the desired polynomial.
+
+\textit{(c) $\sqrt[3]{2} + \sqrt{3}$.}
+
+We can follow that
+$$(\sqrt[3]{2} + \sqrt{3})^0 = 1$$
+$$(\sqrt[3]{2} + \sqrt{3})^1 = \sqrt[3]{2} + \sqrt{3}$$
+$$(\sqrt[3]{2} + \sqrt{3})^2 = (\sqrt[3]{2})^2 + 2\sqrt[3]{2}\sqrt{3} + 3$$
+$$(\sqrt[3]{2} + \sqrt{3})^3 = 2 + 3 \sqrt[3]{2}^2 \sqrt{3} + 9 \sqrt[3]{2}  + 3\sqrt{3}$$
+and so on. In general we can later create a matrix with coefficients
+in
+$$1, \sqrt[3]{2}, (\sqrt[3]{2})^2, \sqrt{3}, \sqrt{3}\sqrt[3]{2}, \sqrt{3}(\sqrt[3]{2})^2$$
+from powers to coefficients, to get a surjective matrix with nonzero
+kernel, which would in turn give us the desired polynomial (we need to go for at least
+6th power here, and that's too tedious).
+
 
 \end{document}
