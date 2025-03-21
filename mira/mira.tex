@@ -1,0 +1,136 @@
+\documentclass[11pt,oneside,titlepage]{book}
+\title{My Measure, Integration, \& Real Analysis exercises}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\author{Evgeny (Gene) Markin}
+\date{2025}
+
+\DeclareMathOperator \map {\mathcal {L}}
+\DeclareMathOperator \pow {\mathcal {P}}
+\DeclareMathOperator \real {\mathbb {R}}
+\DeclareMathOperator \topol {\mathcal {T}}
+\DeclareMathOperator \basis {\mathcal {B}}
+\DeclareMathOperator \ns {null}
+\DeclareMathOperator \range {range}
+\DeclareMathOperator \fld {fld}
+\DeclareMathOperator \inv {^{-1}}
+\DeclareMathOperator \Span {span}
+\DeclareMathOperator \lra {\Leftrightarrow}
+\DeclareMathOperator \eqv {\Leftrightarrow}
+\DeclareMathOperator \la {\Leftarrow}
+\DeclareMathOperator \ra {\Rightarrow}
+\DeclareMathOperator \imp {\Rightarrow}
+\DeclareMathOperator \true {true}
+\DeclareMathOperator \false {false}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \ran {ran}
+\newcommand{\eangle}[1]{\langle #1 \rangle}
+\newcommand{\set}[1]{\{ #1 \}}
+\newcommand{\qed}{\hfill $\blacksquare$}
+
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\chapter{Riemann Integration}
+
+\section{Riemann Integral}
+
+\subsection{}
+
+\textit{Suppose $f: [a, b] \to R$ is a bounded function such that
+  $$L(f, P, [a, b]) = U(f, P, [a, b])$$
+  for some partition $P$ of $[a, b]$. Prove that $f$ is a constant
+  function on $[a, b]$.}
+
+Suppose that $f$ is not contant. We want to follow that there is a
+section of the partition $P$ whose elements are not all equal.
+
+Assume that all images of elements of any subinterval of a partition
+are equal. This means that for a given $x_j, x_{j + 1}$ we have that
+if $x_1, x_2 \in [x_j, x_{j + 1}$, then $f(x_1) = f(x_2)$. We then
+follow that $f(x_1) = f(x_2)$, $f(x_2) = f(x_3)$, and so on, which
+implies that images of all elemets of the partition are equal. By our
+assumption we have that all the elements in between elements of the
+partition are also equal, which implies that $f$ is a constant
+function.
+
+Thus if $f$ is not a constant function, then there is a
+subinterval of the partition $[x_j, x_{j + 1}]$ such that there are
+$q_1, q_2 \in [x_j, x_{j + 1}]$ for which $f(q_1) \neq f(q_2)$.
+Now relabel $q_1, q_2$ so that $f(q_1) > f(q_2)$. We follow that
+$$\sup_{[x_j, x_{j + 1}]} f \geq f(q_1) > f(q_2) \geq \inf_{[x_j, x_{j + 1}]} f $$
+and thus
+$$\sup_{[x_j, x_{j + 1}]} f >  \inf_{[x_j, x_{j + 1}]} f $$
+$$(x_{j + 1} - x_j) \sup_{[x_j, x_{j + 1}]} f >  (x_{j + 1} - x_j)  \inf_{[x_j, x_{j + 1}]} f $$
+
+We then can state that for any $x_k, x_{k +1}$ we have that
+$$(x_{k + 1} - x_k) \inf_{[x_k, x_{k +1}]} f
+\leq (x_{k + 1} - x_k) \sup_{[x_k, x_{k +1}]} f$$
+which further implies that
+$$\sum_{k \in P \setminus \set{j}}(x_{k + 1} - x_k) \inf_{[x_k, x_{k +1}]} f
+\leq \sum_{k \in P \setminus \set{j}} (x_{k + 1} - x_k) \sup_{[x_k, x_{k +1}]} f$$
+by then adding the partition in question to both sides we have that
+$$(x_{j + 1} - x_j)  \inf_{[x_j, x_{j + 1}]} f  +
+\sum_{k \in P \setminus \set{j}}(x_{k + 1} - x_k) \inf_{[x_k, x_{k +1}]} f
+<$$
+$$ < (x_{j + 1} - x_j)  \sup_{[x_j, x_{j + 1}]} f  +
+\sum_{k \in P \setminus \set{j}} (x_{k + 1} - x_k) \sup_{[x_k, x_{k +1}]} f$$
+thus
+$$
+\sum_{k \in P}(x_{k + 1} - x_k) \inf_{[x_k, x_{k +1}]} f
+< \sum_{k \in P} (x_{k + 1} - x_k) \sup_{[x_k, x_{k +1}]} f$$
+and when we apply definitions we get that
+$$L(f, P, [a, b]) < U(f, P, [a, b])$$
+as desired.
+
+\subsection{}
+
+\textit{Suppose $a \leq s < t \leq b$. Define $f: [a, b] \to R$ by
+$$f(x) =
+\begin{cases}
+  s < x < t \to 1 \\
+  0 \text{ otherwise }
+\end{cases}
+$$
+Prove that $f$ is Riemann integrable on $[a, b]$ and that $\int_a^b{f} = t - s$}
+
+We can follow that every part of the sum in the definition
+$$L(f, P, [a, b]) = \sum_{j = 1}^n{(x_j - x_{j - 1})\inf_{[x_{j - 1}, x_j]}{f}}$$
+is nonnegative since $f(x) \geq 0$ for all $x \in [a, b]$. Same goes
+for $U(f, P, [a, b])$. We then follow that there is $n \in N$ such that
+$$s < s + 1/n < t - 1/n < t$$
+and for all $m > n$ we have 
+$$s < s + 1/m < t - 1/m < t < b$$
+We then can create a set of partitions
+$$P_m = a, s, s + 1/m, t - 1/m, t, b$$
+for which we have
+$$L(f, P_m, [a, b]) =$$
+$$ = (s - a) * 0 + (s + 1/m - s) * 0 + (t - 1/m - s - 1/m) * 1 + (t - t + 1/m) * 0 + (b - t) * 0 = $$
+$$ = t - 1/m - s - 1/m = t - s - 2/m$$
+and
+$$U(f, P_m, [a, b]) =$$
+$$ = (s - a) * 0 + (s + 1/m - s) * 1 + (t - 1/m - s - 1/m) * 1 + (t - t + 1/m) * 1 + (b - t) * 0 = $$
+$$ = s + 1/m - s + t - 1/m - s - 1/m + t - t + 1/m = $$
+$$ = t - s = $$
+thus we have
+$$U(f, P_m, [a, b]) - L(f, P_m, [a, b]) = 2/m$$
+and since for all $\epsilon > 0$ we have $m \in N$ such that $n \geq m
+\ra 2/m < \epsilon$ we follow that for all $\epsilon > 0$ there is $m
+\in N$ such that
+$$U(f, [a, b]) - L(f, [a, b]) \leq U(f, P_m, [a, b]) - L(f, P_m, [a, b]) < \epsilon$$
+thus proving that $f$ is indeed Riemann integrable on $[a, b]$. We
+then follow that
+$$L(f, P_m, [a, b]) \leq \int_a^b{f} \leq U(f, P_m, [a, b])$$
+for all $m$, and thus
+$$t - s - 2/m \leq \int_a^b{f} \leq t - s$$
+for all $m$. This in turn implies that
+$$\int_a^b{f} = t - s$$
+as desired.
+
+
+\end{document}
