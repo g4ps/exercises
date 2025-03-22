@@ -132,5 +132,75 @@ for all $m$. This in turn implies that
 $$\int_a^b{f} = t - s$$
 as desired.
 
+\subsection{}
+
+\textit{Suppose $f: [a, b] \to R$ is a bounded function. Prove that $f$ is Riemann integrable
+  if and only if for each $\epsilon > 0$ there exists a partition $P$ of $[a, b]$ such that
+  $$U(f, P, [a, b]) - L(f, P, [a, b]) < \epsilon$$
+}
+
+We can follow that
+$$U(f, P, [a, b]) \geq U(f, [a, b]) $$
+$$L(f, [a, b]) \geq L(f, [a, b]) $$
+by defnition. Thus we have that
+$$U(f, P, [a, b]) - L(f, P, [a, b]) \geq U(f, [a, b]) - L(f, P, [a, b])
+\geq U(f, [a, b]) - L(f, [a, b]) $$
+and thus for every $\epsilon > 0$ we have that
+$$U(f, [a, b]) - L(f, [a, b]) < \epsilon$$
+Since $U(f, [a, b]) \geq L(f, [a, b])$ we follow then that $U(f, [a,
+b]) - L(f, [a, b]) \geq 0$ in general, and in particular we've got
+that
+$$U(f, [a, b]) - L(f, [a, b]) = 0 \lra U(f, [a, b]) = L(f, [a, b]) $$
+thus implying the desired result by definition.
+
+Assume now that $f$ is Riemann integrable. Let $\epsilon > 0$. We
+follow that there are partions $P_1, P_2$ such that
+$$U(f, P_1, [a, b]) - U(f, [a, b]) < \epsilon/2$$
+$$L(f, [a, b]) - L(f, P_2, [a, b])  < \epsilon/2$$
+we then can sum up the previous inequalities to get
+$$U(f, P_1, [a, b]) - U(f, [a, b]) + L(f, [a, b]) - L(f, P_2, [a, b]) < \epsilon$$
+Since $U(f, [a, b]) = L(f, [a, b])$ by the fact that $f$ is Riemann
+integrable on $[a, b]$, which implies that
+$$U(f, P_1, [a, b]) - L(f, P_2, [a, b]) < \epsilon$$
+We then follow that there is $P_3 = P_1 \cup P_2$ for which we have
+$$U(f, P_3, [a, b]) - L(f, P_3, [a, b]) < \epsilon$$
+by 1.5, as desired.
+
+\subsection{}
+
+\textit{Suppose $f, g: [a, b] \to R$ are Riemann integrable. Prove that $f + g$ is
+  Riemann integrable on $[a, b]$ and
+  $$\int_a^b{f + g} = \int_a^b{f} + \int_a^b{g} $$
+}
+
+We can follow that
+$$L(f + g, P, [a, b]) =
+\sum_{j = 1}^n{(x_j - x_{j - 1}) \inf_{[x_{j - 1}, x_j]}{f + g}}$$
+$$\inf_{[x_{j - 1}, x_j]}{f + g} =
+\inf_{[x_{j - 1}, x_j]}{f} + \inf_{[x_{j - 1}, x_j]}{g}$$
+and similar for $\sup$ and $U(f, P, [a, b])$. Don't know whether or
+not we've got the latter equality proven, but it's trivial to prove if
+not. Similar case holds for $U$.
+
+We then follow that for a given
+$\epsilon/2 > 0$ we have $P_1, P_2$ such that
+$$U(f, P_1, [a, b]) - L(f, P_1, [a, b]) < \epsilon/2$$
+$$U(g, P_2, [a, b]) - L(g, P_2, [a, b]) < \epsilon/2$$
+we thus have that by $P_3 = P_1 \cup P_2$ we have
+$$U(f, P_3, [a, b]) - L(f, P_3, [a, b]) < \epsilon/2$$
+$$U(g, P_3, [a, b]) - L(g, P_3, [a, b]) < \epsilon/2$$
+and thus we can add those up to get 
+$$U(f, P_3, [a, b]) - L(f, P_3, [a, b]) + U(g, P_3, [a, b]) - L(g, P_3, [a, b]) < \epsilon$$
+thus by the first paragraph we've got
+$$U(f + g, P_3, [a, b]) - L(f + g, P_3, [a, b]) < \epsilon$$
+which by previous exercise proves that $f + g$ is Riemann integrable, as desired.
+
+By the first paragraph as well we can follow that
+$$\int_a^b{f + g} = L(f + g, [a, b]) = \sup_P{L(f + g, P, [a, b])} =
+\sup_P{L(f, P, [a, b]) + L(g, P, [a, b])} =
+\sup_P{L(f, P, [a, b])} + \sup_P{L(g, P, [a, b])} = \int_a^b{f} + \int_a^b{g}$$
+as desired.
+
+
 
 \end{document}
