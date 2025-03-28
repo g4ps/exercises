@@ -203,4 +203,37 @@ as desired.
 
 \textit{The rest was handled in my real analysis course}
 
+\section{Riemann Integral Is Not Good Enough}
+
+\subsection{}
+
+\textit{Define $f: [0, 1] \to R$ as follows:
+$$ f(a) = 
+\begin{cases}
+  0 \text{ if } a \text{ is irrational} \\
+  1/n \text{ if } a \text{ is rational and } n \text{
+  is the smallest positive integer such that } a = m/n \\
+\end{cases}
+$$}
+
+Show that $f$ is Riemann integrable and comute $\int_0^1{f}$. We
+firstly follow that for any given $0 \leq x_1 < x_2 \leq 1$ we have that
+there is $x_1 < x_3 < x_2$ such that
+$$f(x_3) = 0$$
+and thus for any partition $P$ we've got that
+$$L(f, P, [a, b]) = 0$$
+thus
+$$L(f, [a, b]) = 0$$
+We then follow that for any given $\epsilon > 0$ there is $n \in N$
+such that $1/n < \epsilon$, and thus we can create a set
+$$R = \set{i/j: j \leq n, 0 \leq i \leq n}$$
+that is finite. Thus we can follow that
+$$\sup_{[0, 1] \setminus R}{f} = 1/(n + 1) < \epsilon$$
+and thus we have that for every $\epsilon > 0$ there is $P$ such that
+$$U(f, P, [a, b]) < \epsilon$$
+thus implying that
+$$U(f, [a, b]) = 0$$
+therefore we conclude that
+$$\int_0^1{f} = 0$$
+
 \end{document}
