@@ -6402,7 +6402,50 @@ Then we follow that if $f \in K_a$ then it can be destructed as
 $$(x - a_1) ... (x - a_n) g(x)$$
 by theorem 8.8(b), which implies the desired result.
 
-\textit{(c) Let $R = Z/6Z$. Find generafores for the ideal $K_a$ for each
-of the following choices of $a$:}
+\subsection{}
+
+\textit{Let $H$ be the ring of quaternions.}
+
+\textit{(a) It was noted that the quadratic polynomial $x^2 + 1$ has
+  more than two roots in $H$. Explain which step of the proof Theorem
+  8.8 goes wrong for $H$.}
+
+Theorem 8.8 is not applicable to $H$ due to the fact that $H$ is a
+non-commutative ring. For the case of (a) we can follow that
+$$x^k - a^k = (x - a) \sum_{i = 0}^{k - 1}{x^{k - i - 1} a^i }$$
+is wrong:
+$$i^2 - j^2 = (-1) - (-1) = 0$$
+$$(i - j)(i + j) = i^2 + ij - ji + j^2 = (-1) + k + k + (-1) = k - 2$$
+
+\textit{(b) Prove that $x^2 + 1$ has infinitely many roots in $H$.}
+
+We can follow that for some $h \in H$ we have that
+$$h = q + xi + yj + zk$$
+for some $q, x, y, z \in R$, and thus we have that 
+$$h^2 = (q + xi + yj + zk)^2 = (q + xi + yj + zk)(q + xi + yj + zk) = $$
+
+$$= (q^2 + qxi+ qyj + qzk) + (qxi - x^2 + xyij + xzik) + $$
+$$+ (qyj + xyji - y^2 + yzjk) + (qzk + zxki + zykj - z^2) = $$
+
+$$= (q^2 + qxi+ qyj + qzk) + (qxi - x^2 + xyk - xzj) + $$
+$$+ (qyj - xyk - y^2 + yzi) + (qzk + zxj - zyi - z^2) = $$
+
+$$= (q^2 - x^2 - y^2 - z^2) + i(qx + qx + yz - zy) +
+j(qy - xz + qy + zx) + k(qz + xy - xy + qz) = $$
+$$= (q^2 - x^2 - y^2 - z^2) + (2qx) i + (2qy) j + (2qz) k$$
+
+We then follow that if we set $q = 0$, then $(2qx) i = (2qy) j = (2qz) k = 0$.
+Thus we only need to find some $x, y, z \in R$ so that
+$$- x^2 - y^2 - z^2 = -1$$
+in order to find appropriate root. For example we can set $x = 0$ and get
+$$- y^2 - z^2 = -1$$
+$$- y^2  = -1 + z^2$$
+$$y^2  = 1 - z^2$$
+$$y  = \sqrt{1 - z^2}$$
+we then follow that for any $z \in [-1, 1]$ there  is an appropriate $y$, which
+gives us that
+$$(\sqrt{1 - z^2} j + zk)^2 = -1$$
+which gives us the desired result.
+
 
 \end{document}
