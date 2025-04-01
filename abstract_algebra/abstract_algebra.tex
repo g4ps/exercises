@@ -6461,39 +6461,64 @@ This can be easily derived from our previous formula for the square.
 \textit{(a) Let $a, b \in F^*$. If $a^2 = b^2$, prove that either $a =
   b$ or $a = -b$.}
 
-We can follow that if $a = 0$ then $b = 0$ as well since $F$ is a
-field and thus an integral domain. Suppose then that $a \neq 0$.
+Here we only use the assumption that $F$ is an integral domain. Namely we have that
+$$a^2 = b^2 \lra a^2 - b^2 = 0 \ra (a - b) (a + b) = 0 \ra a = b \lor a = -b$$
+as desired.
 
-8.10 implies here that $F^*$ is a cyclic group, and thus there are $w
-\in F$ and $m, n \in Z$ such that $w \neq 0$, $0 \leq m, n \leq q - 1$,
+\textit{(b) Show by the way of example that (a) is not true for the
+  rings $Z/8Z$ and $Z/15Z$}
+
+We follow that
+$$4^2 = 16 \equiv 0 = 0^2$$
 and
-$$a = w^m, b = w^n$$
-therefore we have
-$$a^2 = b^2$$
-$$(w^m)^2 = (w^n)^2$$
-$$w^{2m} = w^{2n}$$
-$$1 = w^{2n - 2m}$$
-thus we follow that either $2n - 2m = 0$ or $q - 1 | 2n - 2m$ (since
-$|F^*| = |F| - 1$). Former case implies that $m = n$ and thus $a =
-b$. For the latter case we follow
-that there is $j \in N$ such that
-$$2n - 2m = j(q - 1)$$
-$$2(n - m) = j(q - 1)$$
-we then follow that
-$$0 \leq m, n \leq (q - 1) \ra 0 \leq 2n, 2m \leq 2(q - 1) \ra -2(q - 1) \leq -2m \leq 0 \ra $$
-$$-2(q - 1) \leq 2n - 2m \leq 2(q - 1)$$
-thus $j \in \set{-2, -1, 0, 1, 2}$. If $j \in \set{-2, 0, 2}$, then
-there is $k \in Z$ such that $j = 2k$, and thus
-$$n - m = q - 1$$
-$$n  = q - 1 + m$$
-$$w^n  = w^{q - 1 + m} = w^{q - 1} w^{m} = w^m \ra a = b$$
-If $j \in \set{1, -1}$, then there is $l \in Z$ such that $q - 1 = 2l$, and thus 
-$$2n - 2m = 2l j $$
-$$n - m = lj$$
-$$n = lj + m$$
-$$w^n = w^{lj} w^m$$
-TODO
+$$11^2 = 121 \equiv 1 \equiv 196 = 14^2$$
+as desired.
 
+\textit{(c) Let
+  $$R = \set{a^2: a \in F^*}, N = F^* \setminus R$$
+  be, respectively, the set of squares and non-squares in $F^*$. Prove
+  that $R$ and $N$ each contain exactly $(q - 1) / 2$ elements.
+}
 
+Since $F^*$ is a finite subset of itself, and $F$ is a finite field,
+we follow that $F^*$ is a cyclic group under multiplication. This
+gives us the fact that there is $w$ such that for each $a \in F^*$
+there is \ $n \in N$ such that
+$$a = w^n$$
+thus we then follow that either $n$ is odd or even, which in
+conjuction with the fact that $|F^*| = q - 1$ gives us the desired
+result.
+
+\textit{(d) Let $f(x)$ be the polynomial
+  $$f(x) = x^{(q - 1)/2} - 1$$
+  Prove that $R$ is exactly the set of roots of $f(x)$ in $F$.}
+
+We follow that if $a^2 \in R$ then
+$$(a^2)^{(q - 1)/2} = a^{q - 1}$$
+since $a \in F^*$ we follow that its order $j$ (which is finite since
+$F^*$ is finite) divideds the order of $F^*$, and thus
+$$a^{q - 1} = a^{jk} = e^k = 1$$
+which gives us that all elements of $R$ are roots of the given
+polynomial. Since
+$$|R| = (q - 1)  / 2$$
+we follow that $f$ is fully destructed by elements of $R$, which
+implies that $R$ is a comlete set of roots of $f$, as desired.
+
+\textit{(e) Let $c \in F^*$. Prove that
+$$c^{(q - 1)/2)} \equiv
+  \begin{cases}
+    c \in R \ra 1 \\
+    c \in N \ra -1
+  \end{cases}
+$$}
+
+Presuming that there is a typo and the author meant $R$ instead of $Q$.
+
+We follow that if $x \in F^*$ then
+$$x^{q - 1} = 1$$
+we also follow that
+$$(x^{(q - 1)/2} - 1)(x^{(q - 1)/2} + 1) = x^{q - 1} - 1$$
+The fact that $(x^{(q - 1)/2} - 1)$ destructs by $R$ is the previous
+point, which gives us the desired resut.
 
 \end{document}
