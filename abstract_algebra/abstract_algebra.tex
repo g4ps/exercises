@@ -6447,5 +6447,53 @@ gives us that
 $$(\sqrt{1 - z^2} j + zk)^2 = -1$$
 which gives us the desired result.
 
+\textit{(c) Describe all the roots of $x^2 + 1$ in $H$}
+
+This can be easily derived from our previous formula for the square.
+
+\textit{(d) Skip}
+
+\subsection{}
+
+\textit{Let $F$ be a finite field of order $q$, and assume that $q$ is
+  odd.}
+
+\textit{(a) Let $a, b \in F^*$. If $a^2 = b^2$, prove that either $a =
+  b$ or $a = -b$.}
+
+We can follow that if $a = 0$ then $b = 0$ as well since $F$ is a
+field and thus an integral domain. Suppose then that $a \neq 0$.
+
+8.10 implies here that $F^*$ is a cyclic group, and thus there are $w
+\in F$ and $m, n \in Z$ such that $w \neq 0$, $0 \leq m, n \leq q - 1$,
+and
+$$a = w^m, b = w^n$$
+therefore we have
+$$a^2 = b^2$$
+$$(w^m)^2 = (w^n)^2$$
+$$w^{2m} = w^{2n}$$
+$$1 = w^{2n - 2m}$$
+thus we follow that either $2n - 2m = 0$ or $q - 1 | 2n - 2m$ (since
+$|F^*| = |F| - 1$). Former case implies that $m = n$ and thus $a =
+b$. For the latter case we follow
+that there is $j \in N$ such that
+$$2n - 2m = j(q - 1)$$
+$$2(n - m) = j(q - 1)$$
+we then follow that
+$$0 \leq m, n \leq (q - 1) \ra 0 \leq 2n, 2m \leq 2(q - 1) \ra -2(q - 1) \leq -2m \leq 0 \ra $$
+$$-2(q - 1) \leq 2n - 2m \leq 2(q - 1)$$
+thus $j \in \set{-2, -1, 0, 1, 2}$. If $j \in \set{-2, 0, 2}$, then
+there is $k \in Z$ such that $j = 2k$, and thus
+$$n - m = q - 1$$
+$$n  = q - 1 + m$$
+$$w^n  = w^{q - 1 + m} = w^{q - 1} w^{m} = w^m \ra a = b$$
+If $j \in \set{1, -1}$, then there is $l \in Z$ such that $q - 1 = 2l$, and thus 
+$$2n - 2m = 2l j $$
+$$n - m = lj$$
+$$n = lj + m$$
+$$w^n = w^{lj} w^m$$
+TODO
+
+
 
 \end{document}
