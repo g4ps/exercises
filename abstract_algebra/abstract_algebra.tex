@@ -6521,4 +6521,70 @@ $$(x^{(q - 1)/2} - 1)(x^{(q - 1)/2} + 1) = x^{q - 1} - 1$$
 The fact that $(x^{(q - 1)/2} - 1)$ destructs by $R$ is the previous
 point, which gives us the desired resut.
 
+\textit{(f) Let $a_1, a_2 \in R$ and $b_1, b_2 \in N$. Prove that
+  $$a_1 a_2 \in R, b_1 b_2 \in R$$
+}
+
+We can follow that for $a_1, a_2 \in R$ there are even $m, n \in N$
+such that
+$$a_1 = w^m, a_2 = w^n$$
+thus
+$$a_1 a_2 = w^{mn}$$
+since $mn$ is even, we follow that it's in $R$, as desired. Similar reasoning holds
+for $b$, but in it we follow that sum of odd numbers is even.
+
+\subsection{}
+
+\textit{Let $F$ be a finite field with $q$ elements, and let $m | q - 1$.}
+
+\textit{(a) Prove that $F^*$ has a unique subgroup of order $m$.}
+
+$F^*$ is a cyclic group, and exercise 2.27(b) implies the desired result.
+
+\textit{(b) Let $\alpha \in F^*$. Prove that the following are equivalent:}
+
+\textit{(i) $\alpha$ is an $m$th power in $F$ (i.e. there's $\beta \in F^*$
+  such that $\beta^m = \alpha$).}
+
+\textit{(ii) $\alpha^{(q - 1)/m} = 1$}
+
+Assuming (i) we follow that
+$$\alpha^{(q - 1)/m} = \beta^{q - 1} = 1$$
+by Lagrange or whatever
+
+Assuming (ii) we follow that there is an element $\beta$ that
+generates $F^*$, and $n \in Z$ such that
+$$\alpha = \beta^n$$
+thus
+$$\alpha^{(q - 1)/m} =  \beta^{n(q - 1)/m} = 1$$
+thus we follow that
+$$(q - 1) | n(q - 1)/m$$
+thus there is $i \in Z$ such that
+$$i(q - 1) = n * (q - 1) / m$$
+thus $n / m \in Z$ (there's gotta be a better way to phrase this) and
+thus $m | n$. Therefore there is $j \in Z$ such that $n = mj$, and
+therefore
+$$\alpha = \beta^n = \beta^{mj} = (\beta^{j})^m$$
+as desired.
+
+\textit{(c) Suppose that $q$ is odd. Prove that
+  $$-1 \text{ is a square in } F^* \lra q \equiv 1 \mod 4$$}
+
+Suppose that $-1$ is a square. We follow then that there is
+$\beta \in F^*$ such that
+$$\beta^2 = -1$$
+thus
+$$(-1)^{(q - 1)/2} = 1$$
+and therefore there is $j \in Z$ such that
+$$(q - 1)j = (q - 1)/2$$
+$$2(q - 1)j = (q - 1)$$
+$$2(q - 1)j + 1 = q$$
+
+Since $q$ is odd we follow that $q - 1$ is even. Since $F$ is a field, it's a
+ring, and by our standarts it's got to have at least two elements, and therefore
+$q \geq 3 \ra q - 1 \geq 2$. Thus there is $l \in N$ such that $q - 1 = 2l$. Thus
+$$q = 2(q - 1)j + 1 = 2 * 2 * l * j + 1$$
+modding both sides by $4$ gives the desired result.
+
+
 \end{document}
