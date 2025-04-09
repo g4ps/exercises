@@ -251,4 +251,45 @@ and since $A \subseteq A \cup B$ we follow by 2.5 that
 $$|A| \leq |A \cup B|$$
 which gives us the desired result
 
+\subsection{}
+
+\textit{Suppose $A \subseteq R$ and $t \in R$. Let $tA = \set{ta: a
+    \in A}$. Prove that $|tA| = |t||A|$.}
+
+If $t = 0$, then we follow that $tA = \set{0}$, and thus $|tA| = 0 = 0
+* |A|$. Thus suppose taht $t \neq 0$.
+
+Let $I_k$ be a family of intervals, whose union covers $A$. We follow
+then that if $q \in tA$, then there is $a \in A$ such that $q =
+ta$. Thus there is $n \in N$ such that $a \in I_n$. Since $I_n$ is an
+open interval, by definition there are $b, c$ such that $I_n = (b,
+c)$ (where both $b$ and $c$ can be infinities), and thus $a \in (b, c)
+\lra b < a < c$. Therefore we have that if $t > 0$ that
+$$tb < ta < tc$$
+and if $t < 0$ then
+$$tb > ta > tc$$
+which implies that $ta \in t(b, c)$ ($(b, c) \subseteq R$, thus same
+definition as in the text of the exercise applies). Thus we have that
+$$q = ta \in tI_n$$
+thus we have that if $I_n$ is a family of intervals that covers $A$, then
+$tT_n$ is a family of intervals, that cover $tA$.
+
+Now suppose that $I_n$ is a family of intervals that covers $tA$. Setting
+$t' = t\inv$ by previous point we get that $t'I_n$ covers $A$.
+
+Then simple application of definition gives us that
+$$l(t(b, c)) = |t| l((b - c))$$
+which in turn implies that
+$$\sum{l(t I_k)} = |t| \sum{l(I_k)}$$
+which implies that if $J \subseteq R$ is such that
+$$J = \set{\sum{I_k}: I_1, ... \text{ are intervals whose union covers } A}$$
+then
+$$|t| J = \set{\sum{I_k}: I_1, ... \text{ are intervals whose union covers } tA}$$
+and since for nonzero $t$ we have that
+$$\inf {|t|J} = |t| \inf {J}$$
+we follow that
+$$|tA| = \inf {|t|J} = |t| \inf {J} = |t||A|$$
+as desired
+
+
 \end{document}
