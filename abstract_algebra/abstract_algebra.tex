@@ -1759,6 +1759,39 @@ We can rephrase the condition of uniqueness of homomorphism from $ZZ$:
 if $f$ and $g$ are homomorphims from $Z$ to some ring $R$, then $f =
 g$.
 
+A little note about polynomials: whenever we've got a ring $R$, by
+polynomials in $R$ we understand a list of coefficients of $R$, first
+one on whom is not zero. This implies that athough we can have a
+finite ring $R$, its ring of polynomials $R[x]$ is
+infinite. Cardinality of the ring $R[x]$ is then the same, as the
+cardinality of the set of sequences over $R$.
+
+This further implies that since the set of functions over a finite
+ring $R$ is finite, but the set of polynomials is infinite, that there
+are two distinct polynomials, that correspond to the same function. In
+real numbers we know (or at the very least assume pretty heavily) that
+each polynomial represents a distinct function, so then the question is
+as follows: what are the conditions, that give us injectivity from the
+set of polynomials to the set of functions?
+
+Assume that $f, g \in R[x]$, are such that $f \neq g$ in terms of
+polynomials. Assume that $f = g$ in terms of functions.  We follow
+that for all $x \in R$ we have that
+$$f(x) = g(x)$$
+thus we have that
+$$\sum{a_i x^i} = \sum{b_i x^i} $$
+$$\sum{(a_i - b_i)x^i}$$
+since $f \neq g$ in terms of polynomials we follow that there is $k
+\in \omega$ such that $a_k \neq b_k$. Moreover, we follow that since
+$f = g$ we follow that $f(0) = g(0)$, and thus $a_0 = b_0$, otherwise
+we're screwed. We thus conclude that there is polynomial $h = f - g$
+such that $h$ is non-constant and nonzero, and such that for all $r
+\in R$ we follow that
+$$h(r) = 0$$
+at the very least it gives us that if $R$ is an infinite integral
+domain, then it's got at most $deg(h)$ roots, and thus the given case
+is impossible. Thus all of the $Z$, $Q$, $R$, and other normal things
+are covered.
 
 \subsection{}
 
