@@ -2398,6 +2398,25 @@ reason, but $b = c$ or $a = 0$ implies that $ab = ac$ for any given
 ring, and thus I'm assunming that there's a typo there (in the text
 of the theorem we even see the word "implication")
 
+Now let us prove a somewhat trivial, but useful theorem.  Suppose now
+that $f: R \to R'$ is an injective ring homomorphism, and $R'$ is an
+integral domain. We can follow that if $a, b$ are such that
+$$a * b = 0$$
+then
+$$f(a) * f(b) = 0$$
+and thus $f(a) = 0$ or $f(b) = 0$ since $R'$ is an integral domain.
+Since $f$ is injective we follow that $f(a) = 0 \ra a = 0$ or $f(b)
+\ra b = 0$, which implies that $R$ is also an integral domain. Therefore
+
+\textbf{Theorem: If $f: R \to R'$ is an injective ring homomorphism,
+and $R'$ is an integral domain, then $R$ is an integral domain as
+well.}
+
+We don't have the same thing going on with fields, sinse for example
+identity for $f: Z \to R$ is injective, but $Z$ is not a field. If
+$f$ is a bijection though, then we can follow that $R$ is a field.
+
+
 \subsection{}
 
 \textit{Let $m$ be a positive integet.}
@@ -3651,6 +3670,38 @@ there's $q \in M' \setminus M$. (b) now implies that $q \in R^*$,
 and thus there's $q\inv \in R$, which means that $q q\inv = 1 \in M'$,
 which implies that $M' = R$, which is false, and thus we conclude the
 desired result, which was pretty easy.
+
+\subsection{}
+
+\textit{Let $R$ be a ring, let $b, c \in R$, and let $E_{b, c}: R[x,
+  y] \to R$ be the evaluation homomorphism as described in 3.13 }
+
+\textit{(a) If $R$ is an integral domain, prove that $\ker(E_{b,c})$
+  is a prime ideal of $R[x, y]$.}
+
+We firstly follow that since $E_{b, c}$ is a ring homomorphism, that
+$\ker(E_{b, c})$ is an ideal. Now let $q, w, e \in R[x, y]$
+are such that $e \in \ker(E_{b, c})$ and
+$$q * w = e$$
+we follow that
+$$E_{b, c}(q * w) = E_{b, c}(e) = 0$$
+$$E_{b, c}(q) * E_{b, c}(w) = 0$$
+since $R$ is an integral domain, we follow that $E_{b, c}(w) = 0$
+or $E_{b, c}(q) = 0$, which implies that $E_{b, c}(w) \in \ker(E_{b, c})$
+or $E_{b, c}(q) \in \ker(E_{b, c})$, which implies that $\ker(E_{b, c})$
+is a prime domain, as desired.
+
+\textit{(b) If $R$ is a field, prove that $\ker(E_{b,c})$ is a
+  maximal ideal of $R[x, y]$.}
+
+We can try to use our fancy theorem from the cahpter this time.
+Presume that $R$ is a field. We can follow that we can define an
+injective
+$$\phi: R[x, y]/\ker(E_{b,c}) \to R$$
+we then follow that $\phi(x) = x$ for all $x \in R$ which implies that
+$\phi$ is surjective, thus making $\phi$ an isomorphism, and thus
+$R[x, y]/\ker(E_{b,c})$ is a field, therefore $\ker(E_{b,c})$ is a
+maximal ideal, as desired.
 
 \textit{The rest of the exercises are skipped for now}
 
