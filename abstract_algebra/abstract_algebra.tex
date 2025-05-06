@@ -3703,6 +3703,7 @@ $\phi$ is surjective, thus making $\phi$ an isomorphism, and thus
 $R[x, y]/\ker(E_{b,c})$ is a field, therefore $\ker(E_{b,c})$ is a
 maximal ideal, as desired.
 
+
 \textit{The rest of the exercises are skipped for now}
 
 \chapter{Vector Spaces - Part 1}
@@ -3934,7 +3935,7 @@ and probably this one leads to the satisfying answer TODO
 
 \subsection{}
 
-\textit{Let $F$ be a finite field. Prove that
+\textit{(a) Let $F$ be a finite field. Prove that
   $$\prod_{\alpha \in F^*}{\alpha} = -1$$
 }
 
@@ -3958,13 +3959,82 @@ such that $q$ is distinct from $1$ and $-1$. We follow that
 $$(q - 1) (q + 1) = q^2 - 1 = 1 - 1 = 0$$
 thus
 $$(q - 1)( q + 1) = 0$$
-this implies that $q - 1 = 0$ or $q + 1 = 0$, which implies that $q =
+$F$ is an integral domain,
+this we have that $q - 1 = 0$ or $q + 1 = 0$, which implies that $q =
 \pm 1$, which is a contradiction. Thus we conclude several things,
 chief among them is the fact that any element that is not equal
 to $\pm 1$ is distinct from its inverse. Thus we conclude by previous
 point (1st paragraph) the desired result.
 
-\textit{The rest of this section is TODO}
+\textit{(b) As a follow-up to (a), let $m \geq 2$ be an integer, that
+  need not be prime. Prove that
+  $$\prod_{a \in (Z/mZ)^*}a = \pm 1$$
+}
+
+Suppose that $a \in (Z/mZ)^*$. We can follow that since $(Z/mZ)^*$ is
+a group under multiplication, that there is $a\inv \in (Z/mZ)$. Thus
+we can once again partition the whole set into pairs/singletons, and
+if
+$$a = a\inv$$
+then
+$$a^2 = 1$$
+the difference between this exercise and the previous point is that we
+can't state that
+$$a^2 - 1 = 0 \lra a = \pm 1$$
+since $(Z/mZ)^*$ is not an integral domain and thus
+$$(a - 1)(a + 1) = 0$$
+does not give us that $a - 1 = 0$ or $a + 1 = 0$. And thus we have nothing.
+
+We can try to generalize this case and ask the question of what
+exactly is the product of all of elements in the finite group.  We
+then have the problem that we can't adequatly generalize what exactly
+$-1$ is in this case is, since it's just an additive inverse of the
+multiplicative identity, and there is nothing special about it in the
+context of the multiplicative group.
+
+We can follow though that the square of the lhs is $1$ by the
+fact that then we can partition the elements into pairs
+of elements and its inverses (where the case with the $a = a\inv$
+resolves into giving us a pair with identical elements). Thus we have that
+$$(\prod_{a \in (Z/mZ)^*}a)^2 = 1$$
+and therefore
+$$\prod_{a \in (Z/mZ)^*}(a^2) = 1$$
+
+Let $j \in (Z/mZ)^*$ be such that
+$$\prod_{a \in (Z/mZ)^*}a = j$$
+and assume that $j \neq \pm 1$. We follow that since $j \in (Z/mZ)^*$
+that
+$$\prod_{a \in (Z/mZ)^* \setminus \set{j}}a = 1$$
+we can also follow that $j \in (Z/mZ)^*$ implies that $j\inv \in
+(Z/mZ)^*$, and thus
+$$j\inv \prod_{a \in (Z/mZ)}a = 1$$
+by taking away the elements of the lhs of the former equation from lhs
+on the latter equation we get that
+$$j\inv j = 1$$
+which gives us absolutely nothing.
+
+Maybe induction then? We can follow that this thing is true for 2,
+thus if
+$$\prod_{a \in (Z/nZ)^*}a = \pm 1$$
+we follow that in $Z$ there is $k \in Z$ such that
+$$\prod_{a \in (Z/nZ)^*}a = nk \pm 1$$
+and thus $(Z/nZ)^*$ and $(Z/(n + 1)Z)^*$ don't have much in common,
+thus giving us absolutely nothing.
+
+We can follow that $m - 1$ is always in $(Z/mZ)^*$ by following that
+$$(m - 1)^2 = m^2 - 2m + 1 \equiv 1$$
+
+Maybe we should go back a bit. If
+$$(a - 1) (a + 1) = 0$$
+we follow that in $Z$ we have that there is $k \in Z$ such that
+$$(a - 1) (a + 1) = mk$$
+and thus
+$$a^2 - mk - 1 = 0$$
+we then follow that
+$$a^2 = mk + 1$$
+$$a = \pm \sqrt{mk + 1}$$
+which does not appear to give us much
+
 
 \section{Subfield and Extension Fields}
 
