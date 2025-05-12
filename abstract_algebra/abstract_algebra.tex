@@ -4486,16 +4486,49 @@ include only non-constant polynomials are applicable in this case
 
 
 Firstly, let us check that $I$ is indeed an ideal. For addition we have
-$$(x - a)g(x, y) + (y - b)h(x, y) + (x - a)g'(x, y) + (y - b)h'(x, y) =
-(x - a)g(x, y)g'(x, y) + (y - b)h(x, y)h'(x, y) \in I$$
+$$(x - a)g(x, y) + (y - b)h(x, y) + (x - a)g'(x, y) + (y - b)h'(x, y) = $$
+$$= (x - a)g(x, y)g'(x, y) + (y - b)h(x, y)h'(x, y) \in I$$
 and for multiplication we follow that 
 $$q(x, y) ((x - a)g(x, y) + (y - b)h(x, y)) =
 (x - a)q(x, y)g(x, y) + (y - b)q(x, y)h(x, y)$$
 thus we have that $I$ is indeed an ideal.
 
-The question then is to prove the
+Since $f(a, b) = 0$ we follow that
+$$f(a, b) = \sum{q_c a^i b^j} = 0$$
+and thus
+$$f(x, y) = f(x, y) - f(a, b) = \sum{q_c x^i y^j} - \sum{q_c a^i b^j} =
+\sum{q_c x^i y^j - q_c a^i b^j} = \sum{q_c (x^i y^j - a^i b^j)} = $$
 
-TODO
+Skipping this one for now
+
+\subsection{}
+
+\textit{The mathematical term for the property that at non-constant
+polynomials have at least one roots is 'algebraically closed'.}
+
+\textit{(a) Proe that the only irreductible polynomials in $C[x]$ are
+linear polynomials.}
+
+If $C[x]$ is a polynomial of degree two or more, then it's got a root
+$a$, and thus can factor into $(x - a)g(x)$ for some polynomial
+$g(x)$.
+
+\textit{(b) Let $f(x) \in R[x]$ and suppose that $a + bi \in C$ is a
+  root of $f(x)$. Prove that $a - bi$ is also a root of $f(a)$}
+
+Follows directly from the fact that $\overline{a}\overline{b} = \overline{ab}$.
+
+\textit{(c) Let $f(x) \in R[x]$ be an irreductible polynomial in
+  $R[x]$. Prove that $\deg(f) \leq 2$}
+
+We can follow that there is $a \in C$ such that $f(a) = 0$. If $a \in
+R$, then we're done, thus assume that $a \notin R$. From previous
+point we get that $f(\overline{a}) = 0$. Thus
+$$f(x) = (x - a)(x - \overline{a})g(x)$$
+and thus
+$$f(x) = (x^2 - x\overline{a} - xa + |a|^2)g(x) = (x^2 - x(\overline{a} + a) + |a|^2)g(x)$$
+we then follow that $\overline{a} + a \in R$, and thus lhs is in $R$
+as well, thus producting the desired result.
 
 \section{Finite Fields}
 
