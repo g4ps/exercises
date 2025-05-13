@@ -4499,7 +4499,110 @@ and thus
 $$f(x, y) = f(x, y) - f(a, b) = \sum{q_c x^i y^j} - \sum{q_c a^i b^j} =
 \sum{q_c x^i y^j - q_c a^i b^j} = \sum{q_c (x^i y^j - a^i b^j)} = $$
 
-Skipping this one for now
+We can follow that if $q \in I$, then $q = (x - a)g(x, y) + (y - b)h(x, y)$
+for some $g, h \in F[x, y]$, and for it we have
+$$q(a, b) = 0 * g(a, b) + 0 * h(x, y) = 0$$
+thus proving that $I \subseteq \ker(E_{a, b})$.
+
+We can fudge around a bit in order to get ourselves closer
+to the right idea:
+$$f(x, y) = x + y - a - b = (x - a) + (y - b)$$
+$$f(x, y) = x^2 + y^2 - (a^2 + b^2) = (x^2 - a^2) + (y^2 - b^2) = (x - a) .. + (y - b) ...$$
+$$f(x, y) = x^2 + y^2 + xy - (a^2 + b^2 + ab) = (x^2 - a^2) + (y^2 - b^2) + (xy - ab) =$$
+$$= 
+(x - a)(x + a) + (y - b)(y + b) + (xy - ab) = $$
+$$ = (x - a)(x + a) + (y -
+b)(y + b) + (xy - ab - ay + bx + ay - bx) = $$
+$$ = (x - a)(x + a) + (y - b)(y
++ b) + (xy - ab - ay + bx) + (ay - bx) = $$
+$$ =
+(x - a)(x + a) + (y - b)(y + b) + (x - a) (y + b) + (ay - bx) = ...$$
+
+Which seems to be boiling down to the question of how does
+$f(x, y) = xy - ab$ factor in the desired way? Let's then
+try to fudge around with this one:
+$$(x - a) * y + (y - b) * x = xy - ay + xy - bx $$
+this one is a non-starter
+$$(x - a)(y + b) + (y - b) * (x + a) = xy - ay + xb - ab + xy - bx + ay - ab =$$
+$$= 
+xy - ay + xb - ab + xy - bx + ay - ab = 2xy - 2ab$$
+which is hell of a lot closer. Thus we have that
+$$1/2(x - a)(y + b) + 1/2(y - b) * (x + a) = xy - ab$$
+which is dope. This lets us conclude that $xy - ab \in I$.
+Next task is to push it into the higher degree:
+$$f(x, y) = x^2y^2 - a^2 b^2 = (xy)^2 - (ab)^2 = (xy - ab) * (xy + ab)$$
+We then know that the lhs of the latter product is in $I$, which implies that
+the whole thing is in $I$. In general we have that
+$$x^ny^n - a^n b^n = (xy)^n - (ab)^n = (xy - ab) * \sum{...}$$
+just as with the single variable polynomial (look up an exercise in 3rd
+chapter with polynomial evaluation to get details), which proves that
+$$x^ny^n - a^n b^n \in I$$
+which is cool as heck. This case tackles only polynomials where we have equal degrees
+for $x$ and $y$, but polynomials of two variables have unequal ones as well. For example
+there is a polynomial
+$$f(x, y) = x^2y - a^2b$$
+that exemplifies this case. Let's try to solve this one then:
+$$x^2y - a^2b$$
+after some fudging around with maxima I got that
+$$x^2y - a^2b = (x + a) (xy - ab) - ax (y - b)$$
+we know that $(xy - ab)$ is an element of $I$, latter part of the sum
+(i.e. $ax (y - b)$) is in $I$ by definition, thus the whole thing is
+in $I$. Generalizing this thing is not going to be trivial. We can follow
+that $x^i y^j$ is a term of a sum in $(x - y)^{i + j}$.
+Fudging around a bit more we get that
+$$x^{n + 1}y^n - a^{n + 1}b^n =
+(x - a) * (x^n y^y - a^n b^n) + a * x * (x^{n - 1} * y^n - a^{n - 1}b^n)$$
+which by induction gives us that
+$$x^{n + 1}y^n - a^{n + 1}b^n \in I$$
+
+We then follow that
+$$(x^2y + a^2b) * (x - a) + a x(xy - ab) = x^3 y - a^3 b$$
+and in general
+$$x^{n + 1}y - a^{n + 1}b =
+(x - a)(x^n * y + a^n * b) + ax(x^{n - 1}y - a^{n - 1}b)$$
+which by induction gives us that for arbitrary $n$ we follow that
+$x^{n}y - a^{n}b \in I$
+
+In way more general sense we get
+$$x^ny^m - a^nb^m =
+(x - a) * (x^{n - 1} y^m + a^{n - 1}b^m + ax(x^{n - 2}y^m - a^{n - 2}b^m)$$
+thus for an arbitrary $i > j$ we can get up to
+$$x^j y^j - a^j b^j \in I$$
+with a point that was made a couple of paragraphs ago, and then by using
+this formula by induction we get that
+$$x^i y^j - a^i b^j \in I$$
+with some notation we can get the same case for $i < j$ as well.
+
+Thus we can get back to our main point. If $f(a, b) = 0$ for some $a,
+b \in F$, then
+$$f(x, y) = f(x, y) - f(a, b) = \sum{q_c x^i y^j} - \sum{q_c a^i b^j} 
+\sum{q_c x^i y^j - q_c a^i b^j} = \sum{q_c (x^i y^j - a^i b^j)}$$ each
+$x^i y^j - a^i b^j$ is in $I$, thus $q_c(x^i y^j - a^i b^j) \in I$,
+therefore the whole sum is in $I$, and thus $f(x, y) \in I$, which
+proves that $I = \ker{E_{a, b}}$, and since our $f(x, y) \in
+\ker{E_{a, b}}$ by definition, we get the first inclusion (not proper
+inclusion though).
+
+We then follow that $I \subset R$ (where $R$ is presumed to be $F[x,
+y]$) with proper inclusion, since $R$ can have arbitrary polynomials,
+whose root is not $a, b$ (for example constant polynomials), that
+aren't present in $I$.
+
+Thus the last thing that is leftto prove is proper inclusion of
+$f(x, y)F[x, y]$ in $I$. If $f$ is a zero polynomial, then we follow
+that $f(x, y)F[x, y] = \set{0}$, and since $I$ has nonzero polynomials
+in it, we follow proper inclusion. $f$ cannot be a constant nonzero
+polynomial (i.e. a number) since it's got roots. Thus let $m$ and $n$
+be the highest powers of $x$ and $y$ respectively in $f(x, y)$. We follow
+that at least one of those is greater than $0$ (assume with no loss in
+generality that it is $m$), and thus every
+polynomial in $f(x, y) F[x, y]$ is either $0$ or its power of $y$ is
+greater or equal than $m$. Polynomials in $I$ can have no powers in $y$
+(simple $(x - a)$ will do as an example), and thus we conclude that
+this polynomial is not a multiple of $f$, thus giving us proper inclusion,
+as desired.
+
+\textit{Skipping the rest of this exercise}
 
 \subsection{}
 
@@ -4529,6 +4632,45 @@ and thus
 $$f(x) = (x^2 - x\overline{a} - xa + |a|^2)g(x) = (x^2 - x(\overline{a} + a) + |a|^2)g(x)$$
 we then follow that $\overline{a} + a \in R$, and thus lhs is in $R$
 as well, thus producting the desired result.
+
+\subsection{}
+
+\textit{Let $F$ be a field, let $f(x) \in F[x]$ be a possibly reductible non-constant
+  polynomial, and let $\deg(f) = d$. }
+
+\textit{(a) Prove that there exists a field extension $K/F$ satisfying $[K:F] \leq d$
+  such that $f(x)$ has a root in $K$}
+
+If $f$ has roots in $F$, then we're done, thus assume that it does not
+have them.
+
+If $f(x)$ is irreductible then let $g(x) = f(x)$, and otherwise let $g(x)$ be
+an irreductible factor of $f$ (we can follow that those exist since all
+the linear polynomials are irreductible, and $\deg(f) \geq 1$). We then follow
+that we have that $\deg(g) \leq \deg(f)$, and since $g$ is irreductible by theorem
+5.27 we have that there is an extension field $K$ of $F$ such that it's got
+roots for $g$. Since $g$ is a factor for $f$ we follow that the same
+root is also a root for $f$, and we also have that
+$$[K_f:F] = \deg(g) \leq \deg(f)$$
+as desired.
+
+\textit{(b) Prove that there exists a field extension $L/F$ and elements $c \in F$
+  and $\alpha_1, ..., \alpha_d \in L$ such that
+  $$f(x) = c(x - \alpha_1)(x - \alpha_2)...(x - \alpha_d)$$
+  ($\alpha$'s need not be distinct). Prove that it is always possible
+  to find such an $L$ that also satisfies
+  $$[L:F] \leq d!$$
+  The field $L$ is called a splitting field for the polynomial $f(x)$
+  oveer the field $F$.
+}
+
+From previous point we follw that there is $K/F$ such that
+$$[K:F] \leq d$$
+and such that $f(x)$ has a root $\alpha_1$ in $K$. We then follow that
+there is $g(x)$ such that
+$$f(x) = (x - \alpha_1)g(x)$$
+Then we can follow that $\deg(g(x)) = \deg(f(x)) - 1$, and by applying
+the same logic we follow by induction that there is a desired field.
 
 \section{Finite Fields}
 
