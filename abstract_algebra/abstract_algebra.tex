@@ -4994,7 +4994,33 @@ the desired result.
 
 \subsection{}
 
-\textit{Skip}
+\textit{Let $G$ be a group, let $K \subseteq G$ be a normal subgroup of $G$, and
+  let $H \subseteq H' \subseteq G$ be subgroups
+  of $G$.}
+
+\textit{(a) Finished this one before}
+
+\textit{(b) Prove that $H/(H \cap K)$ is naturally a subgroup of $H'/(H' \cap K)$}
+
+We can define $\phi: H/(H \cap K) \to H'/(H' \cap K)$ by
+$$\phi(h(H \cap K)) = h(H' \cap K)$$
+we then follow that if $h, h' \in h(H \cap K)$ then there is $k \in (H
+\cap K)$ such that $h = h'k$, and thus
+$$h(H' \cap K) = h'k(H \cap K) = h'(H \cap K)$$
+where the second definition is given by properties of cosets. Thus
+$\phi$ is well defined. The proof that $\phi$ is a homoomrphism is
+somewhat trivial, and we also have that if there are $h(H \cap K), h'(H \cap K)$
+such that
+$$\phi(h(H \cap K)) = \phi(h'(H \cap K))$$
+then
+$$h'(H' \cap K) = h'(H' \cap K)) \lra
+\exists k \in K: h' = hk \ra h(H \cap K) h(H' \cap K)$$
+thus proving  that $\phi$ is injective, as desired.
+
+\textit{(c) Suppose further that $H$ is a normal subgroup of $H'$. Prove that
+$H/(H \cap K)$ is a normal subgroup of $H'(H' \cap K)$.}
+
+There is a somewhat trivially followed with a lot of notation involved
 
 \section{Group Acting on Sets}
 
