@@ -5892,6 +5892,36 @@ domain, which we don't have here. However out proof holds the same
 since the deriviation from (b) to (c) does not involve any properties
 of an integral domain
 
+\textit{(b) Give an example of a ring $R$ and elements $a, b \in R$
+  having the property that $aR = bR$, but there does not exist a unit
+  $u \in R^*$ satisfying $b = au$.}
+
+Hint gives us that $R$ cannot be an integral domain (which is kinda
+obvious from the previous point). The fact that it is a challenging
+problem perhaps suggests that we're going to have to deal with the
+polynomials. 
+
+Simpliest ring that is not an integral domain that I can think of is
+the $Z/4Z$. We can follow that the only units are $1$ and $-1$ that
+give us the only nonzero element that exists apart from that is $2$,
+which does not give us much room to move around.
+
+With $Z/6Z$ we have that $1, 5$ are units, and $2, 3, 4$ are
+non-units. We follow that their respective principal ideals are
+$$2 * Z/6Z = \set{0, 2, 4} = 4 * Z/6Z$$
+$$3 * Z/6Z = \set{0, 3}$$
+we follow that $2 * 5 = 4 \mod 6$ which does not give us the desired
+result.
+
+After some fudging around with python we can find out that none of
+the $Z/nZ$ for $n$ up to $100$ are satisfying those ideas.
+
+Looking into the proof of 7.1 we can follow that $(b) \ra (c),
+(c) \ra (a)$ without the usage of the fact that $R$ is an ID.
+The only requirement of ID comes from the b to c implication.
+
+TODO
+
 \section{Eucledian Domains and Principal Ideal Domains}
 
 \subsection{}
