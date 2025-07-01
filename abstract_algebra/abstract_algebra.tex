@@ -6744,7 +6744,38 @@ $$y^2 = - x^2$$
 $$y = \pm \sqrt{- x^2}$$
 which is as much as I can define in this case
 
+\textit{(c) If $F = F_5$, for which points $(b, c) \in F_5^2$ is
+  $E_{b, c}(\phi)$ is not well-defnied. in particular, how many such
+  points are there}
 
+There are in total 25 points in $F_5$, and python says that points
+$$(0, 0), (1, 2), (1, 3), (2, 1), (2, 4), (3, 1), (3, 4), (4, 2), (4, 3)$$
+are such points.
+
+\textit{(d) Same as in previous}
+
+\subsection{}
+
+\textit{We defined the n-variable polynomial ring $R[X_1, ..., X_n]$
+  in Definition 7.33}
+
+\textit{(a) Prove that there is a natural ring inclusions }
+
+$$R \subseteq R[X_1] \subseteq R[X_1, X_2] \subseteq ... $$
+
+Follows directly from the definitions of those things
+
+\textit{(b) Prove that the union
+  $$Q = \bigcup_{n = 0}^{\infty}{R[X_1, ..., X_n]}$$
+  using the inclusion from (a) is a ring. It is denoted by $R[X_1,
+  X_2, ..., X_n]$ and is called the ring of polynomials in infinitely
+  many variables.}
+
+Identities are present in the $R$. We follow that any given $a, b \in Q$
+are contained in some $R[X_1, ..., X_n]$ for some $n \in \omega$ (we
+can pick the largest of the proper containers of $a$ or $b$), in which
+rules for rings work just fine, and thus we conclude that $Q$ is also
+a ring, as desired.
 
 \chapter{Fields - Part 2}
 
