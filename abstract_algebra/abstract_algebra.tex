@@ -6777,6 +6777,32 @@ can pick the largest of the proper containers of $a$ or $b$), in which
 rules for rings work just fine, and thus we conclude that $Q$ is also
 a ring, as desired.
 
+\subsection{}
+
+\textit{This exercise asks you to prove Proposition 7.39, which says
+  that permutations $\pi \in S_n$ act on the ring of $R[X_1, ..., X_n]$
+  as homomorphisms.}
+
+\textit{(a) Prove that $\pi$ sends sums to sums.}
+
+Let $a, b \in R[X_1, ..., X_n]$. Let $\omega^n$ be a set of vectors of
+length $n$ in $\omega$. We can follow that this set is countable, and
+thus there is an injection $f$ from $\omega$ to $\omega^n$. Thus by
+definition each element of $R[X_1, ..., X_n]$ can be represented by a
+sequence $j$ of elements of $R$ such that
+$$a = \sum_{i \in \omega}{f(i)j(i)}$$
+We then follow that $\pi$ is essentially acting exclusively on $f(i)$,
+i.e.
+$$\pi(a) = \pi(\sum_{i \in \omega}{f(i)j(i)}) = \sum_{i \in \omega}{\pi(f(i))j(i)}$$
+Thus we have that
+$$\pi(a + b) = \pi(\sum_{i \in \omega}{f(i)j(i)} + \sum_{i \in \omega}{f(i)k(i)}) =
+\pi(\sum_{i \in \omega}{f(i)(j(i) + k(i))}) = \sum_{i \in \omega}{\pi(f(i))(j(i) + k(i))} = $$
+$$= 
+\sum_{i \in \omega}{\pi(f(i))j(i)} +  \sum_{i \in \omega}{\pi(f(i))k(i)} =
+\pi(\sum_{i \in \omega}{f(i)j(i)}) +  \pi(\sum_{i \in \omega}{f(i)k(i)}) = \pi(a) +  \pi(b)$$
+as desired
+
+
 \chapter{Fields - Part 2}
 
 \section{Algebraic Numbers and Transcendental Numbers}
