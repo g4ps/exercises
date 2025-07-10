@@ -6871,7 +6871,18 @@ proof in the book is the proof of the following:
 
 \textit{Proof: } If $r' \in \ran(f)$, then there is $r \in R$ such
 that $f(r) = r'$, and thus $\overline{f}(r) = r'$, thus implying that
-$\ran(f) \subseteq \ran(\overline(f)$. Reverse inclusion is similar
+$\ran(f) \subseteq \ran(\overline(f)$. Reverse inclusion is similar.
+
+We can follow that $f: R \to R$ defined by $f(x) = -x$ is a vector
+field isomorphism, however we follow that $f(1) = -1 \neq 1$, thus
+implying that $f$ is not a ring homomorphism. Thus we can follow that
+vector field homomorphisms need not be ring homomorphisms.  Reverse
+implication might not be true as well: if $f$ is a ring homomorphism,
+then we can only follow that
+$$f(c_1a + c_2 b) = f(c_1a) + f(c_2 b) = f(c_1) f(a) + f(c_2) f(b)$$
+which falls just short of the proof of the desired condition. Thus we
+can state that in proof of 8.6(b) we only state that a particular
+function in question is both ring and vector homomorphism.
 
 \subsection{}
 
@@ -6889,11 +6900,7 @@ By the same reasoning as in proof of 8.6(b) we have that there is a
 well-defined surjective ring homomorphism
 $$F[x]/f(x)F[x] \to F(a)$$
 which is also a linear map between two $F$-spaces.
-Since this map is a linear map of spaces with the same dimension,
-we follow that surjectivity here implies bijectivity (see LADR for
-clarifications), thus making this map an isomorphism, which implies that
-$F[x]/f(x)F[x]$ is a field, for which by 7.16 we follow that $f(x)$
-is irreductible, as desired.
+TODO
 
 \subsection{}
 
