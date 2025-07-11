@@ -6882,7 +6882,9 @@ then we can only follow that
 $$f(c_1a + c_2 b) = f(c_1a) + f(c_2 b) = f(c_1) f(a) + f(c_2) f(b)$$
 which falls just short of the proof of the desired condition. Thus we
 can state that in proof of 8.6(b) we only state that a particular
-function in question is both ring and vector homomorphism.
+function in question is both ring and vector homomorphism. That
+particular statement about $E_a$ being both vector and ring homomorphism
+follows from exercises in previous chapters. 
 
 \subsection{}
 
@@ -6898,9 +6900,14 @@ and thus
 $$\dim_F(F(\alpha)) = \deg(f) = \dim_F F[x]/f(x)F[x]$$
 By the same reasoning as in proof of 8.6(b) we have that there is a
 well-defined surjective ring homomorphism
-$$F[x]/f(x)F[x] \to F(a)$$
-which is also a linear map between two $F$-spaces.
-TODO
+$$\overline{E_\alpha}: F[x]/f(x)F[x] \to F(a)$$
+which is also a linear map between two $F$-spaces. Given that we have
+that
+$$\dim_F(F[x]/f(x)F[x])) = \dim_F(F(a))$$
+we conclude that the function $\overline{E_\alpha}$ is bijective,
+thus we have that $\overline{E_\alpha}$ is a ring homomorphism
+that is bijective, thus implying that by 7.16 $f(x)$ is
+irreductible, as desired.
 
 \subsection{}
 
@@ -6955,6 +6962,20 @@ Skipping the rest due to the fact that this exercise is wrong, and
 fixing it is a mess
 
 \section{Polynomial Roots and Multiplicative Subgroups}
+
+\subsection*{Notes}
+
+We can see that during the proof of 8.10 we haven't used the fact that
+$F$ is a field, and only used the fact that $F$ is an integral domain,
+thus we can relax the prerequisites of the theorem.
+
+It is also important to remember that any finite integral domain is a
+field (see exercises for section 3.4). Thus we can ask a somewhat interesting
+question: If $U$ is a finite subset of some integral domain $R$, then
+is there a finite field $F$, that is contained within $R$ and also
+contains $U$? The answer to that is no: we can take $U = \set{1}$,
+which is a subset of $Z$, and then follow that additive closure of this
+set is the entirety of $Z$, which implies that no such field exists. 
 
 \subsection{}
 
@@ -7175,5 +7196,6 @@ $q \geq 3 \ra q - 1 \geq 2$. Thus there is $l \in N$ such that $q - 1 = 2l$. Thu
 $$q = 2(q - 1)j + 1 = 2 * 2 * l * j + 1$$
 modding both sides by $4$ gives the desired result.
 
+\section{Splitting Fields, Separability, and Irreducibility}
 
 \end{document}
