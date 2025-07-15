@@ -7201,9 +7201,28 @@ modding both sides by $4$ gives the desired result.
 \subsection*{Notes}
 
 In regards with theorem 8.24 (that states that $f \in F[x]$ is
-separable iff $gcd(f, f')$): definition of $gcd$ for arbitrary PID is
+separable iff $gcd(f, f') = 1$): definition of $gcd$ for arbitrary PID is
 found in the first exercise of section 7.2. This also incapsulates the
-footnote: if $aR + bR = 1$ then we conclude that $gcd(a, b) = 1$.
+footnote: if $aR + bR = 1R$ then we conclude that $gcd(a, b) = 1$.
+
+When we talk about separability of a given polynomial, the question
+arises about the dependency of separability of given polynomial with
+respect to different splitting fields. I.e. suppose that $L$ and $L'$
+are both fields such that $f(x) \in F[x]$ splits completely in them.
+If $\alpha \in L$ is such that $f(x) = (x - \alpha)^n g(x)$ for some
+$g(x) \in F[x], n \in Z_+$, then does there exist $\alpha' \in L'$ such that
+$f(x) = (x - \alpha')^ng(x)$?
+
+Firstly, if we take on faith for now the assertion that all
+splitting fields of $f(x)$ are isomorphic, then we follow that
+separability makes sense and our initial assertion is correct.
+
+Secondly, if $f(x)$ is separable in one splitting field, but not the
+other, then we follow that $gcd(f(x), f'(x)) = 1$ from the former
+assumption, but $gcd(f(x), f'(x)) \neq 1$ from the latter, which given
+us the contradiction, and thus implies that if $f(x)$ is separable in
+$L$, then it is also separable in $L'$ (mutatis mutandis with
+inseparable)
 
 \subsection{}
 
@@ -7212,8 +7231,9 @@ footnote: if $aR + bR = 1$ then we conclude that $gcd(a, b) = 1$.
 \textit{(a) $F = Q$, $f(x) = x^2 - 4x + 13$, $L = Q(i)$}
 
 We can follow that $x = 2 \pm 3i$ are the roots of this polynomial,
-which are located in $L$ and not in $Q$. Since $[L:Q] = 1$ as per
-examples in 5th chapter, we follow that no proper subfields of $L$
-exist between $L$ and $Q$, which gives the desired result
+which are located in $L$ and not in $Q$. Since $[L:Q] = 2$ as per
+examples in 5th chapter, we follow from exercise 5.4.1 that there are
+no proper subfields of $L$ that properly contain $Q$, which gives the
+desired result.
 
 \end{document}
