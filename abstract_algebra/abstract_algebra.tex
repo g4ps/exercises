@@ -7244,9 +7244,108 @@ $$x^4 - 4 = (x^2 - 2)(x^2 + 2) =
 respect to $L$, and thus we need to show that $L$ is the smallest
 field splits $f$. We can follow that $[L:Q] = 4$, which gives us the
 idea that there might be extension fields of degree $2$ that are
-located in between $L$ and $Q$. Thus we need to prove that
+located in between $L$ and $Q$ (here we assume that the proper
+subfield of $L$, that contains but is not equal to $Q$ is a should be
+of degree not 1 or 4 due to some trivial linear algebra deriviation).
+Thus we need to prove that
 $$Q(\sqrt{2}, -\sqrt{2}, \sqrt{2}i, -\sqrt{2}i) = Q(i, \sqrt{2})$$
+here we can state firstly that
+$$Q(\sqrt{2}, -\sqrt{2}, \sqrt{2}i, -\sqrt{2}i) = Q(\sqrt{2}, \sqrt{2} i)$$
+and thus
+$$  Q(\sqrt{2}, \sqrt{2} i) =  Q(\sqrt{2}, \sqrt{2} \inv * \sqrt{2} i) = Q(\sqrt{2}, i)$$
+as desired
 
+\textit{Skipping due to triviality}
 
+\subsection{}
+
+\textit{(a) Let $f(x) = x^4 - 1 \in Q[x]$. Factor $f(x)$ into irreductible factors in $Q[x]$,
+  and then prove that $Q(\sqrt{-1})$ is th splitting field of $f(x)$ over $Q$.}
+
+We can follow that
+$$(x^4 - 1) = (x^2 + 1)(x^2 - 1) = (x - i)(x + i)(x - 1)(x + 1)$$
+the fact that $Q(i) = Q(1, -1, i, -i)$ is evident.
+
+\textit{(b) Let $f(x) = x^6 - 1 \in Q[x]$. Factor $f(x)$ into
+  irreducible factors in $Q[x]$, and then prove that $Q(\sqrt{-3}$ is
+  the splitting field of $f(x)$ over $Q$.}
+
+We can follow that
+$$(x^6 - 1) = (x - 1)(x + 1)(x^4 + x^2  + 1) = (x - 1)(x + 1)(x^4 + 2x^2  + 1 - x^2) = $$
+$$ (x - 1)(x + 1)((x^2 + 1) - x^2) = (x - 1)(x + 1)(x^2 - x + 1)(x^2 + x + 1) = $$
+$$ (x - 1)(x + 1)((x^2 + 1) - x^2) = $$
+$$(x - 1)(x + 1)(x + \frac{\sqrt{3}i - 1}{2})
+(x - \frac{\sqrt{3}i + 1}{2})(x + \frac{\sqrt{3}i + 1}{2})(x - \frac{\sqrt{3}i - 1}{2})
+$$
+as desired.
+
+\subsection{}
+
+\textit{Which of the following rings are fields, and which are not? Be sure to
+  give a reason for your answer}
+
+We can follow that the whole thing is going to be a field
+if and only if the polynomial is irreductible (per theorem 7.16)
+
+\textit{(a) $R[x]/(x^2 + 1)R[x]$}
+
+We can follow that $x^2 + 1$ is irreductible, and thus the whole thing is a
+field. Also, as proven in some earlier exercise, this thing is isomorphic
+to $C$.
+
+\textit{(b) $F_3[x]/(x^2 + 1)F_3[x]$}
+
+We can follow that
+$$(0^2 + 1)  = 1$$
+$$(1^2 + 1)  = 2$$
+$$(2^2 + 1)  = 5 \equiv 2$$
+thus this polynomial does not have roots, therefore it's irreductible
+(if it whould be, then a factor would be linear, and thus have roots),
+therefore the whole thing is a field
+
+\textit{(c) $F_5[x]/(x^2 + 1)F_5[x]$}
+We can follow that
+$$(0^2 + 1)  = 1$$
+$$(1^2 + 1)  = 2$$
+$$(2^2 + 1)  = 5 \equiv 0$$
+thus we have root of $2$, and thus
+$$x^2 + 1 = (x - 2)(x + 2)$$
+thus making the polynomial reductible, and the whole thing not a field
+(once again, per 7.16)
+
+\subsection{}
+
+\textit{Was taken care of in the real analysis course mutatis mutandis}
+
+\subsection{}
+
+\textit{Let $F$ be a field, and let $f(x) \in F[x]$ be a polynomial.}
+
+\textit{(a) Prove that there is a unique polynomial $\phi(x) \in F[x]$
+  so that in the 2-variable polynomial ring $F[x, y]$ we have
+  $$f(x + y) = f(x) + \phi(x)y + \text{(element in the ideal $y^2F[x, y]$)}$$
+}
+
+We can start our reasoning with some direct computation first:
+$$\sum{a_i (x + y)^i} = \sum{\left(a_i \sum_{0 \leq j \leq i}{bc(j, i)x^{i - j}y^j}\right)} =
+\sum{\left(a_i + (x^i + \sum_{1 \leq j \leq i}{bc(j, i)x^{i - j}y^j})\right)} = $$
+$$= \sum{\left(a_ix^i + a_i\sum_{1 \leq j \leq i}{bc(j, i)x^{i - j}y^j}\right)} =
+f(x) + \sum{\left(a_i\sum_{1 \leq j \leq i}{bc(j, i)x^{i - j}y^j}\right)} =$$
+$$ = f(x) + \sum{\left(a_i(bc(1, i)x^{i - 1}y +
+    \sum_{2 \leq j \leq i}{bc(j, i)x^{i - j}y^j})\right)} = $$
+$$ = f(x) + \sum{\left(a_i(i x^{i - 1}y +
+    \sum_{2 \leq j \leq i}{bc(j, i)x^{i - j}y^j})\right)} = $$
+$$ = f(x) + \sum{\left(a_i i x^{i - 1}y +
+    a_i \sum_{2 \leq j \leq i}{bc(j, i)x^{i - j}y^j})\right)} = $$
+$$ = f(x) + y \sum{a_i i x^{i - 1}} +
+\sum{\left(a_i \sum_{2 \leq j \leq i}{bc(j, i)x^{i - j}y^j})\right)} = $$
+and since $j \geq 2$ we note that the latter part is indeed an element of the
+ideal $y^2 F[x, y]$
+
+\textit{(b) Prove that the polynomial $\phi(x)$ in (a) is the derivative $f'(x)$}
+
+Follows directly from definition.
+
+\textit{Skipping the next one}
 
 \end{document}
