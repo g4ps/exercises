@@ -7348,4 +7348,76 @@ Follows directly from definition.
 
 \textit{Skipping the next one}
 
+\section{Finite Fields Revisited}
+
+\subsection{}
+
+\textit{Let $q$ be a power of a prime, let $d \geq 1$, let $F$ be a
+  field with $q$ elements, and let $K/F$ be an extension of $F$ having
+  $q^d$ elements. Prove that $K$ is a splitting field of $x^{q^d} - x$
+  over $F$.}
+
+
+We firstly follow by the same reasoning as in the proof in the chapter
+that $x^{q^d} - x$ is separable, and thus has $q^d$ distinct roots. We
+then follow that due to theorem 8.11 we have that $K^*$ is cyclic, and
+thus for any elements $k \in K$ we have that order of $k$ divides
+$|K^*| = q^d - 1$. Thus we have that $k^{q^d} = k^{q^d - 1}k = 1 * k =
+k$, and thus
+$$k^{q^d} - k = 0$$
+therefore implying that $k$ is the root pf $x^{q^d} - x$. Thus every
+element of $K$ is a root, and all the roots are accounted for,
+which implies the desired result.
+
+\subsection{}
+
+\textit{Let $K$ be a field with $p^d$ elements, so in particular
+  $K$ contains a copy of $F_P$.}
+
+\textit{(a) Prove that there exists an element $\gamma \in K$ such
+  that the evaluation map
+  $$E_\gamma: F_p[x] \to K$$
+  is surjective}
+
+We can follow that $K^*$ is cyclic, and thus there is an element
+$\gamma$ such that
+$$k \in K^* \ra \exists n \in \omega: k = \gamma^n$$
+thus if $k \in K$ then there is $f(x) = x^n \in F[x]$, and thus
+$$E_\gamma(f) = k$$
+thus implying the desired result.
+
+\textit{(b) Prove that $F_p[x]$ contains an irreductible polynomial
+  of degree $d$.}
+
+We firtly have $\ker(E_\gamma)$. We know that $F_p[x]$ is a PID, and
+thus there is $h(x) \in \ker(E_\gamma)$ that generated
+$\ker(E_\gamma)$. We firstly follow that we have that
+$$F_p[x]/h(x)F_p[x] \to K$$
+is isomorphic, and thus $F_p[x]/h(x)F_p[x]$ is a field, and thus
+$h(x)$ is irreductible. Moreover, we have that
+$$ \dim_FF_p[x]/h(x)F_p[x] = \dim_F K $$
+On top of that we have that
+$$\dim_F(F_p[x]/h(x)F_p[x]) = \deg(h) $$
+thus implying that
+$$\deg(h) = \dim_F(K) = d$$
+thus implying the desired result.
+
+\subsection{}
+
+\textit{Let $K$ be a field with $p^d$ elements. Prove that the following
+  is equivalent:}
+
+\textit{(a) $K$ contains a subfield with $p^e$ elements}
+
+\textit{(b) $e | d$}
+
+Suppose that $K$ contains a subfield $F$ such that $|F| = p^e$.  We
+follow that there is a finite list $l$ of elements of $K$ such that
+$l$ is a basis for $K$ if we view the latter as the vector space in
+$F$. Thus we conclude that
+$$p^{e^l} = |K| = p^d \ra el = d \ra e | d$$
+
+If $e | d$, then we can 
+
+
 \end{document}
