@@ -7402,22 +7402,60 @@ thus implying that
 $$\deg(h) = \dim_F(K) = d$$
 thus implying the desired result.
 
+
+\section{Gauss's Lemma and Eisenstein's Irreductibiliy Criterion}
+
 \subsection{}
 
-\textit{Let $K$ be a field with $p^d$ elements. Prove that the following
-  is equivalent:}
+\textit{Let $u, v \in Z$, and let $f(x)$ be the polynomial
+  $$f(x) = x^3 + ux^2 + vx - 1$$
+  Prove that $f(x)$ is irreductible in $Q[x]$ if and only if $(u + v)(u
+  - v - 2) \neq 0$
+}
 
-\textit{(a) $K$ contains a subfield with $p^e$ elements}
+Suppose that $f(x)$ is reductible. We follow that there are $g, h \in
+Z(x)$ such that
+$$f(x) = g(x) * h(x)$$
+With no loss in generality assume that $\deg(g) = 1, \deg(h) = 2$. We
+follow that
+$$g(x) = (b_gx + c_g)$$
+$$h(x) = (a_gx^2 + b_hx + c_h)$$
+for some $b_g, c_g, a_h, b_h, c_h \in Z$. We follow then that
+$$a_h b_g = 1$$
+and thus either $a_h = b_g = 1$ or $a_h = b_g = -1$. If latter is the
+case, then we can find other appropriate coefficients so that
+$$g(x) = (x + c_g)$$
+$$h(x) = (x^2 + b_hx + c_h)$$
+we then also follow that
+$$c_g c_h = -1$$
+thus implying that $c_g = -1, c_h = 1$ or $c_g = 1, c_h = -1$.
 
-\textit{(b) $e | d$}
+We follow that
+$$u = a_g c_g + b_h b_g$$
+$$v = b_g c_h + b_h c_g$$
+thus we have that
+$$u = c_g + b_h $$
+$$v = c_h + b_h c_g$$
+if $c_g = 1$ then we have that
+$$u = 1 + b_h \land v = b_h - 1 \ra u - v - 2 = 1 + b_h - b_h + 1 - 2 = 0$$
+and if $c_g = -1$ then
+$$u = -1 + b_h \land v = 1 - b_h \ra u - v = 0$$
+thus implying that if $f$ is reductible, then
+$$u + v = 0 \lor u - v - 2 = 0 \lra (u + v)(u - v - 2) = 0$$
+which gives us the reverse implication.
 
-Suppose that $K$ contains a subfield $F$ such that $|F| = p^e$.  We
-follow that there is a finite list $l$ of elements of $K$ such that
-$l$ is a basis for $K$ if we view the latter as the vector space in
-$F$. Thus we conclude that
-$$p^{e^l} = |K| = p^d \ra el = d \ra e | d$$
-
-If $e | d$, then we can 
+Now assume that
+$$(u + v)(u - v - 2) = 0$$
+We follow that
+$$u + v = 0 \lor (u - v - 2) = 0$$
+by assuming former we have that
+$$x^3 + ux^2 - ux - 1  = x^3 + ux(x - 1) - 1 = x^3 - 1 + ux(x - 1) =$$
+$$= (x - 1)(x^2 + x + 1)  + ux(x - 1) = (x - 1)(x^2 + x + 1 + ux)$$
+and if latter holds, then
+$$x^3 + (v + 2)x^2 + vx - 1 = x^3 + vx^2 + 2x^2 + vx - 1 =
+vx(x + 1) + x^3 + 2x^2 - 1 = vx(x + 1) + (x + 1)(x^2 + x - 1) =
+(x + 1)(x^2 + x - 1 + vx)$$
+which gives us the forward implication.
 
 
 \end{document}
