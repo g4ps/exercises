@@ -7457,5 +7457,40 @@ vx(x + 1) + x^3 + 2x^2 - 1 = vx(x + 1) + (x + 1)(x^2 + x - 1) =
 (x + 1)(x^2 + x - 1 + vx)$$
 which gives us the forward implication.
 
+\subsection{}
+
+\textit{(a) Let
+  $$f(x) = 3x^6 - x^5 - 4x^4 + x^3 - x^2 + 3$$
+  Use Corollary 8.32 to prove that $f(x)$ is irreductible in $Q$}
+
+The most obvious prime of choice in this case has to be 2. We follow
+that
+$$\overline{f}(x) = x^6 + x^5 + x^3 + x^2 + 1$$
+By trivial computation we follow that this thing has no roots. Thus we
+follow that if this thing is reducible, then one of its factors has
+got to be irreductible of order $2$ or $3$.
+
+We then follow that
+$$x^6 + x^5 + x^3 + x^2 + 1 = (x^2 + x + 1)(x^4 + x^2) + 1$$
+and similarly
+$$x^6 + x^5 + x^3 + x^2 + 1 = (x^3 + x + 1)(x^3 + x^2 + x + 1) + x^2 + x$$
+$$x^6 + x^5 + x^3 + x^2 + 1 = (x^3 + x^2 + 1)(x^3) + x^2 + 1 $$
+thus giving us the desired conclusion that $\overline{f}$ is indeed
+irreductible, and thus by the straightforward implication of the
+corollary in question we get the desired result.
+
+\textit{The rest of this one is tedious; skip}
+
+\subsection{}
+
+\textit{Let $\Phi_1(x) = x- 1$, and for $n \geq 1$, define the $n$th
+  cyclotomic polynomial $\Phi(x)$ inductively by the formula
+  $$x^n - 1 = \prod_{m | n}{\Phi_m(x)}$$
+  as described in Definition 8.37
+}
+
+\textit{(a) Compute $\Phi_n(x)$ for all $2 \leq n \leq 10$}
+
+TODO
 
 \end{document}
