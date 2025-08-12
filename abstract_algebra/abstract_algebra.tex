@@ -7569,6 +7569,31 @@ and $x^2 + 1$. With $R$ we have $x^2 - 1$, $x^2 - 2$ and $x^3 -
 check all of the fields for irreductibility with direct computation
 and existence of roots
 
+\section{Fields of Algebraic Numbers}
 
+\textit{Let $L/F$ be an extension of fields, let $\alpha \in L$, and suppose
+  that $\alpha \neq 0$ and that $\alpha$ is algebraic over $F$.
+  Prove directly from definition that $\alpha\inv$ is algebraic over $F$.}
+
+Since $\alpha \in L$ is algebraic over $F$ directly from definition
+we follow that there is $f \in F[x]$ such that
+$$f(\alpha) = 0$$
+thus there are $a_0, a_1, ..., a_n$ such that
+$$f(x) = \sum{a_i x^i}$$
+and thus
+$$f(\alpha) = \sum{a_i \alpha^i}$$
+Since $\alpha$ is the root we follow that
+$$\sum{a_i \alpha^i} = 0$$
+and thus
+$$\alpha^{-n} \sum{a_i \alpha^i} = 0$$
+thus implying that (we're gonna expand the list under sum here for
+clarity and relabel order in the last equalities)
+$$\sum_{0 \leq i \leq n}{a_i \alpha^{i - n}} =
+\sum_{0 \leq i \leq n}{a_i (\alpha\inv)^{n - i}} =
+\sum_{0 \leq i \leq n}{a_{n - i} (\alpha\inv)^{i}} = 0$$
+Therefore we are able to conclude that $\alpha\inv$ is the root of 
+$$g(x) = \sum_{0 \leq i \leq n}{a_{n - i} x^i}$$
+(long story short: if we reverse the order of the coefficients, then
+roots invert; )
 
 \end{document}
