@@ -7571,6 +7571,8 @@ and existence of roots
 
 \section{Fields of Algebraic Numbers}
 
+\subsection{}
+
 \textit{Let $L/F$ be an extension of fields, let $\alpha \in L$, and suppose
   that $\alpha \neq 0$ and that $\alpha$ is algebraic over $F$.
   Prove directly from definition that $\alpha\inv$ is algebraic over $F$.}
@@ -7595,5 +7597,31 @@ Therefore we are able to conclude that $\alpha\inv$ is the root of
 $$g(x) = \sum_{0 \leq i \leq n}{a_{n - i} x^i}$$
 (long story short: if we reverse the order of the coefficients, then
 roots invert; )
+
+\subsection{}
+
+\textit{Let $L/F$ be an extension of fields, and let $\alpha_1, ..., \alpha_r$ be
+  algebraic over $F$.}
+
+\textit{(a) Prove that $F[a_1, ..., a_r] = F(a_1, ..., a_r)$}
+
+From definition we follow that $F[a_1, ..., a_n][a_{n + 1}] = F[a_1, ..., a_{n + 1}]$,
+and similarly $F(a_1, ..., a_n)(a_{n + 1}) = F(a_1, ..., a_{n + 1})$. Thus the
+fact that every single $a_1, ..., a_r$ is algebraic implies the desired result.
+
+\textit{(b) Prove that
+  $$[F(a_1, ..., a_r) : F] \leq \prod{[F(a_i): F]}$$
+}
+
+We can follow that since we have a tower of fields
+$$F \subseteq F(a_1) \subseteq F(a_1, a_2)
+\subseteq  .... \subseteq F(a_1, ..., a_r)$$
+we've got
+$$[F(a_1, ..., a_r) : F] = \prod{[F(a_1, ..., a_i):F(a_1, ..., a_{i - 1})]}$$
+
+Let $L, K, F$ be fields such that $L / K / F$, and let $[K:F]$ be finite.
+Let $\alpha \in L$. Suppose that $k_1, ..., k_n$ spans $K$ if we take it as a
+vector space of the $F$. TODO
+
 
 \end{document}
