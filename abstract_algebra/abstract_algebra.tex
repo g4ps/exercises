@@ -7615,13 +7615,54 @@ fact that every single $a_1, ..., a_r$ is algebraic implies the desired result.
 
 We can follow that since we have a tower of fields
 $$F \subseteq F(a_1) \subseteq F(a_1, a_2)
-\subseteq  .... \subseteq F(a_1, ..., a_r)$$
-we've got
-$$[F(a_1, ..., a_r) : F] = \prod{[F(a_1, ..., a_i):F(a_1, ..., a_{i - 1})]}$$
+\subseteq .... \subseteq F(a_1, ..., a_r)$$
+we've got (due to 5.18)
+$$[F(a_1, ..., a_r) : F] =
+\prod{[F(a_1, ..., a_i):F(a_1, ..., a_{i - 1})]}$$
 
-Let $L, K, F$ be fields such that $L / K / F$, and let $[K:F]$ be finite.
-Let $\alpha \in L$. Suppose that $k_1, ..., k_n$ spans $K$ if we take it as a
-vector space of the $F$. TODO
+Now let us look at
+$$[F(a_2):F]$$
+We can follow that since $\alpha_2$ is algebraic over $F$ that there
+is a minimal polynomial $\Phi_{F, \alpha_2}(x)$ with degree $d$, that
+is also a (not necessarily minimal) polynomial in both $F(\alpha_1,
+\alpha_2)$ and $F(\alpha_1)$ (since $F$ is a subfield of both of them)
+whose roots include $\alpha_2$. Therefore if $\Phi_{F(\alpha_1),
+\alpha_2}(x)$ is a minimal polynomial with respect to $F(\alpha_1)$,
+then its degree by definition is less or equal to $\Phi_{F,
+\alpha_2}(x)$, thus giving us
+$$\deg(\Phi_{F(\alpha_1), \alpha_2}(x)) \leq \deg(\Phi_{F, \alpha_2}(x))$$
+which by 9.10(c) implies that
+$$[F(\alpha_1, \alpha_2): F(\alpha_1)] = [F(\alpha_1)(\alpha_2): F(\alpha_1)] =
+\deg(\Phi_{F(\alpha_1), \alpha_2}(x)) \leq \deg(\Phi_{F, \alpha_2}(x)) = [F(\alpha_2): F]$$
+We can generalize this result to give us the inequality
+$$[F(a_1, ..., a_i):F(a_1, ..., a_{i - 1})] \leq [F(\alpha_i) : F]$$
+which implies desired result.
 
+\textit{(c) Suppose that the degrees $[F(\alpha_i):F]$ are pairwise relatively prime.
+  Prove that the inequality in (b) is an equality}
+
+We can follow that the fact that $[F(\alpha_i):F]$ are relatively
+prime implies that degrees of $\Phi_{F, \alpha_i}(x)$ are relatively
+prime, which implies that if
+$\deg(\Phi_{F(\alpha_i), \alpha_j}(x)) < \deg(\Phi_{F, \alpha_j}(x))$
+then $\Phi_{F, \alpha_j}(x)$ is a multiple of $\Phi_{F(\alpha_i), \alpha_j}(x)$.
+
+$$\Phi_{F(\alpha_i), \alpha_j}(x) = \sum{f_i x^j}$$
+thusn
+$$\Phi_{F(\alpha_i), \alpha_j}(x) = \sum{ \alpha^j x}$$
+
+
+This further implies that there is $g \in F(\alpha(i))[x]$ such that
+$$\Phi_{F, \alpha_j}(x) = \Phi_{F(\alpha_i), \alpha_j}(x)g(x)$$
+we follow that $g(x) \notin F[x]$
+
+$$[F(\alpha_i, q) : F] = [F(\alpha_1), F(q)] : [F(q) : F] $$
+$$[F(\alpha_j, q) : F] = [F(\alpha_j), F(q)] : [F(q) : F] $$
+
+$$F(\alpha_i, \alpha_j):F] = [F(\alpha_i, \alpha_j):F(\alpha_i)] * [F(\alpha_i) : F]$$
+$$F(\alpha_i, \alpha_j):F] = [F(\alpha_i, \alpha_j):F(\alpha_j)] * [F(\alpha_j) : F]$$
+$$[F(\alpha_i, \alpha_j): F(\alpha_i)] < [F(\alpha_j), F]$$
+
+TODO
 
 \end{document}
