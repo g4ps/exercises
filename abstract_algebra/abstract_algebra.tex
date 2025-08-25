@@ -7596,7 +7596,7 @@ $$\sum_{0 \leq i \leq n}{a_i \alpha^{i - n}} =
 Therefore we are able to conclude that $\alpha\inv$ is the root of 
 $$g(x) = \sum_{0 \leq i \leq n}{a_{n - i} x^i}$$
 (long story short: if we reverse the order of the coefficients, then
-roots invert; )
+roots invert;)
 
 \subsection{}
 
@@ -7641,28 +7641,59 @@ which implies desired result.
 \textit{(c) Suppose that the degrees $[F(\alpha_i):F]$ are pairwise relatively prime.
   Prove that the inequality in (b) is an equality}
 
+Let us start small. Suppose that $\alpha_1, \alpha_2$ are both
+algebraic over $F$, and $[F(\alpha_1), F], [F(\alpha_2), F]$ are
+relatively prime. We want to show that $[F(\alpha_1, \alpha_2): F]$
+is equal to product of its degrees.
+
+We follow that $F(\alpha_1) = F[\alpha_1]$, and thus for $f \in F(\alpha_1)$
+we have that
+$$f = \sum{f_i \alpha_1^i}$$
+for $f_i \in F$. 
+
+We firstly follow that
+$$[F(\alpha_1, \alpha_2): F] = [F(\alpha_1, \alpha_2): F(\alpha_1)] [F(\alpha_1), F]$$
+and
+$$[F(\alpha_1, \alpha_2): F] = [F(\alpha_1, \alpha_2): F(\alpha_2)] [F(\alpha_2), F]$$
+and thus we might want to prove that
+$$[F(\alpha_1, \alpha_2): F(\alpha_1)] = [F(\alpha_2): F]$$
+$$[F(\alpha_1, \alpha_2): F(\alpha_2)] = [F(\alpha_1): F]$$
+Thus if we assume that it is not the case, then
+
 We can follow that the fact that $[F(\alpha_i):F]$ are relatively
 prime implies that degrees of $\Phi_{F, \alpha_i}(x)$ are relatively
-prime, which implies that if
-$\deg(\Phi_{F(\alpha_i), \alpha_j}(x)) < \deg(\Phi_{F, \alpha_j}(x))$
-then $\Phi_{F, \alpha_j}(x)$ is a multiple of $\Phi_{F(\alpha_i), \alpha_j}(x)$.
-
-$$\Phi_{F(\alpha_i), \alpha_j}(x) = \sum{f_i x^j}$$
-thusn
-$$\Phi_{F(\alpha_i), \alpha_j}(x) = \sum{ \alpha^j x}$$
-
-
-This further implies that there is $g \in F(\alpha(i))[x]$ such that
-$$\Phi_{F, \alpha_j}(x) = \Phi_{F(\alpha_i), \alpha_j}(x)g(x)$$
-we follow that $g(x) \notin F[x]$
-
-$$[F(\alpha_i, q) : F] = [F(\alpha_1), F(q)] : [F(q) : F] $$
-$$[F(\alpha_j, q) : F] = [F(\alpha_j), F(q)] : [F(q) : F] $$
-
-$$F(\alpha_i, \alpha_j):F] = [F(\alpha_i, \alpha_j):F(\alpha_i)] * [F(\alpha_i) : F]$$
-$$F(\alpha_i, \alpha_j):F] = [F(\alpha_i, \alpha_j):F(\alpha_j)] * [F(\alpha_j) : F]$$
-$$[F(\alpha_i, \alpha_j): F(\alpha_i)] < [F(\alpha_j), F]$$
+prime, which implies that if $\deg(\Phi_{F(\alpha_i), \alpha_j}(x)) <
+\deg(\Phi_{F, \alpha_j}(x))$ then $\Phi_{F, \alpha_j}(x)$ is a
+multiple of $\Phi_{F(\alpha_i), \alpha_j}(x)$.  Thus there is
+nonconstant $g \in F(\alpha_i)[x]$ such that
+$$g(x)\Phi_{F(\alpha_i), \alpha_j}(x) = \Phi_{F, \alpha_j}(x)$$
+We follow that $g(x)$ is a monic polynomial (since if it isn't, then
+$\Phi_{F, \alpha_j}(x)$ isn't, which is false). We also follow that $g$ does
+not have roots in $F$ (otherwise $x - q$ is a factor in $\Phi_{F, \alpha_j}$)
 
 TODO
+
+\textit{(d) Suppose that
+  $$F(\alpha_i) \cap F(\alpha_j) = F$$
+for all $i \neq j$. Does this imply the inequality in (b)?
+}
+
+TODO
+
+\subsection{}
+
+\textit{Let $L/K/F$ be a tower of fields. Prove that if $L$ is agebraic over $K$,
+  and $K$ is algebraic over $F$, then $L$ is algebraic over $F$.}
+
+Suppose that $\alpha \in L$. We follow that there is $g \in K[x]$
+such that
+$$g(\alpha) = 0$$
+We also follow that
+$$g = \sum{a_i x^i}$$
+and since $K$ is algebraic over $F$ we follow that each $a_i$ is algebraic over $F$.
+Thus there are polynomials $f_i$ such that
+$$f_i(\alpha_i) = 0$$
+We follow further that $\prod{f_i}$ has all $\alpha_i$'s as its root.
+
 
 \end{document}
