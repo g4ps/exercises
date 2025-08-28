@@ -7649,7 +7649,7 @@ is equal to product of its degrees.
 We follow that $F(\alpha_1) = F[\alpha_1]$, and thus for $f \in F(\alpha_1)$
 we have that
 $$f = \sum{f_i \alpha_1^i}$$
-for $f_i \in F$. 
+for $f_i \in F$.
 
 We firstly follow that
 $$[F(\alpha_1, \alpha_2): F] = [F(\alpha_1, \alpha_2): F(\alpha_1)] [F(\alpha_1), F]$$
@@ -7671,6 +7671,22 @@ We follow that $g(x)$ is a monic polynomial (since if it isn't, then
 $\Phi_{F, \alpha_j}(x)$ isn't, which is false). We also follow that $g$ does
 not have roots in $F$ (otherwise $x - q$ is a factor in $\Phi_{F, \alpha_j}$)
 
+We follow then that
+$$\deg\Phi_{F(\alpha_i), \alpha_j}(x) = [F(\alpha_i, \alpha_j), F(\alpha_j)]$$
+and therefore
+$$F[(\alpha_j, \alpha_j): F] = [F(\alpha_i, \alpha_j), F(\alpha_j)] * F[(\alpha_j) : F]$$
+
+
+Let $f_1, f_2, ..., f_n$ be basis for $F(\alpha_1)$ if we were to see
+it as a vector space over $F$. Does the same list span $F(\alpha_1, \alpha_2)$
+if we were to see it as a vector space over $F(\alpha_2)$?
+
+We can follow that any given $q \in F(\alpha_1, \alpha_2)$ can be
+represented as
+$$\sum\sum{a_{i, j}\alpha_1^i \alpha_2^j}$$
+for $a_{i, j} \in F$ due to the fact that $F(\alpha_1, \alpha_2) = F[\alpha_1,
+\alpha_2]$. Thus we follow that there is 
+
 TODO
 
 \textit{(d) Suppose that
@@ -7678,6 +7694,19 @@ TODO
 for all $i \neq j$. Does this imply the inequality in (b)?
 }
 
+% Suppose that
+% $$F(\alpha_i) \cap F(\alpha_j) \neq F$$
+% we follow then that there is $q \in F(\alpha_i) \cap  F(\alpha_j)$ such
+% that $q \notin F$. Therefore $F(q) \neq F$, and moreover
+% $$[F(q) : F] > 1$$
+% We also have that
+% $$F(q) \subseteq F(\alpha_i)$$
+% and
+% $$F(q) \subseteq F(\alpha_j)$$
+% and thus we have 
+% $$[F(\alpha_i) : F] = [F(\alpha_i) : F(q)] [F(q) : F]$$
+% $$[F(\alpha_j) : F] = [F(\alpha_j) : F(q)] [F(q) : F]$$
+% which implies that $[F(q) : F] > 1$ divides both $[F(\alpha_i) : F]$
 TODO
 
 \subsection{}
@@ -7693,7 +7722,21 @@ $$g = \sum{a_i x^i}$$
 and since $K$ is algebraic over $F$ we follow that each $a_i$ is algebraic over $F$.
 Thus there are polynomials $f_i$ such that
 $$f_i(\alpha_i) = 0$$
-We follow further that $\prod{f_i}$ has all $\alpha_i$'s as its root.
+We follow further that $\prod{f_i}$ has all $\alpha_i$'s as its roots.
 
+TODO
+
+\subsection{}
+
+\textit{Compute the minimal polynomials of the indicated numbers over
+  the indicated fields}
+
+$$x^2 - 3$$
+$$x^2 - 3$$
+$$x - \sqrt{3}$$
+$$x^2 - 1$$
+$$x - i$$
+$$x - i$$
+TODO the rest
 
 \end{document}
