@@ -7641,72 +7641,24 @@ which implies desired result.
 \textit{(c) Suppose that the degrees $[F(\alpha_i):F]$ are pairwise relatively prime.
   Prove that the inequality in (b) is an equality}
 
-Let us start small. Suppose that $\alpha_1, \alpha_2$ are both
-algebraic over $F$, and $[F(\alpha_1), F], [F(\alpha_2), F]$ are
-relatively prime. We want to show that $[F(\alpha_1, \alpha_2): F]$
-is equal to product of its degrees.
-
-We follow that $F(\alpha_1) = F[\alpha_1]$, and thus for $f \in F(\alpha_1)$
-we have that
-$$f = \sum{f_i \alpha_1^i}$$
-for $f_i \in F$.
-
-We firstly follow that
-$$[F(\alpha_1, \alpha_2): F] = [F(\alpha_1, \alpha_2): F(\alpha_1)] [F(\alpha_1), F]$$
-and
-$$[F(\alpha_1, \alpha_2): F] = [F(\alpha_1, \alpha_2): F(\alpha_2)] [F(\alpha_2), F]$$
-and thus we might want to prove that
-$$[F(\alpha_1, \alpha_2): F(\alpha_1)] = [F(\alpha_2): F]$$
-$$[F(\alpha_1, \alpha_2): F(\alpha_2)] = [F(\alpha_1): F]$$
-Thus if we assume that it is not the case, then
-
-We can follow that the fact that $[F(\alpha_i):F]$ are relatively
-prime implies that degrees of $\Phi_{F, \alpha_i}(x)$ are relatively
-prime, which implies that if $\deg(\Phi_{F(\alpha_i), \alpha_j}(x)) <
-\deg(\Phi_{F, \alpha_j}(x))$ then $\Phi_{F, \alpha_j}(x)$ is a
-multiple of $\Phi_{F(\alpha_i), \alpha_j}(x)$.  Thus there is
-nonconstant $g \in F(\alpha_i)[x]$ such that
-$$g(x)\Phi_{F(\alpha_i), \alpha_j}(x) = \Phi_{F, \alpha_j}(x)$$
-We follow that $g(x)$ is a monic polynomial (since if it isn't, then
-$\Phi_{F, \alpha_j}(x)$ isn't, which is false). We also follow that $g$ does
-not have roots in $F$ (otherwise $x - q$ is a factor in $\Phi_{F, \alpha_j}$)
-
-We follow then that
-$$\deg\Phi_{F(\alpha_i), \alpha_j}(x) = [F(\alpha_i, \alpha_j), F(\alpha_j)]$$
-and therefore
-$$F[(\alpha_j, \alpha_j): F] = [F(\alpha_i, \alpha_j), F(\alpha_j)] * F[(\alpha_j) : F]$$
-
-
-Let $f_1, f_2, ..., f_n$ be basis for $F(\alpha_1)$ if we were to see
-it as a vector space over $F$. Does the same list span $F(\alpha_1, \alpha_2)$
-if we were to see it as a vector space over $F(\alpha_2)$?
-
-We can follow that any given $q \in F(\alpha_1, \alpha_2)$ can be
-represented as
-$$\sum\sum{a_{i, j}\alpha_1^i \alpha_2^j}$$
-for $a_{i, j} \in F$ due to the fact that $F(\alpha_1, \alpha_2) = F[\alpha_1,
-\alpha_2]$. Thus we follow that there is 
-
-TODO
+We follow that
+$$[F(\alpha_i, \alpha_j): F] = [F(\alpha_i, \alpha_j): F(\alpha_i)] [F(\alpha_i): F]$$
+$$[F(\alpha_i, \alpha_j): F] = [F(\alpha_i, \alpha_j): F(\alpha_j)] [F(\alpha_j): F]$$
+thus $[F(\alpha_i, \alpha_j): F]$ is divided by both $[F(\alpha_i): F]$ and
+$[F(\alpha_j): F]$. Since $[F(\alpha_i): F]$ and $[F(\alpha_j): F]$
+are pairwise prime we follow that their minimal positive common
+multiple is equal to their product, thus implying the fact that
+$$[F(\alpha_i, \alpha_j): F] = [F(\alpha_i): F] [F(\alpha_j): F]$$
+We can generalize this fact to get the desired result.
 
 \textit{(d) Suppose that
   $$F(\alpha_i) \cap F(\alpha_j) = F$$
-for all $i \neq j$. Does this imply the inequality in (b)?
+  for all $i \neq j$. Does this imply the inequality in (b)? Prove or give a counterexample
 }
 
-% Suppose that
-% $$F(\alpha_i) \cap F(\alpha_j) \neq F$$
-% we follow then that there is $q \in F(\alpha_i) \cap  F(\alpha_j)$ such
-% that $q \notin F$. Therefore $F(q) \neq F$, and moreover
-% $$[F(q) : F] > 1$$
-% We also have that
-% $$F(q) \subseteq F(\alpha_i)$$
-% and
-% $$F(q) \subseteq F(\alpha_j)$$
-% and thus we have 
-% $$[F(\alpha_i) : F] = [F(\alpha_i) : F(q)] [F(q) : F]$$
-% $$[F(\alpha_j) : F] = [F(\alpha_j) : F(q)] [F(q) : F]$$
-% which implies that $[F(q) : F] > 1$ divides both $[F(\alpha_i) : F]$
+Let $F(\alpha_i) \cap F(\alpha_j) \neq F$. We follow that $K =
+F(\alpha_i) \cap F(\alpha_j)$ is itself a field, and thus
+$$[F(\alpha_i, \alpha_j): F] = [F(\alpha_i, \alpha_j): K] [K:F]$$
 TODO
 
 \subsection{}
