@@ -7571,6 +7571,38 @@ and existence of roots
 
 \section{Fields of Algebraic Numbers}
 
+\subsection*{Notes}
+
+Given an algebraic $\alpha \in L$ for $L/F$ we are lead to believe
+that there is a unique minimal polynomial for $\alpha$. Let's prove its
+uniqueness. We can follow that since $\alpha$ is algebraic, there is
+$f \in F[x]$ such that
+$$f(\alpha) = 0$$
+we then follow that $f \in \ker E_\alpha$, and $\ker E_\alpha$ is an
+ideal, as proven somewhere in the book. Thus since $F[x]$ is a PID
+we follow that there is $g \in \ker E_\alpha$ that is a seed of
+$\ker E_\alpha$. Dividing $g$ by its leading coefficient
+we obtain monic $h$, that also generates $\ker E_\alpha$. Let now $k$
+be a monic seed for $\ker E_\alpha$. We follow that there is $l \in F[x]$
+such that
+$$k = lh$$
+we thus follow that $\deg k \geq \deg h$. Since $k$ also generates $\ker E_\alpha$
+we follow that there is $l'$ such that
+$$h = l'k$$
+thus implying that $\deg h \geq \deg k$, therefore giving us the fact that
+$$\deg h = \deg k$$
+therefore we conclude that $l$ in $k = lh$ is constant. Thus the equality of
+leading coefficients implies that $l = 1$, and thus 
+$$h = k$$
+as desired.
+
+One of the interesing consequences of this thing is the fact that if
+we take $l \in Z$, then $\sqrt{l}$ is not a root for
+$$x^2 + \beta x + \gamma$$
+for non-zero $\beta$ (i.e. all the roots of those kinds of polynomials
+are whacky).
+We also follow that 
+
 \subsection{}
 
 \textit{Let $L/F$ be an extension of fields, let $\alpha \in L$, and suppose
