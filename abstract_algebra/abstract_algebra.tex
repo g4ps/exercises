@@ -7698,17 +7698,19 @@ TODO
 \textit{Let $L/K/F$ be a tower of fields. Prove that if $L$ is agebraic over $K$,
   and $K$ is algebraic over $F$, then $L$ is algebraic over $F$.}
 
-Suppose that $\alpha \in L$. We follow that there is $g \in K[x]$
-such that
+Suppose that $\alpha \in L$. We follow that $[K(\alpha):K]$ is finite
+We follow that there is $g \in K[x]$ such that
 $$g(\alpha) = 0$$
 We also follow that
 $$g = \sum{a_i x^i}$$
-and since $K$ is algebraic over $F$ we follow that each $a_i$ is algebraic over $F$.
-Thus there are polynomials $f_i$ such that
-$$f_i(\alpha_i) = 0$$
-We follow further that $\prod{f_i}$ has all $\alpha_i$'s as its roots.
-
-TODO
+We then follow that $F(a_1, a_2, ..., a_n)$ is finite extension of
+$F$.  We also have that $g \in F(a_1, a_2, ..., a_n)[X]$, thus
+implying that $\alpha$ is algebraic over $F(a_1, ..., a_n)$. Thus we
+have that $F(a_1, ..., a_n)(\alpha) = F(a_1, ..., a_n, \alpha)$ is
+finite extension of $F$. $F(\alpha)$ is a subfield of $F(a_1, ...,
+a_n, \alpha)$, which implies that it is a finite extension of $F$,
+thus implying that $\alpha$ is algebraic over $F$. And since $\alpha$
+is arbitrary we follow the desired result. 
 
 \subsection{}
 
@@ -7722,5 +7724,13 @@ $$x^2 - 1$$
 $$x - i$$
 $$x - i$$
 TODO the rest
+
+
+\subsection{}
+
+\textit{Let $K/F$ be an algebraic extension of fields, and let
+  $\alpha, \beta \in K$. Suppose that
+  $$gcd(\deg\Phi_{F, \alpha}(X), \deg\Phi_{F, \beta}(X)) = 1$$
+  Prove that $\Phi_{F, \beta}(X)$ is irreductible in $F(\alpha)[X]$}
 
 \end{document}
