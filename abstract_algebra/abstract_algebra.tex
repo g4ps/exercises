@@ -7698,7 +7698,7 @@ TODO
 \textit{Let $L/K/F$ be a tower of fields. Prove that if $L$ is agebraic over $K$,
   and $K$ is algebraic over $F$, then $L$ is algebraic over $F$.}
 
-Suppose that $\alpha \in L$. We follow that $[K(\alpha):K]$ is finite
+Suppose that $\alpha \in L$.
 We follow that there is $g \in K[x]$ such that
 $$g(\alpha) = 0$$
 We also follow that
@@ -7732,5 +7732,53 @@ TODO the rest
   $\alpha, \beta \in K$. Suppose that
   $$gcd(\deg\Phi_{F, \alpha}(X), \deg\Phi_{F, \beta}(X)) = 1$$
   Prove that $\Phi_{F, \beta}(X)$ is irreductible in $F(\alpha)[X]$}
+
+Suppose that
+$$gcd(\deg\Phi_{F, \alpha}(X), \deg\Phi_{F, \beta}(X)) = 1$$
+We can follow that
+$$gcd([F(\alpha), F], [F(\beta), F]) = 1$$
+Thus one of the previous exercises dictates that
+$$[F(\alpha, \beta): F] = [F(\alpha): F][F(\beta): F]$$
+Now if $\Phi_{F, \beta}$ is reductible within $F(\alpha)[X]$,
+then we follow that
+$$ \deg \Phi_{F(\alpha), \beta} < \deg \Phi_{F, \beta} $$
+thus giving us that
+$$ [F(\alpha, \beta), F(\alpha)] < [F(\beta), F] $$
+and therefore
+$$ [F(\alpha, \beta) : F] =
+[F(\alpha, \beta) : F(\alpha)] * [F(\alpha) : F]
+< [F(\beta), F] * F[(\alpha), F] $$
+which gives us contradiction.
+
+\subsection{}
+
+\textit{For every $n \geq 1$, let
+  $$ K_n = Q(\sqrt[2^n]{2}) $$}
+
+\textit{(a) Prove that $K_1 \subseteq K_2 \subseteq K_3 \subseteq ... $. Let
+  $$K = \bigcup_{n \geq 1}{K_n}$$
+  Prove that $K$ is a field.}
+
+Let $n > 1$. We follow that
+$$ \sqrt[2^{n - 1}]{2} = \sqrt[2^{n}]{2}  \sqrt[2^{n}]{2} $$
+Thus implying that $K_{n - 1} \subseteq K_n$, which implies the
+desired tower of $\subseteq$. The fact that each of them is a field
+follows directly from definition, and the fact that a union of a tower
+of fields is a field follows trivialy (see 5th chapter for clarity).
+
+\textit{(b) Prove that every $\alpha \in K$ is algebraic over $Q$.}
+
+We can follow that by definition, or trivial implication thereof we have that
+each $K_n$ is algebraic. For $\alpha \in K$ we have $n \in \omega$ such that
+$\alpha \in K_n$, which implies the desired result.
+
+\textit{(c) Prove that $[K:Q] = \infty$; i.e. prove that $K$ is an
+infinite-dimentional vector space.}
+
+We can follow that each $K_n$ is an $2^n$ dimentional subspace of $K$
+with respect to $Q$, and since $K_n \subseteq K$ for each $n$ we
+conclude that there is no $n \in \omega$ such that $[K:Q] = n$,
+as desired.
+
 
 \end{document}
