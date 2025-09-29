@@ -7780,5 +7780,61 @@ with respect to $Q$, and since $K_n \subseteq K$ for each $n$ we
 conclude that there is no $n \in \omega$ such that $[K:Q] = n$,
 as desired.
 
+\section{Algebraically Closed Fields}
+
+\subsection{}
+
+\textit{Prove that a field $K$ is an algebraically closed field iff every non-zero
+  polynomial in $K[x]$ splits completely over $K$.}
+
+We can follow that if $K$ is algebraically closed, then nonconstant
+polynomial $f(x)$ of degree $n$ splits into
+$$f(x) = (x - a)g(x)$$
+where $a$ is a root of $f(x)$ (due to some theorem in 8th chapter)
+where $\deg g = \deg f - 1$. Thus by induction we have the forward
+implication.
+
+If every polynomial splits completely in $K[x]$, then for nonconstant
+polynomial $f$ we have some factor $(x - a)$, thus implying that $a$
+is a root for $f$, which gives us the reverse.
+
+
+\subsection{}
+
+\textit{Let $F$ be a field, let $K/F$ be an extension such that $K$ is
+  algebraically closed. Let
+  $$L = \set{a \in K: a \text{ is algebraic over } F}$$
+  Prove that $L$ is an algebraically closed field.  }
+
+Let $f \in L[x]$ be nonconstant. We follow that there is $a \in K$
+such that $f(a) = 0$. Thus $a$ is algebraic over $L$. 
+By definition we follow that $L$ is an algebraic extension of $F$.
+Thus by an exercise in previous section that asserts that algebraic
+extensions are transitive over towers of fields we have that
+$a$ is algebraic over $F$. Therefore by definition of $L$ we have that
+$a \in L$, which implies that $L$ is algebraically closed, as desired.
+
+\subsection{}
+
+\textit{Let $F$ be a field, let $K/F$ be an extension field, and
+assume that $K$ is algebraically closed. Prove that the following are
+equivalent:}
+
+\textit{(1) The only algebraically closed field $L$ satisfying $F
+\subseteq L \subseteq K$ is $L = K$}
+
+\textit{(2) $K$ is algebraic over $F$.}
+
+Assume 1. We follow that the field defined as in the previous exercise
+is equal to $K$ and is an algebraic extension of $F$, which implies 2.
+
+Assume 2. Suppose that $F/L/K$ is a tower of fields such that $L$ is
+algebraically closed. Thus since $L \subseteq K$ we have that $L$ is
+an algebraic extension of $F$. Let $k \in K$. We follow that
+$k$ is algebraic over $F$, and thus a root of a minimal polynomial
+$\Phi_{F, k}(x) \in F[x]$. This polynomial splits completely in $L$
+due to the fact that $L$ is algebraically closed, which implies that
+$k \in L$, which further implies that $K \subseteq L$, which
+gives us 1. 
 
 \end{document}
