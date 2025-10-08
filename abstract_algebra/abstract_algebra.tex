@@ -7835,6 +7835,23 @@ $k$ is algebraic over $F$, and thus a root of a minimal polynomial
 $\Phi_{F, k}(x) \in F[x]$. This polynomial splits completely in $L$
 due to the fact that $L$ is algebraically closed, which implies that
 $k \in L$, which further implies that $K \subseteq L$, which
-gives us 1. 
+gives us 1.
+
+\section{Automorphisms of Fields}
+
+\subsection{}
+
+\textit{Let $K$ be a field of characteristic 0, so $K$ contains a
+  (unique) copy of $Q$.  Prove that every field automorphism $\sigma: K
+  \to K$ fixes every element of $Q$}
+
+We can follow that $\sigma(1) = 1$ by definition, and thus we have
+that
+$$\sigma(n + 1) = \sigma(n) + \sigma(1) = n + 1$$
+therefore by induction we have that $\sigma$ fixes $Z$. Then we have
+that $\sigma(n\inv) = \sigma(n)\inv = n\inv$ by properties of
+homomorphism, and thus
+$$\sigma(n/m) = \sigma(n * (1/m)) = \sigma(n) * \sigma(1/ m) = n * (1/m) = n/m$$
+thus proving that $\sigma$ indeed fixes $Q$, as desired.
 
 \end{document}
