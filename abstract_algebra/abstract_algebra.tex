@@ -7850,8 +7850,86 @@ that
 $$\sigma(n + 1) = \sigma(n) + \sigma(1) = n + 1$$
 therefore by induction we have that $\sigma$ fixes $Z$. Then we have
 that $\sigma(n\inv) = \sigma(n)\inv = n\inv$ by properties of
-homomorphism, and thus
+field homomorphism (see 5.4), and thus
 $$\sigma(n/m) = \sigma(n * (1/m)) = \sigma(n) * \sigma(1/ m) = n * (1/m) = n/m$$
 thus proving that $\sigma$ indeed fixes $Q$, as desired.
+
+\subsection{}
+
+\textit{Prove taht $G(Q(\sqrt[3]{2})/Q)$ is the trivial group.}
+
+Let $\sigma$ be an isomorphism of $Q(\sqrt[3]{2})$. We know that the
+identity is present within the group, thus let us assume that $\sigma$
+is not an identity. This means that there is $q \in Q(\sqrt[3]{2})$
+such that
+$$\sigma(q) \neq q$$
+From the previous point we know that $\sigma$ fixes $Q$, and thus we
+follow that $q \notin Q$. Therefore we follow that
+$$q = a + b\sqrt[3]{2} + c\sqrt[3]{2}^2$$
+for some $a, b, c \in Q$ such that $b$ or $c$ is nonzero. Therefore
+we have that
+$$\sigma(q) = \sigma(a) + \sigma(b\sqrt[3]{2}) + \sigma(c\sqrt[3]{2}^2) =
+\sigma(a) + \sigma(b)\sigma(\sqrt[3]{2}) + \sigma(c)\sigma(\sqrt[3]{2}^2) =
+a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2}^2)$$
+where we have the latter equality due to the previous exercise.
+
+We follow that $\sqrt[3]{2}$ is the root of
+$$f(x) = x^3 - 2$$
+Thus $\sigma(\sqrt[3]{2})$ is also the root of
+$$x^3 - 2$$
+Since this polynomial's only root is $\sqrt[3]{2}$ we follow that
+$\sigma$ fixes $\sqrt[3]{2}$. Thus
+$$a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2}^2) =
+a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2})^2 =
+a + b\sqrt[3]{2} + c\sqrt[3]{2}^2 = q$$
+which means that $q = \sigma(q)$, which is a contradiction, that gives
+us the desired result.
+
+\subsection{}
+
+\textit{Let $K/F$ be a finite extension of fields, and let $\phi: K
+  \to K$ be a field homomorphism, that fixes the elements of $F$. Prove
+  that $\phi$ is an isomorphism.}
+
+Every field homomorphism is an injection (due to 5.4). Since $K$ is
+finite we follow that $\phi$ is also surjective, which gives us the
+desired result.
+
+
+\subsection{}
+
+\textit{Let $F$ be a field, and let $F(T)$ be the field of rational
+functions. Define
+  $$\sigma, \tau: F(T) \to F(T): \sigma(p(T)) = p(T\inv); \tau(p(T)) = p(T^2)$$}
+
+\textit{(a) Prove that $\sigma, tau$ are field homomorphisms that fix
+$F$. Prove that $\sigma$ is a field automorphism of $F(T)$, but that
+$\tau$ is not}
+
+Since neither of them include elements of $F$ in their definition, it
+is trivial to follow that both functions fix $F$.
+
+By expansion we can prove that the given functions are homomorphisms.
+
+There is no $x$ in the image of $\tau$, which implies that it is not
+an automorphism.
+
+\textit{(b) Prove that $\sigma^2 = e$, but that no iterate of $\tau$
+  is the identity element.}
+
+Former derives directly from the definition, and the latter is
+proven by induction on the application on $x$ (i.e.
+every application of $\tau$ increases the degree of $x$)
+
+\textit{(c) Find an element $u \in F(T)$ such that
+  $$\set{p(T) \in F(T): \sigma(p(T)) = p(T)} = F(u)$$
+}
+
+Skip due to confusion about the requirements of the exercise.
+
+\textit{(d) What are elements of $F(T)$ that are fixed by $\tau$?}
+
+Those elements are exclusively $F$ since if $T$ is somewhere within the
+definition, then its power will increase (both in numerator and discriminator)
 
 \end{document}
