@@ -7949,6 +7949,36 @@ $\theta': R_1/c_1R_1 \to R_2/c_2 R_2$ The rest of the proof is
 somewhat trivial, and I can almost swear that I've seen the usage of
 this thing in the book, but for the life of me I cannot find it.
 
+\textit{With regards to 9.6.1:}
+
+We firstly state that initial polynomial is $F = Q$. Then we follow
+that $f(X)$ is split correctly as shown (where we derive the split by
+the formula of sum of squares, and as is noted in example 8.15). Then
+we note that given the roots of the polynomials, the splitting field
+ought to have at least $\sqrt[4]{2}$ and $i$ in it, and thus minimal
+field that contains such elements is $Q(\sqrt[4]{2}, i)$ (as also
+apparently implied in 8.15) Any proper subfield of this field would not
+contain one of the elements, thus will not contain roots, and therefore
+the given field is indeed a splitting field.
+
+Then 9.23 gives us that we can take $F_1 = F_2 = Q$ with identity as
+isomorphism. Then we can take root $\alpha_1 = \sqrt[4]{2}$ and
+$\alpha_2 \in \set{\sqrt[4]{2}, -\sqrt[4]{2}, i\sqrt[4]{2},
+i\sqrt[4]{2}}$, and then 9.23 will produce isomorphisms
+$$\psi_{\alpha_2}: Q(\sqrt[4]{2}) \to Q(\alpha_2)$$
+for all given $\alpha_2$'s. By expanding the codomain to
+$Q(\sqrt[4]{2}, i)$ we get 4 homomorphisms (surjectivity obviously
+takes a hike). We then assume that there is a homomorphism $\theta$
+with same domain/codomain. We get that $\theta$ maps $\sqrt[4]{2}$ to
+one of the roots (otherwise if it does not, then we have that
+$\theta(f(\sqrt[4]{2})) \neq 0$ and thus homomorphism is not a
+homomorphism), and thus this $\theta$ is one if the $\psi$'s by
+definition.
+
+Similar reasoning holds for $X^2 + 1$. And then the rest is group
+theory.
+
+
 \subsection{}
 
 \textit{Show that Lemma 9.23 is false for
