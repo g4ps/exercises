@@ -7200,6 +7200,13 @@ modding both sides by $4$ gives the desired result.
 
 \subsection*{Notes}
 
+With regards to examples: in some of the examples we do not provide
+the initial field, and where it is not provided it is presumingly assumed
+that the field is $Q$. On top of that we do not state that the given
+splitting fields are "the" splitting fields, only stating that they
+are "a" splitting field (i.e. uniqueness is not assumed). Uniqueness
+up to an isomorphism is proven further in the book; in the next chapter.
+
 In regards with theorem 8.24 (that states that $f \in F[x]$ is
 separable iff $gcd(f, f') = 1$): definition of $gcd$ for arbitrary PID is
 found in the first exercise of section 7.2. This also incapsulates the
@@ -7223,6 +7230,11 @@ assumption, but $gcd(f(x), f'(x)) \neq 1$ from the latter, which given
 us the contradiction, and thus implies that if $f(x)$ is separable in
 $L$, then it is also separable in $L'$ (mutatis mutandis with
 inseparable)
+
+Further on in the 9th chapter we develop the proof for the fact that
+any splitting fields of the same polynomial are isomorphic. This proof
+does not depend on separability in any case, and thus our rigor
+remains solid.
 
 \subsection{}
 
@@ -7992,5 +8004,60 @@ we would expect it to be either both reductible or both irrecuctible
 section).  This particular case does not fit the requirements of the
 lemma, since the given polynomial is reducible
 $$x^4 - 5x^2 + 6 = (x^2 - 2)(x^2 - 3)$$
+
+\section{Splitting Fields - Part 2}
+
+\subsection*{Notes}
+
+With regards to proof of 9.31: in it we want among other things to
+prove that there are exactly $r$ homomorphisms between $F(\alpha)$ and
+$K$. I'm a little bit fuzzy on our assertion that $\sigma$ is
+completely determined by the choice of $\sigma(\alpha)$. Thus assume
+that $\sigma_1, \sigma_2: F(\alpha) \to K$ map $F$ as identity and
+$\alpha$ to $\alpha_1$. We follow that since $\alpha$ is algebraic
+over $F$ that $F(\alpha) = F[\alpha]$. Thus any element of $F(\alpha)$
+is a linear combination of powers of $\alpha$ with respect to field
+$F$.  This now directly implies that for $g \in F(\alpha)$ we have
+that
+$$\sigma_1(g) = \sigma_1(\sum{a_i \alpha^i}) = \sum{\sigma_1(a_i) \sigma_1(\alpha)^i}) =$$
+$$ = \sum{a_i \alpha_r^i}) = \sum{a_i \sigma_2(\alpha)^i}) = \sigma_2(g)$$
+thus implying the desired uniqueness. The rest of the proof is then
+trivial.
+
+\subsection{}
+
+\textit{Let $F$ be a characteristic 0, let $f(x) \in F[x]$, and let
+$K/F$ be a splitting field for $f(x)$ over $F$.}
+
+\textit{(a) We know from Corollary 7.20 that we can factor $f(x)$ as a
+  product of irreductible polynomials, say
+  $$f(x) = c g_1(x)^{e_1} g_2(x)^{e_2} ... g_r(x)^{e_r}$$
+  where $g_1, ..., g_r \in F[x]$ are distinct monic irreductible
+  polynomials. Prove that $g_i(x)$ and $g_j(x)$ have a common root if
+  and only if $i = j$. }
+
+Reverse direction is trivial. Assume now that there is $a \in K$ such
+that $g_i(a) = g_j(a) = 0$. We follow then that they are both
+multiples of $\Phi_F(a)$, and since both of them are irreductible and
+monic we follow that $g_i = g_j = \Phi_F(a)$, as desired (uniqueness
+of such a polynomial is discussed in the notes of the appropriate
+chapter)
+
+\textit{(b) Let
+  $$g(x) = g_1(x) ... g_r(x)$$
+  Prove that $g(x)$ is separable}
+
+Suppose that it is not. We follow that $(x - a)^2$ is a factor of $g$.
+We can follow that no two elements of the product can have the
+same root due to previous point, and thus we connclude that
+$(x - a)^2$ is a factor for some $g_j$. But $F$ has characteristic 0
+and $g_j$ is irreductible, thus implying that $g_j$ is separable (due
+to a theorem in 8th chapter), which implies the desired contradiction.
+
+\textit{(c) Prove that $K$ is the splitting field of $g(x)$ over $F$.}
+
+We follow that $K$ is the minimal field that contains $F$ and all the
+roots of $f(x)$. Roots of $f$ and $g$ are the same, which implies
+the desired result.
 
 \end{document}
