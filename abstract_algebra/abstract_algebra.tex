@@ -7613,7 +7613,15 @@ we take $l \in Z$, then $\sqrt{l}$ is not a root for
 $$x^2 + \beta x + \gamma$$
 for non-zero $\beta$ (i.e. all the roots of those kinds of polynomials
 are whacky).
-We also follow that 
+
+It is not right to assume though that if $\Phi_{F, \alpha}(x)$ is a
+minimal polynomial for some algebraic $\alpha$, then the roots of this
+polynomial are all linear combinations of $\alpha$ with regards to $F$
+(meaning that within the roots of a minimal polynomial there also
+might be some other values). This follows from chapter 9.6 and its
+exploration of $X^4 - 2$. This further implies that $F(\alpha)$
+is not necessarily the splitting field for the minimal polynomial
+of $\alpha$.
 
 \subsection{}
 
@@ -8059,5 +8067,13 @@ to a theorem in 8th chapter), which implies the desired contradiction.
 We follow that $K$ is the minimal field that contains $F$ and all the
 roots of $f(x)$. Roots of $f$ and $g$ are the same, which implies
 the desired result.
+
+\subsection{}
+
+\textit{Let $p_1, p_2, ...$ be an infinite list of distinct primes in $Z$,
+  and for each $j \geq 1$, let $\alpha_j = \sqrt{p_j} \in R$. Prove that
+  for every $n \geq 1$, the set $\set{\alpha_1, ..., \alpha_n}$ is $Q$-linearly
+  independent.
+}
 
 \end{document}
