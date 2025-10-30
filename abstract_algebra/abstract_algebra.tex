@@ -8073,15 +8073,49 @@ the desired result.
 \textit{Let $p_1, p_2, ...$ be an infinite list of distinct primes in $Z$,
   and for each $j \geq 1$, let $\alpha_j = \sqrt{p_j} \in R$. Prove that
   for every $n \geq 1$, the set $\set{\alpha_1, ..., \alpha_n}$ is $Q$-linearly
-  independent.
-}
+  independent.}
 
-Let $\alpha_i$ and $\alpha_j$ be as defined. Presume also that they are
-also linearly dependent. That means that
-$$\alpha_i = q \alpha_j$$
-for some $q \in Q$. We follow then that
-$$p_i = q^2 p_j$$
-We then also 
+Let us look at the set $\set{1, \alpha_1, ..., \alpha_n}$. We can
+follow that $Q(\alpha_1, ..., \alpha_n)$ is a splitting field for
+$$f(x) = (x^2 - p_1)(x^2 - p_2) ... (x^2 - p_n)$$
+since all the roots of $f(x)$ are contained in it, and if any one of
+the elements of $\alpha_1$ through $\alpha_n$ is not present in the
+field, then it does not split $f(x)$. Therefore we have that
+$$[Q(\alpha_1, ..., \alpha_n):Q] = |G(Q(\alpha_1, ..., \alpha_n)/Q)|$$
 
+Let $\sigma$ be an isomorphism of $Q(\alpha_1, ..., \alpha_n)$ that
+fixes $Q$ (all of the isomorhisms will fix $Q$ as we have discussed in
+one of the previous exercises, but let us just state it here
+explicitly for the requirements of the theorem). We follow that we can
+restrict $\sigma$'s domain to get homomorphism $\sigma_i: Q(\alpha_i)
+\to Q(\alpha_1, ..., \alpha_n)$ (the fact that this thing is a
+homomorphism is trivially derived). Thus $\sigma_i$ maps $\alpha_i$
+either to $\alpha_i$ or $-\alpha_i$ since
+$$\Phi_{Q, \alpha_i}(x) = x^2 - p_i = (x + \alpha_i)(x - \alpha_i)$$
+and due to lemma 9.31. Hence we follow that for any given automorpism
+$\sigma$ there are $2^n$ choices of where to map distinct $\alpha$'s,
+and therefore there are precisely $2^n$ such automorphisms (we can spell
+it out more clearly, but it's pretty evident). Therefore we follow that by
+9.28 we have that
+$$[Q(\alpha_1, ..., \alpha_n):Q] = |G(Q(\alpha_1, ..., \alpha_n)/Q)| = 2^n$$
+
+We then follow that all the $\alpha$'s are algebraic and thus
+$$Q(\alpha_1, ..., \alpha_n) = Q[\alpha_1, ..., \alpha_n]$$
+Thus if $q \in Q(\alpha_1, ..., \alpha_n)$, then
+$$q = \sum{c_i \alpha_1^{b_{1, i}} ... \alpha_n^{b_{n, i}}}$$
+for appropriate coefficients $c_i \in Q$ and $b_{j, k} \in
+\omega$. Since $\alpha_i^2 \in Q$ we follow that we can restrict all
+the coefficients $b_{j, k}$ to be either $0$ or $1$ with respective
+recalculation of $c_i$. Thus we conclude that coefficients can be only
+in the set
+$$K = \set{\prod{\alpha_i^{b_i}}: b_1, ..., b_n \in \set{0, 1}}$$
+and there are precicely $2^n$ such coefficients. Thus we conclude that
+set $K$ spans $Q(\alpha_1, ..., \alpha_n)$ with respect to $Q$, and
+since its size is the same as the dimension of $Q(\alpha_1, ...,
+\alpha_n)$ over $Q$ we follow that it is its basis. Thus their
+elements are linearly independent, and therefore nonempty subsets of
+this set are also linearly independent, which implies that the desired
+set $\set{\alpha_1, ..., \alpha_n}$ is indeed linearly independent, as
+desired
 
 \end{document}
