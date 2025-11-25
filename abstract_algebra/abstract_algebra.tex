@@ -8120,9 +8120,31 @@ desired
 
 \section{The Primitive Element Theorem}
 
+\subsection*{Notes}
+
+With regards to 9.36, I do not think that my initial proof is somehow
+more deficient to the one that is present in the book, but I still
+want to spell mine out in order to avoid any mistakes.
+
+We firstly follow that a given basis $a_1, a_2, ..., a_n$ is present
+in $F(a_1, ..., a_n)$ by the definition of the latter. Existence of
+such a basis is derived by definition of finite extension.  We then
+have that
+$$k \in K \ra k = \sum{f_i a_i} \ra
+k \in F(a_1, ..., a_n) \ra K \subseteq F(a_1, ..., a_n)$$
+We also have that $F \subseteq K$ and $a_1, ..., a_n \in K$ by
+assumptions. Theorem 5.15 now implies that $F(a_1, ..., a_n) \subseteq K$
+(in which we take $L = K$ and disregarding the rest of the implications).
+Thus we have the desired equality.
+
 \subsection{}
 
-\textit{Skip for now}
+\textit{Let $Q(\sqrt[4]{2}, i)$ be the splitting field of $X^4 - 2$ over $Q$. Describe all the
+  rationals $a, b \in Q$ such that
+  $$Q(a\sqrt[4]{2} + bi) \neq Q(\sqrt[4]{2}, i)$$
+}
+
+We can state that $x^4 - 2$ and $x^2 + 1$ are minimal poly
 
 \subsection{}
 
@@ -8139,6 +8161,28 @@ we follow that $f = \Phi_{F, \alpha}(x)$, thus implying its separability.
 
 If every irreductible is separable, then every minimal is separable, thus by
 definition we have that $K/F$ is separable.
+
+\subsection{}
+
+\textit{Let $F$ be a field, and let $K/F$ and $L/F$ be field
+  extensions. Suppose that $K/F$ is a finite separable extension and
+  that $L$ is algebraically closed. Prove that there are exactly $[K:F]$
+  embeddings $\sigma: K \to L$ that are identity maps on $F$. (Text of
+  the exeicise is fixed in errata)
+}
+
+Since $K/F$ is separable we follow that $K$ is algebbraic over $F$. And since
+$L$ is algebraically closed we follow from exercise 9.10 that $K \subseteq L$.
+
+Main theorem in the section gives us that there is $\gamma \in K$ such
+that $F(\gamma) = K$. Then we follow that since
+$$[F(\gamma): F] = \deg(\Phi_{F, \gamma}(x))$$
+(which we follow from a theorem in at the start of the chapter) and
+$F(\gamma) = K$ we follow that
+$$[K: F] = \deg(\Phi_{F, \gamma}(x))$$
+we then follow that $K$ is the splitting field
+
+TODO
 
 
 \end{document}
