@@ -7718,7 +7718,7 @@ We can generalize this fact to get the desired result.
   for all $i \neq j$. Does this imply the inequality in (b)? Prove or give a counterexample
 }
 
-For $Q(\sqrt{2})$ and $Q(sqrt{3})$ this thing works.
+For $Q(\sqrt{2})$ and $Q(\sqrt{3})$ this thing works. TODO
 
 
 \subsection{}
@@ -7810,6 +7810,27 @@ as desired.
 
 \section{Algebraically Closed Fields}
 
+\subsection*{Notes}
+
+One thing that I want to mention here: if we have an algebraic extension
+$K/F$, then for any field $L$ such that $K/L/F$ we follow that $L$
+is algebraic over $F$ by definition.
+
+Subfileds of algebraically closed fields are not necessarily algebraically
+closed themselves. If a superfield of a field is algebraically closed,
+we cannot follow that it is an algebraic extension. For example we have
+$Q$ and $C$. Since $R$ contains transcedental numbers, we follow that
+not all elements of $C$ are algebraic over $R$.
+
+Let $L/F$ be an extension of fields, and let $a \in L$ be algebraic
+over $F$. Can we follow that $F(a)$ is algebraic extension?
+
+We can follow from the exercise that
+$$K = \set{a \in L: a \text{ is algebraic over } F}$$
+is algebraic extension of $F$, and since $F(a)$ is a subfield of an
+algebraic extension, we can follow that it itself is an algebraic
+extension
+
 \subsection{}
 
 \textit{Prove that a field $K$ is an algebraically closed field iff every non-zero
@@ -7832,15 +7853,18 @@ is a root for $f$, which gives us the reverse.
 \textit{Let $F$ be a field, let $K/F$ be an extension such that $K$ is
   algebraically closed. Let
   $$L = \set{a \in K: a \text{ is algebraic over } F}$$
-  Prove that $L$ is an algebraically closed field.  }
+  Prove that $L$ is an algebraically closed field.}
 
 Let $f \in L[x]$ be nonconstant. We follow that there is $a \in K$
-such that $f(a) = 0$. Thus $a$ is algebraic over $L$. 
-By definition we follow that $L$ is an algebraic extension of $F$.
+such that $f(a) = 0$ since $K$ is algebraically closed. Thus $a$ is
+algebraic over $L$.  By definition (and from the theorem in the
+previous section) we follow that $L$ is an algebraic extension of $F$.
 Thus by an exercise in previous section that asserts that algebraic
-extensions are transitive over towers of fields we have that
-$a$ is algebraic over $F$. Therefore by definition of $L$ we have that
-$a \in L$, which implies that $L$ is algebraically closed, as desired.
+extensions are transitive over towers of fields we have that $L(a)$ is
+algebraic over $L$ and $L$ is algebraic over $F$, which implies that
+$L(a)$ is algebraic over $F$, and thus $a$ is algebraic over
+$F$. Therefore by definition of $L$ we have that $a \in L$, which
+implies that $L$ is algebraically closed, as desired. 
 
 \subsection{}
 
