@@ -7891,6 +7891,16 @@ gives us 1.
 
 \section{Automorphisms of Fields}
 
+\subsection*{Notes}
+
+The assertion that $G(Q(\sqrt{2}), Q)$ is of order 2 is handled in the
+exercise about the trivial group.
+
+We also stress that in the definition of Galois group we require $K/F$
+to be a finite extension of fields. In the next proposition
+we use $K/F$ as an arbitrary extension, and I don't know what to make of
+it. 
+
 \subsection{}
 
 \textit{Let $K$ be a field of characteristic 0, so $K$ contains a
@@ -7916,26 +7926,41 @@ is not an identity. This means that there is $q \in Q(\sqrt[3]{2})$
 such that
 $$\sigma(q) \neq q$$
 From the previous point we know that $\sigma$ fixes $Q$, and thus we
-follow that $q \notin Q$. Therefore we follow that
+follow that $q \notin Q$. Since $\sqrt[3]{2}$ is algebraic over $Q$
+(as can be followed trivially), we follow that $Q(\sqrt[3]{2}) =
+Q[\sqrt[3]{2}]$, which implies that any given element of
+$Q(\sqrt[3]{2})$ is of the form
+$$q = a + b\sqrt[3]{2} + c\sqrt[3]{2}^2$$
+Therefore we follow that since $q \notin Q$ that
 $$q = a + b\sqrt[3]{2} + c\sqrt[3]{2}^2$$
 for some $a, b, c \in Q$ such that $b$ or $c$ is nonzero. Therefore
 we have that
 $$\sigma(q) = \sigma(a) + \sigma(b\sqrt[3]{2}) + \sigma(c\sqrt[3]{2}^2) =
 \sigma(a) + \sigma(b)\sigma(\sqrt[3]{2}) + \sigma(c)\sigma(\sqrt[3]{2}^2) =
 a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2}^2)$$
-where we have the latter equality due to the previous exercise.
+where we have the last equality due to the previous exercise.
 
 We follow that $\sqrt[3]{2}$ is the root of
 $$f(x) = x^3 - 2$$
 Thus $\sigma(\sqrt[3]{2})$ is also the root of
 $$x^3 - 2$$
-Since this polynomial's only root is $\sqrt[3]{2}$ we follow that
-$\sigma$ fixes $\sqrt[3]{2}$. Thus
+Since this polynomial's only root in $Q(\sqrt[3]{2})$ (the rest are in
+$Q$) is $\sqrt[3]{2}$ we follow that $\sigma$ fixes
+$\sqrt[3]{2}$. Thus
 $$a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2}^2) =
 a + b\sigma(\sqrt[3]{2}) + c\sigma(\sqrt[3]{2})^2 =
 a + b\sqrt[3]{2} + c\sqrt[3]{2}^2 = q$$
 which means that $q = \sigma(q)$, which is a contradiction, that gives
 us the desired result.
+
+Similar idea can be followed for the assertion that $G(Q(\sqrt{2}),
+Q)$ is of order 2. We can follow that the only other element of
+$Q(\sqrt{2})$ that we can send $\sqrt{2}$ is $-\sqrt{2}$. Thus we can
+also follow that if $K/F$ is an extension of fields, and $q \in K$ is
+algebraic over $F$, then we follow that the order of $G(F(q), F)$ is
+less than the factorial of degree of $\Phi_{F, q}(x)$, since we have
+that the isomorphisms are determined by the elements, that we send image
+to. 
 
 \subsection{}
 
@@ -7943,9 +7968,28 @@ us the desired result.
   \to K$ be a field homomorphism, that fixes the elements of $F$. Prove
   that $\phi$ is an isomorphism.}
 
-Every field homomorphism is an injection (due to 5.4). Since $K$ is
-finite we follow that $\phi$ is also surjective, which gives us the
-desired result.
+We can follow that $\phi$ is injective due to it being a field
+homomorphism (see 5.4). Thus let $q \in K$. We want to show that $q
+\in \range(\phi)$. If $q \in F$ we conclude that $\phi(q) =
+q$. Therefore assume that $q \in K \setminus F$.
+
+Since $K/F$ is a finite extension, we follow that $K$ is algebraic
+over $F$. Thus we have that $q$ is also algebraic over $F$, and therefore
+there is $f(x) \in F(X)$ such that $f(q) = 0$. Let $q, a_1, ..., a_n$
+be all the distinct roots of $f(x)$. We can follow that
+$F(q, a_1, ..., a_n)$ is a finite extension of $F$. We can also follow that
+$$F(q, a_1, ..., a_n) = F[q, a_1, ..., a_n]$$
+since all the elements are algebraic. Since $\phi$ maps roots of polynomial
+to their roots, we follow that
+$$\phi[F(q, a_1, ..., a_n)] \subseteq F(q, a_1, ..., a_n)$$
+in the sense of image. From the note in the previous exercise we then
+follow that
+$$G(F(q, a_1, ..., a_n), F)$$
+is finite, and thus $\phi$ with restricted domain is an element of a
+finite group.  Thus we follow that it has got an order, and thus we
+conclude that there is an element $q'$ of $F(q, a_1, ..., a_n)$ such
+that $\phi(q') = q$.  Since $q$ is arbitrary we follow that $\phi$ is
+thus surjective, which implies that it is an isomorphism, as desired.
 
 
 \subsection{}
@@ -7954,7 +7998,7 @@ desired result.
 functions. Define
   $$\sigma, \tau: F(T) \to F(T): \sigma(p(T)) = p(T\inv); \tau(p(T)) = p(T^2)$$}
 
-\textit{(a) Prove that $\sigma, tau$ are field homomorphisms that fix
+\textit{(a) Prove that $\sigma, \tau$ are field homomorphisms that fix
 $F$. Prove that $\sigma$ is a field automorphism of $F(T)$, but that
 $\tau$ is not}
 
