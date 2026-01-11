@@ -8218,14 +8218,33 @@ assumptions. Theorem 5.15 now implies that $F(a_1, ..., a_n) \subseteq K$
 (in which we take $L = K$ and disregarding the rest of the implications).
 Thus we have the desired equality.
 
+In the example 9.40 we can skip the calculation for $\sqrt{3}$ since
+we know that both $\sqrt{2} + \sqrt{3}$ and $\sqrt{2}$ are in $Q(\beta)$
+and thus is their difference.
+
 \subsection{}
 
-\textit{Let $Q(\sqrt[4]{2}, i)$ be the splitting field of $X^4 - 2$ over $Q$. Describe all the
-  rationals $a, b \in Q$ such that
+\textit{Let $Q(\sqrt[4]{2}, i)$ be the splitting field of $X^4 - 2$
+  over $Q$. Describe all the rationals $a, b \in Q$ such that
   $$Q(a\sqrt[4]{2} + bi) \neq Q(\sqrt[4]{2}, i)$$
 }
 
-We can state that $x^4 - 2$ and $x^2 + 1$ are minimal poly
+We can trivially follow that if $a$ or $b$ are zeroes, then we have
+the inequality. Thus assume that $a$ and $b$ are nonzero.
+
+Let $\gamma = \sqrt[4]{2} + bi$ for some $b \in Q$.
+We then have
+$$\gamma - \sqrt[4]{2} = bi$$
+and thus
+$$(\gamma - \sqrt[4]{2})^2 = -b^2$$
+$$\gamma^2 - 2 \gamma \sqrt[4]{2} + \sqrt[4]{2}^2 = -b^2$$
+$$\sqrt[4]{2}^2 - 2 \gamma \sqrt[4]{2} + \gamma^2 + b^2  +  = 0$$
+thus we have
+$$D = 4 \gamma^2 - 4 (\gamma^2 + b^2) = 4 \gamma^2 - 4 \gamma^2 - 4b^2 = -4b^2$$
+and thus
+$$\sqrt{D} = 2b$$
+$$\sqrt[4]{2} = \frac{2\gamma \pm 2b}{2} = \gamma \pm 2b$$
+
 
 \subsection{}
 
