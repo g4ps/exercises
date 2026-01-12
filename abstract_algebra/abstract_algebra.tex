@@ -8220,7 +8220,8 @@ Thus we have the desired equality.
 
 In the example 9.40 we can skip the calculation for $\sqrt{3}$ since
 we know that both $\sqrt{2} + \sqrt{3}$ and $\sqrt{2}$ are in $Q(\beta)$
-and thus is their difference.
+and thus is their difference. We also do not use the quadratic formula
+there (this is obvious, but took me a while to get it)
 
 \subsection{}
 
@@ -8238,13 +8239,29 @@ $$\gamma - \sqrt[4]{2} = bi$$
 and thus
 $$(\gamma - \sqrt[4]{2})^2 = -b^2$$
 $$\gamma^2 - 2 \gamma \sqrt[4]{2} + \sqrt[4]{2}^2 = -b^2$$
-$$\sqrt[4]{2}^2 - 2 \gamma \sqrt[4]{2} + \gamma^2 + b^2  +  = 0$$
+$$\sqrt[4]{2}^2 - 2 \gamma \sqrt[4]{2} + \gamma^2 + b^2 = 0$$
 thus we have
 $$D = 4 \gamma^2 - 4 (\gamma^2 + b^2) = 4 \gamma^2 - 4 \gamma^2 - 4b^2 = -4b^2$$
 and thus
-$$\sqrt{D} = 2b$$
-$$\sqrt[4]{2} = \frac{2\gamma \pm 2b}{2} = \gamma \pm 2b$$
+$$\sqrt{D} = 2b i$$
+$$\sqrt[4]{2} = \frac{2\gamma - 2bi}{2} = \gamma - bi$$
+which is not helpful. Let's try something else
+$$\sqrt[4]{2}^2 - 2 \gamma \sqrt[4]{2} + \gamma^2 + b^2 = 0$$
+$$\sqrt[4]{2}^2 = 2 \gamma \sqrt[4]{2} - \gamma^2 - b^2$$
+$$2 = (2 \gamma \sqrt[4]{2} - \gamma^2 - b^2)^2$$
+which leads to a lot of algebra.
 
+After re-reading the proofs in the section we can conclude that the
+only elements that can make the sides non-equal are the elements of
+$L$. We can follow that $x^4 - 2$ is the minimal polynomial for
+$\sqrt[4]{2}$ and $x^2 + 1$ is the minimal of $i$. Roots of those
+polynomials are $\sqrt[4]{2}, -\sqrt[4]{2}, i\sqrt[4]{2},
+-i\sqrt[4]{2}$ for the former and $i, -i$ for the latter. Thus we have
+that denominator is $2i$ for all of the elements and
+$$2\sqrt[4]{2}, (1 - i)\sqrt[4]{2}, (1 + i) \sqrt[4]{2}$$
+for numerator. We then can trivially follow that none of those
+fractions are in $Q$, and thus we conclude that the only $c$ that we
+cannot set is $0$, as desired.
 
 \subsection{}
 
