@@ -8302,13 +8302,14 @@ $$[F(\gamma): F] = \deg(\Phi_{F, \gamma}(x))$$
 $F(\gamma) = K$ we follow that
 $$[K: F] = \deg(\Phi_{F, \gamma}(x))$$
 
-Presume for now that $K$ is a splitting field for $\Phi_{F,
-\gamma}(x)$. We follow that
-$$[K:F] = |G(K/F)|$$
-and thus we need there to exist a single homomorphism $K \to L$
-in order to ge the desired conclusion.
-
-TODO: conclude this one
+We then follow that any $\sigma$ maps $\gamma$ to one of the roots of
+$\Phi_{F, \gamma}(x)$ (we of course assume that by embeddings we mean
+the homomorphic embeddings). There are $\deg(\Phi_{F, \gamma}(x))$
+such roots since $K/F$ is separable. We then follow that all of those
+roots are in $L$ since it is algebraically closed, and thus any
+polynomial splits completely. Since everything is algebraic and thus
+determined, we follow that there are indeed $\deg(\Phi_{F, \gamma}(x))
+= [K:F]$ such embeddings, as desired.
 
 
 \subsection{}
@@ -8331,6 +8332,39 @@ follow that $h \in L[x]$ as well. Thus if there is TODO
 \section{Galois Extenstions}
 
 \subsection*{Notes}
+
+Here we want to remind ourselves that the group of automorphisms of a
+field extensions is defined on an arbitrary finite extension
+$K/F$. Particularly we have that the extension does not have to be
+Galois in order to have that group.
+
+In 9.45 we do require $K/F$ to be a Galois extension since we have that
+$f(x)$ is a separable polynomial.
+
+in 9.47 they ask us to prove the fact that $K^H$ has additive and
+multiplicative inverses.
+
+We can state that if $a \in K^H$ then $\simga(a) = a$ for all $\sigma
+\in H$. It is true in general for all homomorphisms that
+$\sigma(a)\inv = \sigma(a\inv)$ and thus we have that $\sigma(a\inv) =
+\sigma(a)\inv = a\inv$ for all $\sigma$'s, thus implying that $a\inv
+\in K^H$ by definition. Similar reasoning holds for additive inverses.
+
+\subsection{}
+
+\textit{Let $F$ be a field, let $f(x) \in F[x]$ be a separable
+polynomial of degree $n \geq 1$ and let $K/F$ be a splitting field for
+$f(x)$ over $F$. Prove the following implication
+  $$|G(K/F)| = n! \lra G(K/F) = S_n \ra f(x) \text{ is irreductible in } F[x]$$
+}
+
+From the first theorem in the chapter we know that we've got an
+injective homomorphism from $G(K/F)$ to $S_n$. Thus we follow that if
+$|G(K/F)| = n!$ then its image is of the same size as $S_n$ (which is
+$n!$), which implies the forwards result. Reverse implication is
+trivial.
+
+
 
 
 \end{document}
