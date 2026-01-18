@@ -8344,7 +8344,7 @@ $f(x)$ is a separable polynomial.
 in 9.47 they ask us to prove the fact that $K^H$ has additive and
 multiplicative inverses.
 
-We can state that if $a \in K^H$ then $\simga(a) = a$ for all $\sigma
+We can state that if $a \in K^H$ then $\sigma(a) = a$ for all $\sigma
 \in H$. It is true in general for all homomorphisms that
 $\sigma(a)\inv = \sigma(a\inv)$ and thus we have that $\sigma(a\inv) =
 \sigma(a)\inv = a\inv$ for all $\sigma$'s, thus implying that $a\inv
@@ -8355,7 +8355,8 @@ $\sigma(a)\inv = \sigma(a\inv)$ and thus we have that $\sigma(a\inv) =
 \textit{Let $F$ be a field, let $f(x) \in F[x]$ be a separable
 polynomial of degree $n \geq 1$ and let $K/F$ be a splitting field for
 $f(x)$ over $F$. Prove the following implication
-  $$|G(K/F)| = n! \lra G(K/F) = S_n \ra f(x) \text{ is irreductible in } F[x]$$
+$$|G(K/F)| = n! \lra G(K/F) = S_n \ra f(x) \text{ is irreductible in } F[x]$$
+Give an example that illustrates lack of reverse implication
 }
 
 From the first theorem in the chapter we know that we've got an
@@ -8364,7 +8365,21 @@ $|G(K/F)| = n!$ then its image is of the same size as $S_n$ (which is
 $n!$), which implies the forwards result. Reverse implication is
 trivial.
 
+Suppose now that $f$ is reductible and $G(K/F) = S_n$. Let $g, h \in
+F[x]$ be such that both of them are nonconstant and
+$$f = gh$$
+we then follow that $K$ is a splitting field for $f$ and thus contains
+roots for both $g$ and $h$. Let $a, b$ be roots for $g, h$
+respectively. Since $f$ is separable we follow that $a \neq b$, and
+moreover, we follow that $g(b) \neq 0$ and $h(a) \neq 0$. We then follow that
+since $G(K/F) = S_n$ that there is an automorphism $\sigma$ that maps
+$a$ to $b$, and thus we have that
+$$g(a) = g(\sigma(a)) = g(b) = 0$$
+which gives us a contradiction.
 
-
+Polynomial that we discuss in detail (i.e. $X^4 - 2$) in the chapter
+gives a perfect example of lack of the reverse implication. As discussed
+in the previous section, its group of automorphism is a dihedral group,
+which is not equal to $S_n$ in that instance.
 
 \end{document}
