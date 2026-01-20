@@ -8382,4 +8382,36 @@ gives a perfect example of lack of the reverse implication. As discussed
 in the previous section, its group of automorphism is a dihedral group,
 which is not equal to $S_n$ in that instance.
 
+\subsection{}
+
+\textit{Let $K/F$ be a Galois Extension, let $\alpha \in K$, and let
+  $$f(X) = \prod_{\sigma \in G(K/F)}{(X - \sigma(\alpha))}$$
+}
+
+\textit{(a) Prove that $f(X) \in F[X]$}
+
+The same idea that is used in the proof of step 2 of the last theorem
+of the section works here as well
+
+\textit{(b) Let $\Phi_{\alpha, F} \in F[x]$ be the minimal polynomial
+  of $f(X)$ over $F$.  Prove that
+  $$f(X) = \Phi_{\alpha, F}(X) \iff K = F(\alpha)$$
+}
+
+Assume lhs. We follow that since $\alpha \in K$ that $F(\alpha)
+\subseteq K$. We follow from definition of $f(X)$ that
+$$\deg f(X) = |G(K/F)|$$
+From one of the previous theorems we have that
+$$\deg \Phi_{\alpha, F}(X) = [F: F(a)]$$
+and thus we have by simmilar reasoning as in step 4 that
+$[K:F(\alpha)] = 1$ and thus rhs.
+
+Assume rhs. We firstly follow that since $e \in G(K/F)$ that $(x -
+\alpha)$ is a factor of $f(X)$ and thus it is a multiple of
+$\Phi_{\alpha, F}$. We follow that $\deg f(X) = |G(K/F)|$ just as
+before, and $\deg \Phi_{\alpha, F} = [F(\alpha): F] = [K:F] =
+|G(K/F)|$. Thus we have the equality of degrees, and since one is a
+multiple of another and both of them are monic we have the desired
+equality.
+
 \end{document}
