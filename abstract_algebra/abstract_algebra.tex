@@ -8414,4 +8414,55 @@ before, and $\deg \Phi_{\alpha, F} = [F(\alpha): F] = [K:F] =
 multiple of another and both of them are monic we have the desired
 equality.
 
+\textit{(c) In general, even if $K \neq F(\alpha)$, prove that there is an
+  integer $d \geq 1$ such that
+  $$f(X) = \Phi_{\alpha, F}(X)^d$$}
+
+Let $\alpha \in K$ be arbitrary. We firstly follow that all the roots
+of $f$ and the orbit of $\alpha$ is the same set by definitions of
+both. Let
+$$g(x) = \prod_{\beta \in G\alpha}{(x - \beta)}$$
+where we denote the orbit of $\alpha$ by $G\alpha$.
+
+Let $\sigma \in G(K/F)$. We want to follow that $\sigma[G_\alpha] =
+G_\alpha$. We firstly follow that for $g \in \sigma(G_\alpha)$
+there is $b \in G_\alpha$ such that $g = \sigma(b)$. Since $b \in G_\alpha$
+we follow that there is $k \in G(K/F)$ such that
+$$b = k(\alpha)$$
+and thus we have that
+$$g = \sigma(k(\alpha))$$
+since both $\sigma$ and $k$ are in $G(K/F)$ we follow that their
+composition is also there, and thus $g \in G\alpha$. For reverse
+case we use the fact that $\sigma\inv k(\alpha) \in G_\alpha$, thus
+giving us that $G_\alpha = \sigma [G_\alpha]$.
+
+We can follow by reasoning similar to the one before (and using the
+fact that if we apply $\sigma \in G(K/F)$ to $G\alpha$ then we are
+going to get $G\alpha$) that $g(x) \in F[x]$. Moreover, we follow that
+$\alpha$ is a factor of $g(x)$, and thus $g(x)$ is a multiple of
+$\Phi_{F, \alpha}(X)$.
+We then follow that if $|G_\alpha| = 1$ then we have a trivial case of
+$\alpha \in F$ (due to the fact that $F = K^{G(K/F)}$) and thus the
+desired result. Thus assume that $|G_\alpha| > 1$. Assume that $H
+\subset G_\alpha$ (i.e. proper subset) is such that $|H| \geq 1$.
+
+Let $G_\alpha$ be a stabilizer of $\alpha$. We follow then that
+$G/G_\alpha$ is a set of cosets of $G_\alpha$. Let $g \in G/G_\alpha$.
+We follow that there is a unique $q \in G\alpha$ such that for
+each $h \in g$ we have $q = h(\alpha)$. Since each element of
+$G/G_\alpha$ has the same number of elements, we conclude
+that each $q \in G\alpha$ is factored $|G/G_\alpha|$ times
+in $f(X)$.
+
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
