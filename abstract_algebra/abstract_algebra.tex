@@ -8444,7 +8444,19 @@ $\Phi_{F, \alpha}(X)$.
 We then follow that if $|G_\alpha| = 1$ then we have a trivial case of
 $\alpha \in F$ (due to the fact that $F = K^{G(K/F)}$) and thus the
 desired result. Thus assume that $|G_\alpha| > 1$. Assume that $H
-\subset G_\alpha$ (i.e. proper subset) is such that $|H| \geq 1$.
+\subset G_\alpha$ (i.e. proper subset) is such that $|H| \geq 1$.  Let
+us now look at
+$$h = \prod_{w \in H}(x - w)$$
+we can follow that if $\alpha \notin H$ then $h$ does not have
+$\alpha$ as its root, and thus cannot be a multiple of $\Phi_{F,
+\alpha}$. If $\alpha \in H$, we can follow that there is $\theta \in
+Gx$ such that $\theta \notin H$, and thus there is $\sigma \in G(K/F)$
+that maps $\alpha$ to $\sigma$. Thus we have that $h$ has $\theta$ as
+its root, but $\sigma(h)$ does not have $\theta$ as its root, thus
+implying that $h \neq \sigma(h)$ and thus we have that $h \notin
+F[x]$.  Thus we have that in any case we have that $h$ is not a
+multiple of $\Phi_{F, \alpha}$, and thus we have that $g(x) = \Phi_{F,
+\alpha}$.
 
 Let $G_\alpha$ be a stabilizer of $\alpha$. We follow then that
 $G/G_\alpha$ is a set of cosets of $G_\alpha$. Let $g \in G/G_\alpha$.
@@ -8453,6 +8465,11 @@ each $h \in g$ we have $q = h(\alpha)$. Since each element of
 $G/G_\alpha$ has the same number of elements, we conclude
 that each $q \in G\alpha$ is factored $|G/G_\alpha|$ times
 in $f(X)$.
+
+Thus by combining those two arguments together we conclude that indeed
+$$f(x) = \Phi_{F, \alpha}(x)^d$$
+for some $d$ (in this case $d = |G(K/F)| / |G(K/F)_\alpha|$), as
+desired
 
 
 \end{document}
