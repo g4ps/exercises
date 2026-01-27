@@ -8403,7 +8403,7 @@ Assume lhs. We follow that since $\alpha \in K$ that $F(\alpha)
 $$\deg f(X) = |G(K/F)|$$
 From one of the previous theorems we have that
 $$\deg \Phi_{\alpha, F}(X) = [F: F(a)]$$
-and thus we have by simmilar reasoning as in step 4 that
+ and thus we have by simmilar reasoning as in step 4 that
 $[K:F(\alpha)] = 1$ and thus rhs.
 
 Assume rhs. We firstly follow that since $e \in G(K/F)$ that $(x -
@@ -8470,6 +8470,75 @@ Thus by combining those two arguments together we conclude that indeed
 $$f(x) = \Phi_{F, \alpha}(x)^d$$
 for some $d$ (in this case $d = |G(K/F)| / |G(K/F)_\alpha|$), as
 desired
+
+\section{The Fundamental Theorem of Galois Theory}
+
+\subsection{}
+
+\textit{Let $K$ be the splitting field of $X^4 - 2$}
+
+\textit{(a) Compute the field field of $\set{e, \tau}$}
+
+We recall that $\tau: K \to K$ is defined as $\tau(\sqrt[4]{2}) =
+\sqrt[4]{2}, \tau(i) = -i$. Thus we have that
+
+$$\tau(c_1 + c_2 \sqrt[4]{2} + c_3 \sqrt[4]{2}^2 + c_4 \sqrt[4]{2}^3 +
+c_5 i + c_6 i\sqrt[4]{2} + c_7 i \sqrt[4]{2}^2 + c_8 i\sqrt[4]{2}^3) = $$
+$$ c_1 + c_2 \sqrt[4]{2} + c_3 \sqrt[4]{2}^2 + c_4 \sqrt[4]{2}^3 -
+c_5 i - c_6 i\sqrt[4]{2} - c_7 i \sqrt[4]{2}^2 - c_8 i\sqrt[4]{2}^3$$
+thus we follow that the elements that are fixed by $\tau$ are the ones,
+that have
+$$c_5 = c_6 = c_7 = c_8 = 0$$
+and thus we have that those elements can be described by
+$$c_1 + c_2 \sqrt[4]{2} + c_3 \sqrt[4]{2}^2 + c_4 \sqrt[4]{2}^3$$
+for all $c_1, ... \in Q$. This is previcely $Q(\sqrt[4]{2})$
+
+\textit{The rest of this exercise is similar, with some minor
+deviations. Next exercise seems to be tedious as hell, so I am
+skipping it as well.}
+
+\subsection{}
+
+\textit{Let $K/F$ be a Galois extension.}
+
+\textit{(a) Let $\sigma \in G(K/F)$, and let $E$ be an intermediate
+  field. Prove that
+  $$ G(K/\sigma(E)) = \sigma G(K/E)\sigma\inv$$}
+
+We surely can take of faith that $G(K/E)$ is a normal subgroup, but
+let us not do that here.
+
+Firstly we follow that $\sigma$ is an automorphism, and thus we follow
+that $\sigma(E)$ is a subfield of $K$, that contains $F$ by the fact
+that $\sigma \in G(K/F)$ and definition of $G(K/F)$. Thus everything
+is well-defined here. 
+
+Let $\theta \in G(K/\sigma(E))$. We follow that $\theta$ is an
+automorphism of $K$ that fixes $\sigma(E)$. Since $\sigma(E)$
+contains $F$ we follow that $\theta \in G(K/F)$. Let us then construct
+$\tau \in G(K/F)$
+$$\tau = \sigma\inv \theta \sigma $$
+We follow that if $e \in E$ then
+$$\tau(e) = (\sigma\inv \theta \sigma)(e) = \sigma(\theta(\sigma(e)))$$
+Since $\theta \in G(K/\sigma(E))$ and $\sigma(e) \in \sigma(E)$ we
+follow that $\theta(\sigma(e)) = \sigma(e)$ and thus
+$$\tau(e) = \sigma(\theta(\sigma(e))) = \sigma (\sigma\inv(e)) = e$$
+thus giving us that $\tau \in G(K/E)$. Thus we have that
+$\sigma \tau \sigma \inv \in \sigma G(K/E)\sigma\inv$ and thus
+$$\sigma \tau \sigma\inv = \sigma \sigma \inv \theta \sigma \sigma \inv =
+\theta \in \sigma G(K/E) \sigma\inv$$
+which gives us forward inclusion.
+
+If $\theta \in \sigma G(K/E)\sigma\inv$ then there is $\gamma \in
+G(K/E)$ such that $\theta = \sigma \gamma \sigma\inv$ and for $\beta
+\in \sigma(E)$ we have that there is $\alpha \in E$ such that $\beta =
+\sigma(\alpha)$ and thus
+$$\theta(\beta) = (\sigma \gamma \sigma \inv)(\beta) =
+(\sigma \gamma \sigma \inv)(\sigma(\alpha)) = \sigma \gamma (\alpha) =
+\sigma(\alpha) \in \sigma(E)$$ where we have the latest equality from
+the fact that $\gamma$ fixes $E$ and $\alpha \in E$. Thus we conclude
+that $\theta$ fixes $\sigma(E)$, and thus we have reverse inclusion,
+and thus the desired equality.
 
 
 \end{document}
