@@ -8540,6 +8540,76 @@ the fact that $\gamma$ fixes $E$ and $\alpha \in E$. Thus we conclude
 that $\theta$ fixes $\sigma(E)$, and thus we have reverse inclusion,
 and thus the desired equality.
 
+\textit{Skipping the rest for now}
+
+\section{Application: The Fundamental Theorem of Algebra}
+
+\subsection*{Notes}
+
+For claim $1$ we firstly use the fact that $K = F \lra [K:F] = 1$ as
+proven in one of the exercises. We then follow that $[R(\beta): R] =
+2$ since $\beta \notin R$ and $R(\beta) \subseteq K$. In general we
+can use the fact that $K/R$ is a separable extension (due to $R$
+having characteristic 0) and thus there is $\beta \in K$ such that $K
+= R(\beta)$. Then we follow that $\beta$ is a root of a quadratic
+polynomial, and every quadratic polynomial with roots in $R$ has
+roots in $C$ (due to quadratic formula).
+
+Deriviation of quadratic formula is as follows:
+$$x^2 + bx + c = 0$$
+$$x^2 + bx = - c$$
+$$x^2 + bx + (b/2)^2 = - c + (b/2)^2$$
+$$(x + (b/2))^2 = - c + (b/2)^2$$
+$$x + (b/2) = \pm \sqrt{- c + (b/2)^2}$$
+$$x = - (b/2) \pm \sqrt{- c + (b/2)^2}$$
+(i.e. we put everything with $x$ to one side, and then complete the
+square, take the root, and presto).
+
+In claim 2 we state that essentially every polynomial of degree 2 in
+complex numbers has a root. Deriviation of the quadratic formula is
+the same as before, and since every number in $C$ has a square root,
+we are golden.
+
+Claim 3 is pretty solidly explained, the deriviation of the fact that
+polynomial takes both signes is pretty evident.
+
+We then note that $R(a)$ is not necesseraly Galois. The rest of the proof is
+pretty explained, and I dont have anything else to add.
+
+\subsection{}
+
+\textit{Let $f(X)$ be a monic polynomial of odd degree. Prove that $f(x)$ takes
+  on both positive and negative values by explicitly describing a number $B$
+  having property that
+  $$\forall X < -B: f(X) < 0 ; \forall X > B: f(X) > 0$$
+}
+
+For degree 1 we have a trivial case. Thus assume that degree is greater
+than 1. 
+
+Let $n$ be the degree of $f$. Thus $n - 1$ is even.  Let $j$ be the
+maximal coefficient of $f$ or $1$ if the maximal is less than 0 (for
+simplicity's sake). We can follow that for $i$ of odd degree we have
+that
+$$j x^{n - 1} > c_i x^i$$
+for all $x < -1$ (remember, $n - 1$ is even). For even degree we have that
+$$c_i x^i < j x^i \leq j x^i x^{(n - 1) - i} = j x^{n - 1}$$
+Thus we have that for $x < 1$ we have that
+$$f(x) - x^n \leq (n - 1 ) j x^{n - 1} $$
+$$f(x) \leq x^n + (n - 1 ) j x^{n - 1} $$
+we then can follow that
+$$x^n + (n - 1 ) j x^{n - 1} < 0$$
+$$x^{n - 1}(x + (n - 1 ) j)  < 0$$
+we follow that $x^{n - 1} > 0$ for $x < -1$ and thus
+$$x + (n - 1 ) j  < 0$$
+$$x  < - (n - 1 ) j$$
+thus for $x < - (n - 1 )j$ (since we've bounded $j$ we have that $- (n - 1 )j \leq -1$)
+we have that
+$$0 > x^n + (n - 1 ) j x^{n - 1} > f(x)$$
+by making similar calculations for the maximal number (taking minimums and whatnot)
+and taking appropriate maximal number we can obtain $B$, as desired.
+
+
 
 \end{document}
 
