@@ -8609,16 +8609,35 @@ $$0 > x^n + (n - 1 ) j x^{n - 1} > f(x)$$
 by making similar calculations for the maximal number (taking minimums and whatnot)
 and taking appropriate maximal number we can obtain $B$, as desired.
 
+\subsection{}
 
+\textit{Derive the formula for the square root of a complex number $a + bi \in C$
+  by setting
+  $$ (x + yi)^2 = a + bi$$
+  and solving for $x$ and $y$
+}
+
+\textit{Skipping this one}
+
+\subsection{}
+
+\textit{Let $f(X) = X^5 - iX^2 + 1 - i \in C[x]$. Find a polynomial
+  $g(X) \in R(X)$ of degree 10 with the property that every complex root
+  of $f(X)$ is also a root of $g(X)$.}
+
+We can use the same idea as in the proof of the FTA: multiply this
+thing by its complex conjugate. Let's try to do that:
+$$\overline{f(X)} = \overline{X^5 - iX^2 + 1 - i} = X^5 + iX^2 + 1 + i$$
+$$\overline{f(X)}f(X) = (X^5 + iX^2 + 1 + i)(X^5 - iX^2 + 1 - i) = $$
+$$ = (X^{10} - iX^7 + X^5 + iX^5) + (iX^7 + X^4 - iX^2 + X^2) +
+(X^5 + iX^2 + 1 + i) + (-iX^5 + X^2 -i + 1) = $$
+$$ = X^{10} + 2X^5 + X^4  + 2X^2 + 2$$
+I might've (and probably did) fudge up some of the coefficients, but
+the idea seems to be pretty solid
+
+\subsection{}
+
+\textit{Trivial, just apply the exercise}
 
 \end{document}
-
-
-
-
-
-
-
-
-
 
