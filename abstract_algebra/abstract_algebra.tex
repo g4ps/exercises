@@ -8641,6 +8641,29 @@ the idea seems to be pretty solid
 
 \section{Galois Theory of Finite Fields}
 
+\subsection*{Notes}
+
+We firstly want to additionally state some things over here:
+
+Let $K/F$ be an extension, and let $\alpha \in K$ be algebraic
+over $F$. If $\Phi_{F, \alpha}(x)$ is separable, then $\alpha$
+is called separable over $F$.
+
+We then want to solve an exercise that is given in errata:
+
+\textit{Suppose that $K/F$ is a finite Galois extension. Then the
+following are equivalent:}
+
+\textit{(a) $K$ is generated over $F$ by separable elements}
+
+\textit{(b) $K$ is separable over $F$.}
+
+Assume (a). 
+
+If (b) is true, then every element of $K$ is separable. Since $K/F$ is
+a finite extension, it follows that there are elements that generate
+it, and thus we have (a)
+
 \subsection{}
 
 \textit{This one just asks us to make a diagram of $Z/12Z$}
@@ -8651,7 +8674,16 @@ the idea seems to be pretty solid
   $gcd(q, N) = 1$, and let $\zeta$ be a primitive Nth-root unity in some
   extension field of $F_q$.}
 
-\textit{Skip for now}
+\textit{(a) Prove that $F_q(\zeta)/F_q$ is a separable extension}
+
+We state here that the fact that $\zeta$ is the $N$-th root of unity
+implies that $\zeta^N = 1$ and $\zeta^i \neq 1$ for $0 < \zeta < N$.
+Thus we follow that $\zeta$ is the root of
+$$f(x) = x^N - 1$$
+and therefore $\zeta$ is algebraic over $F_q$. Therefore
+$F_q(\zeta)/F_q$ is a finite extension, and thus $F_q(\zeta)$
+is an algebraic extension of $F$. 
+
 
 \subsection{}
 
