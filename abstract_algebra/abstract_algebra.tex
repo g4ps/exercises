@@ -8736,8 +8736,18 @@ got a splitting field $K$ (which might or might not be equal to $E$).
 We thus follow that since $ \gamma \in K$ and $E = F(\gamma)$ that
 $E \subseteq K$ and $K$ is Galois by definition.
 
-% \textit{(b) Prove that there is in fact a minimal field as in (a)}
+\textit{(b) Prove that there is in fact a minimal field as in (a)}
+
+Suppose that $L/E$ is such that $L/F$ is Galois. Let $K$ be a
+splitting field of $\gamma$ as in the previous point. We follow that
+$L/F$ is normal, and also that since $E \subseteq L$ that $\gamma \in
+L$. Thus $\Phi_{F, \gamma}$ either splits completely in $L$ or has no
+roots in $L$, and since $\gamma \in L$ we follow that it splits
+completely. Therefore due to 9.25 there is an isomorphism between the
+splitting field in $L/F$ and $K$. Moreover, due to 9.23 we follow that
+there is an isomorphism $\phi$ such that $\phi(\gamma) = \gamma$, and
+thus since $E = F(\gamma) = F[\gamma]$ we follow that it fixes $E$,
+as desired.
 
 
 \end{document}
-
