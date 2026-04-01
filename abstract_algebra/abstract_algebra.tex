@@ -8792,4 +8792,64 @@ $F$ is equal to one of those fields.
 
 \chapter{Vector Spaces -- Part 2}
 
+\section{Vector Space Homomorphisms}
+
+\subsection{}
+
+Was done in the linear algebra course
+
+\section{Endomorphisms and Automorphisms}
+
+
+\subsection{}
+
+\textit{Prove that if $L \in End_F(V)$ is bijective as a map of sets, then the
+  inverse map $L\inv$ is in $End_F(V)$.}
+
+We can follow that the domains and codomains are correct since $L$ is a bijection.
+We then follow that there are $w_1, w_2 \in V$ such that 
+$$L\inv(v_1) = w_1, L\inv(v_2) = w_2$$
+for arbitrary $v_1, v_2 \in V$ by the fact that $L$ is a bijection. Thus
+$$c L\inv(v_1) = L\inv L (c L\inv(v_1) ) = L\inv (c L (L\inv (v_1))) = L\inv (c v_1)$$
+and in general
+$$L\inv(c_1 v_1 + c_2 v_2) = L\inv(c_1 I v_1 + c_2 I v_2) = L\inv(c_1 L L\inv(v_1) + c_2 L L\inv(v_2)) = $$
+$$ = L\inv(L(c_1L\inv(v_1)) + L(c_2  L\inv(v_2))) = L\inv(L(c_1L\inv(v_1) + c_2  L\inv(v_2))) = $$
+$$ = c_1L\inv(v_1)) + c_2  L\inv(v_2)$$
+as desired.
+
+\subsection{}
+
+\textit{This one was finished as well}
+
+\subsection{}
+
+\textit{Let $V$ be a non-zero $F$-vector space. Prove that $End_F(V)$
+  is a commutative ring if and only if $\dim_F(V) = 1$.}
+
+If $\dim_F(V) = 1$ then we follow that any non-zero vector of $V$
+constitutes a basis of $V$ and thus spans $V$. Let $q$ be such a
+basis. Therefore if $L, W \in End_F(V)$ then
+$$L(q) = cq$$
+for some $c \in F$ and thus for any given $v \in V$
+$$L(v) = L(a q) = a L(q) = a cq = cv$$
+Thus every endomorphism is a multiplication by a scalar.
+$$L W (v) = L (b v) = cbv = bcv = W L (v)$$
+for an appropriate scalar $b \in F$ for $W$, which gives us the
+forward direction.
+
+Now if $\dim_F(V) \neq 1$ then we follow that basis of $V$ has more
+than one element. Let $q, w$ be elements of a basis of $V$.  We can
+then prove that there is a map $L$ such that
+$$L(q) = w, L(w) = q$$
+and map $W$ such that
+$$W(q) = 0, W(w) = w$$
+(i.e. one maps that nulls one of the element of the basis, and the
+other one swaps them; proof of existense of such a map is somewhat
+trivial). Then we follow that
+$$L W(q) = L(0) = 0$$
+$$W L(q) = W(w) = w$$
+which proves that there are elements of $End_F(V)$ that are
+non-commutative, as desired.
+
+
 \end{document}
