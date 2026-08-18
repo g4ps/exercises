@@ -8886,7 +8886,63 @@ independent, and thus are bases of $R^2$ since all od them have two elements.
   What is the basis of $L$ associated to the standard basis?}
 
 \textit{The rest of this section (and perhaps chapter) is just a
-reminder of my linear algebra course}
+  reminder of my linear algebra course}
+
+\chapter{Modules Part 1: Rings + Vector Like Spaces}
+
+\section{What is a Module?}
+
+\subsection{}
+
+\textit{Let $M$ be an $R$-module. Working directly from the axioms, prove the following:}
+
+\textit{(a) Prove that $0m = 0$ for all $m \in M$}
+
+We can follow that
+
+$$m = 1 * m = (1) * m = (1 + 0) * m = 1m + 0m = m + 0m$$
+where we use id, assc, identity for $R$ as $R$ is a ring and thus an
+abelian group, distributivity, and then identity. We can just take the
+fact that the $m + x = m \lra x = 0$, and thus $0m = 0$, but let us
+take a more direct route:
+$$0 = m - m = (1 * m) - m = ((1 + 0) * m) - m =
+(1 * m + 0 * m) - m = m + 0 * m - m = 0m$$
+which we can similarly justify
+
+\textit{(b) Prove that $(-1) * m = -m$}
+
+$$(-1) * m + m = (-1) * m + (1) * m = (-1 + 1) * m = 0 * m = 0$$
+which we can similarly justify
+
+\subsection{}
+
+\textit{Let $R$ be a ring, and let $a_1, ..., a_n \in R$. We define an evaluation map
+  $$E_\alpha = R[x] \to R^n: E_\alpha(f(x)) = (f(a_1), ..., f(a_n))$$}
+
+\textit{(a) Prove that $E_\alpha$ is an $R$-module homomorpism}
+
+Follows trivially
+
+\textit{(b) Suppose that $R$ is an integral domain. Prove that the
+kernel of $E_\alpha$ is a principal ideal of $R[x]$. Find a generator for
+this ideal}
+
+We can follow that if $f(a_1) = 0$, then $(x - a_1)$ is a factor in
+$f$. Thus if in addition $f(a_2) = 0$ and so on by 8.8(b) we've got
+that $f$ is a multiple of $(x - a_1) (x - a_2)... (x - a_n)$, which
+means that every element of the kernel is a multiple of such an
+element, thus making the kernel principal, as desired
+
+\textit{(c) Is (b) true if we drop the assumption that $R$ is an
+  integral domain?}
+
+No.
+
+To justify that we can look at remark 8.9 and see that we can set $1,
+3, 5, 7$ to be elements of $\alpha$ in a ring $Z/8Z$, and then we'll
+get that $x^2 - 1$ is an element of the kernel. We then get that $x^4
++ 6x^2 + 1$ is an element of the kernel (by multiplying $(x - 1)$, $(x
+- 3)$ and so on), but it is not a multiple of $x^2 - 1$
 
 
 
